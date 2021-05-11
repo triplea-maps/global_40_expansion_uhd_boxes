@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="1.2"/>
+  <info name="Global 40 Expansion" version="1.3"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -5967,6 +5967,13 @@
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demolition_harbour" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_Russians_LendLeaseFee" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="original" count="1"/>
+      <option name="unitPresence" value="1_PU" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Russians_AtWarWithGermans" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="atWarPlayers" value="Germans" count="1"/>
+    </attachment>
     <!-- Japanese Conditions -->
     <attachment name="conditionAttachmentAllies_Conquer_Japanese_Islands" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Iwo Jima:Marianas:Okinawa" count="1"/>
@@ -6451,6 +6458,17 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
       <option name="notification" value="RussianGuardsActive"/>
+    </attachment>
+    <attachment name="triggerAttachment_Russians_LendLeaseFee" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Russians_AtWarWithGermans"/>
+      <option name="productionRule" value="productionRussians:buy1_PU"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:russiansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Russians_RemoveLendLeaseFee" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Russians_LendLeaseFee"/>
+      <option name="removeUnits" value="all:1_PU" count="1"/>
+      <option name="when" value="before:russiansCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Russians_DemoAirfield" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Russians_DemoAirfield"/>
@@ -9068,11 +9086,11 @@ Also, it receives no Artillery support during land attacks, which helps to balan
 <br>
 This was the most challenging unit for the engine. I've run several simulated battle scenarios and think it plays fine though. You just need to be deliberate in your steps the first few times. So you may want to save in between turns/phases and fight the Para battles first in case of any mistakes, until you get comfortable with it.<br>
 <br>
-<b>Also</b> if you are only doing Para attacks, don't forget to turn off edit before ending your Combat Move. Otherwise it will go straight to Battle and you can't turn edit of then.<br>
+<b>Also</b> if you are only doing Para attacks, don't forget to turn off edit before ending your Combat Move. Otherwise it will go straight to Battle and you can't turn edit off then.<br>
 <br>
 <b>Lend-Lease</b><br>
 <br>
-After the Allied Players Non Combat Move is finished, use edit and place the appropiate Lend-Lease Unit with the corresponding Unit. On Russia's first Place phase, use edit to remove the Lend-lease Units and add the Soviet ones.
+After the Allied Players Non Combat Move is finished, use edit and place the appropiate Lend-Lease Unit with the corresponding Unit. On Russia's turn, purchase "1_PU" for every Lend Lease Unit you want to accept. On First Place phase, use edit to remove the Lend-lease Units and add the Soviet ones. The "1_PU" Unit will remove itself before Combat Move.<br>
 <b>Note</b><br>
 If The Lend-Lease Units come under attack before Russia's turn, don't take the Lend-Lease image as a hit. It will auto die if the battle is lost.<br>
 Player Enforced Unit Limits. You may want to use the "Comment Log" under View, Top left, to keep track of how many Units have been sent.<br>
@@ -9100,7 +9118,10 @@ Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to
 <br>
 Change Log:
 <br>
-<br>1.2 5/8/21
+<br>1.3<br>   5/10/21
+<br>Add Objectives Tab back. Adjust Lend Lease.
+<br>
+<br>1.2 <br>  5/8/21
 <br>Name change.
 <br>
 <br>1.1
