@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="1.4"/>
+  <info name="Global 40 Expansion" version="1.41"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -9328,7 +9328,7 @@ Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to
 <br>
 Change Log:
 <br>
-<br>1.4<br> 5/12/21  
+<br>1.41<br> 5/12/21  
 <br>Adjust Lend Lease Notes. Shorten some Unit names to create more space in the Purchase Window. Add Demolition Unit for Underground Factories. Fix Commandos and Marines not placing at Underground Factories.
 <br>
 <br>1.3<br>   5/10/21
