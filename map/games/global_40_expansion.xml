@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="1.42"/>
+  <info name="Global 40 Expansion" version="1.43"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -8030,11 +8030,12 @@
       <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
       <option name="text" value="Axis_War_Americans"/>
     </attachment>
-    <attachment name="politicalActionAttachment_Italians_To_War_With_Americans" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentItaliansNotYetAtWarWithAmericans"/>
-      <option name="relationshipChange" value="Italians:Americans:War"/>
+    <attachment name="politicalActionAttachment_Americans_To_War_With_Japanese" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Not_Yet_At_War_With_Americans:conditionAttachment_Americans_May_Declare_War_On_Axis"/>
+      <option name="relationshipChange" value="Japanese:Americans:War"/>
       <option name="relationshipChange" value="Chinese:Americans:Allied"/>
       <option name="relationshipChange" value="British:Americans:Allied"/>
+      <option name="relationshipChange" value="ANZAC:Americans:Allied"/>
       <option name="relationshipChange" value="Americans:French:Allied"/>
       <option name="relationshipChange" value="Americans:Dutch:Friendly"/>
       <option name="relationshipChange" value="Americans:Neutral_Allies:Friendly_Neutral"/>
@@ -9327,6 +9328,9 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn and others for Unit image help.<br>
 <br>
 Change Log:
+<br>
+<br>1.43<br> 5/14/21  
+<br>Fix USA not being able to Declare War on Japan after Japan Declared War on British and ANZAC.
 <br>
 <br>1.42<br> 5/12/21  
 <br>Adjust Lend Lease Notes. Shorten some Unit names to create more space in the Purchase Window. Add Demolition Unit for Underground Factories. Fix Commandos and Marines not placing at Underground Factories.
