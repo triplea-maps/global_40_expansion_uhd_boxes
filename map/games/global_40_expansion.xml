@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="2.0"/>
+  <info name="Global 40 Expansion" version="2.1"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -7148,6 +7148,12 @@
     </attachment>
     <attachment name="PacificEXP" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Expanded Pacific Ocean"/>
+    </attachment>
+    <attachment name="NatlGuard" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="National Guard"/>
+    </attachment>
+    <attachment name="EscortsA3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Escorts and Transports"/>
     </attachment>
     <attachment name="TripleaLandMines" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Triplea Landmines"/>
@@ -18903,6 +18909,18 @@
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansEscortsA3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EscortsA3:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyEscort"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_EscortsA3Notification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EscortsA3:conditionAttachmentTurn4"/>"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="EscortsA3"/>
+    </attachment>
     <attachment name="triggerAttachment_WaffenPanzer" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_WaffenPanzer:conditionAttachmentTurn6OrHigher"/>
       <option name="productionRule" value="productionGermans:buyWaffen_Panzer"/>
@@ -18971,6 +18989,14 @@
       <option name="unitProperty" value="isSuicideOnHit" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_TransportsD1" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EscortsA3:conditionAttachmentTurn4OrHigher"/>
+      <option name="unitType" value="transport"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="attack" count="0"/>
+      <option name="unitProperty" value="defense" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     
     <!-- Russians Triggers -->
     <attachment name="triggerAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -19018,6 +19044,12 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
       <option name="notification" value="RussianGuardsActive"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansEscortsA3" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EscortsA3:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionRussians:buyEscort"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Russians_DemoAirfield" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Russians_DemoAirfield"/>
@@ -19169,6 +19201,12 @@
       <option name="productionRule" value="productionJapanese:buyBattleshipX"/>
       <option name="when" value="before:japanesePurchase"/>
       <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_JapaneseEscortsA3" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EscortsA3:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionJapanese:buyEscort"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Japanese_DemoAirfield" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_DemoAirfield"/>
@@ -23764,6 +23802,12 @@
       <option name="when" value="before:britishPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_BritishEscortsA3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EscortsA3:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionBritish:buyEscort"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     <attachment name="triggerAttachment_British_DemoAirfield" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_DemoAirfield"/>
       <option name="removeUnits" value="all:demo_airfield" count="1"/>
@@ -26051,6 +26095,12 @@
       <option name="when" value="before:italiansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_ItaliansEscortsA3" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EscortsA3:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionItalians:buyEscort"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     <attachment name="triggerAttachment_Italians_DemoAirfield" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Italians_DemoAirfield"/>
       <option name="removeUnits" value="all:demo_airfield" count="1"/>
@@ -26109,6 +26159,12 @@
       <option name="productionRule" value="productionANZAC:buyBattleshipX"/>
       <option name="when" value="before:ANZACPurchase"/>
       <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZACEscortsA3" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EscortsA3:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionANZAC:buyEscort"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_DemoAirfield" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_DemoAirfield"/>
@@ -27919,6 +27975,12 @@
       <option name="when" value="before:americansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_AmericansEscortsA3" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EscortsA3:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionAmericans:buyEscort"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     <attachment name="triggerAttachment_Americans_DemoAirfield" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_DemoAirfield"/>
       <option name="removeUnits" value="all:demo_airfield" count="1"/>
@@ -28048,7 +28110,7 @@
       <option name="notification" value="USAPacificFleet8"/>
     </attachment>
     <attachment name="triggerAttachment_JapanDOW_OnUSA" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_At_War_With_Japan"/>
+      <option name="conditions" value="NatlGuard:conditionAttachment_Americans_At_War_With_Japan"/>
       <option name="placement" value="Western United States:usa_fighter" count="2"/>
       <option name="placement" value="Western United States:infantry" count="6"/>
       <option name="when" value="after:japaneseCombatMove"/>
@@ -32140,6 +32202,12 @@
       <option name="when" value="before:frenchPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_FrenchEscortsA3" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EscortsA3:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionFrench:buyEscort"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     <attachment name="triggerAttachment_French_DemoAirfield" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_French_DemoAirfield"/>
       <option name="removeUnits" value="all:demo_airfield" count="1"/>
@@ -34281,6 +34349,12 @@
     <property name="Triplea Landmines" value="false" editable="true">
       <boolean/>
     </property>
+    <property name="Escorts and Transports" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="National Guard" value="true" editable="true">
+      <boolean/>
+    </property>
     <property name="Damage From Bombing Done To Units Instead Of Territories" value="true" editable="false">
       <boolean/>
     </property>
@@ -34407,9 +34481,13 @@ After attacking players combat move and there is only 1 battle to take place, no
 <br>
 Dutch New Guinea has it's 2 PU boost hardwired into the total PU count. Take into account when determining Victory. After round 30 you will need to use edit for correct PU behavior.<br>
 <br>
+May be turned off in "Map Options".<br>
+<br>
 <b>2. Increased Ship Building</b><br>
 <br>
 Use edit for Movement Restrictions. The 2 Naval Fighters placed in "Late 1942" will always place. Use edit to correct Unit total if needed.<br>
+<br>
+May be turned off with map option "The Expanded Pacific Ocean".<br>
 <br>
 <b>3. Heavy Industry Production</b><br>
 <br>
@@ -34443,17 +34521,22 @@ Mines will block blitz movement. Use edit "Perform Move or Other Actions" to mak
 <b>TripleA Landmines</b><br>
 The “armed” mines are D2 now. They only die after getting a hit or taken as a casualty. They roll separately from the rest of the defending units, so you can see if they hit or not. You can place as many as there are “unarmed” mines, so you’ll have to player enforce any territory limits. They will defend against attacks from any border.<br>
 <br> 
+May be turned on in "Map Options".<br>
+<br>
 <b>5. Escorts & Transports</b><br>
 <br>
 Use edit to place and remove the "Escort Convoy" unit when Convoys are formed or dispersed. Transports must be taken as casualties last. This is Player Enforced.<br>
 <br>
 Do not attack Subs without a Destroyer present. This is also Player Enforced. If you have a mixed Fleet without Destroyers attacking Subs, allocate the Escort hits to other Vessels when possible. If Subs submerge after first round of combat, use edit to replace any illegal Escort hits at the end of combat. If they don't submerge, then count any Escort hits. <br>
 <br>
+May be turned off in "Map Options".<br>
+<br>
 <b>6. US National Guard</b><br>
 <br>
 The National Guard Units will deploy with any state of war with Japan. Use edit to remove them if illegally placed. This will probably be fixed in the future.<br>
 <br>
-
+May be turned off in "Map Options".<br>
+<br>
 <b>7. Carrier Based Fighter Aircraft</b><br>
 <br>
 Movement Restrictions are Player Enforced. Use edit for making legal landing moves when Carrier is sunk or damaged. If caught in land combat, use edit to remove them. If only 1 battle to take place that Combat Phase, you must edit  before starting combat move, then replace them if needed after combat.<br>
@@ -34501,6 +34584,9 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn and others for Unit image help.<br>
 <br>
 Change Log:
+<br>
+<br>2.1<br> 5/17/21  
+<br>Add Map Options "Escorts and Transports" and "National Guard". Fix "Escorts" not being available for purchase in round 4.
 <br>
 <br>2.0<br> 5/16/21  
 <br>Adds "Version 2".
