@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="3.0"/>
+  <info name="Global 40 Expansion" version="3.1"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1358,6 +1358,8 @@
     <unit name="Pac_BB_Damaged"/>
     <unit name="Heavy_BB"/>
     <unit name="Hvy_BB_Dmgd"/>
+    <unit name="German_Heavy_BB"/>
+    <unit name="German_Hvy_BB_Dmgd"/>
   </unitList>
   <relationshipTypes>
     <relationshipType name="Allied"/>
@@ -1742,6 +1744,10 @@
     <productionRule name="buyHeavy_BB">
       <cost resource="PUs" quantity="20"/>
       <result resourceOrUnit="Heavy_BB" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGerman_Heavy_BB">
+      <cost resource="PUs" quantity="20"/>
+      <result resourceOrUnit="German_Heavy_BB" quantity="1"/>
     </productionRule>
     <productionRule name="buyBattleshipX">
       <cost resource="PUs" quantity="17"/>
@@ -2252,7 +2258,7 @@
       <frontierRules name="buyDestroyer"/>
       <frontierRules name="buyCruiser"/>
       <frontierRules name="buyBattleship"/>
-      <frontierRules name="buyHeavy_BB"/>
+      <frontierRules name="buyGerman_Heavy_BB"/>
       <frontierRules name="buyAAGun"/>
       <frontierRules name="buyFactory_Minor"/>
       <frontierRules name="buyFactory_Major"/>
@@ -3758,6 +3764,33 @@
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="whenHitPointsRepairedChangesInto" value="0:true:Heavy_BB"/>
     </attachment>
+    <!-- German Heavy BB -->
+    <attachment name="unitAttachment" attachTo="German_Heavy_BB" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="5"/>
+      <option name="defense" value="5"/>
+      <option name="attackRolls" value="2"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canBombard" value="true"/>
+      <option name="hitPoints" value="3"/>
+      <option name="blockade" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="whenHitPointsDamagedChangesInto" value="1:true:German_Hvy_BB_Dmgd"/>
+    </attachment>
+    <!-- German Hvy BB Dmgd -->
+    <attachment name="unitAttachment" attachTo="German_Hvy_BB_Dmgd" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="5"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canBombard" value="false"/>
+      <option name="hitPoints" value="3"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:German_Heavy_BB"/>
+    </attachment>
     <!-- Cruiser -->
     <attachment name="unitAttachment" attachTo="cruiser" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
@@ -3839,7 +3872,7 @@
       <!-- stuff for targeting unescorted transports (we are using the new-fangled aa-gun code)
 						 <option name="isAAforFlyOverOnly" value="true"/>
 						 <option name="targetsAA" value="transport"/>
-						 <option name="willNotFireIfPresent" value="destroyer:Escort:Escort_Convoy:cruiser:pacific_cruiser:battleship:pacific_BB:carrier:pacific_carrier:pacific_destroyer"/>
+						 <option name="willNotFireIfPresent" value="destroyer:Escort:Escort_Convoy:cruiser:pacific_cruiser:battleship:pacific_BB:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:pacific_carrier:pacific_destroyer"/>
 						 <option name="mayOverStackAA" value="true"/>
 						 <option name="maxAAattacks" value="1"/>
 						 <option name="attackAA" value="2"/>
@@ -4207,6 +4240,10 @@
       <option name="givesMovement" value="1:pacific_carrier"/>
       <option name="givesMovement" value="1:battleship"/>
       <option name="givesMovement" value="1:pacific_BB"/>
+      <option name="givesMovement" value="1:Heavy_BB"/>
+      <option name="givesMovement" value="1:German_Heavy_BB"/>
+      <option name="givesMovement" value="1:Hvy_BB_Dmgd"/>
+      <option name="givesMovement" value="1:German_Hvy_BB_Dmgd"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <!--<option name="canBeGivenByTerritoryTo" value="British"/>-->
     </attachment>
@@ -7856,7 +7893,7 @@
     <!-- Russians Conditions -->
     <attachment name="conditionAttachment_Russians_1_Convoy_Clear" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="enemyExclusionTerritories" value="125 Sea Zone" count="1"/>
-      <option name="unitPresence" value="battleship:BB_Damaged:Heavy_BB:Hvy_BB_Dmgd:carrier:submarine:GermanUBoat:destroyer:Escort:Escort_Convoy:cruiser" count="0"/>
+      <option name="unitPresence" value="battleship:BB_Damaged:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:submarine:GermanUBoat:destroyer:Escort:Escort_Convoy:cruiser" count="0"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Russians_1_Convoy_Clear"/>
@@ -19635,13 +19672,13 @@
       <option name="notification" value="WaffenPanzer"/>
     </attachment>
     <attachment name="triggerAttachment_WaffenPara" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="WaffenParas:conditionAttachment_SwitchIsTrue:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="WaffenParas:conditionAttachment_SwitchIsTrue:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionGermans:buyWaffen_Para"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_WaffenParaNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="WaffenParas:conditionAttachmentTurn8"/>
+      <option name="conditions" value="WaffenParas:conditionAttachmentTurn7"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="WaffenPara"/>
@@ -35397,7 +35434,7 @@ The following is just going to address the triplea game play, although the Help 
 <br>
 If needing to use edit after combat move and before combat and there will be only 1 battle, you will need to edit <b>before</b> your combat move, as after,  you will go straight to the battle without being able to edit. If multiple battles are taking place, you will be able to edit before the first battle is fought to <b>remove</b> units but not place. Actually, you can place but they will have no effect on the battle. <br>
 <br>
-<b>Version 1</b><br>
+<b>Section 1</b><br>
 <br>
 <b>United Kingdom One Economy</b><br>
 <br>
@@ -35418,20 +35455,32 @@ If placing both a Minor Factory and a Underground Minor, Place the Minor in the 
 <br><b>NOTE</b><br>
 Only Place Units that are activated that turn in the First Place Phase.<br>
 <br>
-<b>British Commandos and USA Marines</b><br>
+<b>1. Soviet Guard Infantry</b><br>
+<br>
+They work correctly.<br>
+<br>
+<b>2. Waffen Infantry</b><br>
+<br>
+They work correctly.<br>
+<br>
+<b>3. Waffen Panzer</b><br>
+<br>
+They work correctly.<br>
+<br>
+<b>4 and 5. British Commandos and USA Marines</b><br>
 <br>
 Artillery will support both a Commando/Marine Unit as well as a regular Infantry. This is unintended. The best thing is to avoid the combination where possible or take the regular Infantry as casualties first.<br>
 <br>
 You will also need to edit when placing in a Allied Factory. Make a legal placement and then edit after turn end.<br>
 <br>
-<b>Elite Infantry</b><br>
+<b>6. Elite Infantry</b><br>
 <br>
 You may only have 1 Elite in any Territory at any one time. This includes Allied Elites. This is Player Enforced. If you are forced to retreat to a Territory that has another Elite or Allied Elite, kill them with edit before Non Combat Move.<br>
 <br>
 <b>NOTE</b><br>
 When being supported by Artillery and other Artillery supportable units are present, the Artillery sometimes will support only 1 of the Elite's rolls as well as 1 other unit. So, the Elite will show up in the "1" category in the "Battle Window", but the rolls will be correct.<br>
 <br>
-<b>Paratroopers</b><br>
+<b>7. Paratroopers</b><br>
 Paratroopers require edit for their "Air Movement". Before attacking, if facing AA fire, activate "Roll Dice" under "Game", top left, and roll for AA fire. Then use edit to kill any hits and select "Perform Move Or Other Actions" and then click on the Paratrooper and make a legal move. If there is only 1 battle to be fought that Combat Phase, you will need to do this at the <b>START</b> of your Combat Move.<br>
 <br>
 <b>IMPORTANT</b><br>
@@ -35450,7 +35499,7 @@ This was the most challenging unit for the engine. I've run several simulated ba
 <br>
 <b>Also</b> if you are only doing 1 attack that phase, don't forget to turn off edit before ending your Combat Move. Otherwise, it will go straight to Battle and you can't turn edit off then.<br>
 <br>
-<b>Lend-Lease</b><br>
+<b>8. Lend-Lease</b><br>
 <br>
 After the Allied Players Non Combat Move is finished, use edit and place the appropiate Lend-Lease Unit with the corresponding Unit. On Russia’s turn, purchase “1_PU” for every Lend Lease Unit you want to accept. On First Place phase, place the 1_PU where the Lend Lease Unit is and then use edit to remove the Lend-lease Units and add the Soviet ones. The “1_PU” Unit will remove itself before Combat Move.<br>
 <br>
@@ -35459,23 +35508,33 @@ This is to maintain correct PU levels.<br>
 If The Lend-Lease Units come under attack before Russia's turn, don't take the Lend-Lease image as a hit. It will auto die if the battle is lost.<br>
 Player Enforced Unit Limits. You may want to use the "Comment Log" under View, Top left, to keep track of how many Units have been sent.<br>
 <br> 
-<b>Facilities</b><br>
+<b>9. Facilities</b><br>
 <br>
-<b>Underground Factories</b>. Purchase a Demolition Unit for Free on the turn you want to destroy them. You don’t have to use it, although you may want to place and edit the Factory back, so it won’t stay in your Purchased Units list if you don’t use it.<br>
+<b>Underground Factories</b>.<br>
+Purchase a Demolition Unit for Free on the turn you want to destroy them. You don’t have to use it, although you may want to place and edit the Factory back, so it won’t stay in your Purchased Units list if you don’t use it.<br>
 <br>
 Don’t place and destroy same turn. Player Enforced.  Use edit to downgrade while moving.<br>
-<b>Russian Factories</b>. If only moving 1 space and placing 1 unit, place the unit in the first Plase phase, then edit after end turn.<br>
-<b>Demolition of Airfields and Harbours</b>. These work correctly. Purchase the appropriate Demolition Unit and plant the explosives at the targeted Facility during the second Place Phase. The Facility will detonate at end turn. It will auto destruct before next enemy combat move.<br>
 <br>
-<b>Non-Agression Pacts</b><br>
+<b>Russian Factories</b>.<br> 
+If only moving 1 space and placing 1 unit, place the unit in the first Plase phase, then edit after end turn.<br>
 <br>
-After attacking players combat move and there is only 1 battle to take place, note where any units will be placed. Use edit for placing units and adjusting receiving Players PUs after combat. Use Comment Log if necessary. otherwise, edit the correct number of units to be placed before combat takes place.<br>
+<b>Demolition of Airfields and Harbours</b>.<br>
+These work correctly. Purchase the appropriate Demolition Unit and plant the explosives at the targeted Facility during the second Place Phase. The Facility will detonate at end turn. It will auto destruct before next enemy combat move.<br>
 <br>
-<b>Version 2</b><br>
+<b>10. Non-Agression Pacts</b><br>
+<br>
+After attacking players combat move and there is only 1 battle to take place, note where any units will be placed. Use edit for placing units and adjusting receiving Players PUs after combat. Use Comment Log if necessary. Otherwise, edit the correct number of units to be placed before combat takes place.<br>
+<br>
+<b>11. Strategic Bombing</b><br>
+<br>
+You can't designate certain Fighters to protect certain Facilities. The Air Battles will be fought in one battle.<br> 
+So if you send 2 Fighter Escorts and 2 Bombers with 2 Interceptors defending and the Bombers are Bombing separate targets, there will be one Air Battle with all planes. You may choose your own Air casualties. Triplea will randomly select AA casualties. They will select Bombers or Tac Bombers only.<br>
+<br>
+<b>Section 2</b><br>
 <br>
 <b>1. The Expanded Pacific Ocean</b><br>
 <br>
-Dutch New Guinea has it's 2 PU boost hardwired into the total PU count. Take into account when determining Victory. After round 30 you will need to use edit for correct PU behavior.<br>
+Dutch New Guinea has it's 2 PU boost hardwired into the total PU count. Take into consideration when determining Victory. After round 30 you will need to use edit for correct PU behavior.<br>
 <br>
 May be turned off in "Map Options".<br>
 <br>
@@ -35564,11 +35623,11 @@ If you didn't purchase a free Defend CV unit, simply edit one in after your turn
 <br>
 <b>11. Super Heavy Battleship</b><br>
 <br>
-Have no more than 1 "Super Heavy Battleship" with Germany at a time. This is Player Enforced and will probably be fixed in the future.<br>
+They work correctly.<br>
 <br>
 The "SHB" will fire 2 Bombard shots, even if only 1 amphibous unit is attacking. Use the Dice Roller to simulate the bombardment and for any casualties to fire back. Then use edit to adjust accordingly. If you have more than 1 battle taking place, you will be able to use edit before choosing the first battle to fight. If only 1 battle is being fought, it will go straight to combat after your combat move. You will need to edit before your combat move in that case.<br>
 <br>
-<b>Version 3</b><br>
+<b>Section 3</b><br>
 <br>
 <b>1. US Armoured Infantry</b><br>
 <br>
@@ -35604,13 +35663,15 @@ On UK turn, make <b>All</b> non D-Day combat moves. Catalogue in comment log. Hi
 <br>
 Now do all UK combat moves. Can either do D-day first or non D-day ones. Which ever seems more effecient.<br>
 <br>
-After combat, use edit to replace UK units with the appropriate USA units and change territory control to Americans if invasion was successful. Refer to comment log if need.<br>
+After combat, use edit to replace UK units with the appropriate USA units and change territory control to Americans if invasion was successful. Refer to comment log if needed.<br>
 <br>
 It's an involved turn, but only happens once a game, so not game breaking. Hopefully someone will redraw the map in the future, adding a D-Day box, as well as boxes for the Army Groups and Corps.<br>
 <br>
 <b>7. Red Army Conscription</b><br>
 <br>
 Placement Restrictions Player Enforced. So no more than 20 in Moscow and 6 in the Minor Factrys. Max build of 26 <b>is</b> enforced.<br>
+<br>
+May be turned off in "Map Options".<br>
 <br>
 <b>8. German U-boats</b><br>
 <br>
@@ -35629,7 +35690,9 @@ You will need to use edit to remove any additional Wolfpacks before Germany's ne
 <br>
 <b>9. Waffen Paratroopers</b><br>
 <br>
-Use edit to make combat or non combat moves with "Perform Move or Other Actions" same as Wehrmacht Paratroopers. If still not possible to make legal move, edit directly at start of phase. May not attack Capitals. Player Enforced. They <b>are</b> supported by Waffen Artillery.<br>
+Use Dice Roller for AA fire. Use edit to make combat or non combat moves with "Perform Move or Other Actions" same as Wehrmacht Paratroopers. If still not possible to make legal move, edit directly at start of phase. May not attack Capitals. Player Enforced. They <b>are</b> supported by Waffen Artillery.<br>
+<br>
+May be turned off in "Map Options".<br>
 <br>
 <b>10. Waffen Artillery</b><br>
 <br>
@@ -35647,6 +35710,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn and others for Unit image help.<br>
 <br>
 Change Log:
+<br>
+<br>3.1<br> 5/19/21  
+<br>
+Change Waffen Paras to enter round 7. Make German Heavy BB max production of 1. Add new LCV images. Rename "Version" to "Section". 
 <br>
 <br>3.0<br> 5/18/21  
 <br>Adds Version 3.
