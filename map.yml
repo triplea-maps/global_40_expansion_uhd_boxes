@@ -1,0 +1,3 @@
+map_name: global_40_expansion
+games:
+- {game_name: Global 40 Expansion, file_name: global_40_expansion.xml}
