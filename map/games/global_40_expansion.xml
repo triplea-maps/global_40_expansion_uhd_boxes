@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="4.0"/>
+  <info name="Global 40 Expansion" version="5.0"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1296,6 +1296,7 @@
     <unit name="usa_tactical_bomber"/>
     <unit name="uk_tactical_bomber"/>
     <unit name="bomber"/>
+    <unit name="bomberA0C5"/>
     <unit name="air_transport"/>
     <unit name="transport"/>
     <unit name="German_LCV"/>
@@ -1393,6 +1394,25 @@
     <unit name="Soviet_Commisar_1"/>
     <unit name="Soviet_Commisar_2"/>
     <unit name="Soviet_Commisar_3"/>
+    <unit name="Soviet_Partisan"/>
+    <unit name="Volkssturm"/>
+    <unit name="Me_262"/>
+    <unit name="King_Tiger"/>
+    <unit name="Tiger_Damaged"/>
+    <unit name="Repair_Tiger"/>
+    <unit name="Waffen_Hvy_Tank"/>
+    <unit name="Waffen_HvyTnk_Dmgd"/>
+    <unit name="Repair_Hvy_Tank"/>
+    <unit name="Banzai"/>
+    <unit name="Seafire"/>
+    <unit name="Me_109T"/>
+    <unit name="German_Rockets"/>
+    <unit name="Russian_Rockets"/>
+    <unit name="Heavy_Transport"/>
+    <unit name="Type_XXI_UBoat"/>
+    <unit name="German_Hvy_Bmbr"/>
+    <unit name="USA_Hvy_Bomber"/>
+    <unit name="UK_Hvy_Bomber"/>
   </unitList>
   <relationshipTypes>
     <relationshipType name="Allied"/>
@@ -1463,7 +1483,9 @@
       <step name="germansPlace" delegate="place" player="Germans"/>
       <step name="germansPolitics" delegate="politics" player="Germans"/>
       <step name="germansUserActions" delegate="userActions" player="Germans"/>
-      <step name="germansCombatMove" delegate="move" player="Germans"/>
+      <step name="germansCombatMove" delegate="move" player="Germans">
+	<stepProperty name="resetUnitStateAtStart" value="true"/>
+</step>
       <step name="germansAirborneCombatMove" delegate="specialCombatMove" player="Germans" display="Airborne Attack Move"/>
       <step name="germansBattle" delegate="battle" player="Germans"/>
       <step name="germansNonCombatMove" delegate="move" player="Germans" display="Non Combat Move"/>
@@ -1487,7 +1509,9 @@
       <step name="japanesePurchase" delegate="purchase" player="Japanese"/>
       <step name="japanesePlace" delegate="place" player="Japanese"/>
       <step name="japanesePolitics" delegate="politics" player="Japanese"/>
-      <step name="japaneseCombatMove" delegate="move" player="Japanese"/>
+      <step name="japaneseCombatMove" delegate="move" player="Japanese">
+   <stepProperty name="resetUnitStateAtStart" value="true"/>
+</step>
       <step name="japaneseAirborneCombatMove" delegate="specialCombatMove" player="Japanese" display="Airborne Attack Move"/>
       <step name="japaneseBattle" delegate="battle" player="Japanese"/>
       <step name="japaneseNonCombatMove" delegate="move" player="Japanese" display="Non Combat Move"/>
@@ -1808,6 +1832,10 @@
       <cost resource="PUs" quantity="12"/>
       <result resourceOrUnit="bomber" quantity="1"/>
     </productionRule>
+    <productionRule name="buyBomberA0C5">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="bomberA0C5" quantity="1"/>
+    </productionRule>
     <productionRule name="buyAir_Transport">
       <cost resource="PUs" quantity="4"/>
       <result resourceOrUnit="air_transport" quantity="1"/>
@@ -2010,43 +2038,43 @@
     </productionRule>
     <productionRule name="buyMine_Unarmed">
       <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="mine_unarmed" quantity="2"/>
+      <result resourceOrUnit="mine_unarmed" quantity="1"/>
     </productionRule>
     <productionRule name="buyMine_Armed">
-      <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="mine_armed" quantity="2"/>
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="mine_armed" quantity="1"/>
     </productionRule>
     <productionRule name="buyGerman_Mine">
       <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="german_mine" quantity="2"/>
+      <result resourceOrUnit="german_mine" quantity="1"/>
     </productionRule>
     <productionRule name="buyRussian_Mine">
       <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="russian_mine" quantity="2"/>
+      <result resourceOrUnit="russian_mine" quantity="1"/>
     </productionRule>
     <productionRule name="buyJapan_Mine">
       <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="japan_mine" quantity="2"/>
+      <result resourceOrUnit="japan_mine" quantity="1"/>
     </productionRule>
     <productionRule name="buyUSA_Mine">
       <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="usa_mine" quantity="2"/>
+      <result resourceOrUnit="usa_mine" quantity="1"/>
     </productionRule>
     <productionRule name="buyUK_Mine">
       <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="uk_mine" quantity="2"/>
+      <result resourceOrUnit="uk_mine" quantity="1"/>
     </productionRule>
     <productionRule name="buyItaly_Mine">
       <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="italy_mine" quantity="2"/>
+      <result resourceOrUnit="italy_mine" quantity="1"/>
     </productionRule>
     <productionRule name="buyANZAC_Mine">
       <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="anzac_mine" quantity="2"/>
+      <result resourceOrUnit="anzac_mine" quantity="1"/>
     </productionRule>
     <productionRule name="buyFrance_Mine">
       <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="france_mine" quantity="2"/>
+      <result resourceOrUnit="france_mine" quantity="1"/>
     </productionRule>
     <productionRule name="buyUSA_Fighter_LendLease">
       <cost resource="PUs" quantity="0"/>
@@ -2160,6 +2188,14 @@
       <cost resource="PUs" quantity="3"/>
       <result resourceOrUnit="Repair_BB" quantity="1"/>
     </productionRule>
+    <productionRule name="buyRepair_Tiger">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Repair_Tiger" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyRepair_Hvy_Tank">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Repair_Hvy_Tank" quantity="1"/>
+    </productionRule>
     <productionRule name="buySoviet_Commisar">
       <cost resource="PUs" quantity="5"/>
       <result resourceOrUnit="Soviet_Commisar" quantity="1"/>
@@ -2175,6 +2211,66 @@
     <productionRule name="buySoviet_Commisar_3">
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="Soviet_Commisar_3" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyBanzai">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="Banzai" quantity="1"/>
+    </productionRule>
+    <productionRule name="buySeafire">
+      <cost resource="PUs" quantity="6"/>
+      <result resourceOrUnit="Seafire" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyMe_109T">
+      <cost resource="PUs" quantity="6"/>
+      <result resourceOrUnit="Me_109T" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGerman_Rockets">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="German_Rockets" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyRussian_Rockets">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Russian_Rockets" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyHeavy_Transport">
+      <cost resource="PUs" quantity="9"/>
+      <result resourceOrUnit="Heavy_Transport" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyType_XXI_UBoat">
+      <cost resource="PUs" quantity="6"/>
+      <result resourceOrUnit="Type_XXI_UBoat" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGerman_Hvy_Bmbr">
+      <cost resource="PUs" quantity="15"/>
+      <result resourceOrUnit="German_Hvy_Bmbr" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSA_Hvy_Bomber">
+      <cost resource="PUs" quantity="15"/>
+      <result resourceOrUnit="USA_Hvy_Bomber" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_Hvy_Bomber">
+      <cost resource="PUs" quantity="15"/>
+      <result resourceOrUnit="UK_Hvy_Bomber" quantity="1"/>
+    </productionRule>
+    <productionRule name="buySoviet_Partisan">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Soviet_Partisan" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyVolkssturm">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Volkssturm" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyMe_262">
+      <cost resource="PUs" quantity="11"/>
+      <result resourceOrUnit="Me_262" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyKing_Tiger">
+      <cost resource="PUs" quantity="6"/>
+      <result resourceOrUnit="King_Tiger" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyWaffen_Hvy_Tank">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="Waffen_Hvy_Tank" quantity="1"/>
     </productionRule>
     <!-- Advanced Industrial Production -->
     <!--<productionRule name="buyInfantryIndustrialTechnology">
@@ -3487,6 +3583,52 @@
       <option name="isAirTransportable" value="true"/>
       <option name="unitPlacementOnlyAllowedIn" value="Germany:Russia:Japan:Eastern United States:United Kingdom"/>
     </attachment>
+    <!-- German Rockets -->
+    <attachment name="unitAttachment" attachTo="German_Rockets" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="0"/>
+      <option name="isSuicideOnAttack" value="true"/>
+      <option name="isFirstStrike" value="true"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
+      <option name="maxBuiltPerPlayer" value="10"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="German_Rockets"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="10"/>
+      <option name="maxConstructionsPerTypePerTerr" value="10"/>
+    </attachment>
+    <!-- Russian Rockets -->
+    <attachment name="unitAttachment" attachTo="Russian_Rockets" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="0"/>
+      <option name="isSuicideOnAttack" value="true"/>
+      <option name="isFirstStrike" value="true"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Russia"/>
+      <option name="maxBuiltPerPlayer" value="10"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="Russian_Rockets"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="10"/>
+      <option name="maxConstructionsPerTypePerTerr" value="10"/>
+    </attachment>
+    <!-- Type XXI UBoat -->
+    <attachment name="unitAttachment" attachTo="Type_XXI_UBoat" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="isSub" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="2"/>
+      <option name="blockade" value="2"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="offensiveAttackAA" value="4"/>
+      <option name="damageableAA" value="true"/>
+      <option name="maxAAattacks" value="1"/>
+      <option name="maxRoundsAA" value="1"/>
+      <option name="mayOverStackAA" value="true"/>
+      <option name="targetsAA" value="destroyer:Escort:Escort_Convoy:cruiser:pacific_cruiser:battleship:pacific_BB:Heavy_BB:Hvy_BB_Dmgd:carrier:pacific_carrier:pacific_destroyer"/>
+      <option name="typeAA" value="Type_XXI_UBoatAttack"/>
+      <option name="unitPlacementOnlyAllowedIn" value="112 Sea Zone:113 Sea Zone:114 Sea Zone"/>
+    </attachment>
     <!-- German Para -->
     <attachment name="unitAttachment" attachTo="german_para" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
@@ -3500,7 +3642,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:commando:marine:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:tactical_bomber:usa_armour:usa_fighter:NavyFighter:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:aaGun"/>
+      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:tactical_bomber:usa_armour:usa_fighter:NavyFighter:Seafire:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
       <option name="typeAA" value="GermanAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -3520,7 +3662,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:tactical_bomber:bomber:aaGun"/>
+      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
       <option name="typeAA" value="RussianAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -3540,7 +3682,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:commando:marine:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:NavyFighter:tactical_bomber:usa_armour:usa_fighter:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:aaGun"/>
+      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Seafire:tactical_bomber:usa_armour:usa_fighter:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
       <option name="typeAA" value="JapaneseAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -3560,7 +3702,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:tactical_bomber:bomber:aaGun"/>
+      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
       <option name="typeAA" value="AmericanAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -3580,7 +3722,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:tactical_bomber:bomber:aaGun"/>
+      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
       <option name="typeAA" value="BritishAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -3600,7 +3742,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:commando:marine:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:NavyFighter:tactical_bomber:usa_armour:usa_fighter:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:aaGun"/>
+      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Seafire:tactical_bomber:usa_armour:usa_fighter:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
       <option name="typeAA" value="ItalianAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -3812,6 +3954,84 @@
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="3"/>
     </attachment>
+    <!-- Banzai -->
+    <attachment name="unitAttachment" attachTo="Banzai" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+    </attachment>
+    <!-- Soviet Partisan -->
+    <attachment name="unitAttachment" attachTo="Soviet_Partisan" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="0"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="1"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="Soviet_Partisan"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- Volkssturm -->
+    <attachment name="unitAttachment" attachTo="Volkssturm" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="0"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="Volkssturm"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="10"/>
+      <option name="maxConstructionsPerTypePerTerr" value="10"/>
+      <option name="maxBuiltPerPlayer" value="10"/>
+    </attachment>
+    <!-- King Tiger -->
+    <attachment name="unitAttachment" attachTo="King_Tiger" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="4"/>
+      <option name="hitPoints" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany:Western Germany"/>
+      <option name="maxBuiltPerPlayer" value="6"/>
+      <option name="whenHitPointsDamagedChangesInto" value="1:true:Tiger_Damaged"/>
+    </attachment>
+    <!-- Tiger Damaged -->
+    <attachment name="unitAttachment" attachTo="Tiger_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="4"/>
+      <option name="hitPoints" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany:Western Germany"/>
+      <option name="maxBuiltPerPlayer" value="6"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:King_Tiger"/>
+    </attachment>
+    <!-- Waffen Hvy Tank -->
+    <attachment name="unitAttachment" attachTo="Waffen_Hvy_Tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="5"/>
+      <option name="attackRolls" value="2"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="hitPoints" value="2"/>
+      <option name="consumesUnits" value="1:King_Tiger"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="Waffen_Hvy_Tank"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="whenHitPointsDamagedChangesInto" value="1:true:Waffen_HvyTnk_Dmgd"/>
+    </attachment>
+    <!-- Waffen HvyTnk Dmgd -->
+    <attachment name="unitAttachment" attachTo="Waffen_HvyTnk_Dmgd" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="5"/>
+      <option name="attackRolls" value="2"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="hitPoints" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:Waffen_Hvy_Tank"/>
+    </attachment>
     <!-- Mass Tanks -->
     <attachment name="unitAttachment" attachTo="Mass_Tanks" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="0"/>
@@ -4006,7 +4226,6 @@
       <option name="movement" value="2"/>
       <option name="attack" value="4"/>
       <option name="defense" value="5"/>
-      <!--<option name="artillerySupportable" value="true"/>-->
       <option name="canBlitz" value="true"/>
       <option name="consumesUnits" value="1:armour"/>
       <option name="maxBuiltPerPlayer" value="4"/>
@@ -4059,6 +4278,28 @@
       <option name="canScramble" value="false"/>
       <option name="blockade" value="2"/>
     </attachment>
+    <!-- Seafire -->
+    <attachment name="unitAttachment" attachTo="Seafire" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="3"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="4"/>
+      <option name="maxBuiltPerPlayer" value="4"/>
+      <option name="canScramble" value="false"/>
+      <option name="blockade" value="2"/>
+    </attachment>
+    <!-- Me_109T -->
+    <attachment name="unitAttachment" attachTo="Me_109T" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="3"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="4"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="canScramble" value="false"/>
+      <option name="blockade" value="2"/>
+    </attachment>
     <!-- USA Fighter -->
     <attachment name="unitAttachment" attachTo="usa_fighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="4"/>
@@ -4091,6 +4332,21 @@
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="blockade" value="2"/>
     </attachment>
+    <!-- Me 262 -->
+    <attachment name="unitAttachment" attachTo="Me_262" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="5"/>
+      <option name="canScramble" value="true"/>
+      <option name="maxScrambleDistance" value="1"/>
+      <option name="canIntercept" value="true"/>
+      <option name="canEscort" value="true"/>
+      <option name="airDefense" value="5"/>
+      <option name="airAttack" value="4"/>
+      <option name="blockade" value="2"/>
+    </attachment>
     <!-- Bomber -->
     <attachment name="unitAttachment" attachTo="bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="6"/>
@@ -4098,12 +4354,69 @@
       <option name="attack" value="4"/>
       <option name="defense" value="1"/>
       <option name="isStrategicBomber" value="true"/>
-      <option name="isAirTransport" value="true"/>
-      <option name="transportCapacity" value="2"/>
       <option name="bombingMaxDieSides" value="6"/>
       <option name="bombingBonus" value="2"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="airAttack" value="1"/>
+    </attachment>
+    <!-- BomberA0C5 -->
+    <attachment name="unitAttachment" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="6"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="isStrategicBomber" value="true"/>
+      <option name="isInfrastructure" value="false"/>
+      <option name="bombingMaxDieSides" value="6"/>
+      <option name="canBeGivenByTerritoryTo" value="British"/>
+      <option name="airAttack" value="0"/>
+      <option name="canAirBattle" value="true"/>
+      <option name="destroyedWhenCapturedBy" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- German Hvy Bmbr -->
+    <attachment name="unitAttachment" attachTo="German_Hvy_Bmbr" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="8"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="1"/>
+      <option name="attackRolls" value="2"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="isStrategicBomber" value="true"/>
+      <option name="bombingMaxDieSides" value="6"/>
+      <option name="bombingBonus" value="2"/>
+      <option name="airAttack" value="1"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+    </attachment>
+    <!-- USA Hvy Bomber -->
+    <attachment name="unitAttachment" attachTo="USA_Hvy_Bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="8"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="1"/>
+      <option name="attackRolls" value="2"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="isStrategicBomber" value="true"/>
+      <option name="bombingMaxDieSides" value="6"/>
+      <option name="bombingBonus" value="2"/>
+      <option name="airAttack" value="1"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Eastern United States"/>
+      <option name="maxBuiltPerPlayer" value="4"/>
+    </attachment>
+    <!-- UK Hvy Bomber -->
+    <attachment name="unitAttachment" attachTo="UK_Hvy_Bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="8"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="1"/>
+      <option name="attackRolls" value="2"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="isStrategicBomber" value="true"/>
+      <option name="bombingMaxDieSides" value="6"/>
+      <option name="bombingBonus" value="2"/>
+      <option name="airAttack" value="1"/>
+      <option name="unitPlacementOnlyAllowedIn" value="United Kingdom"/>
+      <option name="maxBuiltPerPlayer" value="4"/>
     </attachment>
     <!-- Tactical Bomber -->
     <attachment name="unitAttachment" attachTo="tactical_bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4164,6 +4477,16 @@
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
+    </attachment>
+    <!-- Heavy Transport -->
+    <attachment name="unitAttachment" attachTo="Heavy_Transport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="isCombatTransport" value="true"/>
+      <option name="transportCapacity" value="10"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="1"/>
+      <option name="maxBuiltPerPlayer" value="4"/>
     </attachment>
     <!-- Air Transport -->
     <attachment name="unitAttachment" attachTo="air_transport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4367,6 +4690,8 @@
     <attachment name="unitAttachment" attachTo="destroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
       <option name="isSea" value="true"/>
+      <option name="isCombatTransport" value="true"/>
+      <option name="transportCapacity" value="1"/>
       <option name="attack" value="2"/>
       <option name="defense" value="2"/>
       <option name="isDestroyer" value="true"/>
@@ -4451,7 +4776,7 @@
     </attachment>
     <!-- Wolfpack -->
     <attachment name="unitAttachment" attachTo="Wolfpack" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="movement" value="2"/>
+      <option name="movement" value="99"/>
       <option name="isSea" value="true"/>
       <option name="isSub" value="true"/>
       <option name="attack" value="0"/>
@@ -4727,10 +5052,15 @@
       <option name="givesMovement" value="1:usa_fighter"/>
       <option name="givesMovement" value="1:uk_fighter"/>
       <option name="givesMovement" value="1:bomber"/>
+      <option name="givesMovement" value="1:bomberA0C5"/>
+      <option name="givesMovement" value="1:German_Hvy_Bmbr"/>
+      <option name="givesMovement" value="1:USA_Hvy_Bomber"/>
+      <option name="givesMovement" value="1:UK_Hvy_Bomber"/>
       <option name="givesMovement" value="1:tactical_bomber"/>
       <option name="givesMovement" value="1:usa_tactical_bomber"/>
       <option name="givesMovement" value="1:uk_tactical_bomber"/>
       <option name="givesMovement" value="1:air_transport"/>
+      <option name="givesMovement" value="1:Me_262"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <!--<option name="canBeGivenByTerritoryTo" value="British"/>-->
       <option name="isRocket" value="true"/>
@@ -4756,10 +5086,15 @@
       <option name="givesMovement" value="1:usa_fighter"/>
       <option name="givesMovement" value="1:uk_fighter"/>
       <option name="givesMovement" value="1:bomber"/>
+      <option name="givesMovement" value="1:bomberA0C5"/>
+      <option name="givesMovement" value="1:German_Hvy_Bmbr"/>
+      <option name="givesMovement" value="1:USA_Hvy_Bomber"/>
+      <option name="givesMovement" value="1:UK_Hvy_Bomber"/>
       <option name="givesMovement" value="1:tactical_bomber"/>
       <option name="givesMovement" value="1:usa_tactical_bomber"/>
       <option name="givesMovement" value="1:uk_tactical_bomber"/>
       <option name="givesMovement" value="1:air_transport"/>
+      <option name="givesMovement" value="1:Me_262"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <!--<option name="canBeGivenByTerritoryTo" value="British"/>-->
       <option name="isRocket" value="true"/>
@@ -4778,9 +5113,11 @@
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
       <option name="movement" value="0"/>
       <option name="givesMovement" value="1:transport"/>
+      <option name="givesMovement" value="1:Heavy_Transport"/>
       <option name="givesMovement" value="1:pacific_transport"/>
       <option name="givesMovement" value="1:submarine"/>
       <option name="givesMovement" value="1:GermanUBoat"/>
+      <option name="givesMovement" value="1:Type_XXI_UBoat"/>
       <option name="givesMovement" value="1:pacific_submarine"/>
       <option name="givesMovement" value="1:destroyer"/>
       <option name="givesMovement" value="1:pacific_destroyer"/>
@@ -4811,7 +5148,7 @@
       <option name="transportCost" value="2"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="maxAAattacks" value="3"/>
-      <option name="targetsAA" value="fighter:NavyFighter:usa_fighter:uk_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber"/>
+      <option name="targetsAA" value="fighter:NavyFighter:Seafire:Me_109T:usa_fighter:uk_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:bomberA0C5:Me_262"/>
     </attachment>
     <!-- 1 PU -->
     <attachment name="unitAttachment" attachTo="1_PU" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4914,6 +5251,28 @@
       <option name="requiresUnits" value="harbour"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="Repair_Carrier"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- Repair Tiger -->
+    <attachment name="unitAttachment" attachTo="Repair_Tiger" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="0"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="repairsUnits" value="Tiger_Damaged"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="Repair_Tiger"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- Repair Hvy Tank -->
+    <attachment name="unitAttachment" attachTo="Repair_Hvy_Tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="0"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="repairsUnits" value="Waffen_HvyTnk_Dmgd"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="Repair_Hvy_Tank"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
     </attachment>
@@ -6162,12 +6521,12 @@
     <attachment name="canalAttachmentGibraltar" attachTo="92 Sea Zone" javaClass="games.strategy.triplea.attachments.CanalAttachment" type="territory">
       <option name="canalName" value="Strait of Gibraltar"/>
       <option name="landTerritories" value="Gibraltar"/>
-      <option name="excludedUnits" value="submarine:GermanUBoat:fighter:tactical_bomber:bomber"/>
+      <option name="excludedUnits" value="submarine:GermanUBoat:Type_XXI_UBoat:fighter:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:USA_Hvy_Bomber:UK_Hvy_Bomber:Me_262:Seafire:Me_109T:Wolfpack"/>
     </attachment>
     <attachment name="canalAttachmentGibraltar" attachTo="91 Sea Zone" javaClass="games.strategy.triplea.attachments.CanalAttachment" type="territory">
       <option name="canalName" value="Strait of Gibraltar"/>
       <option name="landTerritories" value="Gibraltar"/>
-      <option name="excludedUnits" value="submarine:GermanUBoat:fighter:tactical_bomber:bomber"/>
+      <option name="excludedUnits" value="submarine:GermanUBoat:Type_XXI_UBoat:fighter:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:USA_Hvy_Bomber:UK_Hvy_Bomber:Me_262:Seafire:Me_109T:Wolfpack"/>
     </attachment>
     <attachment name="canalAttachmentPanama" attachTo="89 Sea Zone" javaClass="games.strategy.triplea.attachments.CanalAttachment" type="territory">
       <option name="canalName" value="Panama Canal"/>
@@ -6196,6 +6555,17 @@
       <option name="bonusType" value="infantry_bonus"/>
       <option name="impArtTech" value="true"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentBanzai" attachTo="Banzai" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="infantry:elite"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="99"/>
+      <option name="bonusType" value="Banzai_bonus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Japanese"/>
     </attachment>
     <attachment name="supportAttachmentPanzer_General3Attack" attachTo="Panzer_General3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="armour"/>
@@ -7487,6 +7857,138 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+    <attachment name="supportAttachmentGermanAirborneAttackMinusMe_109T" attachTo="Me_109T" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusMe_109T" attachTo="Me_109T" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneAttackMinusMe262" attachTo="Me_262" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusMe262" attachTo="Me_262" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneAttackMinusKing_Tiger" attachTo="King_Tiger" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusKing_Tiger" attachTo="King_Tiger" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneAttackMinusTiger_Damaged" attachTo="Tiger_Damaged" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusTiger_Damaged" attachTo="Tiger_Damaged" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneAttackMinusWaffen_Hvy_Tank" attachTo="Waffen_Hvy_Tank" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusWaffen_Hvy_Tank" attachTo="Waffen_Hvy_Tank" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneAttackMinusWaffen_HvyTnk_Dmgd" attachTo="Waffen_HvyTnk_Dmgd" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusWaffen_HvyTnk_Dmgd" attachTo="Waffen_HvyTnk_Dmgd" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
     <attachment name="supportAttachmentGermanAirborneAttackMinusBomber" attachTo="bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="german_para"/>
       <option name="faction" value="allied"/>
@@ -7499,6 +8001,50 @@
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <attachment name="supportAttachmentGermanAirborneDefenseMinusBomber" attachTo="bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneAttackMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneAttackMinusGerman_Hvy_Bmbr" attachTo="German_Hvy_Bmbr" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusGerman_Hvy_Bmbr" attachTo="German_Hvy_Bmbr" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="german_para"/>
       <option name="faction" value="allied"/>
       <option name="side" value="defence"/>
@@ -7593,6 +8139,107 @@
       <option name="bonusType" value="Tank_General3SupportedDefense_bonus"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+    <attachment name="supportAttachmentGermanType_XXI_UBoatAttackMinusTrprt" attachTo="transport" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Type_XXI_UBoat"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-4"/>
+      <option name="number" value="99"/>
+      <option name="bonusType" value="AA_bonusMinusType_XXI"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanType_XXI_UBoatAttackMinusDD" attachTo="destroyer" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Type_XXI_UBoat"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-4"/>
+      <option name="number" value="99"/>
+      <option name="bonusType" value="AA_bonusMinusType_XXI"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanType_XXI_UBoatAttackMinusCA" attachTo="cruiser" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Type_XXI_UBoat"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-4"/>
+      <option name="number" value="99"/>
+      <option name="bonusType" value="AA_bonusMinusType_XXI"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanType_XXI_UBoatAttackMinusCV" attachTo="carrier" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Type_XXI_UBoat"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-4"/>
+      <option name="number" value="99"/>
+      <option name="bonusType" value="AA_bonusMinusType_XXI"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanType_XXI_UBoatAttackMinusBB" attachTo="battleship" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Type_XXI_UBoat"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-4"/>
+      <option name="number" value="99"/>
+      <option name="bonusType" value="AA_bonusMinusType_XXI"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanType_XXI_UBoatAttackMinusEscort" attachTo="Escort" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Type_XXI_UBoat"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-4"/>
+      <option name="number" value="99"/>
+      <option name="bonusType" value="AA_bonusMinusType_XXI"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanType_XXI_UBoatAttackMinusEscort_Convoy" attachTo="Escort_Convoy" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Type_XXI_UBoat"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-4"/>
+      <option name="number" value="99"/>
+      <option name="bonusType" value="AA_bonusMinusType_XXI"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanType_XXI_UBoatAttackMinusGermanUBoat" attachTo="GermanUBoat" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Type_XXI_UBoat"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-4"/>
+      <option name="number" value="99"/>
+      <option name="bonusType" value="AA_bonusMinusType_XXI"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanType_XXI_UBoatAttackMinusGerman_Heavy_BB" attachTo="German_Heavy_BB" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Type_XXI_UBoat"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-4"/>
+      <option name="number" value="99"/>
+      <option name="bonusType" value="AA_bonusMinusType_XXI"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanType_XXI_UBoatAttackMinusGerman_Hvy_BB_Dmgd" attachTo="German_Hvy_BB_Dmgd" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Type_XXI_UBoat"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-4"/>
+      <option name="number" value="99"/>
+      <option name="bonusType" value="AA_bonusMinusType_XXI"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    
     <attachment name="supportAttachmentRussianAirborneAttack" attachTo="russian_para" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="russian_para"/>
       <option name="faction" value="allied"/>
@@ -7923,6 +8570,28 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+    <attachment name="supportAttachmentRussianAirborneAttackMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="russian_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentRussianAirborneDefenseMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="russian_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
     <attachment name="supportAttachmentRussianAirborneAttackMinusTacBomber" attachTo="tactical_bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="russian_para"/>
       <option name="faction" value="allied"/>
@@ -8133,6 +8802,28 @@
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <attachment name="supportAttachmentJapaneseAirborneDefenseMinusBomber" attachTo="bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="japanese_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentJapaneseAirborneAttackMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="japanese_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentJapaneseAirborneDefenseMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="japanese_para"/>
       <option name="faction" value="allied"/>
       <option name="side" value="defence"/>
@@ -8469,6 +9160,50 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+    <attachment name="supportAttachmentUsaAirborneAttackMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUsaAirborneDefenseMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUsaAirborneAttackMinusUSA_Hvy_Bomber" attachTo="USA_Hvy_Bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUsaAirborneDefenseMinusUSA_Hvy_Bomber" attachTo="USA_Hvy_Bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
     <attachment name="supportAttachmentUsaAirborneAttackMinusUSATacBomber" attachTo="usa_tactical_bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="usa_para"/>
       <option name="faction" value="allied"/>
@@ -8657,6 +9392,28 @@
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <attachment name="supportAttachmentItalianAirborneDefenseMinusBomber" attachTo="bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="italian_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentItalianAirborneAttackMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="italian_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentItalianAirborneDefenseMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="italian_para"/>
       <option name="faction" value="allied"/>
       <option name="side" value="defence"/>
@@ -8927,6 +9684,28 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+    <attachment name="supportAttachmentUkAirborneAttackMinusSeafire" attachTo="Seafire" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUkAirborneDefenseMinusSeafire" attachTo="Seafire" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
     <attachment name="supportAttachmentUkAirborneAttackMinusBomber" attachTo="bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="uk_para"/>
       <option name="faction" value="allied"/>
@@ -8939,6 +9718,50 @@
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <attachment name="supportAttachmentUkAirborneDefenseMinusBomber" attachTo="bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUkAirborneAttackMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUkAirborneDefenseMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUkAirborneAttackMinusUK_Hvy_Bomber" attachTo="UK_Hvy_Bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUkAirborneDefenseMinusUK_Hvy_Bomber" attachTo="UK_Hvy_Bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="uk_para"/>
       <option name="faction" value="allied"/>
       <option name="side" value="defence"/>
@@ -9039,6 +9862,28 @@
     </attachment>
     <attachment name="supportAttachmentTacticalBomber1UK" attachTo="uk_fighter" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="uk_tactical_bomber"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="combined_arms"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentTacticalBomberSeafire" attachTo="Seafire" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_tactical_bomber"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="combined_arms"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentTacticalBomberMe_109T" attachTo="Me_109T" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="tactical_bomber"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
       <option name="dice" value="strength"/>
@@ -9401,7 +10246,7 @@
     <attachment name="conditionAttachment_Germans_4_unit_presence" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Egypt" count="1"/>
       <!-- any land unit includes aaGuns but does not include 'facilities' -->
-      <option name="unitPresence" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:aaGun" count="1"/>
+      <option name="unitPresence" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:aaGun:King_Tiger:Tiger_Damaged:Waffen_Hvy_Tank:Waffen_HvyTnk_Dmgd" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Germans_5_Control_Norway_And_Denmark" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Denmark:Norway" count="2"/>
@@ -9453,6 +10298,18 @@
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="Repair_BB" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_Germans_RemoveRepair_Tiger" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="map" count="1"/>
+      <option name="unitPresence" value="Repair_Tiger" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Germans_RemoveRepair_Hvy_Tank" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="map" count="1"/>
+      <option name="unitPresence" value="Repair_Hvy_Tank" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japanese_RemoveBanzai" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="map" count="1"/>
+      <option name="unitPresence" value="Banzai" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_WaffenPanzer" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
     <option name="switch" value="true"/>  
     </attachment>
@@ -9470,6 +10327,9 @@
     </attachment>
     <attachment name="TripleaLandMines" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Triplea Landmines"/>
+    </attachment>
+    <attachment name="Soviet_Partisan" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Soviet Partisan"/>
     </attachment>
     <attachment name="RedArmyConscript" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Red Army Conscription"/>
@@ -9494,6 +10354,46 @@
     </attachment>
     <attachment name="TotalWar" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Total War"/>
+    </attachment>
+    <attachment name="Volkssturm" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Volkssturm"/>
+    </attachment>
+    <attachment name="Me_262" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Me 262"/>
+    </attachment>
+    <attachment name="King_Tiger" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="King Tiger"/>
+    </attachment>
+    <attachment name="Banzai" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Japanese Banzai Attack"/>
+    </attachment>
+    <attachment name="Seafire" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Seafire Fighter Planes"/>
+    </attachment>
+    <attachment name="Me_109T" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Me-109T Fighter Planes"/>
+    </attachment>
+    <attachment name="JapanDD" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Japanese Destroyers"/>
+    </attachment>
+    <attachment name="Rockets" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Rockets"/>
+    </attachment>
+    <attachment name="HeavyBombers" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Heavy Bombers"/>
+    </attachment>
+    <attachment name="Heavy_Transport" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="US Heavy Transport"/>
+    </attachment>
+    <attachment name="Type_XXI_UBoat" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="German Type XXI U-boats"/>
+    </attachment>
+    <attachment name="A0C5Bmbr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Unofficial SBR Option"/>
+    </attachment>
+    <attachment name="A0C5BmbrInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Unofficial SBR Option"/>
+      <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_SwitchIsTrue" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
     <option name="switch" value="true"/>  
@@ -10238,7 +11138,7 @@
       <!-- Russians Conditions -->
     <attachment name="conditionAttachment_Russians_1_Convoy_Clear" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="enemyExclusionTerritories" value="125 Sea Zone" count="1"/>
-      <option name="unitPresence" value="battleship:BB_Damaged:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:submarine:GermanUBoat:destroyer:Escort:Escort_Convoy:cruiser" count="0"/>
+      <option name="unitPresence" value="battleship:BB_Damaged:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:submarine:GermanUBoat:Type_XXI_UBoat:destroyer:Escort:Escort_Convoy:cruiser" count="0"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Russians_1_Convoy_Clear"/>
@@ -22808,8 +23708,14 @@
     <attachment name="conditionAttachmentTurn9" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="9"/>
     </attachment>
+    <attachment name="conditionAttachmentTurn9OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="9-+"/>
+    </attachment>
     <attachment name="conditionAttachmentTurn10" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="10"/>
+    </attachment>
+    <attachment name="conditionAttachmentTurn10OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="10-+"/>
     </attachment>
     <attachment name="conditionAttachmentTurn11" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="11"/>
@@ -23322,7 +24228,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_WaffenPnzrGrndrNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn5"/>
+      <option name="conditions" value="WaffenPnzrGrndr:conditionAttachmentTurn5"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="WaffenPnzrGrndr"/>
@@ -23334,7 +24240,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_WaffenPanzerNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn6"/>
+      <option name="conditions" value="conditionAttachment_WaffenPanzer:conditionAttachmentTurn6"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="WaffenPanzer"/>
@@ -23363,11 +24269,169 @@
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="AtlanticWall"/>
     </attachment>
+    <attachment name="triggerAttachment_Volkssturm" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Volkssturm"/>
+      <option name="productionRule" value="productionGermans:buyVolkssturm"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     <attachment name="triggerAttachment_DDayNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn9"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="DDay"/>
+    </attachment>
+    <attachment name="triggerAttachment_Me_262" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Me_262:conditionAttachmentTurn9OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyMe_262"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Me_262Notification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Me_262:conditionAttachmentTurn9"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="Me_262"/>
+    </attachment>
+    <attachment name="triggerAttachment_King_Tiger" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="King_Tiger:conditionAttachmentTurn8OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyKing_Tiger"/>
+      <option name="productionRule" value="productionGermans:buyRepair_Tiger"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_King_TigerNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="King_Tiger:conditionAttachmentTurn8"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="King_Tiger"/>
+    </attachment>
+    <attachment name="triggerAttachment_Waffen_Hvy_Tank" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="King_Tiger:conditionAttachmentTurn10OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyWaffen_Hvy_Tank"/>
+      <option name="productionRule" value="productionGermans:buyRepair_Hvy_Tank"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Waffen_Hvy_TankNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="King_Tiger:conditionAttachmentTurn10"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="Waffen_Hvy_Tank"/>
+    </attachment>
+    <attachment name="triggerAttachment_Banzai" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Banzai:conditionAttachmentTurn6OrHigher"/>
+      <option name="placement" value="Japan:Banzai" count="1"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:japaneseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RemoveBanzai" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Banzai:conditionAttachmentTurn6OrHigher"/>
+      <option name="removeUnits" value="all:Banzai" count="1"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:japaneseNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_BanzaiNotification" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Banzai:conditionAttachmentTurn6"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:japanesePurchase"/>
+      <option name="notification" value="Banzai"/>
+    </attachment>
+    <attachment name="triggerAttachment_Seafire" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Seafire:conditionAttachmentTurn1OrHigher"/>
+      <option name="productionRule" value="productionBritish:buySeafire"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:britishPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Me_109T" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Me_109T:conditionAttachmentTurn1OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyMe_109T"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Rockets" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Rockets:conditionAttachmentTurn7OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyGerman_Rockets"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_RocketsNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Rockets:conditionAttachmentTurn7"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="Rockets"/>
+    </attachment>
+    <attachment name="triggerAttachment_Type_XXI_UBoat" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Type_XXI_UBoat:conditionAttachmentTurn9OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyType_XXI_UBoat"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Type_XXI_UBoatNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Type_XXI_UBoat:conditionAttachmentTurn9"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="Type_XXI_UBoat"/>
+    </attachment>
+    <attachment name="triggerAttachment_German_Hvy_Bmbr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="HeavyBombers:conditionAttachmentTurn8OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyGerman_Hvy_Bmbr"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_German_Hvy_BmbrNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="HeavyBombers:conditionAttachmentTurn8"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="German_Hvy_Bmbr"/>
+    </attachment>
+    <attachment name="triggerAttachment_USA_Hvy_Bomber" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="HeavyBombers:conditionAttachmentTurn8OrHigher"/>
+      <option name="productionRule" value="productionAmericans:buyUSA_Hvy_Bomber"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:americansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_USA_Hvy_BomberNotification" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="HeavyBombers:conditionAttachmentTurn8"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:americansPurchase"/>
+      <option name="notification" value="USA_Hvy_Bomber"/>
+    </attachment>
+    <attachment name="triggerAttachment_UK_Hvy_Bomber" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="HeavyBombers:conditionAttachmentTurn8OrHigher"/>
+      <option name="productionRule" value="productionBritish:buyUK_Hvy_Bomber"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:britishPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_UK_Hvy_BomberNotification" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="HeavyBombers:conditionAttachmentTurn8"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:britishPurchase"/>
+      <option name="notification" value="UK_Hvy_Bomber"/>
+    </attachment>
+    <attachment name="triggerAttachment_RocketsUSSR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Rockets:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionRussians:buyRussian_Rockets"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_RocketsNotificationUSSR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Rockets:conditionAttachmentTurn4"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:russiansPurchase"/>
+      <option name="notification" value="RocketsUSSR"/>
+    </attachment>
+    <attachment name="triggerAttachment_Heavy_Transport" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Heavy_Transport:conditionAttachmentTurn8OrHigher"/>
+      <option name="productionRule" value="productionAmericans:buyHeavy_Transport"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:americansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Heavy_TransportNotification" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Heavy_Transport:conditionAttachmentTurn8"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:americansPurchase"/>
+      <option name="notification" value="Heavy_Transport"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_DemoAirfield" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Germans_DemoAirfield"/>
@@ -23404,6 +24468,16 @@
       <option name="removeUnits" value="all:Repair_BB" count="111"/> 
       <option name="when" value="after:germansCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachment_Germans_RemoveRepair_Tiger" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germans_RemoveRepair_Tiger"/>
+      <option name="removeUnits" value="all:Repair_Tiger" count="111"/> 
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germans_RemoveRepair_Hvy_Tank" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germans_RemoveRepair_Hvy_Tank"/>
+      <option name="removeUnits" value="all:Repair_Hvy_Tank" count="111"/> 
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachment_TripleaLandMines" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TripleaLandMines"/>
       <option name="unitType" value="mine_armed"/>
@@ -23419,6 +24493,48 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="attack" count="0"/>
       <option name="unitProperty" value="defense" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_UndgMajor" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="unitType" value="UndrgroundFctry"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="canProduceXUnits" count="6"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_UndgMajorHvy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="unitType" value="Hvy_Undg_2"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="canProduceXUnits" count="7"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_UndgMinor" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="unitType" value="UndergroundMinr"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="canProduceXUnits" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Hvy_Undg_1SBR" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="unitType" value="Hvy_Undg_1"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="canProduceXUnits" count="3"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_UndgMinorUSSR" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="unitType" value="RusUndrGrndMinr"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="canProduceXUnits" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Hvy_Undg_1SBRussr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="unitType" value="Rus_Hvy_Undg_1"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="canProduceXUnits" count="3"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_ItalianParasGermanControlled" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -23939,57 +25055,106 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceGermany4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4Germany:conditionAttachment_GermansRemoveTotalWarBomber4InvertGermany"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4Germany:conditionAttachment_GermansRemoveTotalWarBomber4InvertGermany"/>
       <option name="placement" value="Germany:bomber" count="4"/>
       <option name="removeUnits" value="Germany:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberA0C5PlaceGermany4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4Germany:conditionAttachment_GermansRemoveTotalWarBomber4InvertGermany"/>
+      <option name="placement" value="Germany:bomberA0C5" count="4"/>
+      <option name="removeUnits" value="Germany:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceGermany8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8Germany:conditionAttachment_GermansRemoveTotalWarBomber8GermanyInvert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8Germany:conditionAttachment_GermansRemoveTotalWarBomber8GermanyInvert"/>
       <option name="placement" value="Germany:bomber" count="8"/>
       <option name="removeUnits" value="Germany:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberA0C5PlaceGermany8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8Germany:conditionAttachment_GermansRemoveTotalWarBomber8GermanyInvert"/>
+      <option name="placement" value="Germany:bomberA0C5" count="8"/>
+      <option name="removeUnits" value="Germany:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceWesternGermany4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4WesternGermany:conditionAttachment_GermansRemoveTotalWarBomber4InvertWesternGermany"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4WesternGermany:conditionAttachment_GermansRemoveTotalWarBomber4InvertWesternGermany"/>
       <option name="placement" value="Western Germany:bomber" count="4"/>
       <option name="removeUnits" value="Western Germany:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceWesternGermany8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8WesternGermany:conditionAttachment_GermansRemoveTotalWarBomber8WesternGermanyInvert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8WesternGermany:conditionAttachment_GermansRemoveTotalWarBomber8WesternGermanyInvert"/>
       <option name="placement" value="Western Germany:bomber" count="8"/>
       <option name="removeUnits" value="Western Germany:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberA0C5PlaceWesternGermany8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8WesternGermany:conditionAttachment_GermansRemoveTotalWarBomber8WesternGermanyInvert"/>
+      <option name="placement" value="Western Germany:bomberA0C5" count="8"/>
+      <option name="removeUnits" value="Western Germany:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceRomania4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4Romania:conditionAttachment_GermansRemoveTotalWarBomber4InvertRomania"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4Romania:conditionAttachment_GermansRemoveTotalWarBomber4InvertRomania"/>
       <option name="placement" value="Romania:bomber" count="4"/>
       <option name="removeUnits" value="Romania:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberA0C5PlaceRomania4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4Romania:conditionAttachment_GermansRemoveTotalWarBomber4InvertRomania"/>
+      <option name="placement" value="Romania:bomberA0C5" count="4"/>
+      <option name="removeUnits" value="Romania:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceRomania8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8Romania:conditionAttachment_GermansRemoveTotalWarBomber8RomaniaInvert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8Romania:conditionAttachment_GermansRemoveTotalWarBomber8RomaniaInvert"/>
       <option name="placement" value="Romania:bomber" count="8"/>
       <option name="removeUnits" value="Romania:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberA0C5PlaceRomania8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8Romania:conditionAttachment_GermansRemoveTotalWarBomber8RomaniaInvert"/>
+      <option name="placement" value="Romania:bomberA0C5" count="8"/>
+      <option name="removeUnits" value="Romania:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceGermany12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber12Germany"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber12Germany"/>
       <option name="placement" value="Germany:bomber" count="12"/>
       <option name="removeUnits" value="Germany:TotalWar_Bomber" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberA0C5PlaceGermany12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber12Germany"/>
+      <option name="placement" value="Germany:bomberA0C5" count="12"/>
+      <option name="removeUnits" value="Germany:TotalWar_Bomber" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceWesternGermany12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber12WesternGermany"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber12WesternGermany"/>
       <option name="placement" value="Western Germany:bomber" count="12"/>
+      <option name="removeUnits" value="Western Germany:TotalWar_Bomber" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberA0C5PlaceWesternGermany12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber12WesternGermany"/>
+      <option name="placement" value="Western Germany:bomberA0C5" count="12"/>
       <option name="removeUnits" value="Western Germany:TotalWar_Bomber" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
@@ -24244,6 +25409,27 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansRemoveBombers" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="placement" value="Germany:bomberA0C5" count="2"/>
+      <option name="removeUnits" value="Germany:bomber" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Attack0Cost5BomberBuy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="productionRule" value="productionGermans:-buyBomber"/>               <option name="productionRule" value="productionGermans:buyBomberA0C5"/>
+      <option name="productionRule" value="productionRussians:-buyBomber"/>      <option name="productionRule" value="productionRussians:buyBomberA0C5"/>
+      <option name="productionRule" value="productionJapanese:-buyBomber"/>     <option name="productionRule" value="productionJapanese:buyBomberA0C5"/>
+      <option name="productionRule" value="productionAmericans:-buyBomber"/>             <option name="productionRule" value="productionAmericans:buyBomberA0C5"/>
+      <option name="productionRule" value="productionBritish:-buyBomber"/>               <option name="productionRule" value="productionBritish:buyBomberA0C5"/>
+      <option name="productionRule" value="productionItalians:-buyBomber"/>              <option name="productionRule" value="productionItalians:buyBomberA0C5"/>
+      <option name="productionRule" value="productionANZAC:-buyBomber"/>
+      <option name="productionRule" value="productionANZAC:buyBomberA0C5"/>
+      <option name="productionRule" value="productionFrench:-buyBomber"/>                <option name="productionRule" value="productionFrench:buyBomberA0C5"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
 
     <!-- Russians Triggers -->
     <attachment name="triggerAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -24298,7 +25484,7 @@
       <option name="when" value="after:russiansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_Mass_Tank_UnitNotification" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn6"/>
+      <option name="conditions" value="MassTankProduction:conditionAttachmentTurn6"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
       <option name="notification" value="MassTanks"/>
@@ -24327,10 +25513,22 @@
       <option name="when" value="before:russiansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_RussianGuardsNotification" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn4"/>
+      <option name="conditions" value="conditionAttachment_RussianGuards:conditionAttachmentTurn4"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
       <option name="notification" value="RussianGuardsActive"/>
+    </attachment>
+    <attachment name="triggerAttachment_Soviet_Partisan" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Soviet_Partisan:conditionAttachment_RussianSwitchIsTrue:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionRussians:buySoviet_Partisan"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:russiansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Soviet_PartisanNotification" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Soviet_Partisan:conditionAttachmentTurn4"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:russiansPurchase"/>
+      <option name="notification" value="Soviet_Partisan"/>
     </attachment>
     <attachment name="triggerAttachment_Army_Conscript" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="RedArmyConscript:conditionAttachmentTurn5"/>
@@ -24559,43 +25757,85 @@
       <option name="when" value="before:russiansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_RussiansTotalWarBomberPlaceRussia4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4:conditionAttachment_RussiansRemoveTotalWarBomber4Invert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4:conditionAttachment_RussiansRemoveTotalWarBomber4Invert"/>
       <option name="placement" value="Russia:bomber" count="4"/>
       <option name="removeUnits" value="Russia:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:russiansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_RussiansTotalWarBomberA0C5PlaceRussia4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4:conditionAttachment_RussiansRemoveTotalWarBomber4Invert"/>
+      <option name="placement" value="Russia:bomberA0C5" count="4"/>
+      <option name="removeUnits" value="Russia:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:russiansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_RussiansTotalWarBomberPlaceRussia8" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber8:conditionAttachment_RussiansRemoveTotalWarBomber8Invert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber8:conditionAttachment_RussiansRemoveTotalWarBomber8Invert"/>
       <option name="placement" value="Russia:bomber" count="8"/>
       <option name="removeUnits" value="Russia:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:russiansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_RussiansTotalWarBomberA0C5PlaceRussia8" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber8:conditionAttachment_RussiansRemoveTotalWarBomber8Invert"/>
+      <option name="placement" value="Russia:bomberA0C5" count="8"/>
+      <option name="removeUnits" value="Russia:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:russiansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_RussiansTotalWarBomberPlaceRussia12" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber12"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber12"/>
       <option name="placement" value="Russia:bomber" count="12"/>
       <option name="removeUnits" value="Russia:TotalWar_Bomber" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:russiansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_RussiansTotalWarBomberA0C5PlaceRussia12" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber12"/>
+      <option name="placement" value="Russia:bomberA0C5" count="12"/>
+      <option name="removeUnits" value="Russia:TotalWar_Bomber" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:russiansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_RussiansTotalWarBomberPlaceUkraine4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4Ukraine:conditionAttachment_RussiansRemoveTotalWarBomber4InvertUkraine"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4Ukraine:conditionAttachment_RussiansRemoveTotalWarBomber4InvertUkraine"/>
       <option name="placement" value="Ukraine:bomber" count="4"/>
       <option name="removeUnits" value="Ukraine:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:russiansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_RussiansTotalWarBomberA0C5PlaceUkraine4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4Ukraine:conditionAttachment_RussiansRemoveTotalWarBomber4InvertUkraine"/>
+      <option name="placement" value="Ukraine:bomberA0C5" count="4"/>
+      <option name="removeUnits" value="Ukraine:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:russiansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_RussiansTotalWarBomberPlaceNovgorod4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4Novgorod:conditionAttachment_RussiansRemoveTotalWarBomber4InvertNovgorod"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4Novgorod:conditionAttachment_RussiansRemoveTotalWarBomber4InvertNovgorod"/>
       <option name="placement" value="Novgorod:bomber" count="4"/>
       <option name="removeUnits" value="Novgorod:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:russiansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_RussiansTotalWarBomberA0C5PlaceNovgorod4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4Novgorod:conditionAttachment_RussiansRemoveTotalWarBomber4InvertNovgorod"/>
+      <option name="placement" value="Novgorod:bomberA0C5" count="4"/>
+      <option name="removeUnits" value="Novgorod:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:russiansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_RussiansTotalWarBomberPlaceVolgograd4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4Volgograd:conditionAttachment_RussiansRemoveTotalWarBomber4InvertVolgograd"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4Volgograd:conditionAttachment_RussiansRemoveTotalWarBomber4InvertVolgograd"/>
       <option name="placement" value="Volgograd:bomber" count="4"/>
+      <option name="removeUnits" value="Volgograd:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:russiansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansTotalWarBomberA0C5PlaceVolgograd4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4Volgograd:conditionAttachment_RussiansRemoveTotalWarBomber4InvertVolgograd"/>
+      <option name="placement" value="Volgograd:bomberA0C5" count="4"/>
       <option name="removeUnits" value="Volgograd:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:russiansPlace"/>
@@ -24646,55 +25886,6 @@
       <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarTacBmbr4Volgograd:conditionAttachment_RussiansRemoveTotalWarTacBmbr4InvertVolgograd"/>
       <option name="placement" value="Volgograd:bomber" count="4"/>
       <option name="removeUnits" value="Volgograd:TotalWarTacBmbr" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:russiansPlace"/>
-    </attachment>
-
-    <attachment name="triggerAttachment_RussiansTotalWar_Bomber" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TotalWar:conditionAttachmentTurn7OrHigher"/>
-      <option name="productionRule" value="productionRussians:buyTotalWar_Bomber"/>
-      <option name="uses" value="1"/>
-      <option name="when" value="before:russiansPurchase"/>
-    </attachment>
-    <attachment name="triggerAttachment_RussiansTotalWarBomberPlaceRussia4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4:conditionAttachment_RussiansRemoveTotalWarBomber4Invert"/>
-      <option name="placement" value="Russia:bomber" count="4"/>
-      <option name="removeUnits" value="Russia:TotalWar_Bomber" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:russiansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_RussiansTotalWarBomberPlaceRussia8" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber8:conditionAttachment_RussiansRemoveTotalWarBomber8Invert"/>
-      <option name="placement" value="Russia:bomber" count="8"/>
-      <option name="removeUnits" value="Russia:TotalWar_Bomber" count="8"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:russiansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_RussiansTotalWarBomberPlaceRussia12" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber12"/>
-      <option name="placement" value="Russia:bomber" count="12"/>
-      <option name="removeUnits" value="Russia:TotalWar_Bomber" count="12"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:russiansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_RussiansTotalWarBomberPlaceUkraine4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4Ukraine:conditionAttachment_RussiansRemoveTotalWarBomber4InvertUkraine"/>
-      <option name="placement" value="Ukraine:bomber" count="4"/>
-      <option name="removeUnits" value="Ukraine:TotalWar_Bomber" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:russiansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_RussiansTotalWarBomberPlaceNovgorod4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4Novgorod:conditionAttachment_RussiansRemoveTotalWarBomber4InvertNovgorod"/>
-      <option name="placement" value="Novgorod:bomber" count="4"/>
-      <option name="removeUnits" value="Novgorod:TotalWar_Bomber" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:russiansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_RussiansTotalWarBomberPlaceVolgograd4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarBomber4Volgograd:conditionAttachment_RussiansRemoveTotalWarBomber4InvertVolgograd"/>
-      <option name="placement" value="Volgograd:bomber" count="4"/>
-      <option name="removeUnits" value="Volgograd:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:russiansPlace"/>
     </attachment>
@@ -24938,7 +26129,7 @@
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_JPNPacificFleet_Notification" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn5"/>
+      <option name="conditions" value="PacificEXP:conditionAttachmentTurn5"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japaneseEndTurn"/>
       <option name="notification" value="JPNPacificFleet"/>
@@ -24950,7 +26141,7 @@
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_JPNPacificFleet_NotificationRD6" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn6"/>
+      <option name="conditions" value="PacificEXP:conditionAttachmentTurn6"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japaneseEndTurn"/>
       <option name="notification" value="JPNPacificFleet6"/>
@@ -24962,7 +26153,7 @@
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_JPNPacificFleet_NotificationRD7" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7"/>
+      <option name="conditions" value="PacificEXP:conditionAttachmentTurn7"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japaneseEndTurn"/>
       <option name="notification" value="JPNPacificFleet7"/>
@@ -24973,7 +26164,7 @@
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_JPNPacificFleet_NotificationRD8" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn8"/>
+      <option name="conditions" value="PacificEXP:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japaneseEndTurn"/>
       <option name="notification" value="JPNPacificFleet8"/>
@@ -25102,36 +26293,71 @@
       <option name="when" value="before:japanesePurchase"/>
     </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWar_BomberPlaceJapan4" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber4:conditionAttachment_JapaneseRemoveTotalWar_Bomber4Invert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber4:conditionAttachment_JapaneseRemoveTotalWar_Bomber4Invert"/>
       <option name="placement" value="Japan:bomber" count="4"/>
       <option name="removeUnits" value="Japan:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
+    <attachment name="triggerAttachment_JapaneseTotalWar_BomberA0C5PlaceJapan4" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber4:conditionAttachment_JapaneseRemoveTotalWar_Bomber4Invert"/>
+      <option name="placement" value="Japan:bomberA0C5" count="4"/>
+      <option name="removeUnits" value="Japan:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:japanesePlace"/>
+    </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWar_BomberPlaceJapan8" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber8:conditionAttachment_JapaneseRemoveTotalWar_Bomber8Invert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber8:conditionAttachment_JapaneseRemoveTotalWar_Bomber8Invert"/>
       <option name="placement" value="Japan:bomber" count="8"/>
       <option name="removeUnits" value="Japan:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
+    <attachment name="triggerAttachment_JapaneseTotalWar_BomberA0C5PlaceJapan8" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber8:conditionAttachment_JapaneseRemoveTotalWar_Bomber8Invert"/>
+      <option name="placement" value="Japan:bomberA0C5" count="8"/>
+      <option name="removeUnits" value="Japan:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:japanesePlace"/>
+    </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWar_BomberPlaceJapan12" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber12"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber12"/>
       <option name="placement" value="Japan:bomber" count="12"/>
       <option name="removeUnits" value="Japan:TotalWar_Bomber" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
+    <attachment name="triggerAttachment_JapaneseTotalWar_BomberA0C5PlaceJapan12" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber12"/>
+      <option name="placement" value="Japan:bomberA0C5" count="12"/>
+      <option name="removeUnits" value="Japan:TotalWar_Bomber" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:japanesePlace"/>
+    </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWarBomberPlaceJapan4Korea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarBomber4Korea:conditionAttachment_JapaneseRemoveTotalWarBomber4InvertKorea"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarBomber4Korea:conditionAttachment_JapaneseRemoveTotalWarBomber4InvertKorea"/>
       <option name="placement" value="Korea:bomber" count="4"/>
       <option name="removeUnits" value="Korea:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
+    <attachment name="triggerAttachment_JapaneseTotalWarBomberA0C5PlaceJapan4Korea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarBomber4Korea:conditionAttachment_JapaneseRemoveTotalWarBomber4InvertKorea"/>
+      <option name="placement" value="Korea:bomberA0C5" count="4"/>
+      <option name="removeUnits" value="Korea:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:japanesePlace"/>
+    </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWarBomberPlaceJapan8Korea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarBomber8Korea"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarBomber8Korea"/>
       <option name="placement" value="Korea:bomber" count="8"/>
+      <option name="removeUnits" value="Korea:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:japanesePlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_JapaneseTotalWarBomberA0C5PlaceJapan8Korea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarBomber8Korea"/>
+      <option name="placement" value="Korea:bomberA0C5" count="8"/>
       <option name="removeUnits" value="Korea:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
@@ -25220,7 +26446,27 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
-    
+    <attachment name="triggerAttachment_DD_Transport" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="JapanDD:conditionAttachmentTurn5"/>
+      <option name="unitType" value="destroyer"/>
+      <option name="unitProperty" value="transportCapacity" count="-reset-"/>
+      <option name="unitProperty" value="transportCapacity" count="2"/>
+      <option name="when" value="before:japanesePolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_DD_TransportNotification" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="JapanDD:conditionAttachmentTurn5"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:japanesePurchase"/>
+      <option name="notification" value="DD_Transport"/>
+    </attachment>
+    <attachment name="triggerAttachment_JapanRemoveBombers" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="placement" value="Japan:bomberA0C5" count="2"/>
+      <option name="removeUnits" value="Japan:bomber" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     <!-- Japanese Triggers Pacific Okinawa -->
     <attachment name="triggerAttachment_Japan_Liberates_Okinawa_Turn2" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_LiberateEXPOkinawa:conditionAttachmentTurn2"/>
@@ -29874,22 +31120,43 @@
       <option name="when" value="before:britishPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_UKTotalWar_BomberPlace4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWar_Bomber4:conditionAttachment_BritishRemoveTotalWar_Bomber4Invert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWar_Bomber4:conditionAttachment_BritishRemoveTotalWar_Bomber4Invert"/>
       <option name="placement" value="United Kingdom:bomber" count="4"/>
       <option name="removeUnits" value="United Kingdom:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:britishEndTurn"/>
     </attachment>
+    <attachment name="triggerAttachment_UKTotalWar_BomberA0C5Place4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWar_Bomber4:conditionAttachment_BritishRemoveTotalWar_Bomber4Invert"/>
+      <option name="placement" value="United Kingdom:bomberA0C5" count="4"/>
+      <option name="removeUnits" value="United Kingdom:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:britishEndTurn"/>
+    </attachment>
     <attachment name="triggerAttachment_UKTotalWar_BomberPlace8" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWar_Bomber8:conditionAttachment_BritishRemoveTotalWar_Bomber8Invert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWar_Bomber8:conditionAttachment_BritishRemoveTotalWar_Bomber8Invert"/>
       <option name="placement" value="United Kingdom:bomber" count="8"/>
       <option name="removeUnits" value="United Kingdom:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:britishEndTurn"/>
     </attachment>
+    <attachment name="triggerAttachment_UKTotalWar_BomberA0C5Place8" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWar_Bomber8:conditionAttachment_BritishRemoveTotalWar_Bomber8Invert"/>
+      <option name="placement" value="United Kingdom:bomberA0C5" count="8"/>
+      <option name="removeUnits" value="United Kingdom:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:britishEndTurn"/>
+    </attachment>
     <attachment name="triggerAttachment_UKTotalWar_BomberPlace12" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWar_Bomber12"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWar_Bomber12"/>
       <option name="placement" value="United Kingdom:bomber" count="12"/>
+      <option name="removeUnits" value="United Kingdom:TotalWar_Bomber" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:britishEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachment_UKTotalWar_BomberA0C5Place12" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWar_Bomber12"/>
+      <option name="placement" value="United Kingdom:bomberA0C5" count="12"/>
       <option name="removeUnits" value="United Kingdom:TotalWar_Bomber" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:britishEndTurn"/>
@@ -29924,31 +31191,38 @@
     </attachment>
 
     <attachment name="triggerAttachment_UKTotalWarAirTrprt" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TotalWar:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="TotalWar:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionBritish:buyTotalWarAirTrprt"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:britishPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_UKTotalWarAirTrprtPlace4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher:conditionAttachment_BritishRemoveTotalWarAirTrprt4:conditionAttachment_BritishRemoveTotalWarAirTrprt4Invert"/>
+      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWarAirTrprt4:conditionAttachment_BritishRemoveTotalWarAirTrprt4Invert"/>
       <option name="placement" value="United Kingdom:air_transport" count="4"/>
       <option name="removeUnits" value="United Kingdom:TotalWarAirTrprt" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:britishEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_UKTotalWarAirTrprtPlace8" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher:conditionAttachment_BritishRemoveTotalWarAirTrprt8:conditionAttachment_BritishRemoveTotalWarAirTrprt8Invert"/>
+      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWarAirTrprt8:conditionAttachment_BritishRemoveTotalWarAirTrprt8Invert"/>
       <option name="placement" value="United Kingdom:air_transport" count="8"/>
       <option name="removeUnits" value="United Kingdom:TotalWarAirTrprt" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:britishEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_UKTotalWarAirTrprtPlace12" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher:conditionAttachment_BritishRemoveTotalWarAirTrprt12"/>
+      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWarAirTrprt12"/>
       <option name="placement" value="United Kingdom:air_transport" count="12"/>
       <option name="removeUnits" value="United Kingdom:TotalWarAirTrprt" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:britishEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachment_UKRemoveBombers" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="placement" value="United Kingdom:bomberA0C5" count="1"/>
+      <option name="removeUnits" value="United Kingdom:bomber" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
 
     <!-- British Triggers Okinawa -->
@@ -32233,6 +33507,13 @@
       <option name="removeUnits" value="all:Repair_BB" count="111"/> 
       <option name="when" value="after:italiansCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachment_ItaliansRemoveBombers" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="placement" value="Northern Italy:bomberA0C5" count="1"/>
+      <option name="removeUnits" value="Northern Italy:bomber" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     
     <!-- ANZAC Triggers -->
     <attachment name="triggerAttachment_ANZAC_1_Control_Original_And_Malaya" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -34166,7 +35447,7 @@
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_USAPacificFleet_Notification" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn5"/>
+      <option name="conditions" value="PacificEXP:conditionAttachmentTurn5"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansEndTurn"/>
       <option name="notification" value="USAPacificFleet"/>
@@ -34178,7 +35459,7 @@
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_USAPacificFleet_NotificationRD6" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn6"/>
+      <option name="conditions" value="PacificEXP:conditionAttachmentTurn6"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansEndTurn"/>
       <option name="notification" value="USAPacificFleet6"/>
@@ -34190,7 +35471,7 @@
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_USAPacificFleet_NotificationRD7" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7"/>
+      <option name="conditions" value="PacificEXP:conditionAttachmentTurn7"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansEndTurn"/>
       <option name="notification" value="USAPacificFleet7"/>
@@ -34201,7 +35482,7 @@
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_USAPacificFleet_NotificationRD8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn8"/>
+      <option name="conditions" value="PacificEXP:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansEndTurn"/>
       <option name="notification" value="USAPacificFleet8"/>
@@ -34521,64 +35802,127 @@
       <option name="when" value="before:americansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceEUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber4EUS:conditionAttachment_AmericansRemoveTotalWar_Bomber4EUSInvert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber4EUS:conditionAttachment_AmericansRemoveTotalWar_Bomber4EUSInvert"/>
       <option name="placement" value="Eastern United States:bomber" count="4"/>
       <option name="removeUnits" value="Eastern United States:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWar_BomberA0C5PlaceEUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber4EUS:conditionAttachment_AmericansRemoveTotalWar_Bomber4EUSInvert"/>
+      <option name="placement" value="Eastern United States:bomberA0C5" count="4"/>
+      <option name="removeUnits" value="Eastern United States:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceEUS8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber8EUS:conditionAttachment_AmericansRemoveTotalWar_Bomber8EUSInvert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber8EUS:conditionAttachment_AmericansRemoveTotalWar_Bomber8EUSInvert"/>
       <option name="placement" value="Eastern United States:bomber" count="8"/>
       <option name="removeUnits" value="Eastern United States:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWar_BomberA0C5PlaceEUS8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber8EUS:conditionAttachment_AmericansRemoveTotalWar_Bomber8EUSInvert"/>
+      <option name="placement" value="Eastern United States:bomberA0C5" count="8"/>
+      <option name="removeUnits" value="Eastern United States:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceEUS12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber12EUS"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber12EUS"/>
       <option name="placement" value="Eastern United States:bomber" count="12"/>
       <option name="removeUnits" value="Eastern United States:TotalWar_Bomber" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWar_BomberA0C5PlaceEUS12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber12EUS"/>
+      <option name="placement" value="Eastern United States:bomberA0C5" count="12"/>
+      <option name="removeUnits" value="Eastern United States:TotalWar_Bomber" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceCUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber4CUS:conditionAttachment_AmericansRemoveTotalWar_Bomber4CUSInvert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber4CUS:conditionAttachment_AmericansRemoveTotalWar_Bomber4CUSInvert"/>
       <option name="placement" value="Central United States:bomber" count="4"/>
       <option name="removeUnits" value="Central United States:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWar_BomberA0C5PlaceCUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber4CUS:conditionAttachment_AmericansRemoveTotalWar_Bomber4CUSInvert"/>
+      <option name="placement" value="Central United States:bomberA0C5" count="4"/>
+      <option name="removeUnits" value="Central United States:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceCUS8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber8CUS:conditionAttachment_AmericansRemoveTotalWar_Bomber8CUSInvert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber8CUS:conditionAttachment_AmericansRemoveTotalWar_Bomber8CUSInvert"/>
       <option name="placement" value="Central United States:bomber" count="8"/>
       <option name="removeUnits" value="Central United States:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWar_BomberA0C5PlaceCUS8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber8CUS:conditionAttachment_AmericansRemoveTotalWar_Bomber8CUSInvert"/>
+      <option name="placement" value="Central United States:bomberA0C5" count="8"/>
+      <option name="removeUnits" value="Central United States:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceCUS12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber12CUS"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber12CUS"/>
       <option name="placement" value="Central United States:bomber" count="12"/>
       <option name="removeUnits" value="Central United States:TotalWar_Bomber" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWar_BomberA0C5PlaceCUS12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber12CUS"/>
+      <option name="placement" value="Central United States:bomberA0C5" count="12"/>
+      <option name="removeUnits" value="Central United States:TotalWar_Bomber" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceWUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber4WUS:conditionAttachment_AmericansRemoveTotalWar_Bomber4WUSInvert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber4WUS:conditionAttachment_AmericansRemoveTotalWar_Bomber4WUSInvert"/>
       <option name="placement" value="Western United States:bomber" count="4"/>
       <option name="removeUnits" value="Western United States:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWar_BomberA0C5PlaceWUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber4WUS:conditionAttachment_AmericansRemoveTotalWar_Bomber4WUSInvert"/>
+      <option name="placement" value="Western United States:bomberA0C5" count="4"/>
+      <option name="removeUnits" value="Western United States:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceWUS8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber8WUS:conditionAttachment_AmericansRemoveTotalWar_Bomber8WUSInvert"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber8WUS:conditionAttachment_AmericansRemoveTotalWar_Bomber8WUSInvert"/>
       <option name="placement" value="Western United States:bomber" count="8"/>
       <option name="removeUnits" value="Western United States:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWar_BomberA0C5PlaceWUS8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber8WUS:conditionAttachment_AmericansRemoveTotalWar_Bomber8WUSInvert"/>
+      <option name="placement" value="Western United States:bomberA0C5" count="8"/>
+      <option name="removeUnits" value="Western United States:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceWUS12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber12WUS"/>
+      <option name="conditions" value="A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber12WUS"/>
       <option name="placement" value="Western United States:bomber" count="12"/>
+      <option name="removeUnits" value="Western United States:TotalWar_Bomber" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWar_BomberA0C5PlaceWUS12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber12WUS"/>
+      <option name="placement" value="Western United States:bomberA0C5" count="12"/>
       <option name="removeUnits" value="Western United States:TotalWar_Bomber" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
@@ -34722,6 +36066,13 @@
       <option name="removeUnits" value="Western United States:TotalWarAirTrprt" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_USARemoveBombers" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="placement" value="Central United States:bomberA0C5" count="1"/>
+      <option name="removeUnits" value="Central United States:bomber" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     
     <!-- Americans Triggers Okinawa -->
@@ -39213,12 +40564,6 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:changerTechActivation"/>
     </attachment>
-    <attachment name="triggerAttachment1noteA" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentTurn1Check"/>
-      <option name="notification" value="R01A"/>
-      <option name="uses" value="1"/>
-      <option name="when" value="after:changerTechActivation"/>
-    </attachment>
     <attachment name="triggerAttachment1noteB" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentTurn1Check"/>
       <option name="notification" value="R01B"/>
@@ -39824,11 +41169,16 @@
     <attachment name="techAbilityAttachment" attachTo="superSub" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="attackBonus" value="1:submarine"/>
       <option name="attackBonus" value="1:GermanUBoat"/>
+      <option name="defenseBonus" value="1:GermanUBoat"/>
+      <option name="attackBonus" value="1:Type_XXI_UBoat"/>
+      <option name="defenseBonus" value="1:Type_XXI_UBoat"/>
       <option name="attackBonus" value="1:pacific_submarine"/>
     </attachment>
     <attachment name="techAbilityAttachment" attachTo="jetPower" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="attackBonus" value="1:fighter"/>
       <option name="attackBonus" value="1:NavyFighter"/>
+      <option name="attackBonus" value="1:Seafire"/>
+      <option name="attackBonus" value="1:Me_109T"/>
       <option name="airAttackBonus" value="1:fighter"/>
       <option name="airDefenseBonus" value="1:fighter"/>
       <option name="attackBonus" value="1:usa_fighter"/>
@@ -39855,15 +41205,23 @@
     <attachment name="techAbilityAttachment" attachTo="longRangeAir" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="movementBonus" value="1:fighter"/>
       <option name="movementBonus" value="1:NavyFighter"/>
+      <option name="movementBonus" value="1:Seafire"/>
+      <option name="movementBonus" value="1:Me_109T"/>
       <option name="movementBonus" value="1:usa_fighter"/>
       <option name="movementBonus" value="1:uk_fighter"/>
       <option name="movementBonus" value="1:bomber"/>
+      <option name="movementBonus" value="1:bomberA0C5"/>
+      <option name="movementBonus" value="1:German_Hvy_Bmbr"/>
+      <option name="movementBonus" value="1:USA_Hvy_Bomber"/>
+      <option name="movementBonus" value="1:UK_Hvy_Bomber"/>
       <option name="movementBonus" value="1:tactical_bomber"/>
       <option name="movementBonus" value="1:usa_tactical_bomber"/>
       <option name="movementBonus" value="1:uk_tactical_bomber"/>
+      <option name="movementBonus" value="1:Me_262"/>
     </attachment>
     <attachment name="techAbilityAttachment" attachTo="heavyBomber" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="attackRollsBonus" value="1:bomber"/>
+      <option name="attackRollsBonus" value="1:bomberA0C5"/>
     </attachment>
     <!-- Advanced Artillery (improvedArtillerySupport) is handled via Support Attachments -->
     <attachment name="techAbilityAttachment" attachTo="rocket" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
@@ -41029,6 +42387,45 @@
       </property>
       <property name="Total War" value="true" editable="true">
       <boolean/>
+      </property>
+      <property name="Soviet Partisan" value="true" editable="true">
+      <boolean/>
+    </property>
+      <property name="Volkssturm" value="false" editable="true">
+      <boolean/>
+      </property>
+      <property name="Me 262" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="King Tiger" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Japanese Banzai Attack" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Seafire Fighter Planes" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Me-109T Fighter Planes" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Japanese Destroyers" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Rockets" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="US Heavy Transport" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="German Type XXI U-boats" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Heavy Bombers" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Unofficial SBR Option" value="false" editable="true">
+      <boolean/>
     </property>
     <property name="Damage From Bombing Done To Units Instead Of Territories" value="true" editable="false">
       <boolean/>
@@ -41076,7 +42473,7 @@ The following is just going to address the triplea game play, although the Help 
 <br>
 If needing to use edit after combat move and before combat and there will be only 1 battle, you will need to edit <b>before</b> your combat move, as after,  you will go straight to the battle without being able to edit. If multiple battles are taking place, you will be able to edit before the first battle is fought to <b>remove</b> units but not place. Actually, you can place but they will have no effect on the battle. <br>
 <br>
-<b>Section 1</b><br>
+<b>Section I</b><br>
 <br>
 <b>United Kingdom One Economy</b><br>
 <br>
@@ -41111,7 +42508,7 @@ They work correctly.<br>
 <br>
 <b>4 and 5. British Commandos and USA Marines</b><br>
 <br>
-Artillery will support both a Commando/Marine Unit as well as a regular Infantry. This is unintended. The best thing is to avoid the combination where possible or take the regular Infantry as casualties first.<br>
+Artillery will boost an inf 1 as well as a Commando/Marine 1 if all three present. If no inf, they’ll get boosted 2 and attack at 3..<br>
 <br>
 You will also need to edit when placing in a Allied Factory. Make a legal placement and then edit after turn end.<br>
 <br>
@@ -41158,21 +42555,21 @@ Purchase a Demolition Unit for Free on the turn you want to destroy them. You do
 Don’t place and destroy same turn. Player Enforced.  Use edit to downgrade while moving.<br>
 <br>
 <b>Russian Factories</b>.<br> 
-If only moving 1 space and placing 1 unit, place the unit in the first Plase phase, then edit after end turn.<br>
+While the Factory can move on it's own, you will need to keep track of Rail movement usage. Player Enforced.<br>
 <br>
 <b>Demolition of Airfields and Harbours</b>.<br>
 These work correctly. Purchase the appropriate Demolition Unit and plant the explosives at the targeted Facility during the second Place Phase. The Facility will detonate at end turn. It will auto destruct before next enemy combat move.<br>
 <br>
 <b>10. Non-Agression Pacts</b><br>
 <br>
-After attacking players combat move and there is only 1 battle to take place, note where any units will be placed. Use edit for placing units and adjusting receiving Players PUs after combat. Use Comment Log if necessary. Otherwise, edit the correct number of units to be placed before combat takes place.<br>
+If after attacking players combat move you decide to add units to the battle, you will need to undo all combat moves and use edit to add the defending units. Use Comment Log to keep track of combat moves if necessary.<br>
 <br>
 <b>11. Strategic Bombing</b><br>
 <br>
 You can't designate certain Fighters to protect certain Facilities. The Air Battles will be fought in one battle.<br> 
 So if you send 2 Fighter Escorts and 2 Bombers with 2 Interceptors defending and the Bombers are Bombing separate targets, there will be one Air Battle with all planes. You may choose your own Air casualties. Triplea will randomly select AA casualties. They will select Bombers or Tac Bombers only.<br>
 <br>
-<b>Section 2</b><br>
+<b>Section II</b><br>
 <br>
 <b>1. The Expanded Pacific Ocean</b><br>
 <br>
@@ -41194,13 +42591,13 @@ Only Factories at Game Start can be upgraded. Player Enforced. Use First Place P
 <br>
 This requires extensive edit use. There is also a TripleA option that is "edit free" explained below.<br>
 <br>
-Mines are purchased at 2 for 2 PUs. You may purchase "unarmed" mines and place them in your Capital during the "First Place" phase. You are only allowed to place as many as the territory value. This is Player Enforced.<br>
+You may purchase "unarmed" mines and place them in your Capital during the "First Place" phase. It will allow you to place as many as you want, so placement is Player Enforced.<br>
 <br>
-"Armed" mines are placed in the normal place phase. You may place them anywhere there is an unarmed mine. They will consume the unarmed mine at the end of the place phase.<br>
+"Armed" mines are purchased at no cost and placed in the normal place phase. You may place them anywhere there is an unarmed mine. They will consume the unarmed mine at the end of the place phase.<br>
 <br>
-When you place the armed mines, you will need to use the "Comment Log" stating which Border they are defending in the territory. To access the comment log, go to the 'view' menu, and click 'show comment log'.<br>
+When you place the armed mines, you will need to use the "Comment Log" stating which Border they are defending in the territory. To access the comment log, go to the 'View' menu, and click 'show comment log'.<br>
 <br>
-Using the mines in combat requires use of the "Dice Roller". It is located in the "Game" menu next to view. If only 1 battle is to take place, at the <b>START</b> of your combat move, determine how many units are crossing the minefield and roll as many dice as there are armed mines. Use edit to remove any casualties and any mines that detonated. Excess mine hits are not removed.<br>
+Using the mines in combat requires use of the "Dice Roller". It is located in the "Game" menu next to View. If only 1 battle is to take place, at the <b>START</b> of your combat move, determine how many units are crossing the minefield and roll as many dice as there are armed mines. Use edit to remove any casualties and any mines that detonated. Excess mine hits are not removed.<br>
 <br> You <b>must</b> do any edits <b>before</b> starting the combat move if there is to be only 1 battle that phase. So, if needed, do a dry run and note the units entering the minefield. Use comment log if necessary.<br>
 <br>
 If there will be multiple battles, you will be able to edit before the first battle takes place. <br>
@@ -41269,7 +42666,7 @@ They work correctly.<br>
 <br>
 The "SHB" will fire 2 Bombard shots, even if only 1 amphibous unit is attacking. Use the Dice Roller to simulate the bombardment and for any casualties to fire back. Then use edit to adjust accordingly. If you have more than 1 battle taking place, you will be able to use edit before choosing the first battle to fight. If only 1 battle is being fought, it will go straight to combat after your combat move. You will need to edit before your combat move in that case.<br>
 <br>
-<b>Section 3</b><br>
+<b>Section III</b><br>
 <br>
 <b>1. US Armoured Infantry</b><br>
 <br>
@@ -41290,7 +42687,7 @@ Rail capacity is Player Enforced.<br>
 <br>
 Use edit to place the 2 Japanese Infantry. Use the Dice roller to roll the first round battles and edit to remove casualties <b>before</b> start of combat.<br>
 <br>
-So, do your non combat move. Manually roll first round of battle. Then end non combat move. Then edit to remove casualties. Then start combat phase.<br>
+So, do your combat move. Manually roll first round of battle. Then end combat move. Then edit to remove casualties. Then start combat phase.<br>
 <br>
 <b>5. Landing Craft</b><br>
 <br>
@@ -41301,7 +42698,7 @@ Use edit "Perform Move or Other Actions" for movement across Sea Zones. You will
 <b>6. D-Day</b><br>
 <br> 
 USA makes it's D-Day combat move with <b>all</b> units that will take part in the D-Day invasion. This includes transports that will be loaded with UK troops and any Ships doing Shore Bombardment. Any Air Units as well.<br>
-Then catalogue them in the comment log. Hit the "Undo" button and remove all USA D-Day units with edit. Finish the rest of USA's turn.<br>
+There will be a record of the moves in History. You may also use the Comment Log if preferred. Hit the "Undo" button and remove all USA D-Day units with edit. Finish the rest of USA's turn.<br>
 <br>
 On UK turn, make <b>All</b> non D-Day combat moves. Catalogue in comment log. Hit undo. Then use edit to add all USA D-Day units as British, to United Kingdom. Sea and Air Units to where they were on USA turn. Refer to comment log if needed.<br>
 <br>
@@ -41313,18 +42710,18 @@ It's an involved turn, but only happens once a game, so not game breaking. Hopef
 <br>
 <b>7. Red Army Conscription</b><br>
 <br>
-Placement Restrictions Player Enforced. So no more than 20 in Moscow and 6 in the Minor Factrys. Max build of 26 <b>is</b> enforced.<br>
+Placement Restrictions Player Enforced. So no more than 20 in Moscow and 6 in the Minor Factorys. Max build of 26 <b>is</b> enforced.<br>
 <br>
 May be turned off in "Map Options".<br>
 <br>
 <b>8. German U-boats</b><br>
 <br>
-"Wolfpack" units are A0 D0 M2 C0 units. They give 1 AA shot of +1 on offense and defense to each U-Boat in it's sea zone for 1 round only.<br>
+"Wolfpack" units are A0 D0 C0 units with unlimited movement. They give 1 AA shot of +1 on offense and defense to each U-Boat in it's sea zone for 1 round only.<br>
 Any hits will not be able to fire back, regardless of enemy Destroyers being present.<br>
 <br>
 When Wolfpack conditions exist ( 3 or more U-Boats in same sea zone ), use edit to directly place a "Wolfpack" unit in the appropriate sea zone with "Add Units".<br>
-You may also purchase Wolfpack units for free and place them in <b>any</b> sea zone next to German controlled territories. Place them in the First place phase so they can be used that turn. You can then ignore them if not needed or use "Perform Move or Other Actions" to move them to the Wolfpack zone.<br>
-This is preferred to direct edit placement, as you can move them during the combat move. Otherwise, you must place before starting your combat move.<br>
+You may also purchase Wolfpack units for free and place them in <b>any</b> sea zone next to German controlled territories. Place them in the First place phase so they can be used that turn. You can then ignore them if not needed.<br>
+This is preferred to direct edit placement, as you can move them during the combat move. They will still be blocked by Destroyers, so use "Perform Move Or Other Actions" in edit if needed. Otherwise, you must place before starting your combat move.<br>
 Sea zone 115 is usually a good place for Wolfpack units waiting to be formed.<br>
 <br>
 Do not take as casualties. They will auto die if they are the only units left. They still need to be hit though, so if you get tired of rolling, simply submerge Wolfpack and kill him with edit at the end of the phase. <br>
@@ -41342,7 +42739,7 @@ May be turned off in "Map Options".<br>
 <br>
 They work correctly.<br>
 <br>
-<b>Section 4</b><br>
+<b>Section IV</b><br>
 <br>
 <b>1. Soviet Tank Mass Production </b><br>
 <br>
@@ -41392,6 +42789,104 @@ Navy Fighters must be placed in Japan and Western United States. Use edit to mov
 <br>
 Movement is Player Enforced. They can move 6, or 7 with Airfield, whether loaded or not. Only Germany may transport Panzers. Player Enforced. <br>
 <br>
+<b>Section V Optional Rules</b><br>
+<br>
+May be turned off in "Map Options" before Game Start.<br>
+<br> 
+<b>1. Soviet Partisans</b><br>
+<br>
+You can purchase and place in any soviet controlled territory. You will need to then use edit, to place where you want and remove. This is to keep track of PU levels.<br>
+<br>
+You need to use edit to kill/remove any Partisans your units come into contact with. Also to change from 2 Partisans to 1 Infantry.<br> 
+<br>
+If only 1 Partisan in territory, it will conquer it during combat phase. You will need to edit desired results.<br>
+<br>
+<b>2. German Volkssturm</b><br>
+<br>
+When conditions are met, save game and before restarting, turn on in Map options. You can either turn on and off as needed, or Player Enforce if conditions no longer legal.<br>
+<br>
+<b>3. German Me 262 Jet Fighter</b><br>
+<br>
+These work correctly. 
+<br>
+<br>
+<b>4. German King Tiger Tank</b><br>
+<br>
+Max Build is enforced. Per turn build of 3, is Player Enforced. They can be repaired anywhere. Use the above procedure for repairing Battleships and Carriers.<br>
+Repair unit will not repair Battleship or Carrier.
+<br>
+<br>
+<b>5. Waffen Heavy Tank</b><br>
+<br>
+These work correctly. Use same repair procedure as above. Uses same place procedure as other Waffen Units.
+<br>
+<br>
+<b>6. Japanese Banzai Attack</b><br>
+<br>
+Will auto place 1 Banzai unit per turn in Japan. Has unlimited movement. Do not take as casualty in battle. Use only for legal attacks. Player Enforced.<br>
+Will auto die at End Turn.
+<br>
+<br>
+<b>7. British Seafire Fighter Planes</b><br>
+<br>
+Requires same Player Enforced and edit use as USA and Japan Navy Fighters listed above.
+<br>
+<br>
+<b>8. German Me-109T Fighter Planes</b><br>
+<br>
+Requires same Player Enforced and edit use as USA and Japan Navy Fighters listed above.
+<br>
+<br>
+<b>9. Japanese Destroyers</b><br>
+<br>
+They work correctly.
+<br>
+<br>
+<b>10. Rockets</b><br>
+<br>
+Need to use edit for 2 space attack "Perform Move or Other Actions". Do not take as casualty. Player Enforced. Will auto die if only units left.
+<br>
+<br>
+<b>11. Bidding</b><br>
+<br>
+Player Enforced. :)
+<br>
+<br>
+<b>12. US Heavy Transport</b><br>
+<br>
+They work correctly.
+<br>
+<br>
+<b>13. German Type XXI U-boats</b><br>
+<br>
+Uses a AA shot at attack 4 if no other type of ships attacking for first shot. If no Destroyer present or Destroyer is taken as casualty, you will have option to submerge. If not, you will then fire a normal First Strike Attack and all Defenders will return fire.
+<br>
+<br>
+<b>14. Heavy Bombers</b><br>
+<br>
+They work correctly. 
+<br>
+<br>
+<b>Unofficial SBR Option</b><br>
+<br>
+This is independent of the Captain and Company's Awesome House Rules, thus "Unofficial". :) 
+May be turned on in "Map Options".<br>
+Bombers are now a A0 D0 M6 +1 w/AB C5 unit. They may perform SBR attacks only. They have no Air Battle Attack Factor but can be taken as casualties in the Air Battle with Interceptors. They do 1-6 damage. They no longer receive +2 to an SBR attack.<br>
+<br>
+If defending in a Land Combat, do not take as casualty. Player enforced. <br>
+If you receive a Notification that says "Units in Following Territories will Die". Ignore this and hit "Done Moving". This will be fixed in the future.<br>
+<br>
+This has no effect on "Heavy Bombers".<br>
+<br>
+<b>NOTE</b><br>
+<br>
+You may manipulate the number of Air battle rounds in "Map Options" before Game Start, as well as, "Attacker" "Defender" retreat.<br>
+I suggest using with the default "Expansion" rules, which are unlimited.<br>
+<br>
+It also lowers the production rate of Underground Factories. Minors produce 2 and Majors 6. With Heavy Industry, 3 and 7.<br>
+<br>
+This is to try and encourage more SBR's.<br>
+<br>
 <b>Victory Conditions</b><br>
 <br>
 These are currently Player Enforced. They will be added at a later date. <br>
@@ -41404,6 +42899,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>5.0<br> 6/14/21  
+<br>
+Adds "Section V Optional Rules". Landmines can now be purchased one at a time. Wolfpacks now have unlimited movement.
 <br>
 <br>4.0<br> 5/30/21  
 <br>
