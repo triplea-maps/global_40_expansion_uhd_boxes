@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="5.0"/>
+  <info name="Global 40 Expansion" version="5.1"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -5006,6 +5006,7 @@
       <option name="canOnlyBePlacedInTerritoryValuedAtX" value="3"/>
       <option name="destroyedWhenCapturedBy" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
       <option name="isAAforBombingThisUnitOnly" value="false"/>
+      <option name="maxDamage" value="0"/>
       <option name="canProduceUnits" value="true"/>
       <option name="canProduceXUnits" value="10"/>
       <option name="consumesUnits" value="1:factory_major"/>
@@ -24495,46 +24496,115 @@
       <option name="unitProperty" value="defense" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_AirBattleChangeSBR" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="unitType" value="fighter"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="airAttack" count="1"/>
+      <option name="unitProperty" value="airDefense" count="2"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_AirBattleChangeSBR_Tac" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="unitType" value="tactical_bomber"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="airAttack" count="1"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_AirBattleChangeSBR_USA" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="unitType" value="usa_fighter"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="airAttack" count="1"/>
+      <option name="unitProperty" value="airDefense" count="2"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_AirBattleChangeSBR_TacUSA" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="unitType" value="usa_tactical_bomber"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="airAttack" count="1"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_AirBattleChangeSBR_UK" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="unitType" value="uk_fighter"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="airAttack" count="1"/>
+      <option name="unitProperty" value="airDefense" count="2"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_AirBattleChangeSBR_TacUK" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="unitType" value="uk_tactical_bomber"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="airAttack" count="1"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     <attachment name="triggerAttachment_UndgMajor" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="A0C5Bmbr"/>
       <option name="unitType" value="UndrgroundFctry"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
-      <option name="unitProperty" value="canProduceXUnits" count="6"/>
-      <option name="when" value="before:germansPurchase"/>
-    </attachment>
-    <attachment name="triggerAttachment_UndgMajorHvy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="A0C5Bmbr"/>
-      <option name="unitType" value="Hvy_Undg_2"/>
-      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
-      <option name="unitProperty" value="canProduceXUnits" count="7"/>
+      <option name="unitProperty" value="maxDamage" count="7"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_UndgMinor" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="A0C5Bmbr"/>
       <option name="unitType" value="UndergroundMinr"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
-      <option name="unitProperty" value="canProduceXUnits" count="2"/>
+      <option name="unitProperty" value="maxDamage" count="2"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_UndgMajorHvy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="A0C5Bmbr"/>
+      <option name="unitType" value="Hvy_Undg_2"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="maxDamage" count="8"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Hvy_Undg_1SBR" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="A0C5Bmbr"/>
       <option name="unitType" value="Hvy_Undg_1"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
-      <option name="unitProperty" value="canProduceXUnits" count="3"/>
+      <option name="unitProperty" value="maxDamage" count="2"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_UndgMinorUSSR" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="A0C5Bmbr"/>
       <option name="unitType" value="RusUndrGrndMinr"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
-      <option name="unitProperty" value="canProduceXUnits" count="2"/>
+      <option name="unitProperty" value="maxDamage" count="2"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Hvy_Undg_1SBRussr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="A0C5Bmbr"/>
       <option name="unitType" value="Rus_Hvy_Undg_1"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
-      <option name="unitProperty" value="canProduceXUnits" count="3"/>
+      <option name="unitProperty" value="maxDamage" count="2"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_ItalianParasGermanControlled" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -42562,7 +42632,7 @@ These work correctly. Purchase the appropriate Demolition Unit and plant the exp
 <br>
 <b>10. Non-Agression Pacts</b><br>
 <br>
-If after attacking players combat move you decide to add units to the battle, you will need to undo all combat moves and use edit to add the defending units. Use Comment Log to keep track of combat moves if necessary.<br>
+Use edit to add units after combat move and adjust PU levels.<br>
 <br>
 <b>11. Strategic Bombing</b><br>
 <br>
@@ -42873,6 +42943,9 @@ This is independent of the Captain and Company's Awesome House Rules, thus "Unof
 May be turned on in "Map Options".<br>
 Bombers are now a A0 D0 M6 +1 w/AB C5 unit. They may perform SBR attacks only. They have no Air Battle Attack Factor but can be taken as casualties in the Air Battle with Interceptors. They do 1-6 damage. They no longer receive +2 to an SBR attack.<br>
 <br>
+Fighters now Air battle at Attack 1 on Escort and Defend 2 on Intercept. Tactical Bombers now Air Battle at attack 1.
+<br>
+<br>
 If defending in a Land Combat, do not take as casualty. Player enforced. <br>
 If you receive a Notification that says "Units in Following Territories will Die". Ignore this and hit "Done Moving". This will be fixed in the future.<br>
 <br>
@@ -42883,9 +42956,9 @@ This has no effect on "Heavy Bombers".<br>
 You may manipulate the number of Air battle rounds in "Map Options" before Game Start, as well as, "Attacker" "Defender" retreat.<br>
 I suggest using with the default "Expansion" rules, which are unlimited.<br>
 <br>
-It also lowers the production rate of Underground Factories. Minors produce 2 and Majors 6. With Heavy Industry, 3 and 7.<br>
+You can also Bomb Underground Factories. Max damage to a Major is 7 and a Minor 2. So the major will be able to produce 3 units at max damage and a minor 1. Heavy Industry has 8 max damage to a major, Minor remains at 2. So 4 and 2 for their minimum builds.<br>
 <br>
-This is to try and encourage more SBR's.<br>
+This represents bombing of transportation lines to the Factories and to encourage more SBR's.<br>
 <br>
 <b>Victory Conditions</b><br>
 <br>
@@ -42899,6 +42972,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>5.1<br> 6/14/21  
+<br>
+Correct Non-Agression Pact Game Notes. Adjust "Unofficial SBR Option". 
 <br>
 <br>5.0<br> 6/14/21  
 <br>
