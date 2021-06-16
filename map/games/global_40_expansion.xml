@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="5.1"/>
+  <info name="Global 40 Expansion" version="5.2"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -8012,28 +8012,6 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
-    <attachment name="supportAttachmentGermanAirborneAttackMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="german_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="offence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
-    <attachment name="supportAttachmentGermanAirborneDefenseMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="german_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="defence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
     <attachment name="supportAttachmentGermanAirborneAttackMinusGerman_Hvy_Bmbr" attachTo="German_Hvy_Bmbr" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="german_para"/>
       <option name="faction" value="allied"/>
@@ -8571,28 +8549,6 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
-    <attachment name="supportAttachmentRussianAirborneAttackMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="russian_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="offence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
-    <attachment name="supportAttachmentRussianAirborneDefenseMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="russian_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="defence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
     <attachment name="supportAttachmentRussianAirborneAttackMinusTacBomber" attachTo="tactical_bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="russian_para"/>
       <option name="faction" value="allied"/>
@@ -8803,28 +8759,6 @@
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <attachment name="supportAttachmentJapaneseAirborneDefenseMinusBomber" attachTo="bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="japanese_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="defence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
-    <attachment name="supportAttachmentJapaneseAirborneAttackMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="japanese_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="offence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
-    <attachment name="supportAttachmentJapaneseAirborneDefenseMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="japanese_para"/>
       <option name="faction" value="allied"/>
       <option name="side" value="defence"/>
@@ -9161,28 +9095,6 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
-    <attachment name="supportAttachmentUsaAirborneAttackMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="usa_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="offence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
-    <attachment name="supportAttachmentUsaAirborneDefenseMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="usa_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="defence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
     <attachment name="supportAttachmentUsaAirborneAttackMinusUSA_Hvy_Bomber" attachTo="USA_Hvy_Bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="usa_para"/>
       <option name="faction" value="allied"/>
@@ -9393,28 +9305,6 @@
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <attachment name="supportAttachmentItalianAirborneDefenseMinusBomber" attachTo="bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="italian_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="defence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
-    <attachment name="supportAttachmentItalianAirborneAttackMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="italian_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="offence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
-    <attachment name="supportAttachmentItalianAirborneDefenseMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="italian_para"/>
       <option name="faction" value="allied"/>
       <option name="side" value="defence"/>
@@ -9719,28 +9609,6 @@
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <attachment name="supportAttachmentUkAirborneDefenseMinusBomber" attachTo="bomber" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="uk_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="defence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
-    <attachment name="supportAttachmentUkAirborneAttackMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="uk_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="offence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
-    <attachment name="supportAttachmentUkAirborneDefenseMinusBomberA0C5" attachTo="bomberA0C5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="uk_para"/>
       <option name="faction" value="allied"/>
       <option name="side" value="defence"/>
@@ -24502,8 +24370,6 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="airAttack" count="1"/>
       <option name="unitProperty" value="airDefense" count="2"/>
-      <option name="unitProperty" value="canBeDamaged" count="true"/>
-      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_AirBattleChangeSBR_Tac" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -24511,8 +24377,6 @@
       <option name="unitType" value="tactical_bomber"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="airAttack" count="1"/>
-      <option name="unitProperty" value="canBeDamaged" count="true"/>
-      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_AirBattleChangeSBR_USA" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -24521,8 +24385,6 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="airAttack" count="1"/>
       <option name="unitProperty" value="airDefense" count="2"/>
-      <option name="unitProperty" value="canBeDamaged" count="true"/>
-      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_AirBattleChangeSBR_TacUSA" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -24530,8 +24392,6 @@
       <option name="unitType" value="usa_tactical_bomber"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="airAttack" count="1"/>
-      <option name="unitProperty" value="canBeDamaged" count="true"/>
-      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_AirBattleChangeSBR_UK" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -24540,8 +24400,6 @@
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="airAttack" count="1"/>
       <option name="unitProperty" value="airDefense" count="2"/>
-      <option name="unitProperty" value="canBeDamaged" count="true"/>
-      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_AirBattleChangeSBR_TacUK" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -24549,8 +24407,6 @@
       <option name="unitType" value="uk_tactical_bomber"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="airAttack" count="1"/>
-      <option name="unitProperty" value="canBeDamaged" count="true"/>
-      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_UndgMajor" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -42973,7 +42829,11 @@ Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to
 <br>
 Change Log:
 <br>
-<br>5.1<br> 6/14/21  
+<br>5.2<br> 6/16/21  
+<br>
+Fix Fighters being targeted by A0C5 Bombers when "Unofficial SBR Option" is on. 
+<br>
+<br>5.1<br> 6/15/21  
 <br>
 Correct Non-Agression Pact Game Notes. Adjust "Unofficial SBR Option". 
 <br>
