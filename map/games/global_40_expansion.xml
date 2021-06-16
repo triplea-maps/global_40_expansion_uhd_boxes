@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="5.3"/>
+  <info name="Global 40 Expansion" version="5.4"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -40466,7 +40466,6 @@
       <option name="switch" value="true"/>
     </attachment>
     <attachment name="triggerAttachment_GermansAtWarWithItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
       <option name="relationshipChange" value="Germans:Italians:Allied:War"/>
       <option name="when" value="after:germansCombatMove"/>
     </attachment>
@@ -42829,6 +42828,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>5.4<br> 6/16/21  
+<br>
+Fix Germany and Italy going to war in round 1.
 <br>
 <br>5.3<br> 6/16/21  
 <br>
