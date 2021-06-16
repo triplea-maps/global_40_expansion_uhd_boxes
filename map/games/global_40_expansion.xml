@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="5.2"/>
+  <info name="Global 40 Expansion" version="5.3"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -3440,7 +3440,7 @@
       <option name="attackRolls" value="1"/>
       <option name="defenseRolls" value="1"/>
       <!--<option name="artillerySupportable" value="true"/>-->
-      <option name="isAirTransportable" value="true"/>
+      <option name="isAirTransportable" value="false"/>
       <option name="consumesUnits" value="1:infantry"/>
       <option name="maxBuiltPerPlayer" value="6"/>
       <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
@@ -3816,6 +3816,7 @@
       <option name="transportCost" value="3"/>
       <option name="attack" value="3"/>
       <option name="defense" value="4"/>
+      <option name="consumesUnits" value="1:artillery"/>
       <option name="maxBuiltPerPlayer" value="2"/>
       <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
       <option name="isConstruction" value="true"/>
@@ -42828,6 +42829,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>5.3<br> 6/16/21  
+<br>
+Fix Waffen Artillery not consuming Artillery when placed. 
 <br>
 <br>5.2<br> 6/16/21  
 <br>
