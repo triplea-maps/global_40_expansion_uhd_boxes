@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="5.4"/>
+  <info name="Global 40 Expansion" version="5.5"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -5238,7 +5238,6 @@
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="repairsUnits" value="carrier:pacific_carrier"/>
-      <option name="requiresUnits" value="harbour"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="Repair_Carrier"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
@@ -5250,9 +5249,8 @@
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="repairsUnits" value="2:BB_Damaged:Pac_BB_Damaged:Hvy_BB_Dmgd"/>
-      <option name="requiresUnits" value="harbour"/>
       <option name="isConstruction" value="true"/>
-      <option name="constructionType" value="Repair_Carrier"/>
+      <option name="constructionType" value="Repair_BB"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
     </attachment>
@@ -10264,6 +10262,9 @@
     <attachment name="A0C5BmbrInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Unofficial SBR Option"/>
       <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="NavalRepair" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Naval Repairs Require Harbor"/>
     </attachment>
     <attachment name="conditionAttachment_SwitchIsTrue" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
     <option name="switch" value="true"/>  
@@ -24462,6 +24463,20 @@
       <option name="unitProperty" value="maxDamage" count="2"/>
       <option name="unitProperty" value="canBeDamaged" count="true"/>
       <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_NavalRepairBB" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="NavalRepair"/>
+      <option name="unitType" value="Repair_BB"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="requiresUnits" count="harbour"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_NavalRepairCV" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="NavalRepair"/>
+      <option name="unitType" value="Repair_Carrier"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="requiresUnits" count="harbour"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_ItalianParasGermanControlled" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -42352,6 +42367,9 @@
       </property>
       <property name="Unofficial SBR Option" value="false" editable="true">
       <boolean/>
+      </property>
+      <property name="Naval Repairs Require Harbor" value="false" editable="true">
+      <boolean/>
     </property>
     <property name="Damage From Bombing Done To Units Instead Of Territories" value="true" editable="false">
       <boolean/>
@@ -42828,6 +42846,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>5.5<br> 6/17/21  
+<br>
+Fix Battleships and Carriers needing a Harbour to be repaired. Add map option "Naval Repairs Require Harbor".
 <br>
 <br>5.4<br> 6/16/21  
 <br>
