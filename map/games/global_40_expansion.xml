@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="5.6"/>
+  <info name="Global 40 Expansion" version="5.7"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1312,6 +1312,8 @@
     <unit name="pacific_submarine"/>
     <unit name="submarineX"/>
     <unit name="destroyer"/>
+    <unit name="Japan_destroyer"/>
+    <unit name="JPN_Pacific_DD"/>
     <unit name="pacific_destroyer"/>
     <unit name="destroyerX"/>
     <unit name="cruiser"/>
@@ -1891,6 +1893,14 @@
     <productionRule name="buyPacific_Destroyer">
       <cost resource="PUs" quantity="7"/>
       <result resourceOrUnit="pacific_destroyer" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyJapan_Destroyer">
+      <cost resource="PUs" quantity="7"/>
+      <result resourceOrUnit="Japan_destroyer" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyJPN_Pacific_DD">
+      <cost resource="PUs" quantity="7"/>
+      <result resourceOrUnit="JPN_Pacific_DD" quantity="1"/>
     </productionRule>
     <productionRule name="buyDestroyerX">
       <cost resource="PUs" quantity="7"/>
@@ -2584,7 +2594,6 @@
       <frontierRules name="buyDemo_Hvy_Undg_2"/>
       <frontierRules name="buyDemoRusHvy1Undg"/>
       <frontierRules name="buyDemoAirfieldHvy"/>
-      <frontierRules name="buyFortification"/>
       <frontierRules name="buyDefend_CV_Hit"/>
       <frontierRules name="buyRepair_Carrier"/>
       <frontierRules name="buyRepair_BB"/>
@@ -2606,7 +2615,7 @@
       <frontierRules name="buySubmarine"/>
       <frontierRules name="buyCarrier"/>
       <frontierRules name="buyNavyFighter"/>
-      <frontierRules name="buyDestroyer"/>
+      <frontierRules name="buyJapan_Destroyer"/>
       <frontierRules name="buyCruiser"/>
       <frontierRules name="buyBattleship"/>
       <frontierRules name="buyHeavy_BB"/>
@@ -2770,7 +2779,6 @@
       <frontierRules name="buyDemo_Hvy_Undg_1"/>
       <frontierRules name="buyDemo_Hvy_Undg_2"/>
       <frontierRules name="buyDemoAirfieldHvy"/>
-      <frontierRules name="buyFortification"/>
       <frontierRules name="buyDefend_CV_Hit"/>
       <frontierRules name="buyRepair_Carrier"/>
       <frontierRules name="buyRepair_BB"/>
@@ -4734,6 +4742,28 @@
     <attachment name="unitAttachment" attachTo="destroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
       <option name="isSea" value="true"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="2"/>
+      <option name="isDestroyer" value="true"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British"/>
+    </attachment>
+    <!-- Japan Destroyer -->
+    <attachment name="unitAttachment" attachTo="Japan_destroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="isCombatTransport" value="true"/>
+      <option name="transportCapacity" value="1"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="2"/>
+      <option name="isDestroyer" value="true"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British"/>
+    </attachment>
+    <!-- JPN Pacific DD -->
+    <attachment name="unitAttachment" attachTo="JPN_Pacific_DD" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
       <option name="isCombatTransport" value="true"/>
       <option name="transportCapacity" value="1"/>
       <option name="attack" value="2"/>
@@ -4791,7 +4821,7 @@
       <!-- stuff for targeting unescorted transports (we are using the new-fangled aa-gun code)
 						 <option name="isAAforFlyOverOnly" value="true"/>
 						 <option name="targetsAA" value="transport"/>
-						 <option name="willNotFireIfPresent" value="destroyer:Escort:Escort_Convoy:cruiser:pacific_cruiser:battleship:pacific_BB:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:pacific_carrier:pacific_destroyer"/>
+						 <option name="willNotFireIfPresent" value="destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:cruiser:pacific_cruiser:battleship:pacific_BB:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:pacific_carrier:pacific_destroyer"/>
 						 <option name="mayOverStackAA" value="true"/>
 						 <option name="maxAAattacks" value="1"/>
 						 <option name="attackAA" value="2"/>
@@ -4841,7 +4871,7 @@
       <!-- stuff for targeting unescorted transports (we are using the new-fangled aa-gun code)
 						 <option name="isAAforFlyOverOnly" value="true"/>
 						 <option name="targetsAA" value="transport"/>
-						 <option name="willNotFireIfPresent" value="destroyer:pacific_destroyer:Escort:Escort_Convoy:cruiser:pacific_cruiser:battleship:pacific_BB:carrier:pacific_carrier"/>
+						 <option name="willNotFireIfPresent" value="destroyer:pacific_destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:cruiser:pacific_cruiser:battleship:pacific_BB:carrier:pacific_carrier"/>
 						 <option name="mayOverStackAA" value="true"/>
 						 <option name="maxAAattacks" value="1"/>
 						 <option name="attackAA" value="2"/>
@@ -5166,6 +5196,8 @@
       <option name="givesMovement" value="1:pacific_submarine"/>
       <option name="givesMovement" value="1:destroyer"/>
       <option name="givesMovement" value="1:pacific_destroyer"/>
+      <option name="givesMovement" value="1:Japan_destroyer"/>
+      <option name="givesMovement" value="1:JPN_Pacific_DD"/>
       <option name="givesMovement" value="1:Escort"/>
       <option name="givesMovement" value="1:Escort_Convoy"/>
       <option name="givesMovement" value="1:cruiser"/>
@@ -10323,7 +10355,7 @@
       <option name="directPresenceTerritories" value="113 Sea Zone" count="1"/>
       <option name="unitPresence" value="GermanUBoat" count="3"/>
       <option name="invert" value="true"/>
-      </attachment>w
+      </attachment>
       <attachment name="conditionAttachment_WolfpackRemove114" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="114 Sea Zone" count="1"/>
       <option name="unitPresence" value="GermanUBoat" count="3"/>
@@ -11054,7 +11086,7 @@
       <!-- Russians Conditions -->
     <attachment name="conditionAttachment_Russians_1_Convoy_Clear" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="enemyExclusionTerritories" value="125 Sea Zone" count="1"/>
-      <option name="unitPresence" value="battleship:BB_Damaged:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:submarine:GermanUBoat:Type_XXI_UBoat:destroyer:Escort:Escort_Convoy:cruiser" count="0"/>
+      <option name="unitPresence" value="battleship:BB_Damaged:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:submarine:GermanUBoat:Type_XXI_UBoat:destroyer:Japan_destroyer:Escort:Escort_Convoy:cruiser" count="0"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Russians_1_Convoy_Clear"/>
@@ -23618,6 +23650,9 @@
     <attachment name="conditionAttachmentTurn8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="8"/>
     </attachment>
+    <attachment name="conditionAttachmentTurns1-8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="1-8"/>
+    </attachment>
     <attachment name="conditionAttachmentTurn8OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="8-+"/>
     </attachment>
@@ -24234,6 +24269,12 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="Waffen_Hvy_Tank"/>
+    </attachment>
+    <attachment name="triggerAttachment_WolfpackAutoPlace" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachmentTurns1-8"/>
+      <option name="placement" value="113 Sea Zone:Wolfpack" count="1"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Banzai" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Banzai:conditionAttachmentTurn6OrHigher"/>
@@ -26147,7 +26188,7 @@
     </attachment>
     <attachment name="triggerAttachment_PacificFleetJPNRD8" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachmentTurn8"/>
-      <option name="placement" value="6 Sea Zone:pacific_destroyer" count="2"/>
+      <option name="placement" value="6 Sea Zone:JPN_Pacific_DD" count="2"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_JPNPacificFleet_NotificationRD8" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -26435,7 +26476,15 @@
     </attachment>
     <attachment name="triggerAttachment_DD_Transport" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="JapanDD:conditionAttachmentTurn5"/>
-      <option name="unitType" value="destroyer"/>
+      <option name="unitType" value="Japan_destroyer"/>
+      <option name="unitProperty" value="transportCapacity" count="-reset-"/>
+      <option name="unitProperty" value="transportCapacity" count="2"/>
+      <option name="when" value="before:japanesePolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_DD_TransportPacific" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="JapanDD:conditionAttachmentTurn5"/>
+      <option name="unitType" value="JPN_Pacific_DD"/>
       <option name="unitProperty" value="transportCapacity" count="-reset-"/>
       <option name="unitProperty" value="transportCapacity" count="2"/>
       <option name="when" value="before:japanesePolitics"/>
@@ -41539,7 +41588,7 @@
       <unitPlacement unitType="infantry" territory="Korea" quantity="4" owner="Japanese"/>
       <unitPlacement unitType="fighter" territory="Korea" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="submarine" territory="6 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="destroyer" territory="6 Sea Zone" quantity="2" owner="Japanese"/>
+      <unitPlacement unitType="Japan_destroyer" territory="6 Sea Zone" quantity="2" owner="Japanese"/>
       <unitPlacement unitType="carrier" territory="6 Sea Zone" quantity="2" owner="Japanese"/>
       <unitPlacement unitType="fighter" territory="6 Sea Zone" quantity="2" owner="Japanese"/>
       <unitPlacement unitType="tactical_bomber" territory="6 Sea Zone" quantity="2" owner="Japanese"/>
@@ -41548,9 +41597,9 @@
       <unitPlacement unitType="transport" territory="6 Sea Zone" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="submarine" territory="19 Sea Zone" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="battleship" territory="19 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="destroyer" territory="19 Sea Zone" quantity="1" owner="Japanese"/>
+      <unitPlacement unitType="Japan_destroyer" territory="19 Sea Zone" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="transport" territory="19 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="destroyer" territory="33 Sea Zone" quantity="1" owner="Japanese"/>
+      <unitPlacement unitType="Japan_destroyer" territory="33 Sea Zone" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="carrier" territory="33 Sea Zone" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="fighter" territory="33 Sea Zone" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="tactical_bomber" territory="33 Sea Zone" quantity="1" owner="Japanese"/>
@@ -42631,6 +42680,8 @@ The 2 Naval Fighters placed in "Late 1942" will always place. Use edit to correc
 Only place as many as there are Infantry present. Place in 2nd Place Phase only. These are Player Enforced.<br>
 Do Not take as casualties. If they lose battle, they will auto die. If they win, remove any excess Fortifications with edit after combat.<br>
 <br>
+Use edit for Italy and Russia in the unlikely event they are needed.<br>
+<br>
 <b>9. German Atlantic Wall</b><br>
 <br>
 Only place as many as there are Infantry present. Place in 2nd Place Phase only. These are Player Enforced.<br>
@@ -42640,7 +42691,7 @@ Do Not take as casualties. If they lose battle, they will auto die. If they win,
 <br>
 Don't attack with Damaged Carriers. Take Carriers as first hit when Battleships are present. These are Player Enforced. Don't take "Defend CV Hit" as a casualty in Land Combat. This is also Player Enforced.<br>
 <br>
-1 "Repair Carrier" or "Repair BB" Unit will repair <b>All</b> damaged Ships. Make sure to buy the appropriate amount of repair units. Player Enforced. They will auto die after combat move.<br>
+1 "Repair Carrier" or "Repair BB" Unit will repair <b>All</b> damaged Ships. Make sure to buy the appropriate amount of repair units. Player Enforced. They will auto die after combat move. Use edit to place in open sea. This may be fixed in the future.<br>
 <br>
 Only scramble to the disabled Carrier's Sea Zone with the "Defend CV" Unit. Do not take as a hit in Land Combat. Do Not use any designated Fighters for other actions while on Carrier Defense Duty. These are all Player Enforced.<br>
 <br>
@@ -42709,9 +42760,9 @@ May be turned off in "Map Options".<br>
 Any hits will not be able to fire back, regardless of enemy Destroyers being present.<br>
 <br>
 When Wolfpack conditions exist ( 3 or more U-Boats in same sea zone ), use edit to directly place a "Wolfpack" unit in the appropriate sea zone with "Add Units".<br>
-You may also purchase Wolfpack units for free and place them in <b>any</b> sea zone next to German controlled territories. Place them in the First place phase so they can be used that turn. You can then ignore them if not needed.<br>
+1 Wolfpack is Auto placed in Sea Zone 113 every round through round 8. Only use if needed. Player Enforced. You may also purchase additional Wolfpack units for free and place them in <b>any</b> sea zone next to German controlled territories. Place them in the First place phase so they can be used that turn. You can then ignore them if not needed.<br>
 This is preferred to direct edit placement, as you can move them during the combat move. They will still be blocked by Destroyers, so use "Perform Move Or Other Actions" in edit if needed. Otherwise, you must place before starting your combat move.<br>
-Sea zone 115 is usually a good place for Wolfpack units waiting to be formed.<br>
+Sea zone 113 is usually a good place for Wolfpack units waiting to be formed.<br>
 <br>
 Do not take as casualties. They will auto die if they are the only units left. They still need to be hit though, so if you get tired of rolling, simply submerge Wolfpack and kill him with edit at the end of the phase. <br>
 <br>
@@ -42891,6 +42942,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>5.7<br> 6/27/21  
+<br>
+Add Japanese Destroyer. Remove Fortifications from Russia and Italy purchase windows. Add auto place of 1 Wolfpack in Sea Zone 113 every round through round 8.
 <br>
 <br>5.6<br> 6/23/21  
 <br>
