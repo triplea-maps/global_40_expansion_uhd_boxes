@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="5.7"/>
+  <info name="Global 40 Expansion" version="5.8"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1499,7 +1499,10 @@
       <step name="russiansPurchase" delegate="purchase" player="Russians"/>
       <step name="russiansPlace" delegate="place" player="Russians"/>
       <step name="russiansPolitics" delegate="politics" player="Russians"/>
-      <step name="russiansCombatMove" delegate="move" player="Russians"/>
+      <step name="russiansUserActions" delegate="userActions" player="Russians"/>
+      <step name="russiansCombatMove" delegate="move" player="Russians">
+	<stepProperty name="resetUnitStateAtStart" value="true"/>
+</step>
       <step name="russiansAirborneCombatMove" delegate="specialCombatMove" player="Russians" display="Airborne Attack Move"/>
       <step name="russiansBattle" delegate="battle" player="Russians"/>
       <step name="russiansNonCombatMove" delegate="move" player="Russians" display="Non Combat Move"/>
@@ -1511,6 +1514,7 @@
       <step name="japanesePurchase" delegate="purchase" player="Japanese"/>
       <step name="japanesePlace" delegate="place" player="Japanese"/>
       <step name="japanesePolitics" delegate="politics" player="Japanese"/>
+      <step name="japaneseUserActions" delegate="userActions" player="Japanese"/>
       <step name="japaneseCombatMove" delegate="move" player="Japanese">
    <stepProperty name="resetUnitStateAtStart" value="true"/>
 </step>
@@ -1525,7 +1529,10 @@
       <step name="americansPurchase" delegate="purchase" player="Americans"/>
       <step name="americansPlace" delegate="place" player="Americans"/>
       <step name="americansPolitics" delegate="politics" player="Americans"/>
-      <step name="americansCombatMove" delegate="move" player="Americans"/>
+      <step name="americansUserActions" delegate="userActions" player="Americans"/>
+      <step name="americansCombatMove" delegate="move" player="Americans">
+	<stepProperty name="resetUnitStateAtStart" value="true"/>
+</step>
       <step name="americansAirborneCombatMove" delegate="specialCombatMove" player="Americans" display="Airborne Attack Move"/>
       <step name="americansBattle" delegate="battle" player="Americans"/>
       <step name="americansNonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
@@ -1534,7 +1541,9 @@
       <!-- Chinese Game Sequence -->
       <step name="chinesePurchase" delegate="purchase" player="Chinese"/>
       <step name="chinesePolitics" delegate="politics" player="Chinese"/>
-      <step name="chineseCombatMove" delegate="move" player="Chinese"/>
+      <step name="chineseCombatMove" delegate="move" player="Chinese">
+	<stepProperty name="resetUnitStateAtStart" value="true"/>
+</step>
       <step name="chineseBattle" delegate="battle" player="Chinese"/>
       <step name="chineseNonCombatMove" delegate="move" player="Chinese" display="Non Combat Move"/>
       <step name="chinesePlace" delegate="place" player="Chinese"/>
@@ -1545,7 +1554,8 @@
       <step name="britishPurchase" delegate="purchase" player="British"/>
       <step name="britishPlace" delegate="place" player="British"/>
       <step name="britishPolitics" delegate="politics" player="British"/>
-      <step name="britishCombatMove" player="British" delegate="move">
+      <step name="britishCombatMove" delegate="move" player="British">
+	<stepProperty name="resetUnitStateAtStart" value="true"/>
       </step>
       <step name="britishAirborneCombatMove" delegate="specialCombatMove" player="British" display="Airborne Attack Move"/>
       <step name="britishBattle" delegate="battle" player="British"/>
@@ -1561,7 +1571,9 @@
       <step name="italiansPurchase" delegate="purchase" player="Italians"/>
       <step name="italiansPlace" delegate="place" player="Italians"/>
       <step name="italiansPolitics" delegate="politics" player="Italians"/>
-      <step name="italiansCombatMove" delegate="move" player="Italians"/>
+      <step name="italiansCombatMove" delegate="move" player="Italians">
+      <stepProperty name="resetUnitStateAtStart" value="true"/>
+</step>
       <step name="italiansAirborneCombatMove" delegate="specialCombatMove" player="Italians" display="Airborne Attack Move"/>
       <step name="italiansBattle" delegate="battle" player="Italians"/>
       <step name="italiansNonCombatMove" delegate="move" player="Italians" display="Non Combat Move"/>
@@ -1573,7 +1585,9 @@
       <step name="anzacPurchase" delegate="purchase" player="ANZAC"/>
       <step name="anzacPlace" delegate="place" player="ANZAC"/>
       <step name="anzacPolitics" delegate="politics" player="ANZAC"/>
-      <step name="anzacCombatMove" delegate="move" player="ANZAC"/>
+      <step name="anzacCombatMove" delegate="move" player="ANZAC">
+	<stepProperty name="resetUnitStateAtStart" value="true"/>
+</step>
       <step name="anzacAirborneCombatMove" delegate="specialCombatMove" player="ANZAC" display="Airborne Attack Move"/>
       <step name="anzacBattle" delegate="battle" player="ANZAC"/>
       <step name="anzacNonCombatMove" delegate="move" player="ANZAC" display="Non Combat Move"/>
@@ -1585,7 +1599,9 @@
       <step name="frenchPurchase" delegate="purchase" player="French"/>
       <step name="frenchPlace" delegate="place" player="French"/>
       <step name="frenchPolitics" delegate="politics" player="French"/>
-      <step name="frenchCombatMove" delegate="move" player="French"/>
+      <step name="frenchCombatMove" delegate="move" player="French">
+	<stepProperty name="resetUnitStateAtStart" value="true"/>
+</step>
       <step name="frenchAirborneCombatMove" delegate="specialCombatMove" player="French" display="Airborne Attack Move"/>
       <step name="frenchBattle" delegate="battle" player="French"/>
       <step name="frenchNonCombatMove" delegate="move" player="French" display="Non Combat Move"/>
@@ -3244,7 +3260,7 @@
       <option name="rocket" value="false"/>
       <option name="increasedFactoryProduction" value="false"/>
       <option name="warBonds" value="false"/>
-      <option name="mechanizedInfantry" value="false"/>
+      <option name="mechanizedInfantry" value="true"/>
       <option name="paratroopers" value="true"/>
     </attachment>
     <attachment name="techAttachment" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
@@ -3258,7 +3274,7 @@
       <option name="rocket" value="false"/>
       <option name="increasedFactoryProduction" value="false"/>
       <option name="warBonds" value="false"/>
-      <option name="mechanizedInfantry" value="false"/>
+      <option name="mechanizedInfantry" value="true"/>
       <option name="paratroopers" value="true"/>
     </attachment>
     <attachment name="techAttachment" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
@@ -3272,7 +3288,7 @@
       <option name="rocket" value="false"/>
       <option name="increasedFactoryProduction" value="false"/>
       <option name="warBonds" value="false"/>
-      <option name="mechanizedInfantry" value="false"/>
+      <option name="mechanizedInfantry" value="true"/>
       <option name="paratroopers" value="true"/>
     </attachment>
     <attachment name="techAttachment" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
@@ -3286,7 +3302,7 @@
       <option name="rocket" value="false"/>
       <option name="increasedFactoryProduction" value="false"/>
       <option name="warBonds" value="false"/>
-      <option name="mechanizedInfantry" value="false"/>
+      <option name="mechanizedInfantry" value="true"/>
       <option name="paratroopers" value="true"/>
     </attachment>
     <attachment name="techAttachment" attachTo="British" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
@@ -3300,7 +3316,7 @@
       <option name="rocket" value="false"/>
       <option name="increasedFactoryProduction" value="false"/>
       <option name="warBonds" value="false"/>
-      <option name="mechanizedInfantry" value="false"/>
+      <option name="mechanizedInfantry" value="true"/>
       <option name="paratroopers" value="true"/>
     </attachment>
     <attachment name="techAttachment" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
@@ -3314,7 +3330,7 @@
       <option name="rocket" value="false"/>
       <option name="increasedFactoryProduction" value="false"/>
       <option name="warBonds" value="false"/>
-      <option name="mechanizedInfantry" value="false"/>
+      <option name="mechanizedInfantry" value="true"/>
       <option name="paratroopers" value="true"/>
     </attachment>
     <attachment name="techAttachment" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
@@ -3328,7 +3344,7 @@
       <option name="rocket" value="false"/>
       <option name="increasedFactoryProduction" value="false"/>
       <option name="warBonds" value="false"/>
-      <option name="mechanizedInfantry" value="false"/>
+      <option name="mechanizedInfantry" value="true"/>
       <option name="paratroopers" value="true"/>
     </attachment>
     <attachment name="techAttachment" attachTo="French" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
@@ -3342,7 +3358,7 @@
       <option name="rocket" value="false"/>
       <option name="increasedFactoryProduction" value="false"/>
       <option name="warBonds" value="false"/>
-      <option name="mechanizedInfantry" value="false"/>
+      <option name="mechanizedInfantry" value="true"/>
       <option name="paratroopers" value="true"/>
     </attachment>
     <attachment name="techAttachment" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
@@ -3872,7 +3888,7 @@
       <option name="defense" value="3"/>
       <option name="attackRolls" value="1"/>
       <option name="defenseRolls" value="1"/>
-      <option name="isLandTransport" value="true"/>
+      <option name="isLandTransport" value="false"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
     </attachment>
     <!-- Panzer General -->
@@ -3887,7 +3903,7 @@
       <option name="defenseRolls" value="1"/>
       <option name="maxBuiltPerPlayer" value="3"/>
       <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
-      <option name="isLandTransport" value="true"/>
+      <option name="isLandTransport" value="false"/>
     </attachment>
     <!-- Panzer General3 -->
     <attachment name="unitAttachment" attachTo="Panzer_General3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3900,7 +3916,7 @@
       <option name="attackRolls" value="1"/>
       <option name="defenseRolls" value="1"/>
       <option name="maxBuiltPerPlayer" value="3"/>
-      <option name="isLandTransport" value="true"/>
+      <option name="isLandTransport" value="false"/>
     </attachment>
     <!-- Tank General -->
     <attachment name="unitAttachment" attachTo="Tank_General" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3912,7 +3928,7 @@
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="2"/>
       <option name="unitPlacementOnlyAllowedIn" value="Russia"/>
-      <option name="isLandTransport" value="true"/>
+      <option name="isLandTransport" value="false"/>
     </attachment>
     <!-- USA TankGeneral -->
     <attachment name="unitAttachment" attachTo="USA_TankGeneral" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3924,7 +3940,7 @@
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="2"/>
       <option name="unitPlacementOnlyAllowedIn" value="Eastern United States"/>
-      <option name="isLandTransport" value="true"/>
+      <option name="isLandTransport" value="false"/>
     </attachment>
     <!-- UK TankGeneral -->
     <attachment name="unitAttachment" attachTo="UK_TankGeneral" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3936,7 +3952,7 @@
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="1"/>
       <option name="unitPlacementOnlyAllowedIn" value="United Kingdom"/>
-      <option name="isLandTransport" value="true"/>
+      <option name="isLandTransport" value="false"/>
     </attachment>
     <!-- Tank General3 -->
     <attachment name="unitAttachment" attachTo="Tank_General3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3947,7 +3963,7 @@
       <option name="attack" value="3"/>
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="2"/>
-      <option name="isLandTransport" value="true"/>
+      <option name="isLandTransport" value="false"/>
     </attachment>
     <!-- USATankGeneral3 -->
     <attachment name="unitAttachment" attachTo="USATankGeneral3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3958,7 +3974,7 @@
       <option name="attack" value="3"/>
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="2"/>
-      <option name="isLandTransport" value="true"/>
+      <option name="isLandTransport" value="false"/>
     </attachment>
     <!-- UKTankGeneral3 -->
     <attachment name="unitAttachment" attachTo="UKTankGeneral3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3969,7 +3985,7 @@
       <option name="attack" value="3"/>
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="1"/>
-      <option name="isLandTransport" value="true"/>
+      <option name="isLandTransport" value="false"/>
     </attachment>
     <!-- Soviet Commisar -->
     <attachment name="unitAttachment" attachTo="Soviet_Commisar" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4222,7 +4238,7 @@
       <option name="canBlitz" value="true"/>
       <option name="attack" value="3"/>
       <option name="defense" value="3"/>
-      <option name="isLandTransport" value="true"/>
+      <option name="isLandTransport" value="false"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
     </attachment>
     <!-- Army Group -->
@@ -4266,7 +4282,7 @@
       <option name="canBlitz" value="true"/>
       <option name="attack" value="3"/>
       <option name="defense" value="3"/>
-      <option name="isLandTransport" value="true"/>
+      <option name="isLandTransport" value="false"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
     </attachment>
     <!-- Waffen Panzer -->
@@ -5219,7 +5235,8 @@
       <!--<option name="isRocket" value="true"/>-->
       <option name="canNotMoveDuringCombatMove" value="true"/>
       <!--<option name="isInfrastructure" value="true"/>
-						 <option name="canBeDamaged" value="false"/>-->
+	  <option name="canBeDamaged" value="false"/>-->
+      <option name="isLandTransportable" value="true"/>
       <option name="movement" value="1"/>
       <option name="defense" value="1"/>
       <option name="transportCost" value="2"/>
@@ -10602,6 +10619,9 @@
       <attachment name="conditionAttachment_GermansControlRome" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Southern Italy" count="1"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansControlGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Germany" count="1"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarInf" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany:Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWar_Inf" count="11"/>
@@ -11564,6 +11584,9 @@
       <option name="directPresenceTerritories" value="Volgograd" count="1"/>
       <option name="unitPresence" value="TotalWarAirTrprt" count="12"/>
     </attachment>
+    <attachment name="conditionAttachment_RussiansControlRussia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Russia" count="1"/>
+      </attachment>
     
     <!-- Japanese Conditions -->
     <attachment name="conditionAttachmentAllies_Conquer_Japanese_Islands" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -11794,6 +11817,9 @@
       <option name="directPresenceTerritories" value="Korea" count="1"/>
       <option name="unitPresence" value="TotalWarAirTrprt" count="8"/>
     </attachment>
+    <attachment name="conditionAttachment_JapaneseControlJapan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Japan" count="1"/>
+      </attachment>
 
      <!-- Japanese Conditions Pacific Okinawa -->
     <attachment name="conditionAttachment_Japanese_LiberateOkinawa" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -16095,6 +16121,9 @@
       <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
       <option name="unitPresence" value="TotalWarAirTrprt" count="12"/>
     </attachment>
+    <attachment name="conditionAttachment_BritishControlBritain" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="United Kingdom" count="1"/>
+      </attachment>
     
     <!-- British Conditions Okinawa -->
     <attachment name="conditionAttachment_British_ControlOkinawa" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -18243,6 +18272,10 @@
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="Repair_BB" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_ItaliansControlItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Southern Italy" count="1"/>
+    </attachment>
+    
     <!-- ANZAC Conditions -->
     <attachment name="conditionAttachment_ANZAC_1_Malaya" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Malaya" count="1"/>
@@ -20523,6 +20556,9 @@
       <option name="directPresenceTerritories" value="Western United States" count="1"/>
       <option name="unitPresence" value="TotalWarAirTrprt" count="12"/>
     </attachment>
+    <attachment name="conditionAttachment_AmericansControlAmericaAndAlwaysWill" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Eastern United States" count="1"/>
+      </attachment>
     
     <!-- American Conditions Okinawa -->
     <attachment name="conditionAttachment_Americans_ControlOkinawa" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -24275,6 +24311,94 @@
       <option name="placement" value="113 Sea Zone:Wolfpack" count="1"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_GermansControlGermany"/>
+      <option name="placement" value="Germany:Rail" count="2"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+      <option name="removeUnits" value="all:Rail" count="2"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceRussians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_RussiansControlRussia"/>
+      <option name="placement" value="Russia:Rail" count="2"/>
+      <option name="placement" value="Russia:Europe_Rail" count="1"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:russiansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveRussians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+      <option name="removeUnits" value="all:Rail" count="2"/>
+      <option name="removeUnits" value="all:Europe_Rail" count="1"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:russiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceJapanese" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_JapaneseControlJapan"/>
+      <option name="placement" value="Kiangsu:Rail" count="2"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:japaneseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveJapanese" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+      <option name="removeUnits" value="all:Rail" count="2"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceAmericans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_AmericansControlAmericaAndAlwaysWill"/>
+      <option name="placement" value="Eastern United States:Rail" count="6"/>
+      <option name="placement" value="Eastern United States:Europe_Rail" count="2"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:americansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveAmericans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+      <option name="removeUnits" value="all:Rail" count="6"/>
+      <option name="removeUnits" value="all:Europe_Rail" count="2"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceChinese" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_AmericansControlAmericaAndAlwaysWill"/>
+      <option name="placement" value="Kansu:Rail" count="2"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:chineseCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveChinese" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+      <option name="removeUnits" value="all:Rail" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:chineseNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceBritish" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_BritishControlBritain"/>
+      <option name="placement" value="Union of South Africa:Rail" count="2"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:britishCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveBritish" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+      <option name="removeUnits" value="all:Rail" count="2"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:britishNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceItalians" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_ItaliansControlItaly"/>
+      <option name="placement" value="Southern Italy:Rail" count="1"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:italiansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveItalians" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+      <option name="removeUnits" value="all:Rail" count="1"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Banzai" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Banzai:conditionAttachmentTurn6OrHigher"/>
@@ -42718,10 +42842,17 @@ They work correctly.<br>
 <br>
 <b>3. Strategic Rail Movement</b><br>
 <br>
-Use edit to place Rail unit at start of non combat move. Use the one with a "E" on it for Europe movement. This is to keep track of rail movement. A rail unit will move any unit regardless of theatre.<br>
+Each Major Power's Rail Units will place before Combat Move. Germany, Russia, the United States and Italy, will place in their Capitals. Britain will place in South Africa and China in Kansu. <br>
+<br>You must control your Capital for units to place. China needs USA Capital. <br>
+<br>
+This is to help remind the Player of it's non combat move availability. They will not be able to move in combat move. The one with a "E" on it is for Europe movement. This is to keep track of rail movement. <br>
+<br>
+A rail unit will move any unit regardless of theatre.<br>
 Click on the Rail unit and then click the unit you want to move.<br>
 <br>
-Rail capacity is Player Enforced.<br>
+Use edit "Perform Move or Other Actions" if necessary to make your move.<br>
+<br> 
+Correct movement is Player Enforced.<br>
 <br>
 <b>4. Home Defense</b><br>
 <br>
@@ -42942,6 +43073,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>5.8<br> 6/28/21  
+<br>
+Fix Rail movement. Add Auto Rail placements. Make AA Guns moveable by rail.
 <br>
 <br>5.7<br> 6/27/21  
 <br>
