@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="5.8"/>
+  <info name="Global 40 Expansion" version="5.9"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1348,14 +1348,59 @@
     <unit name="5_PU"/>
     <unit name="mine_unarmed"/>
     <unit name="mine_armed"/>
+    <unit name="mine_armed_Red"/>
+    <unit name="mine_armed_Blue"/>
+    <unit name="mine_armed_Orange"/>
+    <unit name="mine_armed_Green"/>
+    <unit name="mine_armed_Yellow"/>
     <unit name="german_mine"/>
+    <unit name="german_mine_Red"/>
+    <unit name="german_mine_Blue"/>
+    <unit name="german_mine_Orange"/>
+    <unit name="german_mine_Green"/>
+    <unit name="german_mine_Yellow"/>
     <unit name="russian_mine"/>
+    <unit name="russian_mine_Red"/>
+    <unit name="russian_mine_Blue"/>
+    <unit name="russian_mine_Orange"/>
+    <unit name="russian_mine_Green"/>
+    <unit name="russian_mine_Yellow"/>
     <unit name="japan_mine"/>
+    <unit name="japan_mine_Red"/>
+    <unit name="japan_mine_Blue"/>
+    <unit name="japan_mine_Orange"/>
+    <unit name="japan_mine_Green"/>
+    <unit name="japan_mine_Yellow"/>
     <unit name="usa_mine"/>
+    <unit name="usa_mine_Red"/>
+    <unit name="usa_mine_Blue"/>
+    <unit name="usa_mine_Orange"/>
+    <unit name="usa_mine_Green"/>
+    <unit name="usa_mine_Yellow"/>
     <unit name="uk_mine"/>
+    <unit name="uk_mine_Red"/>
+    <unit name="uk_mine_Blue"/>
+    <unit name="uk_mine_Orange"/>
+    <unit name="uk_mine_Green"/>
+    <unit name="uk_mine_Yellow"/>
     <unit name="italy_mine"/>
+    <unit name="italy_mine_Red"/>
+    <unit name="italy_mine_Blue"/>
+    <unit name="italy_mine_Orange"/>
+    <unit name="italy_mine_Green"/>
+    <unit name="italy_mine_Yellow"/>
     <unit name="anzac_mine"/>
+    <unit name="anzac_mine_Red"/>
+    <unit name="anzac_mine_Blue"/>
+    <unit name="anzac_mine_Orange"/>
+    <unit name="anzac_mine_Green"/>
+    <unit name="anzac_mine_Yellow"/>
     <unit name="france_mine"/>
+    <unit name="france_mine_Red"/>
+    <unit name="france_mine_Blue"/>
+    <unit name="france_mine_Orange"/>
+    <unit name="france_mine_Green"/>
+    <unit name="france_mine_Yellow"/>
     <unit name="usa_fighter_lendlease"/>
     <unit name="uk_fighter_lendlease"/>
     <unit name="usa_tac_bomber_lendlease"/>
@@ -2070,37 +2115,217 @@
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="mine_armed" quantity="1"/>
     </productionRule>
+    <productionRule name="buyMine_Armed_Red">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="mine_armed_Red" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyMine_Armed_Blue">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="mine_armed_Blue" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyMine_Armed_Orange">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="mine_armed_Orange" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyMine_Armed_Green">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="mine_armed_Green" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyMine_Armed_Yellow">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="mine_armed_Yellow" quantity="1"/>
+    </productionRule>
     <productionRule name="buyGerman_Mine">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="german_mine" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGerman_Mine_Red">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="german_mine_Red" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGerman_Mine_Blue">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="german_mine_Blue" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGerman_Mine_Orange">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="german_mine_Orange" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGerman_Mine_Green">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="german_mine_Green" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGerman_Mine_Yellow">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="german_mine_Yellow" quantity="1"/>
     </productionRule>
     <productionRule name="buyRussian_Mine">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="russian_mine" quantity="1"/>
     </productionRule>
+    <productionRule name="buyRussian_Mine_Red">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="russian_mine_Red" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyRussian_Mine_Blue">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="russian_mine_Blue" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyRussian_Mine_Orange">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="russian_mine_Orange" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyRussian_Mine_Green">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="russian_mine_Green" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyRussian_Mine_Yellow">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="russian_mine_Yellow" quantity="1"/>
+    </productionRule>
     <productionRule name="buyJapan_Mine">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="japan_mine" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyJapan_Mine_Red">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="japan_mine_Red" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyJapan_Mine_Blue">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="japan_mine_Blue" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyJapan_Mine_Orange">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="japan_mine_Orange" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyJapan_Mine_Green">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="japan_mine_Green" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyJapan_Mine_Yellow">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="japan_mine_Yellow" quantity="1"/>
     </productionRule>
     <productionRule name="buyUSA_Mine">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="usa_mine" quantity="1"/>
     </productionRule>
+    <productionRule name="buyUSA_Mine_Red">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="usa_mine_Red" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSA_Mine_Blue">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="usa_mine_Blue" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSA_Mine_Orange">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="usa_mine_Orange" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyyMine_Green">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="usa_mine_Green" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSA_Mine_Yellow">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="usa_mine_Yellow" quantity="1"/>
+    </productionRule>
     <productionRule name="buyUK_Mine">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="uk_mine" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_Mine_Red">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="uk_mine_Red" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_Mine_Blue">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="uk_mine_Blue" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_Mine_Orange">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="uk_mine_Orange" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_Mine_Green">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="uk_mine_Green" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_Mine_Yellow">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="uk_mine_Yellow" quantity="1"/>
     </productionRule>
     <productionRule name="buyItaly_Mine">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="italy_mine" quantity="1"/>
     </productionRule>
+    <productionRule name="buyItaly_Mine_Red">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="italy_mine_Red" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyItaly_Mine_Blue">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="italy_mine_Blue" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyItaly_Mine_Orange">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="italy_mine_Orange" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyItaly_Mine_Green">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="italy_mine_Green" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyItaly_Mine_Yellow">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="italy_mine_Yellow" quantity="1"/>
+    </productionRule>
     <productionRule name="buyANZAC_Mine">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="anzac_mine" quantity="1"/>
     </productionRule>
+    <productionRule name="buyANZAC_Mine_Red">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="anzac_mine_Red" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyANZAC_Mine_Blue">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="anzac_mine_Blue" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyANZAC_Mine_Orange">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="anzac_mine_Orange" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyANZAC_Mine_Green">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="anzac_mine_Green" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyANZAC_Mine_Yellow">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="anzac_mine_Yellow" quantity="1"/>
+    </productionRule>
     <productionRule name="buyFrance_Mine">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="france_mine" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyFrance_Mine_Red">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="france_mine_Red" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyFrance_Mine_Blue">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="france_mine_Blue" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyFrance_Mine_Orange">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="france_mine_Orange" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyFrance_Mine_Green">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="france_mine_Green" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyFrance_Mine_Yellow">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="france_mine_Yellow" quantity="1"/>
     </productionRule>
     <productionRule name="buyUSA_Fighter_LendLease">
       <cost resource="PUs" quantity="0"/>
@@ -3372,7 +3597,7 @@
       <option name="rocket" value="false"/>
       <option name="increasedFactoryProduction" value="false"/>
       <option name="warBonds" value="false"/>
-      <option name="mechanizedInfantry" value="false"/>
+      <option name="mechanizedInfantry" value="true"/>
       <option name="paratroopers" value="true"/>
     </attachment>
     <attachment name="techAttachment" attachTo="Dutch" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
@@ -3491,6 +3716,8 @@
       <option name="defenseRolls" value="1"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="false"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
       <option name="consumesUnits" value="1:infantry"/>
       <option name="maxBuiltPerPlayer" value="6"/>
       <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
@@ -3504,6 +3731,8 @@
       <option name="movement" value="2"/>
       <option name="attack" value="2"/>
       <option name="defense" value="4"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="consumesUnits" value="1:waffen_infantry"/>
       <option name="maxBuiltPerPlayer" value="4"/>
@@ -3520,6 +3749,8 @@
       <option name="defense" value="4"/>
       <option name="attackRolls" value="1"/>
       <option name="defenseRolls" value="1"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="consumesUnits" value="1:waffen_infantry"/>
       <option name="maxBuiltPerPlayer" value="4"/>
@@ -3535,6 +3766,8 @@
       <option name="defense" value="4"/>
       <option name="attackRolls" value="1"/>
       <option name="defenseRolls" value="1"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="false"/>
       <option name="consumesUnits" value="1:waffen_infantry"/>
@@ -3551,6 +3784,8 @@
       <option name="defense" value="4"/>
       <option name="attackRolls" value="1"/>
       <option name="defenseRolls" value="1"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="false"/>
       <option name="consumesUnits" value="1:waffen_infantry"/>
@@ -3848,6 +4083,8 @@
       <option name="constructionType" value="WaffenPnzrGrndr"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
       <option name="maxConstructionsPerTypePerTerr" value="4"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
     </attachment>
     <!-- Artillery -->
     <attachment name="unitAttachment" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3863,7 +4100,7 @@
     <!-- Waffen Arty -->
     <attachment name="unitAttachment" attachTo="Waffen_Arty" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
-      <option name="isLandTransportable" value="false"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="isAirTransportable" value="true"/>
       <option name="transportCost" value="3"/>
       <option name="attack" value="3"/>
@@ -3994,6 +4231,8 @@
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="3"/>
       <option name="unitPlacementOnlyAllowedIn" value="Russia"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
     </attachment>
     <!-- Soviet Commisar 1 -->
     <attachment name="unitAttachment" attachTo="Soviet_Commisar_1" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4001,6 +4240,8 @@
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
     </attachment>
     <!-- Soviet Commisar 2 -->
     <attachment name="unitAttachment" attachTo="Soviet_Commisar_2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4008,6 +4249,8 @@
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
     </attachment>
     <!-- Soviet Commisar 3 -->
     <attachment name="unitAttachment" attachTo="Soviet_Commisar_3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4015,6 +4258,8 @@
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
     </attachment>
     <!-- Banzai -->
     <attachment name="unitAttachment" attachTo="Banzai" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4300,6 +4545,7 @@
       <option name="maxConstructionsPerTypePerTerr" value="4"/>
       <option name="transportCost" value="3"/>
       <option name="isAirTransportable" value="true"/>
+      <option name="isLandTransportable" value="true"/>
     </attachment>
     <!-- Waffen Para -->
     <attachment name="unitAttachment" attachTo="Waffen_Para" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4316,6 +4562,7 @@
       <option name="constructionType" value="Waffen_Para"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
       <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="isLandTransportable" value="true"/>
     </attachment>
     <!-- Fighter -->
     <attachment name="unitAttachment" attachTo="fighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -5424,6 +5671,61 @@
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
       <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
     </attachment>
+    <!-- Mine Armed Red-->
+    <attachment name="unitAttachment" attachTo="mine_armed_Red" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_armed_Red"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Mine Armed Blue-->
+    <attachment name="unitAttachment" attachTo="mine_armed_Blue" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_armed_Blue"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Mine Armed Orange-->
+    <attachment name="unitAttachment" attachTo="mine_armed_Orange" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_armed_Orange"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Mine Armed Green-->
+    <attachment name="unitAttachment" attachTo="mine_armed_Green" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_armed_Green"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Mine Armed Yellow-->
+    <attachment name="unitAttachment" attachTo="mine_armed_Yellow" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_armed_Yellow"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
     <!-- German Mine  -->
     <attachment name="unitAttachment" attachTo="german_mine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="attack" value="0"/>
@@ -5433,6 +5735,61 @@
       <option name="constructionType" value="1PU"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- German Mine  Red-->
+    <attachment name="unitAttachment" attachTo="german_mine_Red" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Red"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- German Mine  Blue-->
+    <attachment name="unitAttachment" attachTo="german_mine_Blue" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Blue"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- German Mine  Orange-->
+    <attachment name="unitAttachment" attachTo="german_mine_Orange" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Orange"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- German Mine  Green-->
+    <attachment name="unitAttachment" attachTo="german_mine_Green" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Green"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- German Mine  Yellow-->
+    <attachment name="unitAttachment" attachTo="german_mine_Yellow" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Yellow"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
     </attachment>
     <!-- Russian Mine  -->
     <attachment name="unitAttachment" attachTo="russian_mine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -5444,6 +5801,61 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
     </attachment>
+    <!-- Russian Mine  Red-->
+    <attachment name="unitAttachment" attachTo="russian_mine_Red" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Red"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Russian Mine  Blue-->
+    <attachment name="unitAttachment" attachTo="russian_mine_Blue" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Blue"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Russian Mine  Orange-->
+    <attachment name="unitAttachment" attachTo="russian_mine_Orange" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Orange"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Russian Mine  Green-->
+    <attachment name="unitAttachment" attachTo="russian_mine_Green" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Green"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Russian Mine  Yellow-->
+    <attachment name="unitAttachment" attachTo="russian_mine_Yellow" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Yellow"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
     <!-- Japan Mine  -->
     <attachment name="unitAttachment" attachTo="japan_mine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="attack" value="0"/>
@@ -5453,6 +5865,61 @@
       <option name="constructionType" value="1PU"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- Japan Mine  Red-->
+    <attachment name="unitAttachment" attachTo="japan_mine_Red" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Red"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Japan Mine  Blue-->
+    <attachment name="unitAttachment" attachTo="japan_mine_Blue" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Blue"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Japan Mine  Orange-->
+    <attachment name="unitAttachment" attachTo="japan_mine_Orange" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Orange"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Japan Mine  Green-->
+    <attachment name="unitAttachment" attachTo="japan_mine_Green" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Green"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Japan Mine  Yellow-->
+    <attachment name="unitAttachment" attachTo="japan_mine_Yellow" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Yellow"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
     </attachment>
     <!-- USA Mine  -->
     <attachment name="unitAttachment" attachTo="usa_mine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -5464,6 +5931,61 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
     </attachment>
+    <!-- USA Mine  Red-->
+    <attachment name="unitAttachment" attachTo="usa_mine_Red" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Red"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- USA Mine  Blue-->
+    <attachment name="unitAttachment" attachTo="usa_mine_Blue" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Blue"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- USA Mine  Orange-->
+    <attachment name="unitAttachment" attachTo="usa_mine_Orange" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Orange"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- USA Mine  Green-->
+    <attachment name="unitAttachment" attachTo="usa_mine_Green" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Green"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- USA Mine  Yellow-->
+    <attachment name="unitAttachment" attachTo="usa_mine_Yellow" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Yellow"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
     <!-- UK Mine  -->
     <attachment name="unitAttachment" attachTo="uk_mine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="attack" value="0"/>
@@ -5473,6 +5995,61 @@
       <option name="constructionType" value="1PU"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- UK Mine  Red-->
+    <attachment name="unitAttachment" attachTo="uk_mine_Red" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Red"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- UK Mine  Blue-->
+    <attachment name="unitAttachment" attachTo="uk_mine_Blue" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Blue"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- UK Mine  Orange-->
+    <attachment name="unitAttachment" attachTo="uk_mine_Orange" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Orange"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- UK Mine  Green-->
+    <attachment name="unitAttachment" attachTo="uk_mine_Green" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Green"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- UK Mine  Yellow-->
+    <attachment name="unitAttachment" attachTo="uk_mine_Yellow" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Yellow"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
     </attachment>
     <!-- Italy Mine  -->
     <attachment name="unitAttachment" attachTo="italy_mine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -5484,6 +6061,61 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
     </attachment>
+    <!-- Italy Mine  Red-->
+    <attachment name="unitAttachment" attachTo="italy_mine_Red" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Red"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Italy Mine  Blue-->
+    <attachment name="unitAttachment" attachTo="italy_mine_Blue" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Blue"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Mine  Orange-->
+    <attachment name="unitAttachment" attachTo="italy_mine_Orange" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Orange"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Italy Mine  Green-->
+    <attachment name="unitAttachment" attachTo="italy_mine_Green" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Green"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- Italy Mine  Yellow-->
+    <attachment name="unitAttachment" attachTo="italy_mine_Yellow" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Yellow"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
     <!-- ANZAC Mine  -->
     <attachment name="unitAttachment" attachTo="anzac_mine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="attack" value="0"/>
@@ -5494,6 +6126,61 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
     </attachment>
+    <!-- ANZAC Mine  Red-->
+    <attachment name="unitAttachment" attachTo="anzac_mine_Red" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Red"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- ANZAC Mine  Blue-->
+    <attachment name="unitAttachment" attachTo="anzac_mine_Blue" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Blue"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- ANZAC Mine  Orange-->
+    <attachment name="unitAttachment" attachTo="anzac_mine_Orange" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Orange"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- ANZAC Mine  Green-->
+    <attachment name="unitAttachment" attachTo="anzac_mine_Green" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Green"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- ANZAC Mine  Yellow-->
+    <attachment name="unitAttachment" attachTo="anzac_mine_Yellow" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Yellow"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
     <!-- France Mine  -->
     <attachment name="unitAttachment" attachTo="france_mine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="attack" value="0"/>
@@ -5503,6 +6190,61 @@
       <option name="constructionType" value="1PU"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- France Mine  Red-->
+    <attachment name="unitAttachment" attachTo="france_mine_Red" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Red"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- France Mine  Blue-->
+    <attachment name="unitAttachment" attachTo="france_mine_Blue" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Blue"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- France Mine  Orange-->
+    <attachment name="unitAttachment" attachTo="france_mine_Orange" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Orange"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- France Mine  Green-->
+    <attachment name="unitAttachment" attachTo="france_mine_Green" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Green"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- France Mine  Yellow-->
+    <attachment name="unitAttachment" attachTo="france_mine_Yellow" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="mine_Yellow"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
     </attachment>
     <!-- USA Fighter LendLease -->
     <attachment name="unitAttachment" attachTo="usa_fighter_lendlease" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -42759,6 +43501,9 @@ You may purchase "unarmed" mines and place them in your Capital during the "Firs
 <br>
 When you place the armed mines, you will need to use the "Comment Log" stating which Border they are defending in the territory. To access the comment log, go to the 'View' menu, and click 'show comment log'.<br>
 <br>
+You may also place "Colored" mines: Red, Blue, Green, Yellow and Orange. This will allow you to edit different mines designating the defense of different borders. So any "Armed Mine", after placement, can then be edited to a color to make it easier to tell how many and where they defend are.<br>
+Use comment log to clarify. A notepad next to your keyboard with the information may also prove useful, after the initial documentation.<br>
+<br>
 Using the mines in combat requires use of the "Dice Roller". It is located in the "Game" menu next to View. If only 1 battle is to take place, at the <b>START</b> of your combat move, determine how many units are crossing the minefield and roll as many dice as there are armed mines. Use edit to remove any casualties and any mines that detonated. Excess mine hits are not removed.<br>
 <br> You <b>must</b> do any edits <b>before</b> starting the combat move if there is to be only 1 battle that phase. So, if needed, do a dry run and note the units entering the minefield. Use comment log if necessary.<br>
 <br>
@@ -43073,6 +43818,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>5.9<br> 6/28/21  
+<br>
+Armour units will not transport Infantry when Mech Infantry tech is on. Add China Rail movement. Add Colored Mines.
 <br>
 <br>5.8<br> 6/28/21  
 <br>
