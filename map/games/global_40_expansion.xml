@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="5.9"/>
+  <info name="Global 40 Expansion" version="6.0"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -5649,6 +5649,7 @@
     <!-- Mine Unarmed -->
     <attachment name="unitAttachment" attachTo="mine_unarmed" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="transportCost" value="1"/>
@@ -10835,7 +10836,7 @@
     <!-- British Objectives -->
     <attachment name="objectiveAttachment_British_1_Original" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
-      <option name="directOwnershipTerritories" value="original"/>
+      <option name="directOwnershipTerritories" value="United Kingdom:Scotland:Iceland:New Brunswick Nova Scotia:Newfoundland Labrador:Quebec:Ontario:Alberta Saskatchewan Manitoba:British Columbia:British Guiana:Gibraltar:Malta:Cyprus:Alexandria:Egypt:Trans-Jordan:Gold Coast:Nigeria:Anglo Egyptian Sudan:British Somaliland:Belgian Congo:Kenya:Tanganyika Territory:Rhodesia:South West Africa:Union of South Africa"/>
       <option name="atWarPlayers" value="Germans" count="1"/>
     </attachment>
     <attachment name="objectiveAttachment_British_2_Kwangtung_And_Malaya" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -36393,6 +36394,7 @@
       <option name="conditions" value="NatlGuard:conditionAttachment_Americans_At_War_With_Japan"/>
       <option name="placement" value="Western United States:usa_fighter" count="2"/>
       <option name="placement" value="Western United States:infantry" count="6"/>
+      <option name="uses" value="1"/>
       <option name="when" value="after:japaneseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_USATankGeneral" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -43818,6 +43820,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>6.0<br> 7/4/21  
+<br>
+Fix USA activating National Guard more than once.
 <br>
 <br>5.9<br> 6/28/21  
 <br>
