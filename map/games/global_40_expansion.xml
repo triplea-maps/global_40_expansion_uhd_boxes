@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="6.1"/>
+  <info name="Global 40 Expansion" version="6.2"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -43821,6 +43821,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>6.2<br> 7/23/21  
+<br>
+Add "Army Group" image for Americans..
 <br>
 <br>6.1<br> 7/17/21  
 <br>
