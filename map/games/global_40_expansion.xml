@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="6.3"/>
+  <info name="Global 40 Expansion" version="6.4"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1240,6 +1240,7 @@
   <unitList>
     <unit name="infantry"/>
     <unit name="waffen_infantry"/>
+    <unit name="waffen_infantry2"/>
     <unit name="Waffen_Oberst"/>
     <unit name="Waffen_Oberst_2"/>
     <unit name="Waffen_Oberst_3"/>
@@ -1666,6 +1667,10 @@
     <productionRule name="buyWaffen_Infantry">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="waffen_infantry" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyWaffen_Infantry2">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="waffen_infantry2" quantity="1"/>
     </productionRule>
     <productionRule name="buyWaffen_Oberst">
       <cost resource="PUs" quantity="3"/>
@@ -3719,10 +3724,29 @@
       <option name="isLandTransportable" value="true"/>
       <option name="transportCost" value="3"/>
       <option name="consumesUnits" value="1:infantry"/>
-      <option name="maxBuiltPerPlayer" value="6"/>
+      <option name="maxBuiltPerPlayer" value="10"/>
       <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="waffenInf"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
+    </attachment>
+    <!-- Waffen Infantry2 -->
+    <attachment name="unitAttachment" attachTo="waffen_infantry2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="4"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <!--<option name="artillerySupportable" value="true"/>-->
+      <option name="isAirTransportable" value="false"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="consumesUnits" value="1:infantry"/>
+      <option name="maxBuiltPerPlayer" value="10"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="waffenInf2"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
       <option name="maxConstructionsPerTypePerTerr" value="6"/>
     </attachment>
@@ -3932,7 +3956,7 @@
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
       <option name="unitPlacementOnlyAllowedIn" value="Germany:Southern Italy"/>
-      <option name="maxBuiltPerPlayer" value="8"/>
+      <option name="maxBuiltPerPlayer" value="10"/>
     </attachment>
     <!-- Russian Para -->
     <attachment name="unitAttachment" attachTo="russian_para" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -3947,7 +3971,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
+      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
       <option name="typeAA" value="RussianAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -3987,7 +4011,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
+      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
       <option name="typeAA" value="AmericanAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -4007,7 +4031,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
+      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
       <option name="typeAA" value="BritishAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -4067,7 +4091,7 @@
       <option name="defense" value="3"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="receivesAbilityWhenWith" value="canBlitz:armour"/>
-      <option name="maxBuiltPerPlayer" value="6"/>
+      <option name="maxBuiltPerPlayer" value="10"/>
     </attachment>
     <!-- WaffenPnzrGrndr -->
     <attachment name="unitAttachment" attachTo="WaffenPnzrGrndr" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4298,7 +4322,7 @@
       <option name="defense" value="4"/>
       <option name="hitPoints" value="2"/>
       <option name="unitPlacementOnlyAllowedIn" value="Germany:Western Germany"/>
-      <option name="maxBuiltPerPlayer" value="6"/>
+      <option name="maxBuiltPerPlayer" value="8"/>
       <option name="whenHitPointsDamagedChangesInto" value="1:true:Tiger_Damaged"/>
     </attachment>
     <!-- Tiger Damaged -->
@@ -7446,7 +7470,7 @@
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <attachment name="supportAttachmentWaffenInfantryAndWaffenPara" attachTo="Waffen_Arty" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="waffen_infantry:Waffen_Para:Waffen_Oberst"/>
+      <option name="unitType" value="waffen_infantry:waffen_infantry2:Waffen_Para:Waffen_Oberst"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
       <option name="dice" value="strength"/>
@@ -8443,6 +8467,28 @@
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <attachment name="supportAttachmentGermanAirborneDefenseMinusWaffenInf" attachTo="waffen_infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneAttackMinusWaffenInf2" attachTo="waffen_infantry2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusWaffenInf2" attachTo="waffen_infantry2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="german_para"/>
       <option name="faction" value="allied"/>
       <option name="side" value="defence"/>
@@ -10786,10 +10832,6 @@
     <attachment name="conditionAttachmentTurn1OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="1-+"/>
     </attachment>
-    <attachment name="objectiveAttachment_Advanced_Production_Capacity" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="objectiveValue" value="12"/>
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher"/>
-    </attachment>
     <!-- Russian Objectives -->
     <attachment name="objectiveAttachment_Russians_2_Spread_Of_Communism" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="3"/>
@@ -10830,10 +10872,7 @@
       <option name="objectiveValue" value="5"/>
       <option name="directOwnershipTerritories" value="Shantung:Kwangsi:Kiangsu:Jehol:Manchuria:Szechwan:Hunan:Yunnan:Kweichow:Shensi:Suiyuyan:Kiangsi:Hainan:Hopei:Sikang:Tsinghai:Kansu:Timguska:Anhwe" count="18"/>
     </attachment>
-    <attachment name="objectiveAttachment_Advanced_Production_Capacity" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="objectiveValue" value="8"/>
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher"/>
-    </attachment>
+    
     <!-- British Objectives -->
     <attachment name="objectiveAttachment_British_1_Original" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
@@ -10845,10 +10884,7 @@
       <option name="directOwnershipTerritories" value="Malaya:Kwangtung" count="2"/>
       <option name="atWarPlayers" value="Japanese" count="1"/>
     </attachment>
-    <attachment name="objectiveAttachment_Advanced_Production_Capacity" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="objectiveValue" value="6"/>
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher"/>
-    </attachment>
+    
     <!-- ANZAC Objectives -->
     <attachment name="conditionAttachmentANZAC_At_War_With_Japanese" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="relationship" value="ANZAC:Japanese:anyWar"/>
@@ -10877,10 +10913,7 @@
       <option name="objectiveValue" value="2"/>
       <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia" count="each"/>
     </attachment>
-    <attachment name="objectiveAttachment_Advanced_Production_Capacity" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="objectiveValue" value="3"/>
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher"/>
-    </attachment>
+    
     <!-- Americans Objectives -->
     <attachment name="objectiveAttachment_Americans_1_Homeland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="10"/>
@@ -10902,10 +10935,7 @@
       <option name="atWarPlayers" value="Germans:Italians:Japanese" count="1"/>
       <option name="directOwnershipTerritories" value="Philippines" count="1"/>
     </attachment>
-    <attachment name="objectiveAttachment_Advanced_Production_Capacity" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="objectiveValue" value="14"/>
-      <option name="atWarPlayers" value="Germans:Italians:Japanese" count="1"/>
-    </attachment>
+    
     <!-- Chinese Objectives -->
     <attachment name="conditionAttachmentJapaneseDoNotControlBurmaRoad" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="India:Burma:Yunnan:Szechwan" count="1"/>
@@ -10952,7 +10982,7 @@
     <attachment name="conditionAttachment_Germans_4_unit_presence" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Egypt" count="1"/>
       <!-- any land unit includes aaGuns but does not include 'facilities' -->
-      <option name="unitPresence" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:aaGun:King_Tiger:Tiger_Damaged:Waffen_Hvy_Tank:Waffen_HvyTnk_Dmgd" count="1"/>
+      <option name="unitPresence" value="infantry:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:aaGun:King_Tiger:Tiger_Damaged:Waffen_Hvy_Tank:Waffen_HvyTnk_Dmgd" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Germans_5_Control_Norway_And_Denmark" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Denmark:Norway" count="2"/>
@@ -11093,6 +11123,13 @@
     </attachment>
     <attachment name="Type_XXI_UBoat" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="German Type XXI U-boats"/>
+    </attachment>
+    <attachment name="BasicEXP" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Basic Expanion Rules"/>
+    </attachment>
+    <attachment name="BasicEXPInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Basic Expanion Rules"/>
+      <option name="invert" value="true"/>
     </attachment>
     <attachment name="A0C5Bmbr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Unofficial SBR Option"/>
@@ -24899,43 +24936,43 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_Waffen_SS_Oberst" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="WaffenOberst:conditionAttachmentTurn2"/>
+      <option name="conditions" value="WaffenOberst:BasicEXPInvert:conditionAttachmentTurn2"/>
       <option name="productionRule" value="productionGermans:buyWaffen_Oberst"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Waffen_OberstNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="WaffenOberst:conditionAttachmentTurn2"/>
+      <option name="conditions" value="WaffenOberst:BasicEXPInvert:conditionAttachmentTurn2"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="WaffenOberst"/>
     </attachment>
     <attachment name="triggerAttachment_PanzerGeneral" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PanzerGeneral:conditionAttachmentTurn2"/>
+      <option name="conditions" value="PanzerGeneral:BasicEXPInvert:conditionAttachmentTurn2"/>
       <option name="productionRule" value="productionGermans:buyPanzer_General"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_PanzerGeneralNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PanzerGeneral:conditionAttachmentTurn2"/>
+      <option name="conditions" value="PanzerGeneral:BasicEXPInvert:conditionAttachmentTurn2"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="PanzerGeneral"/>
     </attachment>
     <attachment name="triggerAttachment_Army_Group" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PanzerGeneral:conditionAttachmentTurn2"/>
+      <option name="conditions" value="PanzerGeneral:BasicEXPInvert:conditionAttachmentTurn2"/>
       <option name="productionRule" value="productionGermans:buyArmy_Group"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Army_GroupNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PanzerGeneral:conditionAttachmentTurn2"/>
+      <option name="conditions" value="PanzerGeneral:BasicEXPInvert:conditionAttachmentTurn2"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="Army_Group"/>
     </attachment>
     <attachment name="triggerAttachment_ArmyGroupActive" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PanzerGeneral:conditionAttachmentTurn2"/>
+      <option name="conditions" value="PanzerGeneral:BasicEXPInvert:conditionAttachmentTurn2"/>
       <option name="productionRule" value="productionGermans:buyArmyGroupActive"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
@@ -24953,13 +24990,13 @@
       <option name="notification" value="EscortsA3"/>
     </attachment>
     <attachment name="triggerAttachment_WaffenPnzrGrndr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="WaffenPnzrGrndr:conditionAttachment_SwitchIsTrue:conditionAttachmentTurn5"/>
+      <option name="conditions" value="WaffenPnzrGrndr:BasicEXPInvert:conditionAttachment_SwitchIsTrue:conditionAttachmentTurn5"/>
       <option name="productionRule" value="productionGermans:buyWaffenPnzrGrndr"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_WaffenPnzrGrndrNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="WaffenPnzrGrndr:conditionAttachmentTurn5"/>
+      <option name="conditions" value="WaffenPnzrGrndr:BasicEXPInvert:conditionAttachmentTurn5"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="WaffenPnzrGrndr"/>
@@ -25013,26 +25050,26 @@
       <option name="notification" value="DDay"/>
     </attachment>
     <attachment name="triggerAttachment_Me_262" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Me_262:conditionAttachmentTurn9OrHigher"/>
+      <option name="conditions" value="Me_262:BasicEXPInvert:conditionAttachmentTurn9OrHigher"/>
       <option name="productionRule" value="productionGermans:buyMe_262"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Me_262Notification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Me_262:conditionAttachmentTurn9"/>
+      <option name="conditions" value="Me_262:BasicEXPInvert:conditionAttachmentTurn9"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="Me_262"/>
     </attachment>
     <attachment name="triggerAttachment_King_Tiger" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="King_Tiger:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="King_Tiger:BasicEXPInvert:conditionAttachmentTurn8OrHigher"/>
       <option name="productionRule" value="productionGermans:buyKing_Tiger"/>
       <option name="productionRule" value="productionGermans:buyRepair_Tiger"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_King_TigerNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="King_Tiger:conditionAttachmentTurn8"/>
+      <option name="conditions" value="King_Tiger:BasicEXPInvert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="King_Tiger"/>
@@ -25163,97 +25200,103 @@
       <option name="notification" value="Banzai"/>
     </attachment>
     <attachment name="triggerAttachment_Seafire" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Seafire:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="Seafire:BasicEXPInvert:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionBritish:buySeafire"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:britishPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Me_109T" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Me_109T:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="Me_109T:BasicEXPInvert:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionGermans:buyMe_109T"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Rockets" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Rockets:conditionAttachmentTurn7OrHigher"/>
+      <option name="conditions" value="Rockets:BasicEXPInvert:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionGermans:buyGerman_Rockets"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_RocketsNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Rockets:conditionAttachmentTurn7"/>
+      <option name="conditions" value="Rockets:BasicEXPInvert:conditionAttachmentTurn7"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="Rockets"/>
     </attachment>
     <attachment name="triggerAttachment_Type_XXI_UBoat" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Type_XXI_UBoat:conditionAttachmentTurn9OrHigher"/>
+      <option name="conditions" value="Type_XXI_UBoat:BasicEXPInvert:conditionAttachmentTurn9OrHigher"/>
       <option name="productionRule" value="productionGermans:buyType_XXI_UBoat"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_waffen_infantry2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="BasicEXP"/>
+      <option name="productionRule" value="productionGermans:buyWaffen_Infantry2"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     <attachment name="triggerAttachment_Type_XXI_UBoatNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Type_XXI_UBoat:conditionAttachmentTurn9"/>
+      <option name="conditions" value="Type_XXI_UBoat:BasicEXPInvert:conditionAttachmentTurn9"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="Type_XXI_UBoat"/>
     </attachment>
     <attachment name="triggerAttachment_German_Hvy_Bmbr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="HeavyBombers:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="HeavyBombers:BasicEXPInvert:conditionAttachmentTurn8OrHigher"/>
       <option name="productionRule" value="productionGermans:buyGerman_Hvy_Bmbr"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_German_Hvy_BmbrNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="HeavyBombers:conditionAttachmentTurn8"/>
+      <option name="conditions" value="HeavyBombers:BasicEXPInvert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="German_Hvy_Bmbr"/>
     </attachment>
     <attachment name="triggerAttachment_USA_Hvy_Bomber" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="HeavyBombers:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="HeavyBombers:BasicEXPInvert:conditionAttachmentTurn8OrHigher"/>
       <option name="productionRule" value="productionAmericans:buyUSA_Hvy_Bomber"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:americansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_USA_Hvy_BomberNotification" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="HeavyBombers:conditionAttachmentTurn8"/>
+      <option name="conditions" value="HeavyBombers:BasicEXPInvert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansPurchase"/>
       <option name="notification" value="USA_Hvy_Bomber"/>
     </attachment>
     <attachment name="triggerAttachment_UK_Hvy_Bomber" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="HeavyBombers:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="HeavyBombers:BasicEXPInvert:conditionAttachmentTurn8OrHigher"/>
       <option name="productionRule" value="productionBritish:buyUK_Hvy_Bomber"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:britishPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_UK_Hvy_BomberNotification" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="HeavyBombers:conditionAttachmentTurn8"/>
+      <option name="conditions" value="HeavyBombers:BasicEXPInvert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:britishPurchase"/>
       <option name="notification" value="UK_Hvy_Bomber"/>
     </attachment>
     <attachment name="triggerAttachment_RocketsUSSR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Rockets:conditionAttachmentTurn4OrHigher"/>
+      <option name="conditions" value="Rockets:BasicEXPInvert:conditionAttachmentTurn4OrHigher"/>
       <option name="productionRule" value="productionRussians:buyRussian_Rockets"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_RocketsNotificationUSSR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Rockets:conditionAttachmentTurn4"/>
+      <option name="conditions" value="Rockets:BasicEXPInvert:conditionAttachmentTurn4"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
       <option name="notification" value="RocketsUSSR"/>
     </attachment>
     <attachment name="triggerAttachment_Heavy_Transport" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Heavy_Transport:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="Heavy_Transport:BasicEXPInvert:conditionAttachmentTurn8OrHigher"/>
       <option name="productionRule" value="productionAmericans:buyHeavy_Transport"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:americansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Heavy_TransportNotification" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Heavy_Transport:conditionAttachmentTurn8"/>
+      <option name="conditions" value="Heavy_Transport:BasicEXPInvert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansPurchase"/>
       <option name="notification" value="Heavy_Transport"/>
@@ -26326,6 +26369,16 @@
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_Germans_AdvancedProduction" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXPInvert"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="12"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germans_AdvancedProductionBasicRules" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXP"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="6"/>
+    </attachment>
 
     <!-- Russians Triggers -->
     <attachment name="triggerAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -26346,7 +26399,7 @@
       <option name="notification" value="FreeSovietTank"/>
     </attachment>
     <attachment name="triggerAttachment_BuyMassTanks" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="MassTankProduction:conditionAttachmentTurn6"/>
+      <option name="conditions" value="MassTankProduction:BasicEXPInvert:conditionAttachmentTurn6"/>
       <option name="productionRule" value="productionRussians:buyMass_Tanks"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
@@ -26380,7 +26433,7 @@
       <option name="when" value="after:russiansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_Mass_Tank_UnitNotification" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="MassTankProduction:conditionAttachmentTurn6"/>
+      <option name="conditions" value="MassTankProduction:BasicEXPInvert:conditionAttachmentTurn6"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
       <option name="notification" value="MassTanks"/>
@@ -26415,13 +26468,13 @@
       <option name="notification" value="RussianGuardsActive"/>
     </attachment>
     <attachment name="triggerAttachment_Soviet_Partisan" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Soviet_Partisan:conditionAttachment_RussianSwitchIsTrue:conditionAttachmentTurn4OrHigher"/>
+      <option name="conditions" value="Soviet_Partisan:BasicEXPInvert:conditionAttachment_RussianSwitchIsTrue:conditionAttachmentTurn4OrHigher"/>
       <option name="productionRule" value="productionRussians:buySoviet_Partisan"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Soviet_PartisanNotification" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Soviet_Partisan:conditionAttachmentTurn4"/>
+      <option name="conditions" value="Soviet_Partisan:BasicEXPInvert:conditionAttachmentTurn4"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
       <option name="notification" value="Soviet_Partisan"/>
@@ -26834,7 +26887,13 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:russiansPlace"/>
     </attachment>
-    
+    <attachment name="triggerAttachment_RussianConscriptsBuy12" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="BasicEXP"/>
+      <option name="unitType" value="Army_Conscript"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="maxBuiltPerPlayer" count="12"/>
+      <option name="when" value="before:russiansPurchase"/>
+    </attachment>
     <!-- Japanese Triggers -->
     <!-- OLD Kamikaze trigger:
 				<attachment name="triggerAttachment_Japanese_Recruit_Kamikaze_Pilots" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -27343,7 +27402,7 @@
       <option name="when" value="after:japanesePlace"/>
     </attachment>
     <attachment name="triggerAttachment_DD_Transport" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="JapanDD:conditionAttachmentTurn5"/>
+      <option name="conditions" value="JapanDD:BasicEXPInvert:conditionAttachmentTurn5"/>
       <option name="unitType" value="Japan_destroyer"/>
       <option name="unitProperty" value="transportCapacity" count="-reset-"/>
       <option name="unitProperty" value="transportCapacity" count="2"/>
@@ -27351,7 +27410,7 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_DD_TransportPacific" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="JapanDD:conditionAttachmentTurn5"/>
+      <option name="conditions" value="JapanDD:BasicEXPInvert:conditionAttachmentTurn5"/>
       <option name="unitType" value="JPN_Pacific_DD"/>
       <option name="unitProperty" value="transportCapacity" count="-reset-"/>
       <option name="unitProperty" value="transportCapacity" count="2"/>
@@ -27359,7 +27418,7 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_DD_TransportNotification" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="JapanDD:conditionAttachmentTurn5"/>
+      <option name="conditions" value="JapanDD:BasicEXPInvert:conditionAttachmentTurn5"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japanesePurchase"/>
       <option name="notification" value="DD_Transport"/>
@@ -27371,6 +27430,17 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_Japanese_AdvancedProduction" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXPInvert"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="8"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_AdvancedProductionBasicRules" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXP"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="6"/>
+    </attachment>
+    
     <!-- Japanese Triggers Pacific Okinawa -->
     <attachment name="triggerAttachment_Japan_Liberates_Okinawa_Turn2" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_LiberateEXPOkinawa:conditionAttachmentTurn2"/>
@@ -32121,6 +32191,16 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_British_AdvancedProduction" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXPInvert"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="6"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_AdvancedProductionBasicRules" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXP"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="6"/>
+    </attachment>
 
     <!-- British Triggers Okinawa -->
     <attachment name="triggerAttachment_UK_Controls_Okinawa_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -34406,6 +34486,11 @@
       <option name="removeUnits" value="Northern Italy:bomber" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italians_AdvancedProduction" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXPInvert"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="3"/>
     </attachment>
     
     <!-- ANZAC Triggers -->
@@ -36971,6 +37056,16 @@
       <option name="removeUnits" value="Central United States:bomber" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_Americans_AdvancedProduction" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Americans_At_War_With_At_Least_One_Axis:BasicEXPInvert"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="14"/>
+    </attachment>
+    <attachment name="triggerAttachment_Americans_AdvancedProductionBasicRules" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Americans_At_War_With_At_Least_One_Axis:BasicEXP"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="6"/>
     </attachment>
     
     <!-- Americans Triggers Okinawa -->
@@ -41406,7 +41501,7 @@
     <attachment name="conditionAttachment_Germans_NoUnitsInAfrica" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Egypt:Morocco:Algeria:Tunisia:Libya:Tobruk:Alexandria:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:French Equatorial Africa:French Central Africa:Nigeria:Kenya:Gold Coast:South West Africa:French West Africa:Ethiopia:Italian Somaliland:British Somaliland:Belgian Congo:Union of South Africa" count="1"/>
       <!-- any land unit includes aaGuns but does not include 'facilities' -->
-      <option name="unitPresence" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:aaGun" count="1"/>
+      <option name="unitPresence" value="infantry:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:aaGun" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Italians_NoUnitsInAfrica" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -41432,7 +41527,7 @@
       <option name="when" value="after:germansCombatMove"/>
     </attachment>
     <attachment name="userActionAttachment_Germans_TakeOverItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.UserActionAttachment" type="player">
-      <option name="conditions" value="GermanyTakesItaly:conditionAttachmentTurn8OrHigher:conditionAttachment_Germans_NoUnitsInAfrica:conditionAttachment_Italians_NoUnitsInAfrica:conditionAttachment_Italians_ShipsOnlyInMed:conditionAttachment_AxisControlItaly:conditionAttachment_Germans_TakeOverItaly"/>
+      <option name="conditions" value="GermanyTakesItaly:BasicEXPInvert:conditionAttachmentTurn8OrHigher:conditionAttachment_Germans_NoUnitsInAfrica:conditionAttachment_Italians_NoUnitsInAfrica:conditionAttachment_Italians_ShipsOnlyInMed:conditionAttachment_AxisControlItaly:conditionAttachment_Germans_TakeOverItaly"/>
       <option name="activateTrigger" value="triggerAttachment_GermansAtWarWithItaly:1:false:false:false:false"/>
       <option name="text" value="Germans_Take_Over_Italy"/>
       <option name="chance" value="6:6"/>
@@ -41457,6 +41552,12 @@
       <option name="notification" value="R01B"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:changerPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment1noteC" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentTurn1Check"/>
+      <option name="notification" value="R01C"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerPurchase"/>
     </attachment>
     
     <!-- Player Attachments -->
@@ -41686,7 +41787,7 @@
       <option name="text" value="Japanese_War_Russians"/>
     </attachment>
     <attachment name="politicalActionAttachment_Japanese_To_War_With_RussiansTurn3" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn3:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn3:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41696,7 +41797,7 @@
       <option name="costResources" value="PUs" count="8"/>
     </attachment>
     <attachment name="politicalActionAttachment_Japanese_To_War_With_RussiansTurn4" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn4:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn4:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41706,7 +41807,7 @@
       <option name="costResources" value="PUs" count="7"/>
     </attachment>
     <attachment name="politicalActionAttachment_Japanese_To_War_With_RussiansTurn5" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn5:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn5:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41716,7 +41817,7 @@
       <option name="costResources" value="PUs" count="6"/>
     </attachment>
     <attachment name="politicalActionAttachment_Japanese_To_War_With_RussiansTurn6" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn6:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn6:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41726,7 +41827,7 @@
       <option name="costResources" value="PUs" count="5"/>
     </attachment>
     <attachment name="politicalActionAttachment_Japanese_To_War_With_RussiansTurn7" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn7:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41736,7 +41837,7 @@
       <option name="costResources" value="PUs" count="4"/>
     </attachment>
     <attachment name="politicalActionAttachment_Japanese_To_War_With_RussiansTurn8" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn8:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn8:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41746,7 +41847,7 @@
       <option name="costResources" value="PUs" count="3"/>
     </attachment>
     <attachment name="politicalActionAttachment_Japanese_To_War_With_RussiansTurn9" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn9:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn9:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41756,7 +41857,7 @@
       <option name="costResources" value="PUs" count="2"/>
     </attachment>
     <attachment name="politicalActionAttachment_Japanese_To_War_With_RussiansTurn10" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn10:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn10:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41766,7 +41867,7 @@
       <option name="costResources" value="PUs" count="1"/>
     </attachment>
     <attachment name="politicalActionAttachment_Japanese_To_War_With_RussiansTurn11" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn11OrHigher:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn11OrHigher:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41782,7 +41883,7 @@
       <option name="text" value="Russians_War_Japanese"/>
     </attachment>
     <attachment name="politicalActionAttachment_Russians_To_War_With_JapaneseTurn3" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn3:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn3:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41792,7 +41893,7 @@
       <option name="costResources" value="PUs" count="8"/>
     </attachment>
     <attachment name="politicalActionAttachment_Russians_To_War_With_JapaneseTurn4" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn4:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn4:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41802,7 +41903,7 @@
       <option name="costResources" value="PUs" count="7"/>
     </attachment>
     <attachment name="politicalActionAttachment_Russians_To_War_With_JapaneseTurn5" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn5:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn5:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41812,7 +41913,7 @@
       <option name="costResources" value="PUs" count="6"/>
     </attachment>
     <attachment name="politicalActionAttachment_Russians_To_War_With_JapaneseTurn6" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn6:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn6:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41822,7 +41923,7 @@
       <option name="costResources" value="PUs" count="5"/>
     </attachment>
     <attachment name="politicalActionAttachment_Russians_To_War_With_JapaneseTurn7" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn7:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn7:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41832,7 +41933,7 @@
       <option name="costResources" value="PUs" count="4"/>
     </attachment>
     <attachment name="politicalActionAttachment_Russians_To_War_With_JapaneseTurn8" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn8:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn8:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41842,7 +41943,7 @@
       <option name="costResources" value="PUs" count="3"/>
     </attachment>
     <attachment name="politicalActionAttachment_Russians_To_War_With_JapaneseTurn9" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn9:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn9:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41852,7 +41953,7 @@
       <option name="costResources" value="PUs" count="2"/>
     </attachment>
     <attachment name="politicalActionAttachment_Russians_To_War_With_JapaneseTurn10" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn10:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn10:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -41862,7 +41963,7 @@
       <option name="costResources" value="PUs" count="1"/>
     </attachment>
     <attachment name="politicalActionAttachment_Russians_To_War_With_JapaneseTurn11" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn11OrHigher:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachmentTurn11OrHigher:conditionAttachmentPacificAxisNotYetAtWarWithRussians"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="relationshipChange" value="Russians:Chinese:Allied"/>
       <option name="relationshipChange" value="Russians:ANZAC:Allied"/>
@@ -43312,6 +43413,9 @@
       <property name="Heavy Bombers" value="true" editable="true">
       <boolean/>
       </property>
+      <property name="Basic Expanion Rules" value="false" editable="true">
+      <boolean/>
+    </property>
       <property name="Unofficial SBR Option" value="false" editable="true">
       <boolean/>
       </property>
@@ -43391,7 +43495,10 @@ They work correctly.<br>
 <br>
 <b>2. Waffen Infantry</b><br>
 <br>
-They work correctly.<br>
+Max Build is Player Enforced. Otherwise they work correctly.<br>
+<br>
+<b>Note</b><br>
+When using the "Basic" Rules, you need to purchase the "Waffen_Infantry2" Unit, which will show up on the bottom right of the Purchase Window.<br>
 <br>
 <b>3. Waffen Panzer</b><br>
 <br>
@@ -43634,7 +43741,7 @@ You will need to use edit to remove any additional Wolfpacks before Germany's ne
 <br>
 <b>9. Waffen Paratroopers</b><br>
 <br>
-Use Dice Roller for AA fire. Use edit to make combat or non combat moves with "Perform Move or Other Actions" same as Wehrmacht Paratroopers. If still not possible to make legal move, edit directly at start of phase. May not attack Capitals. Player Enforced. They <b>are</b> supported by Waffen Artillery.<br>
+Use Dice Roller for AA fire. Use edit to make combat or non combat moves with "Perform Move or Other Actions" same as Wehrmacht Paratroopers. If still not possible to make legal move, edit directly at start of phase. May not attack Capitals. Player Enforced. Max Builds Player Enforced. They <b>are</b> supported by Waffen Artillery.<br>
 <br>
 May be turned off in "Map Options".<br>
 <br>
@@ -43650,7 +43757,7 @@ They work correctly.<br>
 <br>
 <b>2. Waffen Panzer Grenadiers</b><br>
 <br>
-They work correctly.<br>
+Max Build is Player Enforced. Otherwise they work correctly.<br>
 <br>
 <b>3. Waffen Oberst-Gruppenführer</b><br>
 <br>
@@ -43715,7 +43822,7 @@ These work correctly.
 <br>
 <b>4. German King Tiger Tank</b><br>
 <br>
-Max Build is enforced. Per turn build of 3, is Player Enforced. They can be repaired anywhere. Use the above procedure for repairing Battleships and Carriers.<br>
+Max Build is Player Enforced. Per turn build of 3, is Player Enforced. They can be repaired anywhere. Use the above procedure for repairing Battleships and Carriers.<br>
 Repair unit will not repair Battleship or Carrier.
 <br>
 <br>
@@ -43770,6 +43877,17 @@ Uses a AA shot at attack 4 if no other type of ships attacking for first shot. I
 They work correctly. 
 <br>
 <br>
+<b>15. Basic Expansion Rules</b><br>
+<br>
+Changes to the Basic Expansion Rules. Russian Conscription may only build 12 total now. Germany, Japan, USA, when at war, and UK all recieve 6 PUs for Advanced Production now. Italy receives nothing. 
+<br>
+<br>
+You will need to turn off in Map Options ,or ignore, "Expanded Pacific Ocean", "National Guard" and "Total War".<br>
+<br>
+Waffen Artillery, Wolfpacks and Landing Craft will show up as well as the 1 PU Waffen Infantry. They should be ignored.<br>
+<br>
+Basic Expansion Rules are here: https://www.axisandallies.org/forums/assets/uploads/files/1627938181325-rulebook-global-1940-basic-expansion.pdf<br>
+<br>
 <b>Unofficial SBR Option</b><br>
 <br>
 This is independent of the Captain and Company's Awesome House Rules, thus "Unofficial". :) 
@@ -43805,6 +43923,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>6.4<br> 9/27/21  
+<br>
+Change Max Build Limits for Waffen Infantry, Panzer Grenadiers, German Paras and King Tigers. Max builds are now Player Enforced for these Units. Add Russian Conscription, Advanced Production and Waffen Infantry Cost 2 for Basic Rules.
 <br>
 <br>6.3<br> 8/28/21  
 <br>
