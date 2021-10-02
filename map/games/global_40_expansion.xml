@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="6.4"/>
+  <info name="Global 40 Expansion" version="6.5"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -25088,7 +25088,7 @@
       <option name="notification" value="Waffen_Hvy_Tank"/>
     </attachment>
     <attachment name="triggerAttachment_WolfpackAutoPlace" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachmentTurns1-8"/>
+      <option name="conditions" value="BasicEXPInvert:conditionAttachment_SwitchIsTrue:conditionAttachmentTurns1-8"/>
       <option name="placement" value="113 Sea Zone:Wolfpack" count="1"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansCombatMove"/>
@@ -25231,6 +25231,7 @@
     </attachment>
     <attachment name="triggerAttachment_waffen_infantry2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="BasicEXP"/>
+      <option name="productionRule" value="productionGermans:-buyWaffen_Infantry"/>
       <option name="productionRule" value="productionGermans:buyWaffen_Infantry2"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
@@ -43884,7 +43885,7 @@ Changes to the Basic Expansion Rules. Russian Conscription may only build 12 tot
 <br>
 You will need to turn off in Map Options ,or ignore, "Expanded Pacific Ocean", "National Guard" and "Total War".<br>
 <br>
-Waffen Artillery, Wolfpacks and Landing Craft will show up as well as the 1 PU Waffen Infantry. They should be ignored.<br>
+Waffen Artillery, Wolfpacks and Landing Craft will show up in the Purchase Window. They should be ignored.<br>
 <br>
 Basic Expansion Rules are here: https://www.axisandallies.org/forums/assets/uploads/files/1627938181325-rulebook-global-1940-basic-expansion.pdf<br>
 <br>
@@ -43923,6 +43924,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>6.5<br> 10/2/21  
+<br>
+Fix Waffen Infantry showing twice in Purchase Window when Basic Rules are activated. Prevent Wolfpack from auto placing in Sea Zone 113 when Basic Rules activated. 
 <br>
 <br>6.4<br> 9/27/21  
 <br>
