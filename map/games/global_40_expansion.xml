@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="6.6"/>
+  <info name="Global 40 Expansion" version="6.7"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -18635,91 +18635,91 @@
     </attachment>
     
     <attachment name="conditionAttachment_British_LoseDNGTurn1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:1-2:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:1-2:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn2" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:1-2:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:1-2:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn3" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:2-3:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:2-3:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn4" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:3-4:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:3-4:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn5" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:4-5:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:4-5:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn6" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:5-6:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:5-6:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn7" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:6-7:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:6-7:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn8" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:7-8:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:7-8:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn9" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:8-9:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:8-9:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn10" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:9-10:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:9-10:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn11" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:10-11:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:10-11:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn12" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:11-12:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:11-12:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn13" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:12-13:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:12-13:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn14" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:13-14:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:13-14:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn15" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:14-15:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:14-15:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn16" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:15-16:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:15-16:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn17" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:16-17:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:16-17:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn18" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:17-18:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:17-18:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn19" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:18-19:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:18-19:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn20" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:19-20:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:19-20:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn21" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:20-21:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:20-21:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn22" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:21-22:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:21-22:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn23" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:22-23:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:22-23:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn24" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:23-24:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:23-24:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn25" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:24-25:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:24-25:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn26" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:25-26:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:25-26:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn27" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:26-27:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:26-27:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn28" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:27-28:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:27-28:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_British_LoseDNGTurn29" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:British:any:28-29:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:British:any:28-29:Dutch New Guinea"/>
     </attachment>
     
     <attachment name="conditionAttachment_British_ControlDNGInvert" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -18808,7 +18808,7 @@
      <attachment name="conditionAttachment_British_ControlDNGInvertTurn28" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LoseDNGTurn28:conditionAttachment_British_ControlDNGInvert"/>
      </attachment>
-     <attachment name="conditionAttachment_British_ControlDNGInvertTurn29" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+     any:<attachment name="conditionAttachment_British_ControlDNGInvertTurn29" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LoseDNGTurn29:conditionAttachment_British_ControlDNGInvert"/>
      </attachment>
      
@@ -21168,91 +21168,91 @@
     </attachment>
     
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:1-2:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:1-2:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn2" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:1-2:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:1-2:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn3" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:2-3:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:2-3:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn4" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:3-4:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:3-4:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn5" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:4-5:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:4-5:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn6" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:5-6:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:5-6:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn7" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:6-7:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:6-7:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn8" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:7-8:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:7-8:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn9" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:8-9:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:8-9:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn10" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:9-10:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:9-10:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn11" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:10-11:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:10-11:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn12" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:11-12:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:11-12:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn13" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:12-13:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:12-13:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn14" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:13-14:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:13-14:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn15" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:14-15:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:14-15:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn16" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:15-16:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:15-16:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn17" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:16-17:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:16-17:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn18" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:17-18:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:17-18:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn19" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:18-19:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:18-19:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn20" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:19-20:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:19-20:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn21" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:20-21:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:20-21:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn22" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:21-22:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:21-22:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn23" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:22-23:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:22-23:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn24" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:23-24:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:23-24:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn25" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:24-25:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:24-25:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn26" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:25-26:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:25-26:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn27" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:26-27:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:26-27:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn28" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:27-28:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:27-28:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn29" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:ANZAC:any:28-29:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:ANZAC:any:28-29:Dutch New Guinea"/>
     </attachment>
     
     <attachment name="conditionAttachment_ANZAC_ControlDNGInvert" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -24946,91 +24946,91 @@
     </attachment>
     
     <attachment name="conditionAttachment_Americans_LoseDNGTurn1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:1-2:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:1-2:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn2" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:1-2:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:1-2:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn3" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:2-3:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:2-3:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn4" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:3-4:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:3-4:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn5" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:4-5:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:4-5:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn6" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:5-6:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:5-6:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn7" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:6-7:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:6-7:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:7-8:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:7-8:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn9" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:8-9:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:8-9:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn10" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:9-10:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:9-10:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn11" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:10-11:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:10-11:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:11-12:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:11-12:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn13" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:12-13:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:12-13:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn14" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:13-14:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:13-14:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn15" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:14-15:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:14-15:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn16" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:15-16:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:15-16:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn17" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:16-17:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:16-17:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn18" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:17-18:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:17-18:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn19" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:18-19:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:18-19:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn20" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:19-20:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:19-20:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn21" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:20-21:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:20-21:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn22" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:21-22:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:21-22:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn23" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:22-23:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:22-23:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn24" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:23-24:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:23-24:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn25" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:24-25:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:24-25:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn26" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:25-26:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:25-26:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn27" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:26-27:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:26-27:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn28" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:27-28:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:27-28:Dutch New Guinea"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LoseDNGTurn29" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="any:Americans:any:28-29:Dutch New Guinea"/>
+      <option name="battle" value="Japanese:Americans:any:28-29:Dutch New Guinea"/>
     </attachment>
     
     <attachment name="conditionAttachment_Americans_ControlDNGInvert" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -34472,286 +34472,286 @@
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn2"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn3"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn4"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn5" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn5"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn6" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn6"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn7" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn7"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn8" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn8"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn9" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn9"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn10" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn10"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn11" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn11"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn12" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn12"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn13" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn13"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn14" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn14"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn15" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn15"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn16" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn16"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn17" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn17"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn18" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn18"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn19" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn19"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn20" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn20"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn21" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn21"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn22" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn22"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn23" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn23"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn24" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn24"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn25" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn25"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn26" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn26"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn27" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn27"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn28" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn28"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Liberates_DNG_Turn29" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LiberateEXPDNG:conditionAttachmentTurn29"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     
     <attachment name="triggerAttachment_British_Loses_DNG_Turn1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn1:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn1"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn2"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn2:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn2"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn3"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn3:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn3"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn4"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn4:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn4"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn5" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn5"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn5:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn5"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn6" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn6"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn6:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn6"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn7" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn7"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn7:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn7"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn8" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn8:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn8"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn9" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn9"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn9:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn9"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn10" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn10"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn10:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn10"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn11" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn11"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn11:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn11"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn12" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn12"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn12:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn12"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn13" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn13"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn13:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn13"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn14" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn14"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn14:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn14"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn15" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn15"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn15:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn15"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn16" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn16"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn16:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn16"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn17" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn17"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn17:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn17"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn18" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn18"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn18:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn18"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn19" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn19"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn19:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn19"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn20" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn20"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn20:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn20"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn21" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn21"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn21:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn21"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn22" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn22"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn22:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn22"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn23" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn23"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn23:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn23"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn24" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn24"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn24:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn24"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn25" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn25"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn25:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn25"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn26" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn26"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn26:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn26"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn27" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn27"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn27:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn27"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn28" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn28"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn28:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn28"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn29" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn29"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn29:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn29"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
@@ -37427,286 +37427,286 @@
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn2" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn2"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn3" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn3"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn4" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn4"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn5" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn5"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn6" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn6"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn7" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn7"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn8" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn8"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn9" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn9"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn10" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn10"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn11" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn11"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn12" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn12"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn13" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn13"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn14" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn14"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn15" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn15"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn16" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn16"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn17" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn17"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn18" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn18"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn19" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn19"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn20" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn20"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn21" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn21"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn22" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn22"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn23" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn23"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn24" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn24"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn25" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn25"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn26" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn26"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn27" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn27"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn28" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn28"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG_Turn29" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LiberateEXPDNG:conditionAttachmentTurn29"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn1:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn1"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn2" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn2"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn2:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn2"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn3" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn3"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn3:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn3"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn4" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn4"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn4:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn4"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn5" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn5"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn5:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn5"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn6" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn6"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn6:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn6"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn7" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn7"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn7:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn7"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn8" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn8:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn8"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn9" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn9"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn9:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn9"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn10" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn10"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn10:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn10"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn11" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn11"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn11:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn11"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn12" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn12"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn12:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn12"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn13" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn13"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn13:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn13"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn14" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn14"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn14:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn14"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn15" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn15"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn15:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn15"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn16" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn16"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn16:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn16"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn17" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn17"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn17:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn17"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn18" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn18"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn18:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn18"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn19" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn19"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn19:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn19"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn20" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn20"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn20:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn20"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn21" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn21"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn21:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn21"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn22" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn22"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn22:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn22"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn23" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn23"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn23:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn23"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn24" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn24"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn24:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn24"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn25" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn25"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn25:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn25"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn26" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn26"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn26:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn26"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn27" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn27"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn27:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn27"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn28" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn28"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn28:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn28"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn29" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn29"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn29:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn29"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
@@ -42574,181 +42574,181 @@
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn2" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn2"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn3" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn3"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn4" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn4"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn5" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn5"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn6" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn6"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn7" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn7"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn8"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn9" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn9"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn10" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn10"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn11" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn11"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn12"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn13" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn13"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn14" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn14"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn15" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn15"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn16" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn16"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn17" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn17"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn18" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn18"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn19" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn19"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn20" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn20"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn21" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn21"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn22" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn22"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn23" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn23"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn24" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn24"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn25" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn25"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn26" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn26"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn27" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn27"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn28" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn28"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Liberates_DNG_Turn29" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LiberateEXPDNG:conditionAttachmentTurn29"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="1"/>
+      <option name="resourceCount" value="2"/>
     </attachment>
     
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn1:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn1"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn2" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn2"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn2:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn2"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn3" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn3"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn3:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn3"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn4" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn4"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn4:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn4"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn5" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn5"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn5:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn5"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn6" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn6"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn6:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn6"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn7" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn7"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn7:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn7"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn8:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn8"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
@@ -45378,7 +45378,8 @@ So if you send 2 Fighter Escorts and 2 Bombers with 2 Interceptors defending and
 <b>1. The Expanded Pacific Ocean</b><br>
 <br>
 Allied Land Units in New Guinea are able to activate the Bonus PUs for Dutch New Guinea in Combat Move before it is conquered by Japan. This is unintended and is Player Enforced. You may still take control in Non Combat Move.<br>
-<br> Also in the Rare instance USA is in positon to enter Dutch New Guinea first, you will need to Player Enforce that it doesn't. <br>
+<br> Also in the Rare instance USA is in positon to enter Dutch New Guinea first, you will need to Player Enforce that it doesn't. <br><br>
+Defenders from different Players, may or may not, incorrectly activate the negative bonus if Japan conquers. Use Edit if needed.<br>
 <br>After round 30 you will need to use edit for correct PU behavior.<br>
 <br>
 May be turned off in "Map Options".<br>
@@ -45731,6 +45732,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>6.7<br> 10/16/21  
+<br>
+Fix Dutch New Guinea for "Pacific Expanded".
 <br>
 <br>6.6<br> 10/13/21  
 <br>
