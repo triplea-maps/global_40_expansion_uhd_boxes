@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="6.7"/>
+  <info name="Global 40 Expansion" version="6.8"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -25528,7 +25528,7 @@
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Mongolia_May_Change_To_Russians_Control_Switch" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn3OrHigherInvert:conditionAttachment_Mongolia_Not_At_War_With_Allies"/>
+      <option name="conditions" value="conditionAttachment_Mongolia_Not_At_War_With_Allies"/>
       <option name="switch" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Russians_Conquer_Japanese_Territory_By_Mongolia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -45732,6 +45732,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>6.8<br> 10/29/21  
+<br>
+Fix Mongolia not changing to Russian Control after Japanese Attack.
 <br>
 <br>6.7<br> 10/16/21  
 <br>
