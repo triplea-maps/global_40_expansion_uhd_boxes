@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="6.9"/>
+  <info name="Global 40 Expansion" version="7.0"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4120,7 +4120,7 @@
       <option name="movement" value="1"/>
       <option name="isLandTransportable" value="true"/>
       <option name="isAirTransportable" value="true"/>
-      <option name="transportCost" value="3"/>
+      <option name="transportCost" value="2"/>
       <option name="attack" value="2"/>
       <option name="defense" value="2"/>
       <!--<option name="artillery" value="true"/>-->
@@ -4925,7 +4925,6 @@
       <option name="hitPoints" value="2"/>
       <option name="blockade" value="1"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
-      <option name="whenHitPointsDamagedChangesInto" value="1:true:BB_Damaged"/>
     </attachment>
     <!-- BB Damaged -->
     <attachment name="unitAttachment" attachTo="BB_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4949,7 +4948,6 @@
       <option name="hitPoints" value="2"/>
       <option name="blockade" value="1"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
-      <option name="whenHitPointsDamagedChangesInto" value="1:true:Pac_BB_Damaged"/>
     </attachment>
     <!-- Pac BB Damaged -->
     <attachment name="unitAttachment" attachTo="Pac_BB_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -4976,7 +4974,6 @@
       <option name="blockade" value="1"/>
       <option name="maxBuiltPerPlayer" value="2"/>
       <option name="canBeGivenByTerritoryTo" value="British"/>
-      <option name="whenHitPointsDamagedChangesInto" value="1:true:Hvy_BB_Dmgd"/>
     </attachment>
     <!-- Hvy BB Dmgd -->
     <attachment name="unitAttachment" attachTo="Hvy_BB_Dmgd" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -5003,7 +5000,6 @@
       <option name="hitPoints" value="3"/>
       <option name="blockade" value="1"/>
       <option name="maxBuiltPerPlayer" value="1"/>
-      <option name="whenHitPointsDamagedChangesInto" value="1:true:German_Hvy_BB_Dmgd"/>
     </attachment>
     <!-- German Hvy BB Dmgd -->
     <attachment name="unitAttachment" attachTo="German_Hvy_BB_Dmgd" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -10901,13 +10897,6 @@
     </attachment>
     <attachment name="conditionAttachmentBritish_At_War_With_Japanese" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="relationship" value="British:Japanese:anyWar"/>
-    </attachment>
-    <attachment name="objectiveAttachment_British__Control_Strategic_Islands" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentBritish_At_War_With_Japanese"/>
-      <option name="objectiveValue" value="5"/>
-      <option name="directOwnershipTerritories" value="Solomon Islands:Dutch New Guinea:New Guinea:New Britain" count="4"/>
-      <!-- we do not want dutch control of new guinea to count towards this goal -->
-      <option name="players" value="British:Americans:ANZAC:Russians:French"/>
     </attachment>
     
     <!-- ANZAC Objectives -->
@@ -21552,6 +21541,9 @@
     <attachment name="conditionAttachment_Chinese_Own_Manchuria" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Manchuria" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_Chinese_Own_1_TTy" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="map" count="2"/>
+    </attachment>
     <!-- Americans Conditions -->
     <attachment name="conditionAttachment_Americans_5_unit_presence" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="France" count="1"/>
@@ -26066,7 +26058,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_WaffenPanzerEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachment_WaffenPanzer:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="EXP43:conditionAttachment_WaffenPanzer:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionGermans:buyWaffen_Panzer"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
@@ -26279,7 +26271,7 @@
       <option name="when" value="after:americansNonCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceChinese" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_AmericansControlAmericaAndAlwaysWill"/>
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_Chinese_Own_1_TTy"/>
       <option name="placement" value="Kansu:Rail" count="2"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:chineseCombatMove"/>
@@ -27826,7 +27818,7 @@
 
     <!-- Germans TotalWar Me_262 -->
     <attachment name="triggerAttachment_GermansTotalWarMe_262" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:TotalWar:conditionAttachmentTurn7OrHigher"/>
+      <option name="conditions" value="EXP43Invert:TotalWar:conditionAttachmentTurn9OrHigher"/>
       <option name="productionRule" value="productionGermans:buyTotalWarMe_262"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
@@ -35146,6 +35138,16 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
     </attachment>
+    <attachment name="conditionAttachment_British_Control_ANZAC_Strategic_Islands" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Solomon Islands:Dutch New Guinea:New Guinea:New Britain" count="4"/>
+      <!-- we do not want dutch control of new guinea to count towards this goal -->
+      <option name="players" value="British:Americans:ANZAC:Russians:French"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_Control_Strategic_Islands" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachment_British_Control_ANZAC_Strategic_Islands"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="5"/>
+    </attachment>
 
     <!-- British Triggers Okinawa -->
     <attachment name="triggerAttachment_UK_Controls_Okinawa_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -40050,7 +40052,7 @@
       <option name="conditions" value="EXP43Invert:NatlGuard:conditionAttachment_Americans_At_War_With_Japan"/>
       <option name="notification" value="USANatlGuard"/>
       <option name="uses" value="1"/>
-      <option name="when" value="after:japaneseCombatMove"/>
+      <option name="when" value="after:japaneseEndTurn"/>
     </attachment>
     
     <attachment name="triggerAttachment_USATankGeneral" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -49494,7 +49496,7 @@
     <property name="Ignore Transport In Movement" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Transport Casualties Restricted" value="true" editable="false">
+    <property name="Transport Casualties Restricted" value="false" editable="false">
       <boolean/>
     </property>
     <property name="Unescorted Transport Dies" value="true" editable="false">
@@ -49877,6 +49879,8 @@ Use edit to place and remove the "Escort Convoy" unit when Convoys are formed or
 <br>
 Do not attack Subs without a Destroyer present. This is also Player Enforced. If you have a mixed Fleet without Destroyers attacking Subs, allocate the Escort hits to other Vessels when possible. If Subs submerge after first round of combat, use edit to replace any illegal Escort hits at the end of combat. If they don't submerge, then count any Escort hits. <br>
 <br>
+Do not take Transports as casualties the first three rounds Player Enforced. You will have to kill them in battle, so you may want to quit battle and edit accordingly or continue battle till they're all dead.<br>
+<br>
 May be turned off in "Map Options".<br>
 <br>
 <b>6. US National Guard</b><br>
@@ -49916,11 +49920,15 @@ Place the "Defend CV" Unit during the 2nd Place Phase. It will auto remove befor
 <b>Note</b><br>
 If you didn't purchase a free Defend CV unit, simply edit one in after your turn.<br>
 <br>
+If damage is taken to a Battleship, you will need to edit to "BB_Damaged" and "Pac_BB_Damaged" before non combat move, so they will have a attack factor of zero. <br>
+<br>
 <b>11. Super Heavy Battleship</b><br>
 <br>
 They work correctly.<br>
 <br>
 The "SHB" will fire 2 Bombard shots, even if only 1 amphibous unit is attacking. Use the Dice Roller to simulate the bombardment and for any casualties to fire back. Then use edit to adjust accordingly. If you have more than 1 battle taking place, you will be able to use edit before choosing the first battle to fight. If only 1 battle is being fought, it will go straight to combat after your combat move. You will need to edit before your combat move in that case.<br>
+<br>
+If damage is taken in combat, you will need to edit to "Hvy_BB_Dmgd" and "German_Hvy_BB_Dmgd" before non combat move, so they will have a attack factor of zero.<br>
 <br>
 <b>Section III</b><br>
 <br>
@@ -50184,6 +50192,13 @@ Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to
 <br>
 Change Log:
 <br>
+<br>7.0<br> 11/6/21  
+<br>
+Fix British getting ANZAC "Strategic Islands" Objective when 1943 Rules aren't active. Add Notification for Russia's 10 PU s when attacked for first time. Fix China rail placement when they have no territories. Fix Me 262 Total War showing up early.<br>
+<br>
+Fix "waffen_panzer" showing up early. Change USA National Guard notification to end of Japan's turn. Fix "artillery" transport cost.<br>
+<br>
+Fix Transports not being able to be taken as a hit. You now need to Player Enforce correct behaviour for first 3 rounds. Fix BB_Damaged changing to Attack 0 in middle of battle. You will now need to edit BB_Damaged after combat phase. Heavy_BB and German_Heavy_BB work the same way.<br> 
 <br>6.9<br> 11/2/21  
 <br>
 Undo Fix Mongolia not changing to Russian Control after Japanese Attack.Fix Heavy Underground Factories not placing. Fix German Total War Infantry over placing.<br>
