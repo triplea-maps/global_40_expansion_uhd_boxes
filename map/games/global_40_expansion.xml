@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="7.0"/>
+  <info name="Global 40 Expansion" version="7.1"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1248,6 +1248,8 @@
     <unit name="guard_infantry"/>
     <unit name="commando"/>
     <unit name="marine"/>
+    <unit name="commandoA1"/>
+    <unit name="marineA1"/>
     <unit name="elite"/>
     <unit name="german_para"/>
     <unit name="Waffen_Para"/>
@@ -1701,6 +1703,14 @@
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="marine" quantity="1"/>
     </productionRule>
+    <productionRule name="buyCommandoA1">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="commandoA1" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyMarineA1">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="marineA1" quantity="1"/>
+    </productionRule>
     <productionRule name="buyElite">
       <cost resource="PUs" quantity="3"/>
       <result resourceOrUnit="elite" quantity="1"/>
@@ -2018,7 +2028,7 @@
       <result resourceOrUnit="GermanUBoat" quantity="1"/>
     </productionRule>
     <productionRule name="buyWolfpack">
-      <cost resource="PUs" quantity="0"/>
+      <cost resource="PUs" quantity="3"/>
       <result resourceOrUnit="Wolfpack" quantity="1"/>
     </productionRule>
     <productionRule name="buyPacific_Submarine">
@@ -3841,7 +3851,7 @@
       <option name="movement" value="1"/>
       <option name="isLandTransportable" value="true"/>
       <option name="transportCost" value="2"/>
-      <option name="attack" value="1"/>
+      <option name="attack" value="2"/>
       <option name="defense" value="2"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -3860,12 +3870,35 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
       <option name="maxConstructionsPerTypePerTerr" value="6"/>
     </attachment>
+    <!-- CommandoA1 -->
+    <attachment name="unitAttachment" attachTo="commandoA1" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="2"/>
+      <option name="attack" value="1"/>
+      <option name="defense" value="2"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="consumesUnits" value="1:infantry"/>
+      <option name="maxBuiltPerPlayer" value="6"/>
+      <option name="requiresUnits" value="factory_major"/>
+      <option name="requiresUnits" value="factory_minor"/>
+      <option name="requiresUnits" value="UndrgroundFctry"/>
+      <option name="requiresUnits" value="UndergroundMinr"/>
+      <option name="requiresUnits" value="Hvy_Ind_2"/>
+      <option name="requiresUnits" value="Hvy_Ind_1"/>
+      <option name="requiresUnits" value="Hvy_Undg_2"/>
+      <option name="requiresUnits" value="Hvy_Undg_1"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="commandoA1"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
+    </attachment>
     <!-- Marine -->
     <attachment name="unitAttachment" attachTo="marine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
       <option name="isLandTransportable" value="true"/>
       <option name="transportCost" value="2"/>
-      <option name="attack" value="1"/>
+      <option name="attack" value="2"/>
       <option name="defense" value="2"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -3881,6 +3914,29 @@
       <option name="requiresUnits" value="Hvy_Undg_1"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="marine"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="12"/>
+      <option name="maxConstructionsPerTypePerTerr" value="12"/>
+    </attachment>
+    <!-- MarineA1 -->
+    <attachment name="unitAttachment" attachTo="marineA1" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="2"/>
+      <option name="attack" value="1"/>
+      <option name="defense" value="2"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="consumesUnits" value="1:infantry"/>
+      <option name="maxBuiltPerPlayer" value="12"/>
+      <option name="requiresUnits" value="factory_major"/>
+      <option name="requiresUnits" value="factory_minor"/>
+      <option name="requiresUnits" value="UndrgroundFctry"/>
+      <option name="requiresUnits" value="UndergroundMinr"/>
+      <option name="requiresUnits" value="Hvy_Ind_2"/>
+      <option name="requiresUnits" value="Hvy_Ind_1"/>
+      <option name="requiresUnits" value="Hvy_Undg_2"/>
+      <option name="requiresUnits" value="Hvy_Undg_1"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="marineA1"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="12"/>
       <option name="maxConstructionsPerTypePerTerr" value="12"/>
     </attachment>
@@ -3956,7 +4012,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:tactical_bomber:usa_armour:usa_fighter:NavyFighter:Seafire:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
+      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:commandoA1:marineA1:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:tactical_bomber:usa_armour:usa_fighter:NavyFighter:Seafire:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
       <option name="typeAA" value="GermanAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -3996,7 +4052,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Seafire:tactical_bomber:usa_armour:usa_fighter:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
+      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:commandoA1:marineA1:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Seafire:tactical_bomber:usa_armour:usa_fighter:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
       <option name="typeAA" value="JapaneseAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -4056,7 +4112,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Seafire:tactical_bomber:usa_armour:usa_fighter:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
+      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:commandoA1:marineA1:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Seafire:tactical_bomber:usa_armour:usa_fighter:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
       <option name="typeAA" value="ItalianAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -5268,7 +5324,7 @@
     <!-- Hvy Ind 1 -->
     <attachment name="unitAttachment" attachTo="Hvy_Ind_1" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isFactory" value="true"/>
-      <option name="unitPlacementRestrictions" value="Ceylon:Sumatra:Java:Borneo:Hainan:Philippines:Celebes:Dutch New Guinea:Paulau Island:New Guinea:New Britain:Solomon Islands:New Hebrides:New Zealand:Fiji:Samoa:Line Islands:Johnston Island:Hawaiian Islands:Midway:Iwo Jima:Aleutian Islands:Gilbert Islands:Marshall Islands:Caroline Islands:Wake Island:Marianas:Guam:Formosa:Okinawa:West Indies:Greenland:Iceland:Sardinia:Sicily:French Madagascar:Crete:Cyprus"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Southern Italy:Union of South Africa:New South Wales:Southern France:Normandy Bordeaux"/>
       <option name="canOnlyBePlacedInTerritoryValuedAtX" value="2"/>
       <!--<option name="destroyedWhenCapturedBy" value="Chinese"/>-->
       <option name="isAAforBombingThisUnitOnly" value="true"/>
@@ -5362,7 +5418,7 @@
     <!-- Hvy Ind 2 -->
     <attachment name="unitAttachment" attachTo="Hvy_Ind_2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isFactory" value="true"/>
-      <option name="unitPlacementRestrictions" value="Ceylon:Sumatra:Java:Borneo:Hainan:Philippines:Celebes:Dutch New Guinea:Paulau Island:New Guinea:New Britain:Solomon Islands:New Hebrides:New Zealand:Fiji:Samoa:Line Islands:Johnston Island:Hawaiian Islands:Midway:Iwo Jima:Aleutian Islands:Gilbert Islands:Marshall Islands:Caroline Islands:Wake Island:Marianas:Guam:Formosa:Okinawa:West Indies:Greenland:Iceland:Sardinia:Sicily:French Madagascar:Crete:Cyprus"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Northern Italy:United Kingdom:France:Russia:Japan:Germany:Western Germany:Eastern United States:Central United States:Western United States"/>
       <option name="canOnlyBePlacedInTerritoryValuedAtX" value="3"/>
       <!--<option name="destroyedWhenCapturedBy" value="Chinese"/>-->
       <option name="isAAforBombingThisUnitOnly" value="true"/>
@@ -8312,28 +8368,6 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
-    <attachment name="supportAttachmentCommando" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="commando"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="offence"/>
-      <option name="dice" value="strength"/>
-      <option name="bonus" value="1"/>
-      <option name="number" value="1"/>
-      <option name="bonusType" value="commando_bonus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
-    <attachment name="supportAttachmentMarine" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="marine"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="offence"/>
-      <option name="dice" value="strength"/>
-      <option name="bonus" value="1"/>
-      <option name="number" value="1"/>
-      <option name="bonusType" value="marine_bonus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
     <attachment name="supportAttachmentGermanUBoatAttack" attachTo="GermanUBoat" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="GermanUBoat"/>
       <option name="faction" value="allied"/>
@@ -11170,11 +11204,6 @@
       <option name="unitPresence" value="GermanUBoat" count="3"/>
       <option name="invert" value="true"/>
     </attachment>
-    <attachment name="conditionAttachment_WolfpackRemove113" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="113 Sea Zone" count="1"/>
-      <option name="unitPresence" value="GermanUBoat" count="3"/>
-      <option name="invert" value="true"/>
-      </attachment>
       <attachment name="conditionAttachment_WolfpackRemove114" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="114 Sea Zone" count="1"/>
       <option name="unitPresence" value="GermanUBoat" count="3"/>
@@ -18545,35 +18574,68 @@
     <attachment name="conditionAttachment_British_LiberateAlaska" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="British:any:any:1-99:Alaska"/>
     </attachment>
+    <attachment name="conditionAttachment_Americans_ControlAlaskaUK" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Alaska" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_British_LiberateMidway" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="British:any:any:1-99:Midway"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_ControlMidwayUK" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Midway" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_British_LiberateHawaiianIslands" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="British:any:any:1-99:Hawaiian Islands"/>
     </attachment>
+    <attachment name="conditionAttachment_Americans_ControlHawaiianIslandsUK" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Hawaiian Islands" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_British_LiberateMexico" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="British:any:any:1-99:Mexico"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_ControlMexicoUK" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Mexico" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_British_LiberateWakeIsland" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="British:any:any:1-99:Wake Island"/>
     </attachment>
+    <attachment name="conditionAttachment_Americans_ControlWakeIslandUK" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Wake Island" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_British_LiberatePhilippines" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="British:any:any:1-99:Philippines"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_ControlPhilippinesUK" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Philippines" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_British_LiberateGuam" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="British:any:any:1-99:Guam"/>
     </attachment>
+    <attachment name="conditionAttachment_Americans_ControlGuamUK" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Guam" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_British_LiberateAleutianIslands" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="British:any:any:1-99:Aleutian Islands"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_ControlAleutianIslandsUK" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Aleutian Islands" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_British_LiberateLineIslands" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="British:any:any:1-99:Line Islands"/>
     </attachment>
+    <attachment name="conditionAttachment_Americans_ControlLineIslandsUK" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Line Islands" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_British_LiberateSolomonIslands" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="British:any:any:1-99:Solomon Islands"/>
     </attachment>
+    <attachment name="conditionAttachment_ANZAC_ControlSolomonIslandsUK" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Solomon Islands" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_British_LiberateNewGuinea" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="British:any:any:1-99:New Guinea"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZAC_ControlNewGuineaUK" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="New Guinea" count="1"/>
     </attachment>
     <!-- British Conditions Liberate Allied Territories -->
 
@@ -18581,32 +18643,62 @@
     <attachment name="conditionAttachment_ANZAC_LiberateCeylon" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="ANZAC:any:any:1-99:Ceylon"/>
     </attachment>
+    <attachment name="conditionAttachment_British_ControlCeylonANZAC" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Ceylon" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_Americans_LiberateCeylon" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Americans:any:any:1-99:Ceylon"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_ControlCeylonUSA" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Ceylon" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LiberateGilbertIslands" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="ANZAC:any:any:1-99:Gilbert Islands"/>
     </attachment>
+    <attachment name="conditionAttachment_British_ControlGilbertIslandsANZAC" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Gilbert Islands" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_Americans_LiberateGilbertIslands" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Americans:any:any:1-99:Gilbert Islands"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_ControlGilbertIslandsUSA" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Gilbert Islands" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LiberateFiji" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="ANZAC:any:any:1-99:Fiji"/>
     </attachment>
+    <attachment name="conditionAttachment_British_ControlFijiANZAC" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Fiji" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_Americans_LiberateFiji" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Americans:any:any:1-99:Fiji"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_ControlFijiUSA" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Fiji" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LiberateSamoa" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="ANZAC:any:any:1-99:Samoa"/>
     </attachment>
+    <attachment name="conditionAttachment_British_ControlSamoaANZAC" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Samoa" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_Americans_LiberateSamoa" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Americans:any:any:1-99:Samoa"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_ControlSamoaUSA" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Samoa" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_LiberateSolomonIslands" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Americans:any:any:1-99:Solomon Islands"/>
     </attachment>
+    <attachment name="conditionAttachment_ANZAC_ControlSolomonIslandsUSA" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Solomon Islands" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_Americans_LiberateNewGuinea" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Americans:any:any:1-99:New Guinea"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZAC_ControlNewGuineaUSA" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="New Guinea" count="1"/>
     </attachment>
     <!-- Allies Liberate Allied Territories Ends -->
 
@@ -18800,8 +18892,16 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateCeylon:conditionAttachment_British_ControlCeylon"/>
       <option name="conditionType" value="AND"/>
      </attachment>
+     <attachment name="conditionAttachment_ANZAC_LiberateEXPCeylon1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateCeylon:conditionAttachment_British_ControlCeylonANZAC"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
+     <attachment name="conditionAttachment_Americans_LiberateEXPCeylon1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateCeylon:conditionAttachment_British_ControlCeylonUSA"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_British_LiberateEXPCeylon" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LiberateCeylon:conditionAttachment_Americans_LiberateCeylon:conditionAttachment_British_LiberateEXPCeylon1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPCeylon1:conditionAttachment_ANZAC_LiberateEXPCeylon1:conditionAttachment_Americans_LiberateEXPCeylon1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- British Conditions Pacific Ceylon Ends -->
@@ -18813,6 +18913,17 @@
     <attachment name="conditionAttachment_British_ControlDNG" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Dutch New Guinea" count="1"/>
     </attachment>
+
+    <attachment name="conditionAttachment_British_LoseDNGanzac" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="battle" value="Japanese:British:any:currentRound:Dutch New Guinea"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_LoseDNGJPN" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="battle" value="British:Japanese:any:currentRound:Dutch New Guinea"/>
+      </attachment>
+      <attachment name="conditionAttachment_British_LoseDNG" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="conditions" value="conditionAttachment_British_LoseDNGanzac:conditionAttachment_British_LoseDNGJPN"/>
+	<option name="conditionType" value="OR"/>
+      </attachment>
     
     <attachment name="conditionAttachment_British_LoseDNGTurn1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Japanese:British:any:1-2:Dutch New Guinea"/>
@@ -19188,8 +19299,16 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateGilbertIslands:conditionAttachment_British_ControlGilbertIslands"/>
       <option name="conditionType" value="AND"/>
      </attachment>
+     <attachment name="conditionAttachment_ANZAC_LiberateEXPGilbertIslands1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateGilbertIslands:conditionAttachment_British_ControlGilbertIslandsANZAC"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
+     <attachment name="conditionAttachment_Americans_LiberateEXPGilbertIslands1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateGilbertIslands:conditionAttachment_British_ControlGilbertIslandsUSA"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_British_LiberateEXPGilbertIslands" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LiberateGilbertIslands:conditionAttachment_ANZAC_LiberateGilbertIslands:conditionAttachment_British_LiberateEXPGilbertIslands1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPGilbertIslands1:conditionAttachment_ANZAC_LiberateEXPGilbertIslands1:conditionAttachment_Americans_LiberateEXPGilbertIslands1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- British Conditions Pacific Gilbert Islands Ends -->
@@ -19378,12 +19497,21 @@
      <attachment name="conditionAttachment_British_ControlFijiInvertTurn29" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LoseFijiTurn29:conditionAttachment_British_ControlFijiInvert"/>
      </attachment>
+     
      <attachment name="conditionAttachment_British_LiberateEXPFiji1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateFiji:conditionAttachment_British_ControlFiji"/>
       <option name="conditionType" value="AND"/>
      </attachment>
+     <attachment name="conditionAttachment_ANZAC_LiberateEXPFiji1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateFiji:conditionAttachment_British_ControlFijiANZAC"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
+     <attachment name="conditionAttachment_Americans_LiberateEXPFiji1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateFiji:conditionAttachment_British_ControlFijiUSA"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_British_LiberateEXPFiji" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LiberateFiji:conditionAttachment_Americans_LiberateFiji:conditionAttachment_British_LiberateEXPFiji1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPFiji1:conditionAttachment_ANZAC_LiberateEXPFiji1:conditionAttachment_Americans_LiberateEXPFiji1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- British Conditions Pacific Fiji Ends -->
@@ -19578,8 +19706,16 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateSamoa:conditionAttachment_British_ControlSamoa"/>
       <option name="conditionType" value="AND"/>
      </attachment>
+     <attachment name="conditionAttachment_ANZAC_LiberateEXPSamoa1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateSamoa:conditionAttachment_British_ControlSamoaANZAC"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
+     <attachment name="conditionAttachment_Americans_LiberateEXPSamoa1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateSamoa:conditionAttachment_British_ControlSamoaUSA"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_British_LiberateEXPSamoa" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LiberateSamoa:conditionAttachment_Americans_LiberateSamoa:conditionAttachment_British_LiberateEXPSamoa1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPSamoa1:conditionAttachment_ANZAC_LiberateEXPSamoa1:conditionAttachment_Americans_LiberateEXPSamoa1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- British Conditions Pacific Samoa Ends -->
@@ -20920,29 +21056,56 @@
     <attachment name="conditionAttachment_ANZAC_LiberateAlaska" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="ANZAC:any:any:1-99:Alaska"/>
     </attachment>
+    <attachment name="conditionAttachment_Americans_ControlAlaskaANZAC" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Alaska" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_ANZAC_LiberateMidway" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="ANZAC:any:any:1-99:Midway"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_ControlMidwayANZAC" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Midway" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LiberateHawaiianIslands" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="ANZAC:any:any:1-99:Hawaiian Islands"/>
     </attachment>
+    <attachment name="conditionAttachment_Americans_ControlHawaiianIslandsANZAC" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Hawaiian Islands" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_ANZAC_LiberateMexico" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="ANZAC:any:any:1-99:Mexico"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_ControlMexicoANZAC" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Mexico" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LiberateWakeIsland" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="ANZAC:any:any:1-99:Wake Island"/>
     </attachment>
+    <attachment name="conditionAttachment_Americans_ControlWakeIslandANZAC" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Wake Island" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_ANZAC_LiberatePhilippines" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="ANZAC:any:any:1-99:Philippines"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_ControlPhilippinesANZAC" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Philippines" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_LiberateGuam" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="ANZAC:any:any:1-99:Guam"/>
     </attachment>
+    <attachment name="conditionAttachment_Americans_ControlGuamANZAC" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Guam" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_ANZAC_LiberateAleutianIslands" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="ANZAC:any:any:1-99:Aleutian Islands"/>
     </attachment>
+    <attachment name="conditionAttachment_Americans_ControlAleutianIslandsANZAC" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Aleutian Islands" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_ANZAC_LiberateLineIslands" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="ANZAC:any:any:1-99:Line Islands"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_ControlLineIslandsANZAC" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Line Islands" count="1"/>
     </attachment>
     <!-- ANZAC Conditions Liberate Allied Territories Ends -->
 
@@ -21131,13 +21294,21 @@
      <attachment name="conditionAttachment_ANZAC_ControlSolomonIslandsInvertTurn29" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_LoseSolomonIslandsTurn29:conditionAttachment_ANZAC_ControlSolomonIslandsInvert"/>
      </attachment>
-     
+
+     <attachment name="conditionAttachment_British_LiberateEXPSolomonIslands1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateSolomonIslands:conditionAttachment_ANZAC_ControlSolomonIslandsUK"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_ANZAC_LiberateEXPSolomonIslands1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateSolomonIslands:conditionAttachment_ANZAC_ControlSolomonIslands"/>
       <option name="conditionType" value="AND"/>
      </attachment>
+     <attachment name="conditionAttachment_Americans_LiberateEXPSolomonIslands1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateSolomonIslands:conditionAttachment_ANZAC_ControlSolomonIslandsUSA"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_ANZAC_LiberateEXPSolomonIslands" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LiberateSolomonIslands:conditionAttachment_ANZAC_LiberateSolomonIslands:conditionAttachment_ANZAC_LiberateEXPSolomonIslands1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPSolomonIslands1:conditionAttachment_ANZAC_LiberateEXPSolomonIslands1:conditionAttachment_Americans_LiberateEXPSolomonIslands1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- ANZAC Conditions Pacific Solomon Islands Ends -->
@@ -21149,6 +21320,17 @@
     <attachment name="conditionAttachment_ANZAC_ControlNewGuinea" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="New Guinea" count="1"/>
     </attachment>
+
+    <attachment name="conditionAttachment_ANZAC_LoseNewGuineaanzac" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="battle" value="Japanese:ANZAC:any:currentRound:New Guinea"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZAC_LoseNewGuineaJPN" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="battle" value="ANZAC:Japanese:any:currentRound:New Guinea"/>
+      </attachment>
+      <attachment name="conditionAttachment_ANZAC_LoseNewGuinea" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="conditions" value="conditionAttachment_ANZAC_LoseNewGuineaanzac:conditionAttachment_ANZAC_LoseNewGuineaJPN"/>
+	<option name="conditionType" value="OR"/>
+      </attachment>
     
     <attachment name="conditionAttachment_ANZAC_LoseNewGuineaTurn1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="any:ANZAC:any:1-2:New Guinea"/>
@@ -21329,12 +21511,20 @@
       <option name="conditions" value="conditionAttachment_ANZAC_LoseNewGuineaTurn29:conditionAttachment_ANZAC_ControlNewGuineaInvert"/>
      </attachment>
 
+     <attachment name="conditionAttachment_British_LiberateEXPNewGuinea1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateNewGuinea:conditionAttachment_ANZAC_ControlNewGuineaUK"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_ANZAC_LiberateEXPNewGuinea1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateNewGuinea:conditionAttachment_ANZAC_ControlNewGuinea"/>
       <option name="conditionType" value="AND"/>
      </attachment>
+     <attachment name="conditionAttachment_Americans_LiberateEXPNewGuinea1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateNewGuinea:conditionAttachment_ANZAC_ControlNewGuineaUSA"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_ANZAC_LiberateEXPNewGuinea" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LiberateNewGuinea:conditionAttachment_ANZAC_LiberateNewGuinea:conditionAttachment_ANZAC_LiberateEXPNewGuinea1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPNewGuinea1:conditionAttachment_ANZAC_LiberateEXPNewGuinea1:conditionAttachment_Americans_LiberateEXPNewGuinea1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- ANZAC Conditions Pacific New Guinea Ends -->
@@ -21347,9 +21537,17 @@
       <option name="directOwnershipTerritories" value="Dutch New Guinea" count="1"/>
     </attachment>
     
-    <attachment name="conditionAttachment_ANZAC_LoseDNGTurn1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="Japanese:ANZAC:any:1-2:Dutch New Guinea"/>
+    <attachment name="conditionAttachment_ANZAC_LoseDNGanzac" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="battle" value="Japanese:ANZAC:any:currentRound:Dutch New Guinea"/>
     </attachment>
+    <attachment name="conditionAttachment_ANZAC_LoseDNGJPN" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="battle" value="ANZAC:Japanese:any:currentRound:Dutch New Guinea"/>
+      </attachment>
+      <attachment name="conditionAttachment_ANZAC_LoseDNG" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="conditions" value="conditionAttachment_ANZAC_LoseDNGanzac:conditionAttachment_ANZAC_LoseDNGJPN"/>
+	<option name="conditionType" value="OR"/>
+      </attachment>
+      
     <attachment name="conditionAttachment_ANZAC_LoseDNGTurn2" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Japanese:ANZAC:any:1-2:Dutch New Guinea"/>
     </attachment>
@@ -21542,7 +21740,7 @@
       <option name="directOwnershipTerritories" value="Manchuria" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Chinese_Own_1_TTy" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directOwnershipTerritories" value="map" count="2"/>
+      <option name="directOwnershipTerritories" value="map" count="4"/>
     </attachment>
     <!-- Americans Conditions -->
     <attachment name="conditionAttachment_Americans_5_unit_presence" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -23548,12 +23746,21 @@
      <attachment name="conditionAttachment_Americans_ControlAlaskaInvertTurn29" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LoseAlaskaTurn29:conditionAttachment_Americans_ControlAlaskaInvert"/>
      </attachment>
+     
+     <attachment name="conditionAttachment_British_LiberateEXPAlaska1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateAlaska:conditionAttachment_Americans_ControlAlaskaUK"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
+     <attachment name="conditionAttachment_ANZAC_LiberateEXPAlaska1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateAlaska:conditionAttachment_Americans_ControlAlaskaANZAC"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPAlaska1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateAlaska:conditionAttachment_Americans_ControlAlaska"/>
       <option name="conditionType" value="AND"/>
      </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPAlaska" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LiberateAlaska:conditionAttachment_ANZAC_LiberateAlaska:conditionAttachment_Americans_LiberateEXPAlaska1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPAlaska1:conditionAttachment_ANZAC_LiberateEXPAlaska1:conditionAttachment_Americans_LiberateEXPAlaska1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- Americans Conditions Pacific Alaska Ends -->
@@ -23743,12 +23950,21 @@
      <attachment name="conditionAttachment_Americans_ControlMidwayInvertTurn29" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LoseMidwayTurn29:conditionAttachment_Americans_ControlMidwayInvert"/>
      </attachment>
+
+     <attachment name="conditionAttachment_British_LiberateEXPMidway1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateMidway:conditionAttachment_Americans_ControlMidwayUK"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
+     <attachment name="conditionAttachment_ANZAC_LiberateEXPMidway1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateMidway:conditionAttachment_Americans_ControlMidwayANZAC"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPMidway1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateMidway:conditionAttachment_Americans_ControlMidway"/>
       <option name="conditionType" value="AND"/>
      </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPMidway" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LiberateMidway:conditionAttachment_ANZAC_LiberateMidway:conditionAttachment_Americans_LiberateEXPMidway1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPMidway1:conditionAttachment_ANZAC_LiberateEXPMidway1:conditionAttachment_Americans_LiberateEXPMidway1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- Americans Conditions Pacific Midway Ends -->
@@ -23939,12 +24155,21 @@
      <attachment name="conditionAttachment_Americans_ControlHawaiianIslandsInvertTurn29" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LoseHawaiianIslandsTurn29:conditionAttachment_Americans_ControlHawaiianIslandsInvert"/>
      </attachment>
+
+     <attachment name="conditionAttachment_British_LiberateEXPHawaiianIslands1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateHawaiianIslands:conditionAttachment_Americans_ControlHawaiianIslandsUK"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
+     <attachment name="conditionAttachment_ANZAC_LiberateEXPHawaiianIslands1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateHawaiianIslands:conditionAttachment_Americans_ControlHawaiianIslandsANZAC"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPHawaiianIslands1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateHawaiianIslands:conditionAttachment_Americans_ControlHawaiianIslands"/>
       <option name="conditionType" value="AND"/>
      </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPHawaiianIslands" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LiberateHawaiianIslands:conditionAttachment_ANZAC_LiberateHawaiianIslands:conditionAttachment_Americans_LiberateEXPHawaiianIslands1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPHawaiianIslands1:conditionAttachment_ANZAC_LiberateEXPHawaiianIslands1:conditionAttachment_Americans_LiberateEXPHawaiianIslands1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- Americans Conditions Pacific Hawaiian Islands Ends -->
@@ -24134,13 +24359,21 @@
      <attachment name="conditionAttachment_Americans_ControlMexicoInvertTurn29" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LoseMexicoTurn29:conditionAttachment_Americans_ControlMexicoInvert"/>
      </attachment>
-
+     
+     <attachment name="conditionAttachment_British_LiberateEXPMexico1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateMexico:conditionAttachment_Americans_ControlMexicoUK"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
+     <attachment name="conditionAttachment_ANZAC_LiberateEXPMexico1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateMexico:conditionAttachment_Americans_ControlMexicoANZAC"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPMexico1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateMexico:conditionAttachment_Americans_ControlMexico"/>
       <option name="conditionType" value="AND"/>
      </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPMexico" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LiberateMexico:conditionAttachment_ANZAC_LiberateMexico:conditionAttachment_Americans_LiberateEXPMexico1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPMexico1:conditionAttachment_ANZAC_LiberateEXPMexico1:conditionAttachment_Americans_LiberateEXPMexico1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- Americans Conditions Pacific Mexico Ends -->
@@ -24331,12 +24564,20 @@
       <option name="conditions" value="conditionAttachment_Americans_LoseWakeIslandTurn29:conditionAttachment_Americans_ControlWakeIslandInvert"/>
      </attachment>
 
+     <attachment name="conditionAttachment_British_LiberateEXPWakeIsland1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateWakeIsland:conditionAttachment_Americans_ControlWakeIslandUK"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
+     <attachment name="conditionAttachment_ANZAC_LiberateEXPWakeIsland1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateWakeIsland:conditionAttachment_Americans_ControlWakeIslandANZAC"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPWakeIsland1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateWakeIsland:conditionAttachment_Americans_ControlWakeIsland"/>
       <option name="conditionType" value="AND"/>
      </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPWakeIsland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LiberateWakeIsland:conditionAttachment_ANZAC_LiberateWakeIsland:conditionAttachment_Americans_LiberateEXPWakeIsland1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPWakeIsland1:conditionAttachment_ANZAC_LiberateEXPWakeIsland1:conditionAttachment_Americans_LiberateEXPWakeIsland1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- Americans Conditions Pacific Wake Island Ends -->
@@ -24526,12 +24767,21 @@
      <attachment name="conditionAttachment_Americans_ControlPhilippinesInvertTurn29" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LosePhilippinesTurn29:conditionAttachment_Americans_ControlPhilippinesInvert"/>
      </attachment>
+
+     <attachment name="conditionAttachment_British_LiberateEXPPhilippines1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberatePhilippines:conditionAttachment_Americans_ControlPhilippinesUK"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
+     <attachment name="conditionAttachment_ANZAC_LiberateEXPPhilippines1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberatePhilippines:conditionAttachment_Americans_ControlPhilippinesANZAC"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPPhilippines1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberatePhilippines:conditionAttachment_Americans_ControlPhilippines"/>
       <option name="conditionType" value="AND"/>
      </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPPhilippines" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LiberatePhilippines:conditionAttachment_ANZAC_LiberatePhilippines:conditionAttachment_Americans_LiberateEXPPhilippines1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPPhilippines1:conditionAttachment_ANZAC_LiberateEXPPhilippines1:conditionAttachment_Americans_LiberateEXPPhilippines1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- Americans Conditions Pacific Philippines Ends -->
@@ -24721,12 +24971,21 @@
      <attachment name="conditionAttachment_Americans_ControlGuamInvertTurn29" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LoseGuamTurn29:conditionAttachment_Americans_ControlGuamInvert"/>
      </attachment>
+     
+     <attachment name="conditionAttachment_British_LiberateEXPGuam1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateGuam:conditionAttachment_Americans_ControlGuamUK"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
+     <attachment name="conditionAttachment_ANZAC_LiberateEXPGuam1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateGuam:conditionAttachment_Americans_ControlGuamANZAC"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPGuam1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateGuam:conditionAttachment_Americans_ControlGuam"/>
       <option name="conditionType" value="AND"/>
      </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPGuam" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LiberateGuam:conditionAttachment_ANZAC_LiberateGuam:conditionAttachment_Americans_LiberateEXPGuam1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPGuam1:conditionAttachment_ANZAC_LiberateEXPGuam1:conditionAttachment_Americans_LiberateEXPGuam1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- Americans Conditions Pacific Guam Ends -->
@@ -24916,12 +25175,21 @@
      <attachment name="conditionAttachment_Americans_ControlAleutianIslandsInvertTurn29" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LoseAleutianIslandsTurn29:conditionAttachment_Americans_ControlAleutianIslandsInvert"/>
      </attachment>
+
+     <attachment name="conditionAttachment_British_LiberateEXPAleutianIslands1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateAleutianIslands:conditionAttachment_Americans_ControlAleutianIslandsUK"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
+     <attachment name="conditionAttachment_ANZAC_LiberateEXPAleutianIslands1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateAleutianIslands:conditionAttachment_Americans_ControlAleutianIslandsANZAC"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPAleutianIslands1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateAleutianIslands:conditionAttachment_Americans_ControlAleutianIslands"/>
       <option name="conditionType" value="AND"/>
      </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPAleutianIslands" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LiberateAleutianIslands:conditionAttachment_ANZAC_LiberateAleutianIslands:conditionAttachment_Americans_LiberateEXPAleutianIslands1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPAleutianIslands1:conditionAttachment_ANZAC_LiberateEXPAleutianIslands1:conditionAttachment_Americans_LiberateEXPAleutianIslands1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- Americans Conditions Pacific Aleutian Islands Ends -->
@@ -25111,12 +25379,21 @@
      <attachment name="conditionAttachment_Americans_ControlLineIslandsInvertTurn29" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_LoseLineIslandsTurn29:conditionAttachment_Americans_ControlLineIslandsInvert"/>
      </attachment>
+
+     <attachment name="conditionAttachment_British_LiberateEXPLineIslands1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_LiberateLineIslands:conditionAttachment_Americans_ControlLineIslandsUK"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
+     <attachment name="conditionAttachment_ANZAC_LiberateEXPLineIslands1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_LiberateLineIslands:conditionAttachment_Americans_ControlLineIslandsANZAC"/>
+      <option name="conditionType" value="AND"/>
+     </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPLineIslands1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_Americans_LiberateLineIslands:conditionAttachment_Americans_ControlLineIslands"/>
       <option name="conditionType" value="AND"/>
      </attachment>
      <attachment name="conditionAttachment_Americans_LiberateEXPLineIslands" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LiberateLineIslands:conditionAttachment_ANZAC_LiberateLineIslands:conditionAttachment_Americans_LiberateEXPLineIslands1"/>
+      <option name="conditions" value="conditionAttachment_British_LiberateEXPLineIslands1:conditionAttachment_ANZAC_LiberateEXPLineIslands1:conditionAttachment_Americans_LiberateEXPLineIslands1"/>
       <option name="conditionType" value="OR"/>
      </attachment>
      <!-- Americans Conditions Pacific Line Islands Ends -->
@@ -25128,6 +25405,17 @@
     <attachment name="conditionAttachment_Americans_ControlDNG" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Dutch New Guinea" count="1"/>
     </attachment>
+
+    <attachment name="conditionAttachment_Americans_LoseDNGanzac" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="battle" value="Japanese:Americans:any:currentRound:Dutch New Guinea"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_LoseDNGJPN" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="battle" value="Americans:Japanese:any:currentRound:Dutch New Guinea"/>
+      </attachment>
+      <attachment name="conditionAttachment_Americans_LoseDNG" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="conditions" value="conditionAttachment_Americans_LoseDNGanzac:conditionAttachment_Americans_LoseDNGJPN"/>
+	<option name="conditionType" value="OR"/>
+      </attachment>
     
     <attachment name="conditionAttachment_Americans_LoseDNGTurn1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Japanese:Americans:any:1-2:Dutch New Guinea"/>
@@ -25957,6 +26245,12 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_BB_DamgedNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="BB_Damaged"/>
+    </attachment>
     <attachment name="triggerAttachment_Waffen_OberstNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:WaffenOberst:BasicEXPInvert:conditionAttachmentTurn2"/>
       <option name="uses" value="1"/>
@@ -26212,12 +26506,6 @@
       <option name="notification" value="Waffen_Hvy_Tank"/>
     </attachment>
     
-    <attachment name="triggerAttachment_WolfpackAutoPlace" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="BasicEXPInvert:conditionAttachment_SwitchIsTrue:conditionAttachmentTurns1-8"/>
-      <option name="placement" value="113 Sea Zone:Wolfpack" count="1"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="before:germansCombatMove"/>
-    </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_GermansControlGermany"/>
       <option name="placement" value="Germany:Rail" count="2"/>
@@ -26227,6 +26515,18 @@
     <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
       <option name="removeUnits" value="all:Rail" count="2"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceGermansItalyTakeover" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_GermansControlRome"/>
+      <option name="placement" value="Germany:Rail" count="1"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveGermansItalyTakeover" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+      <option name="removeUnits" value="all:Rail" count="3"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansNonCombatMove"/>
     </attachment>
@@ -26730,11 +27030,6 @@
     <attachment name="triggerAttachment_Germans_RemoveWolfpackSZ112" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_WolfpackRemove112"/>
       <option name="removeUnits" value="112 Sea Zone:Wolfpack" count="1"/> 
-      <option name="when" value="before:germansNonCombatMove"/>
-    </attachment>
-    <attachment name="triggerAttachment_Germans_RemoveWolfpackSZ113" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_WolfpackRemove113"/>
-      <option name="removeUnits" value="113 Sea Zone:Wolfpack" count="1"/> 
       <option name="when" value="before:germansNonCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_RemoveWolfpackSZ114" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -31613,7 +31908,7 @@
       <option name="resourceCount" value="-1"/>
     </attachment>
     <attachment name="triggerAttachment_Japan_Loses_PaulauIsland_Turn16" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_ControlPaulauIslandInvert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="conditionAttachment_Japanese_ControlPaulauIslandInvert:conditionAttachmentTurn16"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -36634,147 +36929,147 @@
     </attachment>
     
     <attachment name="triggerAttachment_British_Loses_DNG_Turn1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn1:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn1"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn2:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn2"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn2"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn3:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn3"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn3"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn4:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn4"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn4"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn5" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn5:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn5"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn5"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn6" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn6:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn6"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn6"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn7" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn7:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn7"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn7"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn8" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn8:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn8"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn9" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn9:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn9"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn9"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn10" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn10:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn10"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn10"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn11" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn11:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn11"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn11"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn12" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn12:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn12"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn12"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn13" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn13:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn13"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn13"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn14" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn14:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn14"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn14"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn15" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn15:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn15"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn15"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn16" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn16:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn16"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn16"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn17" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn17:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn17"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn17"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn18" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn18:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn18"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn18"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn19" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn19:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn19"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn19"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn20" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn20:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn20"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn20"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn21" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn21:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn21"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn21"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn22" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn22:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn22"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn22"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn23" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn23:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn23"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn23"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn24" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn24:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn24"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn24"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn25" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn25:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn25"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn25"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn26" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn26:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn26"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn26"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn27" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn27:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn27"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn27"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn28" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn28:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn28"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn28"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_DNG_Turn29" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_LoseDNGTurn29:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn29"/>
+      <option name="conditions" value="conditionAttachment_British_LoseDNG:conditionAttachment_British_ControlDNGInvert:conditionAttachmentTurn29"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
@@ -39597,147 +39892,147 @@
     </attachment>
     
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn1" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn1:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn1"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn2" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn2:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn2"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn2"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn3" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn3:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn3"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn3"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn4" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn4:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn4"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn4"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn5" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn5:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn5"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn5"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn6" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn6:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn6"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn6"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn7" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn7:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn7"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn7"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn8" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn8:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn8"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn9" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn9:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn9"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn9"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn10" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn10:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn10"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn10"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn11" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn11:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn11"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn11"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn12" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn12:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn12"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn12"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn13" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn13:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn13"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn13"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn14" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn14:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn14"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn14"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn15" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn15:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn15"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn15"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn16" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn16:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn16"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn16"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn17" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn17:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn17"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn17"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn18" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn18:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn18"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn18"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn19" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn19:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn19"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn19"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn20" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn20:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn20"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn20"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn21" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn21:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn21"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn21"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn22" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn22:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn22"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn22"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn23" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn23:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn23"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn23"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn24" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn24:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn24"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn24"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn25" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn25:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn25"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn25"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn26" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn26:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn26"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn26"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn27" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn27:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn27"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn27"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn28" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn28:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn28"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn28"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_Loses_DNG_Turn29" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNGTurn29:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn29"/>
+      <option name="conditions" value="conditionAttachment_ANZAC_LoseDNG:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachmentTurn29"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
@@ -45288,82 +45583,82 @@
     </attachment>
     
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn1:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn1"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn2" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn2:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn2"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn2"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn3" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn3:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn3"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn3"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn4" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn4:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn4"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn4"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn5" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn5:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn5"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn5"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn6" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn6:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn6"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn6"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn7" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn7:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn7"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn7"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_LoseDNGTurn8:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn8"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn9" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn9"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn9"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn10" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn10"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn10"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn11" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn11"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn11"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn12"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn12"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn13" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn13"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn13"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn14" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn14"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn14"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn15" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn15"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn15"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn16" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn16"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn16"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
@@ -45373,62 +45668,62 @@
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn18" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn18"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn18"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn19" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn19"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn19"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn20" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn20"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn20"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn21" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn21"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn21"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn22" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn22"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn22"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn23" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn23"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn23"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn24" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn24"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn24"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn25" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn25"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn25"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn26" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn26"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn26"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn27" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn27"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn27"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn28" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn28"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn28"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_Loses_DNG_Turn29" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn29"/>
+      <option name="conditions" value="conditionAttachment_Americans_LoseDNG:conditionAttachment_Americans_ControlDNGInvert:conditionAttachmentTurn29"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
@@ -49758,7 +50053,7 @@ They work correctly.<br>
 <br>
 <b>4 and 5. British Commandos and USA Marines</b><br>
 <br>
-Artillery will boost an inf 1 as well as a Commando/Marine 1 if all three present. If no inf, they’ll get boosted 2 and attack at 3.<br>
+Commando/Marine units now attack at 2 and get +1 when paired with Artillery. If attacking by themselves, you need to edit in a CommandoA1/MarineA1 unit.<br>
 <br>
 You will also need to edit when placing in a Allied Factory. Make a legal placement and then edit after turn end.<br>
 <br>
@@ -49788,6 +50083,8 @@ This was the most challenging unit for the engine. I've run several simulated ba
 <br>
 <b>Also</b> if you are only doing 1 attack that phase, don't forget to turn off edit before ending your Combat Move. Otherwise, it will go straight to Battle and you can't turn edit off then.<br>
 <br>
+<b>Note</b><br>
+If moving with edit, it may take an unintended route and conquer empty enemy Territories in the process. You may move with your intended course and stop when triplea deviates from your intended path, or edit unintended Territories to correct ownership.
 <b>8. Lend-Lease</b><br>
 <br>
 After the Allied Players Non Combat Move is finished, use edit and place the appropiate Lend-Lease Unit with the corresponding Unit. On Russia’s turn, purchase “1_PU” for every Lend Lease Unit you want to accept. On First Place phase, place the 1_PU where the Lend Lease Unit is and then use edit to remove the Lend-lease Units and add the Soviet ones. The “1_PU” Unit will remove itself before Combat Move.<br>
@@ -49920,7 +50217,7 @@ Place the "Defend CV" Unit during the 2nd Place Phase. It will auto remove befor
 <b>Note</b><br>
 If you didn't purchase a free Defend CV unit, simply edit one in after your turn.<br>
 <br>
-If damage is taken to a Battleship, you will need to edit to "BB_Damaged" and "Pac_BB_Damaged" before non combat move, so they will have a attack factor of zero. <br>
+If damage is taken to a Battleship, you will need to edit to "BB_Damaged" and "Pac_BB_Damaged" before non combat move, so they will have a attack factor of zero. You will also need to edit 1 hit of damage. Turn on edit and then click on the Battleship to add damage.<br>
 <br>
 <b>11. Super Heavy Battleship</b><br>
 <br>
@@ -49928,7 +50225,7 @@ They work correctly.<br>
 <br>
 The "SHB" will fire 2 Bombard shots, even if only 1 amphibous unit is attacking. Use the Dice Roller to simulate the bombardment and for any casualties to fire back. Then use edit to adjust accordingly. If you have more than 1 battle taking place, you will be able to use edit before choosing the first battle to fight. If only 1 battle is being fought, it will go straight to combat after your combat move. You will need to edit before your combat move in that case.<br>
 <br>
-If damage is taken in combat, you will need to edit to "Hvy_BB_Dmgd" and "German_Hvy_BB_Dmgd" before non combat move, so they will have a attack factor of zero.<br>
+If damage is taken in combat, you will need to edit to "Hvy_BB_Dmgd" and "German_Hvy_BB_Dmgd" before non combat move, so they will have a attack factor of zero. You will also need to edit 1 or 2 hits of damage. Turn on edit and then click on the Battleship to add damage.<br>
 <br>
 <b>Section III</b><br>
 <br>
@@ -49954,6 +50251,8 @@ Use edit "Perform Move or Other Actions" if necessary to make your move.<br>
 <br> 
 Correct movement is Player Enforced.<br>
 <br>
+Use Edit to correct Chinese Rail attacks on empty Japanese controlled territories if necessary. <br>
+<br>
 <b>4. Home Defense</b><br>
 <br>
 Use edit to place the 2 Japanese Infantry. Use the Dice roller to roll the first round battles and edit to remove casualties <b>before</b> start of combat.<br>
@@ -49968,12 +50267,11 @@ Use edit "Perform Move or Other Actions" for movement across Sea Zones. You will
 <br>
 <b>6. D-Day</b><br>
 <br> 
-USA makes it's D-Day combat move with <b>all</b> units that will take part in the D-Day invasion. This includes transports that will be loaded with UK troops and any Ships doing Shore Bombardment. Any Air Units as well.<br>
-There will be a record of the moves in History. You may also use the Comment Log if preferred. Hit the "Undo" button and remove all USA D-Day units with edit. Finish the rest of USA's turn.<br>
+Move all USA Land Units to participate in D-Day to UK. Do not move any Air or Naval Units that will participate in D-Day. Use Comment log if necessary. Finish the rest of USA's turn.<br>
 <br>
 On UK turn, make <b>All</b> non D-Day combat moves. Catalogue in comment log. Hit undo. Then use edit to add all USA D-Day units as British, to United Kingdom. Sea and Air Units to where they were on USA turn. Refer to comment log if needed.<br>
 <br>
-Now do all UK combat moves. Can either do D-day first or non D-day ones. Which ever seems more effecient.<br>
+Now do all UK combat moves. Can either do D-day first or non D-day ones. Whichever seems more effecient.<br>
 <br>
 After combat, use edit to replace UK units with the appropriate USA units and change territory control to Americans if invasion was successful. Refer to comment log if needed.<br>
 <br>
@@ -49987,12 +50285,11 @@ May be turned off in "Map Options".<br>
 <br>
 <b>8. German U-boats</b><br>
 <br>
-"Wolfpack" units are A0 D0 C0 units with unlimited movement. They give 1 AA shot of +1 on offense and defense to each U-Boat in it's sea zone for 1 round only.<br>
+"Wolfpack" units are A0 D0 C3 units with unlimited movement. They give 1 AA shot of +1 on offense and +2 on defense to each U-Boat in it's sea zone for 1 round only.<br>
 Any hits will not be able to fire back, regardless of enemy Destroyers being present.<br>
 <br>
-When Wolfpack conditions exist ( 3 or more U-Boats in same sea zone ), use edit to directly place a "Wolfpack" unit in the appropriate sea zone with "Add Units".<br>
-1 Wolfpack is Auto placed in Sea Zone 113 every round through round 8. Only use if needed. Player Enforced. You may also purchase additional Wolfpack units for free and place them in <b>any</b> sea zone next to German controlled territories. Place them in the First place phase so they can be used that turn. You can then ignore them if not needed.<br>
-This is preferred to direct edit placement, as you can move them during the combat move. They will still be blocked by Destroyers, so use "Perform Move Or Other Actions" in edit if needed. Otherwise, you must place before starting your combat move.<br>
+You may place Wolfpack units in <b>any</b> sea zone next to German controlled territories. Place them in the First place phase so they can be used that turn.<br>
+They have unlimited movement but will still be blocked by Destroyers, so use "Perform Move Or Other Actions" in edit if needed. Otherwise, you mu<br>
 Sea zone 113 is usually a good place for Wolfpack units waiting to be formed.<br>
 <br>
 Do not take as casualties. They will auto die if they are the only units left. They still need to be hit though, so if you get tired of rolling, simply submerge Wolfpack and kill him with edit at the end of the phase. <br>
@@ -50110,7 +50407,7 @@ Requires same Player Enforced and edit use as USA and Japan Navy Fighters listed
 <br>
 <b>9. Japanese Destroyers</b><br>
 <br>
-They work correctly.
+Only load with Infantry and Elite infantry. Player Enforced.
 <br>
 <br>
 <b>10. Rockets</b><br>
@@ -50192,13 +50489,24 @@ Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to
 <br>
 Change Log:
 <br>
-<br>7.0<br> 11/6/21  
+<br>7.1<br> 1/1/21  
+<br>
+Fix Dutch New Guinea not activating correctly on Allied counter attack after lost and reconquered. Fix Wolfpack removing Sea Zone 109 when 3 U-boats present. Fix Wolfpack not removing with less than 3 U-boats present in Sea Zone 99.<br>
+<br>
+Make Heavy Industry placement compliant. Fix extra Italian rail not showing up after German takeover of Italy. Fix Chinese rail showing up, unless 3 Territories are owned.<br>
+<br>
+Fix Allies activating Liberate of Pacific Territories when only having battle and not winning. Update D-Day Notes.<br>
+<br>
+Add Roundels to all Changer Landmines. Change "Commando/Marine" units to attack at 2 and get +1 when paired with Artillery. Add "CommandoA1/MarineA1".<br>
+<br>
+7.0<br> 11/6/21  
 <br>
 Fix British getting ANZAC "Strategic Islands" Objective when 1943 Rules aren't active. Add Notification for Russia's 10 PU s when attacked for first time. Fix China rail placement when they have no territories. Fix Me 262 Total War showing up early.<br>
 <br>
 Fix "waffen_panzer" showing up early. Change USA National Guard notification to end of Japan's turn. Fix "artillery" transport cost.<br>
 <br>
-Fix Transports not being able to be taken as a hit. You now need to Player Enforce correct behaviour for first 3 rounds. Fix BB_Damaged changing to Attack 0 in middle of battle. You will now need to edit BB_Damaged after combat phase. Heavy_BB and German_Heavy_BB work the same way.<br> 
+Fix Transports not being able to be taken as a hit. You now need to Player Enforce correct behaviour for first 3 rounds. Fix BB_Damaged changing to Attack 0 in middle of battle. You will now need to edit BB_Damaged after combat phase. Heavy_BB and German_Heavy_BB work the same way.
+<br> 
 <br>6.9<br> 11/2/21  
 <br>
 Undo Fix Mongolia not changing to Russian Control after Japanese Attack.Fix Heavy Underground Factories not placing. Fix German Total War Infantry over placing.<br>
