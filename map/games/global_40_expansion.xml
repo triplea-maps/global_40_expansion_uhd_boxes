@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="7.2"/>
+  <info name="Global 40 Expansion" version="7.3"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1456,6 +1456,7 @@
     <unit name="Repair_Hvy_Tank"/>
     <unit name="Banzai"/>
     <unit name="Seafire"/>
+    <unit name="SeafireTotalWar"/>
     <unit name="Me_109T"/>
     <unit name="German_Rockets"/>
     <unit name="Russian_Rockets"/>
@@ -2491,6 +2492,10 @@
       <cost resource="PUs" quantity="6"/>
       <result resourceOrUnit="Seafire" quantity="1"/>
     </productionRule>
+    <productionRule name="buySeafireTotalWar">
+      <cost resource="PUs" quantity="18"/>
+      <result resourceOrUnit="SeafireTotalWar" quantity="4"/>
+    </productionRule>
     <productionRule name="buyMe_109T">
       <cost resource="PUs" quantity="6"/>
       <result resourceOrUnit="Me_109T" quantity="1"/>
@@ -2800,6 +2805,7 @@
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
       <frontierRules name="buyMine_Unarmed"/>
+      <frontierRules name="buyMine_Armed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -2843,6 +2849,7 @@
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
       <frontierRules name="buyMine_Unarmed"/>
+      <frontierRules name="buyMine_Armed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoRusUndrMinr"/>
@@ -2889,6 +2896,7 @@
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
       <frontierRules name="buyMine_Unarmed"/>
+      <frontierRules name="buyMine_Armed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -2937,6 +2945,7 @@
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
       <frontierRules name="buyMine_Unarmed"/>
+      <frontierRules name="buyMine_Armed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -2982,6 +2991,7 @@
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
       <frontierRules name="buyMine_Unarmed"/>
+      <frontierRules name="buyMine_Armed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -3024,6 +3034,7 @@
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
       <frontierRules name="buyMine_Unarmed"/>
+      <frontierRules name="buyMine_Armed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -3065,6 +3076,7 @@
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
       <frontierRules name="buyMine_Unarmed"/>
+      <frontierRules name="buyMine_Armed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -3105,6 +3117,7 @@
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
       <frontierRules name="buyMine_Unarmed"/>
+      <frontierRules name="buyMine_Armed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -4686,6 +4699,17 @@
       <option name="isAir" value="true"/>
       <option name="attack" value="3"/>
       <option name="defense" value="4"/>
+      <option name="maxBuiltPerPlayer" value="4"/>
+      <option name="canScramble" value="false"/>
+      <option name="blockade" value="2"/>
+    </attachment>
+    <!-- SeafireTotalWar -->
+    <attachment name="unitAttachment" attachTo="SeafireTotalWar" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="3"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
       <option name="maxBuiltPerPlayer" value="4"/>
       <option name="canScramble" value="false"/>
       <option name="blockade" value="2"/>
@@ -17223,6 +17247,16 @@
       <option name="unitPresence" value="TotalWarFighter" count="12"/>
     </attachment>
 
+    <attachment name="conditionAttachment_BritishRemoveSeafireTotalWar4" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+      <option name="unitPresence" value="SeafireTotalWar" count="4"/>
+    </attachment>
+    <attachment name="conditionAttachment_BritishRemoveSeafireTotalWar4Invert" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+      <option name="unitPresence" value="SeafireTotalWar" count="5"/>
+      <option name="invert" value="true"/>
+    </attachment>
+
     <attachment name="conditionAttachment_BritishRemoveTotalWar_Bomber4" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
       <option name="unitPresence" value="TotalWar_Bomber" count="4"/>
@@ -18900,7 +18934,7 @@
 
      <!-- British Conditions Dutch New Guinea -->
     <attachment name="conditionAttachment_British_LiberateDNG" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="British:any:any:1-99:Dutch New Guinea"/>
+      <option name="directOwnershipTerritories" value="Dutch New Guinea" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_British_ControlDNG" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Dutch New Guinea" count="1"/>
@@ -21523,7 +21557,7 @@
 
      <!-- ANZAC Conditions Dutch New Guinea -->
     <attachment name="conditionAttachment_ANZAC_LiberateDNG" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="ANZAC:any:any:1-99:Dutch New Guinea"/>
+      <option name="directOwnershipTerritories" value="Dutch New Guinea" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_ControlDNG" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Dutch New Guinea" count="1"/>
@@ -25392,7 +25426,7 @@
 
      <!-- Americans Conditions Dutch New Guinea -->
     <attachment name="conditionAttachment_Americans_LiberateDNG" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="battle" value="Americans:any:any:1-99:Dutch New Guinea"/>
+      <option name="directOwnershipTerritories" value="Dutch New Guinea" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_ControlDNG" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Dutch New Guinea" count="1"/>
@@ -26285,18 +26319,6 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="Army_Group"/>
-    </attachment>
-    <attachment name="triggerAttachment_ArmyGroupActive" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PanzerGeneral:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn2"/>
-      <option name="productionRule" value="productionGermans:buyArmyGroupActive"/>
-      <option name="uses" value="1"/>
-      <option name="when" value="before:germansPurchase"/>
-    </attachment>
-    <attachment name="triggerAttachment_ArmyGroupActiveEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PanzerGeneral:BasicEXPInvert:EXP43:conditionAttachmentTurn1"/>
-      <option name="productionRule" value="productionGermans:buyArmyGroupActive"/>
-      <option name="uses" value="1"/>
-      <option name="when" value="before:germansPurchase"/>
     </attachment>
     
     <attachment name="triggerAttachment_GermansEscortsA3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -27691,6 +27713,12 @@
     </attachment>
 
     <!-- Germans TotalWarFighter43 -->
+    <attachment name="triggerAttachment_GermansTotalWarFighterEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TotalWar:EXP43:conditionAttachmentTurn1OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyTotalWarFighter"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarFighterPlaceGermany4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4Germany:conditionAttachment_GermansRemoveTotalWarFighter4InvertGermany"/>
       <option name="placement" value="Germany:fighter" count="4"/>
@@ -27750,13 +27778,7 @@
 
     <!-- Germans TotalWarBomber -->
     <attachment name="triggerAttachment_GermansTotalWar_Bomber" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:TotalWar:conditionAttachmentTurn7OrHigher"/>
-      <option name="productionRule" value="productionGermans:buyTotalWar_Bomber"/>
-      <option name="uses" value="1"/>
-      <option name="when" value="before:germansPurchase"/>
-    </attachment>
-    <attachment name="triggerAttachment_GermansTotalWar_Bomber" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:TotalWar:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionGermans:buyTotalWar_Bomber"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
@@ -27869,6 +27891,12 @@
     </attachment>
 
     <!-- Germans TotalWarBomber43 -->
+    <attachment name="triggerAttachment_GermansTotalWar_Bomber" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TotalWar:EXP43:conditionAttachmentTurn1OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyTotalWar_Bomber"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceGermany4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:A0C5BmbrInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4Germany:conditionAttachment_GermansRemoveTotalWarBomber4InvertGermany"/>
       <option name="placement" value="Germany:bomber" count="4"/>
@@ -28660,19 +28688,6 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
       <option name="notification" value="Army_GroupUSSR"/>
-    </attachment>
-    
-    <attachment name="triggerAttachment_ArmyGroupActiveUSSR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:PanzerGeneral:conditionAttachmentTurn2"/>
-      <option name="productionRule" value="productionRussians:buyArmyGroupActive"/>
-      <option name="uses" value="1"/>
-      <option name="when" value="before:russiansPurchase"/>
-    </attachment>
-    <attachment name="triggerAttachment_ArmyGroupActiveUSSREXP43" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:PanzerGeneral:conditionAttachmentTurn1"/>
-      <option name="productionRule" value="productionRussians:buyArmyGroupActive"/>
-      <option name="uses" value="1"/>
-      <option name="when" value="before:russiansPurchase"/>
     </attachment>
     
     <!-- Russians TotalWarInfantry -->
@@ -34986,8 +35001,8 @@
       <option name="when" value="after:britishEndTurn"/>
     </attachment>
     <!-- BritishTotalWarInfantry43 -->
-    <attachment name="triggerAttachment_UKTotalWarInf" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
+    <attachment name="triggerAttachment_UKTotalWarInfEXP43" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TotalWar:EXP43:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionBritish:buyTotalWar_Inf"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:britishPurchase"/>
@@ -35125,6 +35140,35 @@
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_BritishRemoveTotalWar_Arty12"/>
       <option name="placement" value="United Kingdom:artillery" count="12"/>
       <option name="removeUnits" value="United Kingdom:TotalWar_Arty" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:britishEndTurn"/>
+    </attachment>
+
+    <!-- BritishTotalWarSeaFighter -->
+    <attachment name="triggerAttachment_UKTotalWarSeaFighter" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
+      <option name="productionRule" value="productionBritish:buySeafireTotalWar"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:britishPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_UKSeafireTotalWarPlace4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveSeafireTotalWar4:conditionAttachment_BritishRemoveSeafireTotalWar4Invert"/>
+      <option name="placement" value="United Kingdom:Seafire" count="4"/>
+      <option name="removeUnits" value="United Kingdom:SeafireTotalWar" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:britishEndTurn"/>
+    </attachment>
+    <!-- BritishTotalWarSeaFighter43 -->
+    <attachment name="triggerAttachment_UKTotalWarSeaFighterEXP43" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TotalWar:EXP43:conditionAttachmentTurn1OrHigher"/>
+      <option name="productionRule" value="productionBritish:buySeafireTotalWar"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:britishPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_UKSeafireTotalWarPlace4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveSeafireTotalWar4:conditionAttachment_BritishRemoveSeafireTotalWar4Invert"/>
+      <option name="placement" value="United Kingdom:Seafire" count="4"/>
+      <option name="removeUnits" value="United Kingdom:SeafireTotalWar" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:britishEndTurn"/>
     </attachment>
@@ -40373,21 +40417,9 @@
       <option name="when" value="before:americansPurchase"/>
       <option name="notification" value="Army_GroupUSA"/>
     </attachment>
-    <attachment name="triggerAttachment_ArmyGroupActiveUSA" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PanzerGeneral:EXP43Invert:conditionAttachmentTurn5"/>
-      <option name="productionRule" value="productionAmericans:buyArmyGroupActive"/>
-      <option name="uses" value="1"/>
-      <option name="when" value="before:americansPurchase"/>
-    </attachment>
     <attachment name="triggerAttachment_Army_GroupUSAEXP43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="PanzerGeneral:EXP43:conditionAttachmentTurn1"/>
       <option name="productionRule" value="productionAmericans:buyArmy_Group"/>
-      <option name="uses" value="1"/>
-      <option name="when" value="before:americansPurchase"/>
-    </attachment>
-    <attachment name="triggerAttachment_ArmyGroupActiveUSAEXP43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PanzerGeneral:EXP43:conditionAttachmentTurn1"/>
-      <option name="productionRule" value="productionAmericans:buyArmyGroupActive"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansPurchase"/>
     </attachment>
@@ -41423,6 +41455,76 @@
       <option name="when" value="after:americansPlace"/>
     </attachment>
     <!-- AmericansTotalWarAirTrprt43 -->
+    <attachment name="triggerAttachment_AmericansTotalWarAirTrprtEXP43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TotalWar:EXP43:conditionAttachmentTurn1OrHigher"/>
+      <option name="productionRule" value="productionAmericans:buyTotalWarAirTrprt"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:americansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWarAirTrprtPlaceEUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarAirTrprt4EUS:conditionAttachment_AmericansRemoveTotalWarAirTrprt4EUSInvert"/>
+      <option name="placement" value="Eastern United States:air_transport" count="4"/>
+      <option name="removeUnits" value="Eastern United States:TotalWarAirTrprt" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWarAirTrprtPlaceEUS8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarAirTrprt8EUS:conditionAttachment_AmericansRemoveTotalWarAirTrprt8EUSInvert"/>
+      <option name="placement" value="Eastern United States:air_transport" count="8"/>
+      <option name="removeUnits" value="Eastern United States:TotalWarAirTrprt" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWarAirTrprtPlaceEUS12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarAirTrprt12EUS"/>
+      <option name="placement" value="Eastern United States:air_transport" count="12"/>
+      <option name="removeUnits" value="Eastern United States:TotalWarAirTrprt" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWarAirTrprtPlaceCUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarAirTrprt4CUS:conditionAttachment_AmericansRemoveTotalWarAirTrprt4CUSInvert"/>
+      <option name="placement" value="Central United States:air_transport" count="4"/>
+      <option name="removeUnits" value="Central United States:TotalWarAirTrprt" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWarAirTrprtPlaceCUS8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarAirTrprt8CUS:conditionAttachment_AmericansRemoveTotalWarAirTrprt8CUSInvert"/>
+      <option name="placement" value="Central United States:air_transport" count="8"/>
+      <option name="removeUnits" value="Central United States:TotalWarAirTrprt" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWarAirTrprtPlaceCUS12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarAirTrprt12CUS"/>
+      <option name="placement" value="Central United States:air_transport" count="12"/>
+      <option name="removeUnits" value="Central United States:TotalWarAirTrprt" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWarAirTrprtPlaceWUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarAirTrprt4WUS:conditionAttachment_AmericansRemoveTotalWarAirTrprt4WUSInvert"/>
+      <option name="placement" value="Western United States:air_transport" count="4"/>
+      <option name="removeUnits" value="Western United States:TotalWarAirTrprt" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWarAirTrprtPlaceWUS8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarAirTrprt8WUS:conditionAttachment_AmericansRemoveTotalWarAirTrprt8WUSInvert"/>
+      <option name="placement" value="Western United States:air_transport" count="8"/>
+      <option name="removeUnits" value="Western United States:TotalWarAirTrprt" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_AmericansTotalWarAirTrprtPlaceWUS12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarAirTrprt12WUS"/>
+      <option name="placement" value="Western United States:air_transport" count="12"/>
+      <option name="removeUnits" value="Western United States:TotalWarAirTrprt" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:americansPlace"/>
+    </attachment>
+    <!-- AmericansTotalWarAirTrprt43 Ends -->
     
     <attachment name="triggerAttachment_USARemoveBombers" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="A0C5Bmbr"/>
@@ -50135,11 +50237,10 @@ This requires extensive edit use. There is also a TripleA option that is "edit f
 <br>
 You may purchase "unarmed" mines and place them in your Capital during the "First Place" phase. It will allow you to place as many as you want, so placement is Player Enforced.<br>
 <br>
-Use edit to place "Armed" mines. They are placed in the 2nd Place Phase.Use the Player "Changer" for these. You may place them anywhere there is an unarmed mine.<br>
+Use edit to place “Armed” mines. They are placed in the 2nd Place Phase.Use the Player “Changer” for these. You may place them anywhere there is an unarmed mine. When you place the armed mines, you will need to use the “Comment Log” stating which Border they are defending in the territory. To access the comment log, go to the “View” menu, and click “Show Comment Log”.<br>
 <br>
-When you place the armed mines, you will need to use the "Comment Log" stating which Border they are defending in the territory. To access the comment log, go to the "View" menu, and click "Show Comment Log".<br>
+You may also place “Colored” mines: Red, Blue, Green, Yellow and Orange. This will allow you to edit different mines designating the defense of different borders. As a guideline, you may way want to use no color for West, Blue for North, Red for South and Green for East. Yellow for North and Southwest and Orange for North and Southeast to make it easier to tell how many and where they defend are.<br>
 <br>
-You may also place "Colored" mines: Red, Blue, Green, Yellow and Orange. This will allow you to edit different mines designating the defense of different borders. As a guideline, you may way want to use no color for West, Blue for North, Green for South and Red for East. Orange for North and Southwest and Yellow for North and Southeast to make it easier to tell how many and where they defend are.<br>
 Use comment log to clarify. A notepad next to your keyboard with the information may also prove useful, after the initial documentation.<br>
 <br>
 Using the mines in combat requires use of the "Dice Roller". It is located in the "Game" menu next to View. If only 1 battle is to take place, at the <b>START</b> of your combat move, determine how many units are crossing the minefield and roll as many dice as there are armed mines. Use edit to remove any casualties and any mines that detonated. Excess mine hits are not removed.<br>
@@ -50151,11 +50252,11 @@ The Dice Roller is not tracked in "History" so you may use the comment log if yo
 <br>
 You may load no more than 3 mines on a transport. This is Player Enforced.<br>
 <br>
-Do not take Unarmed mines as casualties in combat. Player enforced.<br>
+Do not take mines as casualties in combat. Player enforced. When a territory is conquered, all the mines will be destroyed. You will need to use edit to replace the unexploded mines after combat has ended and before the non combat move. The player "Changer" has mines for each player and they can safely be placed in the conquered territory.<br>
 <br>
 Use the same procedure as above, for any units that cross the minefield in non combat move.<br>
 <br>
-Unarmed mines will block blitz movement. Use edit "Perform Move or Other Actions" to make a legal move.<br>
+Mines will block blitz movement. Use edit "Perform Move or Other Actions" to make a legal move.<br>
 <br>
 <b>TripleA Landmines</b><br>
 The “armed” mines are D2 now. They only die after getting a hit or taken as a casualty. They roll separately from the rest of the defending units, so you can see if they hit or not. You can place as many as there are “unarmed” mines, so you’ll have to player enforce any territory limits. They will defend against attacks from any border.<br>
@@ -50481,7 +50582,11 @@ Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to
 <br>
 Change Log:
 <br>
-<br>7.2<br> 12/1/21  
+<br>7.3<br> 12/10/21  
+<br>
+Fix Dutch New Guinea not giving PUs to Allies without battle. Fix some Total War Units not showing up in Purchase Window.Some Notification and Game Notes cleanup.
+<br>
+<br>7.1<br> 12/1/21  
 <br>
 Fix Dutch New Guinea not activating correctly on Allied counter attack after lost and reconquered. Fix Wolfpack removing Sea Zone 109 when 3 U-boats present. Fix Wolfpack not removing with less than 3 U-boats present in Sea Zone 99.<br>
 <br>
