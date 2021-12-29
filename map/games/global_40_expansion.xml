@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="7.3"/>
+  <info name="Global 40 Expansion" version="7.4"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1258,6 +1258,11 @@
     <unit name="usa_para"/>
     <unit name="uk_para"/>
     <unit name="italian_para"/>
+    <unit name="German_Engineer"/>
+    <unit name="Russian_Engineer"/>
+    <unit name="Japan_Engineer"/>
+    <unit name="USA_Engineer"/>
+    <unit name="UK_Engineer"/>
     <unit name="Army_Conscript"/>
     <unit name="artillery"/>
     <unit name="Waffen_Arty"/>
@@ -1284,9 +1289,23 @@
     <unit name="uk_armour"/>
     <unit name="waffen_panzer"/>
     <unit name="Panzer_General"/>
+    <unit name="DesertGeneral"/>
+    <unit name="DesertGeneral2"/>
+    <unit name="DesertGeneral3"/>
+    <unit name="DesertGeneralA2D3"/>
+    <unit name="DesertGeneralA1D3"/>
     <unit name="Tank_General"/>
     <unit name="USA_TankGeneral"/>
+    <unit name="USA_DesertGeneral"/>
+    <unit name="USA_DesertGeneral2"/>
+    <unit name="USA_DesertGeneral3"/>
+    <unit name="USA_DesertGeneralA2D3"/>
+    <unit name="USA_DesertGeneralA1D3"/>
     <unit name="UK_TankGeneral"/>
+    <unit name="UK_DesertGeneral"/>
+    <unit name="UK_DesertGeneral2"/>
+    <unit name="UK_DesertGeneral3"/>
+    <unit name="UK_DesertGeneralA1D3"/>
     <unit name="Panzer_General3"/>
     <unit name="Tank_General3"/>
     <unit name="USATankGeneral3"/>
@@ -1744,6 +1763,26 @@
       <cost resource="PUs" quantity="4"/>
       <result resourceOrUnit="italian_para" quantity="1"/>
     </productionRule>
+    <productionRule name="buyGerman_Engineer">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="German_Engineer" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyRussian_Engineer">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="Russian_Engineer" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyJapan_Engineer">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="Japan_Engineer" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSA_Engineer">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="USA_Engineer" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_Engineer">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="UK_Engineer" quantity="1"/>
+    </productionRule>
     <productionRule name="buyArmy_Conscript">
       <cost resource="PUs" quantity="2"/>
       <result resourceOrUnit="Army_Conscript" quantity="1"/>
@@ -1864,6 +1903,26 @@
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="Panzer_General3" quantity="1"/>
     </productionRule>
+    <productionRule name="buyDesertGeneral">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="DesertGeneral" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyDesertGeneral2">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="DesertGeneral2" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyDesertGeneral3">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="DesertGeneral3" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyDesertGeneralA2D3">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="DesertGeneralA2D3" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyDesertGeneralA1D3">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="DesertGeneralA1D3" quantity="1"/>
+    </productionRule>
     <productionRule name="buyTank_General3">
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="Tank_General3" quantity="1"/>
@@ -1872,9 +1931,45 @@
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="USATankGeneral3" quantity="1"/>
     </productionRule>
+    <productionRule name="buyUSA_DesertGeneral">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="USA_DesertGeneral" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSA_DesertGeneral2">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="USA_DesertGeneral2" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSA_DesertGeneral3">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="USA_DesertGeneral3" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSA_DesertGeneralA2D3">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="USA_DesertGeneralA2D3" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSA_DesertGeneralA1D3">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="USA_DesertGeneralA1D3" quantity="1"/>
+    </productionRule>
     <productionRule name="buyUKTankGeneral3">
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="UKTankGeneral3" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_DesertGeneral">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="UK_DesertGeneral" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_DesertGeneral2">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="UK_DesertGeneral2" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_DesertGeneral3">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="UK_DesertGeneral3" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_DesertGeneralA1D3">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="UK_DesertGeneralA1D3" quantity="1"/>
     </productionRule>
     <productionRule name="buyArmy_Group">
       <cost resource="PUs" quantity="0"/>
@@ -2777,6 +2872,7 @@
       <frontierRules name="buyWaffen_Infantry"/>
       <frontierRules name="buyElite"/>
       <frontierRules name="buyGerman_Para"/>
+      <frontierRules name="buyGerman_Engineer"/>
       <frontierRules name="buyMech_Infantry"/>
       <frontierRules name="buyPanzer_Grndrs"/>
       <frontierRules name="buyArtillery"/>
@@ -2825,6 +2921,7 @@
       <frontierRules name="buyInfantry"/>
       <frontierRules name="buyElite"/>
       <frontierRules name="buyRussian_Para"/>
+      <frontierRules name="buyRussian_Engineer"/>
       <frontierRules name="buyMech_Infantry"/>
       <frontierRules name="buyArtillery"/>
       <frontierRules name="buyArmour"/>
@@ -2869,6 +2966,7 @@
       <frontierRules name="buyInfantry"/>
       <frontierRules name="buyElite"/>
       <frontierRules name="buyJapanese_Para"/>
+      <frontierRules name="buyJapan_Engineer"/>
       <frontierRules name="buyMech_Infantry"/>
       <frontierRules name="buyArtillery"/>
       <frontierRules name="buyArmour"/>
@@ -2917,6 +3015,7 @@
       <frontierRules name="buyMarine"/>
       <frontierRules name="buyElite"/>
       <frontierRules name="buyUSA_Para"/>
+      <frontierRules name="buyUSA_Engineer"/>
       <frontierRules name="buyMech_Infantry"/>
       <frontierRules name="buyArmoredInfantry"/>
       <frontierRules name="buyArtillery"/>
@@ -2966,6 +3065,7 @@
       <frontierRules name="buyCommando"/>
       <frontierRules name="buyElite"/>
       <frontierRules name="buyUK_Para"/>
+      <frontierRules name="buyUK_Engineer"/>
       <frontierRules name="buyMech_Infantry"/>
       <frontierRules name="buyArtillery"/>
       <frontierRules name="buyUK_Armour"/>
@@ -3960,7 +4060,7 @@
     </attachment>
     <!-- German Rockets -->
     <attachment name="unitAttachment" attachTo="German_Rockets" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="movement" value="1"/>
+      <option name="movement" value="2"/>
       <option name="attack" value="2"/>
       <option name="defense" value="0"/>
       <option name="isSuicideOnAttack" value="true"/>
@@ -3974,7 +4074,7 @@
     </attachment>
     <!-- Russian Rockets -->
     <attachment name="unitAttachment" attachTo="Russian_Rockets" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="movement" value="1"/>
+      <option name="movement" value="2"/>
       <option name="attack" value="2"/>
       <option name="defense" value="0"/>
       <option name="isSuicideOnAttack" value="true"/>
@@ -4017,7 +4117,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:commandoA1:marineA1:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:tactical_bomber:usa_armour:usa_fighter:NavyFighter:Seafire:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
+      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:commandoA1:marineA1:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:USA_DesertGeneral:UK_DesertGeneral:USA_DesertGeneral2:UK_DesertGeneral2:USA_DesertGeneral3:UK_DesertGeneral3:USA_DesertGeneralA2D3:USA_DesertGeneralA1D3:UK_DesertGeneralA1D3:Army_Group:ArmyGroupActive:fighter:tactical_bomber:usa_armour:usa_fighter:NavyFighter:Seafire:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
       <option name="typeAA" value="GermanAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -4037,7 +4137,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
+      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA2D3:DesertGeneralA1D3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
       <option name="typeAA" value="RussianAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -4057,7 +4157,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:commandoA1:marineA1:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Seafire:tactical_bomber:usa_armour:usa_fighter:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
+      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:commandoA1:marineA1:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:USA_DesertGeneral:USA_DesertGeneral2:UK_DesertGeneral2:USA_DesertGeneral3:UK_DesertGeneral3:USA_DesertGeneralA2D3:USA_DesertGeneralA1D3:UK_DesertGeneralA1D3:UK_DesertGeneral:Army_Group:ArmyGroupActive:fighter:NavyFighter:Seafire:tactical_bomber:usa_armour:usa_fighter:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
       <option name="typeAA" value="JapaneseAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -4077,7 +4177,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
+      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA2D3:DesertGeneralA1D3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
       <option name="typeAA" value="AmericanAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -4097,7 +4197,7 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
+      <option name="targetsAA" value="infantry:Volkssturm:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Waffen_Oberst_3:Waffen_Oberst_4:elite:german_para:Waffen_Para:japanese_para:italian_para:artillery:Waffen_Arty:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:Panzer_General:Panzer_General3:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA2D3:DesertGeneralA1D3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Me_109T:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:aaGun:Me_262:King_Tiger:Waffen_Hvy_Tank"/>
       <option name="typeAA" value="BritishAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
@@ -4117,13 +4217,108 @@
       <option name="maxAAattacks" value="1"/>
       <option name="maxRoundsAA" value="1"/>
       <option name="mayOverStackAA" value="true"/>
-      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:commandoA1:marineA1:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Seafire:tactical_bomber:usa_armour:usa_fighter:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
+      <option name="targetsAA" value="infantry:guard_infantry:Army_Conscript:Soviet_Partisan:commando:marine:commandoA1:marineA1:elite:russian_para:usa_para:uk_para:artillery:mech_infantry:ArmoredInfantry:armour:usa_armour:uk_armour:Tank_General:USA_TankGeneral:UK_TankGeneral:Tank_General3:USATankGeneral3:UKTankGeneral3:USA_DesertGeneral:UK_DesertGeneral:USA_DesertGeneral2:UK_DesertGeneral2:USA_DesertGeneral3:UK_DesertGeneral3:USA_DesertGeneralA2D3:USA_DesertGeneralA1D3:UK_DesertGeneralA1D3:Army_Group:ArmyGroupActive:fighter:NavyFighter:Seafire:tactical_bomber:usa_armour:usa_fighter:usa_tactical_bomber:uk_armour:uk_fighter:uk_tactical_bomber:bomber:bomberA0C5:USA_Hvy_Bomber:UK_Hvy_Bomber:aaGun"/>
       <option name="typeAA" value="ItalianAirborneAttack"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
       <option name="unitPlacementOnlyAllowedIn" value="Southern Italy"/>
       <option name="maxBuiltPerPlayer" value="4"/>
     </attachment>
+   <!-- German_Engineer -->
+    <attachment name="unitAttachment" attachTo="German_Engineer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="isLandTransport" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="transportCapacity" value="3"/>
+      <option name="attack" value="1"/>
+      <option name="defense" value="3"/>
+      <!--<option name="artillerySupportable" value="true"/>-->
+      <option name="receivesAbilityWhenWith" value="canBlitz:waffen_panzer"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:Panzer_General"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:DesertGeneral"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:DesertGeneral2"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:DesertGeneral3"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:DesertGeneralA2D3"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:DesertGeneralA1D3"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:armour"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany:Southern Italy"/>
+      <option name="maxBuiltPerPlayer" value="4"/>
+    </attachment>
+    <!-- Russian_Engineer -->
+    <attachment name="unitAttachment" attachTo="Russian_Engineer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="isLandTransport" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="transportCapacity" value="3"/>
+      <option name="attack" value="1"/>
+      <option name="defense" value="3"/>
+      <!--<option name="artillerySupportable" value="true"/>-->
+      <option name="receivesAbilityWhenWith" value="canBlitz:armour"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Russia"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+    </attachment>
+    <!-- Japan_Engineer -->
+    <attachment name="unitAttachment" attachTo="Japan_Engineer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="isLandTransport" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="transportCapacity" value="3"/>
+      <option name="attack" value="1"/>
+      <option name="defense" value="3"/>
+      <!--<option name="artillerySupportable" value="true"/>-->
+      <option name="receivesAbilityWhenWith" value="canBlitz:armour"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Japan"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+    </attachment>
+    <!-- USA_Engineer -->
+    <attachment name="unitAttachment" attachTo="USA_Engineer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="isLandTransport" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="transportCapacity" value="3"/>
+      <option name="attack" value="1"/>
+      <option name="defense" value="3"/>
+      <!--<option name="artillerySupportable" value="true"/>-->
+      <option name="receivesAbilityWhenWith" value="canBlitz:armour"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:USA_TankGeneral"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:USATankGeneral3"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:USA_DesertGeneral"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:USA_DesertGeneral2"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:USA_DesertGeneralA2D3"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:USA_DesertGeneralA1D3"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:USA_DesertGeneral3"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Eastern United States"/>
+      <option name="maxBuiltPerPlayer" value="5"/>
+    </attachment>
+    <!-- UK_Engineer -->
+    <attachment name="unitAttachment" attachTo="UK_Engineer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="isLandTransport" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="transportCapacity" value="3"/>
+      <option name="attack" value="1"/>
+      <option name="defense" value="3"/>
+      <!--<option name="artillerySupportable" value="true"/>-->
+      <option name="receivesAbilityWhenWith" value="canBlitz:armour"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:UK_TankGeneral"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:UKTankGeneral3"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:UK_DesertGeneral"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:UK_DesertGeneral2"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:UK_DesertGeneral3"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:UK_DesertGeneralA1D3"/>
+      <option name="unitPlacementOnlyAllowedIn" value="United Kingdom"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+    </attachment> 
     <!-- Mech Infantry -->
     <attachment name="unitAttachment" attachTo="mech_infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
@@ -4221,6 +4416,7 @@
     <!-- Panzer General -->
     <attachment name="unitAttachment" attachTo="Panzer_General" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="transportCost" value="3"/>
       <option name="isAirTransportable" value="true"/>
       <option name="canBlitz" value="true"/>
@@ -4235,6 +4431,7 @@
     <!-- Panzer General3 -->
     <attachment name="unitAttachment" attachTo="Panzer_General3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="transportCost" value="3"/>
       <option name="isAirTransportable" value="true"/>
       <option name="canBlitz" value="true"/>
@@ -4245,9 +4442,80 @@
       <option name="maxBuiltPerPlayer" value="3"/>
       <option name="isLandTransport" value="false"/>
     </attachment>
+    <!-- DesertGeneral -->
+    <attachment name="unitAttachment" attachTo="DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
+    <!-- DesertGeneral2 -->
+    <attachment name="unitAttachment" attachTo="DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
+    <!-- DesertGeneral3 -->
+    <attachment name="unitAttachment" attachTo="DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
+    <!-- DesertGeneralA2D3 -->
+    <attachment name="unitAttachment" attachTo="DesertGeneralA2D3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
+    <!-- DesertGeneralA1D3 -->
+    <attachment name="unitAttachment" attachTo="DesertGeneralA1D3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
     <!-- Tank General -->
     <attachment name="unitAttachment" attachTo="Tank_General" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="transportCost" value="3"/>
       <option name="isAirTransportable" value="true"/>
       <option name="canBlitz" value="true"/>
@@ -4260,6 +4528,7 @@
     <!-- USA TankGeneral -->
     <attachment name="unitAttachment" attachTo="USA_TankGeneral" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="transportCost" value="3"/>
       <option name="isAirTransportable" value="true"/>
       <option name="canBlitz" value="true"/>
@@ -4269,9 +4538,80 @@
       <option name="unitPlacementOnlyAllowedIn" value="Eastern United States"/>
       <option name="isLandTransport" value="false"/>
     </attachment>
+    <!-- USA_DesertGeneral -->
+    <attachment name="unitAttachment" attachTo="USA_DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
+    <!-- USA_DesertGeneral2 -->
+    <attachment name="unitAttachment" attachTo="USA_DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
+    <!-- USA_DesertGeneral3 -->
+    <attachment name="unitAttachment" attachTo="USA_DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
+    <!-- USA_DesertGeneralA2D3 -->
+    <attachment name="unitAttachment" attachTo="USA_DesertGeneralA2D3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
+    <!-- USA_DesertGeneralA1D3 -->
+    <attachment name="unitAttachment" attachTo="USA_DesertGeneralA1D3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
     <!-- UK TankGeneral -->
     <attachment name="unitAttachment" attachTo="UK_TankGeneral" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="transportCost" value="3"/>
       <option name="isAirTransportable" value="true"/>
       <option name="canBlitz" value="true"/>
@@ -4281,9 +4621,66 @@
       <option name="unitPlacementOnlyAllowedIn" value="United Kingdom"/>
       <option name="isLandTransport" value="false"/>
     </attachment>
+    <!-- UK_DesertGeneral -->
+    <attachment name="unitAttachment" attachTo="UK_DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
+    <!-- UK_DesertGeneral2 -->
+    <attachment name="unitAttachment" attachTo="UK_DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
+    <!-- UK_DesertGeneralA1D3 -->
+    <attachment name="unitAttachment" attachTo="UK_DesertGeneralA1D3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
+    <!-- UK_DesertGeneral3 -->
+    <attachment name="unitAttachment" attachTo="UK_DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="isLandTransport" value="false"/>
+    </attachment>
     <!-- Tank General3 -->
     <attachment name="unitAttachment" attachTo="Tank_General3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="transportCost" value="3"/>
       <option name="isAirTransportable" value="true"/>
       <option name="canBlitz" value="true"/>
@@ -4295,6 +4692,7 @@
     <!-- USATankGeneral3 -->
     <attachment name="unitAttachment" attachTo="USATankGeneral3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="transportCost" value="3"/>
       <option name="isAirTransportable" value="true"/>
       <option name="canBlitz" value="true"/>
@@ -4306,6 +4704,7 @@
     <!-- UKTankGeneral3 -->
     <attachment name="unitAttachment" attachTo="UKTankGeneral3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="transportCost" value="3"/>
       <option name="isAirTransportable" value="true"/>
       <option name="canBlitz" value="true"/>
@@ -4317,6 +4716,7 @@
     <!-- Soviet Commisar -->
     <attachment name="unitAttachment" attachTo="Soviet_Commisar" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="3"/>
@@ -4327,6 +4727,7 @@
     <!-- Soviet Commisar 1 -->
     <attachment name="unitAttachment" attachTo="Soviet_Commisar_1" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="3"/>
@@ -4336,6 +4737,7 @@
     <!-- Soviet Commisar 2 -->
     <attachment name="unitAttachment" attachTo="Soviet_Commisar_2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="3"/>
@@ -4345,6 +4747,7 @@
     <!-- Soviet Commisar 3 -->
     <attachment name="unitAttachment" attachTo="Soviet_Commisar_3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
       <option name="maxBuiltPerPlayer" value="3"/>
@@ -4384,6 +4787,7 @@
     <!-- King Tiger -->
     <attachment name="unitAttachment" attachTo="King_Tiger" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="attack" value="3"/>
       <option name="defense" value="4"/>
       <option name="hitPoints" value="2"/>
@@ -4394,6 +4798,7 @@
     <!-- Tiger Damaged -->
     <attachment name="unitAttachment" attachTo="Tiger_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="attack" value="3"/>
       <option name="defense" value="4"/>
       <option name="hitPoints" value="2"/>
@@ -4404,6 +4809,7 @@
     <!-- Waffen Hvy Tank -->
     <attachment name="unitAttachment" attachTo="Waffen_Hvy_Tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="attack" value="4"/>
       <option name="defense" value="5"/>
       <option name="attackRolls" value="2"/>
@@ -4421,6 +4827,7 @@
     <!-- Waffen HvyTnk Dmgd -->
     <attachment name="unitAttachment" attachTo="Waffen_HvyTnk_Dmgd" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="attack" value="4"/>
       <option name="defense" value="5"/>
       <option name="attackRolls" value="2"/>
@@ -7552,6 +7959,282 @@
       <option name="bonusType" value="Panzer_General3SupportedDefense_bonus"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+
+    <!-- Support Attachment DesertGeneral3 -->
+    <attachment name="supportAttachmentDesertGeneral3Attack" attachTo="DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="armour"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Desert_General3_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneral3Defense" attachTo="DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="armour"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Desert_General3Defense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneral3SupportedAttack" attachTo="armour" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneral3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneral3Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneral3SupportedDefense" attachTo="armour" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneral3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneral3SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment DesertGeneral3 Ends -->
+    
+    <!-- Support Attachment DesertGeneral -->
+    <attachment name="supportAttachmentDesertGeneralAttackInf" attachTo="DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="infantry:elite:mech_infantry:german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneral_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralDefenseInf" attachTo="DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="infantry:elite:mech_infantry:german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneralDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralSupportedAttackInf" attachTo="infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralSupportedDefenseInf" attachTo="infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralSupportedAttackMechInf" attachTo="mech_infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralSupportedDefenseMechInf" attachTo="mech_infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralSupportedAttackElite" attachTo="elite" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralSupportedDefenseElite" attachTo="elite" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralSupportedAttackPara" attachTo="german_para" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralSupportedDefensePara" attachTo="german_para" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment DesertGeneral Ends -->
+    
+    <!-- Support Attachment DesertGeneral2 -->
+    <attachment name="supportAttachmentDesertGeneral2Attack" attachTo="DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="artillery"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Desert_General2_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneral2Defense" attachTo="DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="artillery"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Desert_General2Defense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneral2SupportedAttack" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneral2"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneral2Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneral2SupportedDefense" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneral2"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneral2SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment DesertGeneral2 Ends -->
+
+    <!-- Support Attachment DesertGeneralA2D3 -->
+    <attachment name="supportAttachmentDesertGeneralA2D3Attack" attachTo="DesertGeneralA2D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Panzer_Grndrs"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Desert_GeneralA2D3_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralA2D3Defense" attachTo="DesertGeneralA2D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Panzer_Grndrs"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Desert_GeneralA2D3Defense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralA2D3SupportedAttack" attachTo="Panzer_Grndrs" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneralA2D3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneralA2D3Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralA2D3SupportedDefense" attachTo="Panzer_Grndrs" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneralA2D3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneralA2D3SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment DesertGeneralA2D3 Ends -->
+
+    <!-- Support Attachment DesertGeneralA1D3 -->
+    <attachment name="supportAttachmentDesertGeneralA1D3Attack" attachTo="DesertGeneralA1D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="German_Engineer"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Desert_GeneralA1D3_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralA1D3Defense" attachTo="DesertGeneralA1D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="German_Engineer"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Desert_GeneralA1D3Defense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralA1D3SupportedAttack" attachTo="German_Engineer" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneralA1D3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneralA1D3Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentDesertGeneralA1D3SupportedDefense" attachTo="German_Engineer" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="DesertGeneralA1D3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="DesertGeneralA1D3SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment DesertGeneralA1D3 Ends -->
+    
     <attachment name="supportAttachmentWaffenInfantryAndWaffenPara" attachTo="Waffen_Arty" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="waffen_infantry:waffen_infantry2:Waffen_Para:Waffen_Oberst"/>
       <option name="faction" value="allied"/>
@@ -8516,6 +9199,97 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+    <!-- Support Attachment DesertGenerals Airborne Minus -->
+    <attachment name="supportAttachmentGermanAirborneAttackMinusDG3" attachTo="DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusDG3" attachTo="DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneAttackMinusDG" attachTo="DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusDG" attachTo="DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneAttackMinusDG2" attachTo="DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusDG2" attachTo="DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneAttackMinusDGA2D3" attachTo="DesertGeneralA2D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusDGA2D3" attachTo="DesertGeneralA2D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment DesertGenerals Airborne Minus Ends-->
+    
     <attachment name="supportAttachmentGermanAirborneAttackMinusWaffenInf" attachTo="waffen_infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="german_para"/>
       <option name="faction" value="allied"/>
@@ -8528,6 +9302,28 @@
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <attachment name="supportAttachmentGermanAirborneDefenseMinusWaffenInf" attachTo="waffen_infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneAttackMinusGerman_Engineer" attachTo="German_Engineer" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="german_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGermanAirborneDefenseMinusGerman_Engineer" attachTo="German_Engineer" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="german_para"/>
       <option name="faction" value="allied"/>
       <option name="side" value="defence"/>
@@ -8594,28 +9390,6 @@
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <attachment name="supportAttachmentGermanAirborneDefenseMinusWaffen_Oberst_2" attachTo="Waffen_Oberst_2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="german_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="defence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
-    <attachment name="supportAttachmentGermanAirborneAttackMinusWaffenPara" attachTo="Waffen_Para" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="german_para"/>
-      <option name="faction" value="allied"/>
-      <option name="side" value="offence"/>
-      <option name="dice" value="AAstrength"/>
-      <option name="bonus" value="-2"/>
-      <option name="number" value="8"/>
-      <option name="bonusType" value="AA_bonusMinus"/>
-      <option name="impArtTech" value="false"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
-    <attachment name="supportAttachmentGermanAirborneDefenseMinusWaffenPara" attachTo="Waffen_Para" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="german_para"/>
       <option name="faction" value="allied"/>
       <option name="side" value="defence"/>
@@ -9757,6 +10531,8 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+
+    <!-- Support Attachment USATankGeneral3 -->
     <attachment name="supportAttachmentUSATank_General3Attack" attachTo="USATankGeneral3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="usa_armour"/>
       <option name="faction" value="allied"/>
@@ -9797,6 +10573,394 @@
       <option name="bonusType" value="USATankGeneral3SupportedDefense_bonus"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+    <!-- Support Attachment USATankGeneral3 Ends -->
+
+    <!-- Support Attachment USA_DesertGeneral3 -->
+    <attachment name="supportAttachmentUSA_DesertGeneral3Attack" attachTo="USA_DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_armour"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_Desert_General3_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneral3Defense" attachTo="USA_DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_armour"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_Desert_General3Defense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneral3SupportedAttack" attachTo="usa_armour" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneral3Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneral3SupportedDefense" attachTo="usa_armour" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneral3SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment USA_DesertGeneral3 Ends -->
+
+    <!-- Support Attachment USA_DesertGeneral -->
+    <attachment name="supportAttachmentUSA_DesertGeneralAttackInf" attachTo="USA_DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="infantry:elite:mech_infantry:usa_para:marine"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneral_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralDefenseInf" attachTo="USA_DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="infantry:elite:mech_infantry:usa_para:marine"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralSupportedAttackInf" attachTo="infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralSupportedDefenseInf" attachTo="infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralSupportedAttackMechInf" attachTo="mech_infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralSupportedDefenseMechInf" attachTo="mech_infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralSupportedAttackElite" attachTo="elite" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralSupportedDefenseElite" attachTo="elite" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralSupportedAttackMarine" attachTo="marine" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralSupportedDefenseMarine" attachTo="marine" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralSupportedAttackPara" attachTo="usa_para" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralSupportedDefensePara" attachTo="usa_para" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment USA_DesertGeneral Ends -->
+
+    <!-- Support Attachment USA_DesertGeneral2 -->
+    <attachment name="supportAttachmentUSA_DesertGeneral2Attack" attachTo="USA_DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="artillery"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_Desert_General2_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneral2Defense" attachTo="USA_DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="artillery"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_Desert_General2Defense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneral2SupportedAttack" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral2"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneral2Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneral2SupportedDefense" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneral2"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneral2SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment USA_DesertGeneral2 Ends -->
+
+    <!-- Support Attachment USA_DesertGeneralA2D3 -->
+    <attachment name="supportAttachmentUSA_DesertGeneralA2D3Attack" attachTo="USA_DesertGeneralA2D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="ArmoredInfantry"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_Desert_GeneralA2D3_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralA2D3Defense" attachTo="USA_DesertGeneralA2D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="ArmoredInfantry"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_Desert_GeneralA2D3Defense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralA2D3SupportedAttack" attachTo="ArmoredInfantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneralA2D3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralA2D3Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralA2D3SupportedDefense" attachTo="ArmoredInfantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneralA2D3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralA2D3SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment USA_DesertGeneralA2D3 Ends -->
+
+    <!-- Support Attachment USA_DesertGeneralA1D3 -->
+    <attachment name="supportAttachmentUSA_DesertGeneralA1D3Attack" attachTo="USA_DesertGeneralA1D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_Engineer"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_Desert_GeneralA1D3_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralA1D3Defense" attachTo="USA_DesertGeneralA1D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_Engineer"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_Desert_GeneralA1D3Defense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralA1D3SupportedAttack" attachTo="USA_Engineer" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneralA1D3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralA1D3Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_DesertGeneralA1D3SupportedDefense" attachTo="USA_Engineer" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="USA_DesertGeneralA1D3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USA_DesertGeneralA1D3SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment USA_DesertGeneralA1D3 Ends -->
+
+    <!-- Support Attachment USA_DesertGenerals Airborne Minus -->
+    <attachment name="supportAttachmentUSA_AirborneAttackMinusDG3" attachTo="USA_DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_AirborneDefenseMinusDG3" attachTo="USA_DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_AirborneAttackMinusDG" attachTo="USA_DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_AirborneDefenseMinusDG" attachTo="USA_DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_AirborneAttackMinusDG2" attachTo="USA_DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_AirborneDefenseMinusDG2" attachTo="USA_DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_AirborneAttackMinusDGA2D3" attachTo="USA_DesertGeneralA2D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSA_AirborneDefenseMinusDGA2D3" attachTo="USA_DesertGeneralA2D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment USA_DesertGenerals Airborne Minus Ends-->
+    
     <attachment name="supportAttachmentUsaAirborneAttack" attachTo="usa_para" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="usa_para"/>
       <option name="faction" value="allied"/>
@@ -9841,6 +11005,30 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+    
+    <attachment name="supportAttachmentUsaAirborneAttackMinusUSA_Engineer" attachTo="USA_Engineer" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUsaAirborneDefenseMinusUSA_Engineer" attachTo="USA_Engineer" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    
     <attachment name="supportAttachmentUsaAirborneAttackMinusUSATG" attachTo="USA_TankGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="usa_para"/>
       <option name="faction" value="allied"/>
@@ -10365,6 +11553,328 @@
       <option name="bonusType" value="UKTankGeneral3Defense_bonus"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+
+    <!-- Support Attachment UK_DesertGeneral3 -->
+    <attachment name="supportAttachmentUK_DesertGeneral3Attack" attachTo="UK_DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_armour"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_Desert_General3_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneral3Defense" attachTo="UK_DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_armour"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_Desert_General3Defense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneral3SupportedAttack" attachTo="uk_armour" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneral3Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneral3SupportedDefense" attachTo="uk_armour" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneral3SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment UK_DesertGeneral3 Ends -->
+
+    <!-- Support Attachment UK_DesertGeneral -->
+    <attachment name="supportAttachmentUK_DesertGeneralAttackInf" attachTo="UK_DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="infantry:elite:mech_infantry:uk_para:commando"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneral_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralDefenseInf" attachTo="UK_DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="infantry:elite:mech_infantry:uk_para:commando"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneralDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralSupportedAttackInf" attachTo="infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralSupportedDefenseInf" attachTo="infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralSupportedAttackMechInf" attachTo="mech_infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralSupportedDefenseMechInf" attachTo="mech_infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralSupportedAttackElite" attachTo="elite" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralSupportedDefenseElite" attachTo="elite" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralSupportedAttackCommando" attachTo="commando" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralSupportedDefenseCommando" attachTo="commando" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralSupportedAttackPara" attachTo="uk_para" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneralSupported_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralSupportedDefensePara" attachTo="uk_para" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneralSupportedDefense_bonusInf"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment UK_DesertGeneral Ends -->
+
+    <!-- Support Attachment UK_DesertGeneral2 -->
+    <attachment name="supportAttachmentUK_DesertGeneral2Attack" attachTo="UK_DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="artillery"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_Desert_General2_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneral2Defense" attachTo="UK_DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="artillery"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_Desert_General2Defense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneral2SupportedAttack" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral2"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneral2Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneral2SupportedDefense" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneral2"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneral2SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment UK_DesertGeneral2 Ends -->
+
+    <!-- Support Attachment UK_DesertGeneralA1D3 -->
+    <attachment name="supportAttachmentUK_DesertGeneralA1D3Attack" attachTo="UK_DesertGeneralA1D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_Engineer"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_Desert_GeneralA1D3_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralA1D3Defense" attachTo="UK_DesertGeneralA1D3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_Engineer"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_Desert_GeneralA1D3Defense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralA1D3SupportedAttack" attachTo="UK_Engineer" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneralA1D3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneralA1D3Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_DesertGeneralA1D3SupportedDefense" attachTo="UK_Engineer" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="UK_DesertGeneralA1D3"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UK_DesertGeneralA1D3SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment UK_DesertGeneralA1D3 Ends -->
+
+    <!-- Support Attachment UK_DesertGenerals Airborne Minus -->
+    <attachment name="supportAttachmentUK_AirborneAttackMinusDG3" attachTo="UK_DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_AirborneDefenseMinusDG3" attachTo="UK_DesertGeneral3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_AirborneAttackMinusDG" attachTo="UK_DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_AirborneDefenseMinusDG" attachTo="UK_DesertGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_AirborneAttackMinusDG2" attachTo="UK_DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUK_AirborneDefenseMinusDG2" attachTo="UK_DesertGeneral2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment UK_DesertGenerals Airborne Minus Ends-->
+
     <attachment name="supportAttachmentUkAirborneAttackMinusInf" attachTo="infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="uk_para"/>
       <option name="faction" value="allied"/>
@@ -10387,6 +11897,30 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+
+    <attachment name="supportAttachmentUsaAirborneAttackMinusUK_Engineer" attachTo="UK_Engineer" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUsaAirborneDefenseMinusUK_Engineer" attachTo="UK_Engineer" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="uk_para"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="AAstrength"/>
+      <option name="bonus" value="-2"/>
+      <option name="number" value="8"/>
+      <option name="bonusType" value="AA_bonusMinus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    
     <attachment name="supportAttachmentUKAirborneAttackMinusUKTG" attachTo="UK_TankGeneral" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="uk_para"/>
       <option name="faction" value="allied"/>
@@ -11046,7 +12580,7 @@
     <attachment name="conditionAttachment_Germans_4_unit_presence" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Egypt" count="1"/>
       <!-- any land unit includes aaGuns but does not include 'facilities' -->
-      <option name="unitPresence" value="infantry:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:aaGun:King_Tiger:Tiger_Damaged:Waffen_Hvy_Tank:Waffen_HvyTnk_Dmgd" count="1"/>
+      <option name="unitPresence" value="infantry:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:aaGun:King_Tiger:Tiger_Damaged:Waffen_Hvy_Tank:Waffen_HvyTnk_Dmgd:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA2D3:DesertGeneralA1D3:German_Engineer" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Germans_5_Control_Norway_And_Denmark" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Denmark:Norway" count="2"/>
@@ -21773,7 +23307,7 @@
       <option name="directPresenceTerritories" value="France" count="1"/>
       <option name="atWarPlayers" value="Japanese:Germans:Italians" count="1"/>
       <!-- any land unit includes aaGuns but does not include 'facilities' -->
-      <option name="unitPresence" value="infantry:marine:elite:artillery:mech_infantry:ArmoredInfantry:usa_armour:aaGun:USA_TankGeneral:USATankGeneral3" count="1"/>
+      <option name="unitPresence" value="infantry:marine:elite:artillery:mech_infantry:ArmoredInfantry:usa_armour:aaGun:USA_TankGeneral:USATankGeneral3:USA_DesertGeneral:USA_DesertGeneral2:USA_DesertGeneral3:USA_DesertGeneralA1D3:USA_DesertGeneralA2D3:USA_Engineer" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_Major_Factory_Eastern" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Eastern United States" count="1"/>
@@ -26271,6 +27805,12 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_PacificIslandsNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="PacificIslands"/>
+    </attachment>
     <attachment name="triggerAttachment_BB_DamgedNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="uses" value="1"/>
@@ -26534,13 +28074,14 @@
     </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceGermansItalyTakeover" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_GermansControlRome"/>
-      <option name="placement" value="Germany:Rail" count="1"/>
+      <option name="placement" value="Germany:Europe_Rail" count="1"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveGermansItalyTakeover" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
-      <option name="removeUnits" value="all:Rail" count="3"/>
+      <option name="removeUnits" value="all:Rail" count="2"/>
+      <option name="removeUnits" value="all:Europe_Rail" count="1"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansNonCombatMove"/>
     </attachment>
@@ -28147,56 +29688,56 @@
     
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceGermany4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2624Germany:conditionAttachment_GermansRemoveTotalWarMe_2624InvertGermany"/>
-      <option name="placement" value="Germany:tactical_bomber" count="4"/>
+      <option name="placement" value="Germany:Me_262" count="4"/>
       <option name="removeUnits" value="Germany:TotalWarMe_262" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceGermany8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2628Germany:conditionAttachment_GermansRemoveTotalWarMe_2628GermanyInvert"/>
-      <option name="placement" value="Germany:tactical_bomber" count="8"/>
+      <option name="placement" value="Germany:Me_262" count="8"/>
       <option name="removeUnits" value="Germany:TotalWarMe_262" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceWesternGermany4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2624WesternGermany:conditionAttachment_GermansRemoveTotalWarMe_2624InvertWesternGermany"/>
-      <option name="placement" value="Western Germany:tactical_bomber" count="4"/>
+      <option name="placement" value="Western Germany:Me_262" count="4"/>
       <option name="removeUnits" value="Western Germany:TotalWarMe_262" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceWesternGermany8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2628WesternGermany:conditionAttachment_GermansRemoveTotalWarMe_2628WesternGermanyInvert"/>
-      <option name="placement" value="Western Germany:tactical_bomber" count="8"/>
+      <option name="placement" value="Western Germany:Me_262" count="8"/>
       <option name="removeUnits" value="Western Germany:TotalWarMe_262" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceRomania4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2624Romania:conditionAttachment_GermansRemoveTotalWarMe_2624InvertRomania"/>
-      <option name="placement" value="Romania:tactical_bomber" count="4"/>
+      <option name="placement" value="Romania:Me_262" count="4"/>
       <option name="removeUnits" value="Romania:TotalWarMe_262" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceRomania8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2628Romania:conditionAttachment_GermansRemoveTotalWarMe_2628RomaniaInvert"/>
-      <option name="placement" value="Romania:tactical_bomber" count="8"/>
+      <option name="placement" value="Romania:Me_262" count="8"/>
       <option name="removeUnits" value="Romania:TotalWarMe_262" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceGermany12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_26212Germany"/>
-      <option name="placement" value="Germany:tactical_bomber" count="12"/>
+      <option name="placement" value="Germany:Me_262" count="12"/>
       <option name="removeUnits" value="Germany:TotalWarMe_262" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceWesternGermany12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_26212WesternGermany"/>
-      <option name="placement" value="Western Germany:tactical_bomber" count="12"/>
+      <option name="placement" value="Western Germany:Me_262" count="12"/>
       <option name="removeUnits" value="Western Germany:TotalWarMe_262" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
@@ -28204,56 +29745,56 @@
     <!-- Germans TotalWarMe_26243 -->
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceGermany4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2624Germany:conditionAttachment_GermansRemoveTotalWarMe_2624InvertGermany"/>
-      <option name="placement" value="Germany:tactical_bomber" count="4"/>
+      <option name="placement" value="Germany:Me_262" count="4"/>
       <option name="removeUnits" value="Germany:TotalWarMe_262" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceGermany8EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2628Germany:conditionAttachment_GermansRemoveTotalWarMe_2628GermanyInvert"/>
-      <option name="placement" value="Germany:tactical_bomber" count="8"/>
+      <option name="placement" value="Germany:Me_262" count="8"/>
       <option name="removeUnits" value="Germany:TotalWarMe_262" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceWesternGermany4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2624WesternGermany:conditionAttachment_GermansRemoveTotalWarMe_2624InvertWesternGermany"/>
-      <option name="placement" value="Western Germany:tactical_bomber" count="4"/>
+      <option name="placement" value="Western Germany:Me_262" count="4"/>
       <option name="removeUnits" value="Western Germany:TotalWarMe_262" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceWesternGermany8EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2628WesternGermany:conditionAttachment_GermansRemoveTotalWarMe_2628WesternGermanyInvert"/>
-      <option name="placement" value="Western Germany:tactical_bomber" count="8"/>
+      <option name="placement" value="Western Germany:Me_262" count="8"/>
       <option name="removeUnits" value="Western Germany:TotalWarMe_262" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceRomania4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2624Romania:conditionAttachment_GermansRemoveTotalWarMe_2624InvertRomania"/>
-      <option name="placement" value="Romania:tactical_bomber" count="4"/>
+      <option name="placement" value="Romania:Me_262" count="4"/>
       <option name="removeUnits" value="Romania:TotalWarMe_262" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceRomania8EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2628Romania:conditionAttachment_GermansRemoveTotalWarMe_2628RomaniaInvert"/>
-      <option name="placement" value="Romania:tactical_bomber" count="8"/>
+      <option name="placement" value="Romania:Me_262" count="8"/>
       <option name="removeUnits" value="Romania:TotalWarMe_262" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceGermany12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_26212Germany"/>
-      <option name="placement" value="Germany:tactical_bomber" count="12"/>
+      <option name="placement" value="Germany:Me_262" count="12"/>
       <option name="removeUnits" value="Germany:TotalWarMe_262" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceWesternGermany12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_26212WesternGermany"/>
-      <option name="placement" value="Western Germany:tactical_bomber" count="12"/>
+      <option name="placement" value="Western Germany:Me_262" count="12"/>
       <option name="removeUnits" value="Western Germany:TotalWarMe_262" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
@@ -48011,7 +49552,7 @@
     <attachment name="conditionAttachment_Germans_NoUnitsInAfrica" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Egypt:Morocco:Algeria:Tunisia:Libya:Tobruk:Alexandria:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:French Equatorial Africa:French Central Africa:Nigeria:Kenya:Gold Coast:South West Africa:French West Africa:Ethiopia:Italian Somaliland:British Somaliland:Belgian Congo:Union of South Africa" count="1"/>
       <!-- any land unit includes aaGuns but does not include 'facilities' -->
-      <option name="unitPresence" value="infantry:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:aaGun" count="1"/>
+      <option name="unitPresence" value="infantry:waffen_infantry:waffen_infantry2:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:aaGun:German_Engineer:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA1D3:DesertGeneralA2D3" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Italians_NoUnitsInAfrica" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -48034,15 +49575,14 @@
     </attachment>
     <attachment name="triggerAttachment_GermansAtWarWithItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="relationshipChange" value="Germans:Italians:Allied:War"/>
-      <option name="when" value="after:germansCombatMove"/>
+      <option name="when" value="before:germansCombatMove"/>
     </attachment>
     <attachment name="userActionAttachment_Germans_TakeOverItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.UserActionAttachment" type="player">
-      <option name="conditions" value="GermanyTakesItaly:BasicEXPInvert:conditionAttachmentTurn8OrHigher:conditionAttachment_Germans_NoUnitsInAfrica:conditionAttachment_Italians_NoUnitsInAfrica:conditionAttachment_Italians_ShipsOnlyInMed:conditionAttachment_AxisControlItaly:conditionAttachment_Germans_TakeOverItaly"/>
+      <option name="conditions" value="GermanyTakesItaly:BasicEXPInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_Germans_NoUnitsInAfrica:conditionAttachment_Italians_NoUnitsInAfrica:conditionAttachment_Italians_ShipsOnlyInMed:conditionAttachment_AxisControlItaly:conditionAttachment_Germans_TakeOverItaly"/>
       <option name="activateTrigger" value="triggerAttachment_GermansAtWarWithItaly:1:false:false:false:false"/>
       <option name="text" value="Germans_Take_Over_Italy"/>
       <option name="chance" value="6:6"/>
       <option name="costResources" value="PUs" count="5"/>
-      <option name="attemptsPerTurn" value="1"/>
       <option name="actionAccept" value="Germans"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_At_War_With_Allies" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -50109,6 +51649,20 @@ The following is just going to address the triplea game play, although the Help 
 <br>
 If needing to use edit after combat move and before combat and there will be only 1 battle, you will need to edit <b>before</b> your combat move, as after,  you will go straight to the battle without being able to edit. If multiple battles are taking place, you will be able to edit before the first battle is fought to <b>remove</b> units but not place. Actually, you can place but they will have no effect on the battle. <br>
 <br>
+<b>Important</b><br>
+<br>
+Some Pacific Island Bonuses don't activate correctly. Currently, if you conquer an opposing Players Territory and then lose it, it will only give the negative bonus for that turn. All proceeding turns will not give the negative bonus. If/when you reconquer the Territory, it will work correctly for that turn and then revert to previous behaviour.
+ <br>
+<br>
+Use Edit to correct.<br>
+<br>
+<b>Important</b><br>
+<br>
+Sometimes triplea will not allow you to make a legal landing on a Carrier. Use edit to replace Units as needed.
+<br>
+<br>
+Use Edit to correct.<br>
+<br>
 <b>Section I</b><br>
 <br>
 <b>United Kingdom One Economy</b><br>
@@ -50178,7 +51732,8 @@ This was the most challenging unit for the engine. I've run several simulated ba
 <b>Also</b> if you are only doing 1 attack that phase, don't forget to turn off edit before ending your Combat Move. Otherwise, it will go straight to Battle and you can't turn edit off then.<br>
 <br>
 <b>Note</b><br>
-If moving with edit, it may take an unintended route and conquer empty enemy Territories in the process. You may move with your intended course and stop when triplea deviates from your intended path, or edit unintended Territories to correct ownership.
+If moving with edit, it may take an unintended route and conquer empty enemy Territories in the process. You may move with your intended course and stop when triplea deviates from your intended path, or edit unintended Territories to correct ownership.<br>
+<br>
 <b>8. Lend-Lease</b><br>
 <br>
 After the Allied Players Non Combat Move is finished, use edit and place the appropiate Lend-Lease Unit with the corresponding Unit. On Russia’s turn, purchase “1_PU” for every Lend Lease Unit you want to accept. On First Place phase, place the 1_PU where the Lend Lease Unit is and then use edit to remove the Lend-lease Units and add the Soviet ones. The “1_PU” Unit will remove itself before Combat Move.<br>
@@ -50213,6 +51768,12 @@ So if you send 2 Fighter Escorts and 2 Bombers with 2 Interceptors defending and
 <b>Section II</b><br>
 <br>
 <b>1. The Expanded Pacific Ocean</b><br>
+<br>
+<b>Important</b><br>
+<br>
+Some Pacific Island Bonuses don't activate correctly. Currently, if you conquer an opposing Players Territory and then lose it, it will only give the negative bonus for that turn. All proceeding turns will not give the negative bonus. If/when you reconquer the Territory, it will work correctly for that turn and then revert to previous behaviour.
+ <br>
+Use Edit to correct.<br>
 <br>
 Allied Land Units in New Guinea are able to activate the Bonus PUs for Dutch New Guinea in Combat Move before it is conquered by Japan. This is unintended and is Player Enforced. You may still take control in Non Combat Move.<br>
 <br> Also in the Rare instance USA is in positon to enter Dutch New Guinea first, you will need to Player Enforce that it doesn't. <br><br>
@@ -50356,7 +51917,11 @@ So, do your combat move. Manually roll first round of battle. Then end combat mo
 <br>
 Only take as casualty when Attacking in Land Battles. They will Auto Die when only units left in battle. Player Enforced. Roll Scramble Battles in the Dice Roller <b>before</b> starting Combat Phase.<br>
 <br>
-Use edit "Perform Move or Other Actions" for movement across Sea Zones. You will need to click on the units it's carrying as well.<br>
+Use edit "Perform Move or Other Actions" for movement across Sea Zones. You will need to click on the units it's carrying as well.
+<br>
+<br>
+<b>IMPORTANT</b><br>
+ If accompanied by Air Units during an attack, you won't be able to retreat Air Units during battle. If necessary, save game, reroll battle accordingly using the triplea Dice Roller located in "View" top left of screen and then edit correct outcome.<br>
 <br>
 <b>6. D-Day</b><br>
 <br> 
@@ -50450,6 +52015,9 @@ Navy Fighters must be placed in Japan and Western United States. Use edit to mov
 <br>
 Movement is Player Enforced. They can move 6, or 7 with Airfield, whether loaded or not. Only Germany may transport Panzers. Player Enforced. <br>
 <br>
+<b>Note</b><br>
+They won't reset if you select from all units. Best to load one at a time. May need to restart game if unable to edit correct behavior.<br>
+<br>
 <b>Section V Optional Rules</b><br>
 <br>
 May be turned off in "Map Options" before Game Start.<br>
@@ -50500,12 +52068,15 @@ Requires same Player Enforced and edit use as USA and Japan Navy Fighters listed
 <br>
 <b>9. Japanese Destroyers</b><br>
 <br>
+<b>Note</b><br>
+Triplea will always load Infanty to Destroyer first. Load 1 at a time and use edit if needed.<br>
+<br>
 Only load with Infantry and Elite infantry. Player Enforced.
 <br>
 <br>
 <b>10. Rockets</b><br>
 <br>
-Need to use edit for 2 space attack "Perform Move or Other Actions". Do not take as casualty. Player Enforced. Will auto die if only units left.
+Only move 1 space in NCM. Do not take as casualty. Player Enforced. Will auto die if only units left.
 <br>
 <br>
 <b>11. Bidding</b><br>
@@ -50539,12 +52110,24 @@ Waffen Artillery, Wolfpacks and Landing Craft will show up in the Purchase Windo
 <br>
 Basic Expansion Rules are here: https://www.axisandallies.org/forums/assets/uploads/files/1627938181325-rulebook-global-1940-basic-expansion.pdf<br>
 <br>
-<b>15. 1943 Expansion Rules</b><br>
+<b>16. 1943 Expansion Rules</b><br>
 <br>
 1943 Expansion Rules are here: https://www.axisandallies.org/forums/topic/37278/global-1943-house-rules-expansion?page=1<br>
 <br>
 <b>Note</b><br>
 You will need to Edit the Hit Damage to 1 of the Japanese Carriers in Sea Zone 45 and the British Carrier in Sea Zone 106.<br>
+<br>
+<b>17. Desert Army</b><br>
+<br>
+Adds the Desert Army Unit. Once the Desert Army is Formed, you will need to edit the correct DesertGeneral. Use "DesertGeneral3" with Tank Units. "DesertGeneral2" with Artillery. Use "DesertGeneralA2D3" for Panzer Grenadier and Armoured Infantry Units. Use "DesertGeneralA1D3" for Combat Engineers. Use"DesertGeneral" for all other Units.<br>
+<br>
+Move Restrictions are Player Enforced. This may be fixed in the future.
+<br>
+<br>
+<b>18. Combat Engineer</b><br>
+<br>
+Adds the Combat Engineer Unit. Use Edit for moving Minor Factories and removing Landmines. Also for landing at Landing Strips. Land the Air Unit in a legal area and then edit after Non Combat Move. Unit Image courtesy of Hepps.
+<br>
 <br>
 <b>Unofficial SBR Option</b><br>
 <br>
@@ -50581,6 +52164,14 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>7.4<br> 12/28/21  
+<br>
+Add Notification for Incorrect Pacific Island Bonuses. Clarify Game Notes for LCVs. Fix Take Over Italy Notification showing up after accepted. Change German take Over of Italy Rail to show as Europe only.<br>
+<br>
+Fix German Heavy Tanks and Russian Commisars not being able to move by rail. Change Rockets to move 2. Fix Total War Me 262 turning into Tactical Bombers. Fix Waffen Paras negating regular Para attack bonus.<br>
+<br>
+Add Desert Army. Add Combat Engineer.
 <br>
 <br>7.3<br> 12/10/21  
 <br>
