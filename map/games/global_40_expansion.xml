@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion" version="7.4"/>
+  <info name="Global 40 Expansion" version="7.41"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -7898,7 +7898,7 @@
     </attachment>
     <!-- Support Attachments -->
     <attachment name="supportAttachmentInfantryAndMechInf" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="infantry:guard_infantry:commando:marine:Army_Conscript:elite:mech_infantry:ArmoredInfantry:Panzer_Grndrs"/>
+      <option name="unitType" value="infantry:guard_infantry:commando:marine:Army_Conscript:elite:mech_infantry:ArmoredInfantry:Panzer_Grndrs:German_Engineer:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
       <option name="dice" value="strength"/>
@@ -52164,6 +52164,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe and others for Unit image help. Thanks to the triplea devs for making it possible.<br>
 <br>
 Change Log:
+<br>
+<br>7.41<br> 12/29/21  
+<br>
+Fix Engineers not getting Artillery boost.
 <br>
 <br>7.4<br> 12/28/21  
 <br>
