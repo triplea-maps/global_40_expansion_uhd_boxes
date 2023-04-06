@@ -1,7 +1,7 @@
 
-6 Sea Zone  (5661,831)
-17 Sea Zone  (6029,1231)
-19 Sea Zone  (5222,1174)
-20 Sea Zone  (5254,1663)
-22 Sea Zone  (5835,1510)
-35 Sea Zone  (5435,1953)
+6 Sea Zone  (7960,1950)
+17 Sea Zone  (8690,2500)
+19 Sea Zone  (7915,2685)
+20 Sea Zone  (7360,2858)
+35 Sea Zone  (7580,2965)
+22 Sea Zone  (8513,2820)
