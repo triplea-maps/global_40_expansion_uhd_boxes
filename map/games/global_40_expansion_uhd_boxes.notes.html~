@@ -546,7 +546,10 @@ If the Army Group will disband after a round of combat, you must kill the Army G
 <b>7. German Take Over of Italy</b><br>
 <br>
 <img src="TakeOverItaly.png"/> <br><br>
-Use edit to change unit and territory control. Also use edit to adjust PU levels and any Damage to Facilities. <br>
+On Italy's Turn prior to being Taken Over, Buy a "TakeOverItaly" Token. If conditions are not met for Take Over of Italy after Non combat Move, Do Not Place. Otherwise, place in Southern Italy during 2nd Place Phase.<br>
+This will Auto change <b>Most</b> Italian Units and Territories to German. <br>
+Use Edit for any that did not correctly change. Infrastructure will remove but be replaced beginning of German turn. In the off chance France or ANZAC wanted to Attack Italian Infrastructure, use Edit for correct Game Play.<br><br>
+On Germany's turn, pay the 5 PUs to the Bank when prompted. You will also need to Edit the Italian PUs to German and adjust any Damage to Facilities. <br><br>
 The extra Para and LCV build limits are Player Enforced. National Objectives will not show up in the Objectives tab. They will be listed at end of turn and in History.<br>
 <br>
 For First turn Italy is Taken Over, Buy Mech Infantry instead of Paras if needed. Correct with Edit after Placement.<br>
@@ -804,7 +807,7 @@ Change Log UHD Boxes:
 <br>
 <br>Version 1.83<br> 9/8/23 
 <br>
-Fix 3rd Java Place. Switched Japan's Ship Facing. Add Timetable to Notes. Fix "Repair_BB" to Repair "Regular Battleships" with Damage and Not just "Damaged" ones.<br>
+Fix 3rd Java Place. Add Timetable to Notes. Fix "Repair_BB" to Repair "Regular Battleships" with Damage and Not just "Damaged" ones.<br>
 <br>
 Add "Surrender" Image to Changer. Auto Place Army Group Flags at Game Start in Army Group Boxes. Switched to "Grey" Panzers for Germany and their "Black" Panzers are now the "Waffen" Panzer.<br>
 <br>
