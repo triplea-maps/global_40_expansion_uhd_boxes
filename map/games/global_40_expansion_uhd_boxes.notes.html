@@ -76,6 +76,10 @@ Most Starting Units will be on the Left side of the Edit Window. Unfortunately, 
 <br>
 <b>Boxes</b><br>
 <br>
+<b>NOTE</b><br>
+<br>
+There is an Invisible Factory that allows placement in Boxes. Use <b>Caution</b> when editing units in and out of Boxes so you don't delete it. If you do by accident, you can edit it back in. It's called "BoxFctry". <br>
+<br>
 <b>You Must Use Edit</b> to Move To and From and will only be able to move in CM and NCM. Use "Perform Move Or Other Actions" while in Edit. You will be able to move other Players' Units as well. However, you can only move to legal territories. For example, Germany can't move Units into russia without being at War. You will need to Edit otherwise and Manually Place/Replace.<br><br>
 Also, you can move units in Edit, then move additional units somewhere else and not have to hit "Perform Move ..." again. You can do multiple moves. In other words, you don't need to click on "Perform Move or Other Actions" for every move.<br>
 <br>
@@ -150,7 +154,7 @@ You may activate tech in Early 1943, Round 7, in "Map Options". You will need to
 <br>
 <b>Double Place Phase</b><br>
 <br>
-Waffen Infantry, Waffen Panzer, Commandos, Marines, Unarmed Mines, Waffen Paratroopers, Waffen Artillery, Wolfpacks and Underground Factories are all placed in the First Placement Phase. Everything else as normal.<br>
+Waffen Infantry, Waffen Panzer, Commandos, Marines, Unarmed Mines, Waffen Paratroopers, Waffen Artillery, Waffen Heavy Tank, Wolfpacks, Heavy Industry and Underground Factories are all placed in the First Placement Phase. Everything else as normal.<br>
 If placing both a Minor Factory and a Underground Minor, Place the Minor in the first phase and the Underground in the second.<br>
 <br><b>NOTE</b><br>
 Only Place Units that are activated that turn in the First Place Phase.<br>
@@ -187,7 +191,7 @@ When being supported by Artillery and other Artillery supportable units are pres
 <br>
 <b>7. Paratroopers</b><br>
 <img src="USA_para.png"/> <br><br>
-<b>It is Reccommended to Roll All Para Battles in Edit Mode Using the Intended Rules</b><br><br>
+<b>It is Recommended to Roll All Para Battles in Edit Mode Using the Intended Rules</b><br><br>
 Paratroopers Move 2 and +1 from an Airfield. Player Enforce correct land movement of 1 move only. Paratroopers may require edit for their "Air Movement". Before attacking, if facing AA fire, activate "Roll Dice" under "Game", top left, or use Dicebot and roll for AA fire. Then use edit to kill any hits and if needed, select "Perform Move Or Other Actions" and then click on the Paratrooper and make a legal move. If there is only 1 battle to be fought that Combat Phase, you will need to do this at the <b>START</b> of your Combat Move.<br>
 <br>
 <b>IMPORTANT</b><br>
@@ -351,9 +355,11 @@ Do Not take as casualties. If they lose battle, they will auto die. If they win,
 <br>
 Don't attack with Damaged Carriers. Take Carriers as a hit over Battleships, when both are present. These are Player Enforced. Don't take "Defend CV Hit" as a casualty in Land Combat. This is also Player Enforced.<br>
 <br>
-1 "Repair Carrier" or "Repair BB" Unit will repair <b>All</b> damaged Ships. Make sure to buy the appropriate amount of repair units. Player Enforced. They will auto die after combat move. Use edit to place in open sea. This may be fixed in the future.<br>
+1 "Repair Carrier" or "Repair BB" Unit will repair <b>All</b> Damaged Ships. Make sure to buy the appropriate amount of repair units. Player Enforced. They will auto die after combat move. Use edit to place in open sea. This may be fixed in the future.<br>
 <br>
-<b>This has been Fixed and they will now Place in "Any" Sea Zone.</b> <br>
+<b>This has been partially Fixed and they will now Place in Sea Zones that Border a Land Territory that you Control.</b> <br>
+<br>
+Purchase the Repair "Unit" and place in any legal spot First Place Phase to keep Correct PU total and then Edit A Repair Unit to the correct Sea Zone.<br>
 <br>
 Only scramble to the disabled Carrier's Sea Zone with the "Defend CV" Unit. Do not take as a hit in Land Combat. Do Not use any designated Fighters for other actions while on Carrier Defense Duty. These are all Player Enforced.<br>
 <br>
@@ -365,11 +371,11 @@ If you didn't purchase a free Defend CV unit, simply edit one in after your turn
 <b>11. Super Heavy Battleship</b><br>
 <br>
 <img src="Heavy_BB.png"/> <br><br>
-The "SHB" will fire 2 Bombard shots, even if only 1 amphibous unit is attacking. Use the Dice Roller to simulate the bombardment and for any casualties to fire back. Then use edit to adjust accordingly. If you have more than 1 battle taking place, you will be able to use edit before choosing the first battle to fight. If only 1 battle is being fought, it will go straight to combat after your combat move. You will need to edit before your combat move in that case.<br>
+The "SHB" will fire 2 Bombard shots, even if only 1 amphibous unit is attacking. Use the Dice Roller or Dicebot to Simulate the Bombardment and for any casualties to fire back. Then use edit to adjust accordingly. After that, do normal Battle without Bombarding during Combat. <br><br>
+If you have more than 1 battle taking place, you will be able to use edit before choosing the first battle to fight. If only 1 battle is being fought, it will go straight to combat after your combat move. You will need to edit before your combat move in that case.<br>
 <br>
-If 1 hit point of damage is taken in combat, use "Repair_Heavy_BB". Use "Repair Hvy_BB_Damg2" if you want to repair 2 hit points of damage. "Repair_Heavy_BB" will also repair 1 hit point of damage if 2 hit points have been taken. <br><br>
-<br>
-If you have 2 Super Heavy Battleships in the same Sea Zone by the same Player, you need to Player Enforce the repair costs as the repair unit will repair both at the same time. So buy the correct repair unit for each Super Heavy Battleship.<br>  
+"Repair_BB" will repair 1 hit point of damage for <b>ALL</b> Battleships, Heavy and non Heavy. If you have just a Heavy BB with 2 damage, it will repair it Fully, so you need to Player Enforce purchasing the correct amount of Repair Units. <br><br>
+It Defaults to repairing a Battleship and not a Heavy BB if only 1 Repair Unit and both are present.
 <br>
 You need to edit to <b> "Hvy_BB_Dmgd" and "BB_Damaged"</b> before your next combat turn if needed and apply the appropriate amount of damage. This is so it can continue to attack in battle but not after battle when taking damage. Most BBs will repair, so will rarely be necessary.<br><br>
 <b>Section III</b><br>
@@ -454,15 +460,17 @@ May be turned off in "Map Options".<br>
 <b>8. German U-boats</b><br>
 <br>
 <img src="Wolfpack.png"/> <br><br>
-<b>It is Reccommended to Roll All Wolfpack Battles in Edit Mode Using the Intended Rules</b><br><br>
-"Wolfpack" units are A0 D0 C0 units with unlimited movement. They give 1 AA shot of +1 on offense and +2 on defense to each U-Boat in it's sea zone for 1 round only.<br>
+<b>It is Recommended to Roll All Wolfpack Battles in Edit Mode Using the Intended Rules</b><br><br>
+For Larger Battles, use Dicebot or the Dice Roller for the 1st round of Battle and then Edit the results accordingly before starting the Combat Phase.<br>
+<br>
+"Wolfpack" units are A0 D0 C0 units with unlimited movement. They give 1 AA shot of +1 on offense and +2 on defense to <b>each</b> U-Boat in it's sea zone for 1 round only.<br>
 Any hits will not be able to fire back, regardless of enemy Destroyers being present.<br>
 <br>
 You may place Wolfpack units in <b>any</b> sea zone next to German controlled territories. Use edit if needed to place elsewhere. Place them in the First place phase so they can be used that turn.<br>
 They have unlimited movement but will still be blocked by Destroyers, so use "Perform Move Or Other Actions" in edit if needed. Otherwise, you must place before starting your combat move.<br>
 Sea zone 113 is usually a good place for Wolfpack units waiting to be formed.<br>
 <br>
-Do not take as casualties. They will auto die if they are the only units left. They still need to be hit though, so if you get tired of rolling, simply submerge Wolfpack and kill him with edit at the end of the phase. <br>
+Do not take as casualties. They will auto die if they are the only units left. They still need to be hit though, so if you get tired of rolling, simply submerge Wolfpack and he will die at the end of the phase. <br>
 <br>
 After combat, triplea will remove any Wolfpack units that are in the Atlantic Ocean or Mediterranean Sea that no longer meet the requirement for a Wolfpack, before the Germans non combat move.<br>
 You will need to use edit to remove any additional Wolfpacks before Germany's next combat move, if enemy attacks have done the same.<br>
@@ -480,7 +488,11 @@ May be turned off in "Map Options".<br>
 <b>10. Waffen Artillery</b><br>
 <br>
 <img src="Waffen_Arty.png"/> <br><br>
-Edit to "Waffen_ArtyPG" <img src="Waffen_ArtyPG.png"/> when inside of a Waffen Army, so it doesn't use it's artillery support bonus.<br>
+Edit to "Waffen_ArtyPG" <img src="Waffen_ArtyPG.png"/> when inside of a Waffen Army that only has Waffen Panzers, so it doesn't use it's artillery support bonus for the Oberst.<br>
+Also edit when Waffen Arty is Not part of the Waffen Army and has no Waffen Units to support.<br>
+<br>
+This may <b>Rarely</b> result in Battle that a Active Waffen Arty, due to combat losses, would end up supporting a Unit Inside the Army.<br>
+If needed, you can roll the Battle in Edit for exact Game Play results.<br>
 <br>
 <b>Section IV</b><br>
 <br>
@@ -645,6 +657,8 @@ Only load with Infantry and Elite infantry. Player Enforced.
 Only move 1 space in NCM. Do not take as casualty. Player Enforced. Will auto die if only units left.
 <br>
 <br>
+If Attacking a Army/Corps or Army Group, do the Rocket Attacks with Dicebot before Battle, so you can adjust casualties Before Combat Starts.<br>
+<br>
 <b>11. Bidding</b><br>
 <br>
 Player Enforced. :)
@@ -705,6 +719,8 @@ Edit in the "tactical_bomberPG/TG" and "artilleryPG/TG" before battle to prevent
 Adds the Combat Engineer Unit. Use Edit for moving Minor Factories and removing Landmines. Also for landing at Landing Strips. Land the Air Unit in a legal area and then edit after Non Combat Move. Unit Image courtesy of Hepps.
 <br>
 <br>
+They are Named "German_Engineer" "Russian_Engineer" "Japan_Engineer" "USA_Engineer" and "UK_Engineer". <br>
+<br>
 <b>19. Naval Mine</b><br>
 <br>
 <img src="NavalMine.png"/> <br><br>
@@ -744,7 +760,7 @@ When France is Liberated, Normandy Bordeaux will no longer turn French.<br><br>
 <br>
 These are currently Player Enforced. They will be added at a later date. <br>
 <br>
-<b>18)"Charles de Gaulle Neutrals Modified"</b><br>
+<b>18)Unofficial "Charles de Gaulle Neutrals Modified"</b><br>
 <br>
 <b>Note</b><br>
 <br>
@@ -804,18 +820,43 @@ There are additional Player Enforced rules in the original Game Notes below.
 <br>
 <br>
 <b>Credits</b><br>
-Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. <br>
+Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
 <br>
+<br>Version 1.865<br> 10/18/23 
+<br>
+Fix Sea Zone 125 No Allied Units in Russia Objective so Changer Landmines can be Present. Move "Develop Weapons" to Early 1943.
+<br>
+<br>Version 1.864<br> 10/14/23 
+<br>
+Fix "TotalWar_Bomber" not showing up in German Purchase Window.
+<br>
+<br>Version 1.863<br> 10/12/23 
+<br>
+Change Bermuda to British Control. Fix 15 Sea Zone Place.
+<br>
+<br>Version 1.861<br> 10/6/23 
+<br>
+Correct "Waffen Artillery" Game Notes.
+<br>
+<br>Version 1.86<br> 10/3/23 
+<br>
+Fix USA National Guard Activating Twice when Japan Attacks USA After a UK DOW Only. Fix Placement for Boxes. Game Note Clarification.
+<br>
+<br>
+Fix USA National Guard Not Activating after Japan Attacks UK/ANZAC.<br>
+Remove "Heavy_BB_Repair". "Heavy_BB" is Repaired with "Repair_BB". Explained in Game Notes. Add Jordan Island Back to Jordan.
+<br>
 <br>Version 1.85<br> 9/29/23 
 <br>
-Fix Sea Zone 98 Border with Syria and Jordan.<br>
-Change Overflow for Slovakia and Western Ukraine.
+Fix Sea Zone 98 Border with Syria and Jordan.
 <br>
 <br>Version 1.84<br> 9/14/23 
 <br>
-Correct Bombard Notes to "D1 Transports" <b>WILL</b> Force a Sea Battle Preventing Bombard.
+Correct Bombard Notes to "D1 Transports" <b>WILL</b> Force a Sea Battle Preventing Bombard.<br><b>This is Incorrect. Transports by Themselves can be Ignored same as Out Of Box Rules.</b><br>
+<br>
+Change Overflow for Slovakia and Western Ukraine.
 <br>
 <br>Version 1.83<br> 9/8/23 
 <br>
