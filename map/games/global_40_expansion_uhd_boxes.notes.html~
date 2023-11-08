@@ -417,6 +417,9 @@ Use edit "Perform Move or Other Actions" if necessary to make your move.<br>
 <br> 
 Correct movement is Player Enforced.<br>
 <br>
+<b>Note</b><br>
+Kansu Rail will <b>Not</b> Place if Japanese controlled. Use Edit if needed to make legal Rail moves.<br>
+<br>
 <b>4. Home Defense</b><br>
 <br>
 Use edit to place the 2 Japanese Infantry. Use the Dice roller to roll the first round battles and edit to remove casualties <b>before</b> start of combat.<br>
@@ -874,10 +877,16 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
+<br>Version 1.871<br> 11/8/23 
+<br>
+Fix Escorts Not Transporting "Naval Mines". Tweak Bessarabia Place.
+<br>
 <br>Version 1.87<br> 10/26/23 
 <br>
 Fix Russian "TotalWar_Bomber" Not Placing Correctly. Change some Unit Images. Clarify some Game Notes.<br>
-Add "US and UK Lend-Lease" as a Game Option.
+Add "US and UK Lend-Lease" as a Game Option.<br>
+Prevent Kansu Rail Placement when Japanese Controlled. Use Edit if Needed.<br>
+Remove "waffen_infantry2".
 <br>
 <br>Version 1.869<br> 10/25/23 
 <br>
