@@ -34,6 +34,10 @@ Use edit to move Paratroopers over Enemy Territory and for LCVs.<br>
 <br>
 When an Army is active, you should edit a new army-leading unit depending on the units it commands. Barnee should let you know more about this since I don’t know exactly what army-leading unit commands what.
 <br><br>
+<b>NOTE</b><br>
+<br>
+Widen Battle Window to Show Number of Units if Needed.<br>
+<br>
 <b>Timetable</b>
 <br>
 <br>
@@ -229,7 +233,11 @@ This is to maintain correct PU levels.<br>
 <b>Note</b><br>
 If The Lend-Lease Units come under attack before Russia's turn, don't take the Lend-Lease image as a hit. It will auto die if the battle is lost.<br>
 Player Enforced Unit Limits. You may want to use the "Comment Log" under View, Top left, to keep track of how many Units have been sent.<br>
-<br> 
+<br>
+<b>"US and UK Lend-Lease"</b> Game Option is just a way for Players to agree to it's use. It has no affect on game play.<br>
+<br>
+Rules are here: https://www.axisandallies.org/forums/topic/37806/global-1940-us-uk-lend-lease?_=1700781926910<br>
+<br>
 <b>9. Facilities</b><br>
 <br>
 <b>Underground Factories</b>.<br>
@@ -242,7 +250,9 @@ You may <b>NOT</b> place and then Destroy on the same turn. Player Enforced.  Us
 When replacing a Heavy Major or Minor Factory with an Underground Factory, you will need to use Edit. They will replace non upgraded Factories correctly.<br>
 <br>
 <b>Russian Factories</b>.<br> 
-While the Factory can move on it's own, you will need to keep track of Rail movement usage. Player Enforced.<br>
+While the Factory can move on it's own, you will need to keep track of Rail movement usage. Player Enforced. They will auto-destroy when captured.<br>
+<br>
+You will need to use Edit to remove Airfields and Harbours.<br>
 <br>
 <b>Demolition of Airfields and Harbours</b>.<br><br>
 <img src="demo_harbour.png"/>  <img src="demo_harbour.png"/>  <br><br>
@@ -744,6 +754,14 @@ Adds the Combat Engineer Unit. Use Edit for moving Minor Factories and removing 
 <br>
 They are Named "German_Engineer" "Russian_Engineer" "Japan_Engineer" "USA_Engineer" and "UK_Engineer". <br>
 <br>
+<b>For Combat</b> Use "German_EngineerAttack" Russian etc..<br>
+<br>
+<img src="German_EngineerAttack.png"/> <br><br>
+You will need to Edit before Combat replacing it's counterpart. It will only conduct Combat Operations of "Blitz with Tank" and A2 when paired with Artillery.<br>
+<br>
+This is only needed for Attacking. The othe Engineers will defend correctly as well as the "Attack" Engineer.<br>
+Use Edit to replace as needed.<br>
+<br>
 <b>19. Naval Mine</b><br>
 <br>
 <img src="NavalMine.png"/> <br><br>
@@ -876,6 +894,13 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:<br>
+<br>Version 1.874<br> 11/25/23 
+<br>
+Fix Japan China Objective. Fix "Take Over Italy" Token Not Showing Up. Make Russian Total War Tanks Require a Major Factory to Place.<br>
+Prevent Total War Builds in India. Fix Yunnan Place.<br>
+<br>Version 1.873<br> 11/10/23 
+<br>
+Add Combat "..._EngineerAttack". Tweak Southern Italy Place.<br>
 <br>Version 1.872<br> 11/9/23 
 <br>
 Shrink "Naval Mines". Tweak Belarus Place.
