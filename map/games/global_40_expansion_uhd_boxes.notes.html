@@ -1,7 +1,6 @@
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
 <b>Global 40 Expansion UHD Boxes</b><br>
-<br>
-It uses the Black Elk Mega Map based off of the Bung,Veqryn "World War II Global 1940 2nd Edition" Map. <br>
+<br>It uses the Black Elk Mega Map based off of the Bung,Veqryn "World War II Global 1940 2nd Edition" Map. <br>
 <br>
 This is a House Rule Mod for "World War II Global 1940 2nd Edition". It was Created by The Captain and Company. They can be reached here:
 <br><br><b>g40expansionrules@gmail.com</b>
@@ -34,6 +33,10 @@ Use edit to move Paratroopers over Enemy Territory and for LCVs.<br>
 <br>
 When an Army is active, you should edit a new army-leading unit depending on the units it commands. Barnee should let you know more about this since I don’t know exactly what army-leading unit commands what.
 <br><br>
+<b>NOTE</b><br>
+<br>
+Widen Battle Window to Show Number of Units if Needed.<br>
+<br>
 <b>Timetable</b>
 <br>
 <br>
@@ -125,8 +128,16 @@ use edit to place the Overflow Token into the desired Territorry. Then move the 
 <br>
 You need to edit to <b>"Hvy_BB_Dmgd" and "BB_Damaged"</b> before your next combat turn if needed and apply the appropriate amount of damage. This is so it can continue to attack in battle but not after battle when taking damage. Most BBs will repair, so will rarely be necessary.<br>
 <br>
+<b>Pacific Island Bonuses</b><br>
+<br>
 Some Pacific Island Bonuses don't activate correctly. Currently, if you conquer an opposing Players Territory ( Including Dutch Territorries ) and then lose it, it will only give the negative bonus for that turn. All proceeding turns will not give the negative bonus. If/when you reconquer the Territory, it will work correctly for that turn and then revert to previous behavior.
 Use Edit to correct.<br>
+<br>
+Also, if you attack a previously conquered Island and fail to take it, it will give you the negative PUs for losing that Island.<br>
+<br>
+For example. If ANZAC takes Celebes and then Japan takes it and then UK attacks Celebes and fails to take it, UK will receive the negative objective for losing the Island.<br>
+<br>
+So you will need to edit the correct PU total after UK's turn. ANZAC will still receive the negative objective, unless they take Celebes that turn. That may or may not require edit depending on when they lost it.<br>
 <br>
 If it is a Territorry you Originally Owned, it will work correctly by subtracting or adding the Bonus every Turn.<br>
 <br>
@@ -185,7 +196,7 @@ They work correctly.<br>
 <b>4 and 5. British Commandos and USA Marines</b><br>
 <br>
 <img src="commando.png"/> <img src="marine.png"/> <br><br>
-Commando/Marine units now attack at 2 and get +1 when paired with Artillery. If attacking by themselves, you need to edit in a CommandoA1/MarineA1 unit.<br>
+Commando/Marine units now attack at 2 and get +1 when paired with Artillery. If attacking by themselves, you need to edit in a CommandoA1/MarineA1 unit or they will attack at 2 instead of 1. They will defend correctly.<br>
 <br>
 You will also need to edit when placing in a Allied Factory. Purchase a "1_PU" and then replace an Infantry with a Marine/Commando in the Allied Factory.<br>
 <br>
@@ -223,13 +234,19 @@ If moving with edit, it may take an unintended route and conquer empty Enemy Ter
 <br>
 <b>8. Lend-Lease</b><br>
 <br>
-After the Allied Players Non Combat Move is finished, use edit and place the appropiate Lend-Lease Unit with the corresponding Unit. On Russia’s turn, purchase “1_PU” for every Lend Lease Unit you want to accept. On First Place phase, place the 1_PU where the Lend Lease Unit is and then use edit to remove the Lend-lease Units and add the Soviet ones. The “1_PU” Unit will remove itself before Combat Move.<br>
+After the Allied Players Non Combat Move is finished, use edit and place the appropiate Lend-Lease Unit with the corresponding Unit (this is optional and Players may choose to ignore this step). On Russia’s turn, purchase “AirLL” or "TankLL" for every Lend Lease Unit you want to accept. This will cost 1 PU per unit as well as 1 resource. The Soviets begin the game with 3 "Air" and 3 "Tank" resources. Once the resources are gone, they will be unable to purchase anymore "Air" or "Tank" LL units.<br>
+<br>On First Place phase, place the appropriate "AirLL" or "TankLL" unit where the Lend Lease Unit is and then use edit to remove the Lend-lease Units and add the Soviet ones. The “AirLL” and "TankLL" Unit will remove itself before Combat Move.<br>
 <br>
-This is to maintain correct PU levels.<br>
+This is to maintain correct PU levels and keep track of how many Lend Lease Units have been sent.<br>
+<br>
 <b>Note</b><br>
 If The Lend-Lease Units come under attack before Russia's turn, don't take the Lend-Lease image as a hit. It will auto die if the battle is lost.<br>
 Player Enforced Unit Limits. You may want to use the "Comment Log" under View, Top left, to keep track of how many Units have been sent.<br>
-<br> 
+<br>
+<b>"US and UK Lend-Lease"</b> Game Option is just a way for Players to agree to it's use. It has no affect on game play.<br>
+<br>
+Rules are here: https://www.axisandallies.org/forums/topic/37806/global-1940-us-uk-lend-lease?_=1700781926910<br>
+<br>
 <b>9. Facilities</b><br>
 <br>
 <b>Underground Factories</b>.<br>
@@ -242,7 +259,9 @@ You may <b>NOT</b> place and then Destroy on the same turn. Player Enforced.  Us
 When replacing a Heavy Major or Minor Factory with an Underground Factory, you will need to use Edit. They will replace non upgraded Factories correctly.<br>
 <br>
 <b>Russian Factories</b>.<br> 
-While the Factory can move on it's own, you will need to keep track of Rail movement usage. Player Enforced.<br>
+While the Factory can move on it's own, you will need to keep track of Rail movement usage. Player Enforced. They will auto-destroy when captured.<br>
+<br>
+You will need to use Edit to remove Airfields and Harbours. <br>
 <br>
 <b>Demolition of Airfields and Harbours</b>.<br><br>
 <img src="demo_harbour.png"/>  <img src="demo_harbour.png"/>  <br><br>
@@ -767,7 +786,7 @@ Unit Image courtesy of Generation Kill.
 This has no affect on Game Play. It just adds a "Game Option" for a simple way for Players to agree to using the Optional rule. It may be expanded in the future.<br>
 Is On by Default at Game Start.<br>
 <br>
-Here are the Rules. They are discussed here:<br><br><b>https://www.axisandallies.org/forums/topic/37806/global-1940-us-uk-lend-lease?_=1698425091945</b>
+Here are the Rules. They are discussed here: https://www.axisandallies.org/forums/topic/37806/global-1940-us-uk-lend-lease?_=1698425091945
 <br>
 <br>
 From the beginning of the US player’s turn in Late 1941 the United States can send up to 3 Air Units (all types of Air Units are included) to the United KIngdom.<br>
@@ -883,7 +902,14 @@ There are additional Player Enforced rules in the original Game Notes below.
 <b>Credits</b><br>
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
-Change Log UHD Boxes:<br>
+Change Log UHD Boxes:
+<br>
+<br>Version 1.874<br> 12/5/23 
+<br>
+Fix Japan China Objective. Fix "Take Over Italy" Token Not Showing Up. Make Russian Total War Tanks Require a Major Factory to Place.<br>
+Prevent Total War Builds in India. Fix Yunnan Place.<br>
+Add Lend Lease Tokens for Russia.
+<br>
 <br>Version 1.873<br> 11/10/23 
 <br>
 Add Combat "..._EngineerAttack". Tweak Southern Italy Place.<br>
