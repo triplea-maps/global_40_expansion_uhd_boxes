@@ -1,6 +1,7 @@
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
 <b>Global 40 Expansion UHD Boxes</b><br>
-<br>It uses the Black Elk Mega Map based off of the Bung,Veqryn "World War II Global 1940 2nd Edition" Map. <br>
+<br>
+It uses the Black Elk Mega Map based off of the Bung,Veqryn "World War II Global 1940 2nd Edition" Map. <br>
 <br>
 This is a House Rule Mod for "World War II Global 1940 2nd Edition". It was Created by The Captain and Company. They can be reached here:
 <br><br><b>g40expansionrules@gmail.com</b>
@@ -346,7 +347,7 @@ May be turned on in "Map Options".<br>
 <b>5. Escorts & Transports</b><br>
 <br>
 <img src="Escort_Convoy.png"/> <br><br>
-Use edit to place and remove the "Escort Convoy" unit when Convoys are formed or dispersed. Transports must be taken as casualties last. This is Player Enforced.<br>
+Most Solo Escorts will now Auto change at End Turn. Use edit to place and remove the "Escort Convoy" unit(s) when Convoys are formed or dispersed when necessarry. Transports must be taken as casualties last. This is Player Enforced.<br>
 <br>
 Do not attack Subs without a Destroyer present. This is also Player Enforced. If you have a mixed Fleet without Destroyers attacking Subs, allocate the Escort hits to other Vessels when possible. If Subs submerge after first round of combat, use edit to replace any illegal Escort hits at the end of combat. If they don't submerge, then count any Escort hits. <br>
 <br>
@@ -720,7 +721,7 @@ Take Destroyer as casualty if you plan on submerging after first attack. Battle 
 <br>
 <b>14. Heavy Bombers</b><br>
 <br>
-Infrastructure AA will still Fire at them. Regular combat won't. Use Edit to correct if needed. 
+Infrastructure AA will still Fire at them. Regular combat won't. Use Edit to correct if needed.
 <br>
 <br>
 <b>15. Basic Expansion Rules</b><br>
@@ -766,7 +767,7 @@ They are Named "German_Engineer" "Russian_Engineer" "Japan_Engineer" "USA_Engine
 <img src="German_EngineerAttack.png"/> <br><br>
 You will need to Edit before Combat replacing it's counterpart. It will only conduct Combat Operations of "Blitz with Tank" and A2 when paired with Artillery.<br>
 <br>
-This is only needed for Attacking. The othe Engineers will defend correctly as well as the "Attack" Engineer.<br>
+This is only needed for Attacking. The other Engineers will defend correctly as well as the "Attack" Engineer.<br>
 Use Edit to replace as needed.<br>
 <br>
 <b>19. Naval Mine</b><br>
@@ -808,6 +809,15 @@ The US units cannot take part in any Combat during the US player’s turn before
 The UK player must pay 1 IPC for each Lend-Lease unit.<br>
 The US units must be converted to UK units on the first coming UK player’s turn.<br>
 If the US units are attacked before they are converted to UK units, they defend as usual. If these units are destroyed in Combat before they are converted to UK units, they do not count as Lend-Lease units - and the US player can therefore send new Lend-Lease units to the UK player.<br>
+<br>
+<b>21. Luftwaffe and Fighter Aces</b><br>
+<br>
+<img src="LuftwaffeAce.png"/> <br><br>
+Adds Fighter Aces. They work correctly.<br>
+They enter game play Late 1942, Round 6. They have 2 Rolls on Attack and Defense.<br>
+<br>Explained in detail here <br><br>
+https://www.axisandallies.org/forums/assets/uploads/files/1702281565912-g40-fighter-ace-unit.pdf
+<br>
 <br>
 <b>Unofficial SBR Option</b><br>
 <br>
@@ -902,9 +912,13 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 1.875<br> 12/14/23 
+<br>Version 1.875<br> 12/20/23 
 <br>
-Change "aaGun" Transport Cost to Same as "Armour".
+Change "aaGun" Transport Cost to Same as "Armour".<br>
+Made German Air Transport the only one that can Carry Tank Units.<br>
+Allow Germany to Build Total War Units in Italy.<br>
+Add "Luftwaffe" and "Fighter Aces".<br>
+Escorts and Convoys Now Auto Change in Most Situations.
 <br>
 <br>Version 1.874<br> 12/5/23 
 <br>
