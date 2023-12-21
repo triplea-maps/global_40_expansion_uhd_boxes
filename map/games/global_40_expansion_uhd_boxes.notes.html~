@@ -1,7 +1,6 @@
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
 <b>Global 40 Expansion UHD Boxes</b><br>
-<br>
-It uses the Black Elk Mega Map based off of the Bung,Veqryn "World War II Global 1940 2nd Edition" Map. <br>
+<br>It uses the Black Elk Mega Map based off of the Bung,Veqryn "World War II Global 1940 2nd Edition" Map. <br>
 <br>
 This is a House Rule Mod for "World War II Global 1940 2nd Edition". It was Created by The Captain and Company. They can be reached here:
 <br><br><b>g40expansionrules@gmail.com</b>
@@ -129,8 +128,16 @@ use edit to place the Overflow Token into the desired Territorry. Then move the 
 <br>
 You need to edit to <b>"Hvy_BB_Dmgd" and "BB_Damaged"</b> before your next combat turn if needed and apply the appropriate amount of damage. This is so it can continue to attack in battle but not after battle when taking damage. Most BBs will repair, so will rarely be necessary.<br>
 <br>
+<b>Pacific Island Bonuses</b><br>
+<br>
 Some Pacific Island Bonuses don't activate correctly. Currently, if you conquer an opposing Players Territory ( Including Dutch Territorries ) and then lose it, it will only give the negative bonus for that turn. All proceeding turns will not give the negative bonus. If/when you reconquer the Territory, it will work correctly for that turn and then revert to previous behavior.
 Use Edit to correct.<br>
+<br>
+Also, if you attack a previously conquered Island and fail to take it, it will give you the negative PUs for losing that Island.<br>
+<br>
+For example. If ANZAC takes Celebes and then Japan takes it and then UK attacks Celebes and fails to take it, UK will receive the negative objective for losing the Island.<br>
+<br>
+So you will need to edit the correct PU total after UK's turn. ANZAC will still receive the negative objective, unless they take Celebes that turn. That may or may not require edit depending on when they lost it.<br>
 <br>
 If it is a Territorry you Originally Owned, it will work correctly by subtracting or adding the Bonus every Turn.<br>
 <br>
@@ -189,7 +196,7 @@ They work correctly.<br>
 <b>4 and 5. British Commandos and USA Marines</b><br>
 <br>
 <img src="commando.png"/> <img src="marine.png"/> <br><br>
-Commando/Marine units now attack at 2 and get +1 when paired with Artillery. If attacking by themselves, you need to edit in a CommandoA1/MarineA1 unit.<br>
+Commando/Marine units now attack at 2 and get +1 when paired with Artillery. If attacking by themselves, you need to edit in a CommandoA1/MarineA1 unit or they will attack at 2 instead of 1. They will defend correctly.<br>
 <br>
 You will also need to edit when placing in a Allied Factory. Purchase a "1_PU" and then replace an Infantry with a Marine/Commando in the Allied Factory.<br>
 <br>
@@ -227,9 +234,11 @@ If moving with edit, it may take an unintended route and conquer empty Enemy Ter
 <br>
 <b>8. Lend-Lease</b><br>
 <br>
-After the Allied Players Non Combat Move is finished, use edit and place the appropiate Lend-Lease Unit with the corresponding Unit. On Russia’s turn, purchase “1_PU” for every Lend Lease Unit you want to accept. On First Place phase, place the 1_PU where the Lend Lease Unit is and then use edit to remove the Lend-lease Units and add the Soviet ones. The “1_PU” Unit will remove itself before Combat Move.<br>
+After the Allied Players Non Combat Move is finished, use edit and place the appropiate Lend-Lease Unit with the corresponding Unit (this is optional and Players may choose to ignore this step). On Russia’s turn, purchase “AirLL” or "TankLL" for every Lend Lease Unit you want to accept. This will cost 1 PU per unit as well as 1 resource. The Soviets begin the game with 3 "Air" and 3 "Tank" resources. Once the resources are gone, they will be unable to purchase anymore "Air" or "Tank" LL units.<br>
+<br>On First Place phase, place the appropriate "AirLL" or "TankLL" unit where the Lend Lease Unit is and then use edit to remove the Lend-lease Units and add the Soviet ones. The “AirLL” and "TankLL" Unit will remove itself before Combat Move.<br>
 <br>
-This is to maintain correct PU levels.<br>
+This is to maintain correct PU levels and keep track of how many Lend Lease Units have been sent.<br>
+<br>
 <b>Note</b><br>
 If The Lend-Lease Units come under attack before Russia's turn, don't take the Lend-Lease image as a hit. It will auto die if the battle is lost.<br>
 Player Enforced Unit Limits. You may want to use the "Comment Log" under View, Top left, to keep track of how many Units have been sent.<br>
@@ -252,7 +261,7 @@ When replacing a Heavy Major or Minor Factory with an Underground Factory, you w
 <b>Russian Factories</b>.<br> 
 While the Factory can move on it's own, you will need to keep track of Rail movement usage. Player Enforced. They will auto-destroy when captured.<br>
 <br>
-You will need to use Edit to remove Airfields and Harbours.<br>
+You will need to use Edit to remove Airfields and Harbours. <br>
 <br>
 <b>Demolition of Airfields and Harbours</b>.<br><br>
 <img src="demo_harbour.png"/>  <img src="demo_harbour.png"/>  <br><br>
@@ -506,7 +515,7 @@ You may wish to roll Submarine only battles (attacking or defending) by hand acc
 <b>9. Waffen Paratroopers</b><br>
 <br>
 <img src="Waffen_Para.png"/> <br><br>
-Move 3 with +1 from Airfield. Player Enforce correct land movement of 1 move only. Use Dice Roller for AA fire. You may need to use edit to make combat or non combat moves with "Perform Move or Other Actions" same as Wehrmacht Paratroopers. If still not possible to make legal move, edit directly at start of phase. May not attack Capitals. Player Enforced. Max Builds Player Enforced. They <b>are</b> supported by Waffen Artillery.<br>
+Move 3 with +1 from Airfield. Player Enforce correct land movement of 1 move only. Use Dice Roller for AA fire. You may need to use edit to make combat or non combat moves with "Perform Move or Other Actions" same as Wehrmacht Paratroopers. If still not possible to make legal move, edit directly at start of phase. May not Air Attack Capitals. Player Enforced. Max Builds Player Enforced. They <b>are</b> supported by Waffen Artillery.<br>
 <br>
 May be turned off in "Map Options".<br>
 <br>
@@ -547,8 +556,6 @@ When attacking, all units in the Army must start in same territory. Player Enfor
 <br>
 <b>Note</b><br>
 When Defending in Berlin, Moscow or Washington, you may have <b>2 Active Armies</b><br><br>
-Edit in the "Waffen_ArtyPG" <img src="Waffen_ArtyPG.png"/> when inside of a Waffen Army, so it doesn't use it's artillery support bonus.<br>
-<br>
 <b>4. Soviet Commissar</b><br>
 <br>
 <img src="Soviet_Commisar.png"/> <br><br>
@@ -607,7 +614,7 @@ Navy Fighters must be placed in Japan and Western United States. Use edit to mov
 <b>9. Air Transport</b><br>
 <br>
 <img src="air_transport.png"/> <br><br>
-Movement is Player Enforced. They can move 6, or 7 with Airfield, whether loaded or not. Only Germany may transport Panzers. Player Enforced. <br>
+Movement is Player Enforced. They can move 6, or 7 with Airfield, whether loaded or not. Only Germany may transport Panzers or Panzer rated units. <br>
 <br>
 <b>Note</b><br>
 They won't reset if you select from all units. Best to load one at a time. May need to restart game if unable to edit correct behavior.<br>
@@ -695,7 +702,7 @@ Player Enforced. :)
 <b>12. US Heavy Transport</b><br>
 <br>
 <img src="USAHeavyTransport.png"/> <br><br>
-Player Enforce no more than 2 Tanks per Transport.
+Player Enforce no more than 2 Tanks, AA Guns, Combat Engineers or Paratroopers per Transport.
 <br>
 <br>
 <b>13. German Type XXI U-boats</b><br>
@@ -713,7 +720,7 @@ Take Destroyer as casualty if you plan on submerging after first attack. Battle 
 <br>
 <b>14. Heavy Bombers</b><br>
 <br>
-They work correctly. 
+Infrastructure AA will still Fire at them. Regular combat won't. Use Edit to correct if needed. 
 <br>
 <br>
 <b>15. Basic Expansion Rules</b><br>
@@ -739,7 +746,7 @@ France will also place 4 Infantry regardless of it's Factory damage. Use edit if
 <b>17. Desert Army</b><br>
 <br>
 <img src="DAK.png"/> <br><br>
-Adds the Desert Army Unit. Once the Desert Army is Formed, you will need to edit the correct DesertGeneral. Use "DesertGeneral3" with Tank Units. "DesertGeneral2" with Artillery. Use "DesertGeneralA2D3" for Panzer Grenadier and Armoured Infantry Units. Use "DesertGeneralA1D3" for Combat Engineers. Use"DesertGeneral" for all other Units.<br>
+Adds the Desert Army Unit. Once the Desert Army is Formed, you will need to edit the correct DesertGeneral. Use "DesertGeneral3" with Tank Units. "DesertGeneral2" with Artillery. Use "DesertGeneralA2D3" for Panzer Grenadier and Armoured Infantry Units. Use"DesertGeneral" for all other Units.<br>
 <br>
 Move Restrictions are Player Enforced. This may be fixed in the future.
 <br>
@@ -754,7 +761,7 @@ Adds the Combat Engineer Unit. Use Edit for moving Minor Factories and removing 
 <br>
 They are Named "German_Engineer" "Russian_Engineer" "Japan_Engineer" "USA_Engineer" and "UK_Engineer". <br>
 <br>
-<b>For Combat</b> Use "German_EngineerAttack" Russian etc..<br>
+<b>For Combat</b> Use "German_EngineerAttack" Russian etc...<br>
 <br>
 <img src="German_EngineerAttack.png"/> <br><br>
 You will need to Edit before Combat replacing it's counterpart. It will only conduct Combat Operations of "Blitz with Tank" and A2 when paired with Artillery.<br>
@@ -777,7 +784,7 @@ Unit Image courtesy of Generation Kill.
 This has no affect on Game Play. It just adds a "Game Option" for a simple way for Players to agree to using the Optional rule. It may be expanded in the future.<br>
 Is On by Default at Game Start.<br>
 <br>
-Here are the Rules. They are discussed here:<br><br><b>https://www.axisandallies.org/forums/topic/37806/global-1940-us-uk-lend-lease?_=1698425091945</b>
+Here are the Rules. They are discussed here: https://www.axisandallies.org/forums/topic/37806/global-1940-us-uk-lend-lease?_=1698425091945
 <br>
 <br>
 From the beginning of the US player’s turn in Late 1941 the United States can send up to 3 Air Units (all types of Air Units are included) to the United KIngdom.<br>
@@ -800,7 +807,7 @@ In other words:<br>
 The US units cannot take part in any Combat during the US player’s turn before being converted to UK units.<br>
 The UK player must pay 1 IPC for each Lend-Lease unit.<br>
 The US units must be converted to UK units on the first coming UK player’s turn.<br>
-If the US units are attacked before they are converted to UK units, they defend as usual. If these units are destroyed in Combat before they are converted to UK units, they do not count as Lend-Lease units - and the US player can therefore send new Lend-Lease units the the UK player.<br>
+If the US units are attacked before they are converted to UK units, they defend as usual. If these units are destroyed in Combat before they are converted to UK units, they do not count as Lend-Lease units - and the US player can therefore send new Lend-Lease units to the UK player.<br>
 <br>
 <b>Unofficial SBR Option</b><br>
 <br>
@@ -893,11 +900,18 @@ There are additional Player Enforced rules in the original Game Notes below.
 <b>Credits</b><br>
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
-Change Log UHD Boxes:<br>
-<br>Version 1.874<br> 11/25/23 
+Change Log UHD Boxes:
+<br>
+<br>Version 1.875<br> 12/14/23 
+<br>
+Change "aaGun" Transport Cost to Same as "Armour".
+<br>
+<br>Version 1.874<br> 12/5/23 
 <br>
 Fix Japan China Objective. Fix "Take Over Italy" Token Not Showing Up. Make Russian Total War Tanks Require a Major Factory to Place.<br>
 Prevent Total War Builds in India. Fix Yunnan Place.<br>
+Add Lend Lease Tokens for Russia.
+<br>
 <br>Version 1.873<br> 11/10/23 
 <br>
 Add Combat "..._EngineerAttack". Tweak Southern Italy Place.<br>
