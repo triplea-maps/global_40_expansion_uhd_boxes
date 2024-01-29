@@ -328,6 +328,15 @@ Use edit to place “Armed” mines. Use the Player “Changer” for these. You
 <br>
 You may also place “Colored” mines: Red, Blue, Green, Yellow and Orange. This will allow you to edit different mines designating the defense of different borders. As a guideline, you may way want to use no color for West, Blue for North, Red for South and Yellow for East. Green for Northwest and Southeast and Orange for Southwest and Northeast to make it easier to tell how many and where they defend are.<br>
 <br>
+<b>IMPORTANT</b><br>
+<br>
+For reasons unknown, sometimes after editing a LM to Changer control, that color LM will no longer show up in Changer's edit window.<br>
+<br>
+If that happens, place a different LM than desired, usually non nation specific and document in comment log.<br>
+On the next turn, remove the LM that isn't showing up, it will then reappear as an option to place.<br>
+<br>
+Will add the colored LMs to the "True Neutral" player so this won't happen in the future.<br>
+<br>
 You may also place a colored landmine token from Changer in the territory that is being defended from. For example. Belarus has no color LMs and Blue LMs. Place a Blue LM token in Novgorod to show that the Blue Mines are defending that Border. Place a Grey one in Baltic States to represent the non colored mines. Sea Zone Landmines use the same image.<br>
 <br>
 There are also LM Boxes that show the corresponding color for certain Borders.<br>
@@ -922,7 +931,22 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 1.877<br> 1/4/23 
+<br>Version 1.8<br> 1/28/24 
+<br>
+Fix SZ 122 Border.<br>
+Change Fighter Ace Cost to 11.
+<br>
+<br>Version 1.879<br> 1/9/24 
+<br>
+Change DOW Notifications for when Axis Attacks Russia and Russia and Japan Attack each other.
+<br>
+<br>Version 1.878<br> 1/6/24 
+<br>
+Make "Fighter Aces" only able to Place in there Capital.<br>
+Remove Major Factory Requirement for Russian Total War Tanks.<br>
+Update Landmine Notes.
+<br>
+<br>Version 1.877<br> 1/4/24 
 <br>
 Add "Fighter Aces" to the Timetable for 1943 Mod. Remove Purchase Option for Lend Lease Tokens in 1943 Mod.<br>
 Make Bermuda it's Own Territory.<br>
