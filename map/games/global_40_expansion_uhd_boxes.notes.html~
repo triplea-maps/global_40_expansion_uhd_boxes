@@ -264,11 +264,6 @@ If no accompanying ground Units, you can't retreat the Air Units until <b>ALL</b
 <br>
 They will also be allowed to retreat from Land Battles. This is a legal move.<br>
 <br>
-Instead of a A3 bonus for first round only, the Para will fire one AA shot at 2, along with it's normal A1. The AA shot's casualties do not get to fire back. Instead of a D3 bonus for first round only, the Para will fire one AA shot at 1, along with it's normal D2. The AA shot's casualties do not get to fire back.
-<br>
-<br>
-Also, it receives no Artillery support during land attacks, which helps to balance the First Strike AA kills.<br>
-<br>
 <b>NOTE</b><br>
 You may wish to roll Paratrooper only battles (attacking or defending) by hand according to the Global 40 Expansion Rules. <b>Note</b> When Attacking AA Guns, you will need to <b>Hand Roll</b> before Battle and Edit for a precise result, otherwise Paratroopers will be ignored by AA Fire.<br>
 <br>
@@ -901,6 +896,7 @@ There is no defense against a Japanese Kamikaze attack<br>
 <b>23. FlakTower</b><br>
 <br>
 <img src="FlakTowerTT.png"/> <br><br>
+Thanks to ebbe for the unit image !<br>
 Adds the FlakTower Unit.<br>
 Is On by Default at Game Start.<br>
 <br>Here are the Rules. They are discussed here <br><br>
@@ -915,6 +911,8 @@ They will defend at 1 but will not fire at planes.<br>
 The Tower has Max Damage of 6. This allows you to take the 5 Hit Points of Damage without killing it. You need to roll All AA shots with Dice roller before battle and edit accordingly.<br>
 <br>
 They Fire at <b>ALL</b> planes. 1 at Fighters and 2 at Tac Bmbrs and Bmbrs.<br>
+<br>
+It' can't be captured, so kill as last unit left, then edit it and the damage back in to the Victor.<br>
 <br>
 <b>Unofficial SBR Option</b><br>
 <br>
@@ -1008,6 +1006,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 1.92<br> 2/14/24 
+<br>
+Adjust FlakTower so it Does Not Count as a Placement.
 <br>
 <br>Version 1.91<br> 2/13/24 
 <br>

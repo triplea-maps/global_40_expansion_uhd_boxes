@@ -85,8 +85,12 @@ Tsinghai  (6207,1895)
 Western United States  (10476,1606) 
 Central America  (557,2687) 
 Gibraltar  (2948,2385) 
-Cyprus  (4694,2448) 
-35 Sea Zone  (7849,3025) 
+Cyprus  (4694,2448)
+
+
+35 Sea Zone  (7550,3025)
+
+
 1st Corps  (5757,84) 
 81 Sea Zone  (4822,3192) 
 44 Sea Zone  (7798,3908) 
@@ -368,8 +372,12 @@ Evenkiyskiy  (6484,598)
 Norway  (3870,744) 
 Amur  (7655,1324) 
 Italian Somaliland  (4790,3663) 
-Greater Southern Germany  (4051,1603) 
-20 Sea Zone  (7853,2858) 
+Greater Southern Germany  (4051,1603)
+
+
+20 Sea Zone  (7953,2808)
+
+
 55 Sea Zone  (8404,4284) 
 Denmark  (3814,1101) 
 3rd Corps  (6326,75) 
