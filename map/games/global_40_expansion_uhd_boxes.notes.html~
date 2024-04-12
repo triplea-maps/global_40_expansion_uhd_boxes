@@ -1,7 +1,7 @@
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
 <b>Global 40 Expansion UHD Boxes</b><br>
 <br>
-It uses the Black Elk Mega Map based off of the Bung,Veqryn "World War II Global 1940 2nd Edition" Map. <br>
+It uses the UHD Mega Map based off of the Bung,Veqryn "World War II Global 1940 2nd Edition" Map. <br>
 <br>
 <b>FREE Hand Painted Game Pieces</b> for games played. More Information here:<br>
 <br>
@@ -12,8 +12,6 @@ This is a House Rule Mod for "World War II Global 1940 2nd Edition". It was Crea
 <br>
 <br>
 and here:<br><br><b>https://www.axisandallies.org/forums/topic/36945/axis-allies-global-1940-house-rules-expansion</b><br><br>
-The rules can be found here:<br><br><b>https://drive.google.com/file/d/1SRDOsOwlO4Aa13cULwkWrorrXEmCmiN-/view</b><br>
-<br>
 <b>Latest Triplea Version is Here<br><br> https://www.axisandallies.org/forums/topic/36998/global-1940-and-1943-expansion-for-use-with-triplea</b><br>
 <br>
 This mod will play more like a TableTop game than most triplea maps. While there is the need for edit use, it is completely playable and will become second nature after a few games. It's <b>Huge</b> upside is well worth the effort.<br>
@@ -910,7 +908,7 @@ https://www.axisandallies.org/forums/topic/36945/axis-allies-global-1940-house-r
 You will need to remove any AA Guns and replace with "aaGunNO".<br>
 <br>
 <img src="aaGunNO.png"/> <br><br>
-They will defend at 1 but will not fire at planes.<br>
+Can be taken as a hit but will not fire at planes.<br>
 <br>
 The Tower has Max Damage of 6. This allows you to take the 5 Hit Points of Damage without killing it. You need to roll All AA shots with Dice roller before battle and edit accordingly.<br>
 <br>
@@ -1011,11 +1009,16 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 1.97<br> 3/30/24 
+<br>Version 1.98<br> 4/11/24 
+<br>
+Fix FlakTower Not Showing up in Purchase Window.
+<br>
+<br>Version 1.97<br> 4/1/24 
 <br>
 Revert Bermuda to US Control.<br>
 Add FlakTower to Berlin for 43 Mod.<br>
-Notifications for too Many Units.
+Notifications for too Many Units.<br>
+Remove aaGun ability to Defend at 1 in Land Combat.
 <br>
 <br>Version 1.96<br> 3/24/24 
 <br>
