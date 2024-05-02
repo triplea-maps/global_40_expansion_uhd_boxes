@@ -27,9 +27,19 @@ Open triplea folder<br>
 Open downloadedMaps<br>
 Open map<br>
 Remove units<br>
-Open Landmines Solo and copy units folder.<br>
-Go back to where you removed units and paste new units folder. The default images are Landmines Player. Landmines Solo will not have the Nation specific roundel.<br>
+Open Landmines Player and copy units folder.<br>
+Go back to where you removed units and paste new units folder. The default images are Landmines Solo. Landmines Solo will not have the Nation specific roundel.<br>
 <br>
+<b>Different Panzer/Tank Generals</b><br>
+<br>
+<img src="2ndPanzerArmy.png"/>  <img src="1stUSTank.png"/> <br><br>
+Process is similar to Landmines except you will be adding the image directly into each players units folder. The default uses "Tokens". The alternative uses "Faces".<br>
+<br>
+Open triplea folder<br>
+Open downloadedMaps<br>
+Open map<br>
+Open units<br>
+Open the player specific folder and copy/paste the appropriate image.It's easier to copy the entire Tank Generals folder and leave it open somewhere else for the copy/paste.<br><br>
 <b>Here are some Important Ones</b> Pointed out by Victory First.<br><br>
 It’s important to know these Player-Enforced rules. Everything is stated in the game notes, so you can give that one a read as well, but just highlighting here the most important ones:
 <br><br>
@@ -59,6 +69,10 @@ Do your Combat Move. Then do 1st rd of any Wolfpack/Landmine Battles in Dicebot.
 <br>
 Any Units that have moved from the same originating TTy/SZ, will have to have there moves undone in order to use edit to remove units that started there as well. <B>This is true for All Edit moves.</b><br>
 <br>
+<b>NOTE<br>
+<br>
+If there aren't a lot of Units in the battle, you may want to roll the battle in edit mode and adjust casualties accordingly. This way, you don't need to undo your move and remove the hits.</b><br>
+You will still need to use edit after combat to kill LMs that hit.<br><br>
 If possible and not too mind blowing, try and move all units from the TTy/SZ that will be sending U-boats/Crossing Minefields to the Battle in one CM or Moves. That way you only need to undo that move or moves, if attacking from more than one TTy, and not the ones that are attacking a different zone.<br>
 <br>
 If you start the Battle in Edit, you will have to Fight All of it in Edit.
@@ -390,8 +404,12 @@ Using the mines in combat requires use of the "Dice Roller". It is located in th
 <br>
 If there will be multiple battles, you will be able to edit before the first battle takes place. <br>
 <br>
-The Dice Roller is not tracked in "History" so you may use the comment log if you want to keep a record of the rolls/hits. If playing by Forum, it is recommended to use the Axis & Allies.org dice roller.<br>
+The Dice Roller is not tracked in "History" so you may use the comment log if you want to keep a record of the rolls/hits. If playing by Forum, it is recommended to use the Axis & Allies.org dicebot.<br>
 <br>
+<b>NOTE</b><br>
+<br>
+If there aren't a lot of Units in the battle, you may want to roll the battle in edit mode and adjust casualties accordingly. This way, you don't need to undo your move and remove the hits.<br>
+You will still need to use edit after combat to kill LMs that hit.<br><br>
 You may load no more than 3 mines on a transport. This is Player Enforced.<br>
 <br>
 Do not take mines as casualties in combat. Player enforced. When a territory is conquered, all the unarmed mines will be destroyed. Armed Changer mines will be unaffected.<br>
@@ -416,6 +434,8 @@ Do not take Transports as casualties the first three rounds Player Enforced. You
 <br>
 <b>NOTE</b> When Transports gain the ability to Defend, they still won't Block or Force a Naval Battle. They can still be ignored if by themselves. Triplea does this correctly.<br>
 <br>
+Also, if using Naval Mines, Escorts are considered Transports. You may need to use edit to bypass Submarines in some situations.<br>
+It will ask if you want to atttack the Escort/Transport before battle as well.<br><br>
 May be turned off in "Map Options".<br>
 <br>
 <b>6. US National Guard</b><br>
@@ -470,7 +490,7 @@ If you have more than 1 battle taking place, you will be able to use edit before
 "Repair_BB" will repair 1 hit point of damage for <b>ALL</b> Battleships, Heavy and non Heavy. If you have just a Heavy BB with 2 damage, it will repair it Fully, so you need to Player Enforce purchasing the correct amount of Repair Units. <br><br>
 It Defaults to repairing a Battleship and not a Heavy BB if only 1 Repair Unit and both are present.
 <br>
-You need to edit to <b> "Hvy_BB_Dmgd" and "BB_Damaged"</b> before your next combat turn if needed and apply the appropriate amount of damage. This is so it can continue to attack in battle but not after battle when taking damage. Most BBs will repair, so will rarely be necessary.<br><br>
+<br>
 <b>Section III</b><br>
 <br>
 <b>1. US Armoured Infantry</b><br>
@@ -556,19 +576,28 @@ May be turned off in "Map Options".<br>
 <b>8. German U-boats</b><br>
 <br>
 <img src="Wolfpack.png"/> <br><br>
-<b>It is Recommended to Roll All Wolfpack Battles in Edit Mode Using the Intended Rules</b><br><br>
-For Larger Battles, use Dicebot or the Dice Roller for the 1st round of Battle and then Edit the results accordingly before starting the Combat Phase.<br>
+<b>NOTE<br><br>
+New Wolfpack Procedure as of May 1 2024.</b><br>
 <br>
-"Wolfpack" units are A0 D0 C0 units with unlimited movement. They are for informational and decorative purposes.<br>
+"Wolfpack" units are A0 D0 C0 units with unlimited movement. They provide a plus 1 on Attack and plus 2 on Defense to <B>ALL</b> U-Boats.<br>
+You will need to Player Enforce usage only when a "Wolfpack" is formed per the rules, which is 3 U-Boats in same Sea Zone.<br>
 <br>
-You may place Wolfpack units in <b>any</b> sea zone next to German controlled territories. Use edit if needed to place elsewhere. Place them in the First place phase so they can be used that turn.<br>
-They have unlimited movement but will still be blocked by Destroyers, so use "Perform Move Or Other Actions" in edit if needed.<br>
-<br>
-Do not take as casualties. They will auto die if they are the only units left. They still need to be hit though, so if you get tired of rolling, simply submerge Wolfpack and he will die at the end of the phase. <br>
+Purchase as many Wolfpacks as you think you might need and place during first place phase. You may place Wolfpack units in <b>Any</b> Sea Zone next to German controlled territories.<br><br>
+During Combat Move, once a Wolfpack has formed, move the Wolfpack to the appropriate Sea Zone.<br>
+They have unlimited movement but will still be blocked by Naval Units, so use "Perform Move Or Other Actions" in edit if needed.<br>
+They will auto die after first round of combat rolls. <br>
 <br>
 After combat, triplea will remove any Wolfpack units that are in the Atlantic Ocean or Mediterranean Sea that no longer meet the requirement for a Wolfpack, before the Germans non combat move.<br>
-You will need to use edit to remove any additional Wolfpacks before Germany's next combat move, if enemy attacks have done the same.br>
-<br> 
+<br>
+So, if you had a Wolfpack and moved U-boats out of the Sea Zone during Combat Move so that the Wolfpack was no longer rule compliant, triplea will remove it.<br>
+<br>
+Triplea will also auto add a Wolfpack to any of the above Sea Zones that have 3 or more U-boats in it before the Germans non combat move.<br> 
+You will need to use edit to add any Wolfpacks as needed, if Enemy attacks have not sunk enough U-boats to disolve the Wolfpack.<br>
+The Wolfpack will auto sink after the first round of any attack.<br>
+<br>
+If a Wolfpack is attacked by Enemy Submarines and there is no Destroyer present to defend them, any First Strike hits that would leave the Wolfpack with less than 3 U-Boats, will not remove the Wolpack combat bonus.<br>
+In that case, you will need to fight the battle in edit or for a larger battle, use dicebot/roller and edit accordingly.<br>
+<br>
 <b>9. Waffen Paratroopers</b><br>
 <br>
 <img src="Waffen_Para.png"/> <br><br>
@@ -640,6 +669,10 @@ When in Combat, Kill the PG first if you won't have enough units left to keep th
 <br>
 Edit in the "tactical_bomberPG/TG" before battle to prevent excessive attack bonus if needed. They will receive no Armour support.<br>
 <br>
+<b>NOTE</b><br><br>
+If a Tactical Bomber is present with other Tanks Not part of the Tank Army at start of Battle, Kill the Tac Bmbr and leave a Tank alive instead so the Tac Bmbr will not give it's bonus to the Tank Army if needed.<br>
+<br>
+Edit the Tac Bmbr back in after battle if the Tank it took the hit for survives. Should be a rare occurrence.<br><br>
 <b>6. Army Group</b><br>
 <br>
 <img src="ArmyGroupCentre.png"/> <br><br>
@@ -910,11 +943,13 @@ You will need to remove any AA Guns and replace with "aaGunNO".<br>
 <img src="aaGunNO.png"/> <br><br>
 Can be taken as a hit but will not fire at planes.<br>
 <br>
-The Tower has Max Damage of 6. This allows you to take the 5 Hit Points of Damage without killing it. You need to roll All AA shots with Dice roller before battle and edit accordingly.<br>
+The Tower has Max Damage of 6. This allows you to take the 5 Hit Points of Damage without killing it. One repair unit will fix <b>All</b> damage, so Player enforce the correct amount.<br>
+<br><b> You need to roll All AA shots for Fighter Units with Dice roller before battle and edit accordingly.<br>
+It will Fire at All Bombers, except Heavy Bombers, correctly at 2. </b><br>
 <br>
-They Fire at <b>ALL</b> planes. 1 at Fighters and 2 at Tac Bmbrs and Bmbrs.<br>
+By Rule they Fire at <b>ALL</b> planes. 1 at Fighters and 2 at Tac Bmbrs and Bmbrs.<br>
 <br>
-It' can't be captured, so kill as last unit left, then edit it and the damage back in to the Victor.<br>
+It can't be captured, so kill as last unit left, then edit it and the damage back in to the Victor.<br>
 <br>
 <b>Unofficial SBR Option</b><br>
 <br>
@@ -976,8 +1011,8 @@ Uraguay: 1 infantry<br>
 Argentina: 6 infantry<br>
 SZ 66 (aligned with Argentina): 1 cruiser<br>
 Chile: 4 infantry<br>
-Mozambique: 1 infantry<br>
-Angola: 1 infantry<br>
+Mozambique: 2 infantry<br>
+Angola: 2 infantry<br>
 Portugal: 4 infantry, 1 artillery, 1 AA gun<br>
 SZ 104 (aligned with Portugal): 1 cruiser, 1 transport<br>
 Spain: 10 infantry, 1 artillery, 1 AA gun, 1 tank, 1 fighter<br>
@@ -1009,6 +1044,18 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
+<br>Version 1.99<br> 4/29/24 
+<br>
+Fix "WaffenPnzrGrndr" Not Being Air Transportable.<br>
+Fix Germany Getting Italy's Oil Objective Twice When Italy Has Been Taken Over.<br>
+Fix FlakTower Not Taking Damage and Repairing.<br>
+Change Battleships and Heavy Battleships to Change to "Damaged" when Hit. They will Attack at Zero now.<br>
+Make Take Over Italy Token Not Count as a Placement.<br>
+Update Game Notes for Landmines, Escorts and Battleships.<br>
+Add Alternate Panzer and Tank Generals.<br>
+Make "Wolfpack" Boost U-boats to 3 for First Round of Battle.<br>
+Add "..._paraBoost" Unit that gives +1 to Paratroopers for First Round of Battle.
+<br>
 <br>Version 1.98<br> 4/11/24 
 <br>
 Fix FlakTower Not Showing up in Purchase Window.
@@ -1017,7 +1064,7 @@ Fix FlakTower Not Showing up in Purchase Window.
 <br>
 Revert Bermuda to US Control.<br>
 Add FlakTower to Berlin for 43 Mod.<br>
-Notifications for too Many Units.<br>
+Notifications for too Many Units. Only Works for Waffen Infantry, Panzer Grenadiers and Paratroopers in Berlin.<br>
 Remove aaGun ability to Defend at 1 in Land Combat.
 <br>
 <br>Version 1.96<br> 3/24/24 
