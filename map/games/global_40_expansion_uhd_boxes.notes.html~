@@ -18,6 +18,9 @@ This mod will play more like a TableTop game than most triplea maps. While there
 <br>
 The following is just going to address the triplea game play, although the Help button top right has some Unit information. You will need to read the rules download for full game information.<br>
 <br>
+<b>NOTE</b><br><br>
+<b>New Wolfpack and Paratrooper Procedure as of May 2 2024. Version 1.99</b><br>
+<br>
 <b>Different Landmines</b><br>
 <br>
 <img src="russian_mine_Red2.png"/> <br><br>
@@ -45,7 +48,7 @@ It’s important to know these Player-Enforced rules. Everything is stated in th
 <br><br>
 Transports need to be selected last as casualty.
 <br><br>
-Use Edit when conducting a combat that includes Paratroopers or U-boat units. <br>
+Use Edit when conducting a combat that includes Paratroopers or U-boat units. <br><br> <b>Wolfpacks and Paratroopers have been updated and Edit is now rarely needed.</b><br><br>
 When Edit mode is on, you can select any number of casualties you want, regardless of the rolls you made. Count up the hits manually, keeping in mind the improved attack/defense value of the units.<br>
 <br>
 If fighting a Large Naval battle, it is suggested to use the Dice Roller or Dice Bot for the 1st rd of combat. Do your combat move, save game, roll dice. Restart game, undo any combat moves to the battle. Remove any casualties with edit. Then redo the now adjusted combat move. 
@@ -271,9 +274,20 @@ When being supported by Artillery and other Artillery supportable units are pres
 <br>
 <b>7. Paratroopers</b><br>
 <img src="USA_para.png"/> <br><br>
-<b>It is Recommended to Roll All Para Battles in Edit Mode Using the Intended Rules</b><br><br>
-Paratroopers Move 2 and +1 from an Airfield. Player Enforce correct land movement of 1 move only. Paratroopers may require edit for their "Air Movement". Before attacking, if facing AA fire, activate "Roll Dice" under "Game", top left, or use Dicebot and roll for AA fire. Then use edit to kill any hits and if needed, select "Perform Move Or Other Actions" and then click on the Paratrooper and make a legal move. If there is only 1 battle to be fought that Combat Phase, you will need to do this at the <b>START</b> of your Combat Move.<br>
-<br>
+<b>Paratroopers have been updated and Edit is now rarely needed</b><br><br>
+...paraBoost Units have been added to the Major Powers. They provide +2 on Attack and +1 on Defense for the first round of battle. They will auto die after combat rolls and can't be taken as a hit.<br>
+Purchase two for each expected battle. You will use one for attack and if successful, one for defense. They cost 0 and are placed in first place phase. Place two with the Paratroopers that are going to make the attack.<br><br>
+Move one into battle with the Paratroopers.<br>
+After battle, if successful, move the second paraBoost to the conquered Territory. This one will provide defense against any counterattacks.<br><br>
+Example<br>
+Germany has 2 Paratroopers in Romainia. They are attacking Rostov that has 1 Infantry.<br>
+Purchase 2 paraBoosts and place in Romainia 1st place phase.<br>
+In CM, turn on edit and move the 2 Paras and 1 paraBoost to Rostov.<br>
+After the battle, if successful, move the 2nd paraBoost to Rostov in NCM with edit.<br><br>
+If the 2nd paraBoost isn't needed, you can remove with edit or ignore it, if it won't affect game play.<br>
+It is Player Enforced to have paraBoost Units only present with Paratroopers and aaGuns. Otherwise it will give it's Bonus incorrectly if Paratroopers are in the same TTy as other units.<br><br>
+Paratroopers Move 2 and +1 from an Airfield. Player Enforce correct land movement of 1 move only. Paratroopers may require edit for their "Air Movement". Before attacking, if facing AA fire, activate "Roll Dice" under "Game", top left, or use Dicebot and roll for AA fire. Then use edit to kill any hits and if needed, select "Perform Move Or Other Actions" and then click on the Paratrooper and make a legal move. If there is only 1 battle to be fought that Combat Phase, you will need to do this at the <b>START</b> of your Combat Move.<br><br>
+<b>You also may roll the battle in Edit and select the appropriate casualties</b><br><br>
 <b>IMPORTANT</b><br>
  If accompanied by Air Units during an edit assisted attack across water, along with other ground Units performing an <b>Amphibious Attack</b> , All Paras <b>MUST</b> die before retreating the Air Units or the game will freeze.<br>
 If no accompanying ground Units, you can't retreat the Air Units until <b>ALL</b> Paras are dead. It will then throw a "Withdraw" error when you retreat the remaining Planes, but that is one you can ignore.<br>
@@ -490,6 +504,10 @@ If you have more than 1 battle taking place, you will be able to use edit before
 "Repair_BB" will repair 1 hit point of damage for <b>ALL</b> Battleships, Heavy and non Heavy. If you have just a Heavy BB with 2 damage, it will repair it Fully, so you need to Player Enforce purchasing the correct amount of Repair Units. <br><br>
 It Defaults to repairing a Battleship and not a Heavy BB if only 1 Repair Unit and both are present.
 <br>
+<br>
+<b>Important</b><br>
+<br>
+You need to edit to <b>"Hvy_BB_Dmgd" and "BB_Damaged"</b> before your next combat turn if needed and apply the appropriate amount of damage. This is so it can continue to attack in battle but not after battle when taking damage. Most BBs will repair, so will rarely be necessary.<br>
 <br>
 <b>Section III</b><br>
 <br>
@@ -1049,12 +1067,11 @@ Change Log UHD Boxes:
 Fix "WaffenPnzrGrndr" Not Being Air Transportable.<br>
 Fix Germany Getting Italy's Oil Objective Twice When Italy Has Been Taken Over.<br>
 Fix FlakTower Not Taking Damage and Repairing.<br>
-Change Battleships and Heavy Battleships to Change to "Damaged" when Hit. They will Attack at Zero now.<br>
 Make Take Over Italy Token Not Count as a Placement.<br>
-Update Game Notes for Landmines, Escorts and Battleships.<br>
+Update Game Notes for Landmines, Escorts and Wolfpacks.<br>
 Add Alternate Panzer and Tank Generals.<br>
 Make "Wolfpack" Boost U-boats to 3 for First Round of Battle.<br>
-Add "..._paraBoost" Unit that gives +1 to Paratroopers for First Round of Battle.
+Add "..._paraBoost" Unit that makes Paratroopers Attack and Defend at 3 for First Round of Battle.
 <br>
 <br>Version 1.98<br> 4/11/24 
 <br>
