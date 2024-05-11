@@ -595,24 +595,14 @@ May be turned off in "Map Options".<br>
 <br>
 <img src="Wolfpack.png"/> <br><br>
 <b>NOTE<br><br>
-New Wolfpack Procedure as of May 1 2024.</b><br>
+New Wolfpack Procedure as of May 10 2024.</b><br>
 <br>
 "Wolfpack" units are A0 D0 C0 units with unlimited movement. They provide a plus 1 on Attack and plus 2 on Defense to <B>ALL</b> U-Boats.<br>
-You will need to Player Enforce usage only when a "Wolfpack" is formed per the rules, which is 3 U-Boats in same Sea Zone.<br>
+Triplea will auto place and remove Wolfpacks before the start of combat. In rare instances you may need to Player Enforce usage. A "Wolfpack" is only formed when there are 3 or more U-Boats in same Sea Zone.<br>
 <br>
-Purchase as many Wolfpacks as you think you might need and place during first place phase. You may place Wolfpack units in <b>Any</b> Sea Zone next to German controlled territories.<br><br>
-During Combat Move, once a Wolfpack has formed, move the Wolfpack to the appropriate Sea Zone.<br>
-They have unlimited movement but will still be blocked by Naval Units, so use "Perform Move Or Other Actions" in edit if needed.<br>
-They will auto die after first round of combat rolls. <br>
+They will auto sink after first round of combat rolls. <br>
 <br>
-After combat, triplea will remove any Wolfpack units that are in the Atlantic Ocean or Mediterranean Sea that no longer meet the requirement for a Wolfpack, before the Germans non combat move.<br>
-<br>
-So, if you had a Wolfpack and moved U-boats out of the Sea Zone during Combat Move so that the Wolfpack was no longer rule compliant, triplea will remove it.<br>
-<br>
-Triplea will also auto add a Wolfpack to any of the above Sea Zones that have 3 or more U-boats in it before the Germans non combat move.<br> 
-You will need to use edit to add any Wolfpacks as needed, if Enemy attacks have not sunk enough U-boats to disolve the Wolfpack.<br>
-The Wolfpack will auto sink after the first round of any attack.<br>
-<br>
+You will need to use edit to add or remove any Wolfpacks as needed after Enemy attacks. If not facing anymore attacks before Germany's next turn, triplea will place as stated above.<br><br>
 If a Wolfpack is attacked by Enemy Submarines and there is no Destroyer present to defend them, any First Strike hits that would leave the Wolfpack with less than 3 U-Boats, will not remove the Wolpack combat bonus.<br>
 In that case, you will need to fight the battle in edit or for a larger battle, use dicebot/roller and edit accordingly.<br>
 <br>
@@ -969,6 +959,13 @@ By Rule they Fire at <b>ALL</b> planes. 1 at Fighters and 2 at Tac Bmbrs and Bmb
 <br>
 It can't be captured, so kill as last unit left, then edit it and the damage back in to the Victor.<br>
 <br>
+<b>24. Strict Neutral Nations</b><br>
+<br>
+Adds The Captain's Strict Neutral Rules.<br>
+<br>Explained in detail here <br><br>
+https://www.axisandallies.org/forums/assets/uploads/files/1710313916575-g40-strict-neutrals.pdf
+<br>
+<br>
 <b>Unofficial SBR Option</b><br>
 <br>
 This is independent of the Captain and Company's Awesome House Rules, thus "Unofficial". :) 
@@ -1061,6 +1058,22 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.11<br> 5/10/24 
+<br>
+Make Wolfpacks Auto Place and Remove Before Combat.<br>
+Correct UK Objective for Control of European Territorries to only Require those that have a PU Value.<br>
+Add Strict Neutrals to the Game Notes.<br>
+Add Notification for USA/UK Lend Lease.
+<br>
+<br>Version 2.1<br> 5/5/24 
+<br>
+Add Tankograd to TimeTable.<br>
+Make Minor Factories Movable in Edit.
+<br>
+<br>Version 2.0<br> 5/2/24 
+<br>
+Change Wolfpacks to Auto place after EndTurn.
 <br>
 <br>Version 1.99<br> 4/29/24 
 <br>
