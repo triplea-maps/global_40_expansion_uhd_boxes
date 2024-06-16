@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.163"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.164"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1387,6 +1387,7 @@
     <resource name="SuicideAttackTokens"/>
     <resource name="AirLendLease"/>
     <resource name="TankLendLease"/>
+    <resource name="NavyLendLease"/>
   </resourceList>
   <playerList>
     <!-- In turn order -->
@@ -1676,6 +1677,7 @@
     <unit name="1_PU"/>
     <unit name="AirLL"/>
     <unit name="TankLL"/>
+    <unit name="NavyLL"/>
     <unit name="1Pu"/>
     <unit name="1pus"/>
     <unit name="2_PU"/>
@@ -1851,6 +1853,7 @@
     <unit name="FlakTowerTT"/>
     <unit name="FlakTower_Damaged"/>
     <unit name="Repair_FlakTower"/>
+    <unit name="HomeDefense"/>
   </unitList>
   <relationshipTypes>
     <relationshipType name="Allied"/>
@@ -2596,6 +2599,11 @@
       <cost resource="TankLendLease" quantity="1"/>
       <result resourceOrUnit="TankLL" quantity="1"/>
     </productionRule>
+    <productionRule name="buyNavyLL">
+      <cost resource="PUs" quantity="1"/>
+      <cost resource="NavyLendLease" quantity="1"/>
+      <result resourceOrUnit="NavyLL" quantity="1"/>
+    </productionRule>
     <productionRule name="buy1Pu">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="1Pu" quantity="1"/>
@@ -3303,6 +3311,10 @@
     <productionRule name="buyFlakTower">
       <cost resource="PUs" quantity="12"/>
       <result resourceOrUnit="FlakTower" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyHomeDefense">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="HomeDefense" quantity="1"/>
     </productionRule>
     <!-- Advanced Industrial Production -->
     <!--<productionRule name="buyInfantryIndustrialTechnology">
@@ -4705,7 +4717,7 @@
       <option name="defenseRolls" value="2"/>
       <!--<option name="artillerySupportable" value="true"/>-->
       <option name="isAirTransportable" value="true"/>
-      <option name="unitPlacementOnlyAllowedIn" value="Germany:Russia:Japan:Eastern United States:United Kingdom"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany:Russia:Japan:Eastern United States:United Kingdom:Army Group South:Army Group Centre:Army Group North:1st Army Group:2nd Army Group:USA Army Group"/>
       <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
     </attachment>
     <!-- German Rockets -->
@@ -7019,6 +7031,19 @@
       <option name="hitPoints" value="6"/>
       <option name="whenHitPointsRepairedChangesInto" value="0:true:FlakTower"/>
     </attachment>
+    <!-- HomeDefense -->
+    <attachment name="unitAttachment" attachTo="HomeDefense" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="isSuicideOnAttack" value="true"/>
+      <option name="isSuicideOnDefense" value="true"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="HD"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+      <option name="maxConstructionsPerTypePerTerr" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+    </attachment>
     <!-- aaGunNO -->
     <attachment name="unitAttachment" attachTo="aaGunNO" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
@@ -7350,6 +7375,16 @@
       <option name="defense" value="0"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="tankLL"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- NavyLL -->
+    <attachment name="unitAttachment" attachTo="NavyLL" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="0"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="navyLL"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
     </attachment>
@@ -7971,7 +8006,7 @@
       <option name="isAirTransportable" value="false"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="1PU"/>
-      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="10"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
       <option name="unitPlacementOnlyAllowedIn" value="Germany:Russia:Japan:Eastern United States:United Kingdom:France:New South Wales:Southern Italy:India"/>
       <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
@@ -10726,6 +10761,17 @@
       <option name="bonusType" value="J_ParaBoost_bonusDefence"/>
       <option name="impArtTech" value="false"/>
       <option name="players" value="Japanese"/>
+    </attachment>
+    <attachment name="supportAttachmentHomeDefense" attachTo="HomeDefense" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="infantry:elite:fighter:uk_fighter"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="99"/>
+      <option name="bonusType" value="HD_bonus"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Japanese:British"/>
     </attachment>
     <attachment name="supportAttachmentUSA_ParaBoost" attachTo="usa_paraBoost" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="usa_para"/>
@@ -29508,7 +29554,15 @@
     </attachment>
     <attachment name="conditionAttachment_BritishControlBritain" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="United Kingdom" count="1"/>
-      </attachment>
+    </attachment>
+    <attachment name="conditionAttachment_British_LendLeaseFeeAir" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="original" count="1"/>
+      <option name="unitPresence" value="AirLL" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_LendLeaseFeeNavy" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="original" count="1"/>
+      <option name="unitPresence" value="NavyLL" count="1"/>
+    </attachment>
     
     <!-- British Conditions Okinawa -->
     <attachment name="conditionAttachment_British_ControlOkinawa" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -42593,12 +42647,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
     </attachment>
-    
-    <attachment name="triggerAttachment_Japanese_Loses_Alaska_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlAlaskaInvert:conditionAttachment_Japanese_LoseAlaska"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-3"/>
-    </attachment>
     <!-- Japanese Triggers Alaska Ends -->
 
     <!-- Japanese Triggers Midway -->
@@ -42606,11 +42654,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlMidway"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
-    </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_Midway_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlMidwayInvert:conditionAttachment_Japanese_LoseMidway"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-3"/>
     </attachment>
     <!-- Japanese Triggers Midway Ends -->
 
@@ -42620,11 +42663,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
     </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_HawaiianIslands_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlHawaiianIslandsInvert:conditionAttachment_Japanese_LoseHawaiianIslands"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-3"/>
-    </attachment>
     <!-- Japanese Triggers Hawaiian Islands Ends -->
 
     <!-- Japanese Triggers Mexico -->
@@ -42633,12 +42671,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_Mexico_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlMexicoInvert:conditionAttachment_Japanese_LoseMexico"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-2"/>
-    </attachment>
-    
     <!-- Japanese Triggers Mexico Ends -->
     
     <!-- Japanese Triggers Wake Island -->
@@ -42646,11 +42678,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlWakeIsland"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
-    </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_WakeIsland_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlWakeIslandInvert:conditionAttachment_Japanese_LoseWakeIsland"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-2"/>
     </attachment>
     <!-- Japanese Triggers Wake Island Ends -->
 
@@ -42660,11 +42687,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
     </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_Philippines_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlPhilippinesInvert:conditionAttachment_Japanese_LosePhilippines"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-3"/>
-    </attachment>
     <!-- Japanese Triggers Philippines Ends -->
 
     <!-- Japanese Triggers Guam -->
@@ -42672,11 +42694,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlGuam"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_Guam_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlGuamInvert:conditionAttachment_Japanese_LoseGuam"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
     </attachment>
     <!-- Japanese Triggers Guam Ends -->
 
@@ -42686,11 +42703,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_DNG_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlDNGInvert:conditionAttachment_Japanese_LoseDNG"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-2"/>
-    </attachment>
     <!-- Japanese Triggers Dutch New Guinea Ends -->
     
     <!-- Japanese Triggers Celebes -->
@@ -42699,12 +42711,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_Celebes_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlCelebesInvert:conditionAttachment_Japanese_LoseCelebes"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
-    
     <!-- Japanese Triggers Celebes Ends -->
 
     <!-- Japanese Triggers Aleutian Islands -->
@@ -42712,11 +42718,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlAleutianIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_AleutianIslands_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlAleutianIslandsInvert:conditionAttachment_Japanese_LoseAleutianIslands"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
     </attachment>
     <!-- Japanese Triggers Aleutian Islands Ends -->
     
@@ -42726,11 +42727,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_LineIslands_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlLineIslandsInvert:conditionAttachment_Japanese_LoseLineIslands"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- Japanese Triggers Line Islands Ends -->
 
     <!-- Japanese Triggers Ceylon -->
@@ -42738,11 +42734,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlCeylon"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_Ceylon_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlCeylonInvert:conditionAttachment_Japanese_LoseCeylon"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
     </attachment>
     <!-- Japanese Triggers Ceylon Ends -->
 
@@ -42752,11 +42743,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_Fiji_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlFijiInvert:conditionAttachment_Japanese_LoseFiji"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- Japanese Triggers Fiji Ends -->
 
     <!-- Japanese Triggers Gilbert Islands -->
@@ -42764,11 +42750,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlGilbertIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
-    </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_GilbertIslands_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlGilbertIslandsInvert:conditionAttachment_Japanese_LoseGilbertIslands"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-2"/>
     </attachment>
     <!-- Japanese Triggers Gilbert Islands Ends -->
 
@@ -42778,11 +42759,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_Samoa_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlSamoaInvert:conditionAttachment_Japanese_LoseSamoa"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- Japanese Triggers Samoa Ends -->
     
     <!-- Japanese Triggers Solomon Islands -->
@@ -42791,11 +42767,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_SolomonIslands_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlSolomonIslandsInvert:conditionAttachment_Japanese_LoseSolomonIslands"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-2"/>
-    </attachment>
     <!-- Japanese Triggers Solomons Islands Ends -->
 
     <!-- Japanese Triggers New Guinea -->
@@ -42803,11 +42774,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlNewGuinea"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
-    </attachment>
-    <attachment name="triggerAttachment_Japanese_Loses_NewGuinea_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlNewGuineaInvert:conditionAttachment_Japanese_LoseNewGuinea"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-2"/>
     </attachment>
     <!-- Japanese Triggers New Guinea Ends -->
     
@@ -42906,6 +42872,28 @@
       <option name="productionRule" value="productionBritish:buyUK_TankGeneral"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:britishPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_LendLeaseFeeAir" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:USandUK_LL:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionBritish:buyAirLL"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:britishPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_RemoveLendLeaseFeeAir" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_LendLeaseFeeAir"/>
+      <option name="removeUnits" value="all:AirLL" count="11"/>
+      <option name="when" value="before:britishCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_LendLeaseFeeNavy" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:USandUK_LL:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionBritish:buyNavyLL"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:britishPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_RemoveLendLeaseFeeNavy" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_LendLeaseFeeAir"/>
+      <option name="removeUnits" value="all:NavyLL" count="11"/>
+      <option name="when" value="before:britishCombatMove"/>
     </attachment>
     
     <!-- BritishTotalWarInfantry -->
@@ -43387,7 +43375,7 @@
       <option name="directOwnershipTerritories" value="Queensland:Victoria:New Britain:Northern Territory:New Zealand:New South Wales:South Australia:Western Australia:Solomon Islands:New Guinea:Malaya" count="11"/>
     </attachment>
     <attachment name="triggerAttachment_British_Control_Original_Pacific_And_Malaya" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentBritish_At_War_With_Japanese:conditionAttachment_British_Control_ANZAC_Original"/>
+      <option name="trigger" value="EXP43:conditionAttachmentBritish_At_War_With_Japanese:conditionAttachment_British_Control_ANZAC_Original"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
     </attachment>
@@ -43408,11 +43396,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_UK_Loses_Okinawa_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlOkinawaInvert:conditionAttachment_British_LoseOkinawa"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- British Triggers Okinawa Ends -->
 
     <!-- British Triggers Caroline Islands -->
@@ -43420,11 +43403,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlCarolineIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
-    </attachment>
-    <attachment name="triggerAttachment_UK_Loses_CarolineIslands_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlCarolineIslandsInvert:conditionAttachment_British_LoseCarolineIslands"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-3"/>
     </attachment>
     <!-- British Triggers Caroline Islands Ends -->
 
@@ -43434,11 +43412,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_UK_Loses_Formosa_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlFormosaInvert:conditionAttachment_British_LoseFormosa"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- British Triggers Formosa Ends -->
 
      <!-- British Triggers Iwo Jima -->
@@ -43446,11 +43419,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlIwoJima"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_UK_Loses_IwoJima_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlIwoJimaInvert:conditionAttachment_British_LoseIwoJima"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
     </attachment>
     <!-- British Triggers Iwo Jima Ends -->
 
@@ -43460,11 +43428,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_UK_Loses_Hainan_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlHainanInvert:conditionAttachment_British_LoseHainan"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- British Triggers Hainan Ends -->
 
     <!-- British Triggers Paulau Island -->
@@ -43473,11 +43436,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_UK_Loses_PaulauIsland_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlPaulauIslandInvert:conditionAttachment_British_LosePaulauIsland"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- British Triggers Paulau Island Ends -->
     
     <!-- British Triggers Marianas -->
@@ -43485,11 +43443,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlMarianas"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_UK_Loses_Marianas_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlMarianasInvert:conditionAttachment_British_LoseMarianas"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
     </attachment>
     <!-- British Triggers Marianas Ends -->
 
@@ -43507,11 +43460,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlDNG"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
-    </attachment>
-    <attachment name="triggerAttachment_British_Loses_DNG_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlDNGInvert:conditionAttachment_British_LoseDNG"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-2"/>
     </attachment>
     <!-- British Triggers Pacific Dutch New Guinea -->
 
@@ -43732,11 +43680,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_ANZAC_Loses_Okinawa_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlOkinawaInvert:conditionAttachment_ANZAC_LoseOkinawa"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- ANZAC Triggers Okinawa Ends -->
 
     <!-- ANZAC Triggers Caroline Islands -->
@@ -43744,11 +43687,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlCarolineIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
-    </attachment>
-    <attachment name="triggerAttachment_ANZAC_Loses_CarolineIslands_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlCarolineIslandsInvert:conditionAttachment_ANZAC_LoseCarolineIslands"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-3"/>
     </attachment>
     <!-- ANZAC Triggers Caroline Islands Ends -->
 
@@ -43758,11 +43696,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_ANZAC_Loses_Formosa_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlFormosaInvert:conditionAttachment_ANZAC_LoseFormosa"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- ANZAC Triggers Formosa Ends -->
 
      <!-- ANZAC Triggers Iwo Jima -->
@@ -43770,11 +43703,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlIwoJima"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_ANZAC_Loses_IwoJima_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlIwoJimaInvert:conditionAttachment_ANZAC_LoseIwoJima"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
     </attachment>
     <!-- ANZAC Triggers Iwo Jima Ends -->
 
@@ -43784,11 +43712,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_ANZAC_Loses_Hainan_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlHainanInvert:conditionAttachment_ANZAC_LoseHainan"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- ANZAC Triggers Hainan Ends -->
 
     <!-- ANZAC Triggers Paulau Island -->
@@ -43797,11 +43720,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_ANZAC_Loses_PaulauIsland_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlPaulauIslandInvert:conditionAttachment_ANZAC_LosePaulauIsland"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- ANZAC Triggers Paulau Island Ends -->
     
     <!-- ANZAC Triggers Marianas -->
@@ -43809,11 +43727,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlMarianas"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_ANZAC_Loses_Marianas_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlMarianasInvert:conditionAttachment_ANZAC_LoseMarianas"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
     </attachment>
    <!-- ANZAC Triggers Marianas Ends -->
 
@@ -43841,11 +43754,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
-    <attachment name="triggerAttachment_ANZAC_Loses_DNG_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlDNGInvert:conditionAttachment_ANZAC_LoseDNG"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-2"/>
-    </attachment>
     <!-- ANZAC Triggers Pacific Dutch New Guinea -->
 
     <!-- ANZAC Triggers Pacific Celebes -->
@@ -43853,11 +43761,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlCelebes"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
-    </attachment>
-    <attachment name="triggerAttachment_ANZAC_Loses_Celebes_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlCelebesInvert:conditionAttachment_ANZAC_LoseCelebes"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-2"/>
     </attachment>
     <!-- ANZAC Triggers Pacific Celebes -->
 
@@ -45325,11 +45228,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_USA_Loses_Okinawa" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlOkinawaInvert:conditionAttachment_Americans_LoseOkinawa"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- Americans Triggers Okinawa Ends -->
 
     <!-- Americans Triggers Caroline Islands -->
@@ -45337,11 +45235,6 @@
       <option name="conditions" value="conditionAttachment_Americans_ControlCarolineIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
-    </attachment>
-    <attachment name="triggerAttachment_USA_Loses_CarolineIslands" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlCarolineIslandsInvert:conditionAttachment_Americans_LoseCarolineIslands"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-3"/>
     </attachment>
     <!-- Americans Triggers Caroline Islands Ends -->
     
@@ -45351,11 +45244,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_USA_Loses_Formosa" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlFormosaInvert:conditionAttachment_Americans_LoseFormosa"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- Americans Triggers Formosa Ends -->
 
     <!-- Americans Triggers Iwo Jima -->
@@ -45363,11 +45251,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlIwoJima"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_USA_Loses_IwoJima" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlIwoJimaInvert:conditionAttachment_Americans_LoseIwoJima"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
     </attachment>
     <!-- Americans Triggers Iwo Jima Ends -->
 
@@ -45377,11 +45260,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_USA_Loses_Hainan" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlHainanInvert:conditionAttachment_Americans_LoseHainan"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- Americans Triggers Hainan Ends -->
 
     <!-- Americans Triggers Paulau Island -->
@@ -45390,11 +45268,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_USA_Loses_PaulauIsland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlPaulauIslandInvert:conditionAttachment_Americans_LosePaulauIsland"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
-    </attachment>
     <!-- Americans Triggers Paulau Island Ends -->
     
     <!-- Americans Triggers Marianas -->
@@ -45402,11 +45275,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlMarianas"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_USA_Loses_Marianas" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlMarianasInvert:conditionAttachment_Americans_LoseMarianas"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
     </attachment>
     <!-- Americans Triggers Marianas Ends -->
 
@@ -45496,11 +45364,6 @@
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
-    <attachment name="triggerAttachment_Americans_Loses_DNG_Pacific_Expanded" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlDNGInvert:conditionAttachment_Americans_LoseDNG"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-2"/>
-    </attachment>
     <!-- Americans Triggers Pacific Dutch New Guinea -->
 
     <!-- Americans Triggers Pacific Celebes -->
@@ -45508,11 +45371,6 @@
       <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlCelebes"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_Americans_Loses_Celebes_Pacific_Expanded" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlCelebesInvert:conditionAttachment_Americans_LoseCelebes"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="-1"/>
     </attachment>
     <!-- Americans Triggers Pacific Celebes Ends -->
     
@@ -50235,6 +50093,8 @@
       <resourceGiven player="Japanese" resource="SuicideAttackTokens" quantity="6"/>
       <resourceGiven player="Russians" resource="AirLendLease" quantity="3"/>
       <resourceGiven player="Russians" resource="TankLendLease" quantity="3"/>
+      <resourceGiven player="British" resource="AirLendLease" quantity="3"/>
+      <resourceGiven player="British" resource="NavyLendLease" quantity="3"/>
     </resourceInitialize>
     <relationshipInitialize>
       <relationship player1="Changer" player2="Germans" type="Allied" roundValue="1"/>
@@ -50979,7 +50839,8 @@ Most Starting Units will be on the Left side of the Edit Window. Unfortunately, 
 <br>
 There is an Invisible Factory that allows placement in Boxes. Use <b>Caution</b> when editing units in and out of Boxes so you don't delete it. If you do by accident, you can edit it back in. It's called "BoxFctry". <br>
 <br>
-<b>You Must Use Edit</b> to Move To and From and will only be able to move in CM and NCM. Use "Perform Move Or Other Actions" while in Edit. You will be able to move other Players' Units as well. However, you can only move to legal territories. For example, Germany can't move Units into russia without being at War. You will need to Edit otherwise and Manually Place/Replace.<br><br>
+<b>You Must Use Edit</b> to Move To and From and will only be able to move in CM and NCM. Use "Perform Move Or Other Actions" while in Edit. You will be able to move other Players' Units as well. However, you can only move to legal territories. For example, Germany can't move Units into russia without being at War.<br><br> <b> NOTE<br> You may temporarily edit russia and Germany to War if you have a large number of moves to make and then edit back to Neutrality.</b> <br>
+<br>You will need to Edit otherwise and Manually Place/Replace.<br><br>
 Also, you can move units in Edit, then move additional units somewhere else and not have to hit "Perform Move ..." again. You can do multiple moves. In other words, you don't need to click on "Perform Move or Other Actions" for every move.<br>
 <br>
 <b>Note</b><br>
@@ -51228,7 +51089,7 @@ Only Factories at Game Start can be upgraded. Player Enforced. Use First Place P
 <img src="russian_mine.png"/> <br><br>
 This requires extensive edit use. There is also a TripleA option that is "edit free" explained below.<br>
 <br>
-You may purchase "unarmed" mines and place them in your Capital and India for UK. It will allow you to place as many as you want, so placement is Player Enforced.<br>
+You may purchase "unarmed" mines and place them in your Capital and India for UK.<br> When placing in a damaged Factory, you may only place as many as there are placements available. You can't place the maximum of 10, unless there are 10 placements available.<br>
 <br>
 Use edit to place “Armed” mines. Use the Player “Changer” for these. You may place them anywhere there is an unarmed mine (including ones you purchased that turn). When you place the armed mines, you will need to use the “Comment Log” stating which Border they are defending in the territory. To access the comment log, go to the “View” menu, and click “Show Comment Log”.<br>
 <br>
@@ -51647,6 +51508,8 @@ Only move 1 space in NCM. Do not take as casualty. Player Enforced. Will auto di
 <br>
 If Attacking a Army/Corps or Army Group, do the Rocket Attacks with Dicebot or the Dice Roller before Battle if needed, so you can adjust casualties Before Combat Starts.<br>
 <br>
+When placing in a damaged Factory, you may only place as many as there are placements available. You can't place the maximum of 10, unless there are 10 placements available.<br>
+<br>
 <b>11. Bidding</b><br>
 <br>
 Player Enforced. :)
@@ -51729,7 +51592,8 @@ Unit Image courtesy of Generation Kill.
 <br>
 <b>20. US and UK Lend-Lease</b><br>
 <br>
-This has no affect on Game Play. It just adds a "Game Option" for a simple way for Players to agree to using the Optional rule. It may be expanded in the future.<br>
+<b>This now works the same as the Soviet Lend Lease where you purchase the Lend lease Fee.</b><br>
+<br>
 Is On by Default at Game Start.<br>
 <br>
 Here are the Rules. They are discussed here: https://www.axisandallies.org/forums/topic/37806/global-1940-us-uk-lend-lease?_=1698425091945
@@ -51927,10 +51791,18 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 2.163<br> 6/6/24 
+<br>Version 2.164<br> 6/13/24 
 <br>
-Add German U-Boat Pens.<br>
-Add Operation Felix-Heinrich.
+Fix Pacific Islands. You No Longer Receive a Negative Bonus for Losing Control Unless you are the Original Owner.<br>
+Fix Being Able to Place More than 10 Landmines in Capitals in One Turn.<br>
+Make "Elite" Able to Place in Army Group Boxes.
+<br>
+<br>Version 2.163<br> 6/7/24 
+<br>
+Add German U-Boat Pens.
+<br>
+Add Operation Felix-Heinrich.<br>
+Add Lend Lease Fee Purchase for USA/UK Lend Lease.
 <br>
 <br>Version 2.162<br> 6/5/24 
 <br>

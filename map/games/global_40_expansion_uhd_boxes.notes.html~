@@ -120,7 +120,8 @@ Most Starting Units will be on the Left side of the Edit Window. Unfortunately, 
 <br>
 There is an Invisible Factory that allows placement in Boxes. Use <b>Caution</b> when editing units in and out of Boxes so you don't delete it. If you do by accident, you can edit it back in. It's called "BoxFctry". <br>
 <br>
-<b>You Must Use Edit</b> to Move To and From and will only be able to move in CM and NCM. Use "Perform Move Or Other Actions" while in Edit. You will be able to move other Players' Units as well. However, you can only move to legal territories. For example, Germany can't move Units into russia without being at War. You will need to Edit otherwise and Manually Place/Replace.<br><br>
+<b>You Must Use Edit</b> to Move To and From and will only be able to move in CM and NCM. Use "Perform Move Or Other Actions" while in Edit. You will be able to move other Players' Units as well. However, you can only move to legal territories. For example, Germany can't move Units into russia without being at War.<br><br> <b> NOTE<br> You may temporarily edit russia and Germany to War if you have a large number of moves to make and then edit back to Neutrality.</b> <br>
+<br> You will need to Edit otherwise and Manually Place/Replace.<br><br>
 Also, you can move units in Edit, then move additional units somewhere else and not have to hit "Perform Move ..." again. You can do multiple moves. In other words, you don't need to click on "Perform Move or Other Actions" for every move.<br>
 <br>
 <b>Note</b><br>
@@ -303,7 +304,11 @@ This is to maintain correct PU levels and keep track of how many Lend Lease Unit
 If The Lend-Lease Units come under attack before Russia's turn, don't take the Lend-Lease image as a hit. It will auto die if the battle is lost.<br>
 Player Enforced Unit Limits. You may want to use the "Comment Log" under View, Top left, to keep track of how many Units have been sent.<br>
 <br>
-<b>"US and UK Lend-Lease"</b> Game Option is just a way for Players to agree to it's use. It has no affect on game play.<br>
+<b>"US and UK Lend-Lease"</b> <br>
+<br>
+<b>This now works the same as the Soviet Lend Lease where you purchase the Lend lease Fee.</b>
+<br>
+Is On by Default at Game Start.<br>
 <br>
 Rules are here: https://www.axisandallies.org/forums/topic/37806/global-1940-us-uk-lend-lease?_=1700781926910<br>
 <br>
@@ -369,7 +374,7 @@ Only Factories at Game Start can be upgraded. Player Enforced. Use First Place P
 <img src="russian_mine.png"/> <br><br>
 This requires extensive edit use. There is also a TripleA option that is "edit free" explained below.<br>
 <br>
-You may purchase "unarmed" mines and place them in your Capital and India for UK. It will allow you to place as many as you want, so placement is Player Enforced.<br>
+You may purchase "unarmed" mines and place them in your Capital and India for UK. <br> When placing in a damaged Factory, you may only place as many as there are placements available. You can't place the maximum of 10, unless there are 10 placements available.<br>
 <br>
 Use edit to place “Armed” mines. Use the Player “Changer” for these. You may place them anywhere there is an unarmed mine (including ones you purchased that turn). When you place the armed mines, you will need to use the “Comment Log” stating which Border they are defending in the territory. To access the comment log, go to the “View” menu, and click “Show Comment Log”.<br>
 <br>
@@ -786,6 +791,8 @@ Only move 1 space in NCM. Do not take as casualty. Player Enforced. Will auto di
 <br>
 If Attacking a Army/Corps or Army Group, do the Rocket Attacks with Dicebot or the Dice Roller before Battle if needed, so you can adjust casualties Before Combat Starts.<br>
 <br>
+When placing in a damaged Factory, you may only place as many as there are placements available. You can't place the maximum of 10, unless there are 10 placements available.<br>
+<br>
 <b>11. Bidding</b><br>
 <br>
 Player Enforced. :)
@@ -1069,10 +1076,17 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 2.163<br> 6/6/24 
+<br>Version 2.164<br> 6/13/24 
+<br>
+Fix Pacific Islands. You No Longer Receive a Negative Bonus for Losing Control Unless you are the Original Owner.<br>
+Fix Being Able to Place More than 10 Landmines in Capitals in One Turn.<br>
+Make "Elite" Able to Place in Army Group Boxes.
+<br>
+<br>Version 2.163<br> 6/7/24 
 <br>
 Add German U-Boat Pens.<br>
-Add Operation Felix-Heinrich.
+Add Operation Felix-Heinrich.<br>
+Add Lend Lease Fee Purchase for USA/UK Lend Lease.
 <br>
 <br>Version 2.162<br> 6/5/24 
 <br>
