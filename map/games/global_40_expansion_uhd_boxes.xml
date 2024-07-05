@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.164"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.165"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -14922,7 +14922,7 @@
     <!-- British Objectives -->
     <attachment name="objectiveAttachment_British_1_Original" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
-      <option name="directOwnershipTerritories" value="United Kingdom:Scotland:New Brunswick Nova Scotia:Quebec:Ontario:Alberta Saskatchewan Manitoba:Alexandria:Egypt:Trans-Jordan:Gold Coast:Nigeria:Anglo Egyptian Sudan:Belgian Congo:Kenya:Tanganyika Territory:Rhodesia:South West Africa:Union of South Africa"/>
+      <option name="directOwnershipTerritories" value="United Kingdom:Scotland:New Brunswick Nova Scotia:Quebec:Ontario:Alberta Saskatchewan Manitoba:Egypt:Trans-Jordan:Gold Coast:Nigeria:Anglo Egyptian Sudan:Belgian Congo:Kenya:Tanganyika Territory:Rhodesia:South West Africa:Union of South Africa"/>
       <option name="atWarPlayers" value="Germans" count="1"/>
     </attachment>
     <attachment name="objectiveAttachment_British_2_Kwangtung_And_Malaya" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -15031,7 +15031,7 @@
     <attachment name="conditionAttachment_Germans_4_unit_presence" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Egypt" count="1"/>
       <!-- any land unit includes aaGuns but does not include 'facilities' -->
-      <option name="unitPresence" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:aaGun:King_Tiger:Tiger_Damaged:Waffen_Hvy_Tank:Waffen_HvyTnk_Dmgd:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA2D3:German_Engineer:German_EngineerAttack" count="1"/>
+      <option name="unitPresence" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_panzer:aaGun:King_Tiger:Tiger_Damaged:Waffen_Hvy_Tank:Waffen_HvyTnk_Dmgd:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA2D3:German_Engineer:German_EngineerAttack:DAK:1stWaffenArmy:2ndWaffenArmy:3rdWaffenArmy:4thWaffenArmy:1stPanzerArmy:2ndPanzerArmy:3rdPanzerArmy" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Germans_5_Control_Norway_And_Denmark" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Denmark:Norway" count="2"/>
@@ -28314,7 +28314,27 @@
     <attachment name="conditionAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Russians_1_Lend_LeaseLMs:conditionAttachment_Russians_1_Lend_LeaseLMsChangerOR"/>
       <option name="conditionType" value="OR"/>
-     </attachment>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_have_units_in_Russia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Evenkiyskiy:Urals:Novosibirsk:Kazakhstan:Timguska:Sakha:Yenisey:Soviet Far East:Amur:Yakut S.S.R.:Siberia:Buryatia" count="1"/>
+      <option name="invert" value="true"/>
+      <option name="unitPresence" value="ANY" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_have_units_in_Russia" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Evenkiyskiy:Urals:Novosibirsk:Kazakhstan:Timguska:Sakha:Yenisey:Soviet Far East:Amur:Yakut S.S.R.:Siberia:Buryatia" count="1"/>
+      <option name="invert" value="true"/>
+      <option name="unitPresence" value="ANY" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZAC_have_units_in_Russia" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Evenkiyskiy:Urals:Novosibirsk:Kazakhstan:Timguska:Sakha:Yenisey:Soviet Far East:Amur:Yakut S.S.R.:Siberia:Buryatia" count="1"/>
+      <option name="invert" value="true"/>
+      <option name="unitPresence" value="ANY" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_French_have_units_in_Russia" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Evenkiyskiy:Urals:Novosibirsk:Kazakhstan:Timguska:Sakha:Yenisey:Soviet Far East:Amur:Yakut S.S.R.:Siberia:Buryatia" count="1"/>
+      <option name="invert" value="true"/>
+      <option name="unitPresence" value="ANY" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_Urals_Tank_Unit" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Urals" count="1"/>
     </attachment>
@@ -32226,12 +32246,43 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachment_SubPen43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:BasicEXPInvert:EXP43:conditionAttachmentTurn1"/>
-      <option name="productionRule" value="productionGermans:buySubPen"/>
+    <attachment name="triggerAttachment_SubPenLate43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="SubPenLate43"/>
     </attachment>
+    <attachment name="triggerAttachment_SubPenEarly44" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="SubPenEarly44"/>
+    </attachment>
+    <attachment name="triggerAttachment_SubPenLate44" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn10"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="SubPenLate44"/>
+    </attachment>
+    <attachment name="triggerAttachment_SubPenLate43EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="SubPenLate43EXP43"/>
+    </attachment>
+    <attachment name="triggerAttachment_SubPenEarly44EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn3"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="SubPenEarly44EXP43"/>
+    </attachment>
+    <attachment name="triggerAttachment_SubPenLate44EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn4"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="SubPenLate44EXP43"/>
+    </attachment>
+    
     <attachment name="triggerAttachment_PacificIslandsNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="uses" value="1"/>
@@ -40703,7 +40754,7 @@
     
     <!-- Russians Triggers -->
     <attachment name="triggerAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_1_Lend_Lease"/>
+      <option name="conditions" value="conditionAttachment_Russians_1_Lend_Lease:conditionAttachment_Americans_have_units_in_Russia:conditionAttachment_British_have_units_in_Russia:conditionAttachment_ANZAC_have_units_in_Russia:conditionAttachment_French_have_units_in_Russia"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
     </attachment>
@@ -43773,7 +43824,7 @@
     <attachment name="triggerAttachment_ANZAC_Liberates_Celebes" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlCelebes"/>
       <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="2"/>
+      <option name="resourceCount" value="1"/>
     </attachment>
     <!-- ANZAC Triggers Pacific Celebes -->
 
@@ -48535,6 +48586,12 @@
       <option name="uses" value="1"/>
       <option name="when" value="after:changerPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment1noteD" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentTurn1Check"/>
+      <option name="notification" value="R01D"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:changerPurchase"/>
+    </attachment>
     
     <!-- Player Attachments -->
     <attachment name="playerAttachment" attachTo="Mongolians" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
@@ -50789,6 +50846,8 @@ When an Army is active, you should edit a new army-leading unit depending on the
 <br><br>
 <b>NOTE</b><br>
 <br>
+It is suggested to fight the battle in edit if there were any dicebot casualties and select them accordingly. That way you don't need to undo and redo your combat move.<br>
+<br>
 When doing Wolfpack and Landmine Battles with Dicebot:<br>
 Do your Combat Move. Then do 1st rd of any Wolfpack/Landmine Battles in Dicebot. Undo your CM and edit casualties. Then continue with your normal CM.<br>
 <br>
@@ -50917,16 +50976,7 @@ You need to edit to <b>"Hvy_BB_Dmgd" and "BB_Damaged"</b> before your next comba
 <br>
 <b>Pacific Island Bonuses</b><br>
 <br>
-Some Pacific Island Bonuses may not work correctly. Check End Turn in History if unsure there was correct game play.<br> 
-Use Edit to correct if needed.<br>
-<br>
-Also, if you attack a previously conquered Island and fail to take it, it will give you the negative PUs for losing that Island.<br>
-<br>
-For example. If ANZAC takes Celebes and then Japan takes it and then UK attacks Celebes and fails to take it, UK will receive the negative objective for losing the Island.<br>
-<br>
-So you will need to edit the correct PU total after UK's turn. ANZAC will still receive the negative objective, unless they take Celebes that turn. That may or may not require edit depending on when they lost it.<br>
-<br>
-If it is a Territorry you Originally Owned, it will work correctly by subtracting or adding the Bonus every Turn.<br>
+These should now work correctly.<br> 
 <br>
 <b>Important</b><br>
 <br>
@@ -51052,7 +51102,7 @@ You may <b>NOT</b> place and then Destroy on the same turn. Player Enforced.  Us
 When replacing a Heavy Major or Minor Factory with an Underground Factory, you will need to use Edit. They will replace non upgraded Factories correctly.<br>
 <br>
 <b>Russian Factories</b>.<br> 
-While the Factory can move on it's own, you will need to keep track of Rail movement usage. Player Enforced. They will auto-destroy when captured.<br>
+While the Factory can move on it's own, you will need to keep track of Rail movement usage. Player Enforced. They will auto-destroy when captured. Replace with edit if needed.<br>
 <br>
 You will need to use Edit to remove Airfields and Harbours. <br>
 <br>
@@ -51311,7 +51361,7 @@ Automatic change from USA to UK may be added in the future.<br>
 <b>7. Red Army Conscription</b><br>
 <br>
 <img src="RedArmyConscript.png"/> <br><br>
-Placement Restrictions Player Enforced. So no more than 20 in Moscow and 6 in the Minor Factories. Max build of 26 <b>is</b> Player Enforced.<br>
+Placement Restrictions Player Enforced. So no more than 20 in Moscow and 6 in the Stalingrad Factories. May Place 3 for normal place in other Factories.<br> Max build of 26 <b>is</b> Player Enforced.<br>
 <br>
 <b>Note</b><br>
 May Max Place Regardless of Factory Damage.<br><br>
@@ -51331,6 +51381,11 @@ They will auto sink after first round of combat rolls. <br>
 
 If a Wolfpack is attacked by Enemy Submarines and there is no Destroyer present to defend them, any First Strike hits that would leave the Wolfpack with less than 3 U-Boats, will not remove the Wolpack combat bonus.<br>
 In that case, you will need to fight the battle in edit or for a larger battle, use dicebot/roller and edit accordingly.<br>
+<br>
+<b>NOTE</b><br>
+<br>
+If attacking with Air and Submarine/U-boats, triplea will ask if you want to retreat the Air or submerge the Subs.<br>
+This is incorrect as you <b>MUST</b> Retreat all attacking units at the same time.<br>
 <br>
 <b>9. Waffen Paratroopers</b><br>
 <br>
@@ -51705,6 +51760,9 @@ Adds The Captain's German U-Boat Pens.<br> Image created by Hepps.
 https://www.axisandallies.org/forums/assets/uploads/files/1717401203834-7.german-u-boat-pen.pdf
 <br>
 <br>
+You will need to edit in and out the "UboatPen" <img src="UBoatPen.png"/> and  "XXI_UboatPen" <img src="XXI_UBoatPen.png"/> as needed.<br><br>
+They are owned by Changer and work similar as Landmines, in that they cannot be attacked.<br><br>
+Rules are Player Enforced. <br><br>
 <b>26. Operation Felix-Heinrich</b><br>
 <br>
 Adds The Captain's Operation Felix-Heinrich.<br> 
@@ -51811,13 +51869,20 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 2.164<br> 6/13/24 
+<br>Version 2.165<br> 7/5/24 
+<br>
+Fix Russian National Objective "No Allies".<br>
+Add some Images to Notifications.<br>
+Fix ANZAC Receiving 2 PU Bonus for Control of Celebes.
+<br>
+<br>Version 2.164<br> 6/25/24 
 <br>
 Fix Pacific Islands. You No Longer Receive a Negative Bonus for Losing Control Unless you are the Original Owner.<br>
 Fix Being Able to Place More than 10 Landmines in Capitals in One Turn.<br>
 Make "Elite" Able to Place in Army Group Boxes.<br>
 Add "HomeDefense" Token.<br>
-Make Japanese Rail Not Place if All of China is Free.
+Make Japanese Rail Not Place if All of China is Free.<br>
+Change Victory Conditions in Objectives Tab. Will Not Trigger.
 <br>
 <br>Version 2.163<br> 6/7/24 
 <br>
