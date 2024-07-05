@@ -41,7 +41,7 @@ Global_40_Expansion_UHD_Boxes.Americans;triggerAttachment_Americans_5_Presence_I
 Global_40_Expansion_UHD_Boxes.Chinese;objectiveAttachment_Chinese_1_Burma_Road=<b>6 PUs</b> and may build artillery if the Allies control India, Burma, Yunnan, and Szechwan.
 
 
-Global_40_Expansion_UHD_Boxes.British;objectiveAttachment_British_1_Original=<b>5 PUs</b> for UK if UK controls all of its original European territories.
+Global_40_Expansion_UHD_Boxes.British;objectiveAttachment_British_1_Original=<b>5 PUs</b>  <b> If All original UK territories with an IPC value on the European map are controlled by United Kingdom (not including West India).</b>
 Global_40_Expansion_UHD_Boxes.British;objectiveAttachment_British_2_Kwangtung_And_Malaya=<b>5 PUs</b> for UK if UK controls both Kwangtung and Malaya, and is at war with Japan.
 
 
@@ -58,8 +58,8 @@ Global_40_Expansion_UHD_Boxes.ANZAC;objectiveAttachment_ANZAC_2_Control_Strategi
 Global_40_Expansion_UHD_Boxes.French;conditionAttachment_French_1_Liberation_Switch=<b>12 PUs</b> worth of free units in France the first time France is Liberated (The engine will give you 4 infantry automatically. Use edit mode if you want something other than 4 infantry by deleting the infantry and replacing them with what you really want).
 
 
-Global_40_Expansion_UHD_Boxes.Germans;triggerAttachmentAxisVictory1=<b>Axis Victory:</b> 8 European Victory Cities OR 6 Pacific Victory Cities where at least one is Rome/Berlin/Japan.
-Global_40_Expansion_UHD_Boxes.British;triggerAttachmentAlliedVictory1=<b>Allied Victory:</b> Berlin and Rome and Japan are under allied control and allies maintain control of one of their own capitals.
+Global_40_Expansion_UHD_Boxes.Germans;triggerAttachmentAxisVictory1=<b>Axis Victory:</b> 148 PUs For a Economic Victory. Activated Pacific Islands Count.<br>Or Control of Moscow For One Turn.
+Global_40_Expansion_UHD_Boxes.British;triggerAttachmentAlliedVictory1=<b>Allied Victory:</b> 189 PUs For a Economic Victory. Activated Pacific Islands Count.<br>All Allied Capitals Must be Allied Controlled.<br>Or Control One of Berlin or Tokyo for One Turn.
 
 
 
