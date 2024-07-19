@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.167"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.166"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1593,7 +1593,11 @@
     <unit name="TotalWarMe_262"/>
     <unit name="TotalWarAirTrprt"/>
     <unit name="Rail"/>
+    <unit name="J_Rail"/>
+    <unit name="G_Rail"/>
     <unit name="Europe_Rail"/>
+    <unit name="R_Europe_Rail"/>
+    <unit name="Russian_Rail"/>
     <unit name="usa_armour"/>
     <unit name="uk_armour"/>
     <unit name="waffen_panzer"/>
@@ -1668,11 +1672,11 @@
     <unit name="UBoatPen"/>
     <unit name="XXI_UBoatPen"/>
     <unit name="factory_minor"/>
+    <unit name="UndergroundMinr"/>
     <unit name="russian_minor"/>
     <unit name="factory_upgrade"/>
     <unit name="factory_major"/>
     <unit name="UndrgroundFctry"/>
-    <unit name="UndergroundMinr"/>
     <unit name="RusUndrGrndMinr"/>
     <unit name="1_PU"/>
     <unit name="AirLL"/>
@@ -1762,6 +1766,8 @@
     <unit name="uk_mine_Orange"/>
     <unit name="uk_mine_Green"/>
     <unit name="uk_mine_Yellow"/>
+    <unit name="uk_mine_India_Burma"/>
+    <unit name="uk_mine_India_39SZ"/>
     <unit name="italy_mine"/>
     <unit name="italy_mine_Red"/>
     <unit name="italy_mine_Blue"/>
@@ -1867,6 +1873,16 @@
     <relationshipType name="Friendly_Neutral"/>
     <relationshipType name="Unfriendly_Neutral"/>
   </relationshipTypes>
+  
+	<territoryEffectList>
+		<territoryEffect name="city"/>
+		<territoryEffect name="desert"/>
+		<territoryEffect name="forest"/>
+		<territoryEffect name="hill"/>
+		<territoryEffect name="marsh"/>
+		<territoryEffect name="mountain"/>
+		<territoryEffect name="sahara"/>
+	</territoryEffectList> 
   <gamePlay>
     <delegate name="initDelegate" javaClass="games.strategy.triplea.delegate.InitializationDelegate" display="Initializing Delegates"/>
     <delegate name="tech" javaClass="games.strategy.triplea.delegate.TechnologyDelegate" display="Research Technology"/>
@@ -2257,9 +2273,25 @@
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="Rail" quantity="1"/>
     </productionRule>
+    <productionRule name="buyJ_Rail">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="Rail" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyG_Rail">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="G_Rail" quantity="1"/>
+    </productionRule>
     <productionRule name="buyEurope_Rail">
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="Europe_Rail" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyR_Europe_Rail">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="R_Europe_Rail" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyRussian_Rail">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="Russian_Rail" quantity="1"/>
     </productionRule>
     <productionRule name="buyWaffen_Panzer">
       <cost resource="PUs" quantity="2"/>
@@ -2979,6 +3011,14 @@
     <productionRule name="buyUK_Mine_Yellow">
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="uk_mine_Yellow" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_Mine_India_Burma">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="uk_mine_India_Burma" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_Mine_India_39SZ">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="uk_mine_India_39SZ" quantity="1"/>
     </productionRule>
     <productionRule name="buyItaly_Mine">
       <cost resource="PUs" quantity="1"/>
@@ -5678,12 +5718,10 @@
     <!-- TotalWarFighter -->
     <attachment name="unitAttachment" attachTo="TotalWarFighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="0"/>
-      <option name="isLandTransportable" value="false"/>
-      <option name="transportCost" value="2"/>
-      <option name="canBlitz" value="false"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
-      <option name="isLandTransport" value="false"/>
       <option name="unitPlacementRestrictions" value="India"/>
     </attachment>
     <!-- TotalWarNavyFtr -->
@@ -5750,8 +5788,56 @@
       <option name="defense" value="0"/>
       <option name="isLandTransport" value="true"/>
     </attachment>
+    <!-- J_Rail -->
+    <attachment name="unitAttachment" attachTo="J_Rail" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="canNotMoveDuringCombatMove" value="true"/>
+      <option name="transportCapacity" value="3"/>
+      <option name="isLandTransportable" value="false"/>
+      <option name="transportCost" value="2"/>
+      <option name="canBlitz" value="false"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="isLandTransport" value="true"/>
+    </attachment>
+    <!-- G Rail -->
+    <attachment name="unitAttachment" attachTo="G_Rail" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="canNotMoveDuringCombatMove" value="true"/>
+      <option name="transportCapacity" value="3"/>
+      <option name="isLandTransportable" value="false"/>
+      <option name="transportCost" value="2"/>
+      <option name="canBlitz" value="false"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="isLandTransport" value="true"/>
+    </attachment>
     <!-- Europe Rail -->
     <attachment name="unitAttachment" attachTo="Europe_Rail" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="canNotMoveDuringCombatMove" value="true"/>
+      <option name="transportCapacity" value="3"/>
+      <option name="isLandTransportable" value="false"/>
+      <option name="transportCost" value="2"/>
+      <option name="canBlitz" value="false"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="isLandTransport" value="true"/>
+    </attachment>
+    <!-- R_Europe Rail -->
+    <attachment name="unitAttachment" attachTo="R_Europe_Rail" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="canNotMoveDuringCombatMove" value="true"/>
+      <option name="transportCapacity" value="3"/>
+      <option name="isLandTransportable" value="false"/>
+      <option name="transportCost" value="2"/>
+      <option name="canBlitz" value="false"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="isLandTransport" value="true"/>
+    </attachment>
+    <!-- Russian Rail -->
+    <attachment name="unitAttachment" attachTo="Russian_Rail" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="99"/>
       <option name="canNotMoveDuringCombatMove" value="true"/>
       <option name="transportCapacity" value="3"/>
@@ -8875,6 +8961,26 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
     </attachment>
+    <!-- UK Mine India Burma -->
+    <attachment name="unitAttachment" attachTo="uk_mine_India_Burma" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- UK Mine India 39SZ -->
+    <attachment name="unitAttachment" attachTo="uk_mine_India_39SZ" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
     <!-- Russian Mine  Red-->
     <attachment name="unitAttachment" attachTo="russian_mine_Red" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="attack" value="0"/>
@@ -9634,6 +9740,8 @@
       </attachment>
     <attachment name="territoryAttachment" attachTo="Korea" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
+      <option name="territoryEffect" value="forest"/>
+      <option name="territoryEffect" value="hill"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Kiangsu" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
@@ -9666,6 +9774,8 @@
     <attachment name="territoryAttachment" attachTo="Manchuria" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
       <option name="originalOwner" value="Chinese"/>
+      <option name="territoryEffect" value="forest"/>
+      <option name="territoryEffect" value="hill"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Hainan" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -9687,12 +9797,16 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Kansu" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
+      <option name="territoryEffect" value="forest"/>
+      <option name="territoryEffect" value="hill"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Hopei" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Tsinghai" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
+      <option name="territoryEffect" value="forest"/>
+      <option name="territoryEffect" value="hill"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Szechwan" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -9702,6 +9816,8 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Sikang" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
+      <option name="territoryEffect" value="forest"/>
+      <option name="territoryEffect" value="hill"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Anhwe" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -10049,6 +10165,7 @@
     <attachment name="territoryAttachment" attachTo="Egypt" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="victoryCity" value="1"/>
+      <option name="territoryEffect" value="desert"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Union of South Africa" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
@@ -10146,6 +10263,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Slovakia Hungary" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
+      <option name="territoryEffect" value="forest"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Western Germany" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="5"/>
@@ -10153,10 +10271,12 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Romania" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
+      <option name="territoryEffect" value="forest"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Poland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="victoryCity" value="1"/>
+      <option name="territoryEffect" value="forest"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Germany" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="5"/>
@@ -10206,6 +10326,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Belarus" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
+      <option name="territoryEffect" value="marsh"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Karelia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -10248,10 +10369,12 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Ukraine" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
+      <option name="territoryEffect" value="marsh"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Western Ukraine" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="unitProduction" value="2"/>
+      <option name="territoryEffect" value="marsh"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Novosibirsk" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -10271,6 +10394,7 @@
       <option name="production" value="2"/>
       <option name="unitProduction" value="3"/>
       <option name="victoryCity" value="1"/>
+      <option name="territoryEffect" value="marsh"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Caucasus" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
@@ -10491,6 +10615,8 @@
     <attachment name="territoryAttachment" attachTo="Eastern Persia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
       <option name="captureUnitOnEnteringBy" value="British:Russians:Americans:French:ANZAC"/>
+      <option name="territoryEffect" value="forest"/>
+      <option name="territoryEffect" value="hill"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Uruguay" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -10505,6 +10631,8 @@
     <attachment name="territoryAttachment" attachTo="Northwest Persia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
       <option name="captureUnitOnEnteringBy" value="British:Russians:Americans:French:ANZAC"/>
+      <option name="territoryEffect" value="forest"/>
+      <option name="territoryEffect" value="hill"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Persia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
@@ -10535,6 +10663,7 @@
     <attachment name="territoryAttachment" attachTo="Finland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="captureUnitOnEnteringBy" value="Germans:Italians:Japanese"/>
+      <option name="territoryEffect" value="forest"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Suriname" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -10608,6 +10737,20 @@
       <option name="production" value="0"/>
       <option name="blockadeZone" value="true"/>
     </attachment>
+    <!-- Rail Effects -->
+    <attachment name="territoryEffectAttachment" attachTo="forest" javaClass="TerritoryEffectAttachment" type="territoryEffect">
+      <option name="unitsNotAllowed" value="Russian_Rail:J_Rail"/>
+    </attachment>
+    <attachment name="territoryEffectAttachment" attachTo="hill" javaClass="TerritoryEffectAttachment" type="territoryEffect">
+      <option name="unitsNotAllowed" value="R_Europe_Rail"/>
+    </attachment>
+    <attachment name="territoryEffectAttachment" attachTo="marsh" javaClass="TerritoryEffectAttachment" type="territoryEffect">
+      <option name="unitsNotAllowed" value="Europe_Rail"/>
+    </attachment>
+    <attachment name="territoryEffectAttachment" attachTo="desert" javaClass="TerritoryEffectAttachment" type="territoryEffect">
+      <option name="unitsNotAllowed" value="G_Rail:J_Rail"/>
+    </attachment>
+    
     <!-- Canals -->
     <attachment name="canalAttachmentSuez" attachTo="81 Sea Zone" javaClass="games.strategy.triplea.attachments.CanalAttachment" type="territory">
       <option name="canalName" value="Suez Canal"/>
@@ -10651,6 +10794,8 @@
       <option name="canalName" value="Turkish Straits"/>
       <option name="landTerritories" value="Turkey"/>
     </attachment>
+    <!-- Territory Effects -->
+    
     <!-- Support Attachments -->
     <attachment name="supportAttachmentInfantryAndMechInf" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="infantry:guard_infantry:commando:marine:Army_Conscript:elite:mech_infantry:ArmoredInfantry:Panzer_Grndrs:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:german_para:russian_para:japanese_para:usa_para:uk_para:italian_para"/>
@@ -28392,6 +28537,9 @@
     <attachment name="conditionAttachment_Japanese_AtWarWithRussians" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="atWarPlayers" value="Russians" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_Americans_AtWarWithGermans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="atWarPlayers" value="Germans" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_Russians_AtWarWithItaliansInvert" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="atWarPlayers" value="Italians" count="1"/>
       <option name="invert" value="true"/>
@@ -28426,6 +28574,30 @@
     <attachment name="conditionAttachment_Russians_RemoveMassTanks12" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Russia" count="1"/>
       <option name="unitPresence" value="Mass_Tanks" count="12"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveConscripts" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Russia" count="1"/>
+      <option name="unitPresence" value="Army_Conscript" count="20"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveConscriptsVolgograd" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Volgograd" count="1"/>
+      <option name="unitPresence" value="Army_Conscript" count="6"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveConscriptsNovgorod" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Novgorod" count="1"/>
+      <option name="unitPresence" value="Army_Conscript" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveConscriptsUkraine" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Ukraine" count="1"/>
+      <option name="unitPresence" value="Army_Conscript" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveConscripts19" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Russia" count="1"/>
+      <option name="unitPresence" value="Army_Conscript" count="19"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveConscripts18" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Russia" count="1"/>
+      <option name="unitPresence" value="Army_Conscript" count="18"/>
     </attachment>
     <attachment name="conditionAttachment_RussiansRemoveTotalWarInf" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Russia" count="1"/>
@@ -30663,6 +30835,9 @@
     </attachment>
     <attachment name="conditionAttachment_AmericansControlAmericaAndAlwaysWill" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Eastern United States" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_AmericansPlaceEuropeRail" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedOwnershipTerritories" value="Normandy Bordeaux" count="1"/>
       </attachment>
     
     <!-- American Conditions Okinawa -->
@@ -30979,8 +31154,14 @@
     <attachment name="conditionAttachmentTurn3OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="3-+"/>
     </attachment>
-    <attachment name="conditionAttachmentTurn3OrHigherInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="conditionAttachmentTurn3Thru10" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="3-+"/>
+    </attachment>
+    <attachment name="conditionAttachmentTurn1Thru4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="1-4"/>
+    </attachment>
+    <attachment name="conditionAttachmentTurn3OrHigherInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="3-10"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachmentTurn4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -32469,7 +32650,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_WaffenPnzrGrndrNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="WaffenPnzrGrndr:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="WaffenPnzrGrndr:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn5"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="WaffenPnzrGrndr"/>
@@ -32644,13 +32825,13 @@
     </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_GermansControlGermany"/>
-      <option name="placement" value="Germany:Rail" count="2"/>
+      <option name="placement" value="Germany:G_Rail" count="2"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveGermans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
-      <option name="removeUnits" value="all:Rail" count="2"/>
+      <option name="removeUnits" value="all:G_Rail" count="2"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansNonCombatMove"/>
     </attachment>
@@ -32669,34 +32850,39 @@
     </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceRussians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_RussiansControlRussia"/>
-      <option name="placement" value="Russia:Rail" count="2"/>
-      <option name="placement" value="Russia:Europe_Rail" count="1"/>
+      <option name="placement" value="Russia:Russian_Rail" count="2"/>
+      <option name="placement" value="Russia:R_Europe_Rail" count="1"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:russiansCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveRussians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
-      <option name="removeUnits" value="all:Rail" count="2"/>
-      <option name="removeUnits" value="all:Europe_Rail" count="1"/>
+      <option name="removeUnits" value="all:Russian_Rail" count="2"/>
+      <option name="removeUnits" value="all:R_Europe_Rail" count="1"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:russiansNonCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceJapanese" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_JapaneseControlJapan:conditionAttachment_JapaneseControlOneChinaTTy"/>
-      <option name="placement" value="Kiangsu:Rail" count="2"/>
+      <option name="placement" value="Kiangsu:J_Rail" count="2"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:japaneseCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveJapanese" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
-      <option name="removeUnits" value="all:Rail" count="2"/>
+      <option name="removeUnits" value="all:J_Rail" count="2"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japaneseNonCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceAmericans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_AmericansControlAmericaAndAlwaysWill"/>
       <option name="placement" value="Eastern United States:Rail" count="6"/>
-      <option name="placement" value="Eastern United States:Europe_Rail" count="2"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:americansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_RailMovementAutoPlaceAmericansEurope" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_Americans_AtWarWithGermans:conditionAttachment_AmericansPlaceEuropeRail"/>
+      <option name="placement" value="Normandy Bordeaux:Europe_Rail" count="2"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:americansCombatMove"/>
     </attachment>
@@ -41047,6 +41233,49 @@
       <option name="when" value="before:russiansPurchase"/>
     </attachment>
     
+    <attachment name="triggerAttachment_RussiansReplaceConscripts" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn5:conditionAttachment_RussiansRemoveConscripts"/>
+      <option name="placement" value="Russia:infantry" count="20"/>
+      <option name="removeUnits" value="Russia:Army_Conscript" count="20"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:russiansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansReplaceConscripts19" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn5:conditionAttachment_RussiansRemoveConscripts19"/>
+      <option name="placement" value="Russia:infantry" count="19"/>
+      <option name="removeUnits" value="Russia:Army_Conscript" count="19"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:russiansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansReplaceConscripts18" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn5:conditionAttachment_RussiansRemoveConscripts18"/>
+      <option name="placement" value="Russia:infantry" count="18"/>
+      <option name="removeUnits" value="Russia:Army_Conscript" count="18"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:russiansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansReplaceConscriptsVolgograd" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn5:conditionAttachment_RussiansRemoveConscriptsVolgograd"/>
+      <option name="placement" value="Volgograd:infantry" count="6"/>
+      <option name="removeUnits" value="Volgograd:Army_Conscript" count="6"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:russiansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansReplaceConscriptsNovgorod" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn5:conditionAttachment_RussiansRemoveConscriptsNovgorod"/>
+      <option name="placement" value="Novgorod:infantry" count="3"/>
+      <option name="removeUnits" value="Novgorod:Army_Conscript" count="3"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:russiansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansReplaceConscriptsUkraine" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn5:conditionAttachment_RussiansRemoveConscriptsUkraine"/>
+      <option name="placement" value="Ukraine:infantry" count="3"/>
+      <option name="removeUnits" value="Ukraine:Army_Conscript" count="3"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:russiansPlace"/>
+    </attachment>
+    
     <attachment name="triggerAttachment_RussiansTotalWarInfPlaceRussia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_RussiansRemoveTotalWarInf"/>
       <option name="placement" value="Russia:infantry" count="11"/>
@@ -41692,16 +41921,28 @@
     </attachment>
 
     <attachment name="triggerAttachment_JapanDOWonUSSRrd3OrAbove" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn3OrHigher:EXP43Invert:conditionAttachment_Russians_AtWarWithJapanese"/>
+      <option name="conditions" value="conditionAttachmentTurn3Thru10:EXP43Invert:conditionAttachment_Russians_AtWarWithJapanese"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansPurchase"/>
       <option name="notification" value="JPN_DOW_USSR"/>
     </attachment>
     <attachment name="triggerAttachment_UssrDOWonJPNrd3OrAbove" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn3OrHigher:EXP43Invert:conditionAttachment_Japanese_AtWarWithRussians"/>
+      <option name="conditions" value="conditionAttachmentTurn3Thru10:EXP43Invert:conditionAttachment_Japanese_AtWarWithRussians"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japanesePurchase"/>
       <option name="notification" value="USSR_DOW_JPN"/>
+    </attachment>
+    <attachment name="triggerAttachment_JapanDOWonUSSRrd3OrAbove43" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1Thru4:EXP43:conditionAttachment_Russians_AtWarWithJapanese"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:americansPurchase"/>
+      <option name="notification" value="JPN_DOW_USSR43"/>
+    </attachment>
+    <attachment name="triggerAttachment_UssrDOWonJPNrd3OrAbove43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1Thru4:EXP43:conditionAttachment_Japanese_AtWarWithRussians"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:japanesePurchase"/>
+      <option name="notification" value="USSR_DOW_JPN43"/>
     </attachment>
     
     <!-- Japanese Triggers -->
@@ -50830,7 +51071,7 @@ Transports need to be selected last as casualty.
 Use Edit when conducting a combat that includes Paratroopers or U-boat units. <br><br> <b>Wolfpacks and Paratroopers have been updated and Edit is now rarely needed.</b><br><br>
 When Edit mode is on, you can select any number of casualties you want, regardless of the rolls you made. Count up the hits manually, keeping in mind the improved attack/defense value of the units.<br>
 <br>
-If fighting a Large Naval battle, it is suggested to use the Dice Roller or Dice Bot for the 1st rd of combat. Do your combat move, save game, roll dice. Restart game, undo any combat moves to the battle. Remove any casualties with edit. Then redo the now adjusted combat move. 
+If fighting a Large Naval battle, it is suggested to use Edit and select the casualties manually. It actually works quite well, as you usually have to adjust the triplea chosen casualties anyway.
 <br>
 <br>
 <b>NOTE</b><br>
@@ -50844,20 +51085,12 @@ Use edit to move Paratroopers over Enemy Territory and for LCVs.<br>
 <br>
 When an Army is active, you should edit a new army-leading unit depending on the units it commands. Barnee should let you know more about this since I don’t know exactly what army-leading unit commands what.
 <br><br>
-<b>NOTE</b><br>
-<br>
-It is suggested to fight the battle in edit if there were any dicebot casualties and select them accordingly. That way you don't need to undo and redo your combat move.<br>
-<br>
-When doing Wolfpack and Landmine Battles with Dicebot:<br>
-Do your Combat Move. Then do 1st rd of any Wolfpack/Landmine Battles in Dicebot. Undo your CM and edit casualties. Then continue with your normal CM.<br>
-<br>
-Any Units that have moved from the same originating TTy/SZ, will have to have there moves undone in order to use edit to remove units that started there as well. <B>This is true for All Edit moves.</b><br>
-<br>
-<b>NOTE<br>
-<br>
-If there aren't a lot of Units in the battle, you may want to roll the battle in edit mode and adjust casualties accordingly. This way, you don't need to undo your move and remove the hits.</b><br>
-You will still need to use edit after combat to kill LMs that hit.<br><br>
-If possible and not too mind blowing, try and move all units from the TTy/SZ that will be sending U-boats/Crossing Minefields to the Battle in one CM or Moves. That way you only need to undo that move or moves, if attacking from more than one TTy, and not the ones that are attacking a different zone.<br>
+When doing Landmine Battles with Dicebot, Follow these steps:<br><br>
+Do your Entire Combat Move.<br>
+Roll for any Landmines that have been crossed and make note of any hits.<br>
+At the Beginning of Combat, if there were any LM hits, go to Edit and remove the appropriate units and LMs.<br>
+Then, turn Edit off and fight the battle normally.<br><br>
+If there is only one battle to be fought, you will need to be in Edit before you start Battle Phase, as triplea will immediately start the battle.<br>
 <br>
 If you start the Battle in Edit, you will have to Fight All of it in Edit.
 <br>
@@ -50923,22 +51156,10 @@ If using Edit to move units in Combat Move, it may take you over an unintended r
 <br>
 Also, you can Edit Units to a Territory and then Move them the same turn but you <b>Cannot</b> Move Units and then Edit them into the Territory you moved from.<br>
 <br>
-If Hand Rolling for Paratrooper and UBoat battles, it is suggested to roll in Edit Mode. You may also use the Dice Roller or Dice Bot and Edit the results.<br><br>
 <b>Landmine Boxes</b> are for Informational purposes only. You cannot move units there. The top Territory is where the LM is located. The color denotes which LM. The bottom Territory is the Border it defends against.<br>
 For Example. Western Germany has a Orange LM with France at the bottom. That means that Orange LMs in W GER defend against the border with France.<br>
 When in doubt, use the Comment Log located under "View" upper left, to designate which LMs are defending which border. <br> <br>
 Landmines have to be hand rolled with either the Dice Roller or Dice Bot from A&A.org.https://www.axisandallies.org/forums/topic/39917/when-you-need-a-topic-to-use-the-dicebot-do-it-here/27<br>
-<br>
-You can't edit if having already moved from a territory.<br>
-<br>
-<b>Example</b><br>
-3 Infantry attack from Eastern Poland to Belarus and must cross 3 Landmines. E POL is also going to send units to other attacks. <br>
-<b>You Must Move All Units that Will Participate in the Belarus Attack Before Rolling For The Landmine Hits.</b><br>
-Roll for the 3 Landmines and then undo your move to Belarus and use Edit to remove any hits/Landmines as necessary. Then redo your Belarus Move minus any Hits.<br>
-<br>
-You may only use Edit to move units during Combat and NonCombat Move. This includes other Players. However, you can only move to legal territories. For example, Germany can't move Units into russia without being at War.<br>
-<br>
-Most Starting Units will be on the Left Side of the Edit Window. Unfortunately, the Window is <b>Inconsistent</b>, so they won't always be in the same place.<br>
 <br>
 Usually, after editing LMs, the next time you open edit, those LMs will have moved to the left column.<br>
 <br>
@@ -50959,6 +51180,7 @@ Bryansk<br>
 Rostov<br>
 Caucasus<br>
 Novgorod<br>
+Archangel<br>
 <br>
 <b>Active Army Groups</b> must be rolled with Edit as above for complete Rule Compliance or Players can agree to count the hit when the Army Group is no longer Active the way triplea does it. Edit an "Inactive Army Group to the Defending Player if it doesn't have one to offset the Attacking one. Do Not take as casualty until after the Attacking one has been killed.<br>
 <br>
@@ -51049,18 +51271,16 @@ When being supported by Artillery and other Artillery supportable units are pres
 <img src="USA_para.png"/> <br><br>
 <b>Paratroopers have been updated and Edit is now rarely needed</b><br><br>
 ...paraBoost Units have been added to the Major Powers. They provide +2 on Attack and +1 on Defense for the first round of battle. They will auto die after combat rolls and can't be taken as a hit.<br>
-Purchase two for each expected battle. You will use one for attack and if successful, one for defense. They cost 0 and are placed in first place phase. Place two with the Paratroopers that are going to make the attack.<br><br>
-Move one into battle with the Paratroopers.<br>
-After battle, if successful, move the second paraBoost to the conquered Territory. This one will provide defense against any counterattacks.<br><br>
+If planning a All Paratrooper Attack, purchase a "paraBoost" during Purchase and place where the Paras are on first place phase. They cost 0.<br><br>
+Move into battle with the Paratroopers.<br>
+After battle, if successful, you will need to edit a paraBoost to the conquered Territory. This will provide defense against any counterattacks.<br><br>
 Example<br>
 Germany has 2 Paratroopers in Romainia. They are attacking Rostov that has 1 Infantry.<br>
-Purchase 2 paraBoosts and place in Romainia 1st place phase.<br>
-In CM, turn on edit and move the 2 Paras and 1 paraBoost to Rostov.<br>
-After the battle, if successful, move the 2nd paraBoost to Rostov in NCM with edit.<br><br>
-If the 2nd paraBoost isn't needed, you can remove with edit or ignore it, if it won't affect game play.<br>
+Purchase a paraBoost and place in Romainia 1st place phase.<br>
+In CM, turn on edit, if needed, and move the 2 Paras and 1 paraBoost to Rostov.<br>
+After the battle, if successful, edit a 2nd paraBoost to Rostov in NCM.<br><br>
 It is Player Enforced to have paraBoost Units only present with Paratroopers and aaGuns. Otherwise it will give it's Bonus incorrectly if Paratroopers are in the same TTy as other units.<br><br>
 Paratroopers Move 2 and +1 from an Airfield. Player Enforce correct land movement of 1 move only. Paratroopers may require edit for their "Air Movement". Before attacking, if facing AA fire, activate "Roll Dice" under "Game", top left, or use Dicebot and roll for AA fire. Then use edit to kill any hits and if needed, select "Perform Move Or Other Actions" and then click on the Paratrooper and make a legal move. If there is only 1 battle to be fought that Combat Phase, you will need to do this at the <b>START</b> of your Combat Move.<br><br>
-<b>You also may roll the battle in Edit and select the appropriate casualties</b><br><br>
 <b>IMPORTANT</b><br>
  If accompanied by Air Units during an edit assisted attack across water, along with other ground Units performing an <b>Amphibious Attack</b> , All Paras <b>MUST</b> die before retreating the Air Units or the game will freeze.<br>
 If no accompanying ground Units, you can't retreat the Air Units until <b>ALL</b> Paras are dead. It will then throw a "Withdraw" error when you retreat the remaining Planes, but that is one you can ignore.<br>
@@ -51149,7 +51369,7 @@ Only Factories at Game Start can be upgraded. Player Enforced. Use First Place P
 <br>
 <b>4. Landmine</b><br>
 <br>
-<img src="russian_mine.png"/> <br><br>
+<img src="russian_mine.png"/>   <img src="soloMine.png"/> <br><br>
 This requires extensive edit use. There is also a TripleA option that is "edit free" explained below.<br>
 <br>
 You may purchase "unarmed" mines and place them in your Capital and India for UK.<br> When placing in a damaged Factory, you may only place as many as there are placements available. You can't place the maximum of 10, unless there are 10 placements available.<br>
@@ -51175,6 +51395,7 @@ Bryansk<br>
 Rostov<br>
 Caucasus<br>
 Novgorod<br>
+Archangel<br>
 <br>
 <b>IMPORTANT</b><br>
 <br>
@@ -51184,18 +51405,12 @@ If you can't find the LM your looking for, select another and document in Commen
 <br>
 There are also LM Boxes that show the corresponding color for certain Borders. These are for informational purposes only.<br>
 <br>
-Using the mines in combat requires use of the "Dice Roller". It is located in the "Game" menu next to View. If only 1 battle is to take place, at the <b>START</b> of your combat move, determine how many units are crossing the minefield and roll as many dice as there are armed mines. Use edit to remove any casualties and any mines that detonated. Excess mine hits are not removed.<br>
-<br> You <b>must</b> do any edits <b>before</b> starting the combat move if there is to be only 1 battle that phase. So, if needed, do a dry run and note the units entering the minefield. Use comment log if necessary.<br>
-<br>
-If there will be multiple battles, you will be able to edit before the first battle takes place. <br>
-<br>
-The Dice Roller is not tracked in "History" so you may use the comment log if you want to keep a record of the rolls/hits. If playing by Forum, it is recommended to use the Axis & Allies.org dicebot.<br>
-<br>
-<b>NOTE</b><br>
-<br>
-If there aren't a lot of Units in the battle, you may want to roll the battle in edit mode and adjust casualties accordingly. This way, you don't need to undo your move and remove the hits.<br>
-You will still need to use edit after combat to kill LMs that hit.<br><br>
-You may load no more than 3 mines on a transport. This is Player Enforced.<br>
+Using the mines in combat requires use of the "Dice Roller" or if playing by forum, dicebot. Follow these steps:<br><br>
+Do your Entire Combat Move.<br>
+Roll for any Landmines that have been crossed and make note of any hits.<br>
+At the Beginning of Combat, if there were any LM hits, go to Edit and remove the appropriate units and LMs.<br>
+Then, turn Edit off and fight the battle normally.<br><br>
+If there is only one battle to be fought, you will need to be in Edit before you start Battle Phase, as triplea will immediately start the battle.<br>
 <br>
 Do not take mines as casualties in combat. Player enforced. When a territory is conquered, all the unarmed mines will be destroyed. Armed Changer mines will be unaffected.<br>
 <br>
@@ -51495,7 +51710,6 @@ For First turn Italy is Taken Over, Buy Mech Infantry instead of Paras if needed
 <img src="TotalWar.png"/> <br><br>
 Placement number is Player Enforced. Only place during 2nd plase phase or they won't change. If unable to place in a legal spot, use edit. This should be a rare occurence.<br> <b>Note</b> If Russia buys more than one Total War Tank, use Edit to Correct PU's or Units, as you can only use the "Mass Tank" build once and there is no other Total War Tank build.
 <br>
-Navy Fighters must be placed in Japan and Western United States. Use edit to move them to their correct Sea Zones.<br>
 <br>
 <b>9. Air Transport</b><br>
 <br>
@@ -51716,7 +51930,7 @@ From Late 1944 Japan can launch Kamikaze attacks<br>
 Japanese Kamikaze attacks can be launched anywhere on the game board<br>
 Japan can launch a maximum of 1 Kamikaze attack in each round<br>
 The Japanese player must choose a Japanese Air Unit to be used in a Kamikaze attack<br>
-The Kamikaze Air Unit must be one of the following Air Units: Fighter, Tactical Bomber, Strategic Bomber, Carrier Based Fighter<br>
+The Kamikaze Air Unit must be one of the following Air Units: Fighter, Tactical Bomber, Strategic Bomber<br>
 The Kamikaze Air Unit can use up all its movement to reach an enemy Target Naval Unit<br>
 The enemy naval unit that is attacked by Japanese Kamikaze must be the same type of naval units as mentioned in the G40 OOB rulebook<br>
 The Japanese Kamikaze Air Unit attacks at “5”<br>
@@ -51869,7 +52083,13 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 2.167<br> 7/3/24 
+<br>Version 2.166<br> 7/16/24 
+<br>
+Fix "Total War Fighters" Not Placing on Carriers.<br>
+Make Rail Units More Rule Compliant.<br>
+Have Russian Conscripts Change to Infantry in Most Situations.<br>
+<br>
+<br>Version 2.165<br> 7/5/24 
 <br>
 Fix Russian National Objective "No Allies".<br>
 Add some Images to Notifications.<br>
