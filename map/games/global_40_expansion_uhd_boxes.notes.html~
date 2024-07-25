@@ -909,6 +909,9 @@ The enemy naval unit that is attacked by Japanese Kamikaze must be the same type
 The Japanese Kamikaze Air Unit attacks at “5”<br>
 There is no defense against a Japanese Kamikaze attack<br>
 <br>
+Beginning Rd 10, A Kamikaze Unit will auto spawn the same way as the Banzai unit and work similar.<br>
+Rules are Player Enforced.<br>
+<br>
 <b>23. FlakTower</b><br>
 <br>
 <img src="FlakTowerTT.png"/> <br><br>
@@ -1061,6 +1064,7 @@ Change Log UHD Boxes:
 Fix "Total War Fighters" Not Placing on Carriers.<br>
 Make Rail Units More Rule Compliant.<br>
 Have Russian Conscripts Change to Infantry in Most Situations.<br>
+Add Kamikaze Air Unit For Japan.<br>
 <br>
 <br>Version 2.165<br> 7/5/24 
 <br>
