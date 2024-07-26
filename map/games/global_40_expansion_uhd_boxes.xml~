@@ -15581,7 +15581,62 @@
 <!-- This should check for all land and air unit that can aid -->
 <attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_Help_@ParaBoost@" attachTo="Germans" javaClass="RulesAttachment" type="player">
    <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
-   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:german_paraBoost" count="1"/>
+   <option name="invert" value="true"/>
+</attachment>
+<attachment foreach="$ParaBoost$" name="conditionAttachmentRussiansParaBoost@ParaBoost@" attachTo="Russians" javaClass="RulesAttachment" type="player">
+   <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
+   <option name="unitPresence" value="russian_para" count="1"/>
+</attachment>
+<!-- Also check for the presence of any other friendly unit -->
+<!-- This should check for all land and air unit that can aid -->
+<attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpRussians_@ParaBoost@" attachTo="Russians" javaClass="RulesAttachment" type="player">
+   <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:russian_paraBoost" count="1"/>
+   <option name="invert" value="true"/>
+</attachment>
+<attachment foreach="$ParaBoost$" name="conditionAttachmentJapaneseParaBoost@ParaBoost@" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+   <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
+   <option name="unitPresence" value="japanese_para" count="1"/>
+</attachment>
+<!-- Also check for the presence of any other friendly unit -->
+<!-- This should check for all land and air unit that can aid -->
+<attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpJapanese_@ParaBoost@" attachTo="Japanese" javaClass="RulesAttachment" type="player">
+   <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:japanese_paraBoost" count="1"/>
+   <option name="invert" value="true"/>
+</attachment>
+<attachment foreach="$ParaBoost$" name="conditionAttachmentAmericansParaBoost@ParaBoost@" attachTo="Americans" javaClass="RulesAttachment" type="player">
+   <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
+   <option name="unitPresence" value="usa_para" count="1"/>
+</attachment>
+<!-- Also check for the presence of any other friendly unit -->
+<!-- This should check for all land and air unit that can aid -->
+<attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpAmericans_@ParaBoost@" attachTo="Americans" javaClass="RulesAttachment" type="player">
+   <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:usa_paraBoost" count="1"/>
+   <option name="invert" value="true"/>
+</attachment>
+<attachment foreach="$ParaBoost$" name="conditionAttachmentBritishParaBoost@ParaBoost@" attachTo="British" javaClass="RulesAttachment" type="player">
+   <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
+   <option name="unitPresence" value="uk_para" count="1"/>
+</attachment>
+<!-- Also check for the presence of any other friendly unit -->
+<!-- This should check for all land and air unit that can aid -->
+<attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpBritish_@ParaBoost@" attachTo="British" javaClass="RulesAttachment" type="player">
+   <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:uk_paraBoost" count="1"/>
+   <option name="invert" value="true"/>
+</attachment>
+<attachment foreach="$ParaBoost$" name="conditionAttachmentItaliansParaBoost@ParaBoost@" attachTo="Italians" javaClass="RulesAttachment" type="player">
+   <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
+   <option name="unitPresence" value="italian_para" count="1"/>
+</attachment>
+<!-- Also check for the presence of any other friendly unit -->
+<!-- This should check for all land and air unit that can aid -->
+<attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpItalians_@ParaBoost@" attachTo="Italians" javaClass="RulesAttachment" type="player">
+   <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:italian_paraBoost" count="1"/>
    <option name="invert" value="true"/>
 </attachment>
 
@@ -33507,9 +33562,11 @@
   <option name="when" value="before:germansEndTurn"/>
   <!-- These are added to ensure Wolfpack is replaced after combat -->
   <option name="when" value="before:russiansNonCombatMove"/>
+  <option name="when" value="before:japaneseNonCombatMove"/>
   <option name="when" value="before:americansNonCombatMove"/>
   <option name="when" value="before:chineseNonCombatMove"/>
   <option name="when" value="before:britishNoAirCheckPlace"/>
+  <option name="when" value="before:italiansNonCombatMove"/>
   <option name="when" value="before:anzacNonCombatMove"/>
   <option name="when" value="before:frenchNonCombatMove"/>
 </attachment>
@@ -33523,26 +33580,223 @@
   <!-- will cause problems because of multiple phases with the same name -->
   
   <option name="when" value="after:russiansBattle"/>
+  <option name="when" value="after:japaneseBattle"/>
   <option name="when" value="after:americansBattle"/>
   <option name="when" value="after:chineseBattle"/>
   <option name="when" value="after:britishBattle"/>
+  <option name="when" value="after:italiansBattle"/>
   <option name="when" value="after:anzacBattle"/>
   <option name="when" value="after:frenchBattle"/>
 </attachment>
 
 <attachment foreach="$ParaBoost$" name="triggerAttachment_ParaBoost_at@ParaBoost@" attachTo="Germans" javaClass="TriggerAttachment" type="player">
   <option name="conditions" value="conditionAttachmentGermansParaBoost@ParaBoost@:conditionAttachment_No_Allied_Help_@ParaBoost@"/>
-  <option name="placement" value="@ParaBoost@:german_paraBoost" count="1"/> 
+  <option name="placement" value="@ParaBoost@:german_paraBoost" count="1"/>
+  <option name="when" value="before:russiansCombatMove"/>
+  <option name="when" value="before:americansCombatMove"/>
+  <option name="when" value="before:chineseCombatMove"/>
+  <option name="when" value="before:britishCombatMove"/>
+  <option name="when" value="before:anzacCombatMove"/>
   <option name="when" value="before:germansCombatMove"/>
   <option name="when" value="before:germansPurchase"/>
   <option name="when" value="before:germansEndTurn"/>
   <!-- These are added to ensure ParaBoost is replaced after combat -->
   <option name="when" value="before:russiansNonCombatMove"/>
+  <option name="when" value="before:japaneseNonCombatMove"/>
+  <option name="when" value="before:americansNonCombatMove"/>
+  <option name="when" value="before:chineseNonCombatMove"/>
+  <option name="when" value="before:britishNoAirCheckPlace"/>
+  <option name="when" value="before:italiansNonCombatMove"/>
+  <option name="when" value="before:anzacNonCombatMove"/>
+  <option name="when" value="before:frenchNonCombatMove"/>
+</attachment>
+<attachment name="triggerAttachment_Remove_All_ParaBoost" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+  <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+  <option name="removeUnits" value="all:german_paraBoost" count="99"/> 
+  <option name="when" value="after:germansNonCombatMove"/>
+  <!-- will cause problems because of multiple phases with the same name -->
+  
+  <option name="when" value="after:russiansBattle"/>
+  <option name="when" value="after:japaneseBattle"/>
+  <option name="when" value="after:americansBattle"/>
+  <option name="when" value="after:chineseBattle"/>
+  <option name="when" value="after:britishBattle"/>
+  <option name="when" value="after:italiansBattle"/>
+  <option name="when" value="after:anzacBattle"/>
+  <option name="when" value="after:frenchBattle"/>
+</attachment>
+<attachment foreach="$ParaBoost$" name="triggerAttachment_RussiansParaBoost_at@ParaBoost@" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+  <option name="conditions" value="conditionAttachmentRussiansParaBoost@ParaBoost@:conditionAttachment_No_Allied_HelpRussians_@ParaBoost@"/>
+  <option name="placement" value="@ParaBoost@:russian_paraBoost" count="1"/> 
+  <option name="when" value="before:germansCombatMove"/>
+  <option name="when" value="before:japaneseCombatMove"/>
+  <option name="when" value="before:italiansCombatMove"/>
+  <option name="when" value="before:russiansCombatMove"/>
+  <option name="when" value="before:russiansPurchase"/>
+  <option name="when" value="before:russiansEndTurn"/>
+  <!-- These are added to ensure ParaBoost is replaced after combat -->
+  <option name="when" value="before:germansNonCombatMove"/>
+  <option name="when" value="before:japaneseNonCombatMove"/>
+  <option name="when" value="before:americansNonCombatMove"/>
+  <option name="when" value="before:chineseNonCombatMove"/>
+  <option name="when" value="before:britishNoAirCheckPlace"/>
+  <option name="when" value="before:italiansNonCombatMove"/>
+  <option name="when" value="before:anzacNonCombatMove"/>
+  <option name="when" value="before:frenchNonCombatMove"/>
+</attachment>
+<attachment name="triggerAttachment_Remove_All_RussiansParaBoost" attachTo="Russians" javaClass="TriggerAttachment" type="player">
+  <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+  <option name="removeUnits" value="all:russian_paraBoost" count="99"/> 
+  <option name="when" value="after:russiansNonCombatMove"/>
+  <!-- will cause problems because of multiple phases with the same name -->
+  
+  <option name="when" value="after:germansBattle"/>
+  <option name="when" value="after:japaneseBattle"/>
+  <option name="when" value="after:americansBattle"/>
+  <option name="when" value="after:chineseBattle"/>
+  <option name="when" value="after:britishBattle"/>
+  <option name="when" value="after:italiansBattle"/>
+  <option name="when" value="after:anzacBattle"/>
+  <option name="when" value="after:frenchBattle"/>
+</attachment>
+<attachment foreach="$ParaBoost$" name="triggerAttachment_JapaneseParaBoost_at@ParaBoost@" attachTo="Japanese" javaClass="TriggerAttachment" type="player">
+  <option name="conditions" value="conditionAttachmentJapaneseParaBoost@ParaBoost@:conditionAttachment_No_Allied_HelpJapanese_@ParaBoost@"/>
+  <option name="placement" value="@ParaBoost@:japanese_paraBoost" count="1"/>  <option name="when" value="before:russiansCombatMove"/>
+  <option name="when" value="before:americansCombatMove"/>
+  <option name="when" value="before:chineseCombatMove"/>
+  <option name="when" value="before:britishCombatMove"/>
+  <option name="when" value="before:anzacCombatMove"/>
+  <option name="when" value="before:japaneseCombatMove"/>
+  <option name="when" value="before:japanesePurchase"/>
+  <option name="when" value="before:japaneseEndTurn"/>
+  <!-- These are added to ensure ParaBoost is replaced after combat -->
+  <option name="when" value="before:germansNonCombatMove"/>
+  <option name="when" value="before:russiansNonCombatMove"/>
+  <option name="when" value="before:americansNonCombatMove"/>
+  <option name="when" value="before:chineseNonCombatMove"/>
+  <option name="when" value="before:britishNoAirCheckPlace"/>
+  <option name="when" value="before:italiansNonCombatMove"/>
+  <option name="when" value="before:anzacNonCombatMove"/>
+  <option name="when" value="before:frenchNonCombatMove"/>
+</attachment>
+<attachment name="triggerAttachment_Remove_All_JapaneseParaBoost" attachTo="Japanese" javaClass="TriggerAttachment" type="player">
+  <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+  <option name="removeUnits" value="all:japanese_paraBoost" count="99"/> 
+  <option name="when" value="after:japaneseNonCombatMove"/>
+  <!-- will cause problems because of multiple phases with the same name -->
+  
+  <option name="when" value="after:germansBattle"/>
+  <option name="when" value="after:russiansBattle"/>
+  <option name="when" value="after:americansBattle"/>
+  <option name="when" value="after:chineseBattle"/>
+  <option name="when" value="after:britishBattle"/>
+  <option name="when" value="after:italiansBattle"/>
+  <option name="when" value="after:anzacBattle"/>
+  <option name="when" value="after:frenchBattle"/>
+</attachment>
+<attachment foreach="$ParaBoost$" name="triggerAttachment_AmericansParaBoost_at@ParaBoost@" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+  <option name="conditions" value="conditionAttachmentAmericansParaBoost@ParaBoost@:conditionAttachment_No_Allied_HelpAmericans_@ParaBoost@"/>
+  <option name="placement" value="@ParaBoost@:usa_paraBoost" count="1"/>
+  <option name="when" value="before:germansCombatMove"/>
+  <option name="when" value="before:japaneseCombatMove"/>
+  <option name="when" value="before:italiansCombatMove"/>
+  <option name="when" value="before:americansCombatMove"/>
+  <option name="when" value="before:americansPurchase"/>
+  <option name="when" value="before:americansEndTurn"/>
+  <!-- These are added to ensure ParaBoost is replaced after combat -->
+  <option name="when" value="before:germansNonCombatMove"/>
+  <option name="when" value="before:russiansNonCombatMove"/>
+  <option name="when" value="before:japaneseNonCombatMove"/>
+  <option name="when" value="before:chineseNonCombatMove"/>
+  <option name="when" value="before:britishNoAirCheckPlace"/>
+  <option name="when" value="before:italiansNonCombatMove"/>
+  <option name="when" value="before:anzacNonCombatMove"/>
+  <option name="when" value="before:frenchNonCombatMove"/>
+</attachment>
+<attachment name="triggerAttachment_Remove_All_AmericansParaBoost" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+  <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+  <option name="removeUnits" value="all:usa_paraBoost" count="99"/> 
+  <option name="when" value="after:americansNonCombatMove"/>
+  <!-- will cause problems because of multiple phases with the same name -->
+  
+  <option name="when" value="after:germansBattle"/>
+  <option name="when" value="after:russiansBattle"/>
+  <option name="when" value="after:japaneseBattle"/>
+  <option name="when" value="after:chineseBattle"/>
+  <option name="when" value="after:britishBattle"/>
+  <option name="when" value="after:italiansBattle"/>
+  <option name="when" value="after:anzacBattle"/>
+  <option name="when" value="after:frenchBattle"/>
+</attachment>
+    <attachment foreach="$ParaBoost$" name="triggerAttachment_BritishParaBoost_at@ParaBoost@" attachTo="British" javaClass="TriggerAttachment" type="player">
+  <option name="conditions" value="conditionAttachmentBritishParaBoost@ParaBoost@:conditionAttachment_No_Allied_HelpBritish_@ParaBoost@"/>
+  <option name="placement" value="@ParaBoost@:uk_paraBoost" count="1"/>
+  <option name="when" value="before:germansCombatMove"/>
+  <option name="when" value="before:japaneseCombatMove"/>
+  <option name="when" value="before:italiansCombatMove"/>
+  <option name="when" value="before:britishCombatMove"/>
+  <option name="when" value="before:britishPurchase"/>
+  <option name="when" value="before:britishEndTurn"/>
+  <!-- These are added to ensure ParaBoost is replaced after combat -->
+  <option name="when" value="before:germansNonCombatMove"/>
+  <option name="when" value="before:russiansNonCombatMove"/>
+  <option name="when" value="before:japaneseNonCombatMove"/>
+  <option name="when" value="before:americansNonCombatMove"/>
+  <option name="when" value="before:chineseNonCombatMove"/>
+  <option name="when" value="before:italiansNonCombatMove"/>
+  <option name="when" value="before:anzacNonCombatMove"/>
+  <option name="when" value="before:frenchNonCombatMove"/>
+</attachment>
+<attachment name="triggerAttachment_Remove_All_BritishParaBoost" attachTo="British" javaClass="TriggerAttachment" type="player">
+  <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+  <option name="removeUnits" value="all:uk_paraBoost" count="99"/> 
+  <option name="when" value="after:britishNonCombatMove"/>
+  <!-- will cause problems because of multiple phases with the same name -->
+  
+  <option name="when" value="after:germansBattle"/>
+  <option name="when" value="after:russiansBattle"/>
+  <option name="when" value="after:japaneseBattle"/>
+  <option name="when" value="after:americansBattle"/>
+  <option name="when" value="after:chineseBattle"/>
+  <option name="when" value="after:italiansBattle"/>
+  <option name="when" value="after:anzacBattle"/>
+  <option name="when" value="after:frenchBattle"/>
+</attachment>
+  <attachment foreach="$ParaBoost$" name="triggerAttachment_ItaliansParaBoost_at@ParaBoost@" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+  <option name="conditions" value="conditionAttachmentItaliansParaBoost@ParaBoost@:conditionAttachment_No_Allied_HelpItalians_@ParaBoost@"/>
+  <option name="placement" value="@ParaBoost@:italian_paraBoost" count="1"/>
+  <option name="when" value="before:russiansCombatMove"/>
+  <option name="when" value="before:americansCombatMove"/>
+  <option name="when" value="before:chineseCombatMove"/>
+  <option name="when" value="before:britishCombatMove"/>
+  <option name="when" value="before:anzacCombatMove"/>
+  <option name="when" value="before:italiansCombatMove"/>
+  <option name="when" value="before:italiansPurchase"/>
+  <option name="when" value="before:italiansEndTurn"/>
+  <!-- These are added to ensure ParaBoost is replaced after combat -->
+  <option name="when" value="before:germansNonCombatMove"/>
+  <option name="when" value="before:russiansNonCombatMove"/>
+  <option name="when" value="before:japaneseNonCombatMove"/>
   <option name="when" value="before:americansNonCombatMove"/>
   <option name="when" value="before:chineseNonCombatMove"/>
   <option name="when" value="before:britishNoAirCheckPlace"/>
   <option name="when" value="before:anzacNonCombatMove"/>
   <option name="when" value="before:frenchNonCombatMove"/>
+</attachment>
+<attachment name="triggerAttachment_Remove_All_ItaliansParaBoost" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+  <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
+  <option name="removeUnits" value="all:italian_paraBoost" count="99"/> 
+  <option name="when" value="after:italiansNonCombatMove"/>
+  <!-- will cause problems because of multiple phases with the same name -->
+  
+  <option name="when" value="after:germansBattle"/>
+  <option name="when" value="after:russiansBattle"/>
+  <option name="when" value="after:japaneseBattle"/>
+  <option name="when" value="after:americansBattle"/>
+  <option name="when" value="after:chineseBattle"/>
+  <option name="when" value="after:britishBattle"/>
+  <option name="when" value="after:anzacBattle"/>
+  <option name="when" value="after:frenchBattle"/>
 </attachment>
     
     <attachment name="triggerAttachment_UndgMinorUSSR" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -52251,6 +52505,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.167<br> 7/25/24 
+<br>
+Have "ParaBoost" Auto Place.
 <br>
 <br>Version 2.166<br> 7/16/24 
 <br>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.167"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.168"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -10377,6 +10377,7 @@
     <attachment name="territoryAttachment" attachTo="Slovakia Hungary" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
       <option name="territoryEffect" value="forest"/>
+      <option name="territoryEffect" value="city"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Western Germany" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="5"/>
@@ -10385,11 +10386,13 @@
     <attachment name="territoryAttachment" attachTo="Romania" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
       <option name="territoryEffect" value="forest"/>
+      <option name="territoryEffect" value="city"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Poland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="victoryCity" value="1"/>
       <option name="territoryEffect" value="forest"/>
+      <option name="territoryEffect" value="city"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Germany" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="5"/>
@@ -10852,7 +10855,7 @@
     </attachment>
     <!-- Rail Effects -->
     <attachment name="territoryEffectAttachment" attachTo="forest" javaClass="TerritoryEffectAttachment" type="territoryEffect">
-      <option name="unitsNotAllowed" value="Russian_Rail:J_Rail"/>
+      <option name="unitsNotAllowed" value="Russian_Rail"/>
     </attachment>
     <attachment name="territoryEffectAttachment" attachTo="hill" javaClass="TerritoryEffectAttachment" type="territoryEffect">
       <option name="unitsNotAllowed" value="R_Europe_Rail"/>
@@ -10862,6 +10865,9 @@
     </attachment>
     <attachment name="territoryEffectAttachment" attachTo="desert" javaClass="TerritoryEffectAttachment" type="territoryEffect">
       <option name="unitsNotAllowed" value="G_Rail:J_Rail"/>
+    </attachment>
+    <attachment name="territoryEffectAttachment" attachTo="city" javaClass="TerritoryEffectAttachment" type="territoryEffect">
+      <option name="unitsNotAllowed" value="J_Rail"/>
     </attachment>
     
     <!-- Canals -->
@@ -52505,6 +52511,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.168<br> 7/26/24 
+<br>
+Fix Japan Rail.
 <br>
 <br>Version 2.167<br> 7/25/24 
 <br>
