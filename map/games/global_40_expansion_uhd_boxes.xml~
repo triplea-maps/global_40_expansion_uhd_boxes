@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.167"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.1693"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1757,6 +1757,7 @@
     <unit name="Wolfpack"/>
     <unit name="pacific_submarine"/>
     <unit name="submarineX"/>
+    <unit name="UBoatPen"/>
     <unit name="destroyer"/>
     <unit name="Japan_destroyer"/>
     <unit name="JPN_Pacific_DD"/>
@@ -1776,7 +1777,6 @@
     <unit name="airfield_Hvy"/>
     <unit name="harbour"/>
     <unit name="SubPen"/>
-    <unit name="UBoatPen"/>
     <unit name="XXI_UBoatPen"/>
     <unit name="factory_minor"/>
     <unit name="UndergroundMinr"/>
@@ -1916,6 +1916,7 @@
     <unit name="DemoAirfieldHvy"/>
     <unit name="Escort"/>
     <unit name="Escort_Convoy"/>
+    <unit name="Escort_ConvoyA"/>
     <unit name="NavyFighter"/>
     <unit name="Fortification"/>
     <unit name="Atlantic_Wall"/>
@@ -3302,6 +3303,10 @@
     <productionRule name="buyEscort_Convoy">
       <cost resource="PUs" quantity="6"/>
       <result resourceOrUnit="Escort_Convoy" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyEscort_ConvoyA">
+      <cost resource="PUs" quantity="6"/>
+      <result resourceOrUnit="Escort_ConvoyA" quantity="1"/>
     </productionRule>
     <productionRule name="buyFortification">
       <cost resource="PUs" quantity="1"/>
@@ -6722,7 +6727,7 @@
       <!-- stuff for targeting unescorted transports (we are using the new-fangled aa-gun code)
 						 <option name="isAAforFlyOverOnly" value="true"/>
 						 <option name="targetsAA" value="transport"/>
-						 <option name="willNotFireIfPresent" value="destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:cruiser:pacific_cruiser:battleship:pacific_BB:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:pacific_carrier:pacific_destroyer"/>
+						 <option name="willNotFireIfPresent" value="destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:Escort_ConvoyA:cruiser:pacific_cruiser:battleship:pacific_BB:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:pacific_carrier:pacific_destroyer"/>
 						 <option name="mayOverStackAA" value="true"/>
 						 <option name="maxAAattacks" value="1"/>
 						 <option name="attackAA" value="2"/>
@@ -6783,7 +6788,7 @@
       <!-- stuff for targeting unescorted transports (we are using the new-fangled aa-gun code)
 						 <option name="isAAforFlyOverOnly" value="true"/>
 						 <option name="targetsAA" value="transport"/>
-						 <option name="willNotFireIfPresent" value="destroyer:pacific_destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:cruiser:pacific_cruiser:battleship:pacific_BB:carrier:pacific_carrier"/>
+						 <option name="willNotFireIfPresent" value="destroyer:pacific_destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:Escort_ConvoyA:cruiser:pacific_cruiser:battleship:pacific_BB:carrier:pacific_carrier"/>
 						 <option name="mayOverStackAA" value="true"/>
 						 <option name="maxAAattacks" value="1"/>
 						 <option name="attackAA" value="2"/>
@@ -6860,7 +6865,7 @@
       <!-- stuff for targeting unescorted transports (we are using the new-fangled aa-gun code)
 						 <option name="isAAforFlyOverOnly" value="true"/>
 						 <option name="targetsAA" value="transport"/>
-						 <option name="willNotFireIfPresent" value="destroyer:destroyerC5:Escort:Escort_Convoy:cruiser:battleship:carrier:EscortCarrier:EscortCarrierASW"/>
+						 <option name="willNotFireIfPresent" value="destroyer:destroyerC5:Escort:Escort_Convoy:Escort_ConvoyA:cruiser:battleship:carrier:EscortCarrier:EscortCarrierASW"/>
 						 <option name="mayOverStackAA" value="true"/>
 						 <option name="maxAAattacks" value="1"/>
 						 <option name="attackAA" value="2"/>
@@ -7154,6 +7159,7 @@
       <option name="givesMovement" value="1:JPN_Pacific_DD"/>
       <option name="givesMovement" value="1:Escort"/>
       <option name="givesMovement" value="1:Escort_Convoy"/>
+      <option name="givesMovement" value="1:Escort_ConvoyA"/>
       <option name="givesMovement" value="1:cruiser"/>
       <option name="givesMovement" value="1:pacific_cruiser"/>
       <option name="givesMovement" value="1:carrier"/>
@@ -9735,6 +9741,17 @@
       <option name="blockade" value="1"/>
       <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
     </attachment>
+    <!-- Escort ConvoyA -->
+    <attachment name="unitAttachment" attachTo="Escort_ConvoyA" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="transportCapacity" value="1"/>
+      <option name="attack" value="1"/>
+      <option name="defense" value="3"/>
+      <option name="isDestroyer" value="false"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+    </attachment>
     <!-- Fortification -->
     <attachment name="unitAttachment" attachTo="Fortification" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="attack" value="0"/>
@@ -10377,6 +10394,7 @@
     <attachment name="territoryAttachment" attachTo="Slovakia Hungary" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
       <option name="territoryEffect" value="forest"/>
+      <option name="territoryEffect" value="city"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Western Germany" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="5"/>
@@ -10385,11 +10403,13 @@
     <attachment name="territoryAttachment" attachTo="Romania" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
       <option name="territoryEffect" value="forest"/>
+      <option name="territoryEffect" value="city"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Poland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="victoryCity" value="1"/>
       <option name="territoryEffect" value="forest"/>
+      <option name="territoryEffect" value="city"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Germany" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="5"/>
@@ -10852,7 +10872,7 @@
     </attachment>
     <!-- Rail Effects -->
     <attachment name="territoryEffectAttachment" attachTo="forest" javaClass="TerritoryEffectAttachment" type="territoryEffect">
-      <option name="unitsNotAllowed" value="Russian_Rail:J_Rail"/>
+      <option name="unitsNotAllowed" value="Russian_Rail"/>
     </attachment>
     <attachment name="territoryEffectAttachment" attachTo="hill" javaClass="TerritoryEffectAttachment" type="territoryEffect">
       <option name="unitsNotAllowed" value="R_Europe_Rail"/>
@@ -10862,6 +10882,9 @@
     </attachment>
     <attachment name="territoryEffectAttachment" attachTo="desert" javaClass="TerritoryEffectAttachment" type="territoryEffect">
       <option name="unitsNotAllowed" value="G_Rail:J_Rail"/>
+    </attachment>
+    <attachment name="territoryEffectAttachment" attachTo="city" javaClass="TerritoryEffectAttachment" type="territoryEffect">
+      <option name="unitsNotAllowed" value="J_Rail"/>
     </attachment>
     
     <!-- Canals -->
@@ -28763,6 +28786,11 @@
       <option name="directPresenceTerritories" value="Russia" count="1"/>
       <option name="unitPresence" value="Army_Conscript" count="20"/>
     </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveConscriptsInvert" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Russia" count="1"/>
+      <option name="unitPresence" value="Army_Conscript" count="20"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_RussiansRemoveConscriptsVolgograd" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Volgograd" count="1"/>
       <option name="unitPresence" value="Army_Conscript" count="6"/>
@@ -28779,9 +28807,19 @@
       <option name="directPresenceTerritories" value="Russia" count="1"/>
       <option name="unitPresence" value="Army_Conscript" count="19"/>
     </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveConscripts19Invert" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Russia" count="1"/>
+      <option name="unitPresence" value="Army_Conscript" count="19"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_RussiansRemoveConscripts18" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Russia" count="1"/>
       <option name="unitPresence" value="Army_Conscript" count="18"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveConscripts18Invert" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Russia" count="1"/>
+      <option name="unitPresence" value="Army_Conscript" count="18"/>
+      <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_RussiansRemoveTotalWarInf" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Russia" count="1"/>
@@ -32040,6 +32078,7 @@
       <option name="placement" value="Early 1940:WaffenArty" count="1"/>
       <option name="placement" value="Early 1940:marine" count="1"/>
       <option name="placement" value="Early 1940:commando" count="1"/>
+      <option name="placement" value="Early 1940:SubPen" count="1"/>
       <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
       <option name="placement" value="Late 1940:Late1940" count="1"/>
       <option name="placement" value="Late 1940:Panzer_General" count="1"/>
@@ -32101,6 +32140,7 @@
       <option name="placement" value="Early 1940:WaffenArty" count="1"/>
       <option name="placement" value="Early 1940:marine" count="1"/>
       <option name="placement" value="Early 1940:commando" count="1"/>
+      <option name="placement" value="Early 1940:SubPen" count="1"/>
       <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
       <option name="placement" value="Late 1940:Late1940" count="1"/>
       <option name="placement" value="Late 1940:Panzer_General" count="1"/>
@@ -41661,14 +41701,14 @@
       <option name="when" value="after:russiansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_RussiansReplaceConscripts19" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn5:conditionAttachment_RussiansRemoveConscripts19"/>
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn5:conditionAttachment_RussiansRemoveConscriptsInvert:conditionAttachment_RussiansRemoveConscripts19"/>
       <option name="placement" value="Russia:infantry" count="19"/>
       <option name="removeUnits" value="Russia:Army_Conscript" count="19"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:russiansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_RussiansReplaceConscripts18" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn5:conditionAttachment_RussiansRemoveConscripts18"/>
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn5:conditionAttachment_RussiansRemoveConscriptsInvert:conditionAttachment_RussiansRemoveConscripts19Invert:conditionAttachment_RussiansRemoveConscripts18"/>
       <option name="placement" value="Russia:infantry" count="18"/>
       <option name="removeUnits" value="Russia:Army_Conscript" count="18"/>
       <option name="uses" value="1"/>
@@ -49269,7 +49309,7 @@
     </attachment>
     <attachment name="playerAttachment" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="suicideAttackResources" value="SuicideAttackTokens" count="2"/>
-      <!--<option name="suicideAttackTargets" value="battleship:BB_Damaged:Heavy_BB:Hvy_BB_Dmgd:pacific_BB:carrier:pacific_carrier:cruiser:pacific_cruiser:destroyer:Escort:Escort_Convoy:pacific_destroyer"/>-->
+      <!--<option name="suicideAttackTargets" value="battleship:BB_Damaged:Heavy_BB:Hvy_BB_Dmgd:pacific_BB:carrier:pacific_carrier:cruiser:pacific_cruiser:destroyer:Escort:Escort_Convoy:Escort_ConvoyA:pacific_destroyer"/>-->
     </attachment>
     <attachment name="playerAttachment" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="immuneToBlockade" value="true"/>
@@ -51848,7 +51888,7 @@ May be turned on in "Map Options".<br>
 <img src="Escort_Convoy.png"/> <br><br>
 Most Solo Escorts will now Auto change at End Turn. Use edit to place and remove the "Escort Convoy" unit(s) when Convoys are formed or dispersed when necessarry. Transports must be taken as casualties last. This is Player Enforced.<br>
 <br>
-Do not attack Subs without a Destroyer present. This is also Player Enforced. If you have a mixed Fleet without Destroyers attacking Subs, allocate the Escort hits to other Vessels when possible. If Subs submerge after first round of combat, use edit to replace any illegal Escort hits at the end of combat. If they don't submerge, then count any Escort hits. <br>
+When attacking Submarines without a DD present, edit in Escort_ConvoyA<br><br><img src="Escort_ConvoyA.png"/> <br><br> These will not be able to attack Submarines. Edit back after battle if needed.<br>
 <br>
 Do not take Transports as casualties the first three rounds Player Enforced. You will have to kill them in battle, so you may want to quit battle and edit accordingly or continue battle till they're all dead.<br>
 <br>
@@ -52505,6 +52545,19 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.1693<br> 8/15/24 
+<br>
+Add "Escort_ConvoyA". These will Not Fire at Submarines.<br>
+Add SubPen to TimeTable.
+<br>
+<br>Version 2.1692<br> 8/10/24 
+<br>
+Fix Conscript Removal and Infantry Place.
+<br>
+<br>Version 2.168<br> 7/26/24 
+<br>
+Fix Japan Rail.
 <br>
 <br>Version 2.167<br> 7/25/24 
 <br>

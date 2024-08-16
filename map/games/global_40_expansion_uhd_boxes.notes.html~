@@ -397,7 +397,7 @@ May be turned on in "Map Options".<br>
 <img src="Escort_Convoy.png"/> <br><br>
 Most Solo Escorts will now Auto change at End Turn. Use edit to place and remove the "Escort Convoy" unit(s) when Convoys are formed or dispersed when necessarry. Transports must be taken as casualties last. This is Player Enforced.<br>
 <br>
-Do not attack Subs without a Destroyer present. This is also Player Enforced. If you have a mixed Fleet without Destroyers attacking Subs, allocate the Escort hits to other Vessels when possible. If Subs submerge after first round of combat, use edit to replace any illegal Escort hits at the end of combat. If they don't submerge, then count any Escort hits. <br>
+When attacking Submarines without a DD present, edit in Escort_ConvoyA<br><br><img src="Escort_ConvoyA.png"/> <br><br> These will not be able to attack Submarines. Edit back after battle if needed. <br>
 <br>
 Do not take Transports as casualties the first three rounds Player Enforced. You will have to kill them in battle, so you may want to quit battle and edit accordingly or continue battle till they're all dead.<br>
 <br>
@@ -1051,6 +1051,19 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.1693<br> 8/15/24 
+<br>
+Add "Escort_ConvoyA". These will Not Fire at Submarines.<br>
+Add SubPen to TimeTable.
+<br>
+<br>Version 2.1692<br> 8/10/24 
+<br>
+Fix Conscript Removal and Infantry Place.
+<br>
+<br>Version 2.168<br> 7/26/24 
+<br>
+Fix Japan Rail.
 <br>
 <br>Version 2.167<br> 7/25/24 
 <br>
