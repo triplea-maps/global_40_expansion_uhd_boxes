@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.1693"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.1694"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -32080,6 +32080,7 @@
       <option name="placement" value="Early 1940:commando" count="1"/>
       <option name="placement" value="Early 1940:SubPen" count="1"/>
       <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
+      <option name="placement" value="Early 1940:NavalMine" count="1"/>
       <option name="placement" value="Late 1940:Late1940" count="1"/>
       <option name="placement" value="Late 1940:Panzer_General" count="1"/>
       <option name="placement" value="Late 1940:UK_TankGeneral" count="1"/>
@@ -32096,7 +32097,6 @@
       <option name="placement" value="Late 1941:Soviet_Partisan" count="1"/>
       <option name="placement" value="Late 1941:MayAttack" count="1"/>
       <option name="placement" value="Late 1941:Late1941" count="1"/>
-      <option name="placement" value="Late 1941:NavalMine" count="1"/>
       <option name="placement" value="Late 1941:USA_LendLeaseUK" count="1"/>
       <option name="placement" value="Early 1942:Early1942" count="1"/>
       <option name="placement" value="Early 1942:CruiserAndSub" count="1"/>
@@ -32142,6 +32142,7 @@
       <option name="placement" value="Early 1940:commando" count="1"/>
       <option name="placement" value="Early 1940:SubPen" count="1"/>
       <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
+      <option name="placement" value="Early 1940:NavalMine" count="1"/>
       <option name="placement" value="Late 1940:Late1940" count="1"/>
       <option name="placement" value="Late 1940:Panzer_General" count="1"/>
       <option name="placement" value="Late 1940:UK_TankGeneral" count="1"/>
@@ -32158,7 +32159,6 @@
       <option name="placement" value="Late 1941:Soviet_Partisan" count="1"/>
       <option name="placement" value="Late 1941:MayAttack" count="1"/>
       <option name="placement" value="Late 1941:Late1941" count="1"/>
-      <option name="placement" value="Late 1941:NavalMine" count="1"/>
       <option name="placement" value="Late 1941:USA_LendLeaseUK" count="1"/>
       <option name="placement" value="Early 1942:Early1942" count="1"/>
       <option name="placement" value="Early 1942:CruiserAndSub" count="1"/>
@@ -32808,7 +32808,7 @@
     </attachment>
 
     <attachment name="triggerAttachment_GermansNavalMines" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="NavalMines:EXP43Invert:conditionAttachmentTurn4OrHigher"/>
+      <option name="conditions" value="NavalMines:EXP43Invert:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionGermans:buyNavalMine"/>
       <option name="productionRule" value="productionJapanese:buyNavalMine"/>
       <option name="productionRule" value="productionAmericans:buyNavalMine"/>
@@ -32852,13 +32852,6 @@
       <option name="productionRule" value="productionItalians:buyNavalMine3"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
-    </attachment>
-    
-    <attachment name="triggerAttachment_NavalMineNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="NavalMines:EXP43Invert:conditionAttachmentTurn4"/>
-      <option name="uses" value="1"/>
-      <option name="when" value="before:germansPurchase"/>
-      <option name="notification" value="NavalMine"/>
     </attachment>
     
     <attachment name="triggerAttachment_WaffenPnzrGrndr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -52545,6 +52538,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.1694<br> 8/21/24 
+<br>
+Correct Naval Mines to be at Game Start.
 <br>
 <br>Version 2.1693<br> 8/15/24 
 <br>

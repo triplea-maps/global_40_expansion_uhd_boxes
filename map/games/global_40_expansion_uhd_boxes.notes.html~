@@ -484,7 +484,9 @@ Each Major Power's Rail Units will place before Combat Move. Germany, Russia, th
 <br>
 This is to help remind the Player of it's non combat move availability. They will not be able to move in combat move. The one with a "E" on it is for Europe movement. This is to keep track of rail movement. <br>
 <br>
-A rail unit will move any unit regardless of theatre.<br>
+Rail Units are now Nation Specific and will only move where they are allowed to. You may still need to use edit in certain situations.<br><br>
+Click on the Rail unit and then click the unit you want to move.<br>
+<br>
 Click on the Rail unit and then click the unit you want to move.<br>
 <br>
 Use edit "Perform Move or Other Actions" if necessary to make your move.<br>
