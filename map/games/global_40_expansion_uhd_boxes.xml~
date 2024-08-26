@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.1693"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.1695"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -211,7 +211,30 @@
       <element name="USA_TankGeneral"/>
       <element name="UK_TankGeneral"/>
     </variable>
+	<variable name="ItalianFacilities">
+		<element name="factory_minor"/>
+		<element name="factory_major"/>
+		<element name="UndrgroundFctry"/>
+		<element name="UndergroundMinr"/>
+		<element name="airfield"/>
+		<element name="harbour"/>
+		<element name="airfield_Hvy"/>
+		<element name="Hvy_Ind_1"/>
+		<element name="Hvy_Ind_2"/>
+		<element name="Hvy_Undg_1"/>
+		<element name="Hvy_Undg_2"/>
+		</variable>
+	<variable name="ItalianFacilityTerritories">
+		<element name="Northern Italy"/>
+		<element name="Southern Italy"/>
+		<element name="Greece"/>
+		<element name="Gibraltar"/>
+		<element name="Egypt"/>
+		<element name="Southern France"/>
+		<element name="Normandy Bordeaux"/>
+		</variable>
     </variableList>
+
 
   <map>
     <!-- Full europe list:
@@ -15014,6 +15037,12 @@
       <option name="impArtTech" value="false"/>
       <!-- left blank on purpose: <option name="players" value=""/>-->
     </attachment>
+	
+	<!-- Conditions -->
+	<attachment name="Notifications" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+		<option name="gameProperty" value="Show Start-Up Notifications"/>
+	</attachment>
+	
     <attachment name="conditionAttachment_Germans_Improved_Mech_Inf" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="techs" value="Improved_Mech_Inf" count="1"/>
     </attachment>
@@ -32080,6 +32109,7 @@
       <option name="placement" value="Early 1940:commando" count="1"/>
       <option name="placement" value="Early 1940:SubPen" count="1"/>
       <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
+      <option name="placement" value="Early 1940:NavalMine" count="1"/>
       <option name="placement" value="Late 1940:Late1940" count="1"/>
       <option name="placement" value="Late 1940:Panzer_General" count="1"/>
       <option name="placement" value="Late 1940:UK_TankGeneral" count="1"/>
@@ -32096,7 +32126,6 @@
       <option name="placement" value="Late 1941:Soviet_Partisan" count="1"/>
       <option name="placement" value="Late 1941:MayAttack" count="1"/>
       <option name="placement" value="Late 1941:Late1941" count="1"/>
-      <option name="placement" value="Late 1941:NavalMine" count="1"/>
       <option name="placement" value="Late 1941:USA_LendLeaseUK" count="1"/>
       <option name="placement" value="Early 1942:Early1942" count="1"/>
       <option name="placement" value="Early 1942:CruiserAndSub" count="1"/>
@@ -32142,6 +32171,7 @@
       <option name="placement" value="Early 1940:commando" count="1"/>
       <option name="placement" value="Early 1940:SubPen" count="1"/>
       <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
+      <option name="placement" value="Early 1940:NavalMine" count="1"/>
       <option name="placement" value="Late 1940:Late1940" count="1"/>
       <option name="placement" value="Late 1940:Panzer_General" count="1"/>
       <option name="placement" value="Late 1940:UK_TankGeneral" count="1"/>
@@ -32158,7 +32188,6 @@
       <option name="placement" value="Late 1941:Soviet_Partisan" count="1"/>
       <option name="placement" value="Late 1941:MayAttack" count="1"/>
       <option name="placement" value="Late 1941:Late1941" count="1"/>
-      <option name="placement" value="Late 1941:NavalMine" count="1"/>
       <option name="placement" value="Late 1941:USA_LendLeaseUK" count="1"/>
       <option name="placement" value="Early 1942:Early1942" count="1"/>
       <option name="placement" value="Early 1942:CruiserAndSub" count="1"/>
@@ -32689,7 +32718,7 @@
     </attachment>
     
     <attachment name="triggerAttachment_PacificIslandsNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="conditions" value="Notifications:conditionAttachmentTurn1"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="PacificIslands"/>
@@ -32715,19 +32744,19 @@
     </attachment>
     
     <attachment name="triggerAttachment_2.6PreNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="conditions" value="Notifications:conditionAttachmentTurn1"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="Prerelease"/>
     </attachment>
     <attachment name="triggerAttachment_MidBattleSave" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="conditions" value="Notifications:conditionAttachmentTurn1"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="MidBattleSave"/>
     </attachment>
     <attachment name="triggerAttachment_BB_DamgedNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="conditions" value="Notifications:conditionAttachmentTurn1"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="BB_Damaged"/>
@@ -32808,7 +32837,7 @@
     </attachment>
 
     <attachment name="triggerAttachment_GermansNavalMines" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="NavalMines:EXP43Invert:conditionAttachmentTurn4OrHigher"/>
+      <option name="conditions" value="NavalMines:EXP43Invert:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionGermans:buyNavalMine"/>
       <option name="productionRule" value="productionJapanese:buyNavalMine"/>
       <option name="productionRule" value="productionAmericans:buyNavalMine"/>
@@ -32852,13 +32881,6 @@
       <option name="productionRule" value="productionItalians:buyNavalMine3"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
-    </attachment>
-    
-    <attachment name="triggerAttachment_NavalMineNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="NavalMines:EXP43Invert:conditionAttachmentTurn4"/>
-      <option name="uses" value="1"/>
-      <option name="when" value="before:germansPurchase"/>
-      <option name="notification" value="NavalMine"/>
     </attachment>
     
     <attachment name="triggerAttachment_WaffenPnzrGrndr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -48980,7 +49002,6 @@
       <option name="text" value="Germans_Take_Over_Italy"/>
       <option name="chance" value="6:6"/>
       <option name="costResources" value="PUs" count="5"/>
-      <option name="actionAccept" value="Germans"/>
     </attachment>
     <attachment name="userActionAttachment_Germans_TakeOverItalyEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.UserActionAttachment" type="player">
       <option name="conditions" value="GermanyTakesItaly:BasicEXPInvert:EXP43:conditionAttachment_Germans_Control_Rome:conditionAttachmentTurn1OrHigher:conditionAttachment_Germans_NoUnitsInAfrica:conditionAttachment_Italians_NoUnitsInAfrica:conditionAttachment_Italians_ShipsOnlyInMed:conditionAttachment_AxisControlItaly:conditionAttachment_Germans_TakeOverItaly:conditionAttachment_ItalyUser"/>
@@ -48988,7 +49009,6 @@
       <option name="text" value="Germans_Take_Over_Italy"/>
       <option name="chance" value="6:6"/>
       <option name="costResources" value="PUs" count="5"/>
-      <option name="actionAccept" value="Germans"/>
     </attachment>
 
     <!-- Take Over Italy ForEach -->
@@ -49075,95 +49095,22 @@
       <option name="conditions" value="EXP43Invert:conditionAttachmentTakeOverItalyToken"/>
       <option name="when" value="after:italiansPlace"/>
       <option name="uses" value="1"/>
-      <option name="changeOwnership" value="Southern Italy:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Northern Italy:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Sardinia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Sicily:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Crete:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Cyprus:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Malta:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Southern France:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Normandy Bordeaux:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Malta:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Ethiopia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Italian Somaliland:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Yugoslavia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Albania:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Greece:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Bulgaria:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Romania:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Bessarabia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Western Ukraine:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Ukraine:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Rostov:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Eastern Poland:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Baltic States:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Bryansk:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Belarus:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Smolensk:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Syria:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Iraq:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Persia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Northwest Persia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Trans-Jordan:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Egypt:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Alexandria:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Tobruk:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Libya:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Tunisia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Algeria:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Morocco:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Anglo Egyptian Sudan:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Gibraltar:Italians:Germans:false"/>
+      <option name="changeOwnership" value="ALL:Italians:Germans:false"/>
     </attachment>
     <attachment name="triggerAttachmentConquerItaly43" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTakeOverItalyToken"/>
       <option name="when" value="after:italiansPlace"/>
       <option name="uses" value="1"/>
-      <option name="changeOwnership" value="Southern Italy:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Northern Italy:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Sardinia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Sicily:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Crete:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Cyprus:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Malta:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Southern France:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Normandy Bordeaux:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Malta:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Ethiopia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Italian Somaliland:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Yugoslavia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Albania:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Greece:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Bulgaria:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Romania:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Bessarabia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Western Ukraine:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Ukraine:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Rostov:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Eastern Poland:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Baltic States:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Bryansk:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Belarus:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Smolensk:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Syria:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Iraq:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Persia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Northwest Persia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Trans-Jordan:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Egypt:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Alexandria:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Tobruk:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Libya:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Tunisia:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Algeria:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Morocco:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Anglo Egyptian Sudan:Italians:Germans:false"/>
-      <option name="changeOwnership" value="Gibraltar:Italians:Germans:false"/>
+      <option name="changeOwnership" value="ALL:Italians:Germans:false"/>
     </attachment>
-    
+   
+    <!-- Condition for Italian Take Over -->
+    <attachment name="conditionAttachmentItalianTakeOverConditions" attachTo="Germans" javaClass="RulesAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_Germans_NoUnitsInAfrica:conditionAttachment_Italians_NoUnitsInAfrica:conditionAttachment_Italians_ShipsOnlyInMed:conditionAttachment_AxisControlItaly:conditionAttachmentTakeOverItalyToken"/>
+    </attachment>
+   
     <attachment name="triggerAttachment_TakeOverALLItalianUnitsGermanyDone" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_Germans_NoUnitsInAfrica:conditionAttachment_Italians_NoUnitsInAfrica:conditionAttachment_Italians_ShipsOnlyInMed:conditionAttachment_AxisControlItaly:conditionAttachmentTakeOverItalyToken"/>
+      <option name="conditions" value="EXP43Invert:conditionAttachmentItalianTakeOverConditions"/>
       <option name="playerAttachmentName" value="PlayerAttachment" count="playerAttachment"/>
       <option name="players" value="Italians"/>
       <option name="playerProperty" value="giveUnitControlInAllTerritories" count="true"/>
@@ -49171,7 +49118,7 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_TakeOverALLItalianUnitsGermanyDone43" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_Germans_NoUnitsInAfrica:conditionAttachment_Italians_NoUnitsInAfrica:conditionAttachment_Italians_ShipsOnlyInMed:conditionAttachment_AxisControlItaly:conditionAttachmentTakeOverItalyToken"/>
+      <option name="conditions" value="EXP43:conditionAttachmentItalianTakeOverConditions"/>
       <option name="playerAttachmentName" value="PlayerAttachment" count="playerAttachment"/>
       <option name="players" value="Italians"/>
       <option name="playerProperty" value="giveUnitControlInAllTerritories" count="true"/>
@@ -49195,23 +49142,25 @@
       <option name="uses" value="1"/>
     </attachment>
    
-    <attachment name="triggerAttachment_ItaliansRemoveInfrastructure" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTakeOverItalyToken"/>
-      <option name="removeUnits" value="Southern Italy:airfield" count="1"/>
-      <option name="removeUnits" value="Southern Italy:harbour" count="1"/>
-      <option name="removeUnits" value="Southern Italy:factory_minor" count="1"/>
-      <option name="removeUnits" value="Northern Italy:factory_major" count="1"/>
-      <option name="when" value="after:italiansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_GermansPlaceItalianInfrastructureSouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTakeOverItalyToken"/>
-      <option name="placement" value="Southern Italy:airfield" count="1"/>
-      <option name="placement" value="Southern Italy:harbour" count="1"/>
-      <option name="placement" value="Southern Italy:factory_minor" count="1"/>
-      <option name="placement" value="Northern Italy:factory_major" count="1"/>
-      <option name="when" value="before:germansPurchase"/>
-    </attachment>
-    
+		<!-- Italian facilities Condition -->
+    <attachment foreach="$ItalianFacilities$^$ItalianFacilityTerritories$" name="conditionAttachmentItalian@ItalianFacilities@In@ItalianFacilityTerritories@" attachTo="Italians" javaClass="RulesAttachment" type="player">
+		<option name="directPresenceTerritories" value="@ItalianFacilityTerritories@" count="1"/>
+		<option name="unitPresence" value="@ItalianFacilities@" count="1"/>
+	</attachment>
+	
+		<!-- Italian Facilities Triggers -->
+    <attachment foreach="$ItalianFacilities$^$ItalianFacilityTerritories$" name="triggerAttachmentRemoveItalian@ItalianFacilities@In@ItalianFacilityTerritories@" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentItalian@ItalianFacilities@In@ItalianFacilityTerritories@:EXP43Invert:conditionAttachmentItalianTakeOverConditions"/>
+		<option name="removeUnits" value="@ItalianFacilityTerritories@:@ItalianFacilities@"/>
+		<option name="when" value="after:italiansPlace"/>
+	</attachment>
+	
+	<attachment foreach="$ItalianFacilities$^$ItalianFacilityTerritories$" name="triggerAttachmentPlaceGerman@ItalianFacilities@In@ItalianFacilityTerritories@" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentItalian@ItalianFacilities@In@ItalianFacilityTerritories@:EXP43Invert:conditionAttachmentItalianTakeOverConditions"/>
+		<option name="placement" value="@ItalianFacilityTerritories@:@ItalianFacilities@"/>
+		<option name="when" value="after:italiansPlace"/>
+	</attachment>
+	
     <attachment name="triggerAttachment_Germans_At_War_With_Allies" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="BasicEXPInvert:EXP43"/>
       <option name="when" value="before:changerCombatMove"/>
@@ -49270,25 +49219,25 @@
       <option name="rounds" value="1"/>
     </attachment>
     <attachment name="triggerAttachment1note" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentTurn1Check"/>
+      <option name="trigger" value="Notifications:conditionAttachmentTurn1Check"/>
       <option name="notification" value="R01"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:changerTechActivation"/>
     </attachment>
     <attachment name="triggerAttachment1noteB" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentTurn1Check"/>
+      <option name="trigger" value="Notifications:conditionAttachmentTurn1Check"/>
       <option name="notification" value="R01B"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:changerPurchase"/>
     </attachment>
     <attachment name="triggerAttachment1noteC" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentTurn1Check"/>
+      <option name="trigger" value="Notifications:conditionAttachmentTurn1Check"/>
       <option name="notification" value="R01C"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:changerPurchase"/>
     </attachment>
     <attachment name="triggerAttachment1noteD" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentTurn1Check"/>
+      <option name="trigger" value="Notifications:conditionAttachmentTurn1Check"/>
       <option name="notification" value="R01D"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:changerPurchase"/>
@@ -51485,6 +51434,9 @@
     <property name="Neutral Flyover Allowed" value="false" editable="false">
       <boolean/>
     </property>
+    <property name="Show Start-Up Notifications" value="true" editable="true">
+      <boolean/>
+    </property>
     <property name="mapName" value="global_40_expansion_uhd_boxes" editable="false"/>
     <property name="notes">
       <value><![CDATA[  
@@ -52545,6 +52497,10 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.1694<br> 8/21/24 
+<br>
+Correct Naval Mines to be at Game Start.
 <br>
 <br>Version 2.1693<br> 8/15/24 
 <br>
