@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.1695"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.1696"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -6939,8 +6939,9 @@
     <attachment name="unitAttachment" attachTo="russian_minor" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isFactory" value="true"/>
       <option name="unitPlacementRestrictions" value="Ceylon:Sumatra:Java:Borneo:Hainan:Philippines:Celebes:Dutch New Guinea:Paulau Island:New Guinea:New Britain:Solomon Islands:New Hebrides:New Zealand:Fiji:Samoa:Line Islands:Johnston Island:Hawaiian Islands:Midway:Iwo Jima:Aleutian Islands:Gilbert Islands:Marshall Islands:Caroline Islands:Wake Island:Marianas:Guam:Formosa:Okinawa:West Indies:Greenland:Iceland:Sardinia:Sicily:French Madagascar:Crete:Cyprus"/>
-      <option name="movement" value="2"/>
+      <option name="movement" value="0"/>
       <option name="canNotMoveDuringCombatMove" value="true"/>
+      <option name="isLandTransportable" value="false"/>
       <option name="canOnlyBePlacedInTerritoryValuedAtX" value="2"/>
       <option name="destroyedWhenCapturedBy" value="Germans:Japanese:Italians"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
@@ -9757,6 +9758,7 @@
     <attachment name="unitAttachment" attachTo="Escort_Convoy" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
       <option name="isSea" value="true"/>
+      <option name="isCombatTransport" value="true"/>
       <option name="transportCapacity" value="1"/>
       <option name="attack" value="1"/>
       <option name="defense" value="3"/>
@@ -9768,6 +9770,7 @@
     <attachment name="unitAttachment" attachTo="Escort_ConvoyA" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
       <option name="isSea" value="true"/>
+      <option name="isCombatTransport" value="true"/>
       <option name="transportCapacity" value="1"/>
       <option name="attack" value="1"/>
       <option name="defense" value="3"/>
@@ -33532,6 +33535,13 @@
       <option name="unitProperty" value="defense" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_RussianFctrys" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Russians_AtWarWithGermans"/>
+      <option name="unitType" value="russian_minor"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="isLandTransportable" count="true"/>
+      <option name="when" value="before:russiansNonCombatMove"/>
+    </attachment>
     
     <attachment name="triggerAttachment_AirBattleChangeSBR" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="A0C5Bmbr"/>
@@ -51734,7 +51744,7 @@ You may <b>NOT</b> place and then Destroy on the same turn. Player Enforced.  Us
 When replacing a Heavy Major or Minor Factory with an Underground Factory, you will need to use Edit. They will replace non upgraded Factories correctly.<br>
 <br>
 <b>Russian Factories</b>.<br> 
-While the Factory can move on it's own, you will need to keep track of Rail movement usage. Player Enforced. They will auto-destroy when captured. Replace with edit if needed.<br>
+Minor Factories will Only move when at War with Germany. They require a "Rail" Unit to move. You will need to keep track of Rail movement usage. Player Enforced. They will auto-destroy when captured. Replace with edit if needed.<br>
 <br>
 You will need to use Edit to remove Airfields and Harbours. <br>
 <br>
@@ -52497,6 +52507,16 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.1696<br> 9/5/24 
+<br>
+Allow Escorts to Escort Transports when Submarines Present.<br>
+Make Russian Minor Factories Only Moveable when at War with Germany. 
+<br>
+<br>Version 2.1695<br> 8/26/24 
+<br>
+Improve Take Over Italy. Victory <br>
+Map Logo Change. Victory.
 <br>
 <br>Version 2.1694<br> 8/21/24 
 <br>
