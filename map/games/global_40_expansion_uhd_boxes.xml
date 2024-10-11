@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.1696"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.2"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -211,14 +211,14 @@
       <element name="USA_TankGeneral"/>
       <element name="UK_TankGeneral"/>
     </variable>
-	<variable name="ItalianFacilities">
+    <variable name="ItalianFacilities">
+                <element name="airfield"/>
+		<element name="harbour"/>
+		<element name="airfield_Hvy"/>
 		<element name="factory_minor"/>
 		<element name="factory_major"/>
 		<element name="UndrgroundFctry"/>
 		<element name="UndergroundMinr"/>
-		<element name="airfield"/>
-		<element name="harbour"/>
-		<element name="airfield_Hvy"/>
 		<element name="Hvy_Ind_1"/>
 		<element name="Hvy_Ind_2"/>
 		<element name="Hvy_Undg_1"/>
@@ -1796,6 +1796,12 @@
     <unit name="pacific_BB"/>
     <unit name="battleshipX"/>
     <unit name="aaGun"/>
+    <unit name="factory_major"/>
+    <unit name="UndrgroundFctry"/>
+    <unit name="Hvy_Ind_2"/>
+    <unit name="Hvy_Ind_1"/>
+    <unit name="Hvy_Undg_2"/>
+    <unit name="Hvy_Undg_1"/>
     <unit name="airfield"/>
     <unit name="airfield_Hvy"/>
     <unit name="harbour"/>
@@ -1805,8 +1811,6 @@
     <unit name="UndergroundMinr"/>
     <unit name="russian_minor"/>
     <unit name="factory_upgrade"/>
-    <unit name="factory_major"/>
-    <unit name="UndrgroundFctry"/>
     <unit name="RusUndrGrndMinr"/>
     <unit name="1_PU"/>
     <unit name="AirLL"/>
@@ -1931,10 +1935,6 @@
     <unit name="Demo_Hvy_Undg_1"/>
     <unit name="Demo_Hvy_Undg_2"/>
     <unit name="DemoRusHvy1Undg"/>
-    <unit name="Hvy_Ind_2"/>
-    <unit name="Hvy_Ind_1"/>
-    <unit name="Hvy_Undg_2"/>
-    <unit name="Hvy_Undg_1"/>
     <unit name="Rus_Hvy_Ind_1"/>
     <unit name="Rus_Hvy_Undg_1"/>
     <unit name="DemoAirfieldHvy"/>
@@ -6956,9 +6956,9 @@
     <!-- BoxFctry -->
     <attachment name="unitAttachment" attachTo="BoxFctry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isAAforBombingThisUnitOnly" value="false"/>
+      <option name="canNotMoveDuringCombatMove" value="true"/>
       <option name="canProduceUnits" value="true"/>
       <option name="canProduceXUnits" value="12"/>
-      <option name="isInfrastructure" value="true"/>
     </attachment>
     <!-- ItalyUser -->
     <attachment name="unitAttachment" attachTo="ItalyUser" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -6977,13 +6977,12 @@
     </attachment>
     <!-- Hvy Undg 1 -->
     <attachment name="unitAttachment" attachTo="Hvy_Undg_1" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="unitPlacementRestrictions" value="Ceylon:Sumatra:Java:Borneo:Hainan:Philippines:Celebes:Dutch New Guinea:Paulau Island:New Guinea:New Britain:Solomon Islands:New Hebrides:New Zealand:Fiji:Samoa:Line Islands:Johnston Island:Hawaiian Islands:Midway:Iwo Jima:Aleutian Islands:Gilbert Islands:Marshall Islands:Caroline Islands:Wake Island:Marianas:Guam:Formosa:Okinawa:West Indies:Greenland:Iceland:Sardinia:Sicily:French Madagascar:Crete:Cyprus"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany:Western Germany:Southern Italy:Northern Italy:Japan:Russia:United Kingdom:India:Union of South Africa:New South Wales"/>
       <option name="canOnlyBePlacedInTerritoryValuedAtX" value="2"/>
       <option name="isAAforBombingThisUnitOnly" value="false"/>
       <option name="canProduceUnits" value="true"/>
       <option name="canProduceXUnits" value="4"/>
       <option name="consumesUnits" value="1:UndergroundMinr"/>
-      <option name="special" value="canOnlyPlaceInOriginalTerritories"/>
       <option name="isInfrastructure" value="true"/>
       <option name="whenCapturedChangesInto" value="any:any:true:UndergroundMinr:1"/>
     </attachment>
@@ -7052,7 +7051,7 @@
     <!-- Hvy Undg 2 -->
     <attachment name="unitAttachment" attachTo="Hvy_Undg_2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isFactory" value="false"/>
-      <option name="unitPlacementRestrictions" value="Ceylon:Sumatra:Java:Borneo:Hainan:Philippines:Celebes:Dutch New Guinea:Paulau Island:New Guinea:New Britain:Solomon Islands:New Hebrides:New Zealand:Fiji:Samoa:Line Islands:Johnston Island:Hawaiian Islands:Midway:Iwo Jima:Aleutian Islands:Gilbert Islands:Marshall Islands:Caroline Islands:Wake Island:Marianas:Guam:Formosa:Okinawa:West Indies:Greenland:Iceland:Sardinia:Sicily:French Madagascar:Crete:Cyprus"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Northern Italy:United Kingdom:France:Russia:Japan:Germany:Western Germany:Eastern United States:Central United States:Western United States"/>
       <option name="canOnlyBePlacedInTerritoryValuedAtX" value="3"/>
       <option name="isAAforBombingThisUnitOnly" value="false"/>
       <option name="canProduceUnits" value="true"/>
@@ -9916,7 +9915,6 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Kiangsu" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
-      <option name="victoryCity" value="1"/>
       <option name="originalOwner" value="Chinese"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Kiangsi" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -9926,7 +9924,6 @@
     <attachment name="territoryAttachment" attachTo="Japan" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="8"/>
       <option name="capital" value="Japanese"/>
-      <option name="victoryCity" value="1"/>
       </attachment>
     <attachment name="territoryAttachment" attachTo="Jehol" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -10016,7 +10013,6 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="India" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Malaya" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
@@ -10031,7 +10027,6 @@
 				   -->
     <attachment name="territoryAttachment" attachTo="Kwangtung" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Queensland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
@@ -10051,7 +10046,6 @@
     <attachment name="territoryAttachment" attachTo="New South Wales" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="capital" value="ANZAC"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="South Australia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -10067,7 +10061,6 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Philippines" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Line Islands" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -10083,7 +10076,6 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Western United States" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="10"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Alaska" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
@@ -10096,7 +10088,6 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Hawaiian Islands" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Midway" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -10296,7 +10287,6 @@
       <option name="production" value="20"/>
       <option name="unitProduction" value="20"/>
       <option name="capital" value="Americans"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="West India" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
@@ -10335,7 +10325,6 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Egypt" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
-      <option name="victoryCity" value="1"/>
       <option name="territoryEffect" value="desert"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Union of South Africa" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -10353,7 +10342,6 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Ontario" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Scotland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
@@ -10374,7 +10362,6 @@
       <option name="production" value="6"/>
       <option name="unitProduction" value="10"/>
       <option name="capital" value="British"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Anglo Egyptian Sudan" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -10424,7 +10411,6 @@
       <option name="production" value="4"/>
       <option name="unitProduction" value="10"/>
       <option name="capital" value="French"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Tunisia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -10448,7 +10434,6 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Poland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
-      <option name="victoryCity" value="1"/>
       <option name="territoryEffect" value="forest"/>
       <option name="territoryEffect" value="city"/>
     </attachment>
@@ -10456,7 +10441,6 @@
       <option name="production" value="5"/>
       <option name="unitProduction" value="5"/>
       <option name="capital" value="Germans"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Norway" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="3"/>
@@ -10490,7 +10474,6 @@
       <option name="production" value="3"/>
       <option name="unitProduction" value="3"/>
       <option name="capital" value="Italians"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Ethiopia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -10536,7 +10519,6 @@
       <option name="production" value="3"/>
       <option name="unitProduction" value="10"/>
       <option name="capital" value="Russians"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Tambov" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -10559,7 +10541,6 @@
     <attachment name="territoryAttachment" attachTo="Volgograd" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="unitProduction" value="3"/>
-      <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Turkmenistan" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -10567,7 +10548,6 @@
     <attachment name="territoryAttachment" attachTo="Novgorod" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="unitProduction" value="3"/>
-      <option name="victoryCity" value="1"/>
       <option name="territoryEffect" value="marsh"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Caucasus" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -31430,7 +31410,7 @@
       <option name="rounds" value="1-4"/>
     </attachment>
     <attachment name="conditionAttachmentTurn3OrHigherInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="rounds" value="3-10"/>
+      <option name="rounds" value="3-+"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachmentTurn4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -32706,9 +32686,9 @@
     </attachment>
     <attachment name="triggerAttachment_SubPenLate43Place" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="placement" value="Western Germany:SubPen" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
-      <option name="notification" value="SubPenLate43Place"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenEarly44" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9"/>
@@ -32718,9 +32698,9 @@
     </attachment>
     <attachment name="triggerAttachment_SubPenEarly44Place" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9"/>
+      <option name="placement" value="Western Germany:SubPen" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
-      <option name="notification" value="SubPenEarly44Place"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenLate44" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn10"/>
@@ -32730,9 +32710,9 @@
     </attachment>
     <attachment name="triggerAttachment_SubPenLate44Place" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn10"/>
+      <option name="placement" value="Western Germany:SubPen" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
-      <option name="notification" value="SubPenLate44Place"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenLate43EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn2"/>
@@ -32742,9 +32722,9 @@
     </attachment>
     <attachment name="triggerAttachment_SubPenLate43EXP43Place" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn2"/>
+      <option name="placement" value="Western Germany:SubPen" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
-      <option name="notification" value="SubPenLate43EXP43Place"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenEarly44EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn3"/>
@@ -32754,9 +32734,9 @@
     </attachment>
     <attachment name="triggerAttachment_SubPenEarly44EXP43Place" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn3"/>
+      <option name="placement" value="Western Germany:SubPen" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
-      <option name="notification" value="SubPenEarly44EXP43Place"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenLate44EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn4"/>
@@ -32766,9 +32746,9 @@
     </attachment>
     <attachment name="triggerAttachment_SubPenLate44EXP43Place" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn4"/>
+      <option name="placement" value="Western Germany:SubPen" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
-      <option name="notification" value="SubPenLate44EXP43Place"/>
     </attachment>
     
     <attachment name="triggerAttachment_PacificIslandsNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -33148,6 +33128,7 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansNonCombatMove"/>
     </attachment>
+    
     <attachment name="triggerAttachment_RailMovementAutoPlaceRussians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_RussiansControlRussia"/>
       <option name="placement" value="Russia:Russian_Rail" count="2"/>
@@ -52558,6 +52539,17 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.2<br> 10/11/24 
+<br>
+Change Place for Facilities. Fixes Minor Factories Placement Change after Allowing them to Move.
+<br>
+<br>Version 2.17<br> 9/28/24 
+<br>
+Prevent "Box Fctry" Moving in Combat Move.<br>
+Allow Hvy Undg 1 and 2 to Place with Edit if Needed.<br>
+Have Free SubPens Auto Place in Western Germany. Use Edit to Move if Needed.<br>
+Fix Mongolians Activating after Round 10 after Japanese Attack.
 <br>
 <br>Version 2.1696<br> 9/5/24 
 <br>
