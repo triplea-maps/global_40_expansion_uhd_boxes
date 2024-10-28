@@ -958,6 +958,19 @@ https://www.axisandallies.org/forums/assets/uploads/files/1717401219557-8.g40-op
 Purchase a "Take Over Spain" Token, place in Germany in 1st place phase and Declare War on the Neutrals.<br>
 The Neutral Spainards will remove before combat and be replaced with Neutral Axis after combat.<br><br>
 Rules are Player Enforced. <br><br>
+<b>27. Waffen Panzer General</b><br>
+<br>
+<img src="WaffenPG.png"/><br><br>
+Adds The Captain's Waffen Panzer General Optional Rule.<br> 
+<br>Explained in detail here <br><br>
+https://www.axisandallies.org/forums/assets/uploads/files/1729790116957-15.waffen-ss-panzer-general.pdf
+<br>
+<br>
+Waffen Panzer General, aka WaffenPG, is available in Late 1942. It rolls 2 dice on attack and defense.<br>
+When 3 Waffen Panzers, Excluding Heavy Waffen, are present, they can form 1st Waffen Panzer Army.<br>
+All 3 Waffen Panzers will now roll two dice as well.<br><br>
+You must roll the Battle in "Edit" and select the correct casualties, as the WaffenPG rolls two dice whether active or not. You can't remove it first the way you can a Wehrmacht Panzer General to remove the bonus dice rolls to the rest of the Army.<br><br>
+Rules are Player Enforced. <br><br>
 <b>Unofficial SBR Option</b><br>
 <br>
 This is independent of the Captain and Company's Awesome House Rules, thus "Unofficial". :) 
@@ -1053,6 +1066,18 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.23<br> 10/27/24 
+<br>
+Map Fix for Finland Islands. <br>
+Add Missing Territories to Para Boost.<br>
+Add Russia_Bryansk LM.<br>
+Add "Waffen Panzer General" Rule Option. On by Default.
+<br>
+<br>Version 2.22<br> 10/18/24 
+<br>
+Map Fix for Timguska. <br>
+Shrink Changer Flag.
 <br>
 <br>Version 2.21<br> 10/11/24 
 <br>
