@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.23"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.24"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -247,7 +247,7 @@
 
   <map>
     <!-- Full europe list:
-				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Easterns Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:1st Desert:3rd Panzer:3rd Waffen:Army Group South:Army Group Centre:Army Group North:1st Waffen:1st Panzer:2nd Waffen:4th Waffen:2nd Panzer:1st Corps:1st Tank:2nd Corps:2nd Tank:3rd Corps:LM 1:LM 2:LM 3:LM 4:LM 5:LM 6:LM 7:1st Waffen Panzer:1st Army Group:2nd Army Group:UK Desert:1st UK Tank:USA Desert:1st USA Tank:2nd USA Tank:USA Army Group:Early 1940:Early 1941:Early 1942:Early 1943:Early 1944:Late 1940:Late 1941:Late 1942:Late 1943:Late 1944:D-Day:Overflow:Overflow2:Bermuda
+				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Easterns Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:1st Desert:3rd Panzer:3rd Waffen:Army Group South:Army Group Centre:Army Group North:1st Waffen:1st Panzer:2nd Waffen:4th Waffen:2nd Panzer:1st Corps:1st Tank:2nd Corps:2nd Tank:3rd Corps:LM 1:1st Waffen Panzer:Credits:1st Army Group:2nd Army Group:UK Desert:1st UK Tank:USA Desert:1st USA Tank:2nd USA Tank:USA Army Group:Early 1940:Early 1941:Early 1942:Early 1943:Early 1944:Late 1940:Late 1941:Late 1942:Late 1943:Late 1944:D-Day:Overflow:Overflow2:Bermuda
 				-->
     <!-- Border territories:
 				Evenkiyskiy:Urals:Novosibirsk:Himalayas:Kazakhstan:Timguska:India:Sikang:Tsinghai:Kansu
@@ -534,15 +534,10 @@
     <territory name="3rd Corps"/>
     <territory name="1st Tank"/>
     <territory name="2nd Tank"/>
+    <territory name="Credits"/>
     <territory name="1st Army Group"/>
     <territory name="2nd Army Group"/>
     <territory name="LM 1"/>
-    <territory name="LM 2"/>
-    <territory name="LM 3"/>
-    <territory name="LM 4"/>
-    <territory name="LM 5"/>
-    <territory name="LM 6"/>
-    <territory name="LM 7"/>
     <territory name="1st Waffen Panzer"/>
     <territory name="3rd Panzer"/>
     <territory name="3rd Waffen"/>
@@ -1504,6 +1499,7 @@
     <connection t1="1st Desert" t2="2nd Corps"/>
     <connection t1="1st Desert" t2="2nd Tank"/>
     <connection t1="1st Desert" t2="3rd Corps"/>
+    <connection t1="1st Desert" t2="Credits"/>
     <connection t1="1st Desert" t2="1st Army Group"/>
     <connection t1="1st Desert" t2="2nd Army Group"/>
     <connection t1="1st Desert" t2="UK Desert"/>
@@ -1651,6 +1647,7 @@
     <unit name="1stPanzerArmy"/>
     <unit name="2ndPanzerArmy"/>
     <unit name="3rdPanzerArmy"/>
+    <unit name="TheCaptain"/>
     <unit name="1stWaffenArmy"/>
     <unit name="1stWaffenPnzrArmy"/>
     <unit name="2ndWaffenArmy"/>
@@ -2004,6 +2001,7 @@
     <unit name="FlakTower_Damaged"/>
     <unit name="Repair_FlakTower"/>
     <unit name="HomeDefense"/>
+    <unit name="FrenchUK"/>
   </unitList>
   <relationshipTypes>
     <relationshipType name="Allied"/>
@@ -2864,6 +2862,10 @@
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="3rdPanzerArmy" quantity="1"/>
     </productionRule>
+    <productionRule name="buyTheCapatain">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="TheCaptain" quantity="1"/>
+    </productionRule>
     <productionRule name="buy1stWaffenArmy">
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="1stWaffenArmy" quantity="1"/>
@@ -3527,6 +3529,10 @@
     <productionRule name="buyHomeDefense">
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="HomeDefense" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyFrenchUK">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="FrenchUK" quantity="1"/>
     </productionRule>
     <!-- Advanced Industrial Production -->
     <!--<productionRule name="buyInfantryIndustrialTechnology">
@@ -7343,6 +7349,19 @@
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
       <option name="maxBuiltPerPlayer" value="1"/>
     </attachment>
+    <!-- French UK -->
+    <attachment name="unitAttachment" attachTo="FrenchUK" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="isSuicideOnAttack" value="true"/>
+      <option name="isSuicideOnDefense" value="true"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="FrnchUK"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+      <option name="maxConstructionsPerTypePerTerr" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+    </attachment>
     <!-- aaGunNO -->
     <attachment name="unitAttachment" attachTo="aaGunNO" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
@@ -7970,6 +7989,23 @@
       <option name="isLandTransportable" value="true"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
+      <option name="transportCost" value="1"/>
+      <option name="isAirTransportable" value="false"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
+    </attachment>
+    <!-- The Capatain -->
+    <attachment name="unitAttachment" attachTo="TheCaptain" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="canNotMoveDuringCombatMove" value="false"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="attack" value="6"/>
+      <option name="defense" value="6"/>
+      <option name="attackRolls" value="4"/>
+      <option name="defenseRolls" value="4"/>
       <option name="transportCost" value="1"/>
       <option name="isAirTransportable" value="false"/>
       <option name="isConstruction" value="true"/>
@@ -10691,6 +10727,9 @@
     <attachment name="territoryAttachment" attachTo="2nd Tank" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
+    <attachment name="territoryAttachment" attachTo="Credits" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
     <attachment name="territoryAttachment" attachTo="1st Army Group" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
@@ -10698,24 +10737,6 @@
       <option name="production" value="0"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="LM 1" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
-      <option name="production" value="0"/>
-    </attachment>
-    <attachment name="territoryAttachment" attachTo="LM 2" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
-      <option name="production" value="0"/>
-    </attachment>
-    <attachment name="territoryAttachment" attachTo="LM 3" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
-      <option name="production" value="0"/>
-    </attachment>
-    <attachment name="territoryAttachment" attachTo="LM 4" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
-      <option name="production" value="0"/>
-    </attachment>
-    <attachment name="territoryAttachment" attachTo="LM 5" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
-      <option name="production" value="0"/>
-    </attachment>
-    <attachment name="territoryAttachment" attachTo="LM 6" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
-      <option name="production" value="0"/>
-    </attachment>
-    <attachment name="territoryAttachment" attachTo="LM 7" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="1st Waffen Panzer" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -15669,6 +15690,9 @@
     </attachment>
     <attachment name="FlakTower" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="FlakTower"/>
+    </attachment>
+    <attachment name="FrenchInUK" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="French In UK"/>
     </attachment>
     <attachment name="NeutralNations" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Strict Neutral Nations"/>
@@ -28818,6 +28842,14 @@
       <option name="invert" value="true"/>
       <option name="unitPresence" value="ANY" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_French_have_units_in_UK" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+      <option name="unitPresence" value="infantry" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachment_French_have_units_in_UKfighter" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+      <option name="unitPresence" value="fighter" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_ANZAC_have_units_in_Russia" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Evenkiyskiy:Urals:Novosibirsk:Kazakhstan:Timguska:Sakha:Yenisey:Soviet Far East:Amur:Yakut S.S.R.:Siberia:Buryatia" count="1"/>
       <option name="invert" value="true"/>
@@ -30124,6 +30156,11 @@
     <attachment name="conditionAttachment_British_LendLeaseFeeNavy" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="original" count="1"/>
       <option name="unitPresence" value="NavyLL" count="1"/>
+    </attachment>
+
+    <attachment name="conditionAttachmentFrenchTurnUK" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
+      <option name="unitPresence" value="FrenchUK" count="1"/>
     </attachment>
     
     <!-- British Conditions Okinawa -->
@@ -31997,6 +32034,11 @@
       <option name="placement" value="3rd Panzer:BoxFctry" count="1"/>
       <option name="when" value="after:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachmenCredits" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="placement" value="Credits:TheCaptain" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     <attachment name="triggerAttachmen1stWaffenArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert"/>
       <option name="placement" value="1st Waffen:1stWaffenArmy" count="1"/>
@@ -32796,6 +32838,19 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_FrenchUK" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="FrenchInUK:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn5"/>
+      <option name="productionRule" value="productionBritish:buyFrenchUK"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_FrenchUK43" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="FrenchInUK:BasicEXPInvert:EXP43:conditionAttachmentTurn1"/>
+      <option name="productionRule" value="productionBritish:buyFrenchUK"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    
     <attachment name="triggerAttachment_SubPen" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn1"/>
       <option name="productionRule" value="productionGermans:buySubPen"/>
@@ -50531,15 +50586,10 @@
       <territoryOwner territory="3rd Corps" owner="Russians"/>
       <territoryOwner territory="1st Tank" owner="Russians"/>
       <territoryOwner territory="2nd Tank" owner="Russians"/>
+      <territoryOwner territory="Credits" owner="Changer"/>
       <territoryOwner territory="1st Army Group" owner="Russians"/>
       <territoryOwner territory="2nd Army Group" owner="Russians"/>
       <territoryOwner territory="LM 1" owner="Changer"/>
-      <territoryOwner territory="LM 2" owner="Changer"/>
-      <territoryOwner territory="LM 3" owner="Changer"/>
-      <territoryOwner territory="LM 4" owner="Changer"/>
-      <territoryOwner territory="LM 5" owner="Changer"/>
-      <territoryOwner territory="LM 6" owner="Changer"/>
-      <territoryOwner territory="LM 7" owner="Changer"/>
       <territoryOwner territory="1st Waffen Panzer" owner="Germans"/>
       <territoryOwner territory="Overflow" owner="Changer"/>
       <territoryOwner territory="Overflow2" owner="Changer"/>
@@ -51577,6 +51627,9 @@
       <boolean/>
       </property>
       <property name="Waffen Panzer General" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="French In UK" value="true" editable="true">
       <boolean/>
       </property>
       <property name="Triplea Landmines" value="false" editable="true">
