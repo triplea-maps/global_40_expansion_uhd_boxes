@@ -971,6 +971,17 @@ When 3 Waffen Panzers, Excluding Heavy Waffen, are present, they can form 1st Wa
 All 3 Waffen Panzers will now roll two dice as well.<br><br>
 You must roll the Battle in "Edit" and select the correct casualties, as the WaffenPG rolls two dice whether active or not. You can't remove it first the way you can a Wehrmacht Panzer General to remove the bonus dice rolls to the rest of the Army.<br><br>
 Rules are Player Enforced. <br><br>
+<b>28. French Units in UK</b><br>
+<br>
+<img src="FrenchUK.png"/><br><br>
+Adds The Captain's French Units in UK.<br> 
+<br>Explained in detail here <br><br>
+https://www.axisandallies.org/forums/assets/uploads/files/1730303458835-20.french-units-in-uk.pdf
+<br>
+<br>
+It is available in Early 1942. Purchase the Unit and then place in 1st Place Phase. <br>
+You will need to then use Edit to change the units to UK control<br><br>
+Rules are Player Enforced. <br><br>
 <b>Unofficial SBR Option</b><br>
 <br>
 This is independent of the Captain and Company's Awesome House Rules, thus "Unofficial". :) 
@@ -1066,6 +1077,12 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.24<br> 11/3/24 
+<br>
+Version 2.24<br> Will Not Work with 2.22 or Earlier Version Saves.<br><br>
+Add French Units in United Kingdom.<br>
+Remove Landmine Boxes.
 <br>
 <br>Version 2.23<br> 10/27/24 
 <br>
