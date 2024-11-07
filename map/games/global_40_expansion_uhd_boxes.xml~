@@ -7357,7 +7357,7 @@
       <option name="isSuicideOnAttack" value="true"/>
       <option name="isSuicideOnDefense" value="true"/>
       <option name="isConstruction" value="true"/>
-      <option name="constructionType" value="HD"/>
+      <option name="constructionType" value="FrnchUK"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
       <option name="maxBuiltPerPlayer" value="1"/>
@@ -32839,13 +32839,13 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_FrenchUK" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="FrenchInUK:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn5:conditionAttachment_French_have_units_in_UK:conditionAttachment_French_have_units_in_UKfighter"/>
+      <option name="conditions" value="FrenchInUK:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn5"/>
       <option name="productionRule" value="productionBritish:buyFrenchUK"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_FrenchUK43" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="FrenchInUK:BasicEXPInvert:EXP43:conditionAttachmentTurn1:conditionAttachment_French_have_units_in_UK:conditionAttachment_French_have_units_in_UKfighter"/>
+      <option name="conditions" value="FrenchInUK:BasicEXPInvert:EXP43:conditionAttachmentTurn1"/>
       <option name="productionRule" value="productionBritish:buyFrenchUK"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
