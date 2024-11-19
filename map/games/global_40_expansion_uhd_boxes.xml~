@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.24"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.25"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1887,6 +1887,9 @@
     <unit name="R_mine_NOVGO_127"/>
     <unit name="R_mine_ARCH_NOVGO"/>
     <unit name="R_mine_ARCH_Belarus"/>
+    <unit name="R_mine_EPOL_POL"/>
+    <unit name="R_mine_EPOL_SLOVAK"/>
+    <unit name="R_mine_EPOL_ROM"/>
     <unit name="russian_mine_Red"/>
     <unit name="russian_mine_Blue"/>
     <unit name="russian_mine_Orange"/>
@@ -3085,6 +3088,18 @@
     <productionRule name="buyR_mine_ARCH_Belarus">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="R_mine_ARCH_Belarus" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyR_mine_EPOL_POL">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="R_mine_EPOL_POL" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyR_mine_EPOL_SLOVAK">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="R_mine_EPOL_SLOVAK" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyR_mine_EPOL_ROM">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="R_mine_EPOL_ROM" quantity="1"/>
     </productionRule>
     <productionRule name="buyRussian_Mine_Red">
       <cost resource="PUs" quantity="0"/>
@@ -9247,6 +9262,36 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
     </attachment>
+    <!-- R Mine EPOL POL -->
+    <attachment name="unitAttachment" attachTo="R_mine_EPOL_POL" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- R Mine EPOL SLOVAK -->
+    <attachment name="unitAttachment" attachTo="R_mine_EPOL_SLOVAK" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- R Mine EPOL ROM -->
+    <attachment name="unitAttachment" attachTo="R_mine_EPOL_ROM" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
     <!-- UK Mine India Burma -->
     <attachment name="unitAttachment" attachTo="uk_mine_India_Burma" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="attack" value="0"/>
@@ -9890,6 +9935,7 @@
     <attachment name="unitAttachment" attachTo="Escort" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
       <option name="isSea" value="true"/>
+      <option name="isCombatTransport" value="true"/>
       <option name="transportCapacity" value="1"/>
       <option name="attack" value="1"/>
       <option name="defense" value="2"/>

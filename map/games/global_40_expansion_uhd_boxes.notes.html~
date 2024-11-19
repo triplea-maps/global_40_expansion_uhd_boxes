@@ -786,6 +786,7 @@ If part of a multi Vessel Attack, they will work correctly.<br>
 <br>
 <b>14. Heavy Bombers</b><br>
 <br>
+<img src="German_Hvy_Bmbr.png"/> <br><br>
 Infrastructure AA will still Fire at them. Regular combat won't. Use Edit to correct if needed.
 <br>
 <br>
@@ -1077,6 +1078,19 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.26<br> 11/18/24 
+<br>
+Version 2.26<br> Will Not Work with 2.22 or Earlier Version Saves.<br><br>
+Fix Tactical Bomber PG and TG Not Getting Bonus Movement from Airfields.<br>
+Add German Landmines for Poland.<br>
+Add More Landmines for Russia.
+<br>
+<br>Version 2.25<br> 11/7/24 
+<br>
+Version 2.25<br> Will Not Work with 2.22 or Earlier Version Saves.<br><br>
+Fix Escort Not Negating Italian No Ships in Med Objective.<br>
+Add LMs fo Russia EPOL_POL, EPOL_SLOVAK and EPOL_ROM.
 <br>
 <br>Version 2.24<br> 11/3/24 
 <br>
