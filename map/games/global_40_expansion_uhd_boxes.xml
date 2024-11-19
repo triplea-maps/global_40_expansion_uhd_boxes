@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.25"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.26"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1855,6 +1855,9 @@
     <unit name="G_mine_WGER_DEN"/>
     <unit name="G_mine_WGER_FRA"/>
     <unit name="G_mine_WGER_HOL"/>
+    <unit name="G_mine_POL_EPOL"/>
+    <unit name="G_mine_POL_SLOVAK"/>
+    <unit name="G_mine_POL_BALT"/>
     <unit name="german_mine_Red"/>
     <unit name="german_mine_Blue"/>
     <unit name="german_mine_Orange"/>
@@ -1862,6 +1865,9 @@
     <unit name="german_mine_Yellow"/>
     <unit name="russian_mine"/>
     <unit name="R_mine_Russia_Bryansk"/>
+    <unit name="R_mine_Russia_Smolensk"/>
+    <unit name="R_mine_Russia_Tambov"/>
+    <unit name="R_mine_Russia_VOLOG"/>
     <unit name="R_mine_WUKR_EPOL"/>
     <unit name="R_mine_WUKR_BESS"/>
     <unit name="R_mine_Belarus_EPOL"/>
@@ -7190,6 +7196,8 @@
       <option name="givesMovement" value="1:tactical_bomber"/>
       <option name="givesMovement" value="1:usa_tactical_bomber"/>
       <option name="givesMovement" value="1:uk_tactical_bomber"/>
+      <option name="givesMovement" value="1:tactical_bomberPG"/>
+      <option name="givesMovement" value="1:tactical_bomberTG"/>
       <option name="givesMovement" value="1:air_transport"/>
       <option name="givesMovement" value="1:G_air_transport"/>
       <option name="givesMovement" value="1:Me_262"/>
@@ -7241,6 +7249,8 @@
       <option name="givesMovement" value="1:tactical_bomber"/>
       <option name="givesMovement" value="1:usa_tactical_bomber"/>
       <option name="givesMovement" value="1:uk_tactical_bomber"/>
+      <option name="givesMovement" value="1:tactical_bomberPG"/>
+      <option name="givesMovement" value="1:tactical_bomberTG"/>
       <option name="givesMovement" value="1:air_transport"/>
       <option name="givesMovement" value="1:G_air_transport"/>
       <option name="givesMovement" value="1:Me_262"/>
@@ -8519,6 +8529,36 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
     </attachment>
+    <!-- G Mine POL EPOL -->
+    <attachment name="unitAttachment" attachTo="G_mine_POL_EPOL" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- G Mine POL BALT -->
+    <attachment name="unitAttachment" attachTo="G_mine_POL_BALT" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- G Mine POL SLOVAK -->
+    <attachment name="unitAttachment" attachTo="G_mine_POL_SLOVAK" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
     <!-- German Mine Red-->
     <attachment name="unitAttachment" attachTo="german_mine_Red" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="attack" value="0"/>
@@ -9004,6 +9044,36 @@
     </attachment>
     <!-- R Mine Russia Bryansk -->
     <attachment name="unitAttachment" attachTo="R_mine_Russia_Bryansk" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- R Mine Russia Smolensk -->
+    <attachment name="unitAttachment" attachTo="R_mine_Russia_Smolensk" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- R Mine Russia Tambov -->
+    <attachment name="unitAttachment" attachTo="R_mine_Russia_Tambov" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- R Mine Russia VOLOG -->
+    <attachment name="unitAttachment" attachTo="R_mine_Russia_VOLOG" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="consumesUnits" value="1:mine_unarmed"/>
