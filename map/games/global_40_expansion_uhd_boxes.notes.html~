@@ -1018,6 +1018,19 @@ https://www.axisandallies.org/forums/assets/uploads/files/1730303458835-20.frenc
 It is available in Early 1942. Purchase the Unit and then place in 1st Place Phase. <br>
 You will need to then use Edit to change the units to UK control<br><br>
 Rules are Player Enforced. <br><br>
+<b>29. Tank Destroyers</b><br>
+<br>
+<img src="PanzerJagerFS.png"/><br><br>
+<br>Explained in detail here <br><br>
+https://www.axisandallies.org/forums/assets/uploads/files/1733937595643-18.tank-destroyer-amp-panzer-j%C3%A4ger.pdf
+<br>
+<br>
+The Units for purchase will have the First Strike ability. They work correctly. <br>
+If more than one Tank Destroyer is in a territory, you will need to edit in a TD without the FS ability.<br><br>
+<img src="PanzerJager.png"/><br><br>
+For Waffen Armies and Commisar Corps, you will need to edit in a "FS2" unit.<br><br>
+<img src="TankDestroyerFS2.png"/><br><br>
+Rules are Player Enforced. <br><br>
 <b>Unofficial SBR Option</b><br>
 <br>
 This is independent of the Captain and Company's Awesome House Rules, thus "Unofficial". :) 
@@ -1114,13 +1127,14 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 2.27<br> 12/15/24 
+<br>Version 2.27<br> 12/16/24 
 <br>
 Version 2.27<br> Will Not Work with 2.22 or Earlier Version Saves.<br><br>
 Update Game Notes.<br>
 Adjust Home Defense.<br>
 Fix 4 Sea Zone Escorts Not Changing Correctly.<br>
-Allow German Total War Units to be Built in Northern and Southern Italy.
+Allow German Total War Units to be Built in Northern and Southern Italy.<br>
+Add Tank Destroyers.
 <br>
 <br>Version 2.26<br> 11/19/24 
 <br>
