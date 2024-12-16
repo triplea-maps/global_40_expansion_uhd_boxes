@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.27"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.28"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -5144,12 +5144,6 @@
       <!--<option name="artillerySupportable" value="false"/>-->
       <option name="isAirTransportable" value="true"/>
       <option name="maxBuiltPerPlayer" value="2"/>
-      <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
-      <option name="consumesUnits" value="1:PanzerJager"/>
-      <option name="isConstruction" value="true"/>
-      <option name="constructionType" value="waffenPanzerJager"/>
-      <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
-      <option name="maxConstructionsPerTypePerTerr" value="2"/>
     </attachment>
     <!-- WaffenPnzrJagerFS -->
     <attachment name="unitAttachment" attachTo="WaffenPnzrJagerFS" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -5171,7 +5165,7 @@
       <option name="isAirTransportable" value="true"/>
       <option name="maxBuiltPerPlayer" value="2"/>
       <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
-      <option name="consumesUnits" value="1:PanzerJager"/>
+      <option name="consumesUnits" value="1:PanzerJagerFS"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="waffenPanzerJagerFS"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="2"/>

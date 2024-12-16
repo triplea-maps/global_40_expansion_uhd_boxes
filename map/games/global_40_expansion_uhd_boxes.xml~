@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.272"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.27"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1691,7 +1691,11 @@
     <unit name="WaffenPnzrJager"/>
     <unit name="WaffenPnzrJagerFS"/>
     <unit name="WaffenPnzrJagerFS2"/>
+    <unit name="USATankDestroyerFS"/>
+    <unit name="USATankDestroyer"/>
     <unit name="TankDestroyerFS"/>
+    <unit name="TankDestroyerFS2"/>
+    <unit name="TankDestroyer"/>
     <unit name="russian_para"/>
     <unit name="russian_paraBoost"/>
     <unit name="japanese_para"/>
@@ -1983,6 +1987,7 @@
     <unit name="Soviet_Commisar_2"/>
     <unit name="Soviet_Commisar_3"/>
     <unit name="Soviet_Commisar_A2D3"/>
+    <unit name="Soviet_Commisar_4"/>
     <unit name="Soviet_Partisan"/>
     <unit name="Volkssturm"/>
     <unit name="Me_262"/>
@@ -2307,9 +2312,25 @@
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="WaffenPnzrJagerFS2" quantity="1"/>
     </productionRule>
+    <productionRule name="buyUSATankDestroyerFS">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="USATankDestroyerFS" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSATankDestroyer">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="USATankDestroyer" quantity="1"/>
+    </productionRule>
     <productionRule name="buyTankDestroyerFS">
       <cost resource="PUs" quantity="5"/>
       <result resourceOrUnit="TankDestroyerFS" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyTankDestroyerFS2">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="TankDestroyerFS2" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyTankDestroyer">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="TankDestroyer" quantity="1"/>
     </productionRule>
     <productionRule name="buyWaffen_Para">
       <cost resource="PUs" quantity="2"/>
@@ -3469,6 +3490,10 @@
     <productionRule name="buySoviet_Commisar_3">
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="Soviet_Commisar_3" quantity="1"/>
+    </productionRule>
+    <productionRule name="buySoviet_Commisar_4">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="Soviet_Commisar_4" quantity="1"/>
     </productionRule>
     <productionRule name="buySoviet_Commisar_A2D3">
       <cost resource="PUs" quantity="0"/>
@@ -5141,7 +5166,7 @@
       <option name="AttackAAmaxDieSides" value="6"/>
       <option name="mayOverStackAA" value="false"/>
       <option name="maxAAattacks" value="3"/>
-      <option name="targetsAA" value="armour:mech_infantry:ArmoredInfantry:usa_armour:uk_armour:USA_TankGeneral:USA_DesertGeneral:UK_TankGeneral:UK_DesertGeneral"/>
+      <option name="targetsAA" value="armour:mech_infantry:ArmoredInfantry:usa_armour:uk_armour:USA_TankGeneral:USA_DesertGeneral:UK_TankGeneral:UK_DesertGeneral:TankDestroyer:TankDestroyerFS:TankDestroyerFS2:USATankDestroyer:USATankDestroyerFS"/>
       <option name="typeAA" value="WaffenPnzrJagerFirstStrike"/>
       <option name="isAirTransportable" value="true"/>
       <option name="maxBuiltPerPlayer" value="2"/>
@@ -5167,7 +5192,7 @@
       <option name="AttackAAmaxDieSides" value="6"/>
       <option name="mayOverStackAA" value="false"/>
       <option name="maxAAattacks" value="2"/>
-      <option name="targetsAA" value="armour:mech_infantry:ArmoredInfantry:usa_armour:uk_armour:USA_TankGeneral:USA_DesertGeneral:UK_TankGeneral:UK_DesertGeneral"/>
+      <option name="targetsAA" value="armour:mech_infantry:ArmoredInfantry:usa_armour:uk_armour:USA_TankGeneral:USA_DesertGeneral:UK_TankGeneral:UK_DesertGeneral:TankDestroyer:TankDestroyerFS:TankDestroyerFS2:USATankDestroyer:USATankDestroyerFS"/>
       <option name="typeAA" value="WaffenPnzrJagerFirstStrike2FS2"/>
       <option name="isAirTransportable" value="true"/>
       <option name="maxBuiltPerPlayer" value="2"/>
@@ -5192,8 +5217,61 @@
       <option name="mayOverStackAA" value="false"/>
       <option name="maxAAattacks" value="3"/>
       <option name="targetsAA" value="armour:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:PanzerJager:PanzerJagerFS:WaffenPnzrJager:WaffenPnzrJagerFS:WaffenPnzrJagerFS2:Panzer_General:DesertGeneral"/>
-      <option name="typeAA" value="PanzerJagerFirstStrike"/>
-      <option name="isAirTransportable" value="true"/>
+      <option name="typeAA" value="TankDestroyerFirstStrike"/>
+      <option name="maxBuiltPerPlayer" value="2"/>  
+    </attachment>
+    <!-- TankDestroyerFS2 -->
+    <attachment name="unitAttachment" attachTo="TankDestroyerFS2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="4"/>
+      <option name="canBlitz" value="true"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="AttackAA" value="1"/>
+      <option name="AttackAAmaxDieSides" value="6"/>
+      <option name="mayOverStackAA" value="false"/>
+      <option name="maxAAattacks" value="2"/>
+      <option name="targetsAA" value="armour:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:PanzerJager:PanzerJagerFS:WaffenPnzrJager:WaffenPnzrJagerFS:WaffenPnzrJagerFS2:Panzer_General:DesertGeneral"/>
+      <option name="typeAA" value="TankDestroyerFirstStrike2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>  
+    </attachment>
+    <!-- TankDestroyer -->
+    <attachment name="unitAttachment" attachTo="TankDestroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="4"/>
+      <option name="canBlitz" value="true"/>
+      <option name="maxBuiltPerPlayer" value="2"/>  
+    </attachment>
+    <!-- USATankDestroyerFS -->
+    <attachment name="unitAttachment" attachTo="USATankDestroyerFS" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="4"/>
+      <option name="canBlitz" value="true"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="AttackAA" value="1"/>
+      <option name="AttackAAmaxDieSides" value="6"/>
+      <option name="mayOverStackAA" value="false"/>
+      <option name="maxAAattacks" value="3"/>
+      <option name="targetsAA" value="armour:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:PanzerJager:PanzerJagerFS:WaffenPnzrJager:WaffenPnzrJagerFS:WaffenPnzrJagerFS2:Panzer_General:DesertGeneral"/>
+      <option name="typeAA" value="USATankDestroyerFirstStrike"/>
+      <option name="maxBuiltPerPlayer" value="2"/>  
+    </attachment>
+    <!-- USATankDestroyer -->
+    <attachment name="unitAttachment" attachTo="USATankDestroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="4"/>
+      <option name="canBlitz" value="true"/>
       <option name="maxBuiltPerPlayer" value="2"/>  
     </attachment>
     <!-- Russian Para -->
@@ -5925,6 +6003,16 @@
     </attachment>
     <!-- Soviet Commisar 3 -->
     <attachment name="unitAttachment" attachTo="Soviet_Commisar_3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="3"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+    </attachment>
+    <!-- Soviet Commisar 4 -->
+    <attachment name="unitAttachment" attachTo="Soviet_Commisar_4" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
       <option name="isLandTransportable" value="true"/>
       <option name="attack" value="2"/>
@@ -12271,7 +12359,7 @@
     <!-- Support Attachment Commisar 2 Ends -->
 
     <!-- Support Attachment Commisar3 -->
-    <attachment name="supportAttachmentSoviet_Commisar_2SupportedAttackTank" attachTo="armour" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+    <attachment name="supportAttachmentSoviet_Commisar_3SupportedAttackTank" attachTo="armour" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="Soviet_Commisar_3"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
@@ -12315,6 +12403,52 @@
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <!-- Support Attachment Commisar 3 Ends -->
+
+    <!-- Support Attachment Commisar4 -->
+    <attachment name="supportAttachmentSoviet_Commisar_4SupportedAttackTankDestroyerFS2" attachTo="TankDestroyerFS2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Soviet_Commisar_4"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Soviet_Commisar_4Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentSoviet_Commisar_4SupportedDefenseTank" attachTo="TankDestroyerFS2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Soviet_Commisar_4"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Soviet_Commisar_4SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+
+    <attachment name="supportAttachmentSoviet_Commisar_4AttackSupportSovietA4Units" attachTo="Soviet_Commisar_4" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="TankDestroyerFS2"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Soviet_Commisar_4_bonus"/>
+      <option name="impArtTech" value="true"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentSoviet_Commisar_4DefenseSupportSovietA4Units" attachTo="Soviet_Commisar_4" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="TankDestroyerFS2"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Soviet_Commisar_4_bonusDefense"/>
+      <option name="impArtTech" value="true"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment Commisar 4 Ends -->
     
     <attachment name="supportAttachmentFortification" attachTo="Fortification" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="infantry"/>
@@ -16115,7 +16249,7 @@
 <!-- This should check for all land and air unit that can aid -->
 <attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_Help_@ParaBoost@" attachTo="Germans" javaClass="RulesAttachment" type="player">
    <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
-   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:german_paraBoost" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:USATankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:german_paraBoost" count="1"/>
    <option name="invert" value="true"/>
 </attachment>
 <attachment foreach="$ParaBoost$" name="conditionAttachmentRussiansParaBoost@ParaBoost@" attachTo="Russians" javaClass="RulesAttachment" type="player">
@@ -16137,7 +16271,7 @@
 <!-- This should check for all land and air unit that can aid -->
 <attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpJapanese_@ParaBoost@" attachTo="Japanese" javaClass="RulesAttachment" type="player">
    <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
-   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:japanese_paraBoost" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:USATankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:japanese_paraBoost" count="1"/>
    <option name="invert" value="true"/>
 </attachment>
 <attachment foreach="$ParaBoost$" name="conditionAttachmentAmericansParaBoost@ParaBoost@" attachTo="Americans" javaClass="RulesAttachment" type="player">
@@ -16170,7 +16304,7 @@
 <!-- This should check for all land and air unit that can aid -->
 <attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpItalians_@ParaBoost@" attachTo="Italians" javaClass="RulesAttachment" type="player">
    <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
-   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:italian_paraBoost" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:USATankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:italian_paraBoost" count="1"/>
    <option name="invert" value="true"/>
 </attachment>
 
@@ -34172,6 +34306,54 @@
       <option name="notification" value="WaffenPnzrJagerFS"/>
     </attachment>
     <!-- German Panzer Jagers End -->
+
+    <!-- Russian Tank Destroyers --> 
+    <attachment name="triggerAttachmentTankDestroyerFS" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
+      <option name="productionRule" value="productionRussians:buyTankDestroyerFS"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:russiansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentTankDestroyerFSNotification" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:russiansPurchase"/>
+      <option name="notification" value="TankDestroyerFS"/>
+    </attachment>
+    <attachment name="triggerAttachmentTankDestroyerFSEXP43" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43:conditionAttachmentTurn2OrHigher"/>
+      <option name="productionRule" value="productionRussians:buyTankDestroyerFS"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:russiansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentTankDestroyerFSNotificationEXP43" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43:conditionAttachmentTurn2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:russiansPurchase"/>
+      <option name="notification" value="TankDestroyerFS"/>
+    </attachment>
+    <!-- Russian Tank Destroyers End -->
+
+    <!-- USA Tank Destroyers --> 
+    <attachment name="triggerAttachmentUSATankDestroyerFS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn6OrHigher"/>
+      <option name="productionRule" value="productionAmericans:buyUSATankDestroyerFS"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:americansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentUSATankDestroyerFSNotification" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn6"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:americansPurchase"/>
+      <option name="notification" value="USATankDestroyerFS"/>
+    </attachment>
+    <attachment name="triggerAttachmentUSATankDestroyerFSEXP43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher"/>
+      <option name="productionRule" value="productionAmericans:buyUSATankDestroyerFS"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:americansPurchase"/>
+    </attachment>
+    <!-- USA Tank Destroyers End -->
     
     <attachment name="triggerAttachment_USA_Hvy_Bomber" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
