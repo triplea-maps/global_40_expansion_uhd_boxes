@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.26"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.27"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1676,6 +1676,7 @@
     <unit name="Waffen_Oberst_2"/>
     <unit name="Waffen_Oberst_3"/>
     <unit name="Waffen_Oberst_4"/>
+    <unit name="Waffen_Oberst_5"/>
     <unit name="guard_infantry"/>
     <unit name="commando"/>
     <unit name="marine"/>
@@ -1685,6 +1686,16 @@
     <unit name="german_para"/>
     <unit name="german_paraBoost"/>
     <unit name="Waffen_Para"/>
+    <unit name="PanzerJager"/>
+    <unit name="PanzerJagerFS"/>
+    <unit name="WaffenPnzrJager"/>
+    <unit name="WaffenPnzrJagerFS"/>
+    <unit name="WaffenPnzrJagerFS2"/>
+    <unit name="USATankDestroyerFS"/>
+    <unit name="USATankDestroyer"/>
+    <unit name="TankDestroyerFS"/>
+    <unit name="TankDestroyerFS2"/>
+    <unit name="TankDestroyer"/>
     <unit name="russian_para"/>
     <unit name="russian_paraBoost"/>
     <unit name="japanese_para"/>
@@ -1976,6 +1987,7 @@
     <unit name="Soviet_Commisar_2"/>
     <unit name="Soviet_Commisar_3"/>
     <unit name="Soviet_Commisar_A2D3"/>
+    <unit name="Soviet_Commisar_4"/>
     <unit name="Soviet_Partisan"/>
     <unit name="Volkssturm"/>
     <unit name="Me_262"/>
@@ -2244,6 +2256,10 @@
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="Waffen_Oberst_4" quantity="1"/>
     </productionRule>
+    <productionRule name="buyWaffen_Oberst_5">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="Waffen_Oberst_5" quantity="1"/>
+    </productionRule>
     <productionRule name="buyGuard_Infantry">
       <cost resource="PUs" quantity="10"/>
       <result resourceOrUnit="guard_infantry" quantity="3"/>
@@ -2275,6 +2291,46 @@
     <productionRule name="buyGerman_ParaBoost">
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="german_paraBoost" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyPanzerJagerFS">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="PanzerJagerFS" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyPanzerJager">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="PanzerJager" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyWaffenPnzrJager">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="WaffenPnzrJager" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyWaffenPnzrJagerFS">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="WaffenPnzrJagerFS" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyWaffenPnzrJagerFS2">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="WaffenPnzrJagerFS2" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSATankDestroyerFS">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="USATankDestroyerFS" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSATankDestroyer">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="USATankDestroyer" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyTankDestroyerFS">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="TankDestroyerFS" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyTankDestroyerFS2">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="TankDestroyerFS2" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyTankDestroyer">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="TankDestroyer" quantity="1"/>
     </productionRule>
     <productionRule name="buyWaffen_Para">
       <cost resource="PUs" quantity="2"/>
@@ -3434,6 +3490,10 @@
     <productionRule name="buySoviet_Commisar_3">
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="Soviet_Commisar_3" quantity="1"/>
+    </productionRule>
+    <productionRule name="buySoviet_Commisar_4">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="Soviet_Commisar_4" quantity="1"/>
     </productionRule>
     <productionRule name="buySoviet_Commisar_A2D3">
       <cost resource="PUs" quantity="0"/>
@@ -4839,6 +4899,24 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
       <option name="maxConstructionsPerTypePerTerr" value="4"/>
     </attachment>
+    <!-- Waffen Oberst 5 -->
+    <attachment name="unitAttachment" attachTo="Waffen_Oberst_5" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="4"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <!--<option name="artillerySupportable" value="true"/>-->
+      <option name="consumesUnits" value="1:waffen_infantry"/>
+      <option name="maxBuiltPerPlayer" value="4"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="Waffen_Oberst_5"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
+      <option name="maxConstructionsPerTypePerTerr" value="4"/>
+    </attachment>
     <!-- Guard Infantry -->
     <attachment name="unitAttachment" attachTo="guard_infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
@@ -5024,6 +5102,177 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
       <option name="maxBuiltPerPlayer" value="20"/>
+    </attachment>
+    <!-- PanzerJager -->
+    <attachment name="unitAttachment" attachTo="PanzerJager" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="4"/>
+      <option name="canBlitz" value="true"/>
+      <!--<option name="artillerySupportable" value="false"/>-->
+      <option name="isAirTransportable" value="true"/>
+      <option name="maxBuiltPerPlayer" value="6"/>
+    </attachment>
+    <!-- PanzerJagerFS -->
+    <attachment name="unitAttachment" attachTo="PanzerJagerFS" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="4"/>
+      <option name="canBlitz" value="true"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="AttackAA" value="1"/>
+      <option name="AttackAAmaxDieSides" value="6"/>
+      <option name="mayOverStackAA" value="false"/>
+      <option name="maxAAattacks" value="3"/>
+      <option name="targetsAA" value="armour:mech_infantry:ArmoredInfantry:usa_armour:uk_armour:USA_TankGeneral:USA_DesertGeneral:UK_TankGeneral:UK_DesertGeneral"/>
+      <option name="typeAA" value="PanzerJagerFirstStrike"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="maxBuiltPerPlayer" value="4"/>  
+    </attachment>
+    <!-- WaffenPnzrJager -->
+    <attachment name="unitAttachment" attachTo="WaffenPnzrJager" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="5"/>
+      <option name="canBlitz" value="true"/>
+      <!--<option name="artillerySupportable" value="false"/>-->
+      <option name="isAirTransportable" value="true"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
+      <option name="consumesUnits" value="1:PanzerJager"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="waffenPanzerJager"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+    </attachment>
+    <!-- WaffenPnzrJagerFS -->
+    <attachment name="unitAttachment" attachTo="WaffenPnzrJagerFS" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="5"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="canBlitz" value="true"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="AttackAA" value="2"/>
+      <option name="AttackAAmaxDieSides" value="6"/>
+      <option name="mayOverStackAA" value="false"/>
+      <option name="maxAAattacks" value="3"/>
+      <option name="targetsAA" value="armour:mech_infantry:ArmoredInfantry:usa_armour:uk_armour:USA_TankGeneral:USA_DesertGeneral:UK_TankGeneral:UK_DesertGeneral:TankDestroyer:TankDestroyerFS:TankDestroyerFS2:USATankDestroyer:USATankDestroyerFS"/>
+      <option name="typeAA" value="WaffenPnzrJagerFirstStrike"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
+      <option name="consumesUnits" value="1:PanzerJager"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="waffenPanzerJagerFS"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+    </attachment>
+    <!-- WaffenPnzrJagerFS2 -->
+    <attachment name="unitAttachment" attachTo="WaffenPnzrJagerFS2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="5"/>
+      <option name="attackRolls" value="1"/>
+      <option name="defenseRolls" value="1"/>
+      <option name="canBlitz" value="true"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="AttackAA" value="2"/>
+      <option name="AttackAAmaxDieSides" value="6"/>
+      <option name="mayOverStackAA" value="false"/>
+      <option name="maxAAattacks" value="2"/>
+      <option name="targetsAA" value="armour:mech_infantry:ArmoredInfantry:usa_armour:uk_armour:USA_TankGeneral:USA_DesertGeneral:UK_TankGeneral:UK_DesertGeneral:TankDestroyer:TankDestroyerFS:TankDestroyerFS2:USATankDestroyer:USATankDestroyerFS"/>
+      <option name="typeAA" value="WaffenPnzrJagerFirstStrike2FS2"/>
+      <option name="isAirTransportable" value="true"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
+      <option name="consumesUnits" value="1:PanzerJager"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="waffenPanzerJagerFS2"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+    </attachment>
+    <!-- TankDestroyerFS -->
+    <attachment name="unitAttachment" attachTo="TankDestroyerFS" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="4"/>
+      <option name="canBlitz" value="true"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="AttackAA" value="1"/>
+      <option name="AttackAAmaxDieSides" value="6"/>
+      <option name="mayOverStackAA" value="false"/>
+      <option name="maxAAattacks" value="3"/>
+      <option name="targetsAA" value="armour:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:PanzerJager:PanzerJagerFS:WaffenPnzrJager:WaffenPnzrJagerFS:WaffenPnzrJagerFS2:Panzer_General:DesertGeneral"/>
+      <option name="typeAA" value="TankDestroyerFirstStrike"/>
+      <option name="maxBuiltPerPlayer" value="2"/>  
+    </attachment>
+    <!-- TankDestroyerFS2 -->
+    <attachment name="unitAttachment" attachTo="TankDestroyerFS2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="4"/>
+      <option name="canBlitz" value="true"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="AttackAA" value="1"/>
+      <option name="AttackAAmaxDieSides" value="6"/>
+      <option name="mayOverStackAA" value="false"/>
+      <option name="maxAAattacks" value="2"/>
+      <option name="targetsAA" value="armour:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:PanzerJager:PanzerJagerFS:WaffenPnzrJager:WaffenPnzrJagerFS:WaffenPnzrJagerFS2:Panzer_General:DesertGeneral"/>
+      <option name="typeAA" value="TankDestroyerFirstStrike2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>  
+    </attachment>
+    <!-- TankDestroyer -->
+    <attachment name="unitAttachment" attachTo="TankDestroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="4"/>
+      <option name="canBlitz" value="true"/>
+      <option name="maxBuiltPerPlayer" value="2"/>  
+    </attachment>
+    <!-- USATankDestroyerFS -->
+    <attachment name="unitAttachment" attachTo="USATankDestroyerFS" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="4"/>
+      <option name="canBlitz" value="true"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="AttackAA" value="1"/>
+      <option name="AttackAAmaxDieSides" value="6"/>
+      <option name="mayOverStackAA" value="false"/>
+      <option name="maxAAattacks" value="3"/>
+      <option name="targetsAA" value="armour:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:PanzerJager:PanzerJagerFS:WaffenPnzrJager:WaffenPnzrJagerFS:WaffenPnzrJagerFS2:Panzer_General:DesertGeneral"/>
+      <option name="typeAA" value="USATankDestroyerFirstStrike"/>
+      <option name="maxBuiltPerPlayer" value="2"/>  
+    </attachment>
+    <!-- USATankDestroyer -->
+    <attachment name="unitAttachment" attachTo="USATankDestroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="4"/>
+      <option name="canBlitz" value="true"/>
+      <option name="maxBuiltPerPlayer" value="2"/>  
     </attachment>
     <!-- Russian Para -->
     <attachment name="unitAttachment" attachTo="russian_para" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -5754,6 +6003,16 @@
     </attachment>
     <!-- Soviet Commisar 3 -->
     <attachment name="unitAttachment" attachTo="Soviet_Commisar_3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="3"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="isLandTransportable" value="true"/>
+      <option name="transportCost" value="3"/>
+    </attachment>
+    <!-- Soviet Commisar 4 -->
+    <attachment name="unitAttachment" attachTo="Soviet_Commisar_4" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
       <option name="isLandTransportable" value="true"/>
       <option name="attack" value="2"/>
@@ -7120,7 +7379,7 @@
     <!-- Hvy Ind 2 -->
     <attachment name="unitAttachment" attachTo="Hvy_Ind_2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isFactory" value="true"/>
-      <option name="unitPlacementOnlyAllowedIn" value="Northern Italy:United Kingdom:France:Russia:Japan:Germany:Western Germany:Eastern United States:Central United States:Western United States"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Northern Italy:Southern Italy:United Kingdom:France:Russia:Japan:Germany:Western Germany:Eastern United States:Central United States:Western United States"/>
       <option name="canOnlyBePlacedInTerritoryValuedAtX" value="3"/>
       <!--<option name="destroyedWhenCapturedBy" value="Chinese"/>-->
       <option name="isAAforBombingThisUnitOnly" value="true"/>
@@ -7146,7 +7405,7 @@
     <!-- Hvy Undg 2 -->
     <attachment name="unitAttachment" attachTo="Hvy_Undg_2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isFactory" value="false"/>
-      <option name="unitPlacementOnlyAllowedIn" value="Northern Italy:United Kingdom:France:Russia:Japan:Germany:Western Germany:Eastern United States:Central United States:Western United States"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Northern Italy:Southern Italy:United Kingdom:France:Russia:Japan:Germany:Western Germany:Eastern United States:Central United States:Western United States"/>
       <option name="canOnlyBePlacedInTerritoryValuedAtX" value="3"/>
       <option name="isAAforBombingThisUnitOnly" value="false"/>
       <option name="canProduceUnits" value="true"/>
@@ -11244,6 +11503,7 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans"/>
     </attachment>
+    
     <attachment name="supportAttachmentR_ParaBoost" attachTo="russian_paraBoost" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="russian_para"/>
       <option name="faction" value="allied"/>
@@ -11288,8 +11548,8 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Japanese"/>
     </attachment>
-    <attachment name="supportAttachmentHomeDefense" attachTo="HomeDefense" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="infantry:elite:fighter:uk_fighter"/>
+    <attachment name="supportAttachmentHomeDefenseJPN" attachTo="HomeDefense" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="infantry:elite"/>
       <option name="faction" value="allied"/>
       <option name="side" value="defence"/>
       <option name="dice" value="strength"/>
@@ -11297,7 +11557,18 @@
       <option name="number" value="99"/>
       <option name="bonusType" value="HD_bonus"/>
       <option name="impArtTech" value="false"/>
-      <option name="players" value="Japanese:British"/>
+      <option name="players" value="Japanese"/>
+    </attachment>
+    <attachment name="supportAttachmentHomeDefenseUK" attachTo="HomeDefense" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="infantry:elite:uk_fighter"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="99"/>
+      <option name="bonusType" value="HD_bonusUK"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="British"/>
     </attachment>
     <attachment name="supportAttachmentUSA_ParaBoost" attachTo="usa_paraBoost" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="usa_para"/>
@@ -11911,6 +12182,50 @@
     </attachment>
     <!-- Support Attachment Waffen_Oberst_4 Ends -->
     
+    <!-- Support Attachment Waffen_Oberst_5 -->
+    <attachment name="supportAttachmentWaffen_Oberst_5AttackFS2" attachTo="Waffen_Oberst_5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="WaffenPnzrJagerFS2"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Waffen_Oberst_5FS2_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentWaffen_Oberst_5DefenseFS2" attachTo="Waffen_Oberst_5" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="WaffenPnzrJagerFS2"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Waffen_Oberst_5FS2Defence_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentWaffen_Oberst_5SupportedAttackFS2" attachTo="WaffenPnzrJagerFS2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Waffen_Oberst_5"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Waffen_Oberst_5FS2Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentWaffen_Oberst_5SupportedDefenseFS2" attachTo="WaffenPnzrJagerFS2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Waffen_Oberst_5"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Waffen_Oberst_5FS2SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+
+    <!-- Support Attachment Waffen_Oberst_5 Ends -->
+    
     <!-- Support Attachment Commisar1 -->
     <attachment name="supportAttachmentSoviet_Commisar_1SupportedAttackINF" attachTo="infantry" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="Soviet_Commisar_1"/>
@@ -12044,7 +12359,7 @@
     <!-- Support Attachment Commisar 2 Ends -->
 
     <!-- Support Attachment Commisar3 -->
-    <attachment name="supportAttachmentSoviet_Commisar_2SupportedAttackTank" attachTo="armour" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+    <attachment name="supportAttachmentSoviet_Commisar_3SupportedAttackTank" attachTo="armour" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="Soviet_Commisar_3"/>
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
@@ -12088,6 +12403,52 @@
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <!-- Support Attachment Commisar 3 Ends -->
+
+    <!-- Support Attachment Commisar4 -->
+    <attachment name="supportAttachmentSoviet_Commisar_4SupportedAttackTankDestroyerFS2" attachTo="TankDestroyerFS2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Soviet_Commisar_4"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Soviet_Commisar_4Supported_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentSoviet_Commisar_4SupportedDefenseTank" attachTo="TankDestroyerFS2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Soviet_Commisar_4"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Soviet_Commisar_4SupportedDefense_bonus"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+
+    <attachment name="supportAttachmentSoviet_Commisar_4AttackSupportSovietA4Units" attachTo="Soviet_Commisar_4" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="TankDestroyerFS2"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Soviet_Commisar_4_bonus"/>
+      <option name="impArtTech" value="true"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentSoviet_Commisar_4DefenseSupportSovietA4Units" attachTo="Soviet_Commisar_4" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="TankDestroyerFS2"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="Soviet_Commisar_4_bonusDefense"/>
+      <option name="impArtTech" value="true"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <!-- Support Attachment Commisar 4 Ends -->
     
     <attachment name="supportAttachmentFortification" attachTo="Fortification" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="infantry"/>
@@ -15584,7 +15945,7 @@
     <attachment name="conditionAttachment_Germans_4_unit_presence" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Egypt" count="1"/>
       <!-- any land unit includes aaGuns but does not include 'facilities' -->
-      <option name="unitPresence" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_PG:waffen_PG_Active:waffen_panzer:aaGun:King_Tiger:Tiger_Damaged:Waffen_Hvy_Tank:Waffen_HvyTnk_Dmgd:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA2D3:German_Engineer:German_EngineerAttack:DAK:1stWaffenArmy:1stWaffenPnzrArmy:2ndWaffenArmy:3rdWaffenArmy:4thWaffenArmy:1stPanzerArmy:2ndPanzerArmy:3rdPanzerArmy" count="1"/>
+      <option name="unitPresence" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_PG:waffen_PG_Active:waffen_panzer:aaGun:King_Tiger:Tiger_Damaged:Waffen_Hvy_Tank:Waffen_HvyTnk_Dmgd:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA2D3:German_Engineer:German_EngineerAttack:DAK:1stWaffenArmy:1stWaffenPnzrArmy:2ndWaffenArmy:3rdWaffenArmy:4thWaffenArmy:1stPanzerArmy:2ndPanzerArmy:3rdPanzerArmy:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Germans_5_Control_Norway_And_Denmark" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Denmark:Norway" count="2"/>
@@ -15785,6 +16146,9 @@
     <attachment name="HeavyBombers" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Heavy Bombers"/>
     </attachment>
+    <attachment name="TankDestroyers" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Tank Destroyers"/>
+    </attachment>
     <attachment name="Heavy_Transport" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="US Heavy Transport"/>
     </attachment>
@@ -15885,7 +16249,7 @@
 <!-- This should check for all land and air unit that can aid -->
 <attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_Help_@ParaBoost@" attachTo="Germans" javaClass="RulesAttachment" type="player">
    <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
-   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:german_paraBoost" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:USATankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:german_paraBoost" count="1"/>
    <option name="invert" value="true"/>
 </attachment>
 <attachment foreach="$ParaBoost$" name="conditionAttachmentRussiansParaBoost@ParaBoost@" attachTo="Russians" javaClass="RulesAttachment" type="player">
@@ -15907,7 +16271,7 @@
 <!-- This should check for all land and air unit that can aid -->
 <attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpJapanese_@ParaBoost@" attachTo="Japanese" javaClass="RulesAttachment" type="player">
    <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
-   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:japanese_paraBoost" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:USATankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:japanese_paraBoost" count="1"/>
    <option name="invert" value="true"/>
 </attachment>
 <attachment foreach="$ParaBoost$" name="conditionAttachmentAmericansParaBoost@ParaBoost@" attachTo="Americans" javaClass="RulesAttachment" type="player">
@@ -15940,7 +16304,7 @@
 <!-- This should check for all land and air unit that can aid -->
 <attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpItalians_@ParaBoost@" attachTo="Italians" javaClass="RulesAttachment" type="player">
    <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
-   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:italian_paraBoost" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:USATankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:italian_paraBoost" count="1"/>
    <option name="invert" value="true"/>
 </attachment>
 
@@ -18789,6 +19153,32 @@
       <option name="invert" value="false"/>
       </attachment>
 
+      <attachment name="conditionAttachment_ConvoyRemove4" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="transport" count="1"/>
+      <option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemove4Invert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="transport" count="1"/>
+      <option name="invert" value="false"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemove4Escort_Convoy" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="Escort_Convoy" count="1"/>
+      <option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemove4Escort_ConvoyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="Escort_Convoy" count="1"/>
+      <option name="invert" value="false"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemove4EscortInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="Escort" count="1"/>
+      <option name="invert" value="false"/>
+      </attachment>
+
       <attachment name="conditionAttachment_ConvoyRemove5" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="5 Sea Zone" count="1"/>
       <option name="unitPresence" value="transport" count="1"/>
@@ -21518,6 +21908,32 @@
       </attachment>
       <attachment name="conditionAttachment_ConvoyRemoveUSA3EscortInvert" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="3 Sea Zone" count="1"/>
+      <option name="unitPresence" value="Escort" count="1"/>
+      <option name="invert" value="false"/>
+      </attachment>
+
+      <attachment name="conditionAttachment_ConvoyRemoveUSA4" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="transport" count="1"/>
+      <option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemoveUSA4Invert" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="transport" count="1"/>
+      <option name="invert" value="false"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemoveUSA4Escort_Convoy" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="Escort_Convoy" count="1"/>
+      <option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemoveUSA4Escort_ConvoyInvert" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="Escort_Convoy" count="1"/>
+      <option name="invert" value="false"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemoveUSA4EscortInvert" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
       <option name="unitPresence" value="Escort" count="1"/>
       <option name="invert" value="false"/>
       </attachment>
@@ -24255,6 +24671,32 @@
       <option name="invert" value="false"/>
       </attachment>
 
+      <attachment name="conditionAttachment_ConvoyRemoveUK4" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="transport" count="1"/>
+      <option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemoveUK4Invert" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="transport" count="1"/>
+      <option name="invert" value="false"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemoveUK4Escort_Convoy" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="Escort_Convoy" count="1"/>
+      <option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemoveUK4Escort_ConvoyInvert" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="Escort_Convoy" count="1"/>
+      <option name="invert" value="false"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemoveUK4EscortInvert" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="Escort" count="1"/>
+      <option name="invert" value="false"/>
+      </attachment>
+
       <attachment name="conditionAttachment_ConvoyRemoveUK5" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="5 Sea Zone" count="1"/>
       <option name="unitPresence" value="transport" count="1"/>
@@ -26988,6 +27430,32 @@
       <option name="invert" value="false"/>
       </attachment>
 
+      <attachment name="conditionAttachment_ConvoyRemoveANZAC4" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="transport" count="1"/>
+      <option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemoveANZAC4Invert" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="transport" count="1"/>
+      <option name="invert" value="false"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemoveANZAC4Escort_Convoy" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="Escort_Convoy" count="1"/>
+      <option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemoveANZAC4Escort_ConvoyInvert" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="Escort_Convoy" count="1"/>
+      <option name="invert" value="false"/>
+      </attachment>
+      <attachment name="conditionAttachment_ConvoyRemoveANZAC4EscortInvert" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="4 Sea Zone" count="1"/>
+      <option name="unitPresence" value="Escort" count="1"/>
+      <option name="invert" value="false"/>
+      </attachment>
+      
       <attachment name="conditionAttachment_ConvoyRemoveANZAC5" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="5 Sea Zone" count="1"/>
       <option name="unitPresence" value="transport" count="1"/>
@@ -28263,6 +28731,8 @@
       </attachment>
 
       <!-- ANZAC Convoy Removal Ends -->
+
+      <!-- Germany Total War Conditions -->
       
       <attachment name="conditionAttachment_GermansItaliansWar" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="atWarPlayers" value="Italians" count="1"/>
@@ -28275,6 +28745,14 @@
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarInfGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWar_Inf" count="11"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarInfNorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Inf" count="11"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarInfSouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWar_Inf" count="11"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarInfWesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -28293,12 +28771,34 @@
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarMechInf" count="6"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMechInf6NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarMechInf" count="6"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMechInf6SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarMechInf" count="6"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMechInf6WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
+	<option name="unitPresence" value="TotalWarMechInf" count="6"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarMechInf6Romania" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Romania" count="1"/>
 	<option name="unitPresence" value="TotalWarMechInf" count="6"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarMechInf6InvertGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWarMechInf" count="7"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMechInf6InvertNorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarMechInf" count="7"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMechInf6InvertSouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarMechInf" count="7"/>
 	<option name="invert" value="true"/>
       </attachment>
@@ -28311,6 +28811,14 @@
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarMechInf" count="12"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMechInf12NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarMechInf" count="12"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMechInf12SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarMechInf" count="12"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarMechInf12WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarMechInf" count="12"/>
@@ -28318,6 +28826,14 @@
       
       <attachment name="conditionAttachment_GermansRemoveTotalWarArty6Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWar_Arty" count="6"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarArty6NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Arty" count="6"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarArty6SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWar_Arty" count="6"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarArty6WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -28330,6 +28846,16 @@
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarArty6InvertGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWar_Arty" count="7"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarArty6InvertNorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Arty" count="7"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarArty6InvertSouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWar_Arty" count="7"/>
 	<option name="invert" value="true"/>
       </attachment>
@@ -28347,6 +28873,14 @@
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWar_Arty" count="12"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarArty12NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Arty" count="12"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarArty12SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Arty" count="12"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarArty12WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWar_Arty" count="12"/>
@@ -28354,6 +28888,14 @@
       
       <attachment name="conditionAttachment_GermansRemoveTotalWarTank6Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWar_Tank" count="6"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTank6NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Tank" count="6"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTank6SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWar_Tank" count="6"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarTank6WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -28366,6 +28908,16 @@
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarTank6InvertGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWar_Tank" count="7"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTank6InvertNorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Tank" count="7"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTank6InvertSouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWar_Tank" count="7"/>
 	<option name="invert" value="true"/>
       </attachment>
@@ -28383,6 +28935,14 @@
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWar_Tank" count="12"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTank12NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Tank" count="12"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTank12SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Tank" count="12"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarTank12WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWar_Tank" count="12"/>
@@ -28390,6 +28950,14 @@
 
       <attachment name="conditionAttachment_GermansRemoveTotalWarFighter4Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWarFighter" count="4"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter4NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarFighter" count="4"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter4SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarFighter" count="4"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarFighter4WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -28405,6 +28973,16 @@
 	<option name="unitPresence" value="TotalWarFighter" count="5"/>
 	<option name="invert" value="true"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter4InvertNorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarFighter" count="5"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter4InvertSouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarFighter" count="5"/>
+	<option name="invert" value="true"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarFighter4InvertWesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarFighter" count="5"/>
@@ -28414,6 +28992,18 @@
 	<option name="directPresenceTerritories" value="Romania" count="1"/>
 	<option name="unitPresence" value="TotalWarFighter" count="5"/>
 	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter8Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWarFighter" count="8"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter8NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarFighter" count="8"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter8SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarFighter" count="8"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarFighter8Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
@@ -28432,6 +29022,16 @@
 	<option name="unitPresence" value="TotalWarFighter" count="9"/>
 	<option name="invert" value="true"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter8NorthernItalyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarFighter" count="9"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter8SouthernItalyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarFighter" count="9"/>
+	<option name="invert" value="true"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarFighter8WesternGermanyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarFighter" count="9"/>
@@ -28446,6 +29046,14 @@
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarFighter" count="12"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter12NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarFighter" count="12"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter12SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarFighter" count="12"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarFighter12WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarFighter" count="12"/>
@@ -28453,6 +29061,14 @@
 
       <attachment name="conditionAttachment_GermansRemoveTotalWarBomber4Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWar_Bomber" count="4"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarBomber4NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Bomber" count="4"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarBomber4SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWar_Bomber" count="4"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarBomber4WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -28465,6 +29081,16 @@
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarBomber4InvertGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWar_Bomber" count="5"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarBomber4InvertNorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Bomber" count="5"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarBomber4InvertSouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWar_Bomber" count="5"/>
 	<option name="invert" value="true"/>
       </attachment>
@@ -28482,6 +29108,14 @@
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWar_Bomber" count="8"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarBomber8NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Bomber" count="8"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarBomber8SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Bomber" count="8"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarBomber8WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWar_Bomber" count="8"/>
@@ -28492,6 +29126,16 @@
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarBomber8GermanyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWar_Bomber" count="9"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarBomber8NorthernItalyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Bomber" count="9"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarBomber8SouthernItalyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWar_Bomber" count="9"/>
 	<option name="invert" value="true"/>
       </attachment>
@@ -28509,6 +29153,14 @@
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWar_Bomber" count="12"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarBomber12NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Bomber" count="12"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarBomber12SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWar_Bomber" count="12"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarBomber12WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWar_Bomber" count="12"/>
@@ -28519,6 +29171,14 @@
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarTacBmbr" count="4"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr4NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarTacBmbr" count="4"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr4SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarTacBmbr" count="4"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr4WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarTacBmbr" count="4"/>
@@ -28529,6 +29189,16 @@
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr4InvertGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWarTacBmbr" count="5"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr4InvertNorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarTacBmbr" count="5"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr4InvertSouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarTacBmbr" count="5"/>
 	<option name="invert" value="true"/>
       </attachment>
@@ -28546,6 +29216,14 @@
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarTacBmbr" count="8"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr8NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarTacBmbr" count="8"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr8SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarTacBmbr" count="8"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr8WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarTacBmbr" count="8"/>
@@ -28556,6 +29234,16 @@
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr8GermanyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWarTacBmbr" count="9"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr8NorthernItalyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarTacBmbr" count="9"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr8SouthernItalyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarTacBmbr" count="9"/>
 	<option name="invert" value="true"/>
       </attachment>
@@ -28573,65 +29261,12 @@
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarTacBmbr" count="12"/>
       </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr12WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr12NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarTacBmbr" count="12"/>
-      </attachment><attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr4Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarTacBmbr" count="4"/>
       </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr4WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarTacBmbr" count="4"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr4Romania" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Romania" count="1"/>
-	<option name="unitPresence" value="TotalWarTacBmbr" count="4"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr4InvertGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarTacBmbr" count="5"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr4InvertWesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarTacBmbr" count="5"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr4InvertRomania" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Romania" count="1"/>
-	<option name="unitPresence" value="TotalWarTacBmbr" count="5"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr8Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarTacBmbr" count="8"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr8WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarTacBmbr" count="8"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr8Romania" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Romania" count="1"/>
-	<option name="unitPresence" value="TotalWarTacBmbr" count="8"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr8GermanyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarTacBmbr" count="9"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr8WesternGermanyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarTacBmbr" count="9"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr8RomaniaInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Romania" count="1"/>
-	<option name="unitPresence" value="TotalWarTacBmbr" count="9"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr12Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr12SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarTacBmbr" count="12"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarTacBmbr12WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -28644,74 +29279,8 @@
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarMe_262" count="4"/>
       </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2624WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="4"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2624Romania" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Romania" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="4"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2624SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="4"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2624InvertGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="5"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2624InvertWesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="5"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2624InvertRomania" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Romania" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="5"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2624InvertSouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="5"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2628Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="8"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2628WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="8"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2628Romania" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Romania" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="8"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2628GermanyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="9"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2628WesternGermanyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="9"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2628RomaniaInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Romania" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="9"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_26212Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="12"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_26212WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarMe_262" count="12"/>
-      </attachment><attachment name="conditionAttachment_GermansRemoveTotalWarMe_2624Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2624NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarMe_262" count="4"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2624WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -28746,8 +29315,21 @@
 	<option name="unitPresence" value="TotalWarMe_262" count="5"/>
 	<option name="invert" value="true"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2624InvertNorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarMe_262" count="5"/>
+	<option name="invert" value="true"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2628Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWarMe_262" count="8"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2628NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarMe_262" count="8"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2628SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarMe_262" count="8"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2628WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -28763,6 +29345,16 @@
 	<option name="unitPresence" value="TotalWarMe_262" count="9"/>
 	<option name="invert" value="true"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2628NorthernItalyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarMe_262" count="9"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2628SouthernItalyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarMe_262" count="9"/>
+	<option name="invert" value="true"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarMe_2628WesternGermanyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarMe_262" count="9"/>
@@ -28775,6 +29367,14 @@
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarMe_26212Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWarMe_262" count="12"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_26212NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarMe_262" count="12"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarMe_26212SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarMe_262" count="12"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarMe_26212WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -28787,70 +29387,12 @@
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarAirTrprt" count="4"/>
       </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="4"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4Romania" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Romania" count="1"/>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarAirTrprt" count="4"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="4"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4InvertGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="5"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4InvertWesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="5"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4InvertRomania" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Romania" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="5"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt8Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="8"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt8WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="8"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt8Romania" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Romania" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="8"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt8GermanyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="9"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt8WesternGermanyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="9"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt8RomaniaInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Romania" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="9"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt12Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="12"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt12WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="12"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarAirTrprt" count="4"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -28861,22 +29403,13 @@
 	<option name="directPresenceTerritories" value="Romania" count="1"/>
 	<option name="unitPresence" value="TotalWarAirTrprt" count="4"/>
       </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="4"/>
-      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4InvertGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarAirTrprt" count="5"/>
 	<option name="invert" value="true"/>
       </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4InvertWesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
-	<option name="unitPresence" value="TotalWarAirTrprt" count="5"/>
-	<option name="invert" value="true"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4InvertRomania" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="Romania" count="1"/>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4InvertNorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarAirTrprt" count="5"/>
 	<option name="invert" value="true"/>
       </attachment>
@@ -28885,8 +29418,26 @@
 	<option name="unitPresence" value="TotalWarAirTrprt" count="5"/>
 	<option name="invert" value="true"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4InvertWesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
+	<option name="unitPresence" value="TotalWarAirTrprt" count="5"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt4InvertRomania" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Romania" count="1"/>
+	<option name="unitPresence" value="TotalWarAirTrprt" count="5"/>
+	<option name="invert" value="true"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt8Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWarAirTrprt" count="8"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt8NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarAirTrprt" count="8"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt8SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarAirTrprt" count="8"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt8WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -28902,6 +29453,16 @@
 	<option name="unitPresence" value="TotalWarAirTrprt" count="9"/>
 	<option name="invert" value="true"/>
       </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt8NorthernItalyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarAirTrprt" count="9"/>
+	<option name="invert" value="true"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt8SouthernItalyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarAirTrprt" count="9"/>
+	<option name="invert" value="true"/>
+      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt8WesternGermanyInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarAirTrprt" count="9"/>
@@ -28914,6 +29475,14 @@
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt12Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
+	<option name="unitPresence" value="TotalWarAirTrprt" count="12"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt12NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
+	<option name="unitPresence" value="TotalWarAirTrprt" count="12"/>
+      </attachment>
+      <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt12SouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Southern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarAirTrprt" count="12"/>
       </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarAirTrprt12WesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -33658,6 +34227,7 @@
       <option name="notification" value="Type_XXI_UBoat"/>
     </attachment>
     
+    <!-- German Hvy Bmbrs --> 
     <attachment name="triggerAttachment_German_Hvy_Bmbr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
       <option name="productionRule" value="productionGermans:buyGerman_Hvy_Bmbr"/>
@@ -33682,6 +34252,108 @@
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="German_Hvy_Bmbr"/>
     </attachment>
+    <!-- German Hvy Bmbrs End -->
+
+    <!-- German Panzer Jagers --> 
+    <attachment name="triggerAttachmentPanzerJagerFS" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyPanzerJagerFS"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentPanzerJagerFSNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="PanzerJagerFS"/>
+    </attachment>
+    <attachment name="triggerAttachmentPanzerJagerFSEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43:conditionAttachmentTurn2OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyPanzerJagerFS"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentPanzerJagerFSNotificationEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43:conditionAttachmentTurn2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="PanzerJagerFS"/>
+    </attachment>
+
+    <!-- German Waffen Panzer Jagers --> 
+    <attachment name="triggerAttachmentWaffenPnzrJagerFS" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyWaffenPnzrJagerFS"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentWaffenPnzrJagerFSNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="WaffenPnzrJagerFS"/>
+    </attachment>
+    <attachment name="triggerAttachmentWaffenPnzrJagerFSEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43:conditionAttachmentTurn3OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyWaffenPnzrJagerFS"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentWaffenPnzrJagerFSNotificationEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43:conditionAttachmentTurn3"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="WaffenPnzrJagerFS"/>
+    </attachment>
+    <!-- German Panzer Jagers End -->
+
+    <!-- Russian Tank Destroyers --> 
+    <attachment name="triggerAttachmentTankDestroyerFS" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
+      <option name="productionRule" value="productionRussians:buyTankDestroyerFS"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:russiansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentTankDestroyerFSNotification" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:russiansPurchase"/>
+      <option name="notification" value="TankDestroyerFS"/>
+    </attachment>
+    <attachment name="triggerAttachmentTankDestroyerFSEXP43" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43:conditionAttachmentTurn2OrHigher"/>
+      <option name="productionRule" value="productionRussians:buyTankDestroyerFS"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:russiansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentTankDestroyerFSNotificationEXP43" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43:conditionAttachmentTurn2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:russiansPurchase"/>
+      <option name="notification" value="TankDestroyerFS"/>
+    </attachment>
+    <!-- Russian Tank Destroyers End -->
+
+    <!-- USA Tank Destroyers --> 
+    <attachment name="triggerAttachmentUSATankDestroyerFS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn6OrHigher"/>
+      <option name="productionRule" value="productionAmericans:buyUSATankDestroyerFS"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:americansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentUSATankDestroyerFSNotification" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn6"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:americansPurchase"/>
+      <option name="notification" value="USATankDestroyerFS"/>
+    </attachment>
+    <attachment name="triggerAttachmentUSATankDestroyerFSEXP43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher"/>
+      <option name="productionRule" value="productionAmericans:buyUSATankDestroyerFS"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:americansPurchase"/>
+    </attachment>
+    <!-- USA Tank Destroyers End -->
     
     <attachment name="triggerAttachment_USA_Hvy_Bomber" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
@@ -35662,6 +36334,19 @@
       <option name="when" value="before:japaneseEndTurn"/>
     </attachment>
 
+    <attachment name="triggerAttachment_Japanese_RemoveConvoySZ4" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ConvoyRemove4:conditionAttachment_ConvoyRemove4Escort_ConvoyInvert"/>
+      <option name="removeUnits" value="4 Sea Zone:Escort_Convoy" count="1"/>
+      <option name="placement" value="4 Sea Zone:Escort" count="1"/>
+      <option name="when" value="before:japaneseEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_RemoveConvoySZ4Invert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ConvoyRemove4Invert:conditionAttachment_ConvoyRemove4Escort_Convoy:conditionAttachment_ConvoyRemove4EscortInvert"/>
+      <option name="removeUnits" value="4 Sea Zone:Escort" count="1"/>
+      <option name="placement" value="4 Sea Zone:Escort_Convoy" count="1"/>
+      <option name="when" value="before:japaneseEndTurn"/>
+    </attachment>
+
     <attachment name="triggerAttachment_Japanese_RemoveConvoySZ5" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ConvoyRemove5:conditionAttachment_ConvoyRemove5Escort_ConvoyInvert"/>
       <option name="removeUnits" value="5 Sea Zone:Escort_Convoy" count="1"/>
@@ -37015,6 +37700,19 @@
       <option name="conditions" value="conditionAttachment_ConvoyRemoveUSA3Invert:conditionAttachment_ConvoyRemoveUSA3Escort_Convoy:conditionAttachment_ConvoyRemoveUSA3EscortInvert"/>
       <option name="removeUnits" value="3 Sea Zone:Escort" count="1"/>
       <option name="placement" value="3 Sea Zone:Escort_Convoy" count="1"/>
+      <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+
+    <attachment name="triggerAttachment_Americans_RemoveUSAConvoySZ4" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ConvoyRemoveUSA4:conditionAttachment_ConvoyRemoveUSA4Escort_ConvoyInvert"/>
+      <option name="removeUnits" value="4 Sea Zone:Escort_Convoy" count="1"/>
+      <option name="placement" value="4 Sea Zone:Escort" count="1"/>
+      <option name="when" value="before:americansEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachment_Americans_RemoveUSAConvoySZ4Invert" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ConvoyRemoveUSA4Invert:conditionAttachment_ConvoyRemoveUSA4Escort_Convoy:conditionAttachment_ConvoyRemoveUSA4EscortInvert"/>
+      <option name="removeUnits" value="4 Sea Zone:Escort" count="1"/>
+      <option name="placement" value="4 Sea Zone:Escort_Convoy" count="1"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
 
@@ -38373,6 +39071,19 @@
       <option name="when" value="before:britishEndTurn"/>
     </attachment>
 
+    <attachment name="triggerAttachment_British_RemoveUKConvoySZ4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ConvoyRemoveUK4:conditionAttachment_ConvoyRemoveUK4Escort_ConvoyInvert"/>
+      <option name="removeUnits" value="4 Sea Zone:Escort_Convoy" count="1"/>
+      <option name="placement" value="4 Sea Zone:Escort" count="1"/>
+      <option name="when" value="before:britishEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_RemoveUKConvoySZ4Invert" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ConvoyRemoveUK4Invert:conditionAttachment_ConvoyRemoveUK4Escort_Convoy:conditionAttachment_ConvoyRemoveUK4EscortInvert"/>
+      <option name="removeUnits" value="4 Sea Zone:Escort" count="1"/>
+      <option name="placement" value="4 Sea Zone:Escort_Convoy" count="1"/>
+      <option name="when" value="before:britishEndTurn"/>
+    </attachment>
+    
     <attachment name="triggerAttachment_British_RemoveUKConvoySZ5" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ConvoyRemoveUK5:conditionAttachment_ConvoyRemoveUK5Escort_ConvoyInvert"/>
       <option name="removeUnits" value="5 Sea Zone:Escort_Convoy" count="1"/>
@@ -39728,6 +40439,19 @@
       <option name="when" value="before:anzacEndTurn"/>
     </attachment>
 
+    <attachment name="triggerAttachment_ANZAC_RemoveANZACConvoySZ4" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ConvoyRemoveANZAC4:conditionAttachment_ConvoyRemoveANZAC4Escort_ConvoyInvert"/>
+      <option name="removeUnits" value="4 Sea Zone:Escort_Convoy" count="1"/>
+      <option name="placement" value="4 Sea Zone:Escort" count="1"/>
+      <option name="when" value="before:anzacEndTurn"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZAC_RemoveANZACConvoySZ4Invert" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ConvoyRemoveANZAC4Invert:conditionAttachment_ConvoyRemoveANZAC4Escort_Convoy:conditionAttachment_ConvoyRemoveANZAC4EscortInvert"/>
+      <option name="removeUnits" value="4 Sea Zone:Escort" count="1"/>
+      <option name="placement" value="4 Sea Zone:Escort_Convoy" count="1"/>
+      <option name="when" value="before:anzacEndTurn"/>
+    </attachment>
+
     <attachment name="triggerAttachment_ANZAC_RemoveANZACConvoySZ5" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ConvoyRemoveANZAC5:conditionAttachment_ConvoyRemoveANZAC5Escort_ConvoyInvert"/>
       <option name="removeUnits" value="5 Sea Zone:Escort_Convoy" count="1"/>
@@ -40421,6 +41145,20 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarInfPlaceNorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarInfNorthernItaly"/>
+      <option name="placement" value="Northern Italy:infantry" count="11"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Inf" count="11"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarInfPlaceSouthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarInfNorthernItaly"/>
+      <option name="placement" value="Southern Italy:infantry" count="11"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Inf" count="11"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarInfPlaceWesternGermany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarInfWesternGermany"/>
       <option name="placement" value="Western Germany:infantry" count="11"/>
@@ -40441,6 +41179,20 @@
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarInfGermany"/>
       <option name="placement" value="Germany:infantry" count="11"/>
       <option name="removeUnits" value="Germany:TotalWar_Inf" count="11"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarInfPlaceNorthernItalyEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarInfNorthernItaly"/>
+      <option name="placement" value="Northern Italy:infantry" count="11"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Inf" count="11"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarInfPlaceSouthernItalyEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarInfNorthernItaly"/>
+      <option name="placement" value="Southern Italy:infantry" count="11"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Inf" count="11"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -40480,6 +41232,34 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMechInfPlaceNorthernItaly6" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMechInf6NorthernItaly:conditionAttachment_GermansRemoveTotalWarMechInf6InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:mech_infantry" count="6"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarMechInf" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMechInfPlaceNorthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMechInf12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:mech_infantry" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarMechInf" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMechInfPlaceSouthernItaly6" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMechInf6SouthernItaly:conditionAttachment_GermansRemoveTotalWarMechInf6InvertSouthernItaly"/>
+      <option name="placement" value="Southern Italy:mech_infantry" count="6"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarMechInf" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMechInfPlaceSouthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMechInf12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:mech_infantry" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarMechInf" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMechInfPlaceWesternGermany6" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMechInf6WesternGermany:conditionAttachment_GermansRemoveTotalWarMechInf6InvertWesternGermany"/>
       <option name="placement" value="Western Germany:mech_infantry" count="6"/>
@@ -40514,6 +41294,34 @@
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarMechInf12Germany"/>
       <option name="placement" value="Germany:mech_infantry" count="12"/>
       <option name="removeUnits" value="Germany:TotalWarMechInf" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMechInfPlaceNorthernItaly6EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarMechInf6NorthernItaly:conditionAttachment_GermansRemoveTotalWarMechInf6InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:mech_infantry" count="6"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarMechInf" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMechInfPlaceNorthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarMechInf12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:mech_infantry" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarMechInf" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMechInfPlaceSouthernItaly6EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarMechInf6SouthernItaly:conditionAttachment_GermansRemoveTotalWarMechInf6InvertSouthernItaly"/>
+      <option name="placement" value="Southern Italy:mech_infantry" count="6"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarMechInf" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMechInfPlaceSouthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarMechInf12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:mech_infantry" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarMechInf" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -40567,6 +41375,34 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTankPlaceNorthernItaly6" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarTank6NorthernItaly:conditionAttachment_GermansRemoveTotalWarTank6InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:armour" count="6"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Tank" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTankPlaceNorthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarTank12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:armour" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Tank" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTankPlaceSouthernItaly6" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarTank6SouthernItaly:conditionAttachment_GermansRemoveTotalWarTank6InvertSouthernItaly"/>
+      <option name="placement" value="Southern Italy:armour" count="6"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Tank" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTankPlaceSouthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarTank12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:armour" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Tank" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarTankPlaceWesternGermany6" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarTank6WesternGermany:conditionAttachment_GermansRemoveTotalWarTank6InvertWesternGermany"/>
       <option name="placement" value="Western Germany:armour" count="6"/>
@@ -40601,6 +41437,34 @@
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarTank12Germany"/>
       <option name="placement" value="Germany:armour" count="12"/>
       <option name="removeUnits" value="Germany:TotalWar_Tank" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTankPlaceNorthernItaly6EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarTank6NorthernItaly:conditionAttachment_GermansRemoveTotalWarTank6InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:armour" count="6"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Tank" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTankPlaceNorthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarTank12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:armour" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Tank" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTankPlaceSouthernItaly6EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarTank6SouthernItaly:conditionAttachment_GermansRemoveTotalWarTank6InvertSouthernItaly"/>
+      <option name="placement" value="Southern Italy:armour" count="6"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Tank" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTankPlaceSouthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarTank12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:armour" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Tank" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -40654,6 +41518,34 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarArtyPlaceNorthernItaly6" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarArty6NorthernItaly:conditionAttachment_GermansRemoveTotalWarArty6InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:artillery" count="6"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Arty" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarArtyPlaceNorthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarArty12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:artillery" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Arty" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarArtyPlaceSouthernItaly6" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarArty6SouthernItaly:conditionAttachment_GermansRemoveTotalWarArty6InvertSouthernItaly"/>
+      <option name="placement" value="Southern Italy:artillery" count="6"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Arty" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarArtyPlaceSouthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarArty12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:artillery" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Arty" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarArtyPlaceWesternGermany6" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarArty6WesternGermany:conditionAttachment_GermansRemoveTotalWarArty6InvertWesternGermany"/>
       <option name="placement" value="Western Germany:artillery" count="6"/>
@@ -40688,6 +41580,34 @@
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarArty12Germany"/>
       <option name="placement" value="Germany:artillery" count="12"/>
       <option name="removeUnits" value="Germany:TotalWar_Arty" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarArtyPlaceNorthernItaly6EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarArty6NorthernItaly:conditionAttachment_GermansRemoveTotalWarArty6InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:artillery" count="6"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Arty" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarArtyPlaceNorthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarArty12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:artillery" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Arty" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarArtyPlaceSouthernItaly6EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarArty6SouthernItaly:conditionAttachment_GermansRemoveTotalWarArty6InvertSouthernItaly"/>
+      <option name="placement" value="Southern Italy:artillery" count="6"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Arty" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarArtyPlaceSouthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarArty12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:artillery" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Arty" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -40788,6 +41708,34 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceNorthernItaly4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4NorthernItaly:conditionAttachment_GermansRemoveTotalWarFighter4InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:fighter" count="4"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarFighter" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceNorthernItaly8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarFighter8NorthernItaly:conditionAttachment_GermansRemoveTotalWarFighter8NorthernItalyInvert"/>
+      <option name="placement" value="Northern Italy:fighter" count="8"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarFighter" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceSouthernItaly4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4SouthernItaly:conditionAttachment_GermansRemoveTotalWarFighter4InvertSouthernItaly"/>
+      <option name="placement" value="Southern Italy:fighter" count="4"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarFighter" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceSouthernItaly8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarFighter8SouthernItaly:conditionAttachment_GermansRemoveTotalWarFighter8SouthernItalyInvert"/>
+      <option name="placement" value="Southern Italy:fighter" count="8"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarFighter" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarFighterPlaceWesternGermany4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4WesternGermany:conditionAttachment_GermansRemoveTotalWarFighter4InvertWesternGermany"/>
       <option name="placement" value="Western Germany:fighter" count="4"/>
@@ -40823,6 +41771,20 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceNorthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarFighter12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:fighter" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarFighter" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceSouthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarFighter12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:fighter" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarFighter" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarFighterPlaceWesternGermany12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarFighter12WesternGermany"/>
       <option name="placement" value="Western Germany:fighter" count="12"/>
@@ -40849,6 +41811,34 @@
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarFighter8Germany:conditionAttachment_GermansRemoveTotalWarFighter8GermanyInvert"/>
       <option name="placement" value="Germany:fighter" count="8"/>
       <option name="removeUnits" value="Germany:TotalWarFighter" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceNorthernItaly4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4NorthernItaly:conditionAttachment_GermansRemoveTotalWarFighter4InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:fighter" count="4"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarFighter" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceNorthernItaly8EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarFighter8NorthernItaly:conditionAttachment_GermansRemoveTotalWarFighter8NorthernItalyInvert"/>
+      <option name="placement" value="Northern Italy:fighter" count="8"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarFighter" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceSouthernItaly4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4SouthernItaly:conditionAttachment_GermansRemoveTotalWarFighter4InvertSouthernItaly"/>
+      <option name="placement" value="Southern Italy:fighter" count="4"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarFighter" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceSouthernItaly8EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarFighter8SouthernItaly:conditionAttachment_GermansRemoveTotalWarFighter8SouthernItalyInvert"/>
+      <option name="placement" value="Southern Italy:fighter" count="8"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarFighter" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -40887,6 +41877,20 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceNorthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarFighter12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:fighter" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarFighter" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceSouthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarFighter12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:fighter" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarFighter" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarFighterPlaceWesternGermany12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarFighter12WesternGermany"/>
       <option name="placement" value="Western Germany:fighter" count="12"/>
@@ -40910,6 +41914,20 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceNorthernItaly4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4NorthernItaly:conditionAttachment_GermansRemoveTotalWarBomber4InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:bomber" count="4"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceSouthernItaly4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4SouthernItaly:conditionAttachment_GermansRemoveTotalWarBomber4InvertSouthernItaly"/>
+      <option name="placement" value="Southern Italy:bomber" count="4"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWar_BomberA0C5PlaceGermany4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4Germany:conditionAttachment_GermansRemoveTotalWarBomber4InvertGermany"/>
       <option name="placement" value="Germany:bomberA0C5" count="4"/>
@@ -40921,6 +41939,20 @@
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8Germany:conditionAttachment_GermansRemoveTotalWarBomber8GermanyInvert"/>
       <option name="placement" value="Germany:bomber" count="8"/>
       <option name="removeUnits" value="Germany:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceNorthernItaly8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8NorthernItaly:conditionAttachment_GermansRemoveTotalWarBomber8NorthernItalyInvert"/>
+      <option name="placement" value="Northern Italy:bomber" count="8"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceSouthernItaly8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8SouthernItaly:conditionAttachment_GermansRemoveTotalWarBomber8SouthernItalyInvert"/>
+      <option name="placement" value="Southern Italy:bomber" count="8"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -40987,6 +42019,20 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceNorthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:bomber" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Bomber" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceSouthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:bomber" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Bomber" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWar_BomberA0C5PlaceGermany12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5Bmbr:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarBomber12Germany"/>
       <option name="placement" value="Germany:bomberA0C5" count="12"/>
@@ -41023,6 +42069,20 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceNorthernItaly4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:A0C5BmbrInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4NorthernItaly:conditionAttachment_GermansRemoveTotalWarBomber4InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:bomber" count="4"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceSouthernItaly4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:A0C5BmbrInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4SouthernItaly:conditionAttachment_GermansRemoveTotalWarBomber4InvertSouthernItaly"/>
+      <option name="placement" value="Southern Italy:bomber" count="4"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Bomber" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWar_BomberA0C5PlaceGermany4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:A0C5Bmbr:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarBomber4Germany:conditionAttachment_GermansRemoveTotalWarBomber4InvertGermany"/>
       <option name="placement" value="Germany:bomberA0C5" count="4"/>
@@ -41034,6 +42094,20 @@
       <option name="conditions" value="EXP43:A0C5BmbrInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8Germany:conditionAttachment_GermansRemoveTotalWarBomber8GermanyInvert"/>
       <option name="placement" value="Germany:bomber" count="8"/>
       <option name="removeUnits" value="Germany:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceNorthernItaly8EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:A0C5BmbrInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8NorthernItaly:conditionAttachment_GermansRemoveTotalWarBomber8NorthernItalyInvert"/>
+      <option name="placement" value="Northern Italy:bomber" count="8"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Bomber" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceSouthernItaly8EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:A0C5BmbrInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarBomber8SouthernItaly:conditionAttachment_GermansRemoveTotalWarBomber8SouthernItalyInvert"/>
+      <option name="placement" value="Southern Italy:bomber" count="8"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -41100,6 +42174,20 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceNorthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:A0C5BmbrInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarBomber12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:bomber" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWar_Bomber" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWar_BomberPlaceSouthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:A0C5BmbrInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarBomber12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:bomber" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWar_Bomber" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWar_BomberA0C5PlaceGermany12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:A0C5Bmbr:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarBomber12Germany"/>
       <option name="placement" value="Germany:bomberA0C5" count="12"/>
@@ -41143,10 +42231,38 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceNorthernItaly4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr4NorthernItaly:conditionAttachment_GermansRemoveTotalWarTacBmbr4InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:tactical_bomber" count="4"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarTacBmbr" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceSouthernItaly4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr4SouthernItaly:conditionAttachment_GermansRemoveTotalWarTacBmbr4InvertSouthernItaly"/>
+      <option name="placement" value="Southern Italy:tactical_bomber" count="4"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarTacBmbr" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceGermany8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr8Germany:conditionAttachment_GermansRemoveTotalWarTacBmbr8GermanyInvert"/>
       <option name="placement" value="Germany:tactical_bomber" count="8"/>
       <option name="removeUnits" value="Germany:TotalWarTacBmbr" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceNorthernItaly8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr8NorthernItaly:conditionAttachment_GermansRemoveTotalWarTacBmbr8NorthernItalyInvert"/>
+      <option name="placement" value="Northern Italy:tactical_bomber" count="8"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarTacBmbr" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceSouthernItaly8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr8SouthernItaly:conditionAttachment_GermansRemoveTotalWarTacBmbr8NorthernItalyInvert"/>
+      <option name="placement" value="Southern Italy:tactical_bomber" count="8"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarTacBmbr" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -41185,6 +42301,20 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceNorthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:tactical_bomber" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarTacBmbr" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceSouthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:tactical_bomber" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarTacBmbr" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceWesternGermany12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr12WesternGermany"/>
       <option name="placement" value="Western Germany:tactical_bomber" count="12"/>
@@ -41204,6 +42334,34 @@
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr8Germany:conditionAttachment_GermansRemoveTotalWarTacBmbr8GermanyInvert"/>
       <option name="placement" value="Germany:tactical_bomber" count="8"/>
       <option name="removeUnits" value="Germany:TotalWarTacBmbr" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceNorthernItaly4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr4NorthernItaly:conditionAttachment_GermansRemoveTotalWarTacBmbr4InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:tactical_bomber" count="4"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarTacBmbr" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceNorthernItaly8EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr8NorthernItaly:conditionAttachment_GermansRemoveTotalWarTacBmbr8NorthernItalyInvert"/>
+      <option name="placement" value="Northern Italy:tactical_bomber" count="8"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarTacBmbr" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceSouthernItaly4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr4SouthernItaly:conditionAttachment_GermansRemoveTotalWarTacBmbr4InvertSouthernItaly"/>
+      <option name="placement" value="Southern Italy:tactical_bomber" count="4"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarTacBmbr" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceSouthernItaly8EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr8SouthernItaly:conditionAttachment_GermansRemoveTotalWarTacBmbr8SouthernItalyInvert"/>
+      <option name="placement" value="Southern Italy:tactical_bomber" count="8"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarTacBmbr" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -41242,6 +42400,20 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceNorthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:tactical_bomber" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarTacBmbr" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceSouthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:tactical_bomber" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarTacBmbr" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarTacBmbrPlaceWesternGermany12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarTacBmbr12WesternGermany"/>
       <option name="placement" value="Western Germany:tactical_bomber" count="12"/>
@@ -41275,6 +42447,27 @@
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2628Germany:conditionAttachment_GermansRemoveTotalWarMe_2628GermanyInvert"/>
       <option name="placement" value="Germany:Me_262" count="8"/>
       <option name="removeUnits" value="Germany:TotalWarMe_262" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceNorthernItaly4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2624NorthernItaly:conditionAttachment_GermansRemoveTotalWarMe_2624InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:Me_262" count="4"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarMe_262" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceNorthernItaly8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2628NorthernItaly:conditionAttachment_GermansRemoveTotalWarMe_2628NorthernItalyInvert"/>
+      <option name="placement" value="Northern Italy:Me_262" count="8"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarMe_262" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceSouthernItaly8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2628SouthernItaly:conditionAttachment_GermansRemoveTotalWarMe_2628SouthernItalyInvert"/>
+      <option name="placement" value="Southern Italy:Me_262" count="8"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarMe_262" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -41320,6 +42513,20 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceNorthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_26212NorthernItaly"/>
+      <option name="placement" value="Northern Italy:Me_262" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarMe_262" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceSouthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_26212SouthernItaly"/>
+      <option name="placement" value="Southern Italy:Me_262" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarMe_262" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceWesternGermany12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarMe_26212WesternGermany"/>
       <option name="placement" value="Western Germany:Me_262" count="12"/>
@@ -41339,6 +42546,27 @@
       <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2628Germany:conditionAttachment_GermansRemoveTotalWarMe_2628GermanyInvert"/>
       <option name="placement" value="Germany:Me_262" count="8"/>
       <option name="removeUnits" value="Germany:TotalWarMe_262" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceNorthernItaly4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2624NorthernItaly:conditionAttachment_GermansRemoveTotalWarMe_2624InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:Me_262" count="4"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarMe_262" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceNorthernItaly8EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2628NorthernItaly:conditionAttachment_GermansRemoveTotalWarMe_2628NorthernItalyInvert"/>
+      <option name="placement" value="Northern Italy:Me_262" count="8"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarMe_262" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceSouthernItaly8EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_2628SouthernItaly:conditionAttachment_GermansRemoveTotalWarMe_2628SouthernItalyInvert"/>
+      <option name="placement" value="Southern Italy:Me_262" count="8"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarMe_262" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -41384,6 +42612,20 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceNorthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_26212NorthernItaly"/>
+      <option name="placement" value="Northern Italy:Me_262" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarMe_262" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceSouthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_26212SouthernItaly"/>
+      <option name="placement" value="Southern Italy:Me_262" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarMe_262" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarMe_262PlaceWesternGermany12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachment_GermansRemoveTotalWarMe_26212WesternGermany"/>
       <option name="placement" value="Western Germany:Me_262" count="12"/>
@@ -41417,6 +42659,27 @@
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt8Germany:conditionAttachment_GermansRemoveTotalWarAirTrprt8GermanyInvert"/>
       <option name="placement" value="Germany:G_air_transport" count="8"/>
       <option name="removeUnits" value="Germany:TotalWarAirTrprt" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarAirTrprtPlaceNorthernItaly4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt4NorthernItaly:conditionAttachment_GermansRemoveTotalWarAirTrprt4InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:G_air_transport" count="4"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarAirTrprt" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarAirTrprtPlaceNorthernItaly8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt8NorthernItaly:conditionAttachment_GermansRemoveTotalWarAirTrprt8NorthernItalyInvert"/>
+      <option name="placement" value="Northern Italy:G_air_transport" count="8"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarAirTrprt" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarAirTrprtPlaceSouthernItaly8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt8SouthernItaly:conditionAttachment_GermansRemoveTotalWarAirTrprt8SouthernItalyInvert"/>
+      <option name="placement" value="Southern Italy:G_air_transport" count="8"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarAirTrprt" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -41462,6 +42725,20 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarAirTrprtPlaceNorthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:G_air_transport" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarAirTrprt" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarAirTrprtPlaceSouthernItaly12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:G_air_transport" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarAirTrprt" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
     <attachment name="triggerAttachment_GermansTotalWarAirTrprtPlaceWesternGermany12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt12WesternGermany"/>
       <option name="placement" value="Western Germany:G_air_transport" count="12"/>
@@ -41481,6 +42758,27 @@
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt8Germany:conditionAttachment_GermansRemoveTotalWarAirTrprt8GermanyInvert"/>
       <option name="placement" value="Germany:G_air_transport" count="8"/>
       <option name="removeUnits" value="Germany:TotalWarAirTrprt" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarAirTrprtPlaceNorthernItaly4EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt4NorthernItaly:conditionAttachment_GermansRemoveTotalWarAirTrprt4InvertNorthernItaly"/>
+      <option name="placement" value="Northern Italy:G_air_transport" count="4"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarAirTrprt" count="4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarAirTrprtPlaceNorthernItaly8EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt8NorthernItaly:conditionAttachment_GermansRemoveTotalWarAirTrprt8NorthernItalyInvert"/>
+      <option name="placement" value="Northern Italy:G_air_transport" count="8"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarAirTrprt" count="8"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarAirTrprtPlaceSouthernItaly8EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt8SouthernItaly:conditionAttachment_GermansRemoveTotalWarAirTrprt8SouthernItalyInvert"/>
+      <option name="placement" value="Southern Italy:G_air_transport" count="8"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarAirTrprt" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -41523,6 +42821,20 @@
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt12Germany"/>
       <option name="placement" value="Germany:G_air_transport" count="12"/>
       <option name="removeUnits" value="Germany:TotalWarAirTrprt" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarAirTrprtPlaceNorthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt12NorthernItaly"/>
+      <option name="placement" value="Northern Italy:G_air_transport" count="12"/>
+      <option name="removeUnits" value="Northern Italy:TotalWarAirTrprt" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_GermansTotalWarAirTrprtPlaceSouthernItaly12EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarAirTrprt12SouthernItaly"/>
+      <option name="placement" value="Southern Italy:G_air_transport" count="12"/>
+      <option name="removeUnits" value="Southern Italy:TotalWarAirTrprt" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -43718,10 +45030,9 @@
     <attachment name="triggerAttachment_JapaneseHomeDefense" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentJapanHomeDefense"/>
       <option name="placement" value="Japan:infantry" count="2"/>
+      <option name="when" value="after:japaneseNonCombatMove"/>
     </attachment>
 
-    
-    
     <!-- Japanese Triggers Pacific Okinawa -->
     <attachment name="triggerAttachment_Japan_Loses_Okinawa" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlOkinawaInvert:conditionAttachment_Japanese_LoseOkinawa"/>
@@ -49316,7 +50627,7 @@
     <attachment name="conditionAttachment_Germans_NoUnitsInAfrica" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Egypt:Morocco:Algeria:Tunisia:Libya:Tobruk:Alexandria:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:French Equatorial Africa:French Central Africa:Nigeria:Kenya:Gold Coast:South West Africa:French West Africa:Ethiopia:Italian Somaliland:British Somaliland:Belgian Congo:Union of South Africa" count="1"/>
       <!-- any land unit includes aaGuns but does not include 'facilities' -->
-      <option name="unitPresence" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_PG:waffen_PG_Active:waffen_panzer:aaGun:German_Engineer:German_EngineerAttack:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA2D3" count="1"/>
+      <option name="unitPresence" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:artillery:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:WaffenPnzrJager:aaGun:German_Engineer:German_EngineerAttack:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA2D3" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Italians_NoUnitsInAfrica" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -51710,6 +53021,9 @@
       <boolean/>
       </property>
       <property name="Heavy Bombers" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Tank Destroyers" value="true" editable="true">
       <boolean/>
       </property>
       <property name="Basic Expansion Rules" value="false" editable="true">

@@ -51,8 +51,23 @@ Once Edit is on, you will need to click back to Actions in order to fight the ba
 <br>
 Another option is to use Axisandallies.org dicebot. That tends to be slower but is less punishing when you make a mistake. For Landmines, you must use dice bot <br>
 <br>
-You have two placement phases - one for units like Waffen units, US Marines, etc that are active immediately- and one for your normal units. Don’t place normal stuff like Tanks or Infantry in the first placement phase.<br>
+<b>You have two placement phases</b> - one for units like Waffen units, US Marines, etc that are active immediately- and one for your normal units.<b> Don’t place normal stuff like Tanks or Infantry in the first placement phase.</b><br><br>Here is a list of All Units that can be placed in First Place Phase.<br><br>
+<b>All Players Except China.</b><br>
+Heavy Industry for Factories and Airfields<br>
+Underground Factories<br>
 <br>
+<b>Germany</b><br>
+Waffen Infantry<br>
+Waffen Artillery<br>
+Waffen Oberst<br>
+Waffen Panzer<br>
+Waffen Paratrooper<br>
+Waffen Heavy Tank<br>
+<br>
+<b>USA</b><br>
+Marines<br><br>
+<b>United Kingdom</b><br>
+Commandos<br><br>
 Use edit to move Paratroopers over Enemy Territory and for LCVs.<br>
 <br>
 When an Army is active, you should edit a new army-leading unit depending on the units it commands. Barnee should let you know more about this since I don’t know exactly what army-leading unit commands what.
@@ -67,7 +82,16 @@ If there is only one battle to be fought, you will need to be in Edit before you
 If you start the Battle in Edit, you will have to Fight All of it in Edit.
 <br>
 <br>
-Widen Battle Window to Show Number of Units if Needed.<br>
+<b>Widen Battle Window to Show Number of Units if Needed.</b><br>
+<br>
+<b>Air and Submarine Retreat.</b><br>
+<br>
+You Must retreat All of your Forces according to the Out of Box Rules. Player Enforced.<br>
+<br>
+<b>NOTE</b><br>
+<br>
+Air and Naval Transports originating in the same TTy may not allow proper loading. This is being investigated.<br>
+Use edit if needed.<br>
 <br>
 <b>Timetable</b>
 <br>
@@ -110,13 +134,15 @@ Regular Commisar doesn't Boost anything. Including Himself. <img src="Soviet_Com
 <br>
 Most Starting Units will be on the Left side of the Edit Window. Unfortunately, the Window is <b>Inconsistent</b>, so they won't always be in the same place.<br>
 <br>
+Once a Changer Unit has been added in Edit,<b> for example Landmines</b>, they will show up on the left of the window in the future.<br>
+<br>
 <b>Boxes</b><br>
 <br>
 <b>NOTE</b><br>
 <br>
 There is an Invisible Factory that allows placement in Boxes. Use <b>Caution</b> when editing units in and out of Boxes so you don't delete it. If you do by accident, you can edit it back in. It's called "BoxFctry". <br>
 <br>
-<b>You Must Use Edit</b> to Move To and From and will only be able to move in CM and NCM. Use "Perform Move Or Other Actions" while in Edit. You will be able to move other Players' Units as well. However, you can only move to legal territories. For example, Germany can't move Units into russia without being at War.<br><br> <b> NOTE<br> You may temporarily edit russia and Germany to War if you have a large number of moves to make and then edit back to Neutrality.</b> <br>
+<b>You Must Use Edit</b> to Move To and From and will only be able to move in CM and NCM. Use "Perform Move Or Other Actions" while in Edit. You will be able to move other Players' Units as well. However, you can only move to legal territories. For example, Germany can't move Units into russia without being at War.<br><br> <b>NOTE<br> You may temporarily edit russia and Germany to War if you have a large number of moves to make and then edit back to Neutrality.</b> <br>
 <br> You will need to Edit otherwise and Manually Place/Replace.<br><br>
 Also, you can move units in Edit, then move additional units somewhere else and not have to hit "Perform Move ..." again. You can do multiple moves. In other words, you don't need to click on "Perform Move or Other Actions" for every move.<br>
 <br>
@@ -128,23 +154,26 @@ If using Edit to move units in Combat Move, it may take you over an unintended r
 <br>
 Also, you can Edit Units to a Territory and then Move them the same turn but you <b>Cannot</b> Move Units and then Edit them into the Territory you moved from.<br>
 <br>
-<b>Landmine Boxes</b> are for Informational purposes only. You cannot move units there. The top Territory is where the LM is located. The color denotes which LM. The bottom Territory is the Border it defends against.<br>
-For Example. Western Germany has a Orange LM with France at the bottom. That means that Orange LMs in W GER defend against the border with France.<br>
-When in doubt, use the Comment Log located under "View" upper left, to designate which LMs are defending which border. <br> <br>
+<b>Landmines</b>  <br> <br>
 Landmines have to be hand rolled with either the Dice Roller or Dice Bot from A&A.org.https://www.axisandallies.org/forums/topic/39917/when-you-need-a-topic-to-use-the-dicebot-do-it-here/27<br>
 <br>
-Usually, after editing LMs, the next time you open edit, those LMs will have moved to the left column.<br>
+Usually, after editing LMs, the next time you open edit, those LMs will have moved to the<b> left</b> column.<br>
 <br>
 <b>NOTE</b><br>
-Some high use areas have border specific LMs. When you hover on them, they will tell you which border they are defending. These Territories are for Germany<br>
+Some high use areas have border specific LMs. When you <b>hover</b> on them, they will tell you which border they are defending. These Territories are for:<br>
+<br>
+<b>Germany</b><br>
 112 Sea Zone<br>
 Denmark<br>
 Holland<br>
 Norway<br>
 Normandy<br>
 West Germany<br>
+Eastern Poland<br>
+Slovakia<br>
+Baltic States<br>
 <br>
-For Russia<br>
+<b>Russia</b><br>
 Western Ukraine<br>
 Belarus<br>
 Ukraine<br>
@@ -153,6 +182,10 @@ Rostov<br>
 Caucasus<br>
 Novgorod<br>
 Archangel<br>
+Eastern Poland<br>
+Smolensk<br>
+Tambov<br>
+Volgograd<br>
 <br>
 <b>Active Army Groups</b> must be rolled with Edit as above for complete Rule Compliance or Players can agree to count the hit when the Army Group is no longer Active the way triplea does it. Edit an "Inactive Army Group to the Defending Player if it doesn't have one to offset the Attacking one. Do Not take as casualty until after the Attacking one has been killed.<br>
 <br>
@@ -182,7 +215,7 @@ Use Edit to correct.<br>
 <b>NOTE</b><br><br>
 Battleship Bombard does not work with LCVs. You can Hand roll the Battle or use Edit to temporarily add a Transport(s) then Edit the correct Unit total at end of Combat.<br><br>
 <b><NOTE</b>
-When replacing Units with Edit, most starting Units will be on the Left side of the Window.<br><br>
+When replacing Units with Edit, most starting Units will be on the <b>Left</b> side of the Window.<br><br>
 <b>NOTE</b><br>
 You may be able to Edit Territory Control and then change Units, then change back without undoing your moves. This may cause movement problems, especially for Air, so be aware.<br><br>
 When Attacking with LCV and Air Units, it will not allow Air Units to retreat. Do the Battle in Edit or use the Dice roller. If you forget, use Edit to adjust to the correct outcome.<br>
@@ -234,7 +267,7 @@ You will also need to edit when placing in a Allied Factory. Purchase a "1_PU" a
 <b>6. Elite Infantry</b><br>
 <br>
 <img src="elite.png"/> <br><br>
-You may only have 1 Elite in any Territory at any one time. This includes Allied Elites. This is Player Enforced. If you are forced to retreat to a Territory that has another Elite or Allied Elite, kill them with edit before Non Combat Move.<br>
+You may only have 1 Elite in any Territory at any one time. This includes Allied Elites. This is <b>Player Enforced</b>. If you are forced to retreat to a Territory that has another Elite or Allied Elite, kill them with edit before Non Combat Move.<br>
 <br>
 <b>NOTE</b><br>
 When being supported by Artillery and other Artillery supportable units are present, the Artillery sometimes will support only 1 of the Elite's rolls as well as 1 other unit. So, the Elite will show up in the "1" category in the "Battle Window", but the rolls will be correct.<br>
@@ -337,8 +370,7 @@ May be turned off with map option "The Expanded Pacific Ocean".<br>
 Only Factories at Game Start can be upgraded. Player Enforced. Use First Place Phase and edit if necessary, when placing multiple upgrades at once.<br>
 <br>
 <b>4. Landmine</b><br>
-<br>
-<img src="russian_mine.png"/>   <img src="soloMine.png"/><br><br>
+<br>  <img src="soloMine.png"/><br><br>
 This requires extensive edit use. There is also a TripleA option that is "edit free" explained below.<br>
 <br>
 You may purchase "unarmed" mines and place them in your Capital and India for UK. <br> When placing in a damaged Factory, you may only place as many as there are placements available. You can't place the maximum of 10, unless there are 10 placements available.<br>
@@ -368,11 +400,9 @@ Archangel<br>
 <br>
 <b>IMPORTANT</b><br>
 <br>
-Usually, after editing LMs, the next time you open edit, those LMs will have moved to the left column.<br>
+Usually, after editing LMs, the next time you open edit, those LMs will have moved to the<b> left</b> column.<br>
 <br>
 If you can't find the LM your looking for, select another and document in Comment Log. Next turn, remove LM and then look for the LM you want.<br>
-<br>
-There are also LM Boxes that show the corresponding color for certain Borders. These are for informational purposes only.<br>
 <br>
 Using the mines in combat requires use of the "Dice Roller" or if playing by forum, dicebot. Follow these steps:<br><br>
 Do your Entire Combat Move.<br>
@@ -395,7 +425,9 @@ May be turned on in "Map Options".<br>
 <b>5. Escorts & Transports</b><br>
 <br>
 <img src="Escort_Convoy.png"/> <br><br>
-Most Solo Escorts will now Auto change at End Turn. Use edit to place and remove the "Escort Convoy" unit(s) when Convoys are formed or dispersed when necessarry. Transports must be taken as casualties last. This is Player Enforced.<br>
+Most<b> Solo</b> Escorts will now Auto change at End Turn. Use edit to place and remove the "Escort Convoy" unit(s) when Convoys are formed or dispersed when necessarry. Transports must be taken as casualties last. This is Player Enforced.<br>
+<br>
+Pacific and Heavy Transports won't change. Will be fixed in the future.<br>
 <br>
 When attacking Submarines without a DD present, edit in Escort_ConvoyA<br><br><img src="Escort_ConvoyA.png"/> <br><br> These will not be able to attack Submarines. Edit back after battle if needed. <br>
 <br>
@@ -441,7 +473,7 @@ Don't attack with Damaged Carriers. Take Carriers as a hit over Battleships, whe
 <br>
 <b>This has been partially Fixed and they will now Place in Sea Zones that Border a Land Territory that you Control.</b> <br>
 <br>
-Purchase the Repair "Unit" and place in any legal spot First Place Phase to keep Correct PU total and then Edit A Repair Unit to the correct Sea Zone.<br>
+Purchase the Repair "Unit" and place in any legal spot First Place Phase to keep Correct PU total and then Edit A Repair Unit to the correct Sea Zone or <b>temporarily change a TTy to your control, place and then edit back</b>.<br>
 <br>
 Only scramble to the disabled Carrier's Sea Zone with the "Defend CV" Unit. Do not take as a hit in Land Combat. Do Not use any designated Fighters for other actions while on Carrier Defense Duty. These are all Player Enforced.<br>
 <br>
@@ -487,8 +519,6 @@ This is to help remind the Player of it's non combat move availability. They wil
 Rail Units are now Nation Specific and will only move where they are allowed to. You may still need to use edit in certain situations.<br><br>
 Click on the Rail unit and then click the unit you want to move.<br>
 <br>
-Click on the Rail unit and then click the unit you want to move.<br>
-<br>
 Use edit "Perform Move or Other Actions" if necessary to make your move.<br>
 <br> 
 Correct movement is Player Enforced.<br>
@@ -501,20 +531,26 @@ Japanese Rail will not Place if All of China is Chinese controlled. Use edit to 
 <b>4. Home Defense</b><br>
 <br>
 <img src="HomeDefense.png"/> <br><br>
-Use edit to place a "HomeDefense" token. It will place 2 Infantry for Japan and boost the Infantry and Fighters by 1 on defense for the first round only for UK and Japan.<br>
+Use edit to place a "HomeDefense" token. It will place 2 Infantry for Japan and boost their Infantry by 1 on defense for the first round only. It will also boost UK Fighters and their Infantry by 1 on Defense for UK.<br>
 It will then auto remove after first round of battle and the remaining units will revert to their normal defense factor.
 <br>
+<br>
+<b>NOTE</b><br>
+This currently will <b>Only</b> place the JPN Infantry after Japan's Non Combat move .<br>
+You will need to edit them before battle along with the HD token before battle otherwise.<br>
+<b>Also</b> any French Infantry will defend at 3 for the first round. This is incorrect and will be fixed.<br>
+For now, switch UK Mech Infantry for any French Infantry and edit back as needed after battle.<br>
 <br>
 <b>5. Landing Craft</b><br>
 <br>
 <img src="USA_LCV.png"/> <br><br>
-Only take as casualty when Attacking in Land Battles. They will Auto Die when only units left in battle. Player Enforced. Roll Scramble Battles in the Dice Roller <b>before</b> starting Combat Phase.<br>
+Only take as casualty when Attacking in Amphibous Battles. They will Auto Die when only units left in battle. Player Enforced. Roll Scramble Battles in the Dice Roller <b>before</b> starting Combat Phase.<br>
 <br>
 Use edit "Perform Move or Other Actions" for movement across Sea Zones. You will need to click on the units it's carrying as well.
 <br>
 <br>
 <b>IMPORTANT</b><br>
- If accompanied by Air Units during an attack, you won't be able to retreat Air Units during battle. If necessary, save game, reroll battle accordingly using the triplea Dice Roller located in "View" top left of screen and then edit correct outcome or<b> do the battle in Edit mode</b>.<br>
+ If accompanied by Air Units during an attack, you won't be able to retreat Air Units during battle. <b> It is suggested to do the battle in Edit mode</b>. Otherwise, it may be necessary to save game, reroll battle accordingly using the triplea Dice Roller located in "View" top left of screen and then edit correct outcome.<br>
 <br>
 <b>6. D-Day</b><br>
 <br>
@@ -552,6 +588,8 @@ Placement Restrictions Player Enforced. So no more than 20 in Moscow and 6 in th
 <b>Note</b><br>
 May Max Place Regardless of Factory Damage.<br><br>
 May be turned off in "Map Options".<br>
+<br>
+<b>It will now auto change to Infantry in most situations.</b><br>
 <br>
 <b>8. German U-boats</b><br>
 <br>
@@ -683,10 +721,7 @@ Placement number is Player Enforced. Only place during 2nd plase phase or they w
 <b>9. Air Transport</b><br>
 <br>
 <img src="air_transport.png"/> <br><br>
-Movement is Player Enforced. They can move 6, or 7 with Airfield, whether loaded or not. Only Germany may transport Panzers or Panzer rated units. <br>
-<br>
-<b>Note</b><br>
-They won't reset if you select from all units. Best to load one at a time. May need to restart game if unable to edit correct behavior.<br>
+Movement is Player Enforced. They can move 6, or 7 with Airfield, whether loaded or not. Only Germany may transport Panzers or Panzer rated units. Triplea does this correctly.<br>
 <br>
 <b>Section V Optional Rules</b><br>
 <br>
@@ -719,7 +754,7 @@ Max Build is Player Enforced. Per turn build of 3, is Player Enforced. They can 
 Repair unit will not repair Battleship or Carrier.
 <br>
 <br>
-It is actually easier to use edit for the repairs, as their combat values do not change the way Battleships do. <br>
+Buy the appropriate number of "repair units" and place where needed.<br>
 <br>
 <b>5. Waffen Heavy Tank</b><br>
 <br>
@@ -823,7 +858,7 @@ Edit in the "tactical_bomberPG/TG" and "artilleryPG/TG" before battle to prevent
 <b>18. Combat Engineer</b><br>
 <br>
 <img src="German_Engineer.png"/> <br><br>
-Adds the Combat Engineer Unit. Use Edit for moving Minor Factories and removing Landmines. Also for landing at Landing Strips. Land the Air Unit in a legal area and then edit after Non Combat Move. Unit Image courtesy of Hepps.
+Adds the Combat Engineer Unit. Use Edit for removing Landmines. Also for landing at Landing Strips. Land the Air Unit in a legal area if needed and then edit after Non Combat Move. Unit Image courtesy of Hepps.
 <br>
 <br>
 They are Named "German_Engineer" "Russian_Engineer" "Japan_Engineer" "USA_Engineer" and "UK_Engineer". <br>
@@ -946,7 +981,7 @@ Adds The Captain's German U-Boat Pens.<br> Image created by Hepps.
 https://www.axisandallies.org/forums/assets/uploads/files/1717401203834-7.german-u-boat-pen.pdf
 <br>
 <br>
-You will need to edit in and out the "UboatPen" <img src="UBoatPen.png"/> and  "XXI_UboatPen" <img src="XXI_UBoatPen.png"/> as needed.<br><br>
+You will need to edit in and out of the "UboatPen" <img src="UBoatPen.png"/> and  "XXI_UboatPen" <img src="XXI_UBoatPen.png"/> as needed.<br><br>
 They are owned by Changer and work similar as Landmines, in that they cannot be attacked.<br><br>
 Rules are Player Enforced. <br><br>
 <b>26. Operation Felix-Heinrich</b><br>
@@ -1079,7 +1114,15 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 2.26<br> 11/18/24 
+<br>Version 2.27<br> 12/15/24 
+<br>
+Version 2.27<br> Will Not Work with 2.22 or Earlier Version Saves.<br><br>
+Update Game Notes.<br>
+Adjust Home Defense.<br>
+Fix 4 Sea Zone Escorts Not Changing Correctly.<br>
+Allow German Total War Units to be Built in Northern and Southern Italy.
+<br>
+<br>Version 2.26<br> 11/19/24 
 <br>
 Version 2.26<br> Will Not Work with 2.22 or Earlier Version Saves.<br><br>
 Fix Tactical Bomber PG and TG Not Getting Bonus Movement from Airfields.<br>
