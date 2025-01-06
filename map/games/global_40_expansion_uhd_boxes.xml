@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.29"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.292"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -32557,6 +32557,7 @@
       <option name="placement" value="Early 1942:RedArmyConscript" count="1"/>
       <option name="placement" value="Early 1942:WaffenPnzrGrndr" count="1"/>
       <option name="placement" value="Early 1942:USA_TankGeneral" count="1"/>
+      <option name="placement" value="Early 1942:FrenchUK" count="1"/>
       <option name="placement" value="Late 1942:Late1942" count="1"/>
       <option name="placement" value="Late 1942:Carrier2FTRS" count="1"/>
       <option name="placement" value="Late 1942:waffen_panzer" count="1"/>
@@ -32565,6 +32566,7 @@
       <option name="placement" value="Late 1942:Banzai" count="1"/>
       <option name="placement" value="Late 1942:LuftwaffeAce" count="1"/>
       <option name="placement" value="Late 1942:USATankDestroyerFS" count="1"/>
+      <option name="placement" value="Late 1942:waffen_PG" count="1"/>
       <option name="placement" value="Early 1943:Early1943" count="1"/>
       <option name="placement" value="Early 1943:BBandTransport" count="1"/>
       <option name="placement" value="Early 1943:TotalWar" count="1"/>
@@ -32624,6 +32626,7 @@
       <option name="placement" value="Early 1942:RedArmyConscript" count="1"/>
       <option name="placement" value="Early 1942:WaffenPnzrGrndr" count="1"/>
       <option name="placement" value="Early 1942:USA_TankGeneral" count="1"/>
+      <option name="placement" value="Early 1942:FrenchUK" count="1"/>
       <option name="placement" value="Late 1942:Late1942" count="1"/>
       <option name="placement" value="Late 1942:Carrier2FTRS" count="1"/>
       <option name="placement" value="Late 1942:waffen_panzer" count="1"/>
@@ -32632,6 +32635,7 @@
       <option name="placement" value="Late 1942:Banzai" count="1"/>
       <option name="placement" value="Late 1942:LuftwaffeAce" count="1"/>
       <option name="placement" value="Late 1942:USATankDestroyerFS" count="1"/>
+      <option name="placement" value="Late 1942:waffen_PG" count="1"/>
       <option name="placement" value="Early 1943:Early1943_red" count="1"/>
       <option name="placement" value="Early 1943:BBandTransport" count="1"/>
       <option name="placement" value="Early 1943:TotalWar" count="1"/>
@@ -43664,38 +43668,38 @@
     <attachment name="triggerAttachment_GermanyDOWonUSSR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachment_Russians_AtWarWithGermans:conditionAttachment_Russians_AtWarWithItaliansInvert"/>
       <option name="uses" value="1"/>
-      <option name="when" value="before:russiansPurchase"/>
+      <option name="when" value="after:germansCombatMove"/>
       <option name="notification" value="AxisDOWonUSSR10PU"/>
     </attachment>
     <attachment name="triggerAttachment_ItalyDOWonUSSR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachment_Russians_AtWarWithItalians:conditionAttachment_Russians_AtWarWithGermansInvert"/>
       <option name="uses" value="1"/>
-      <option name="when" value="before:anzacPurchase"/>
+      <option name="when" value="after:italiansCombatMove"/>
       <option name="notification" value="AxisDOWonUSSR10PUItaly"/>
     </attachment>
 
     <attachment name="triggerAttachment_JapanDOWonUSSRrd3OrAbove" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn3Thru10:EXP43Invert:conditionAttachment_Russians_AtWarWithJapanese"/>
       <option name="uses" value="1"/>
-      <option name="when" value="before:americansPurchase"/>
+      <option name="when" value="after:japaneseCombatMove"/>
       <option name="notification" value="JPN_DOW_USSR"/>
     </attachment>
     <attachment name="triggerAttachment_UssrDOWonJPNrd3OrAbove" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn3Thru10:EXP43Invert:conditionAttachment_Japanese_AtWarWithRussians"/>
       <option name="uses" value="1"/>
-      <option name="when" value="before:japanesePurchase"/>
+      <option name="when" value="after:russiansCombatMove"/>
       <option name="notification" value="USSR_DOW_JPN"/>
     </attachment>
     <attachment name="triggerAttachment_JapanDOWonUSSRrd3OrAbove43" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1Thru4:EXP43:conditionAttachment_Russians_AtWarWithJapanese"/>
       <option name="uses" value="1"/>
-      <option name="when" value="before:americansPurchase"/>
+      <option name="when" value="after:japaneseCombatMove"/>
       <option name="notification" value="JPN_DOW_USSR43"/>
     </attachment>
     <attachment name="triggerAttachment_UssrDOWonJPNrd3OrAbove43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1Thru4:EXP43:conditionAttachment_Japanese_AtWarWithRussians"/>
       <option name="uses" value="1"/>
-      <option name="when" value="before:japanesePurchase"/>
+      <option name="when" value="after:russiansCombatMove"/>
       <option name="notification" value="USSR_DOW_JPN43"/>
     </attachment>
     
