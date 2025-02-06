@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.291"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.2931"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1481,7 +1481,7 @@
     <connection t1="110 Sea Zone" t2="111 Sea Zone"/>
     <connection t1="110 Sea Zone" t2="105 Sea Zone"/>
 
-    <connection t1="Poland" t2="3rd Panzer"/>
+    <connection t1="Germany" t2="3rd Panzer"/>
     <connection t1="Early 1944" t2="3rd Panzer"/>
     <connection t1="1st Desert" t2="3rd Panzer"/>
     <connection t1="1st Desert" t2="3rd Waffen"/>
@@ -7395,7 +7395,7 @@
     <!-- Hvy Ind 1 -->
     <attachment name="unitAttachment" attachTo="Hvy_Ind_1" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isFactory" value="true"/>
-      <option name="unitPlacementOnlyAllowedIn" value="Southern Italy:Union of South Africa:New South Wales:Southern France:Normandy Bordeaux"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Southern Italy:Northern Italy:Germany:Western Germany:Union of South Africa:New South Wales:Southern France:Normandy Bordeaux"/>
       <option name="canOnlyBePlacedInTerritoryValuedAtX" value="2"/>
       <!--<option name="destroyedWhenCapturedBy" value="Chinese"/>-->
       <option name="isAAforBombingThisUnitOnly" value="true"/>
@@ -7564,7 +7564,6 @@
       <option name="constructionType" value="airfield_structure"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
-      <option name="movement" value="0"/>
       <option name="givesMovement" value="1:fighter"/>
       <option name="givesMovement" value="1:LuftwaffeAce"/>
       <option name="givesMovement" value="1:FighterAce"/>
@@ -7617,7 +7616,6 @@
       <option name="constructionType" value="airfield_structureHvy"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
-      <option name="movement" value="0"/>
       <option name="givesMovement" value="1:fighter"/>
       <option name="givesMovement" value="1:LuftwaffeAce"/>
       <option name="givesMovement" value="1:FighterAce"/>
@@ -7773,8 +7771,11 @@
     <!-- aaGunNO -->
     <attachment name="unitAttachment" attachTo="aaGunNO" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
+      <option name="isLandTransportable" value="true"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
+      <option name="transportCost" value="3"/>
+      <option name="isAirTransportable" value="true"/>
     </attachment>
     <!-- DestroyerTransport -->
     <attachment name="unitAttachment" attachTo="DestroyerTransport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -29223,6 +29224,16 @@
       <option name="unitPresence" value="Army_Conscript" count="20"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveConscriptsInvert19" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Russia" count="1"/>
+      <option name="unitPresence" value="Army_Conscript" count="19"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveConscriptsInvert18" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Russia" count="1"/>
+      <option name="unitPresence" value="Army_Conscript" count="18"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_RussiansRemoveConscriptsVolgograd" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Volgograd" count="1"/>
       <option name="unitPresence" value="Army_Conscript" count="6"/>
@@ -29251,6 +29262,15 @@
     <attachment name="conditionAttachment_RussiansRemoveConscripts18Invert" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Russia" count="1"/>
       <option name="unitPresence" value="Army_Conscript" count="18"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveConscripts17" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Russia" count="1"/>
+      <option name="unitPresence" value="Army_Conscript" count="17"/>
+    </attachment>
+    <attachment name="conditionAttachment_RussiansRemoveConscripts17Invert" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Russia" count="1"/>
+      <option name="unitPresence" value="Army_Conscript" count="17"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_RussiansRemoveTotalWarInf" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -31041,8 +31061,16 @@
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="Repair_BB" count="1"/>
     </attachment>
-    <attachment name="conditionAttachment_AmericansRemoveTotalWarInf" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="Eastern United States:Western United States:Central United States" count="1"/>
+    <attachment name="conditionAttachment_AmericansRemoveTotalWarInfEUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Eastern United States" count="1"/>
+      <option name="unitPresence" value="TotalWar_Inf" count="11"/>
+    </attachment>
+    <attachment name="conditionAttachment_AmericansRemoveTotalWarInfCUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Central United States" count="1"/>
+      <option name="unitPresence" value="TotalWar_Inf" count="11"/>
+    </attachment>
+    <attachment name="conditionAttachment_AmericansRemoveTotalWarInfWUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Western United States" count="1"/>
       <option name="unitPresence" value="TotalWar_Inf" count="11"/>
     </attachment>
     <attachment name="conditionAttachment_AmericansRemoveTotalWarMechInf6EUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -32243,7 +32271,7 @@
     <attachment name="triggerAttachmen1stDesertArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="1st Desert:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenOverflow" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32271,7 +32299,7 @@
     <attachment name="triggerAttachmen1stPanzerArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="1st Panzer:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen2ndPanzerArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32281,7 +32309,7 @@
     <attachment name="triggerAttachmen2ndPanzerArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="2nd Panzer:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen3rdPanzerArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32291,7 +32319,7 @@
     <attachment name="triggerAttachmen3rdPanzerArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="3rd Panzer:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenCredits" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32306,7 +32334,7 @@
     <attachment name="triggerAttachmen1stWaffenArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="1st Waffen:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen1stWaffenPnzrArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert:WaffenPG"/>
@@ -32326,7 +32354,7 @@
     <attachment name="triggerAttachmen2ndWaffenArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="2nd Waffen:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen3rdWaffenArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32336,7 +32364,7 @@
     <attachment name="triggerAttachmen3rdWaffenArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="3rd Waffen:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen4thWaffenArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32346,7 +32374,7 @@
     <attachment name="triggerAttachmen4thWaffenArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="4th Waffen:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenArmyGroupNorth" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32358,7 +32386,7 @@
     <attachment name="triggerAttachmenArmyGroupNorthFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="Army Group North:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenArmyGroupCentre" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32370,7 +32398,7 @@
     <attachment name="triggerAttachmenArmyGroupCentreFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="Army Group Centre:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenArmyGroupSouth" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32382,7 +32410,7 @@
     <attachment name="triggerAttachmenArmyGroupSouthFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="Army Group South:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     
     <attachment name="triggerAttachmen1stSovietAG" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -32395,7 +32423,7 @@
     <attachment name="triggerAttachmen1stSovietAGFctry" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="1st Army Group:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen2ndSovietAG" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert"/>
@@ -32407,7 +32435,7 @@
     <attachment name="triggerAttachmen2ndSovietAGFctry" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="2nd Army Group:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen1stCorps" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert"/>
@@ -32417,7 +32445,7 @@
     <attachment name="triggerAttachmen1stCorpsFctry" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="1st Corps:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen2ndCorps" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert"/>
@@ -32427,7 +32455,7 @@
     <attachment name="triggerAttachmen2ndCorpsFctry" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="2nd Corps:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen3rdCorps" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert"/>
@@ -32437,7 +32465,7 @@
     <attachment name="triggerAttachmen3rdCorpsFctry" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="3rd Corps:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen1stTankArmy" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert"/>
@@ -32447,7 +32475,7 @@
     <attachment name="triggerAttachmen1stTankArmyFctry" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="1st Tank:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen2ndTankArmy" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert"/>
@@ -32457,7 +32485,7 @@
     <attachment name="triggerAttachmen2ndTankArmyFctry" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="2nd Tank:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen1stUSTank" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32467,7 +32495,7 @@
     <attachment name="triggerAttachmen1stUSTankFctry" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="1st USA Tank:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen2ndUSTank" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32477,7 +32505,7 @@
     <attachment name="triggerAttachmen2ndUSTankFctry" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="2nd USA Tank:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen1stUSAG" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32489,7 +32517,7 @@
     <attachment name="triggerAttachmen1stUSAGFctry" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="USA Army Group:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenUSADesertArmy" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32499,7 +32527,7 @@
     <attachment name="triggerAttachmenUSADesertArmyFctry" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="USA Desert:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen1stUKTank" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32509,7 +32537,7 @@
     <attachment name="triggerAttachmen1stUKTankFctry" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="1st UK Tank:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenUKDesertArmy" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
@@ -32519,7 +32547,7 @@
     <attachment name="triggerAttachmenUKDesertArmyFctry" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="UK Desert:BoxFctry" count="1"/>
-      <option name="when" value="after:germansPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
 
     <!-- Changer Triggers -->
@@ -43006,9 +43034,16 @@
       <option name="when" value="after:russiansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_RussiansReplaceConscripts18" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn5:conditionAttachment_RussiansRemoveConscriptsInvert:conditionAttachment_RussiansRemoveConscripts19Invert:conditionAttachment_RussiansRemoveConscripts18"/>
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn5:conditionAttachment_RussiansRemoveConscriptsInvert19:conditionAttachment_RussiansRemoveConscripts18"/>
       <option name="placement" value="Russia:infantry" count="18"/>
       <option name="removeUnits" value="Russia:Army_Conscript" count="18"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:russiansPlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_RussiansReplaceConscripts17" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn5:conditionAttachment_RussiansRemoveConscriptsInvert18:conditionAttachment_RussiansRemoveConscripts17"/>
+      <option name="placement" value="Russia:infantry" count="17"/>
+      <option name="removeUnits" value="Russia:Army_Conscript" count="17"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:russiansPlace"/>
     </attachment>
@@ -46185,21 +46220,21 @@
       <option name="when" value="before:americansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWarInfPlaceEUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarInf"/>
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarInfEUS"/>
       <option name="placement" value="Eastern United States:infantry" count="11"/>
       <option name="removeUnits" value="Eastern United States:TotalWar_Inf" count="11"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWarInfPlaceCUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarInf"/>
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarInfCUS"/>
       <option name="placement" value="Central United States:infantry" count="11"/>
       <option name="removeUnits" value="Central United States:TotalWar_Inf" count="11"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWarInfPlaceWUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarInf"/>
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarInfWUS"/>
       <option name="placement" value="Western United States:infantry" count="11"/>
       <option name="removeUnits" value="Western United States:TotalWar_Inf" count="11"/>
       <option name="uses" value="99"/>
@@ -46213,21 +46248,21 @@
       <option name="when" value="before:americansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWarInfPlaceEUSEXP43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_AmericansRemoveTotalWarInf"/>
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_AmericansRemoveTotalWarInfEUS"/>
       <option name="placement" value="Eastern United States:infantry" count="11"/>
       <option name="removeUnits" value="Eastern United States:TotalWar_Inf" count="11"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWarInfPlaceCUSEXP43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_AmericansRemoveTotalWarInf"/>
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_AmericansRemoveTotalWarInfCUS"/>
       <option name="placement" value="Central United States:infantry" count="11"/>
       <option name="removeUnits" value="Central United States:TotalWar_Inf" count="11"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWarInfPlaceWUSEXP43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_AmericansRemoveTotalWarInf"/>
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_AmericansRemoveTotalWarInfWUS"/>
       <option name="placement" value="Western United States:infantry" count="11"/>
       <option name="removeUnits" value="Western United States:TotalWar_Inf" count="11"/>
       <option name="uses" value="99"/>
@@ -50544,6 +50579,13 @@
     </attachment>
     <attachment name="playerAttachment" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="giveUnitControl" value="British"/>
+    </attachment>
+    <attachment name="playerAttachment" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
+      <option name="placementLimit" value="allied:elite" count="1"/>
+      <option name="placementLimit" value="owned:waffen_infantry" count="6"/>
+      <option name="placementLimit" value="owned:Waffen_Arty" count="2"/>
+      <option name="placementLimit" value="owned:WaffenPioneer" count="2"/>
+      <option name="placementLimit" value="owned:Panzer_General" count="1"/>
     </attachment>
     <!--  Rules Restrictions -->
     <attachment name="rulesAttachment" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
