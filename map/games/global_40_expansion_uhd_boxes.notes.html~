@@ -473,7 +473,7 @@ Do Not take as casualties. If they lose battle, they will auto die. If they win,
 <br>
 <b>10. Capital Warships Taking Damage</b><br>
 <br>
-Don't attack with Damaged Carriers. Take Carriers as a hit over Battleships, when both are present. These are Player Enforced. Don't take "Defend CV Hit" as a casualty in Land Combat. This is also Player Enforced.<br>
+Don't attack with Damaged Carriers. Alternate taking Carriers and Battleships as a hit, with CV's hit first when both are present. These are Player Enforced. Don't take "Defend CV Hit" as a casualty in Land Combat. This is also Player Enforced.<br>
 <br>
 1 "Repair Carrier" or "Repair BB" Unit will repair <b>All</b> Damaged Ships. Make sure to buy the appropriate amount of repair units. Player Enforced. They will auto die after combat move. Use edit to place in open sea. This may be fixed in the future.<br>
 <br>
@@ -483,10 +483,7 @@ Purchase the Repair "Unit" and place in any legal spot First Place Phase to keep
 <br>
 Only scramble to the disabled Carrier's Sea Zone with the "Defend CV" Unit. Do not take as a hit in Land Combat. Do Not use any designated Fighters for other actions while on Carrier Defense Duty. These are all Player Enforced.<br>
 <br>
-Place the "Defend CV" Unit during the 2nd Place Phase. It will auto remove before your next Purchase Phase.<br>
-<br>
-<b>Note</b><br>
-If you didn't purchase a free Defend CV unit, simply edit one in after your turn.<br>
+Use edit to place the "Defend_CV_Hit" Unit<br><img src="Defend_CV_Hit.png"/> <br><br> during the 2nd Place Phase. It will auto remove before your next Purchase Phase.<br>
 <br>
 <b>11. Super Heavy Battleship</b><br>
 <br>
@@ -729,6 +726,11 @@ Placement number is Player Enforced. Only place during 2nd plase phase or they w
 <img src="air_transport.png"/> <br><br>
 Movement is Player Enforced. They can move 6, or 7 with Airfield, whether loaded or not. Only Germany may transport Panzers or Panzer rated units. Triplea does this correctly.<br>
 <br>
+When needing to transport a Allied unit, you will need to use edit and Player Enforce correct game play. If desired, you can place a "AirTrprtAllied"<br>
+<br>
+<img src="AirTrprtAllied.png"/> <br><br> token in the territory where transport is taking place. This is for information purposes only.<br>
+You may also document in comment log.<br>
+<br>
 <b>Section V Optional Rules</b><br>
 <br>
 May be turned off in "Map Options" before Game Start.<br>
@@ -736,7 +738,10 @@ May be turned off in "Map Options" before Game Start.<br>
 <b>1. Soviet Partisans</b><br>
 <br>
 <img src="Soviet_Partisan.png"/> <br><br>
-You can purchase and place in any soviet controlled territory. You will need to then use edit, to place where you want and remove. This is to keep track of PU levels.<br>
+You can purchase and place in any Soviet controlled territory. You will need to then use edit, to place where you want and remove. This is to keep track of PU levels.<br>
+<br>
+<b>Note</b><br>
+It is suggested to place Partisans in 1st place phase. You can then move them in NCM with edit.<br>
 <br>
 You need to use edit to kill/remove any Partisans your units come into contact with. Also to change from 2 Partisans to 1 Infantry.<br> 
 <br>
@@ -1022,7 +1027,7 @@ Adds The Captain's French Units in UK.<br>
 https://www.axisandallies.org/forums/assets/uploads/files/1730303458835-20.french-units-in-uk.pdf
 <br>
 <br>
-It is available in Early 1942. Purchase the Unit and then place in 1st Place Phase. <br>
+It is available <b>Only</b> in Early 1942. Purchase the Unit and then place in 1st Place Phase. <br>
 You will need to then use Edit to change the units to UK control<br><br>
 Rules are Player Enforced. <br><br>
 <b>29. Tank Destroyers</b><br>
@@ -1150,7 +1155,15 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 2.293<br> 2/3/25 
+<br>Version 2.294<br> 2/14/25 
+<br>
+Add "AirTrprtAllied".<br>
+Fix "FrenchUK" Token Showing up in Purchase Window After Early 1942.<br>
+Make Total War Fighters Change Correctly when Placed in Sea Zones.<br>
+Allow Only 1 Build per Turn for "MassTanks".<br>
+Change Russian Total War Tanks to Only Place in Moscow.
+<br>
+<br>Version 2.293<br> 2/6/25 
 <br>
 Allow Minor Factorys to be Placed in Western Germany and Germany.<br>
 Make "aaGunNO" able to Rail and Air Transport.<br>
