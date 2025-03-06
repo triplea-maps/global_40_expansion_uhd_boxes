@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.294"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.293"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1962,7 +1962,6 @@
     <unit name="uk_tac_bomber_lendlease"/>
     <unit name="usa_armour_lendlease"/>
     <unit name="uk_armour_lendlease"/>
-    <unit name="AirTrprtAllied"/>
     <unit name="demo_airfield"/>
     <unit name="demo_harbour"/>
     <unit name="DemoUnderMajor"/>
@@ -3390,10 +3389,6 @@
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="uk_armour_lendlease" quantity="1"/>
     </productionRule>
-    <productionRule name="buyAirTrprtAllied">
-      <cost resource="PUs" quantity="0"/>
-      <result resourceOrUnit="AirTrprtAllied" quantity="1"/>
-    </productionRule>
     <productionRule name="buyDemo_Airfield">
       <cost resource="PUs" quantity="4"/>
       <result resourceOrUnit="demo_airfield" quantity="1"/>
@@ -3924,6 +3919,7 @@
       <frontierRules name="buyDemo_Hvy_Undg_1"/>
       <frontierRules name="buyDemo_Hvy_Undg_2"/>
       <frontierRules name="buyDemoAirfieldHvy"/>
+      <frontierRules name="buyDefend_CV_Hit"/>
       <frontierRules name="buyRepair_Carrier"/>
       <frontierRules name="buyRepair_BB"/>
       <frontierRules name="buyFactory_Upgrade"/>
@@ -3968,6 +3964,7 @@
       <frontierRules name="buyDemo_Hvy_Undg_2"/>
       <frontierRules name="buyDemoRusHvy1Undg"/>
       <frontierRules name="buyDemoAirfieldHvy"/>
+      <frontierRules name="buyDefend_CV_Hit"/>
       <frontierRules name="buyRepair_Carrier"/>
       <frontierRules name="buyRepair_BB"/>
       <frontierRules name="buyFactory_Upgrade"/>
@@ -4015,6 +4012,7 @@
       <frontierRules name="buyDemo_Hvy_Undg_1"/>
       <frontierRules name="buyDemo_Hvy_Undg_2"/>
       <frontierRules name="buyDemoAirfieldHvy"/>
+      <frontierRules name="buyDefend_CV_Hit"/>
       <frontierRules name="buyRepair_Carrier"/>
       <frontierRules name="buyRepair_BB"/>
       <frontierRules name="buyFactory_Upgrade"/>
@@ -4064,6 +4062,7 @@
       <frontierRules name="buyDemo_Hvy_Undg_1"/>
       <frontierRules name="buyDemo_Hvy_Undg_2"/>
       <frontierRules name="buyDemoAirfieldHvy"/>
+      <frontierRules name="buyDefend_CV_Hit"/>
       <frontierRules name="buyRepair_Carrier"/>
       <frontierRules name="buyRepair_BB"/>
       <frontierRules name="buyFactory_Upgrade"/>
@@ -4111,6 +4110,7 @@
       <frontierRules name="buyDemo_Hvy_Undg_1"/>
       <frontierRules name="buyDemo_Hvy_Undg_2"/>
       <frontierRules name="buyDemoAirfieldHvy"/>
+      <frontierRules name="buyDefend_CV_Hit"/>
       <frontierRules name="buyRepair_Carrier"/>
       <frontierRules name="buyRepair_BB"/>
       <frontierRules name="buyFactory_Upgrade"/>
@@ -4154,6 +4154,7 @@
       <frontierRules name="buyDemo_Hvy_Undg_1"/>
       <frontierRules name="buyDemo_Hvy_Undg_2"/>
       <frontierRules name="buyDemoAirfieldHvy"/>
+      <frontierRules name="buyDefend_CV_Hit"/>
       <frontierRules name="buyRepair_Carrier"/>
       <frontierRules name="buyRepair_BB"/>
       <frontierRules name="buyFactory_Upgrade"/>
@@ -4194,6 +4195,7 @@
       <frontierRules name="buyDemo_Hvy_Undg_1"/>
       <frontierRules name="buyDemo_Hvy_Undg_2"/>
       <frontierRules name="buyDemoAirfieldHvy"/>
+      <frontierRules name="buyDefend_CV_Hit"/>
       <frontierRules name="buyRepair_Carrier"/>
       <frontierRules name="buyRepair_BB"/>
       <frontierRules name="buyFactory_Upgrade"/>
@@ -4235,6 +4237,7 @@
       <frontierRules name="buyDemoAirfieldHvy"/>
       <frontierRules name="buyFortification"/>
       <frontierRules name="buyFactory_Upgrade"/>
+      <frontierRules name="buyDefend_CV_Hit"/>
       <frontierRules name="buyRepair_Carrier"/>
       <frontierRules name="buyRepair_BB"/>
     </productionFrontier>
@@ -6244,7 +6247,6 @@
       <option name="defense" value="0"/>
       <option name="isLandTransport" value="false"/>
       <option name="unitPlacementOnlyAllowedIn" value="Russia"/>
-      <option name="maxBuiltPerPlayer" value="1"/>
     </attachment>
     <!-- TotalWar Inf -->
     <attachment name="unitAttachment" attachTo="TotalWar_Inf" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -6286,7 +6288,6 @@
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="isLandTransport" value="false"/>
-      <option name="unitPlacementOnlyAllowedIn" value="Russia"/>
     </attachment>
     <!-- TotalWar Arty -->
     <attachment name="unitAttachment" attachTo="TotalWar_Arty" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -10272,17 +10273,6 @@
       <option name="defense" value="0"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="1PU"/>
-      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
-      <option name="maxConstructionsPerTypePerTerr" value="99"/>
-      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
-    </attachment>
-    <!-- AirTrprtAllied -->
-    <attachment name="unitAttachment" attachTo="AirTrprtAllied" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="movement" value="99"/>
-      <option name="attack" value="0"/>
-      <option name="defense" value="0"/>
-      <option name="isConstruction" value="true"/>
-      <option name="constructionType" value="AirTrprtAllied"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
       <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
@@ -28537,22 +28527,6 @@
 	<option name="directPresenceTerritories" value="Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarFighter" count="4"/>
       </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter4Germany112SZ" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="112 Sea Zone" count="1"/>
-	<option name="unitPresence" value="TotalWarFighter" count="4"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter4Germany113SZ" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="113 Sea Zone" count="1"/>
-	<option name="unitPresence" value="TotalWarFighter" count="4"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter4Germany95SZ" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="95 Sea Zone" count="1"/>
-	<option name="unitPresence" value="TotalWarFighter" count="4"/>
-      </attachment>
-      <attachment name="conditionAttachment_GermansRemoveTotalWarFighter4Germany97SZ" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-	<option name="directPresenceTerritories" value="97 Sea Zone" count="1"/>
-	<option name="unitPresence" value="TotalWarFighter" count="4"/>
-      </attachment>
       <attachment name="conditionAttachment_GermansRemoveTotalWarFighter4NorthernItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
 	<option name="directPresenceTerritories" value="Northern Italy" count="1"/>
 	<option name="unitPresence" value="TotalWarFighter" count="4"/>
@@ -29801,10 +29775,6 @@
       <option name="directPresenceTerritories" value="Japan" count="1"/>
       <option name="unitPresence" value="TotalWarFighter" count="4"/>
     </attachment>
-    <attachment name="conditionAttachment_JapaneseRemoveTotalWarFighter4SZ6" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="6 Sea Zone" count="1"/>
-      <option name="unitPresence" value="TotalWarFighter" count="4"/>
-    </attachment>
     <attachment name="conditionAttachment_JapaneseRemoveTotalWarFighter4Invert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Japan" count="1"/>
       <option name="unitPresence" value="TotalWarFighter" count="5"/>
@@ -30356,14 +30326,6 @@
 
     <attachment name="conditionAttachment_BritishRemoveTotalWarFighter4" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="United Kingdom" count="1"/>
-      <option name="unitPresence" value="TotalWarFighter" count="4"/>
-    </attachment>
-    <attachment name="conditionAttachment_BritishRemoveTotalWarFighter4SZ110" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="110 Sea Zone" count="1"/>
-      <option name="unitPresence" value="TotalWarFighter" count="4"/>
-    </attachment>
-    <attachment name="conditionAttachment_BritishRemoveTotalWarFighter4SZ109" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="109 Sea Zone" count="1"/>
       <option name="unitPresence" value="TotalWarFighter" count="4"/>
     </attachment>
     <attachment name="conditionAttachment_BritishRemoveTotalWarFighter4Invert" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -31281,18 +31243,6 @@
     </attachment>
     <attachment name="conditionAttachment_AmericansRemoveTotalWarFighter4WUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Western United States" count="1"/>
-      <option name="unitPresence" value="TotalWarFighter" count="4"/>
-    </attachment>
-    <attachment name="conditionAttachment_AmericansRemoveTotalWarFighter4EUS101SZ" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="101 Sea Zone" count="1"/>
-      <option name="unitPresence" value="TotalWarFighter" count="4"/>
-    </attachment>
-    <attachment name="conditionAttachment_AmericansRemoveTotalWarFighter4CUS101SZ" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="101 Sea Zone" count="1"/>
-      <option name="unitPresence" value="TotalWarFighter" count="4"/>
-    </attachment>
-    <attachment name="conditionAttachment_AmericansRemoveTotalWarFighter4WUS10SZ" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="10 Sea Zone" count="1"/>
       <option name="unitPresence" value="TotalWarFighter" count="4"/>
     </attachment>
     <attachment name="conditionAttachment_AmericansRemoveTotalWarFighter4EUSInvert" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -33193,13 +33143,13 @@
       <option name="conditions" value="FrenchInUK:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn5"/>
       <option name="productionRule" value="productionBritish:buyFrenchUK"/>
       <option name="uses" value="1"/>
-      <option name="when" value="before:britishPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachment_FrenchUKRemove" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="FrenchInUK:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn6"/>
-      <option name="productionRule" value="productionBritish:-buyFrenchUK"/>
+    <attachment name="triggerAttachment_FrenchUK43" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="FrenchInUK:BasicEXPInvert:EXP43:conditionAttachmentTurn1"/>
+      <option name="productionRule" value="productionBritish:buyFrenchUK"/>
       <option name="uses" value="1"/>
-      <option name="when" value="before:britishPurchase"/>
+      <option name="when" value="before:germansPurchase"/>
     </attachment>
     
     <attachment name="triggerAttachment_SubPen" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -41375,7 +41325,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_GermansTotalWarFighterEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:TotalWar:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="EXP43:TotalWar:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionGermans:buyTotalWarFighter"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
@@ -41385,62 +41335,6 @@
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4Germany:conditionAttachment_GermansRemoveTotalWarFighter4InvertGermany"/>
       <option name="placement" value="Germany:fighter" count="4"/>
       <option name="removeUnits" value="Germany:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:germansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceGermany4SZ112" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4Germany112SZ"/>
-      <option name="placement" value="112 Sea Zone:fighter" count="4"/>
-      <option name="removeUnits" value="112 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:germansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_GermansTotalWarFighter43PlaceGermany4SZ112" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4Germany112SZ"/>
-      <option name="placement" value="112 Sea Zone:fighter" count="4"/>
-      <option name="removeUnits" value="112 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:germansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceGermany4SZ113" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4Germany113SZ"/>
-      <option name="placement" value="113 Sea Zone:fighter" count="4"/>
-      <option name="removeUnits" value="113 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:germansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_GermansTotalWarFighter43PlaceGermany4SZ113" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4Germany113SZ"/>
-      <option name="placement" value="113 Sea Zone:fighter" count="4"/>
-      <option name="removeUnits" value="113 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:germansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceGermany4SZ95" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4Germany95SZ"/>
-      <option name="placement" value="95 Sea Zone:fighter" count="4"/>
-      <option name="removeUnits" value="95 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:germansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_GermansTotalWarFighter43PlaceGermany4SZ95" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4Germany95SZ"/>
-      <option name="placement" value="95 Sea Zone:fighter" count="4"/>
-      <option name="removeUnits" value="95 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:germansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_GermansTotalWarFighterPlaceGermany4SZ97" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4Germany97SZ"/>
-      <option name="placement" value="97 Sea Zone:fighter" count="4"/>
-      <option name="removeUnits" value="97 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:germansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_GermansTotalWarFighter43PlaceGermany4SZ97" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_GermansRemoveTotalWarFighter4Germany97SZ"/>
-      <option name="placement" value="97 Sea Zone:fighter" count="4"/>
-      <option name="removeUnits" value="97 Sea Zone:TotalWarFighter" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:germansPlace"/>
     </attachment>
@@ -44281,20 +44175,6 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
-    <attachment name="triggerAttachment_JapaneseTotalWarFighterPlaceJapan4SZ6" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarFighter4SZ6:conditionAttachment_JapaneseRemoveTotalWarFighter4Invert"/>
-      <option name="placement" value="6 Sea Zone:fighter" count="4"/>
-      <option name="removeUnits" value="6 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:japanesePlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_JapaneseTotalWarFighter43PlaceJapan4SZ6" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_JapaneseRemoveTotalWarFighter4SZ6:conditionAttachment_JapaneseRemoveTotalWarFighter4Invert"/>
-      <option name="placement" value="6 Sea Zone:fighter" count="4"/>
-      <option name="removeUnits" value="6 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:japanesePlace"/>
-    </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWarFighterPlaceJapan8" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarFighter8:conditionAttachment_JapaneseRemoveTotalWarFighter8Invert"/>
       <option name="placement" value="Japan:fighter" count="8"/>
@@ -45314,20 +45194,6 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:britishEndTurn"/>
     </attachment>
-    <attachment name="triggerAttachment_UKTotalWarFighterPlace4EXPSZ110" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWarFighter4SZ110:conditionAttachment_BritishRemoveTotalWarFighter4Invert"/>
-      <option name="placement" value="110 Sea Zone:uk_fighter" count="4"/>
-      <option name="removeUnits" value="110 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:britishEndTurn"/>
-    </attachment>
-    <attachment name="triggerAttachment_UKTotalWarFighterPlace4EXPSZ109" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWarFighter4SZ109:conditionAttachment_BritishRemoveTotalWarFighter4Invert"/>
-      <option name="placement" value="109 Sea Zone:uk_fighter" count="4"/>
-      <option name="removeUnits" value="109 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:britishEndTurn"/>
-    </attachment>
     <attachment name="triggerAttachment_UKTotalWarFighterPlace8" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_BritishRemoveTotalWarFighter8:conditionAttachment_BritishRemoveTotalWarFighter8Invert"/>
       <option name="placement" value="United Kingdom:uk_fighter" count="8"/>
@@ -45353,20 +45219,6 @@
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_BritishRemoveTotalWarFighter4:conditionAttachment_BritishRemoveTotalWarFighter4Invert"/>
       <option name="placement" value="United Kingdom:uk_fighter" count="4"/>
       <option name="removeUnits" value="United Kingdom:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:britishEndTurn"/>
-    </attachment>
-    <attachment name="triggerAttachment_UKTotalWarFighterPlace4EXP43SZ110" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_BritishRemoveTotalWarFighter4SZ110:conditionAttachment_BritishRemoveTotalWarFighter4Invert"/>
-      <option name="placement" value="110 Sea Zone:uk_fighter" count="4"/>
-      <option name="removeUnits" value="110 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:britishEndTurn"/>
-    </attachment>
-    <attachment name="triggerAttachment_UKTotalWarFighterPlace4EXP43SZ109" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_BritishRemoveTotalWarFighter4SZ109:conditionAttachment_BritishRemoveTotalWarFighter4Invert"/>
-      <option name="placement" value="109 Sea Zone:uk_fighter" count="4"/>
-      <option name="removeUnits" value="109 Sea Zone:TotalWarFighter" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:britishEndTurn"/>
     </attachment>
@@ -46739,48 +46591,6 @@
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarFighter4WUS:conditionAttachment_AmericansRemoveTotalWarFighter4WUSInvert"/>
       <option name="placement" value="Western United States:usa_fighter" count="4"/>
       <option name="removeUnits" value="Western United States:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:americansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_AmericansTotalWarFighterPlaceEUS101SZ" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarFighter4EUS101SZ:conditionAttachment_AmericansRemoveTotalWarFighter4EUSInvert"/>
-      <option name="placement" value="101 Sea Zone:usa_fighter" count="4"/>
-      <option name="removeUnits" value="101 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:americansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_AmericansTotalWarFighterPlaceCUS101SZ" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarFighter4CUS101SZ:conditionAttachment_AmericansRemoveTotalWarFighter4CUSInvert"/>
-      <option name="placement" value="101 Sea Zone:usa_fighter" count="4"/>
-      <option name="removeUnits" value="101 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:americansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_AmericansTotalWarFighterPlaceWUS10SZ" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWarFighter4WUS10SZ:conditionAttachment_AmericansRemoveTotalWarFighter4WUSInvert"/>
-      <option name="placement" value="10 Sea Zone:usa_fighter" count="4"/>
-      <option name="removeUnits" value="10 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:americansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_AmericansTotalWarFighter43PlaceEUS101SZ" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_AmericansRemoveTotalWarFighter4EUS101SZ:conditionAttachment_AmericansRemoveTotalWarFighter4EUSInvert"/>
-      <option name="placement" value="101 Sea Zone:usa_fighter" count="4"/>
-      <option name="removeUnits" value="101 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:americansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_AmericansTotalWarFighter43PlaceCUS101SZ" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_AmericansRemoveTotalWarFighter4CUS101SZ:conditionAttachment_AmericansRemoveTotalWarFighter4CUSInvert"/>
-      <option name="placement" value="101 Sea Zone:usa_fighter" count="4"/>
-      <option name="removeUnits" value="101 Sea Zone:TotalWarFighter" count="4"/>
-      <option name="uses" value="99"/>
-      <option name="when" value="after:americansPlace"/>
-    </attachment>
-    <attachment name="triggerAttachment_AmericansTotalWarFighter43PlaceWUS10SZ" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_AmericansRemoveTotalWarFighter4WUS10SZ:conditionAttachment_AmericansRemoveTotalWarFighter4WUSInvert"/>
-      <option name="placement" value="10 Sea Zone:usa_fighter" count="4"/>
-      <option name="removeUnits" value="10 Sea Zone:TotalWarFighter" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
     </attachment>
