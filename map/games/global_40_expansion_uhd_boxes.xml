@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.296"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.297"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -45782,13 +45782,13 @@
     </attachment>
 
     <attachment name="triggerAttachment_ItaliansBuyTakeOverItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:GermanyTakesItaly:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="EXP43Invert:GermanyTakesItaly:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionItalians:buyTakeOverItaly"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_ItaliansBuyTakeOverItaly43" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:GermanyTakesItaly:conditionAttachmentTurn2OrHigher"/>
+      <option name="conditions" value="EXP43:GermanyTakesItaly:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionItalians:buyTakeOverItaly"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
