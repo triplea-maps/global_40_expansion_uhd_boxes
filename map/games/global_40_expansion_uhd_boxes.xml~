@@ -1787,6 +1787,13 @@
     <unit name="fighter"/>
     <unit name="GfighterAF"/>
     <unit name="fighterAF"/>
+    <unit name="1stLuftfloffen"/>
+    <unit name="2ndLuftfloffen"/>
+    <unit name="3rdLuftfloffen"/>
+    <unit name="1stAirFleet"/>
+    <unit name="2ndAirFleet"/>
+    <unit name="USA1stAirFleet"/>
+    <unit name="USA2ndAirFleet"/>
     <unit name="GAirCommander"/>
     <unit name="GAirCommanderOn"/>
     <unit name="AirCommander"/>
@@ -3586,6 +3593,34 @@
     <productionRule name="buyBanzai">
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="Banzai" quantity="1"/>
+    </productionRule>
+    <productionRule name="buy1stLuftfloffen">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="1stLuftfloffen" quantity="1"/>
+    </productionRule>
+    <productionRule name="buy2ndLuftfloffen">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="2ndLuftfloffen" quantity="1"/>
+    </productionRule>
+    <productionRule name="buy3rdLuftfloffen">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="3rdLuftfloffen" quantity="1"/>
+    </productionRule>
+    <productionRule name="buy1stAirFleet">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="1stAirFleet" quantity="1"/>
+    </productionRule>
+    <productionRule name="buy2ndAirFleet">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="2ndAirFleet" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSA1stAirFleet">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="USA1stAirFleet" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSA2ndAirFleet">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="USA2ndAirFleet" quantity="1"/>
     </productionRule>
     <productionRule name="buyKamikaze">
       <cost resource="PUs" quantity="0"/>
@@ -6203,6 +6238,62 @@
     </attachment>
     <!-- Banzai -->
     <attachment name="unitAttachment" attachTo="Banzai" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+    </attachment>
+    <!-- 1stLuftfloffen -->
+    <attachment name="unitAttachment" attachTo="1stLuftfloffen" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+    </attachment>
+    <!-- 2ndLuftfloffen -->
+    <attachment name="unitAttachment" attachTo="2ndLuftfloffen" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+    </attachment>
+    <!-- 3rdLuftfloffen -->
+    <attachment name="unitAttachment" attachTo="3rdLuftfloffen" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+    </attachment>
+    <!-- 1st Air Fleet -->
+    <attachment name="unitAttachment" attachTo="1stAirFleet" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+    </attachment>
+    <!-- 2nd Air Fleet -->
+    <attachment name="unitAttachment" attachTo="2ndAirFleet" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+    </attachment>
+    <!-- USA 1st Air Fleet -->
+    <attachment name="unitAttachment" attachTo="USA1stAirFleet" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+    </attachment>
+    <!-- USA 2nd Air Fleet -->
+    <attachment name="unitAttachment" attachTo="USA2ndAirFleet" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="99"/>
       <option name="isAir" value="true"/>
       <option name="attack" value="0"/>
@@ -32711,42 +32802,93 @@
       <option name="placement" value="1st Waffen:BoxFctry" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachmen1stWaffenPnzrArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment1stLuftfloffen" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert:AirFleetCommander"/>
+      <option name="placement" value="1st Luftfloffen:1stLuftfloffen" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment1stLuftfloffen43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1:EXP43:AirFleetCommander"/>
+      <option name="placement" value="1st Luftfloffen:1stLuftfloffen" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment2ndLuftfloffen" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert:AirFleetCommander"/>
+      <option name="placement" value="2nd Luftfloffen:2ndLuftfloffen" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment2ndLuftfloffen43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1:EXP43:AirFleetCommander"/>
+      <option name="placement" value="2nd Luftfloffen:2ndLuftfloffen" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment3rdLuftfloffen" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert:AirFleetCommander"/>
+      <option name="placement" value="3rd Luftfloffen:3rdLuftfloffen" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment3rdLuftfloffen43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1:EXP43:AirFleetCommander"/>
+      <option name="placement" value="3rd Luftfloffen:3rdLuftfloffen" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment1stAirFleet" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert:AirFleetCommander"/>
+      <option name="placement" value="1st AirFleet:1stAirFleet" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment2ndAirFleet" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert:AirFleetCommander"/>
+      <option name="placement" value="2nd AirFleet:2ndAirFleet" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentUSA1stAirFleet" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert:AirFleetCommander"/>
+      <option name="placement" value="1st USA AirFleet:USA1stAirFleet" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentUSA2ndAirFleet" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert:AirFleetCommander"/>
+      <option name="placement" value="2nd USA AirFleet:USA2ndAirFleet" count="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    
+    <attachment name="triggerAttachment1stWaffenPnzrArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert:WaffenPG"/>
       <option name="placement" value="1st Waffen Panzer:1stWaffenPnzrArmy" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachmen1stWaffenPnzrArmy43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment1stWaffenPnzrArmy43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43:WaffenPG"/>
       <option name="placement" value="1st Waffen Panzer:1stWaffenPnzrArmy" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachmen2ndWaffenArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment2ndWaffenArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="2nd Waffen:2ndWaffenArmy" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachmen2ndWaffenArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment2ndWaffenArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="2nd Waffen:BoxFctry" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachmen3rdWaffenArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment3rdWaffenArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="3rd Waffen:3rdWaffenArmy" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachmen3rdWaffenArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment3rdWaffenArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="3rd Waffen:BoxFctry" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachmen4thWaffenArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment4thWaffenArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="4th Waffen:4thWaffenArmy" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachmen4thWaffenArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment4thWaffenArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="4th Waffen:BoxFctry" count="1"/>
       <option name="when" value="before:germansPurchase"/>
@@ -32995,6 +33137,17 @@
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
 
+    <attachment name="triggerAttachmenLate 1940AC" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:AirFleetCommander:conditionAttachmentTurn1"/>
+      <option name="placement" value="Late 1940:GAirCommanderOn" count="1"/>
+<option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenLate 1940ACEXP43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:AirFleetCommander:conditionAttachmentTurn1"/>
+      <option name="placement" value="Late 1940:GAirCommanderOn" count="1"/>
+<option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    
     <attachment name="triggerAttachmenEarly1943RedTimeTable" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn1"/>
       <option name="placement" value="Early 1940:Early1940" count="1"/>
@@ -41669,7 +41822,7 @@
     </attachment>
 
     <attachment name="triggerAttachment_AirCommander" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:AirFleetCommander:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="EXP43Invert:AirFleetCommander:conditionAttachmentTurn2OrHigher"/>
       <option name="productionRule" value="productionGermans:buyGAirCommander"/>
       <option name="productionRule" value="productionRussians:buyAirCommander"/>
       <option name="productionRule" value="productionAmericans:buyAirCommander"/>
