@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.297"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.3"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -247,7 +247,7 @@
 
   <map>
     <!-- Full europe list:
-				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Easterns Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:1st Desert:3rd Panzer:3rd Waffen:Army Group South:Army Group Centre:Army Group North:1st Waffen:1st Panzer:2nd Waffen:4th Waffen:2nd Panzer:1st Corps:1st Tank:2nd Corps:2nd Tank:3rd Corps:LM 1:1st Waffen Panzer:Credits:1st Army Group:2nd Army Group:UK Desert:1st UK Tank:USA Desert:1st USA Tank:2nd USA Tank:USA Army Group:Early 1940:Early 1941:Early 1942:Early 1943:Early 1944:Late 1940:Late 1941:Late 1942:Late 1943:Late 1944:D-Day:Overflow:Overflow2:Bermuda
+				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Easterns Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:1st Desert:3rd Panzer:3rd Waffen:Army Group South:Army Group Centre:Army Group North:1st Waffen:1st Panzer:2nd Waffen:4th Waffen:2nd Panzer:1st Corps:1st Tank:2nd Corps:2nd Tank:3rd Corps:1st Waffen Panzer:1st Luftfloffen:2nd Luftfloffen:3rd Luftfloffen:1st USA AirFleet:2nd USA AirFleet:1st AirFleet:2nd AirFleet:Credits:1st Army Group:2nd Army Group:UK Desert:1st UK Tank:USA Desert:1st USA Tank:2nd USA Tank:USA Army Group:Early 1940:Early 1941:Early 1942:Early 1943:Early 1944:Late 1940:Late 1941:Late 1942:Late 1943:Late 1944:D-Day:Overflow:Bermuda
 				-->
     <!-- Border territories:
 				Evenkiyskiy:Urals:Novosibirsk:Himalayas:Kazakhstan:Timguska:India:Sikang:Tsinghai:Kansu
@@ -256,7 +256,7 @@
 				Caroline Islands:Iwo Jima:Paulau Island:Marshall Islands:Shantung:Formosa:Kwangsi:Korea:Kiangsu:Kiangsi:Japan:Jehol:Okinawa:Marianas:Siam:Manchuria:Hainan:Shensi:Yunnan:Suiyuyan:Kweichow:Hunan:Hopei:Szechwan:Chahar:Anhwe:Gilbert Islands:Fiji:Ceylon:Samoa:Shan State:Burma:British Columbia:Malaya:Borneo:Yukon Territory:Kwangtung:Queensland:Victoria:New Britain:Northern Territory:New Zealand:New South Wales:South Australia:Western Australia:Solomon Islands:New Guinea:Philippines:Line Islands:Mexico:Guam:Wake Island:Western United States:Alaska:Aleutian Islands:Johnston Island:Hawaiian Islands:Midway:Sakha:Yenisey:Soviet Far East:Amur:Yakut S.S.R.:Siberia:Buryatia:French Indo China:New Hebrides:Celebes:Java:Dutch New Guinea:Sumatra:Olgiy:Dzavhan:Central Mongolia:Buyant-Uhaa:Ulaanbaatar:Tsagaan Olom
 				-->
     <!-- Full sea zone list:
-				1 Sea Zone:2 Sea Zone:3 Sea Zone:4 Sea Zone:5 Sea Zone:6 Sea Zone:7 Sea Zone:8 Sea Zone:9 Sea Zone:10 Sea Zone:11 Sea Zone:12 Sea Zone:13 Sea Zone:14 Sea Zone:15 Sea Zone:16 Sea Zone:17 Sea Zone:18 Sea Zone:19 Sea Zone:20 Sea Zone:21 Sea Zone:22 Sea Zone:23 Sea Zone:24 Sea Zone:25 Sea Zone:26 Sea Zone:27 Sea Zone:28 Sea Zone:29 Sea Zone:30 Sea Zone:31 Sea Zone:32 Sea Zone:33 Sea Zone:34 Sea Zone:35 Sea Zone:36 Sea Zone:37 Sea Zone:38 Sea Zone:39 Sea Zone:40 Sea Zone:41 Sea Zone:42 Sea Zone:43 Sea Zone:44 Sea Zone:45 Sea Zone:46 Sea Zone:47 Sea Zone:48 Sea Zone:49 Sea Zone:50 Sea Zone:51 Sea Zone:52 Sea Zone:53 Sea Zone:54 Sea Zone:55 Sea Zone:56 Sea Zone:57 Sea Zone:58 Sea Zone:59 Sea Zone:60 Sea Zone:61 Sea Zone:62 Sea Zone:63 Sea Zone:64 Sea Zone:65 Sea Zone:66 Sea Zone:67 Sea Zone:68 Sea Zone:69 Sea Zone:70 Sea Zone:71 Sea Zone:72 Sea Zone:73 Sea Zone:74 Sea Zone:75 Sea Zone:76 Sea Zone:77 Sea Zone:78 Sea Zone:79 Sea Zone:80 Sea Zone:81 Sea Zone:82 Sea Zone:83 Sea Zone:84 Sea Zone:85 Sea Zone:86 Sea Zone:87 Sea Zone:88 Sea Zone:89 Sea Zone:90 Sea Zone:91 Sea Zone:92 Sea Zone:93 Sea Zone:94 Sea Zone:95 Sea Zone:96 Sea Zone:97 Sea Zone:98 Sea Zone:99 Sea Zone:100 Sea Zone:101 Sea Zone:102 Sea Zone:103 Sea Zone:104 Sea Zone:105 Sea Zone:106 Sea Zone:107 Sea Zone:108 Sea Zone:109 Sea Zone:110 Sea Zone:111 Sea Zone:112 Sea Zone:113 Sea Zone:114 Sea Zone:115 Sea Zone:116 Sea Zone:117 Sea Zone:118 Sea Zone:119 Sea Zone:120 Sea Zone:121 Sea Zone:122 Sea Zone:123 Sea Zone:124 Sea Zone:125 Sea Zone:126 Sea Zone:127 Sea Zone:128 Sea Zone:SZflow Sea Zone
+				1 Sea Zone:2 Sea Zone:3 Sea Zone:4 Sea Zone:5 Sea Zone:6 Sea Zone:7 Sea Zone:8 Sea Zone:9 Sea Zone:10 Sea Zone:11 Sea Zone:12 Sea Zone:13 Sea Zone:14 Sea Zone:15 Sea Zone:16 Sea Zone:17 Sea Zone:18 Sea Zone:19 Sea Zone:20 Sea Zone:21 Sea Zone:22 Sea Zone:23 Sea Zone:24 Sea Zone:25 Sea Zone:26 Sea Zone:27 Sea Zone:28 Sea Zone:29 Sea Zone:30 Sea Zone:31 Sea Zone:32 Sea Zone:33 Sea Zone:34 Sea Zone:35 Sea Zone:36 Sea Zone:37 Sea Zone:38 Sea Zone:39 Sea Zone:40 Sea Zone:41 Sea Zone:42 Sea Zone:43 Sea Zone:44 Sea Zone:45 Sea Zone:46 Sea Zone:47 Sea Zone:48 Sea Zone:49 Sea Zone:50 Sea Zone:51 Sea Zone:52 Sea Zone:53 Sea Zone:54 Sea Zone:55 Sea Zone:56 Sea Zone:57 Sea Zone:58 Sea Zone:59 Sea Zone:60 Sea Zone:61 Sea Zone:62 Sea Zone:63 Sea Zone:64 Sea Zone:65 Sea Zone:66 Sea Zone:67 Sea Zone:68 Sea Zone:69 Sea Zone:70 Sea Zone:71 Sea Zone:72 Sea Zone:73 Sea Zone:74 Sea Zone:75 Sea Zone:76 Sea Zone:77 Sea Zone:78 Sea Zone:79 Sea Zone:80 Sea Zone:81 Sea Zone:82 Sea Zone:83 Sea Zone:84 Sea Zone:85 Sea Zone:86 Sea Zone:87 Sea Zone:88 Sea Zone:89 Sea Zone:90 Sea Zone:91 Sea Zone:92 Sea Zone:93 Sea Zone:94 Sea Zone:95 Sea Zone:96 Sea Zone:97 Sea Zone:98 Sea Zone:99 Sea Zone:100 Sea Zone:101 Sea Zone:102 Sea Zone:103 Sea Zone:104 Sea Zone:105 Sea Zone:106 Sea Zone:107 Sea Zone:108 Sea Zone:109 Sea Zone:110 Sea Zone:111 Sea Zone:112 Sea Zone:113 Sea Zone:114 Sea Zone:115 Sea Zone:116 Sea Zone:117 Sea Zone:118 Sea Zone:119 Sea Zone:120 Sea Zone:121 Sea Zone:122 Sea Zone:123 Sea Zone:124 Sea Zone:125 Sea Zone:126 Sea Zone:127 Sea Zone:128 Sea Zone
 				-->
     <!-- Territory Definitions -->
     <!-- P40 -->
@@ -485,7 +485,6 @@
     <territory name="Eastern Poland"/>
     <territory name="Bessarabia"/>
     <territory name="Overflow"/>
-    <territory name="Overflow2"/>
     <territory name="Russia"/>
     <territory name="Tambov"/>
     <territory name="Ukraine"/>
@@ -537,8 +536,14 @@
     <territory name="Credits"/>
     <territory name="1st Army Group"/>
     <territory name="2nd Army Group"/>
-    <territory name="LM 1"/>
     <territory name="1st Waffen Panzer"/>
+    <territory name="1st Luftfloffen"/>
+    <territory name="2nd Luftfloffen"/>
+    <territory name="3rd Luftfloffen"/>
+    <territory name="1st USA AirFleet"/>
+    <territory name="2nd USA AirFleet"/>
+    <territory name="1st AirFleet"/>
+    <territory name="2nd AirFleet"/>
     <territory name="3rd Panzer"/>
     <territory name="3rd Waffen"/>
     <territory name="4th Waffen"/>
@@ -607,7 +612,6 @@
     <territory name="83 Sea Zone" water="true"/>
     <territory name="77 Sea Zone" water="true"/>
     <territory name="121 Sea Zone" water="true"/>
-    <territory name="SZflow Sea Zone" water="true"/>
     <territory name="82 Sea Zone" water="true"/>
     <territory name="Brazil"/>
     <territory name="Venezuela"/>
@@ -1490,6 +1494,13 @@
     <connection t1="1st Desert" t2="Army Group North"/>
     <connection t1="1st Desert" t2="1st Waffen"/>
     <connection t1="1st Desert" t2="1st Waffen Panzer"/>
+    <connection t1="1st Desert" t2="1st Luftfloffen"/>
+    <connection t1="1st Desert" t2="2nd Luftfloffen"/>
+    <connection t1="1st Desert" t2="3rd Luftfloffen"/>
+    <connection t1="1st Desert" t2="1st USA AirFleet"/>
+    <connection t1="1st Desert" t2="2nd USA AirFleet"/>
+    <connection t1="1st Desert" t2="1st AirFleet"/>
+    <connection t1="1st Desert" t2="2nd AirFleet"/>
     <connection t1="1st Desert" t2="1st Panzer"/>
     <connection t1="1st Desert" t2="2nd Waffen"/>
     <connection t1="1st Desert" t2="4th Waffen"/>
@@ -1510,9 +1521,7 @@
     <connection t1="1st Desert" t2="USA Army Group"/>
     <connection t1="1st Desert" t2="D-Day"/>
     <connection t1="1st Desert" t2="Overflow"/>
-    <connection t1="1st Desert" t2="Overflow2"/>
 
-    <connection t1="121 Sea Zone" t2="SZflow Sea Zone"/>
 
   </map>
   <resourceList>
@@ -1776,17 +1785,27 @@
     <unit name="USATankGeneral3"/>
     <unit name="UKTankGeneral3"/>
     <unit name="fighter"/>
+    <unit name="GfighterAF"/>
+    <unit name="fighterAF"/>
+    <unit name="GAirCommander"/>
+    <unit name="GAirCommanderOn"/>
+    <unit name="AirCommander"/>
+    <unit name="AirCommanderOn"/>
     <unit name="LuftwaffeAce"/>
     <unit name="FighterAce"/>
     <unit name="FighterAceUSA"/>
     <unit name="usa_fighter"/>
+    <unit name="usa_fighterAF"/>
     <unit name="uk_fighter"/>
     <unit name="tactical_bomberPG"/>
     <unit name="usa_tactical_bomberTG"/>
     <unit name="uk_tactical_bomberTG"/>
     <unit name="tactical_bomberTG"/>
     <unit name="tactical_bomber"/>
+    <unit name="Gtactical_bomberAF"/>
+    <unit name="tactical_bomberAF"/>
     <unit name="usa_tactical_bomber"/>
+    <unit name="usa_tactical_bomberAF"/>
     <unit name="uk_tactical_bomber"/>
     <unit name="bomber"/>
     <unit name="bomberA0C5"/>
@@ -1852,8 +1871,6 @@
     <unit name="4Pu"/>
     <unit name="5_PU"/>
     <unit name="Overflow"/>
-    <unit name="Overflow2"/>
-    <unit name="SZflow"/>
     <unit name="NavalMine"/>
     <unit name="NavalMine2"/>
     <unit name="NavalMine3"/>
@@ -2639,6 +2656,30 @@
       <cost resource="PUs" quantity="9"/>
       <result resourceOrUnit="fighter" quantity="1"/>
     </productionRule>
+    <productionRule name="buyGFighterAF">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="GfighterAF" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyFighterAF">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="fighterAF" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGAirCommander">
+      <cost resource="PUs" quantity="14"/>
+      <result resourceOrUnit="GAirCommander" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGAirCommanderOn">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="GAirCommanderOn" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyAirCommander">
+      <cost resource="PUs" quantity="14"/>
+      <result resourceOrUnit="AirCommander" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyAirCommanderOn">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="AirCommanderOn" quantity="1"/>
+    </productionRule>
     <productionRule name="buyLuftwaffeAce">
       <cost resource="PUs" quantity="11"/>
       <result resourceOrUnit="LuftwaffeAce" quantity="1"/>
@@ -2659,6 +2700,10 @@
       <cost resource="PUs" quantity="9"/>
       <result resourceOrUnit="usa_fighter" quantity="1"/>
     </productionRule>
+    <productionRule name="buyUSA_FighterAF">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="usa_fighterAF" quantity="1"/>
+    </productionRule>
     <productionRule name="buyUK_Fighter">
       <cost resource="PUs" quantity="9"/>
       <result resourceOrUnit="uk_fighter" quantity="1"/>
@@ -2667,9 +2712,21 @@
       <cost resource="PUs" quantity="10"/>
       <result resourceOrUnit="tactical_bomber" quantity="1"/>
     </productionRule>
+    <productionRule name="buyGTactical_BomberAF">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="Gtactical_bomberAF" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyTactical_BomberAF">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="tactical_bomberAF" quantity="1"/>
+    </productionRule>
     <productionRule name="buyUSA_Tactical_Bomber">
       <cost resource="PUs" quantity="10"/>
       <result resourceOrUnit="usa_tactical_bomber" quantity="1"/>
+      </productionRule>
+    <productionRule name="buyUSA_Tactical_BomberAF">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="usa_tactical_bomberAF" quantity="1"/>
     </productionRule>
     <productionRule name="buyUK_Tactical_Bomber">
       <cost resource="PUs" quantity="10"/>
@@ -2929,14 +2986,6 @@
     <productionRule name="buyOverflow">
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="Overflow" quantity="1"/>
-    </productionRule>
-    <productionRule name="buyOverflow2">
-      <cost resource="PUs" quantity="0"/>
-      <result resourceOrUnit="Overflow2" quantity="1"/>
-    </productionRule>
-    <productionRule name="buySZflow">
-      <cost resource="PUs" quantity="0"/>
-      <result resourceOrUnit="SZflow" quantity="1"/>
     </productionRule>
     <productionRule name="buy1stDesertUS">
       <cost resource="PUs" quantity="0"/>
@@ -6577,6 +6626,114 @@
       <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
       <option name="blockade" value="2"/>
     </attachment>
+    <!-- GFighterAF -->
+    <attachment name="unitAttachment" attachTo="GfighterAF" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="4"/>
+      <option name="canScramble" value="true"/>
+      <option name="maxScrambleDistance" value="1"/>
+      <option name="canIntercept" value="true"/>
+      <option name="canEscort" value="true"/>
+      <option name="airDefense" value="4"/>
+      <option name="airAttack" value="3"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="blockade" value="2"/>
+    </attachment>
+    <!-- FighterAF -->
+    <attachment name="unitAttachment" attachTo="fighterAF" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="4"/>
+      <option name="canScramble" value="true"/>
+      <option name="maxScrambleDistance" value="1"/>
+      <option name="canIntercept" value="true"/>
+      <option name="canEscort" value="true"/>
+      <option name="airDefense" value="4"/>
+      <option name="airAttack" value="3"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="blockade" value="2"/>
+    </attachment>
+    <!-- GAirCommander -->
+    <attachment name="unitAttachment" attachTo="GAirCommander" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="4"/>
+      <option name="canScramble" value="true"/>
+      <option name="maxScrambleDistance" value="1"/>
+      <option name="canIntercept" value="true"/>
+      <option name="canEscort" value="true"/>
+      <option name="airDefense" value="4"/>
+      <option name="airAttack" value="3"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="blockade" value="2"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
+    </attachment>
+    <!-- GAirCommanderOn -->
+    <attachment name="unitAttachment" attachTo="GAirCommanderOn" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="4"/>
+      <option name="attackRolls" value="2"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canScramble" value="true"/>
+      <option name="maxScrambleDistance" value="1"/>
+      <option name="canIntercept" value="true"/>
+      <option name="canEscort" value="true"/>
+      <option name="airDefense" value="4"/>
+      <option name="airAttack" value="3"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="blockade" value="2"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany"/>
+    </attachment>
+    <!-- AirCommander -->
+    <attachment name="unitAttachment" attachTo="AirCommander" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="4"/>
+      <option name="canScramble" value="true"/>
+      <option name="maxScrambleDistance" value="1"/>
+      <option name="canIntercept" value="true"/>
+      <option name="canEscort" value="true"/>
+      <option name="airDefense" value="4"/>
+      <option name="airAttack" value="3"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="blockade" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Russia:Eastern United States"/>
+    </attachment>
+    <!-- AirCommanderOn -->
+    <attachment name="unitAttachment" attachTo="AirCommanderOn" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="4"/>
+      <option name="attackRolls" value="2"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canScramble" value="true"/>
+      <option name="maxScrambleDistance" value="1"/>
+      <option name="canIntercept" value="true"/>
+      <option name="canEscort" value="true"/>
+      <option name="airDefense" value="4"/>
+      <option name="airAttack" value="3"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="blockade" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Russia:Eastern United States"/>
+    </attachment>
     <!-- LuftwaffeAce -->
     <attachment name="unitAttachment" attachTo="LuftwaffeAce" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="4"/>
@@ -6684,6 +6841,21 @@
     </attachment>
     <!-- USA Fighter -->
     <attachment name="unitAttachment" attachTo="usa_fighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="4"/>
+      <option name="canScramble" value="true"/>
+      <option name="maxScrambleDistance" value="1"/>
+      <option name="canIntercept" value="true"/>
+      <option name="canEscort" value="true"/>
+      <option name="airDefense" value="4"/>
+      <option name="airAttack" value="3"/>
+      <option name="blockade" value="2"/>
+    </attachment>
+    <!-- USA FighterAF -->
+    <attachment name="unitAttachment" attachTo="usa_fighterAF" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="4"/>
       <option name="carrierCost" value="1"/>
       <option name="isAir" value="true"/>
@@ -6816,6 +6988,40 @@
       <option name="bombingBonus" value="0"/>
       <option name="bombingTargets" value="airfield:airfield_Hvy:harbour"/>
     </attachment>
+    <!-- GTactical BomberAF -->
+    <attachment name="unitAttachment" attachTo="Gtactical_bomberAF" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="isStrategicBomber" value="true"/>
+      <option name="canScramble" value="true"/>
+      <option name="maxScrambleDistance" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="airAttack" value="3"/>
+      <option name="blockade" value="2"/>
+      <option name="bombingMaxDieSides" value="6"/>
+      <option name="bombingBonus" value="0"/>
+      <option name="bombingTargets" value="airfield:airfield_Hvy:harbour"/>
+    </attachment>
+    <!-- Tactical BomberAF -->
+    <attachment name="unitAttachment" attachTo="tactical_bomberAF" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="isStrategicBomber" value="true"/>
+      <option name="canScramble" value="true"/>
+      <option name="maxScrambleDistance" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="airAttack" value="3"/>
+      <option name="blockade" value="2"/>
+      <option name="bombingMaxDieSides" value="6"/>
+      <option name="bombingBonus" value="0"/>
+      <option name="bombingTargets" value="airfield:airfield_Hvy:harbour"/>
+    </attachment>
     <!-- Tactical BomberPG -->
     <attachment name="unitAttachment" attachTo="tactical_bomberPG" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="4"/>
@@ -6852,6 +7058,22 @@
     </attachment>
     <!-- USA Tactical Bomber -->
     <attachment name="unitAttachment" attachTo="usa_tactical_bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="carrierCost" value="1"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="isStrategicBomber" value="true"/>
+      <option name="canScramble" value="true"/>
+      <option name="maxScrambleDistance" value="1"/>
+      <option name="airAttack" value="3"/>
+      <option name="blockade" value="2"/>
+      <option name="bombingMaxDieSides" value="6"/>
+      <option name="bombingBonus" value="0"/>
+      <option name="bombingTargets" value="airfield:airfield_Hvy:harbour"/>
+    </attachment>
+    <!-- USA Tactical BomberAF -->
+    <attachment name="unitAttachment" attachTo="usa_tactical_bomberAF" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="4"/>
       <option name="carrierCost" value="1"/>
       <option name="isAir" value="true"/>
@@ -7425,7 +7647,6 @@
       <option name="canNotMoveDuringCombatMove" value="true"/>
       <option name="isLandTransportable" value="false"/>
       <option name="canOnlyBePlacedInTerritoryValuedAtX" value="2"/>
-      <option name="destroyedWhenCapturedBy" value="Germans:Japanese:Italians"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <option name="canProduceXUnits" value="3"/>
       <option name="maxDamage" value="6"/>
@@ -7564,10 +7785,17 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
       <option name="givesMovement" value="1:fighter"/>
+      <option name="givesMovement" value="1:GfighterAF"/>
+      <option name="givesMovement" value="1:fighterAF"/>
+      <option name="givesMovement" value="1:GAirCommander"/>
+      <option name="givesMovement" value="1:GAirCommanderOn"/>
+      <option name="givesMovement" value="1:AirCommander"/>
+      <option name="givesMovement" value="1:AirCommanderOn"/>
       <option name="givesMovement" value="1:LuftwaffeAce"/>
       <option name="givesMovement" value="1:FighterAce"/>
       <option name="givesMovement" value="1:FighterAceUSA"/>
       <option name="givesMovement" value="1:usa_fighter"/>
+      <option name="givesMovement" value="1:usa_fighterAF"/>
       <option name="givesMovement" value="1:uk_fighter"/>
       <option name="givesMovement" value="1:bomber"/>
       <option name="givesMovement" value="1:bomberA0C5"/>
@@ -7575,7 +7803,10 @@
       <option name="givesMovement" value="1:USA_Hvy_Bomber"/>
       <option name="givesMovement" value="1:UK_Hvy_Bomber"/>
       <option name="givesMovement" value="1:tactical_bomber"/>
+      <option name="givesMovement" value="1:Gtactical_bomberAF"/>
+      <option name="givesMovement" value="1:tactical_bomberAF"/>
       <option name="givesMovement" value="1:usa_tactical_bomber"/>
+      <option name="givesMovement" value="1:usa_tactical_bomberAF"/>
       <option name="givesMovement" value="1:uk_tactical_bomber"/>
       <option name="givesMovement" value="1:tactical_bomberPG"/>
       <option name="givesMovement" value="1:tactical_bomberTG"/>
@@ -7616,10 +7847,17 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
       <option name="givesMovement" value="1:fighter"/>
+      <option name="givesMovement" value="1:GfighterAF"/>
+      <option name="givesMovement" value="1:fighterAF"/>
+      <option name="givesMovement" value="1:GAirCommander"/>
+      <option name="givesMovement" value="1:GAirCommanderOn"/>
+      <option name="givesMovement" value="1:AirCommander"/>
+      <option name="givesMovement" value="1:AirCommanderOn"/>
       <option name="givesMovement" value="1:LuftwaffeAce"/>
       <option name="givesMovement" value="1:FighterAce"/>
       <option name="givesMovement" value="1:FighterAceUSA"/>
       <option name="givesMovement" value="1:usa_fighter"/>
+      <option name="givesMovement" value="1:usa_fighterAF"/>
       <option name="givesMovement" value="1:uk_fighter"/>
       <option name="givesMovement" value="1:bomber"/>
       <option name="givesMovement" value="1:bomberA0C5"/>
@@ -7627,7 +7865,10 @@
       <option name="givesMovement" value="1:USA_Hvy_Bomber"/>
       <option name="givesMovement" value="1:UK_Hvy_Bomber"/>
       <option name="givesMovement" value="1:tactical_bomber"/>
+      <option name="givesMovement" value="1:Gtactical_bomberAF"/>
+      <option name="givesMovement" value="1:tactical_bomberAF"/>
       <option name="givesMovement" value="1:usa_tactical_bomber"/>
+      <option name="givesMovement" value="1:usa_tactical_bomberAF"/>
       <option name="givesMovement" value="1:uk_tactical_bomber"/>
       <option name="givesMovement" value="1:tactical_bomberPG"/>
       <option name="givesMovement" value="1:tactical_bomberTG"/>
@@ -7710,7 +7951,7 @@
       <option name="isAirTransportable" value="true"/>
       <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
       <option name="maxAAattacks" value="3"/>
-      <option name="targetsAA" value="fighter:LuftwaffeAce:FighterAce:FighterAceUSA:NavyFighter:Seafire:Me_109T:usa_fighter:uk_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:tactical_bomberPG:tactical_bomberTG:usa_tactical_bomberTG:uk_tactical_bomberTG:bomber:bomberA0C5:Me_262"/>
+      <option name="targetsAA" value="fighter:GfighterAF:fighterAF:usa_fighterAF:Gtactical_bomberAF:tactical_bomberAF:usa_tactical_bomberAF:GAirCommander:GAirCommanderOn:AirCommander:AirCommanderOn:LuftwaffeAce:FighterAce:FighterAceUSA:NavyFighter:Seafire:Me_109T:usa_fighter:uk_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:tactical_bomberPG:tactical_bomberTG:usa_tactical_bomberTG:uk_tactical_bomberTG:bomber:bomberA0C5:Me_262"/>
     </attachment>
     <!-- FlakTower -->
     <attachment name="unitAttachment" attachTo="FlakTower" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -8327,33 +8568,6 @@
       <option name="defense" value="0"/>
       <option name="transportCost" value="1"/>
       <option name="isAirTransportable" value="false"/>
-      <option name="isConstruction" value="true"/>
-      <option name="constructionType" value="1PU"/>
-      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
-      <option name="maxConstructionsPerTypePerTerr" value="99"/>
-      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
-    </attachment>
-    <!-- Overflow2 -->
-    <attachment name="unitAttachment" attachTo="Overflow2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="movement" value="2"/>
-      <option name="canNotMoveDuringCombatMove" value="false"/>
-      <option name="isLandTransportable" value="true"/>
-      <option name="attack" value="0"/>
-      <option name="defense" value="0"/>
-      <option name="transportCost" value="1"/>
-      <option name="isAirTransportable" value="false"/>
-      <option name="isConstruction" value="true"/>
-      <option name="constructionType" value="1PU"/>
-      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
-      <option name="maxConstructionsPerTypePerTerr" value="99"/>
-      <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
-    </attachment>
-    <!-- SZflow -->
-    <attachment name="unitAttachment" attachTo="SZflow" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="movement" value="2"/>
-      <option name="isSea" value="true"/>
-      <option name="attack" value="0"/>
-      <option name="defense" value="0"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="1PU"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
@@ -10281,6 +10495,7 @@
       <option name="movement" value="99"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
+      <option name="canNotMoveDuringCombatMove" value="true"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="AirTrprtAllied"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
@@ -11246,16 +11461,31 @@
     <attachment name="territoryAttachment" attachTo="2nd Army Group" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
-    <attachment name="territoryAttachment" attachTo="LM 1" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
-      <option name="production" value="0"/>
-    </attachment>
     <attachment name="territoryAttachment" attachTo="1st Waffen Panzer" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
-    <attachment name="territoryAttachment" attachTo="Overflow" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="1st Luftfloffen" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
-    <attachment name="territoryAttachment" attachTo="Overflow2" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="2nd Luftfloffen" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="3rd Luftfloffen" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="1st USA AirFleet" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="2nd USA AirFleet" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="1st AirFleet" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="2nd AirFleet" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="Overflow" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="UK Desert" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -11546,12 +11776,12 @@
     <attachment name="canalAttachmentGibraltar" attachTo="92 Sea Zone" javaClass="games.strategy.triplea.attachments.CanalAttachment" type="territory">
       <option name="canalName" value="Strait of Gibraltar"/>
       <option name="landTerritories" value="Gibraltar"/>
-      <option name="excludedUnits" value="submarine:GermanUBoat:UBoatPen:Type_XXI_UBoat:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:USA_Hvy_Bomber:UK_Hvy_Bomber:Me_262:Seafire:Me_109T:Wolfpack"/>
+      <option name="excludedUnits" value="submarine:GermanUBoat:UBoatPen:Type_XXI_UBoat:fighter:GfighterAF:fighterAF:usa_fighterAF:Gtactical_bomberAF:tactical_bomberAF:usa_tactical_bomberAF:GAirCommander:GAirCommanderOn:AirCommander:AirCommanderOn:LuftwaffeAce:FighterAce:FighterAceUSA:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:USA_Hvy_Bomber:UK_Hvy_Bomber:Me_262:Seafire:Me_109T:Wolfpack"/>
     </attachment>
     <attachment name="canalAttachmentGibraltar" attachTo="91 Sea Zone" javaClass="games.strategy.triplea.attachments.CanalAttachment" type="territory">
       <option name="canalName" value="Strait of Gibraltar"/>
       <option name="landTerritories" value="Gibraltar"/>
-      <option name="excludedUnits" value="submarine:GermanUBoat:UBoatPen:Type_XXI_UBoat:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:USA_Hvy_Bomber:UK_Hvy_Bomber:Me_262:Seafire:Me_109T:Wolfpack"/>
+      <option name="excludedUnits" value="submarine:GermanUBoat:UBoatPen:Type_XXI_UBoat:fighter:GfighterAF:fighterAF:usa_fighterAF:Gtactical_bomberAF:tactical_bomberAF:usa_tactical_bomberAF:GAirCommander:GAirCommanderOn:AirCommander:AirCommanderOn:LuftwaffeAce:FighterAce:FighterAceUSA:tactical_bomber:bomber:bomberA0C5:German_Hvy_Bmbr:USA_Hvy_Bomber:UK_Hvy_Bomber:Me_262:Seafire:Me_109T:Wolfpack"/>
     </attachment>
     <attachment name="canalAttachmentPanama" attachTo="89 Sea Zone" javaClass="games.strategy.triplea.attachments.CanalAttachment" type="territory">
       <option name="canalName" value="Panama Canal"/>
@@ -15091,6 +15321,50 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+    <attachment name="supportAttachmentGTacticalBomber1AF" attachTo="GfighterAF" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Gtactical_bomberAF"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="combined_arms"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentTacticalBomber1AF" attachTo="fighterAF" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="tactical_bomberAF"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="combined_arms"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentTacticalBomberGAC" attachTo="GAirCommander" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="tactical_bomber:tactical_bomberPG"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="combined_arms"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentTacticalBomberFtrGACOn" attachTo="GAirCommanderOn" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="Gtactical_bomberAF:fighterAF"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="combined_arms"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
     <attachment name="supportAttachmentTacticalBomber1Navy" attachTo="NavyFighter" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="tactical_bomber:tactical_bomberPG"/>
       <option name="faction" value="allied"/>
@@ -15107,6 +15381,39 @@
       <option name="faction" value="allied"/>
       <option name="side" value="offence"/>
       <option name="dice" value="strength"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="combined_arms"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentTacticalBomber1USAAF" attachTo="usa_fighterAF" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_tactical_bomberAF"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="combined_arms"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentTacticalBomberAC" attachTo="AirCommander" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="tactical_bomberTG:tactical_bomber:usa_tactical_bomber:usa_tactical_bomberTG"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="combined_arms"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentTacticalBomberFtrACOn" attachTo="AirCommanderOn" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="usa_tactical_bomberAF:usa_fighterAF:tactical_bomberAF:fighterAF"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
       <option name="bonus" value="1"/>
       <option name="number" value="1"/>
       <option name="bonusType" value="combined_arms"/>
@@ -15713,6 +16020,9 @@
     <attachment name="LuftwaffeAndFtrAce" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Luftwaffe And Fighter Ace"/>
     </attachment>
+    <attachment name="AirFleetCommander" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Air Fleet Commander"/>
+    </attachment>
     <attachment name="Seafire" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Seafire Fighter Planes"/>
     </attachment>
@@ -15834,7 +16144,7 @@
 <!-- This should check for all land and air unit that can aid -->
 <attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_Help_@ParaBoost@" attachTo="Germans" javaClass="RulesAttachment" type="player">
    <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
-   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:WaffenPioneerAttack:WaffenPioneer:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:USATankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:german_paraBoost" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:WaffenPioneerAttack:WaffenPioneer:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:USATankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:GfighterAF:fighterAF:usa_fighterAF:Gtactical_bomberAF:tactical_bomberAF:usa_tactical_bomberAF:GAirCommander:GAirCommanderOn:AirCommander:AirCommanderOn:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:german_paraBoost" count="1"/>
    <option name="invert" value="true"/>
 </attachment>
 <attachment foreach="$ParaBoost$" name="conditionAttachmentRussiansParaBoost@ParaBoost@" attachTo="Russians" javaClass="RulesAttachment" type="player">
@@ -15845,7 +16155,7 @@
 <!-- This should check for all land and air unit that can aid -->
 <attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpRussians_@ParaBoost@" attachTo="Russians" javaClass="RulesAttachment" type="player">
    <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
-   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:WaffenPioneerAttack:WaffenPioneer:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:russian_paraBoost" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:WaffenPioneerAttack:WaffenPioneer:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:GfighterAF:fighterAF:usa_fighterAF:Gtactical_bomberAF:tactical_bomberAF:usa_tactical_bomberAF:GAirCommander:GAirCommanderOn:AirCommander:AirCommanderOn:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:russian_paraBoost" count="1"/>
    <option name="invert" value="true"/>
 </attachment>
 <attachment foreach="$ParaBoost$" name="conditionAttachmentJapaneseParaBoost@ParaBoost@" attachTo="Japanese" javaClass="RulesAttachment" type="player">
@@ -15856,7 +16166,7 @@
 <!-- This should check for all land and air unit that can aid -->
 <attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpJapanese_@ParaBoost@" attachTo="Japanese" javaClass="RulesAttachment" type="player">
    <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
-   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:WaffenPioneerAttack:WaffenPioneer:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:USATankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:japanese_paraBoost" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:WaffenPioneerAttack:WaffenPioneer:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:USATankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:GfighterAF:fighterAF:usa_fighterAF:Gtactical_bomberAF:tactical_bomberAF:usa_tactical_bomberAF:GAirCommander:GAirCommanderOn:AirCommander:AirCommanderOn:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:japanese_paraBoost" count="1"/>
    <option name="invert" value="true"/>
 </attachment>
 <attachment foreach="$ParaBoost$" name="conditionAttachmentAmericansParaBoost@ParaBoost@" attachTo="Americans" javaClass="RulesAttachment" type="player">
@@ -15867,7 +16177,7 @@
 <!-- This should check for all land and air unit that can aid -->
 <attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpAmericans_@ParaBoost@" attachTo="Americans" javaClass="RulesAttachment" type="player">
    <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
-   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:WaffenPioneerAttack:WaffenPioneer:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:usa_paraBoost" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:WaffenPioneerAttack:WaffenPioneer:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:GfighterAF:fighterAF:usa_fighterAF:Gtactical_bomberAF:tactical_bomberAF:usa_tactical_bomberAF:GAirCommander:GAirCommanderOn:AirCommander:AirCommanderOn:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:usa_paraBoost" count="1"/>
    <option name="invert" value="true"/>
 </attachment>
 <attachment foreach="$ParaBoost$" name="conditionAttachmentBritishParaBoost@ParaBoost@" attachTo="British" javaClass="RulesAttachment" type="player">
@@ -15878,7 +16188,7 @@
 <!-- This should check for all land and air unit that can aid -->
 <attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpBritish_@ParaBoost@" attachTo="British" javaClass="RulesAttachment" type="player">
    <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
-   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:WaffenPioneerAttack:WaffenPioneer:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:uk_paraBoost" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:WaffenPioneerAttack:WaffenPioneer:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:GfighterAF:fighterAF:usa_fighterAF:Gtactical_bomberAF:tactical_bomberAF:usa_tactical_bomberAF:GAirCommander:GAirCommanderOn:AirCommander:AirCommanderOn:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:uk_paraBoost" count="1"/>
    <option name="invert" value="true"/>
 </attachment>
 <attachment foreach="$ParaBoost$" name="conditionAttachmentItaliansParaBoost@ParaBoost@" attachTo="Italians" javaClass="RulesAttachment" type="player">
@@ -15889,7 +16199,7 @@
 <!-- This should check for all land and air unit that can aid -->
 <attachment foreach="$ParaBoost$" name="conditionAttachment_No_Allied_HelpItalians_@ParaBoost@" attachTo="Italians" javaClass="RulesAttachment" type="player">
    <option name="directPresenceTerritories" value="@ParaBoost@" count="1"/>
-   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:WaffenPioneerAttack:WaffenPioneer:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:USATankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:italian_paraBoost" count="1"/>
+   <option name="unitPresence" value="infantry:elite:artillery:armour:waffen_infantry:WaffenArty:Waffen_Oberst:guard_infantry:commando:marine:commandoA1:marineA1:German_Engineer:German_EngineerAttack:WaffenPioneerAttack:WaffenPioneer:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:mech_infantry:ArmoredInfantry:Panzer_Grndrs:WaffenPnzrGrndr:usa_armour:uk_armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:PanzerJagerFS:TankDestroyerFS:USATankDestroyerFS:Panzer_General:DesertGeneral:Tank_General:USA_TankGeneral:UK_TankGeneral:fighter:GfighterAF:fighterAF:usa_fighterAF:Gtactical_bomberAF:tactical_bomberAF:usa_tactical_bomberAF:GAirCommander:GAirCommanderOn:AirCommander:AirCommanderOn:LuftwaffeAce:FighterAce:FighterAceUSA:usa_fighter:tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:bomber:NavyFighter:Soviet_Commisar:Me_262:King_Tiger:Waffen_Hvy_Tank:Me_109T:italian_paraBoost" count="1"/>
    <option name="invert" value="true"/>
 </attachment>
 
@@ -29090,6 +29400,33 @@
 	<option name="directPresenceTerritories" value="Western Germany" count="1"/>
 	<option name="unitPresence" value="TotalWarAirTrprt" count="12"/>
       </attachment>
+      
+      <attachment name="conditionAttachment_SwedenGerman" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Sweden" count="1"/>
+	<option name="unitPresence" value="infantry" count="1"/>
+      </attachment>
+      <attachment name="conditionAttachment_TurkeyGerman" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Turkey" count="1"/>
+	<option name="unitPresence" value="infantry" count="1"/>
+      </attachment>
+      <attachment name="conditionAttachment_SwitzerlandGerman" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Switzerland" count="1"/>
+	<option name="unitPresence" value="infantry" count="1"/>
+      </attachment>
+
+      
+      <attachment name="conditionAttachment_SwedenItalian" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Sweden" count="1"/>
+	<option name="unitPresence" value="infantry" count="1"/>
+      </attachment>
+      <attachment name="conditionAttachment_TurkeyItalian" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Turkey" count="1"/>
+	<option name="unitPresence" value="infantry" count="1"/>
+      </attachment>
+      <attachment name="conditionAttachment_SwitzerlandItalian" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+	<option name="directPresenceTerritories" value="Switzerland" count="1"/>
+	<option name="unitPresence" value="infantry" count="1"/>
+      </attachment>
 
       <!-- Russians Conditions -->
     <attachment name="conditionAttachment_Russians_1_Convoy_Clear" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -32329,18 +32666,6 @@
       <option name="placement" value="Overflow:BoxFctry" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachmenOverflow2" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1"/>
-      <option name="placement" value="Overflow2:Overflow2" count="1"/>
-      <option name="placement" value="Overflow2:BoxFctry" count="1"/>
-      <option name="when" value="before:germansPurchase"/>
-    </attachment>
-    <attachment name="triggerAttachmenSZflow" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1"/>
-      <option name="placement" value="SZflow Sea Zone:SZflow" count="1"/>
-      <option name="placement" value="SZflow Sea Zone:BoxFctry" count="1"/>
-      <option name="when" value="before:germansPurchase"/>
-    </attachment>
     <attachment name="triggerAttachmen1stPanzerArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert"/>
       <option name="placement" value="1st Panzer:1stPanzerArmy" count="1"/>
@@ -33663,8 +33988,11 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:germansNonCombatMove"/>
     </attachment>
+    <attachment name="conditionAttachmentGermansAtWarWithItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="atWarPlayers" value="Italians" count="1"/>
+    </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceGermansItalyTakeover" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_GermansControlGermany:conditionAttachment_GermansControlRome"/>
+      <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_GermansControlGermany:conditionAttachmentGermansAtWarWithItaly"/>
       <option name="placement" value="Germany:Europe_Rail" count="1"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansCombatMove"/>
@@ -41320,7 +41648,7 @@
       <option name="when" value="after:germansPlace"/>
     </attachment>
 
-    <!-- Germans Luftwaffe Ace -->
+    <!-- Germans Luftwaffe Ace And Air Commander -->
     <attachment name="triggerAttachment_GermansLuftwaffeAce" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:LuftwaffeAndFtrAce:conditionAttachmentTurn6OrHigher"/>
       <option name="productionRule" value="productionGermans:buyLuftwaffeAce"/>
@@ -41338,6 +41666,29 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="LuftwaffeAce"/>
+    </attachment>
+
+    <attachment name="triggerAttachment_AirCommander" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:AirFleetCommander:conditionAttachmentTurn1OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyGAirCommander"/>
+      <option name="productionRule" value="productionRussians:buyAirCommander"/>
+      <option name="productionRule" value="productionAmericans:buyAirCommander"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_AirCommanderEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:AirFleetCommander:conditionAttachmentTurn1OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyGAirCommander"/>
+      <option name="productionRule" value="productionRussians:buyAirCommander"/>
+      <option name="productionRule" value="productionAmericans:buyAirCommander"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_AirFleetCommanderNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:AirFleetCommander:conditionAttachmentTurn2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="AirFleetCommander"/>
     </attachment>
     
     <!-- Allies Fighter Ace -->
@@ -42638,6 +42989,40 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_SwitzerlandSNNAxisRemove" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations:conditionAttachment_SwitzerlandGerman"/>
+      <option name="removeUnits" value="Switzerland:artillery" count="2"/>
+      <option name="removeUnits" value="Switzerland:armour" count="1"/>
+      <option name="removeUnits" value="Switzerland:fighter" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_SwitzerlandSNNAxisPlace" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations:conditionAttachment_SwitzerlandGerman"/>
+      <option name="placement" value="Switzerland:artillery" count="2"/>
+      <option name="placement" value="Switzerland:armour" count="1"/>
+      <option name="placement" value="Switzerland:fighter" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    
+    <attachment name="triggerAttachment_SwitzerlandSNNAxisRemoveItaly" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations:conditionAttachment_SwitzerlandItalian"/>
+      <option name="removeUnits" value="Switzerland:artillery" count="2"/>
+      <option name="removeUnits" value="Switzerland:armour" count="1"/>
+      <option name="removeUnits" value="Switzerland:fighter" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_SwitzerlandSNNAxisPlaceItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations:conditionAttachment_SwitzerlandItalian"/>
+      <option name="placement" value="Switzerland:artillery" count="2"/>
+      <option name="placement" value="Switzerland:armour" count="1"/>
+      <option name="placement" value="Switzerland:fighter" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    
     <attachment name="triggerAttachment_SwedenSNN" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations"/>
       <option name="placement" value="Sweden:artillery" count="2"/>
@@ -42646,6 +43031,77 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_SwedenSNNAxisRemove" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations:conditionAttachment_SwedenGerman"/>
+      <option name="removeUnits" value="Sweden:artillery" count="2"/>
+      <option name="removeUnits" value="Sweden:armour" count="1"/>
+      <option name="removeUnits" value="Sweden:fighter" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_SwedenSNNAxisPlace" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations:conditionAttachment_SwedenGerman"/>
+      <option name="placement" value="Sweden:artillery" count="2"/>
+      <option name="placement" value="Sweden:armour" count="1"/>
+      <option name="placement" value="Sweden:fighter" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+
+    <attachment name="triggerAttachment_SwedenSNNAxisRemoveItaly" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations:conditionAttachment_SwedenItalian"/>
+      <option name="removeUnits" value="Sweden:artillery" count="2"/>
+      <option name="removeUnits" value="Sweden:armour" count="1"/>
+      <option name="removeUnits" value="Sweden:fighter" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_SwedenSNNAxisPlaceItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations:conditionAttachment_SwedenItalian"/>
+      <option name="placement" value="Sweden:artillery" count="2"/>
+      <option name="placement" value="Sweden:armour" count="1"/>
+      <option name="placement" value="Sweden:fighter" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    
+    <attachment name="triggerAttachment_TurkeySNN" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations"/>
+      <option name="placement" value="Turkey:fighter" count="2"/>
+      <option name="placement" value="Turkey:armour" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_TurkeySNNAxisRemove" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations:conditionAttachment_TurkeyGerman"/>
+      <option name="removeUnits" value="Turkey:armour" count="1"/>
+      <option name="removeUnits" value="Turkey:fighter" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_TurkeySNNAxisPlace" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations:conditionAttachment_TurkeyGerman"/>
+      <option name="placement" value="Turkey:armour" count="1"/>
+      <option name="placement" value="Turkey:fighter" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansNonCombatMove"/>
+    </attachment>
+
+    <attachment name="triggerAttachment_TurkeySNNAxisRemoveItaly" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations:conditionAttachment_TurkeyItalian"/>
+      <option name="removeUnits" value="Turkey:armour" count="1"/>
+      <option name="removeUnits" value="Turkey:fighter" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_TurkeySNNAxisPlaceItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations:conditionAttachment_TurkeyItalian"/>
+      <option name="placement" value="Turkey:armour" count="1"/>
+      <option name="placement" value="Turkey:fighter" count="2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:italiansNonCombatMove"/>
+    </attachment>
+    
     <attachment name="triggerAttachment_SpainSNN" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations"/>
       <option name="placement" value="Spain:artillery" count="1"/>
@@ -42708,13 +43164,6 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
    </attachment>
-   <attachment name="triggerAttachment_TurkeySNN" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentCDGMODInvert:NeutralNations"/>
-      <option name="placement" value="Turkey:fighter" count="2"/>
-      <option name="placement" value="Turkey:armour" count="1"/>
-      <option name="uses" value="1"/>
-      <option name="when" value="before:germansPurchase"/>
-    </attachment>
 
     <!-- Strict Neutral Nations End -->
 
@@ -44196,6 +44645,13 @@
       <option name="when" value="after:japanesePlace"/>
     </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWarMTankPlaceJapan12" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarTank12"/>
+      <option name="placement" value="Japan:armour" count="12"/>
+      <option name="removeUnits" value="Japan:TotalWar_Tank" count="12"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:japanesePlace"/>
+    </attachment>
+    <attachment name="triggerAttachment_JapaneseTotalWarMTankPlaceJapan12Korea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarTank12"/>
       <option name="placement" value="Japan:armour" count="12"/>
       <option name="removeUnits" value="Japan:TotalWar_Tank" count="12"/>
@@ -45782,13 +46238,13 @@
     </attachment>
 
     <attachment name="triggerAttachment_ItaliansBuyTakeOverItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:GermanyTakesItaly:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="EXP43Invert:GermanyTakesItaly:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionItalians:buyTakeOverItaly"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_ItaliansBuyTakeOverItaly43" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:GermanyTakesItaly:conditionAttachmentTurn2OrHigher"/>
+      <option name="conditions" value="EXP43:GermanyTakesItaly:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionItalians:buyTakeOverItaly"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
@@ -50241,7 +50697,15 @@
       <option name="activateTrigger" value="triggerAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia_2:1:true:true:false:false"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_Friendly_With_TrueNeutrals" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Germans_Friendly_With_TrueNeutrals"/>
+      <option name="conditions" value="conditionAttachment_Germans_Friendly_With_TrueNeutrals:NeutralNationsInvert"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+      <option name="territories" value="Chile:Argentina:Venezuela:Sweden:Switzerland:Spain:Portugal:Turkey:Saudi Arabia:Afghanistan:Mozambique:Angola"/>
+      <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
+      <option name="territoryProperty" value="captureUnitOnEnteringBy" count="Germans:Italians:Japanese"/>
+    </attachment>
+    <attachment name="triggerAttachment_Germans_Friendly_With_TrueNeutralsCaptainNeutrals" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="NeutralNations:conditionAttachment_Germans_Friendly_With_TrueNeutrals"/>
       <option name="when" value="before:germansPolitics"/>
       <option name="uses" value="1"/>
       <option name="territories" value="Chile:Argentina:Venezuela:Sweden:Switzerland:Spain:Portugal:Turkey:Saudi Arabia:Afghanistan:Mozambique:Angola"/>
@@ -50546,9 +51010,6 @@
       <element name=""/>
     </variable>
     
-    <attachment name="conditionAttachmentGermansAtWarWithItaly" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="atWarPlayers" value="Italians" count="1"/>
-    </attachment>
     <attachment name="triggerAttachment_TakeOverItalyTokenEXP" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_Germans_NoUnitsInAfrica:conditionAttachment_Italians_NoUnitsInAfrica:conditionAttachment_Italians_ShipsOnlyInMed:conditionAttachment_AxisControlItaly"/>
       <option name="productionRule" value="productionItalians:buyTakeOverItaly"/>
@@ -50608,6 +51069,9 @@
     <attachment name="conditionAttachmentItalianTakeOverConditions" attachTo="Germans" javaClass="RulesAttachment" type="player">
 		<option name="conditions" value="conditionAttachmentTurn7OrHigher:conditionAttachment_Germans_NoUnitsInAfrica:conditionAttachment_Italians_NoUnitsInAfrica:conditionAttachment_Italians_ShipsOnlyInMed:conditionAttachment_AxisControlItaly:conditionAttachmentTakeOverItalyToken"/>
     </attachment>
+    <attachment name="conditionAttachmentItalianTakeOverConditions43" attachTo="Germans" javaClass="RulesAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentTurn1OrHigher:conditionAttachment_Germans_NoUnitsInAfrica:conditionAttachment_Italians_NoUnitsInAfrica:conditionAttachment_Italians_ShipsOnlyInMed:conditionAttachment_AxisControlItaly:conditionAttachmentTakeOverItalyToken"/>
+    </attachment>
    
     <attachment name="triggerAttachment_TakeOverALLItalianUnitsGermanyDone" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentItalianTakeOverConditions"/>
@@ -50618,7 +51082,7 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_TakeOverALLItalianUnitsGermanyDone43" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentItalianTakeOverConditions"/>
+      <option name="conditions" value="EXP43:conditionAttachmentItalianTakeOverConditions43"/>
       <option name="playerAttachmentName" value="PlayerAttachment" count="playerAttachment"/>
       <option name="players" value="Italians"/>
       <option name="playerProperty" value="giveUnitControlInAllTerritories" count="true"/>
@@ -50785,7 +51249,6 @@
       <option name="placementLimit" value="owned:waffen_infantry" count="6"/>
       <option name="placementLimit" value="owned:Waffen_Arty" count="2"/>
       <option name="placementLimit" value="owned:WaffenPioneer" count="2"/>
-      <option name="placementLimit" value="owned:Panzer_General" count="1"/>
     </attachment>
     <!--  Rules Restrictions -->
     <attachment name="rulesAttachment" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -51584,11 +52047,24 @@
     </attachment>
     <attachment name="techAbilityAttachment" attachTo="jetPower" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="attackBonus" value="1:fighter"/>
+      <option name="attackBonus" value="1:GfighterAF"/>
+      <option name="attackBonus" value="1:fighterAF"/>
+      <option name="attackBonus" value="1:usa_fighterAF"/>
+      <option name="attackBonus" value="1:GAirCommander"/>
+      <option name="attackBonus" value="1:AirCommander"/>
+      <option name="attackBonus" value="1:GAirCommanderOn"/>
+      <option name="attackBonus" value="1:AirCommanderOn"/>
       <option name="attackBonus" value="1:NavyFighter"/>
       <option name="attackBonus" value="1:Seafire"/>
       <option name="attackBonus" value="1:Me_109T"/>
       <option name="airAttackBonus" value="1:fighter"/>
       <option name="airDefenseBonus" value="1:fighter"/>
+      <option name="airAttackBonus" value="1:GfighterAF"/>
+      <option name="airDefenseBonus" value="1:GfighterAF"/>
+      <option name="airAttackBonus" value="1:fighterAF"/>
+      <option name="airDefenseBonus" value="1:fighterAF"/>
+      <option name="airAttackBonus" value="1:usa_fighterAF"/>
+      <option name="airDefenseBonus" value="1:usa_fighterAF"/>
       <option name="attackBonus" value="1:usa_fighter"/>
       <option name="airAttackBonus" value="1:usa_fighter"/>
       <option name="airDefenseBonus" value="1:usa_fighter"/>
@@ -51612,6 +52088,13 @@
     </attachment>
     <attachment name="techAbilityAttachment" attachTo="longRangeAir" javaClass="games.strategy.triplea.attachments.TechAbilityAttachment" type="technology">
       <option name="movementBonus" value="1:fighter"/>
+      <option name="movementBonus" value="1:GfighterAF"/>
+      <option name="movementBonus" value="1:fighterAF"/>
+      <option name="movementBonus" value="1:usa_fighterAF"/>
+      <option name="movementBonus" value="1:GAirCommander"/>
+      <option name="movementBonus" value="1:AirCommander"/>
+      <option name="movementBonus" value="1:GAirCommanderOn"/>
+      <option name="movementBonus" value="1:AirCommanderOn"/>
       <option name="movementBonus" value="1:NavyFighter"/>
       <option name="movementBonus" value="1:Seafire"/>
       <option name="movementBonus" value="1:Me_109T"/>
@@ -51623,6 +52106,9 @@
       <option name="movementBonus" value="1:USA_Hvy_Bomber"/>
       <option name="movementBonus" value="1:UK_Hvy_Bomber"/>
       <option name="movementBonus" value="1:tactical_bomber"/>
+      <option name="movementBonus" value="1:Gtactical_bomberAF"/>
+      <option name="movementBonus" value="1:tactical_bomberAF"/>
+      <option name="movementBonus" value="1:usa_tactical_bomberAF"/>
       <option name="movementBonus" value="1:usa_tactical_bomber"/>
       <option name="movementBonus" value="1:uk_tactical_bomber"/>
       <option name="movementBonus" value="1:Me_262"/>
@@ -51867,10 +52353,15 @@
       <territoryOwner territory="Credits" owner="Changer"/>
       <territoryOwner territory="1st Army Group" owner="Russians"/>
       <territoryOwner territory="2nd Army Group" owner="Russians"/>
-      <territoryOwner territory="LM 1" owner="Changer"/>
       <territoryOwner territory="1st Waffen Panzer" owner="Germans"/>
+      <territoryOwner territory="1st Luftfloffen" owner="Germans"/>
+      <territoryOwner territory="2nd Luftfloffen" owner="Germans"/>
+      <territoryOwner territory="3rd Luftfloffen" owner="Germans"/>
+      <territoryOwner territory="1st USA AirFleet" owner="Americans"/>
+      <territoryOwner territory="2nd USA AirFleet" owner="Americans"/>
+      <territoryOwner territory="1st AirFleet" owner="Russians"/>
+      <territoryOwner territory="2nd AirFleet" owner="Russians"/>
       <territoryOwner territory="Overflow" owner="Changer"/>
-      <territoryOwner territory="Overflow2" owner="Changer"/>
       <territoryOwner territory="Early 1940" owner="Changer"/>
       <territoryOwner territory="Early 1941" owner="Changer"/>
       <territoryOwner territory="Early 1942" owner="Changer"/>
@@ -52887,6 +53378,9 @@
       <boolean/>
       </property>
       <property name="Luftwaffe And Fighter Ace" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Air Fleet Commander" value="true" editable="true">
       <boolean/>
       </property>
       <property name="Kamikaze" value="true" editable="true">

@@ -58,8 +58,8 @@ Global_40_Expansion_UHD_Boxes.ANZAC;objectiveAttachment_ANZAC_2_Control_Strategi
 Global_40_Expansion_UHD_Boxes.French;conditionAttachment_French_1_Liberation_Switch=<b>12 PUs</b> worth of free units in France the first time France is Liberated (The engine will give you 4 infantry automatically. Use edit mode if you want something other than 4 infantry by deleting the infantry and replacing them with what you really want).
 
 
-Global_40_Expansion_UHD_Boxes.Germans;triggerAttachmentAxisVictory1=<b>Axis Victory:</b> 148 PUs For a Economic Victory. Activated Pacific Islands Count. Berlin and Tokyo Must be Axis Controlled.<br>Or Control of Moscow or London For One Turn with Control of Berlin and Tokyo.
-Global_40_Expansion_UHD_Boxes.British;triggerAttachmentAlliedVictory1=<b>Allied Victory:</b> 189 PUs For a Economic Victory. Activated Pacific Islands Count.<br>All Allied Capitals Must be Allied Controlled.<br>Or Control One of Berlin or Tokyo for One Turn with Control of All Allied Capitals.
+Global_40_Expansion_UHD_Boxes.Germans;triggerAttachmentAxisVictory1=<b>Axis Victory:</b> 148 PUs For a Economic Victory. Activated Pacific Islands Count. Berlin and Tokyo Must be Axis Controlled.<br>Or Control of Moscow For One Turn.
+Global_40_Expansion_UHD_Boxes.British;triggerAttachmentAlliedVictory1=<b>Allied Victory:</b> 189 PUs For a Economic Victory. Activated Pacific Islands Count.<br>All Allied Capitals Must be Allied Controlled.<br>Or Control One of Berlin or Tokyo for One Turn.
 
 
 
