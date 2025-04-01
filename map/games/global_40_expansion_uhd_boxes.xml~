@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.32.1"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.32"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -2087,7 +2087,6 @@
     <delegate name="placeNoAirCheck" javaClass="games.strategy.triplea.delegate.NoAirCheckPlaceDelegate" display="Place Units"/>
     <delegate name="purchase" javaClass="games.strategy.triplea.delegate.PurchaseDelegate" display="Purchase Units"/>
     <delegate name="endTurn" javaClass="games.strategy.triplea.delegate.EndTurnDelegate" display="Turn Complete"/>
-    <delegate name="endTurnNoPU" javaClass="games.strategy.triplea.delegate.NoPUEndTurnDelegate" display="Begin Turn"/>
     <delegate name="endRound" javaClass="games.strategy.triplea.delegate.EndRoundDelegate" display="Round Complete"/>
     <delegate name="placeBid" javaClass="games.strategy.triplea.delegate.BidPlaceDelegate" display="Bid Placement"/>
     <delegate name="bid" javaClass="games.strategy.triplea.delegate.BidPurchaseDelegate" display="Bid Purchase"/>
@@ -2129,7 +2128,6 @@
       <step name="changerPlace" delegate="place" player="Changer" maxRunCount="1"/>
       <step name="changerEndTurn" delegate="endTurn" player="Changer" maxRunCount="1"/>
       <!-- Germans Game Sequence -->
-      <step name="germansNoPUEndTurn" delegate="endTurnNoPU" player="Germans"/>
       <step name="germansTech" delegate="tech" player="Germans"/>
       <step name="germansTechActivation" delegate="tech_activation" player="Germans"/>
       <step name="germansUserActions" delegate="userActions" player="Germans"/>
@@ -2145,7 +2143,6 @@
       <step name="germansPlace" delegate="place" player="Germans"/>
       <step name="germansEndTurn" delegate="endTurn" player="Germans"/>
       <!-- Russians Game Sequence -->
-      <step name="russiansNoPUEndTurn" delegate="endTurnNoPU" player="Russians"/>
       <step name="russiansTech" delegate="tech" player="Russians"/>
       <step name="russiansTechActivation" delegate="tech_activation" player="Russians"/>
       <step name="russiansUserActions" delegate="userActions" player="Russians"/>
@@ -2161,7 +2158,6 @@
       <step name="russiansPlace" delegate="place" player="Russians"/>
       <step name="russiansEndTurn" delegate="endTurn" player="Russians"/>
       <!-- Japanese Game Sequence -->
-      <step name="japaneseNoPUEndTurn" delegate="endTurnNoPU" player="Japanese"/>
       <step name="japaneseTech" delegate="tech" player="Japanese"/>
       <step name="japaneseTechActivation" delegate="tech_activation" player="Japanese"/>
       <step name="japaneseUserActions" delegate="userActions" player="Japanese"/>
@@ -2177,7 +2173,6 @@
       <step name="japanesePlace" delegate="place" player="Japanese"/>
       <step name="japaneseEndTurn" delegate="endTurn" player="Japanese"/>
       <!-- Americans Game Sequence -->
-      <step name="americansNoPUEndTurn" delegate="endTurnNoPU" player="Americans"/>
       <step name="americansTech" delegate="tech" player="Americans"/>
       <step name="americansTechActivation" delegate="tech_activation" player="Americans"/>
       <step name="americansUserActions" delegate="userActions" player="Americans"/>
@@ -2203,7 +2198,6 @@
       <step name="chinesePlace" delegate="place" player="Chinese"/>
       <step name="chineseEndTurn" delegate="endTurn" player="Chinese"/>
       <!-- British Game Sequence -->
-      <step name="britishNoPUEndTurn" delegate="endTurnNoPU" player="British"/>
       <step name="britishTech" delegate="tech" player="British"/>
       <step name="britishTechActivation" delegate="tech_activation" player="British"/>
       <step name="britishPurchase" delegate="purchase" player="British"/>
@@ -2221,7 +2215,6 @@
         <stepProperty name="turnSummaryPlayers" value="Americans:Chinese:British"/>
       </step>
       <!-- Italians Game Sequence -->
-      <step name="italiansNoPUEndTurn" delegate="endTurnNoPU" player="Italians"/>
       <step name="italiansTech" delegate="tech" player="Italians"/>
       <step name="italiansTechActivation" delegate="tech_activation" player="Italians"/>
       <step name="italiansPurchase" delegate="purchase" player="Italians"/>
@@ -2236,7 +2229,6 @@
       <step name="italiansPlace" delegate="place" player="Italians"/>
       <step name="italiansEndTurn" delegate="endTurn" player="Italians"/>
       <!-- ANZAC Game Sequence -->
-      <step name="anzacNoPUEndTurn" delegate="endTurnNoPU" player="ANZAC"/>
       <step name="anzacTech" delegate="tech" player="ANZAC"/>
       <step name="anzacTechActivation" delegate="tech_activation" player="ANZAC"/>
       <step name="anzacPurchase" delegate="purchase" player="ANZAC"/>
@@ -2251,7 +2243,6 @@
       <step name="anzacPlace" delegate="place" player="ANZAC"/>
       <step name="anzacEndTurn" delegate="endTurn" player="ANZAC"/>
       <!-- French Game Sequence -->
-      <step name="frenchNoPUEndTurn" delegate="endTurnNoPU" player="French"/>
       <step name="frenchTech" delegate="tech" player="French"/>
       <step name="frenchTechActivation" delegate="tech_activation" player="French"/>
       <step name="frenchPurchase" delegate="purchase" player="French"/>
@@ -15736,11 +15727,6 @@
       <option name="support" value="supportAttachmentMechanizedTechnology"/>
       <option name="uses" value="1"/>
     </attachment>
-	 <!-- This condition controls when National Objective happen with a switch -->
-	 <!-- and should be added to all objectiveAttachment -->
-	 <attachment name="conditionAttachmentNationalObjectiveSwitch" attachTo="Germans" javaClass="RulesAttachment" type="player">
-		<option name="switch" value="true"/>
-	 </attachment>
     <!--  National Objectives (A number of NOs are done with Conditions r down) -->
     <attachment name="JapanAttackOnRussia" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Japan Attacks Russia"/>
@@ -15765,22 +15751,18 @@
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="objectiveAttachment_Germans_1_Trade_with_Russia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="atWarPlayers" value="Russians" count="0"/>
     </attachment>
     <attachment name="objectiveAttachment_Germans_2_Control_Novgorod_Or_Volgograd_Or_Russia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="directOwnershipTerritories" value="Novgorod:Volgograd:Russia" count="each"/>
     </attachment>
     <attachment name="objectiveAttachment_Germans_3_Control_Caucasus" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Caucasus" count="1"/>
     </attachment>
     <attachment name="objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="2"/>
       <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia" count="each"/>
     </attachment>
@@ -15792,12 +15774,10 @@
     </attachment>
     <!-- Russian Objectives -->
     <attachment name="objectiveAttachment_Russians_2_Spread_Of_Communism" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="3"/>
       <option name="directOwnershipTerritories" value="Bulgaria:Finland:Iraq:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia" count="each"/>
     </attachment>
     <attachment name="objectiveAttachment_Russians_3_Berlin" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="10"/>
       <option name="directOwnershipTerritories" value="Germany" count="1"/>
       <option name="uses" value="1"/>
@@ -15812,40 +15792,34 @@
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="objectiveAttachment_Japanese_1_Trade_With_America" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_1_Not_Attacked_French_Indo_China:conditionAttachment_Japanese_1_Not_Attacked_UK:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_Japanese_1_Not_Attacked_French_Indo_China:conditionAttachment_Japanese_1_Not_Attacked_UK"/>
       <option name="objectiveValue" value="10"/>
       <option name="atWarPlayers" value="Americans" count="0"/>
     </attachment>
     <attachment name="objectiveAttachment_Japanese_2_Strategic_Defense_Perimeter" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Guam:Midway:Wake Island:Gilbert Islands:Solomon Islands" count="5"/>
     </attachment>
     <attachment name="objectiveAttachment_Japanese_3_Control_Honolulu_Or_Sydney_Or_Calcutta_Or_Western_United_States" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Hawaiian Islands:New South Wales:India:Western United States" count="each"/>
     </attachment>
     <attachment name="objectiveAttachment_Japanese_4_Control_Dutch_East_Indies" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Java:Sumatra:Borneo:Celebes" count="4"/>
     </attachment>
     <attachment name="objectiveAttachment_Japanese_5_Control_China" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="directOwnershipTerritories" value="Shantung:Kwangsi:Kiangsu:Jehol:Manchuria:Szechwan:Hunan:Yunnan:Kweichow:Shensi:Suiyuyan:Kiangsi:Hopei:Sikang:Tsinghai:Kansu:Chahar:Anhwe" count="18"/>
     </attachment>
     
     <!-- British Objectives -->
     <attachment name="objectiveAttachment_British_1_Original" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="directOwnershipTerritories" value="United Kingdom:Scotland:New Brunswick Nova Scotia:Quebec:Ontario:Alberta Saskatchewan Manitoba:Egypt:Trans-Jordan:Gold Coast:Nigeria:Anglo Egyptian Sudan:Belgian Congo:Kenya:Tanganyika Territory:Rhodesia:South West Africa:Union of South Africa"/>
       <option name="atWarPlayers" value="Germans" count="1"/>
     </attachment>
     <attachment name="objectiveAttachment_British_2_Kwangtung_And_Malaya" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="directOwnershipTerritories" value="Malaya:Kwangtung" count="2"/>
       <option name="atWarPlayers" value="Japanese" count="1"/>
@@ -15859,7 +15833,7 @@
       <option name="relationship" value="ANZAC:Japanese:anyWar"/>
     </attachment>
     <attachment name="objectiveAttachment_ANZAC_2_Control_Strategic_Islands" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentANZAC_At_War_With_Japanese:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachmentANZAC_At_War_With_Japanese"/>
       <option name="objectiveValue" value="5"/>
       <option name="directOwnershipTerritories" value="Solomon Islands:Dutch New Guinea:New Guinea:New Britain" count="4"/>
       <!-- we do not want dutch control of new guinea to count towards this goal -->
@@ -15867,47 +15841,39 @@
     </attachment>
     <!-- Italians Objectives -->
     <attachment name="objectiveAttachment_Italians_1_Control_The_Mediterranean" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="enemySurfaceExclusionTerritories" value="92 Sea Zone:93 Sea Zone:94 Sea Zone:95 Sea Zone:96 Sea Zone:97 Sea Zone:98 Sea Zone:99 Sea Zone" count="8"/>
     </attachment>
     <attachment name="objectiveAttachment_Italians_2_Roman_Empire" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Greece:Egypt:Southern France:Gibraltar" count="3"/>
     </attachment>
     <attachment name="objectiveAttachment_Italians_3_North_Africa" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Alexandria:Morocco:Algeria:Tunisia:Tobruk:Libya" count="6"/>
     </attachment>
     <attachment name="objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="2"/>
       <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia" count="each"/>
     </attachment>
     
     <!-- Americans Objectives -->
     <attachment name="objectiveAttachment_Americans_1_Homeland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="10"/>
       <option name="atWarPlayers" value="Germans:Italians:Japanese" count="1"/>
       <option name="directOwnershipTerritories" value="Central United States:Eastern United States:Western United States" count="3"/>
     </attachment>
     <attachment name="objectiveAttachment_Americans_2_Outer_Territories" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="atWarPlayers" value="Germans:Italians:Japanese" count="1"/>
       <option name="directOwnershipTerritories" value="Alaska:Aleutian Islands:Hawaiian Islands:Johnston Island:Line Islands" count="5"/>
     </attachment>
     <attachment name="objectiveAttachment_Americans_3_Defense_Obligations" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="atWarPlayers" value="Germans:Italians:Japanese" count="1"/>
       <option name="directOwnershipTerritories" value="Mexico:Southeast Mexico:Central America:West Indies" count="4"/>
     </attachment>
     <attachment name="objectiveAttachment_Americans_4_Philippines" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="5"/>
       <option name="atWarPlayers" value="Germans:Italians:Japanese" count="1"/>
       <option name="directOwnershipTerritories" value="Philippines" count="1"/>
@@ -15919,12 +15885,10 @@
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="objectiveAttachment_Chinese_1_Burma_Road" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="6"/>
       <option name="conditions" value="conditionAttachmentJapaneseDoNotControlBurmaRoad"/>
     </attachment>
     <attachment name="objectiveAttachment_Advanced_Production_1_Infantry" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-		<option name="conditions" value="conditionAttachmentNationalObjectiveSwitch"/>
       <option name="objectiveValue" value="3"/>
       <option name="directOwnershipTerritories" value="Shantung:Kwangsi:Kiangsu:Jehol:Manchuria:Szechwan:Hunan:Yunnan:Kweichow:Shensi:Suiyuyan:Kiangsi:Hopei:Sikang:Tsinghai:Kansu:Timguska:Anhwe" count="1"/>
     </attachment>
@@ -16243,37 +16207,6 @@
 
     <attachment name="conditionAttachment_SwitchIsTrue" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
     <option name="switch" value="true"/>  
-    </attachment>
-
-	 <!-- This trigger changes NationalObjectiveSwitch to false -->
-    <attachment name="triggerAttachmentNationalObjectiveFalse" attachTo="Germans" javaClass="TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
-      <option name="players" value="Germans"/>
-      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachmentNationalObjectiveSwitch"/>
-      <option name="playerProperty" value="switch" count="false"/>
-      <option name="when" value="before:italiansNoPUEndTurn"/>
-      <option name="when" value="before:russiansNoPUEndTurn"/>
-      <option name="when" value="before:germansNoPUEndTurn"/>
-      <option name="when" value="before:britishNoPUEndTurn"/>
-      <option name="when" value="before:japaneseNoPUEndTurn"/>
-      <option name="when" value="before:americansNoPUEndTurn"/>
-      <option name="when" value="before:anzacNoPUEndTurn"/>
-      <option name="when" value="before:frenchNoPUEndTurn"/>
-    </attachment>
- 	 <!-- This trigger changes NationalObjectiveSwitch to true -->
-   <attachment name="triggerAttachmentNationalObjectiveTrue" attachTo="Germans" javaClass="TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
-      <option name="players" value="Germans"/>
-      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachmentNationalObjectiveSwitch"/>
-      <option name="playerProperty" value="switch" count="true"/>
-      <option name="when" value="after:italiansNoPUEndTurn"/>
-      <option name="when" value="after:russiansNoPUEndTurn"/>
-      <option name="when" value="after:germansNoPUEndTurn"/>
-      <option name="when" value="after:britishNoPUEndTurn"/>
-      <option name="when" value="after:japaneseNoPUEndTurn"/>
-      <option name="when" value="after:americansNoPUEndTurn"/>
-      <option name="when" value="after:anzacNoPUEndTurn"/>
-      <option name="when" value="after:frenchNoPUEndTurn"/>
     </attachment>
 
       <!-- Now for some conditions: Check for the presence of 3 German U-Boats -->
@@ -33631,12 +33564,12 @@
     
     <!-- Germans Triggers -->
     <attachment name="triggerAttachment_Germans_4_Presence_In_Egypt" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachment_Germans_4_unit_presence:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="trigger" value="conditionAttachment_Germans_4_unit_presence"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_5_Swedish_Iron_Ore" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachment_Germans_5_Control_Norway_And_Denmark:conditionAttachment_Germans_5_Sweden_Not_Enemy:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="trigger" value="conditionAttachment_Germans_5_Control_Norway_And_Denmark:conditionAttachment_Germans_5_Sweden_Not_Enemy"/>
       <option name="conditionType" value="AND"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
@@ -33645,7 +33578,7 @@
       <option name="directOwnershipTerritories" value="Iraq"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_ControlItalyOilObjectiveIraq" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentItaliansAtWarWithGermans:conditionAttachmentGermansControlItalyOilObjectiveIraq:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="trigger" value="conditionAttachmentItaliansAtWarWithGermans:conditionAttachmentGermansControlItalyOilObjectiveIraq"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
@@ -33653,7 +33586,7 @@
       <option name="directOwnershipTerritories" value="Persia"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_ControlItalyOilObjectivePersia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentItaliansAtWarWithGermans:conditionAttachmentGermansControlItalyOilObjectivePersia:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="trigger" value="conditionAttachmentItaliansAtWarWithGermans:conditionAttachmentGermansControlItalyOilObjectivePersia"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
@@ -33661,7 +33594,7 @@
       <option name="directOwnershipTerritories" value="Northwest Persia"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_ControlItalyOilObjectiveNWPersia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentItaliansAtWarWithGermans:conditionAttachmentGermansControlItalyOilObjectiveNWPersia:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="trigger" value="conditionAttachmentItaliansAtWarWithGermans:conditionAttachmentGermansControlItalyOilObjectiveNWPersia"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
@@ -41327,22 +41260,22 @@
     <!-- ANZAC Convoy Removal Triggers Ends -->
     
     <attachment name="triggerAttachment_Germans_ReceiveItaliansAdvancedProduction" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_GermansItaliansWar:conditionAttachment_GermansControlRome:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_GermansItaliansWar:conditionAttachment_GermansControlRome"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_ReceiveItaliansNoShipsMedObjective" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_GermansItaliansWar:conditionAttachment_GermansControlRome:conditionAttachment_Germans_ReceiveItaliansNoShipsMedObjective:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_GermansItaliansWar:conditionAttachment_GermansControlRome:conditionAttachment_Germans_ReceiveItaliansNoShipsMedObjective"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_ReceiveItaliansRomanEmpireObjective" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_GermansItaliansWar:conditionAttachment_GermansControlRome:conditionAttachment_Germans_ReceiveItaliansRomanEmpireObjective:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_GermansItaliansWar:conditionAttachment_GermansControlRome:conditionAttachment_Germans_ReceiveItaliansRomanEmpireObjective"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_ReceiveItaliansNorth_AfricaObjective" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_GermansItaliansWar:conditionAttachment_GermansControlRome:conditionAttachment_Germans_ReceiveItaliansNorth_AfricaObjective:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_GermansItaliansWar:conditionAttachment_GermansControlRome:conditionAttachment_Germans_ReceiveItaliansNorth_AfricaObjective"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
     </attachment>
@@ -43183,12 +43116,12 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_AdvancedProduction" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXPInvert:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXPInvert"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="12"/>
     </attachment>
     <attachment name="triggerAttachment_Germans_AdvancedProductionBasicRules" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXP:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXP"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="6"/>
     </attachment>
@@ -43501,7 +43434,7 @@
     
     <!-- Russians Triggers -->
     <attachment name="triggerAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Russians_1_Lend_Lease:conditionAttachment_Americans_have_units_in_Russia:conditionAttachment_British_have_units_in_Russia:conditionAttachment_ANZAC_have_units_in_Russia:conditionAttachment_French_have_units_in_Russia:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_Russians_1_Lend_Lease:conditionAttachment_Americans_have_units_in_Russia:conditionAttachment_British_have_units_in_Russia:conditionAttachment_ANZAC_have_units_in_Russia:conditionAttachment_French_have_units_in_Russia"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
     </attachment>
@@ -45458,12 +45391,12 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Japanese_AdvancedProduction" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXPInvert:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXPInvert"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="8"/>
     </attachment>
     <attachment name="triggerAttachment_Japanese_AdvancedProductionBasicRules" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXP:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXP"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="6"/>
     </attachment>
@@ -45475,7 +45408,7 @@
 
     <!-- Japanese Triggers Pacific Okinawa -->
     <attachment name="triggerAttachment_Japan_Loses_Okinawa" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlOkinawaInvert:conditionAttachment_Japanese_LoseOkinawa:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlOkinawaInvert:conditionAttachment_Japanese_LoseOkinawa"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -45483,7 +45416,7 @@
 
     <!-- Japanese Triggers Pacific Caroline Islands -->
     <attachment name="triggerAttachment_Japan_Loses_CarolineIslands" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlCarolineIslandsInvert:conditionAttachment_Japanese_LoseCarolineIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlCarolineIslandsInvert:conditionAttachment_Japanese_LoseCarolineIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-3"/>
     </attachment>
@@ -45492,7 +45425,7 @@
     <!-- Japanese Triggers Pacific Formosa -->
     
     <attachment name="triggerAttachment_Japan_Loses_Formosa" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlFormosaInvert:conditionAttachment_Japanese_LoseFormosa:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlFormosaInvert:conditionAttachment_Japanese_LoseFormosa"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -45501,7 +45434,7 @@
     <!-- Japanese Triggers Pacific Iwo Jima -->
     
     <attachment name="triggerAttachment_Japan_Loses_IwoJima" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlIwoJimaInvert:conditionAttachment_Japanese_LoseIwoJima:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlIwoJimaInvert:conditionAttachment_Japanese_LoseIwoJima"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -45510,7 +45443,7 @@
     <!-- Japanese Triggers Pacific Hainan -->
     
     <attachment name="triggerAttachment_Japan_Loses_Hainan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlHainanInvert:conditionAttachment_Japanese_LoseHainan:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlHainanInvert:conditionAttachment_Japanese_LoseHainan"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -45519,7 +45452,7 @@
     <!-- Japanese Triggers Pacific Paulau Island -->
     
     <attachment name="triggerAttachment_Japan_Loses_PaulauIsland" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlPaulauIslandInvert:conditionAttachment_Japanese_LosePaulauIsland:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlPaulauIslandInvert:conditionAttachment_Japanese_LosePaulauIsland"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -45528,7 +45461,7 @@
     <!-- Japanese Triggers Pacific Marianas -->
     
     <attachment name="triggerAttachment_Japan_Loses_Marianas" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlMarianasInvert:conditionAttachment_Japanese_LoseMarianas:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlMarianasInvert:conditionAttachment_Japanese_LoseMarianas"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -45536,7 +45469,7 @@
 
     <!-- Japanese Triggers Alaska -->
     <attachment name="triggerAttachment_Japanese_Controls_Alaska_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlAlaska:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlAlaska"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
     </attachment>
@@ -45544,7 +45477,7 @@
 
     <!-- Japanese Triggers Midway -->
     <attachment name="triggerAttachment_Japanese_Controls_Midway_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlMidway:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlMidway"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
     </attachment>
@@ -45552,7 +45485,7 @@
 
     <!-- Japanese Triggers Hawaiian Islands -->
     <attachment name="triggerAttachment_Japanese_Controls_HawaiianIslands_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlHawaiianIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlHawaiianIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
     </attachment>
@@ -45560,7 +45493,7 @@
 
     <!-- Japanese Triggers Mexico -->
     <attachment name="triggerAttachment_Japanese_Controls_Mexico_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlMexico:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlMexico"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
@@ -45568,7 +45501,7 @@
     
     <!-- Japanese Triggers Wake Island -->
     <attachment name="triggerAttachment_Japanese_Controls_WakeIsland_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlWakeIsland:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlWakeIsland"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
@@ -45576,7 +45509,7 @@
 
     <!-- Japanese Triggers Philippines -->
     <attachment name="triggerAttachment_Japanese_Controls_Philippines_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlPhilippines:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlPhilippines"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
     </attachment>
@@ -45584,7 +45517,7 @@
 
     <!-- Japanese Triggers Guam -->
     <attachment name="triggerAttachment_Japanese_Controls_Guam_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlGuam:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlGuam"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -45592,7 +45525,7 @@
 
     <!-- Japanese Triggers Dutch New Guinea -->
     <attachment name="triggerAttachment_Japanese_Controls_DNG_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlDNG:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlDNG"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
@@ -45600,7 +45533,7 @@
     
     <!-- Japanese Triggers Celebes -->
     <attachment name="triggerAttachment_Japanese_Controls_Celebes_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlCelebes:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlCelebes"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -45608,7 +45541,7 @@
 
     <!-- Japanese Triggers Aleutian Islands -->
     <attachment name="triggerAttachment_Japanese_Controls_AleutianIslands_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlAleutianIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlAleutianIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -45616,7 +45549,7 @@
     
     <!-- Japanese Triggers Line Islands -->
     <attachment name="triggerAttachment_Japanese_Controls_LineIslands_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlLineIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlLineIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -45624,7 +45557,7 @@
 
     <!-- Japanese Triggers Ceylon -->
     <attachment name="triggerAttachment_Japanese_Controls_Ceylon_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlCeylon:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlCeylon"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -45632,7 +45565,7 @@
 
     <!-- Japanese Triggers Fiji -->
     <attachment name="triggerAttachment_Japanese_Controls_Fiji_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlFiji:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlFiji"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -45640,7 +45573,7 @@
 
     <!-- Japanese Triggers Gilbert Islands -->
     <attachment name="triggerAttachment_Japanese_Controls_GilbertIslands_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlGilbertIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlGilbertIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
@@ -45648,7 +45581,7 @@
 
     <!-- Japanese Triggers Samoa -->
     <attachment name="triggerAttachment_Japanese_Controls_Samoa_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlSamoa:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlSamoa"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -45656,7 +45589,7 @@
     
     <!-- Japanese Triggers Solomon Islands -->
     <attachment name="triggerAttachment_Japanese_Controls_SolomonIslands_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlSolomonIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlSolomonIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
@@ -45664,7 +45597,7 @@
 
     <!-- Japanese Triggers New Guinea -->
     <attachment name="triggerAttachment_Japanese_Controls_NewGuinea_Pacific_Expanded" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlNewGuinea:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Japanese_ControlNewGuinea"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
@@ -46282,12 +46215,12 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_British_AdvancedProduction" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXPInvert:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXPInvert"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="6"/>
     </attachment>
     <attachment name="triggerAttachment_British_AdvancedProductionBasicRules" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXP:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXP"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="6"/>
     </attachment>
@@ -46296,7 +46229,7 @@
       <option name="directOwnershipTerritories" value="Queensland:Victoria:New Britain:Northern Territory:New Zealand:New South Wales:South Australia:Western Australia:Solomon Islands:New Guinea:Malaya" count="11"/>
     </attachment>
     <attachment name="triggerAttachment_British_Control_Original_Pacific_And_Malaya" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="EXP43:conditionAttachmentBritish_At_War_With_Japanese:conditionAttachment_British_Control_ANZAC_Original:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="trigger" value="EXP43:conditionAttachmentBritish_At_War_With_Japanese:conditionAttachment_British_Control_ANZAC_Original"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
     </attachment>
@@ -46306,14 +46239,14 @@
       <option name="players" value="British:Americans:ANZAC:Russians:French"/>
     </attachment>
     <attachment name="triggerAttachment_British_Control_Strategic_Islands" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachment_British_Control_ANZAC_Strategic_Islands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="EXP43:conditionAttachment_British_Control_ANZAC_Strategic_Islands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
     </attachment>
 
     <!-- British Triggers Okinawa -->
     <attachment name="triggerAttachment_UK_Controls_Okinawa_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlOkinawa:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlOkinawa"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -46321,7 +46254,7 @@
 
     <!-- British Triggers Caroline Islands -->
     <attachment name="triggerAttachment_UK_Controls_CarolineIslands_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlCarolineIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlCarolineIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
     </attachment>
@@ -46329,7 +46262,7 @@
 
     <!-- British Triggers Formosa -->
     <attachment name="triggerAttachment_UK_Controls_Formosa_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlFormosa:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlFormosa"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -46337,7 +46270,7 @@
 
      <!-- British Triggers Iwo Jima -->
     <attachment name="triggerAttachment_UK_Controls_IwoJima_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlIwoJima:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlIwoJima"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -46345,7 +46278,7 @@
 
     <!-- British Triggers Hainan -->
     <attachment name="triggerAttachment_UK_Controls_Hainan_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlHainan:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlHainan"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -46353,7 +46286,7 @@
 
     <!-- British Triggers Paulau Island -->
     <attachment name="triggerAttachment_UK_Controls_PaulauIsland_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlPaulauIsland:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlPaulauIsland"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -46361,7 +46294,7 @@
     
     <!-- British Triggers Marianas -->
     <attachment name="triggerAttachment_UK_Controls_Marianas_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlMarianas:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlMarianas"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -46370,7 +46303,7 @@
     <!-- British Triggers Pacific Ceylon -->
     
     <attachment name="triggerAttachment_British_Loses_Ceylon" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlCeylonInvert:conditionAttachment_British_LoseCeylon:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlCeylonInvert:conditionAttachment_British_LoseCeylon"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -46378,7 +46311,7 @@
 
     <!-- British Triggers Pacific Dutch New Guinea -->
     <attachment name="triggerAttachment_British_Liberates_DNG" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlDNG:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlDNG"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
@@ -46386,12 +46319,12 @@
 
     <!-- British Triggers Pacific Celebes -->
     <attachment name="triggerAttachment_British_Liberates_Celebes" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlCelebes:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlCelebes"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_British_Loses_Celebes_Pacific_Expanded" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlCelebesInvert:conditionAttachment_British_LoseCelebes:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlCelebesInvert:conditionAttachment_British_LoseCelebes"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -46401,7 +46334,7 @@
     <!-- British Triggers Pacific Gilbert Islands -->
     
     <attachment name="triggerAttachment_British_Loses_GilbertIslands" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlGilbertIslandsInvert:conditionAttachment_British_LoseGilbertIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlGilbertIslandsInvert:conditionAttachment_British_LoseGilbertIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
@@ -46410,7 +46343,7 @@
     <!-- British Triggers Pacific Fiji -->
     
     <attachment name="triggerAttachment_British_Loses_Fiji" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlFijiInvert:conditionAttachment_British_LoseFiji:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_British_ControlFijiInvert:conditionAttachment_British_LoseFiji"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -46419,7 +46352,7 @@
     <!-- British Triggers Pacific Samoa -->
     
     <attachment name="triggerAttachment_British_Loses_Samoa" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_British_ControlSamoaInvert:conditionAttachment_British_LoseSamoa:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_British_ControlSamoaInvert:conditionAttachment_British_LoseSamoa"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -46514,14 +46447,14 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Italians_AdvancedProduction" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXPInvert:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachmentTurn1OrHigher:BasicEXPInvert"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
     </attachment>
     
     <!-- ANZAC Triggers -->
     <attachment name="triggerAttachment_ANZAC_1_Control_Original_And_Malaya" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachmentANZAC_At_War_With_Japanese:conditionAttachment_ANZAC_1_Original:conditionAttachment_ANZAC_1_Malaya:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="trigger" value="conditionAttachmentANZAC_At_War_With_Japanese:conditionAttachment_ANZAC_1_Original:conditionAttachment_ANZAC_1_Malaya"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
     </attachment>
@@ -46597,7 +46530,7 @@
     
     <!-- ANZAC Triggers Okinawa -->
     <attachment name="triggerAttachment_ANZAC_Controls_Okinawa_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlOkinawa:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlOkinawa"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -46605,7 +46538,7 @@
 
     <!-- ANZAC Triggers Caroline Islands -->
     <attachment name="triggerAttachment_ANZAC_Controls_CarolineIslands_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlCarolineIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlCarolineIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
     </attachment>
@@ -46613,7 +46546,7 @@
 
     <!-- ANZAC Triggers Formosa -->
     <attachment name="triggerAttachment_ANZAC_Controls_Formosa_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlFormosa:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlFormosa"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -46621,7 +46554,7 @@
 
      <!-- ANZAC Triggers Iwo Jima -->
     <attachment name="triggerAttachment_ANZAC_Controls_IwoJima_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlIwoJima:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlIwoJima"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -46629,7 +46562,7 @@
 
     <!-- ANZAC Triggers Hainan -->
     <attachment name="triggerAttachment_ANZAC_Controls_Hainan_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlHainan:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlHainan"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -46637,7 +46570,7 @@
 
     <!-- ANZAC Triggers Paulau Island -->
     <attachment name="triggerAttachment_ANZAC_Controls_PaulauIsland_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlPaulauIsland:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlPaulauIsland"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -46645,7 +46578,7 @@
     
     <!-- ANZAC Triggers Marianas -->
     <attachment name="triggerAttachment_ANZAC_Controls_Marianas_Pacific_Expanded" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlMarianas:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlMarianas"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -46654,7 +46587,7 @@
     <!-- ANZAC Triggers Pacific Solomon Islands -->
     
     <attachment name="triggerAttachment_ANZAC_Loses_SolomonIslands" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlSolomonIslandsInvert:conditionAttachment_ANZAC_LoseSolomonIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlSolomonIslandsInvert:conditionAttachment_ANZAC_LoseSolomonIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
@@ -46663,7 +46596,7 @@
     <!-- ANZAC Triggers Pacific New Guinea -->
     
     <attachment name="triggerAttachment_ANZAC_Loses_NewGuinea" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlNewGuineaInvert:conditionAttachment_ANZAC_LoseNewGuinea:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlNewGuineaInvert:conditionAttachment_ANZAC_LoseNewGuinea"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
@@ -46671,7 +46604,7 @@
 
     <!-- ANZAC Triggers Pacific Dutch New Guinea -->
     <attachment name="triggerAttachment_ANZAC_Liberates_DNG" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlDNG:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlDNG"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
@@ -46679,7 +46612,7 @@
 
     <!-- ANZAC Triggers Pacific Celebes -->
     <attachment name="triggerAttachment_ANZAC_Liberates_Celebes" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlCelebes:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_ANZAC_ControlCelebes"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -46772,7 +46705,7 @@
     </attachment>
     <!-- Americans Triggers -->
     <attachment name="triggerAttachment_Americans_5_Presence_In_France" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachment_Americans_5_unit_presence:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="trigger" value="conditionAttachment_Americans_5_unit_presence"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
     </attachment>
@@ -48175,19 +48108,19 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_AdvancedProduction" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_At_War_With_At_Least_One_Axis:BasicEXPInvert:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_Americans_At_War_With_At_Least_One_Axis:BasicEXPInvert"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="14"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_AdvancedProductionBasicRules" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_At_War_With_At_Least_One_Axis:BasicEXP:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_Americans_At_War_With_At_Least_One_Axis:BasicEXP"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="6"/>
     </attachment>
     
     <!-- Americans Triggers Okinawa -->
     <attachment name="triggerAttachment_USA_Controls_Okinawa_Pacific_Expanded" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlOkinawa:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlOkinawa"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -48195,7 +48128,7 @@
 
     <!-- Americans Triggers Caroline Islands -->
     <attachment name="triggerAttachment_USA_Controls_CarolineIslands_Pacific_Expanded" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlCarolineIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_Americans_ControlCarolineIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="3"/>
     </attachment>
@@ -48203,7 +48136,7 @@
     
     <!-- Americans Triggers Formosa -->
     <attachment name="triggerAttachment_USA_Controls_Formosa_Pacific_Expanded" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlFormosa:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlFormosa"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -48211,7 +48144,7 @@
 
     <!-- Americans Triggers Iwo Jima -->
     <attachment name="triggerAttachment_USA_Controls_IwoJima_Pacific_Expanded" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlIwoJima:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlIwoJima"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -48219,7 +48152,7 @@
 
     <!-- Americans Triggers Hainan -->
     <attachment name="triggerAttachment_USA_Controls_Hainan_Pacific_Expanded" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlHainan:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlHainan"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -48227,7 +48160,7 @@
 
     <!-- Americans Triggers Paulau Island -->
     <attachment name="triggerAttachment_USA_Controls_PaulauIsland_Pacific_Expanded" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlPaulauIsland:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlPaulauIsland"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -48235,7 +48168,7 @@
     
     <!-- Americans Triggers Marianas -->
     <attachment name="triggerAttachment_USA_Controls_Marianas_Pacific_Expanded" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlMarianas:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlMarianas"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
@@ -48243,7 +48176,7 @@
 
     <!-- Americans Triggers Pacific Alaska -->
      <attachment name="triggerAttachment_Americans_Loses_Alaska" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlAlaskaInvert:conditionAttachment_Americans_LoseAlaska:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlAlaskaInvert:conditionAttachment_Americans_LoseAlaska"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-3"/>
     </attachment>
@@ -48252,7 +48185,7 @@
     <!-- Americans Triggers Pacific Midway -->
     
     <attachment name="triggerAttachment_Americans_Loses_Midway" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlMidwayInvert:conditionAttachment_Americans_LoseMidway:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_Americans_ControlMidwayInvert:conditionAttachment_Americans_LoseMidway"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-3"/>
     </attachment>
@@ -48261,7 +48194,7 @@
     <!-- Americans Triggers Pacific Hawaiian Islands -->
     
     <attachment name="triggerAttachment_Americans_Loses_HawaiianIslands" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlHawaiianIslandsInvert:conditionAttachment_Americans_LoseHawaiianIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_Americans_ControlHawaiianIslandsInvert:conditionAttachment_Americans_LoseHawaiianIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-3"/>
     </attachment>
@@ -48270,7 +48203,7 @@
     <!-- Americans Triggers Pacific Mexico -->
     
     <attachment name="triggerAttachment_Americans_Loses_Mexico" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlMexicoInvert:conditionAttachment_Americans_LoseMexico:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_Americans_ControlMexicoInvert:conditionAttachment_Americans_LoseMexico"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
@@ -48279,7 +48212,7 @@
     <!-- Americans Triggers Pacific Wake Island -->
     
     <attachment name="triggerAttachment_Americans_Loses_WakeIsland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlWakeIslandInvert:conditionAttachment_Americans_LoseWakeIsland:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_Americans_ControlWakeIslandInvert:conditionAttachment_Americans_LoseWakeIsland"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-2"/>
     </attachment>
@@ -48288,7 +48221,7 @@
     <!-- Americans Triggers Pacific Philippines -->
     
     <attachment name="triggerAttachment_Americans_Loses_Philippines" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlPhilippinesInvert:conditionAttachment_Americans_LosePhilippines:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_Americans_ControlPhilippinesInvert:conditionAttachment_Americans_LosePhilippines"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-3"/>
     </attachment>
@@ -48297,7 +48230,7 @@
     <!-- Americans Triggers Pacific Guam -->
     
     <attachment name="triggerAttachment_Americans_Loses_Guam" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlGuamInvert:conditionAttachment_Americans_LoseGuam:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_Americans_ControlGuamInvert:conditionAttachment_Americans_LoseGuam"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -48306,7 +48239,7 @@
     <!-- Americans Triggers Pacific Aleutian Islands -->
     
     <attachment name="triggerAttachment_Americans_Loses_AleutianIslands" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlAleutianIslandsInvert:conditionAttachment_Americans_LoseAleutianIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_Americans_ControlAleutianIslandsInvert:conditionAttachment_Americans_LoseAleutianIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -48315,7 +48248,7 @@
     <!-- Americans Triggers Pacific Line Islands -->
     
     <attachment name="triggerAttachment_Americans_Loses_LineIslands" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Americans_ControlLineIslandsInvert:conditionAttachment_Americans_LoseLineIslands:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="conditionAttachment_Americans_ControlLineIslandsInvert:conditionAttachment_Americans_LoseLineIslands"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="-1"/>
     </attachment>
@@ -48323,7 +48256,7 @@
     
     <!-- Americans Triggers Pacific Dutch New Guinea -->
     <attachment name="triggerAttachment_Americans_Liberates_DNG" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlDNG:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlDNG"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="2"/>
     </attachment>
@@ -48331,7 +48264,7 @@
 
     <!-- Americans Triggers Pacific Celebes -->
     <attachment name="triggerAttachment_Americans_Liberates_Celebes" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlCelebes:conditionAttachmentNationalObjectiveSwitch"/>
+      <option name="conditions" value="PacificEXP:conditionAttachment_Americans_ControlCelebes"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="1"/>
     </attachment>
