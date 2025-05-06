@@ -41,5 +41,3 @@ screenshot.stats.x=120
 screenshot.stats.y=2304
 screenshot.stats.text.color=000000
 screenshot.stats.border.color=FFFFFF
-
-map.mapBlendAlpha=0.2f
