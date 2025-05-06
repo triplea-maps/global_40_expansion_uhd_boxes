@@ -1078,11 +1078,16 @@ Rules are Player Enforced. <br><br>
 <br>Explained in detail here <br><br>
 https://www.axisandallies.org/forums/assets/uploads/files/1742398334531-16.g40-air-fleet-commander-rules.pdf
 <br>
+<img src="GAirCommanderFtr.png"/><br>
+<img src="GAirCommanderTac.png"/><br>
+"AirCommanderFtr" and "AirCommanderTac"<br>
 <br>
-<img src="GAirCommanderOn.png"/><br><br>
-"AirCommanderOn"<br>
-<br>
-will activate the Figters and Tac Bombers. You will have to Edit them in and out as needed. Work same as Corps and Waffen Armies basically.<br>
+will activate the Figters and Tac Bombers.<br>
+<img src="GfighterAF.png"/><br>
+"GfighterAF"<br><br>
+<img src="Gtactical_bomberAF.png"/><br>
+"Gtactical_bomberAF"<br>
+<br>They will support each other but can't be supported by non "AF" Air units. You will have to Edit them in and out as needed. Work same as Corps and Waffen Armies basically.<br>
 <br>
 Recommended to read the Rules in the above link.<br><br>
 Kill the Commander first if AA casualties disband the Air Fleet.<br>
@@ -1090,6 +1095,14 @@ Also as the First Casualty in Regular Combat. Otherwise it will continue to give
 <br>Replace in edit after battle if needed.<br>
 <br>
 Rules are Player Enforced. <br><br>
+<b>31. Heavy Carrier</b><br>
+<br>
+<img src="Hvycarrier.png"/><br>
+<br>Explained in detail here <br><br>
+https://www.axisandallies.org/forums/assets/uploads/files/1746017644582-17.g40-heavy-aircraft-carrier-unit.pdf
+<br>
+<br>
+Do Not Land Strategic Bombers on Non Heavy Carriers. Player Enforced. <br><br>
 <b>Unofficial SBR Option</b><br>
 <br>
 This is independent of the Captain and Company's Awesome House Rules, thus "Unofficial". :) 
@@ -1185,6 +1198,35 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.4<br> 5/5/25 
+<br>
+Fix "Air Commander" not working on Defense.<br>
+Add Separate Air Commanders for Fighters and Tactical Bombers.
+<br>
+<br>Version 2.354<br> 5/3/25 
+<br>
+Add "Heavy Carriers".
+<br>
+<br>Version 2.353<br> 4/4/25 
+<br>
+Cange map.properties by adding <br>
+map.mapBlends=true
+map.mapBlendAlpha=0.2f<br>
+Add New Engineers for Russia and Japan.
+<br>
+<br>Version 2.35<br> 4/1/25 
+<br>
+Revert Have Map Center on Player's Capital when Tech is Off. When playing by Forum it will ask you to post twice otherwise.
+<br>
+<br>Version 2.34<br> 3/29/25 
+<br>
+Clarify how "Air Commander" works.
+<br>
+<br>Version 2.33<br> 3/28/25 
+<br>
+Have Map Center on Player's Capital Complete.<br>
+Thanks again wc_sumpton :)
 <br>
 <br>Version 2.32<br> 3/27/25 
 <br>
