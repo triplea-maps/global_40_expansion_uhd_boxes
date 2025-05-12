@@ -247,7 +247,7 @@
 
   <map>
     <!-- Full europe list:
-				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Easterns Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:1st Desert:3rd Panzer:3rd Waffen:Army Group South:Army Group Centre:Army Group North:1st Waffen:1st Panzer:2nd Waffen:4th Waffen:2nd Panzer:1st Corps:1st Tank:2nd Corps:2nd Tank:3rd Corps:1st Waffen Panzer:1st Luftfloffen:2nd Luftfloffen:3rd Luftfloffen:1st USA AirFleet:2nd USA AirFleet:1st AirFleet:2nd AirFleet:Credits:1st Army Group:2nd Army Group:UK Desert:1st UK Tank:USA Desert:1st USA Tank:2nd USA Tank:USA Army Group:Early 1940:Early 1941:Early 1942:Early 1943:Early 1944:Late 1940:Late 1941:Late 1942:Late 1943:Late 1944:D-Day:Overflow:Bermuda
+				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Easterns Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:1st Desert:3rd Panzer:3rd Waffen:Army Group South:Army Group Centre:Army Group North:1st Waffen:1st Panzer:2nd Waffen:4th Waffen:2nd Panzer:1st Corps:1st Tank:2nd Corps:2nd Tank:3rd Corps:1st Waffen Panzer:1st Luftflotten:2nd Luftflotten:3rd Luftflotten:1st USA AirFleet:2nd USA AirFleet:1st AirFleet:2nd AirFleet:Credits:1st Army Group:2nd Army Group:UK Desert:1st UK Tank:USA Desert:1st USA Tank:2nd USA Tank:USA Army Group:Early 1940:Early 1941:Early 1942:Early 1943:Early 1944:Late 1940:Late 1941:Late 1942:Late 1943:Late 1944:D-Day:Overflow:Bermuda
 				-->
     <!-- Border territories:
 				Evenkiyskiy:Urals:Novosibirsk:Himalayas:Kazakhstan:Timguska:India:Sikang:Tsinghai:Kansu
@@ -537,9 +537,9 @@
     <territory name="1st Army Group"/>
     <territory name="2nd Army Group"/>
     <territory name="1st Waffen Panzer"/>
-    <territory name="1st Luftfloffen"/>
-    <territory name="2nd Luftfloffen"/>
-    <territory name="3rd Luftfloffen"/>
+    <territory name="1st Luftflotten"/>
+    <territory name="2nd Luftflotten"/>
+    <territory name="3rd Luftflotten"/>
     <territory name="1st USA AirFleet"/>
     <territory name="2nd USA AirFleet"/>
     <territory name="1st AirFleet"/>
@@ -1494,9 +1494,9 @@
     <connection t1="1st Desert" t2="Army Group North"/>
     <connection t1="1st Desert" t2="1st Waffen"/>
     <connection t1="1st Desert" t2="1st Waffen Panzer"/>
-    <connection t1="1st Desert" t2="1st Luftfloffen"/>
-    <connection t1="1st Desert" t2="2nd Luftfloffen"/>
-    <connection t1="1st Desert" t2="3rd Luftfloffen"/>
+    <connection t1="1st Desert" t2="1st Luftflotten"/>
+    <connection t1="1st Desert" t2="2nd Luftflotten"/>
+    <connection t1="1st Desert" t2="3rd Luftflotten"/>
     <connection t1="1st Desert" t2="1st USA AirFleet"/>
     <connection t1="1st Desert" t2="2nd USA AirFleet"/>
     <connection t1="1st Desert" t2="1st AirFleet"/>
@@ -1787,9 +1787,9 @@
     <unit name="fighter"/>
     <unit name="GfighterAF"/>
     <unit name="fighterAF"/>
-    <unit name="1stLuftfloffen"/>
-    <unit name="2ndLuftfloffen"/>
-    <unit name="3rdLuftfloffen"/>
+    <unit name="1stLuftflotten"/>
+    <unit name="2ndLuftflotten"/>
+    <unit name="3rdLuftflotten"/>
     <unit name="1stAirFleet"/>
     <unit name="2ndAirFleet"/>
     <unit name="USA1stAirFleet"/>
@@ -3609,17 +3609,17 @@
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="Banzai" quantity="1"/>
     </productionRule>
-    <productionRule name="buy1stLuftfloffen">
+    <productionRule name="buy1stLuftflotten">
       <cost resource="PUs" quantity="0"/>
-      <result resourceOrUnit="1stLuftfloffen" quantity="1"/>
+      <result resourceOrUnit="1stLuftflotten" quantity="1"/>
     </productionRule>
-    <productionRule name="buy2ndLuftfloffen">
+    <productionRule name="buy2ndLuftflotten">
       <cost resource="PUs" quantity="0"/>
-      <result resourceOrUnit="2ndLuftfloffen" quantity="1"/>
+      <result resourceOrUnit="2ndLuftflotten" quantity="1"/>
     </productionRule>
-    <productionRule name="buy3rdLuftfloffen">
+    <productionRule name="buy3rdLuftflotten">
       <cost resource="PUs" quantity="0"/>
-      <result resourceOrUnit="3rdLuftfloffen" quantity="1"/>
+      <result resourceOrUnit="3rdLuftflotten" quantity="1"/>
     </productionRule>
     <productionRule name="buy1stAirFleet">
       <cost resource="PUs" quantity="0"/>
@@ -6259,24 +6259,24 @@
       <option name="defense" value="0"/>
       <option name="maxBuiltPerPlayer" value="1"/>
     </attachment>
-    <!-- 1stLuftfloffen -->
-    <attachment name="unitAttachment" attachTo="1stLuftfloffen" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <!-- 1stLuftflotten -->
+    <attachment name="unitAttachment" attachTo="1stLuftflotten" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="99"/>
       <option name="isAir" value="true"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="maxBuiltPerPlayer" value="1"/>
     </attachment>
-    <!-- 2ndLuftfloffen -->
-    <attachment name="unitAttachment" attachTo="2ndLuftfloffen" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <!-- 2ndLuftflotten -->
+    <attachment name="unitAttachment" attachTo="2ndLuftflotten" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="99"/>
       <option name="isAir" value="true"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
       <option name="maxBuiltPerPlayer" value="1"/>
     </attachment>
-    <!-- 3rdLuftfloffen -->
-    <attachment name="unitAttachment" attachTo="3rdLuftfloffen" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <!-- 3rdLuftflotten -->
+    <attachment name="unitAttachment" attachTo="3rdLuftflotten" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="99"/>
       <option name="isAir" value="true"/>
       <option name="attack" value="0"/>
@@ -8042,6 +8042,19 @@
       <option name="givesMovement" value="1:air_transport"/>
       <option name="givesMovement" value="1:G_air_transport"/>
       <option name="givesMovement" value="1:Me_262"/>
+      <option name="givesMovement" value="1:german_para"/>
+      <option name="givesMovement" value="1:german_paraBoost"/>
+      <option name="givesMovement" value="1:Waffen_Para"/>
+      <option name="givesMovement" value="1:russian_para"/>
+      <option name="givesMovement" value="1:russian_paraBoost"/>
+      <option name="givesMovement" value="1:japanese_para"/>
+      <option name="givesMovement" value="1:japanese_paraBoost"/>
+      <option name="givesMovement" value="1:usa_para"/>
+      <option name="givesMovement" value="1:uk_para"/>
+      <option name="givesMovement" value="1:italian_para"/>
+      <option name="givesMovement" value="1:usa_paraBoost"/>
+      <option name="givesMovement" value="1:uk_paraBoost"/>
+      <option name="givesMovement" value="1:italian_paraBoost"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <!--<option name="canBeGivenByTerritoryTo" value="British"/>-->
       <option name="isRocket" value="true"/>
@@ -8520,6 +8533,7 @@
       <option name="movement" value="0"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
+      <option name="isSea" value="true"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="navyLL"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
@@ -11632,13 +11646,13 @@
     <attachment name="territoryAttachment" attachTo="1st Waffen Panzer" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
-    <attachment name="territoryAttachment" attachTo="1st Luftfloffen" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="1st Luftflotten" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
-    <attachment name="territoryAttachment" attachTo="2nd Luftfloffen" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="2nd Luftflotten" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
-    <attachment name="territoryAttachment" attachTo="3rd Luftfloffen" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="3rd Luftflotten" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="1st USA AirFleet" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -32949,34 +32963,34 @@
       <option name="placement" value="1st Waffen:BoxFctry" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachment1stLuftfloffen" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment1stLuftflotten" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert:AirFleetCommander"/>
-      <option name="placement" value="1st Luftfloffen:1stLuftfloffen" count="1"/>
+      <option name="placement" value="1st Luftflotten:1stLuftflotten" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachment1stLuftfloffen43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment1stLuftflotten43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43:AirFleetCommander"/>
-      <option name="placement" value="1st Luftfloffen:1stLuftfloffen" count="1"/>
+      <option name="placement" value="1st Luftflotten:1stLuftflotten" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachment2ndLuftfloffen" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment2ndLuftflotten" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert:AirFleetCommander"/>
-      <option name="placement" value="2nd Luftfloffen:2ndLuftfloffen" count="1"/>
+      <option name="placement" value="2nd Luftflotten:2ndLuftflotten" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachment2ndLuftfloffen43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment2ndLuftflotten43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43:AirFleetCommander"/>
-      <option name="placement" value="2nd Luftfloffen:2ndLuftfloffen" count="1"/>
+      <option name="placement" value="2nd Luftflotten:2ndLuftflotten" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachment3rdLuftfloffen" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment3rdLuftflotten" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43Invert:AirFleetCommander"/>
-      <option name="placement" value="3rd Luftfloffen:3rdLuftfloffen" count="1"/>
+      <option name="placement" value="3rd Luftflotten:3rdLuftflotten" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachment3rdLuftfloffen43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment3rdLuftflotten43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1:EXP43:AirFleetCommander"/>
-      <option name="placement" value="3rd Luftfloffen:3rdLuftfloffen" count="1"/>
+      <option name="placement" value="3rd Luftflotten:3rdLuftflotten" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment1stAirFleet" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -45881,6 +45895,12 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:britishPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_British_LendLeaseFeeAir43" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:USandUK_LL:conditionAttachmentTurn1OrHigher"/>
+      <option name="productionRule" value="productionBritish:buyAirLL"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:britishPurchase"/>
+    </attachment>
     <attachment name="triggerAttachment_British_RemoveLendLeaseFeeAir" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_LendLeaseFeeAir"/>
       <option name="removeUnits" value="all:AirLL" count="11"/>
@@ -45888,6 +45908,12 @@
     </attachment>
     <attachment name="triggerAttachment_British_LendLeaseFeeNavy" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:USandUK_LL:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionBritish:buyNavyLL"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:britishPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_LendLeaseFeeNavy43" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:USandUK_LL:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionBritish:buyNavyLL"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:britishPurchase"/>
@@ -50483,7 +50509,7 @@
       <option name="changeOwnership" value="New South Wales:ANZAC:British:false"/>
       <option name="placement" value="New South Wales:infantry" count="3"/>
       <option name="placement" value="New South Wales:artillery" count="1"/>
-      <option name="placement" value="New South Wales:fighter" count="1"/>
+      <option name="placement" value="New South Wales:uk_fighter" count="1"/>
       <option name="placement" value="New South Wales:aaGun" count="2"/>
       <option name="placement" value="New South Wales:factory_minor" count="1"/>
       <option name="placement" value="New South Wales:harbour" count="1"/>
@@ -50524,7 +50550,7 @@
       <option name="changeOwnership" value="Queensland:ANZAC:British:false"/>
       <option name="placement" value="Queensland:infantry" count="3"/>
       <option name="placement" value="Queensland:artillery" count="1"/>
-      <option name="placement" value="Queensland:fighter" count="3"/>
+      <option name="placement" value="Queensland:uk_fighter" count="3"/>
       <option name="placement" value="Queensland:harbour" count="1"/>
       <option name="placement" value="Queensland:airfield" count="1"/>
       <option name="when" value="before:germansPurchase"/>
@@ -50577,7 +50603,7 @@
       <option name="changeOwnership" value="Northern Territory:ANZAC:British:false"/>
       <option name="placement" value="Northern Territory:infantry" count="1"/>
       <option name="placement" value="Northern Territory:artillery" count="1"/>
-      <option name="placement" value="Northern Territory:armour" count="1"/>
+      <option name="placement" value="Northern Territory:uk_armour" count="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -52683,9 +52709,9 @@
       <territoryOwner territory="1st Army Group" owner="Russians"/>
       <territoryOwner territory="2nd Army Group" owner="Russians"/>
       <territoryOwner territory="1st Waffen Panzer" owner="Germans"/>
-      <territoryOwner territory="1st Luftfloffen" owner="Germans"/>
-      <territoryOwner territory="2nd Luftfloffen" owner="Germans"/>
-      <territoryOwner territory="3rd Luftfloffen" owner="Germans"/>
+      <territoryOwner territory="1st Luftflotten" owner="Germans"/>
+      <territoryOwner territory="2nd Luftflotten" owner="Germans"/>
+      <territoryOwner territory="3rd Luftflotten" owner="Germans"/>
       <territoryOwner territory="1st USA AirFleet" owner="Americans"/>
       <territoryOwner territory="2nd USA AirFleet" owner="Americans"/>
       <territoryOwner territory="1st AirFleet" owner="Russians"/>

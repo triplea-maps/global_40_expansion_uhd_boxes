@@ -1082,7 +1082,8 @@ https://www.axisandallies.org/forums/assets/uploads/files/1742398334531-16.g40-a
 <img src="GAirCommanderTac.png"/><br>
 "AirCommanderFtr" and "AirCommanderTac"<br>
 <br>
-will activate the Figters and Tac Bombers.<br>
+will activate the Figters and Tac Bombers. A Fighter will receive and extra roll or a Tactical Bomber will. <br>
+You will most likely need to edit "AirCommanderTac" for offensive combat operations and AirCommanderFtr for defense.<br>
 <img src="GfighterAF.png"/><br>
 "GfighterAF"<br><br>
 <img src="Gtactical_bomberAF.png"/><br>
@@ -1199,10 +1200,13 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 2.4<br> 5/5/25 
+<br>Version 2.4<br> 5/6/25 
 <br>
 Fix "Air Commander" not working on Defense.<br>
-Add Separate Air Commanders for Fighters and Tactical Bombers.
+Add Separate Air Commanders for Fighters and Tactical Bombers.<br>
+Fix Paratroopers Not Getting Bonus Movement from "Airfield Hvy"<br>
+Have "NavyLL" Place in 109 and 119 Sea Zones.<br>
+Fix Spelling "Luftflotten".
 <br>
 <br>Version 2.354<br> 5/3/25 
 <br>
