@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.4"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.41"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -34423,13 +34423,13 @@
     </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceItalians" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue:conditionAttachment_ItaliansControlItaly"/>
-      <option name="placement" value="Southern Italy:Rail" count="1"/>
+      <option name="placement" value="Southern Italy:Europe_Rail" count="1"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:italiansCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_RailMovementAutoPlaceRemoveItalians" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_SwitchIsTrue"/>
-      <option name="removeUnits" value="all:Rail" count="1"/>
+      <option name="removeUnits" value="all:Europe_Rail" count="1"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:italiansNonCombatMove"/>
     </attachment>
@@ -48676,7 +48676,7 @@
     <!-- 1943 Setup Denmark -->
     <attachment name="triggerAttachment_Denmark43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="BasicEXPInvert:EXP43"/>
-      <option name="placement" value="Denmark:german_mine" count="3"/>
+      <option name="placement" value="Denmark:G_mine_DEN_112" count="3"/>
       <option name="when" value="after:changerCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -48956,6 +48956,7 @@
       <option name="removeUnits" value="Novgorod:factory_minor" count="1"/>
       <option name="removeUnits" value="Novgorod:airfield" count="1"/>
       <option name="removeUnits" value="Novgorod:aaGun" count="2"/>
+      <option name="removeUnits" value="Novgorod:russian_minor" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -49004,6 +49005,7 @@
     <attachment name="triggerAttachment_43RemoveUKR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="BasicEXPInvert:EXP43"/>
       <option name="removeUnits" value="Ukraine:infantry" count="3"/>
+      <option name="removeUnits" value="Ukraine:russian_minor" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -49077,6 +49079,7 @@
       <option name="conditions" value="BasicEXPInvert:EXP43"/>
       <option name="removeUnits" value="Volgograd:mech_infantry" count="1"/>
       <option name="removeUnits" value="Volgograd:armour" count="1"/>
+      <option name="removeUnits" value="Volgograd:russian_minor" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
       <option name="uses" value="1"/>
     </attachment>
