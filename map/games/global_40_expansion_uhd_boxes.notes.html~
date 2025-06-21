@@ -18,6 +18,9 @@ and here:<br><br><b>https://www.axisandallies.org/forums/topic/36945/axis-allies
 <br>
 This mod will play more like a TableTop game than most triplea maps. While there is the need for edit use, it is completely playable and will become second nature after a few games. It's <b>Huge</b> upside is well worth the effort.<br>
 <br>
+<b>IMPORTANT</b><br>
+When moving units from Boxes or adding units to a territory before combat with edit, you <b>MUST</b> move all defendeing units into the territory before any Attackers. Otherwise the defending units will not take place in the battle.<br>
+<br>
 <b>NOTE</b><br><br>
 <b>New Wolfpack and Paratrooper Procedure as of May 2 2024. Version 1.99</b><br>
 <br>
@@ -65,11 +68,23 @@ Waffen Panzer<br>
 Waffen Paratrooper<br>
 Waffen Heavy Tank<br>
 Waffen PG<br>
+Waffen Pioneer<br>
+Waffen Panzer General<br>
+Elite Panzer<br>
+<br>
+<b>Russia</b><br>
+Air LL<br>
+Tank LL<br>
+Elite Armor<br>
 <br>
 <b>USA</b><br>
-Marines<br><br>
+Marines<br>
+Elite Armor<br>
+<br>
 <b>United Kingdom</b><br>
-Commandos<br><br>
+Commandos<br>
+Navy LL<br>
+Air LL<br><br>
 Use edit to move Paratroopers over Enemy Territory and for LCVs.<br>
 <br>
 When an Army is active, you should edit a new army-leading unit depending on the units it commands. Barnee should let you know more about this since I don’t know exactly what army-leading unit commands what.
@@ -145,11 +160,14 @@ Once a Changer Unit has been added in Edit,<b> for example Landmines</b>, they w
 <br>
 <b>Boxes</b><br>
 <br>
+<b>IMPORTANT</b><br>
+When moving units from Boxes or adding units to a territory before combat with edit, you <b>MUST</b> move all defendeing units into the territory before any Attackers. Otherwise the defending units will not take place in the battle.<br>
+<br>
 <b>NOTE</b><br>
 <br>
 There is an Invisible Factory that allows placement in Boxes. Use <b>Caution</b> when editing units in and out of Boxes so you don't delete it. If you do by accident, you can edit it back in. It's called "BoxFctry". <br>
 <br>
-<b>You Must Use Edit</b> to Move To and From and will only be able to move in CM and NCM. Use "Perform Move Or Other Actions" while in Edit. You will be able to move other Players' Units as well. However, you can only move to legal territories. For example, Germany can't move Units into russia without being at War.<br><br> <b>NOTE<br> You may temporarily edit russia and Germany to War if you have a large number of moves to make and then edit back to Neutrality.</b> <br>
+<b>You Must Use Edit</b> to Move To and From and will only be able to move in <b>CM and NCM.</b> Use "Perform Move Or Other Actions" while in Edit. You will be able to move other Players' Units as well. However, you can only move to legal territories. For example, Germany can't move Units into Russia without being at War.<br><br> <b>NOTE</b><br> You may temporarily edit Russia and Germany to War if you have a large number of moves to make and then edit back to Neutrality.</b> <br>
 <br> You will need to Edit otherwise and Manually Place/Replace.<br><br>
 Also, you can move units in Edit, then move additional units somewhere else and not have to hit "Perform Move ..." again. You can do multiple moves. In other words, you don't need to click on "Perform Move or Other Actions" for every move.<br>
 <br>
@@ -193,6 +211,11 @@ Eastern Poland<br>
 Smolensk<br>
 Tambov<br>
 Volgograd<br>
+Russia<br>
+<br>
+<b>United Kingdom</b><br>
+India<br>
+Burma<br>
 <br>
 <b>Active Army Groups</b> must be rolled with Edit as above for complete Rule Compliance or Players can agree to count the hit when the Army Group is no longer Active the way triplea does it. Edit an "Inactive Army Group to the Defending Player if it doesn't have one to offset the Attacking one. Do Not take as casualty until after the Attacking one has been killed.<br>
 <br>
@@ -650,7 +673,12 @@ Max Build is Player Enforced. Otherwise they work correctly.<br>
 <b>3. Waffen Oberst-Gruppenführer</b><br>
 <br>
 <img src="Waffen_Oberst.png"/> <br><br>
-There are "4" Oberst. The one you can purchase is not currently in command of a Waffen Army. Depending on the configuration of the Army, use edit to replace the Oberst with a "2", "3" or "4" Oberst. This will boost the appropriate A2, A3 and A4 units.<br>
+There are "4" Oberst. The one you can purchase is not currently in command of a Waffen Army. Depending on the configuration of the Army, use edit to replace the Oberst with a "2", "3" "4" or "5" Oberst. This will boost the appropriate A2, A3 and A4 units.<br>
+<br>
+<b>NOTE</b><br>
+When attacking with a Waffen Para and Waffen Arty, the Oberst will give the extra die roll to the Waffen Arty. You will need to hand roll or roll in edit and adjust the dice rolls accordingly for exact rule compliance.<br>
+<br>
+All my tests have the Waffen Pioneer working correctly but keep an eye out for the same behavior.<br>
 <br>
 Always take the Oberst as the First casualty of the Army. Otherwise it will continue to roll twice and give it's bonus roll to the designated unit.<br>
 <br>
@@ -1083,13 +1111,14 @@ https://www.axisandallies.org/forums/assets/uploads/files/1742398334531-16.g40-a
 "AirCommanderFtr" and "AirCommanderTac"<br>
 <br>
 will activate the Figters and Tac Bombers. A Fighter will receive and extra roll or a Tactical Bomber will. <br>
-You will most likely need to edit "AirCommanderTac" for offensive combat operations and AirCommanderFtr for defense.<br>
+You will most likely need to edit "AirCommanderTac" for offensive combat operations and AirCommanderFtr for defense or you can palace an additional AC in it's Box and move the desired one as needed.<br>
 <img src="GfighterAF.png"/><br>
 "GfighterAF"<br><br>
 <img src="Gtactical_bomberAF.png"/><br>
 "Gtactical_bomberAF"<br>
 <br>They will support each other but can't be supported by non "AF" Air units. You will have to Edit them in and out as needed. Work same as Corps and Waffen Armies basically.<br>
 <br>
+If you move AF Units before Normal Air Units to the same territory, you will need to use edit to move the Normal Air.<br><br>
 Recommended to read the Rules in the above link.<br><br>
 Kill the Commander first if AA casualties disband the Air Fleet.<br>
 Also as the First Casualty in Regular Combat. Otherwise it will continue to give it's Bonus Rolls.<br>
@@ -1104,6 +1133,14 @@ https://www.axisandallies.org/forums/assets/uploads/files/1746017644582-17.g40-h
 <br>
 <br>
 Do Not Land Strategic Bombers on Non Heavy Carriers. Player Enforced. <br><br>
+<b>31. Elite Panzers</b><br>
+<br>
+<img src="ElitePanzer.png"/><br>
+<br>Explained in detail here <br><br>
+https://www.axisandallies.org/forums/assets/uploads/files/1749817887277-11.g40-elite-tank-unit.pdf
+<br>
+<br>
+Work similar to Elite Infantry. <br><br>
 <b>Unofficial SBR Option</b><br>
 <br>
 This is independent of the Captain and Company's Awesome House Rules, thus "Unofficial". :) 
@@ -1199,6 +1236,19 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.44<br> 6/21/25 
+<br>
+Fix Oberst Rolling when Waffen Arty and Waffen Para or Pioneer Present.<br>
+Add Elite Panzers.<br>
+Fix Japanese Total War Tanks and Artillery Not Changing in Korea.<br>
+Prevent Total War Mech Infantry and Artillery from Placing in India.
+<br>
+<br>Version 2.41<br> 5/12/25 
+<br>
+Fix Italian Rail Moving Out of Europe.<br>
+Remove Initial Russian Minor Factory Placement in 1943 Mod.<br>
+American Fighter Aces Now Have a Red Nose Instead of Blue.
 <br>
 <br>Version 2.4<br> 5/6/25 
 <br>
