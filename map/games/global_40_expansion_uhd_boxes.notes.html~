@@ -16,10 +16,42 @@ This is a House Rule Mod for "World War II Global 1940 2nd Edition". It was Crea
 and here:<br><br><b>https://www.axisandallies.org/forums/topic/36945/axis-allies-global-1940-house-rules-expansion</b><br><br>
 <b>Latest Triplea Version is Here<br><br> https://www.axisandallies.org/forums/topic/36998/global-1940-and-1943-expansion-for-use-with-triplea</b><br>
 <br>
+<b>Tournament Rules</b><br>
+are explained here <b>https://www.axisandallies.org/forums/topic/41850/6th-northern-european-a-a-wiking-con-2025</b><br>
+and for 1st and 2nd year Players here<br>
+<b>https://www.axisandallies.org/forums/assets/uploads/files/1750592387305-tournament-rules-limited-1st-and-2nd.pdf</b><br><br>
+For <b>Tournament Rules </b> in Game Options you will need to turn off<br>
+Increased Ship Building<br>
+Atlantic Wall<br>
+King Tiger. This will also deactivate Waffen Heavy Tank<br>
+Rockets<br>
+US Heavy Transport<br>
+German Type XXI U-boats<br>
+Naval Mines<br>
+Luftwaffe and Fighter Ace<br>
+Kamikaze<br>
+Felix-Heinrich<br>
+Heavy Carrier<br>
+Tank Destroyers<br>
+French in UK<br>
+German U-Boat Pens<br>
+Non use of Desert Army is Player Enforced.<br><br>
+1st and 2nd year Players will also need to deselect<br>
+Landmines<br>
+Navy Fighters<br>
+Fortifications<br>
+D-Day<br>
+Waffen Paratroopers<br>
+Non use of Army Group is Player Enforced.<br>
+Total War<br>
+
+<br><br>
 This mod will play more like a TableTop game than most triplea maps. While there is the need for edit use, it is completely playable and will become second nature after a few games. It's <b>Huge</b> upside is well worth the effort.<br>
 <br>
 <b>IMPORTANT</b><br>
 When moving units from Boxes or adding units to a territory before combat with edit, you <b>MUST</b> move all defendeing units into the territory before any Attackers. Otherwise the defending units will not take place in the battle.<br>
+<br> <b>NOTE</b><br>
+It is recommended to place extra Air Commanders of each type in the Overflow Box. You can then move which one is needed whitout having to edit back and forth.<br>
 <br>
 <b>NOTE</b><br><br>
 <b>New Wolfpack and Paratrooper Procedure as of May 2 2024. Version 1.99</b><br>
@@ -389,6 +421,8 @@ This has been updated on <b>May 27 2024</B>.<br>
 Has Not been tested extensively.<br>
 Consult Game Rules and use Edit to correct as needed.<br>
 <br>
+<b>Works Correctly</b><br>
+<br>
 In the Rare instance USA is in positon to enter Dutch New Guinea first, you will need to Player Enforce that it doesn't. <br><br>
 Use Edit if needed.<br><br>
 May be turned off in "Map Options".<br>
@@ -398,7 +432,7 @@ May be turned off in "Map Options".<br>
 <img src="2Destroyers.png"/> <br><br>
 Movement Restrictions are Player Enforced. The 2 Naval Fighters placed in "Late 1942" will always place. Use edit to correct Unit total if needed.<br>
 <br>
-May be turned off with map option "The Expanded Pacific Ocean".<br>
+May be turned off with map option "Increased Ship Building".<br>
 <br>
 <b>3. Heavy Industry Production</b><br>
 <br>
@@ -1100,7 +1134,7 @@ Both Units will defend correctly.
 <img src="WaffenPioneerAttack.png"/><br><br>
 Use Edit for crossing Sea Zones.<br><br>
 Rules are Player Enforced. <br><br>
-<b>30. Air Fleet Commander</b><br>
+<b>31. Air Fleet Commander</b><br>
 <br>
 <img src="GAirCommander.png"/><br>
 <br>Explained in detail here <br><br>
@@ -1115,8 +1149,10 @@ You will most likely need to edit "AirCommanderTac" for offensive combat operati
 <img src="GfighterAF.png"/><br>
 "GfighterAF"<br><br>
 <img src="Gtactical_bomberAF.png"/><br>
-"Gtactical_bomberAF"<br>
-<br>They will support each other but can't be supported by non "AF" Air units. You will have to Edit them in and out as needed. Work same as Corps and Waffen Armies basically.<br>
+"Gtactical_bomberAF"<br><br>
+<br>
+<br>They will support each other but can't be supported by non "AF" Air units. You will have to Edit them in and out as needed.<br> <b>NOTE</b><br>
+It is recommended to place extra Air Commanders of each type in the Overflow box. You can then move which one is needed whitout having to edit back and forth.<br><br> Work same as Corps and Waffen Armies basically.<br>
 <br>
 If you move AF Units before Normal Air Units to the same territory, you will need to use edit to move the Normal Air.<br><br>
 Recommended to read the Rules in the above link.<br><br>
@@ -1125,7 +1161,7 @@ Also as the First Casualty in Regular Combat. Otherwise it will continue to give
 <br>Replace in edit after battle if needed.<br>
 <br>
 Rules are Player Enforced. <br><br>
-<b>31. Heavy Carrier</b><br>
+<b>32. Heavy Carrier</b><br>
 <br>
 <img src="Hvycarrier.png"/><br>
 <br>Explained in detail here <br><br>
@@ -1133,7 +1169,7 @@ https://www.axisandallies.org/forums/assets/uploads/files/1746017644582-17.g40-h
 <br>
 <br>
 Do Not Land Strategic Bombers on Non Heavy Carriers. Player Enforced. <br><br>
-<b>31. Elite Panzers</b><br>
+<b>33. Elite Panzers</b><br>
 <br>
 <img src="ElitePanzer.png"/><br>
 <br>Explained in detail here <br><br>
@@ -1237,12 +1273,18 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
+<br>Version 2.45<br> 7/30/25 
+<br>
+Add Elite Tanks to TimeTable.<br>
+Add Game Options "Atlantic Wall" and "Increased Ship Building".
+<br>
 <br>Version 2.44<br> 6/21/25 
 <br>
 Fix Oberst Rolling when Waffen Arty and Waffen Para or Pioneer Present.<br>
 Add Elite Panzers.<br>
 Fix Japanese Total War Tanks and Artillery Not Changing in Korea.<br>
-Prevent Total War Mech Infantry and Artillery from Placing in India.
+Prevent Total War Mech Infantry and Artillery from Placing in India.<br>
+Remove BM Rules From Notes.
 <br>
 <br>Version 2.41<br> 5/12/25 
 <br>
@@ -2047,122 +2089,6 @@ Change Waffen Paras to enter round 7. Make German Heavy BB max production of 1. 
 <br>Fix Pro Neutral Units not changing.<br>
 <br>
 <br>
-
-<b>BM Rules</b>
-<br>
-<br>
-<b>**REVISIONS**</b><br><br>
-
-<hr><br>
-
-<b>Revised Air Raid Rules:</b> Fighters attack and defend at 2. Strategic and tactical bombers attack at 1.<br><br>
-
-<b>Revised Capital Capture Rules:</b> The capture of a player's capital results in the plunder of that player's PUs only the <b>first</b> time the capital is taken. Subsequent recapture of the same capital results in the player's PUs being destroyed.<br><br>
-
-<b>Revised Victory Conditions:</b> If Germany is Allied controlled, an Axis victory in the Pacific requires 7 (rather than 6) Pacific VCs. If Japan is Allied controlled, an Axis victory in Europe requires 9 (rather than 8) Europe VCs. 
-
-<br><br>
-<b>Revised Bomber Cost:</b> Strategic bombers now cost 14 PUs, rather than 12. <br><br>
-
-<b>New Unit - Marines:</b> Cost 5; Attack at 1 (2 during amphibious assaults); Defend at 2; No bonus from artillery; Can be loaded onto cruisers and battleships (1 to a ship). <br><br>
-<b>Note:</b> During amphibious assaults, Battleships and Cruisers may bombard any adjacent territory in which an amphibious assault is occurring, regardless of where they unloaded their marines.
-
-<br><br>
-
-<b>Additional National Objectives</b><br><br>
-
-<b>Germany</b>
-<ul>
-<li>2 PUs if Romania, Yugoslavia, Albania, Bulgaria, Greece, and Crete are Axis or Pro-Axis controlled.</li>
-<li>5 PUs if there is at least one German land unit in either London (the United Kingdom) or Egypt. (This modifies Germany's "Presence in Egypt" objective).</li>
-</ul>
-<b>Russia</b>
-<ul>
-<li>3 PUs if Russia is at war with European Axis, and there are no non-Russian Allied units in any originally Russian territory.</li>
-<li>3 PUs for each originally German, Italian, or Pro-Axis neutral territory that Russia controls <b>in mainland Europe.</b> (This modifies Russia's "Spread of Communism" objective). </li>
-<li>2 PUs for each of the following Lend-Lease lanes that is "open" (i.e., the specified Sea Zone has no enemy warships and the specified territory is Allied controlled) when Russia is at war with European Axis beyond Round 2: (1) sz 125, Archangel ; (2) sz 80, Persia; (3) sz 5, Amur (This modifies Russia's "Lend Lease" objective).</li>
-<li>An additional 2 PUs per each "open" Lend-Lease lane, when Russia is at war with European Axis, if Japan has also declared war on Russia.</li> 
-<br>
-<b>Note:</b> An Axis power may not move its units into originally Russian territory unless that Axis power is at war with Russia. Also, when not at war with Japan, Russia may not move its units into any non-Russian Allied territory in Asia, other than Syria, Trans-Jordan, Iraq, Persia, NorthWest Persia, and East Persia. The National Objective for Russia's first capture of Berlin has been removed.
-</ul>
-
-<b>Japan</b>
-<ul>
-<li>5 PUs if Axis controls Dutch New Guinea, New Guinea, New Britain and Solomon Islands. (This modifies Japan's "Strategic Perimeter" objective).</li>
-<li>5 PUs if Axis controls Midway, Wake Island, Guam.</li>
-<li>3 PUs if Japan controls Iwo Jima and Okinawa and is at war with the United States.</li>
-</ul>
-
-<b>USA</b>
-<ul>
-<li>5 PUs if USA is at war and Allies control Midway, Wake Island, Guam.</li>
-<li>5 PUs if USA is at war and Allies control Marshall Islands, Caroline Islands, Paulau Island, Marianas.</li>
-<li>5 PUs if Allies control at least 2 of: Normandy Bordeaux, Holland Belgium, Southern France, and USA has at least one land unit in any of these territories.<b></li>
-<li>5 PUs if Allies control Morocco, Algeria, and Tunisia, and USA has at least one land unit in any of these territories.</li>
-</ul>
-
-<b>China</b>
-<ul>
-<li>3 PUs if Allies control Yunnan, Szechwan, Burma, and India. (This modifies China's "Burma Road" objective).</li>
-<li>At the start of China's turn, a Chinese infantry is spawned in each non-coastal Chinese territory under Axis control that is not garrisoned by at least one Axis land unit (i.e., infantry, marine, mech infantry, artillery, or armor). These "guerrillas" engage in combat wherever they are spawned and may not be moved until China's next turn. </li>
-</ul>
-
-
-<b>UK</b>
-<ul>
-<li>3 PUs if UK Europe controls all its original territories. (This modifies UK's "Original Territories" objective).</li>
-<li>3 PUs if Allies control at least 2 of: Sicily, Sardinia, Greece, Southern Italy, and Allies have at least one land unit in any of these territories.</li>
-<li>3 PUs if there are no enemy submarines in the Atlantic, excluding szs 112 and 125-127.</li>
-<li>3 PUs if Malta, Crete, and Cyprus are Allied or Pro-Allied controlled.</li>
-<li>3 PUs for UK Pacific when at war with the Japanese if: (1) British control West India and either Egypt or South Africa; and (2) there are no enemy submarines in the western half of the Indian Ocean (sz71,...,sz81).</li>
-<li>3 PUs for UK Pacific when at war with the Japanese if Malaya and Kwantung are Allied controlled. (This modifies UK Pacific's "Malaya and Kwantung" objective.</li>
-
-</ul>
-
-<b>Italy</b>
-<ul>
-<li>3 PUs if Malta, Cyprus, and Crete are Axis controlled.</li>
-</ul>
-
-<b>ANZAC</b>
-<ul>
-<li>3 PUs if ANZAC is at war with the Japanese and Dutch New Guinea, New Guinea, New Britain and Solomon Islands are controlled by the Allies (other than the Dutch). (This modifies ANZAC's "Strategic Islands" objective).</li>
-<li>3 PUs if ANZAC is at war with the Japanese and Solomon Islands, Gilbert Islands, Fiji, and Samoa are Allied controlled.</li>
-<li>3 PUs if ANZAC is at war with the Japanese, controls all of its original territories, and Malaya is Allied controlled. (This modifies ANZAC's "Control Original And Malaya" objective).</li>
-</ul>
-
-<br><br>
-
-<b>**VICHY FRANCE RULE SET**</b>
-<br><br>
-The following rule-set simulates the circumstances and strategic consequences of the Franco-German Armistice, and is intended for play with the G40 Balance Mod.
-<br><br>
-<b>Game Conditions for Franco-German Armistice</b> 
-<br><br>
-At the beginning of France's turn, if the following conditions are met, the Franco-German Armistice will occur:
-<br><br>
-1. Axis has control of both France and Normandy Bordeaux;<br>
-2. Axis has never controlled Southern France; and<br>
-3. There are no non-French, Allied land units in Southern France.<br>
-<br><br>
-<b>Game Consequences of Franco-German Armistice</b>
-<br><br>
-<b>French Territorial Control:</b> At the beginning of France's first turn in which Armistice conditions are met, all originally French territories not already under Axis control immediately change ownership to Pro-Axis Neutrals, except: (1) French Equatorial Africa; (2) New Hebrides; (2) any French territories containing non-French allied land units.
-<br><br>
-Any non-French allied air units in Vichy-controlled territory are destroyed upon conversion of the territory to Vichy control.
-<br><br>
-With the exception of Southern France (see discussion of "Zone Libere" below), Vichy French territory operates the same way as other Pro-Axis Neutral territory. An Axis player may capture Vichy French territory and commandeer its forces by moving a land unit into the territory during the non-combat phase of his turn.
-<br><br>
-Fly-over restrictions applicable to other Neutral territories do not apply to Vichy French territory.
-<br><br>
-<b>Fleet at Toulon:</b> In addition to the change in French territorial control, the Armistice changes control of the the French fleet in sz 93, from French to Pro-Axis neutral. The Vichy French fleet maintains a strictly defensive posture. It may not be moved. It may not be captured by the Axis. The fleet is immediately destroyed if any power, other than the Free French, occupies Southern France 
-<br><br>
-<b>"Zone Libre":</b> Any Axis occupation of Southern France following the Armistice results in the scuttling of the Vichy French Fleet at Toulon and the disbandment of all remaining Vichy French forces. These forces are removed at the end of the Axis player's turn in which the occupation of Southern France takes place. Any formerly Vichy French forces that were previously commandeered by the Axis are unaffected by this change.
-<br><br>
-<b>Armistice's Effect on National Objectives:</b> Following the armistice, Southern France is considered Axis-controlled for purposes of Italy's "Roman Empire" objective. Otherwise, the Vichy France arrangement has no impact on National Objectives. Tunisia, Algeria and Morocco must still be directly occupied by Germany or Italy to achieve Italy's "North Africa" objective. Japanese occupation of French Indo China still negates Japan's "Trade With America" objective. 
-<br><br>
-<b>Liberation of France:</b> The Allied liberation of France effectively terminates the Armistice. Any territory and forces still under Vichy French control (including any surviving fleet in sz 93) revert back to Free French control. The Vichy French forces in the Southern France and sz 93 will also revert back if Southern France is liberated by the Free French. 
-<br><br>
 <br><hr><br>
 <b>Note</b><br>
 This game uses the latest Global 1940 2nd Edition (successor to Alpha +3) rules, as posted on Larry's website.<br>

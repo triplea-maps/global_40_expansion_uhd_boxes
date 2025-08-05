@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.44"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.4551"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1969,6 +1969,8 @@
     <unit name="uk_mine_Yellow"/>
     <unit name="uk_mine_India_Burma"/>
     <unit name="uk_mine_Burma_Yunnan"/>
+    <unit name="uk_mine_Burma_ShanST"/>
+    <unit name="uk_mine_Burma_38SZ"/>
     <unit name="uk_mine_India_39SZ"/>
     <unit name="italy_mine"/>
     <unit name="italy_mine_Red"/>
@@ -3391,6 +3393,14 @@
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="uk_mine_Burma_Yunnan" quantity="1"/>
     </productionRule>
+    <productionRule name="buyUK_Mine_Burma_ShanST">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="uk_mine_Burma_ShanST" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK_Mine_Burma_38SZ">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="uk_mine_Burma_38SZ" quantity="1"/>
+    </productionRule>
     <productionRule name="buyUK_Mine_India_39SZ">
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="uk_mine_India_39SZ" quantity="1"/>
@@ -4042,7 +4052,6 @@
       <frontierRules name="buyHarbour"/>
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
-      <frontierRules name="buyMine_Unarmed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -4086,7 +4095,6 @@
       <frontierRules name="buyHarbour"/>
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
-      <frontierRules name="buyMine_Unarmed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoRusUndrMinr"/>
@@ -4118,13 +4126,11 @@
       <frontierRules name="buyJapanese_LCV"/>
       <frontierRules name="buySubmarine"/>
       <frontierRules name="buyCarrier"/>
-      <frontierRules name="buyNavyFighter"/>
       <frontierRules name="buyJapan_Destroyer"/>
       <frontierRules name="buyCruiser"/>
       <frontierRules name="buyBattleship"/>
       <frontierRules name="buyHeavy_BB"/>
       <frontierRules name="buyAAGun"/>
-      <frontierRules name="buyFortification"/>
       <frontierRules name="buyFactory_Minor"/>
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyUndrgroundFctry"/>
@@ -4133,7 +4139,6 @@
       <frontierRules name="buyHarbour"/>
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
-      <frontierRules name="buyMine_Unarmed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -4167,13 +4172,11 @@
       <frontierRules name="buyUSA_LCV"/>
       <frontierRules name="buySubmarine"/>
       <frontierRules name="buyCarrier"/>
-      <frontierRules name="buyNavyFighter"/>
       <frontierRules name="buyDestroyer"/>
       <frontierRules name="buyCruiser"/>
       <frontierRules name="buyBattleship"/>
       <frontierRules name="buyHeavy_BB"/>
       <frontierRules name="buyAAGun"/>
-      <frontierRules name="buyFortification"/>
       <frontierRules name="buyFactory_Minor"/>
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyUndrgroundFctry"/>
@@ -4182,7 +4185,6 @@
       <frontierRules name="buyHarbour"/>
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
-      <frontierRules name="buyMine_Unarmed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -4220,7 +4222,6 @@
       <frontierRules name="buyCruiser"/>
       <frontierRules name="buyBattleship"/>
       <frontierRules name="buyAAGun"/>
-      <frontierRules name="buyFortification"/>
       <frontierRules name="buyFactory_Minor"/>
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyUndrgroundFctry"/>
@@ -4229,7 +4230,6 @@
       <frontierRules name="buyHarbour"/>
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
-      <frontierRules name="buyMine_Unarmed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -4272,7 +4272,6 @@
       <frontierRules name="buyHarbour"/>
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
-      <frontierRules name="buyMine_Unarmed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -4303,7 +4302,6 @@
       <frontierRules name="buyCruiser"/>
       <frontierRules name="buyBattleship"/>
       <frontierRules name="buyAAGun"/>
-      <frontierRules name="buyFortification"/>
       <frontierRules name="buyFactory_Minor"/>
       <frontierRules name="buyFactory_Major"/>
       <frontierRules name="buyUndrgroundFctry"/>
@@ -4312,7 +4310,6 @@
       <frontierRules name="buyHarbour"/>
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
-      <frontierRules name="buyMine_Unarmed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -4351,7 +4348,6 @@
       <frontierRules name="buyHarbour"/>
       <frontierRules name="buyDemo_Airfield"/>
       <frontierRules name="buyDemo_Harbour"/>
-      <frontierRules name="buyMine_Unarmed"/>
       <frontierRules name="buyAirfield_Hvy"/>
       <frontierRules name="buyDemoUnderMajor"/>
       <frontierRules name="buyDemoUnderMinor"/>
@@ -10275,6 +10271,26 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
     </attachment>
+    <!-- UK Mine Burma 38SZ -->
+    <attachment name="unitAttachment" attachTo="uk_mine_Burma_38SZ" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
+    <!-- UK Mine Burma ShanST -->
+    <attachment name="unitAttachment" attachTo="uk_mine_Burma_ShanST" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="consumesUnits" value="1:mine_unarmed"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="1PU"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+    </attachment>
     <!-- UK Mine India 39SZ -->
     <attachment name="unitAttachment" attachTo="uk_mine_India_39SZ" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="attack" value="0"/>
@@ -15742,14 +15758,34 @@
     <attachment name="conditionAttachment_WaffenPanzer" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
     <option name="switch" value="true"/>  
     </attachment>
+    <attachment name="TournamentRules" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Tournament Rules"/>
+    </attachment>
+    <attachment name="TournamentRulesInvert" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Tournament Rules"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="TournamentRules1stAnd2nd" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Tournament Rules 1st and 2nd Year"/>
+    </attachment>
+    <attachment name="TournamentRules1stAnd2ndInvert" attachTo="Changer" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Tournament Rules 1st and 2nd Year"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="SinoSovietPact" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Japanese-Soviet Pact"/>
     </attachment>
     <attachment name="PacificEXP" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Expanded Pacific Ocean"/>
     </attachment>
+    <attachment name="IncreasedShip" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Increased Ship Building"/>
+    </attachment>
     <attachment name="NatlGuard" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="National Guard"/>
+    </attachment>
+    <attachment name="NavyFtrs" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Navy Fighters"/>
     </attachment>
     <attachment name="EscortsA3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Escorts and Transports"/>
@@ -15757,11 +15793,17 @@
     <attachment name="ElitePanzers" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Elite Panzers"/>
     </attachment>
+    <attachment name="Landmines" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Landmines"/>
+    </attachment>
     <attachment name="TripleaLandMines" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Triplea Landmines"/>
     </attachment>
     <attachment name="Soviet_Partisan" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Soviet Partisan"/>
+    </attachment>
+    <attachment name="DDay" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="D-Day"/>
     </attachment>
     <attachment name="RedArmyConscript" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Red Army Conscription"/>
@@ -15805,6 +15847,12 @@
     <attachment name="AirFleetCommander" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Air Fleet Commander"/>
     </attachment>
+    <attachment name="Fortifications" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Fortifications"/>
+    </attachment>
+    <attachment name="AtlanticWall" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Atlantic Wall"/>
+    </attachment>
     <attachment name="Seafire" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Seafire Fighter Planes"/>
     </attachment>
@@ -15840,6 +15888,10 @@
     </attachment>
     <attachment name="Kamikaze" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Kamikaze"/>
+    </attachment>
+    <attachment name="KamikazeInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Kamikaze"/>
+      <option name="invert" value="true"/>
     </attachment>
     <attachment name="KamikazeInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Kamikaze"/>
@@ -32448,12 +32500,12 @@
     
     <!-- Box Triggers -->
     <attachment name="triggerAttachmen1stDesertArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:conditionAttachmentTurn1"/>
       <option name="placement" value="1st Desert:DAK" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen1stDesertArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:conditionAttachmentTurn1"/>
       <option name="placement" value="1st Desert:BoxFctry" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
@@ -32743,12 +32795,12 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenUSADesertArmy" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:conditionAttachmentTurn1"/>
       <option name="placement" value="USA Desert:1stDesertUS" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenUSADesertArmyFctry" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:conditionAttachmentTurn1"/>
       <option name="placement" value="USA Desert:BoxFctry" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
@@ -32763,19 +32815,19 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenUKDesertArmy" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:conditionAttachmentTurn1"/>
       <option name="placement" value="UK Desert:1stDesertUK" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenUKDesertArmyFctry" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:conditionAttachmentTurn1"/>
       <option name="placement" value="UK Desert:BoxFctry" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
 
     <!-- Changer Triggers -->
     <attachment name="triggerAttachmenEarly1940Red" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1"/>
       <option name="placement" value="Early 1940:Early1940_red" count="1"/>
       <option name="placement" value="Early 1940:waffen_infantry" count="1"/>
       <option name="placement" value="Early 1940:WaffenArty" count="1"/>
@@ -32784,6 +32836,7 @@
       <option name="placement" value="Early 1940:SubPen" count="1"/>
       <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
       <option name="placement" value="Early 1940:NavalMine" count="1"/>
+      <option name="placement" value="Early 1940:USA_Engineer" count="1"/>
       <option name="placement" value="Late 1940:Late1940" count="1"/>
       <option name="placement" value="Late 1940:Panzer_General" count="1"/>
       <option name="placement" value="Late 1940:UK_TankGeneral" count="1"/>
@@ -32799,6 +32852,7 @@
       <option name="placement" value="Late 1941:EuropeDOW" count="1"/>
       <option name="placement" value="Late 1941:Russian_Rockets" count="1"/>
       <option name="placement" value="Late 1941:Soviet_Partisan" count="1"/>
+      <option name="placement" value="Late 1941:ElitePanzer" count="1"/>
       <option name="placement" value="Late 1941:MayAttack" count="1"/>
       <option name="placement" value="Late 1941:Late1941" count="1"/>
       <option name="placement" value="Late 1941:USA_LendLeaseUK" count="1"/>
@@ -32824,6 +32878,8 @@
       <option name="placement" value="Early 1943:German_Rockets" count="1"/>
       <option name="placement" value="Early 1943:Waffen_Para" count="1"/>
       <option name="placement" value="Early 1943:Hvycarrier" count="1"/>
+      <option name="placement" value="Early 1943:Elitewaffen_panzer" count="1"/>
+      <option name="placement" value="Early 1943:Elitearmour" count="1"/>
       <option name="placement" value="Late 1943:Late1943" count="1"/>
       <option name="placement" value="Late 1943:2Destroyers" count="1"/>
       <option name="placement" value="Early 1943:DevelopWeapons" count="1"/>
@@ -32839,13 +32895,114 @@
       <option name="placement" value="Early 1944:TypeXXIUBoat" count="1"/>
       <option name="placement" value="Early 1944:WaffenPnzrJagerFS" count="1"/>
       <option name="placement" value="Late 1944:Late1944" count="1"/>
+      <option name="placement" value="Late 1944:Eliteusa_armour" count="1"/>
       <option name="placement" value="Late 1944:Waffen_Hvy_Tank" count="1"/>
       <option name="placement" value="Late 1944:Kamikaze" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
 
+    <!-- Tournament TimeTable -->
+    <attachment name="triggerAttachmenEarly1940RedTournamentRules" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1"/>
+      <option name="placement" value="Early 1940:Early1940_red" count="1"/>
+      <option name="placement" value="Early 1940:waffen_infantry" count="1"/>
+      <option name="placement" value="Early 1940:WaffenArty" count="1"/>
+      <option name="placement" value="Early 1940:marine" count="1"/>
+      <option name="placement" value="Early 1940:commando" count="1"/>
+      <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
+      <option name="placement" value="Early 1940:USA_Engineer" count="1"/>
+      <option name="placement" value="Late 1940:Late1940" count="1"/>
+      <option name="placement" value="Late 1940:Panzer_General" count="1"/>
+      <option name="placement" value="Late 1940:UK_TankGeneral" count="1"/>
+      <option name="placement" value="Late 1940:Waffen_Oberst" count="1"/>
+      <option name="placement" value="Late 1940:FlakTowerTT" count="1"/>
+      <option name="placement" value="Late 1940:WaffenPioneer" count="1"/>
+      <option name="placement" value="Early 1941:Early1941" count="1"/>
+      <option name="placement" value="Early 1941:USADOW" count="1"/>
+      <option name="placement" value="Early 1941:Tank_General" count="1"/>
+      <option name="placement" value="Early 1941:Tankograd" count="1"/>
+      <option name="placement" value="Late 1941:guard_infantry" count="1"/>
+      <option name="placement" value="Late 1941:EscortAndConvoy" count="1"/>
+      <option name="placement" value="Late 1941:EuropeDOW" count="1"/>
+      <option name="placement" value="Late 1941:Soviet_Partisan" count="1"/>
+      <option name="placement" value="Late 1941:ElitePanzer" count="1"/>
+      <option name="placement" value="Late 1941:MayAttack" count="1"/>
+      <option name="placement" value="Late 1941:Late1941" count="1"/>
+      <option name="placement" value="Late 1941:USA_LendLeaseUK" count="1"/>
+      <option name="placement" value="Early 1942:Early1942" count="1"/>
+      <option name="placement" value="Early 1942:DestroyerTransport" count="1"/>
+      <option name="placement" value="Early 1942:RedArmyConscript" count="1"/>
+      <option name="placement" value="Early 1942:WaffenPnzrGrndr" count="1"/>
+      <option name="placement" value="Early 1942:USA_TankGeneral" count="1"/>
+      <option name="placement" value="Late 1942:Late1942" count="1"/>
+      <option name="placement" value="Late 1942:waffen_panzer" count="1"/>
+      <option name="placement" value="Late 1942:Mass_Tanks" count="1"/>
+      <option name="placement" value="Late 1942:Banzai" count="1"/>
+      <option name="placement" value="Late 1942:waffen_PG" count="1"/>
+      <option name="placement" value="Early 1943:Early1943" count="1"/>
+      <option name="placement" value="Early 1943:TotalWar" count="1"/>
+      <option name="placement" value="Early 1943:Waffen_Para" count="1"/>
+      <option name="placement" value="Early 1943:Elitewaffen_panzer" count="1"/>
+      <option name="placement" value="Early 1943:Elitearmour" count="1"/>
+      <option name="placement" value="Late 1943:Late1943" count="1"/>
+      <option name="placement" value="Early 1943:DevelopWeapons" count="1"/>
+      <option name="placement" value="Late 1943:HeavyBombers" count="1"/>
+      <option name="placement" value="Late 1943:TakeOverItalyTT" count="1"/>
+      <option name="placement" value="Early 1944:Early1944" count="1"/>
+      <option name="placement" value="Early 1944:DDayEurope" count="1"/>
+      <option name="placement" value="Early 1944:Me262" count="1"/>
+      <option name="placement" value="Late 1944:Late1944" count="1"/>
+      <option name="placement" value="Late 1944:Eliteusa_armour" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+
+    <!-- Tournament TimeTable 1st and 2nd -->
+    <attachment name="triggerAttachmenEarly1940RedTournamentRules1stAnd2nd" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2nd:EXP43Invert:conditionAttachmentTurn1"/>
+      <option name="placement" value="Early 1940:Early1940_red" count="1"/>
+      <option name="placement" value="Early 1940:waffen_infantry" count="1"/>
+      <option name="placement" value="Early 1940:WaffenArty" count="1"/>
+      <option name="placement" value="Early 1940:marine" count="1"/>
+      <option name="placement" value="Early 1940:commando" count="1"/>
+      <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
+      <option name="placement" value="Late 1940:Late1940" count="1"/>
+      <option name="placement" value="Late 1940:Panzer_General" count="1"/>
+      <option name="placement" value="Late 1940:UK_TankGeneral" count="1"/>
+      <option name="placement" value="Late 1940:Waffen_Oberst" count="1"/>
+      <option name="placement" value="Late 1940:FlakTowerTT" count="1"/>
+      <option name="placement" value="Early 1941:Early1941" count="1"/>
+      <option name="placement" value="Early 1941:USADOW" count="1"/>
+      <option name="placement" value="Early 1941:Tank_General" count="1"/>
+      <option name="placement" value="Early 1941:Tankograd" count="1"/>
+      <option name="placement" value="Late 1941:guard_infantry" count="1"/>
+      <option name="placement" value="Late 1941:EscortAndConvoy" count="1"/>
+      <option name="placement" value="Late 1941:EuropeDOW" count="1"/>
+      <option name="placement" value="Late 1941:ElitePanzer" count="1"/>
+      <option name="placement" value="Late 1941:MayAttack" count="1"/>
+      <option name="placement" value="Late 1941:Late1941" count="1"/>
+      <option name="placement" value="Late 1941:USA_LendLeaseUK" count="1"/>
+      <option name="placement" value="Early 1942:Early1942" count="1"/>
+      <option name="placement" value="Early 1942:RedArmyConscript" count="1"/>
+      <option name="placement" value="Early 1942:WaffenPnzrGrndr" count="1"/>
+      <option name="placement" value="Early 1942:USA_TankGeneral" count="1"/>
+      <option name="placement" value="Late 1942:Late1942" count="1"/>
+      <option name="placement" value="Late 1942:waffen_panzer" count="1"/>
+      <option name="placement" value="Late 1942:Mass_Tanks" count="1"/>
+      <option name="placement" value="Late 1942:waffen_PG" count="1"/>
+      <option name="placement" value="Early 1943:Early1943" count="1"/>
+      <option name="placement" value="Early 1943:Elitewaffen_panzer" count="1"/>
+      <option name="placement" value="Early 1943:Elitearmour" count="1"/>
+      <option name="placement" value="Late 1943:Late1943" count="1"/>
+      <option name="placement" value="Early 1943:DevelopWeapons" count="1"/>
+      <option name="placement" value="Late 1943:TakeOverItalyTT" count="1"/>
+      <option name="placement" value="Early 1944:Early1944" count="1"/>
+      <option name="placement" value="Late 1944:Late1944" count="1"/>
+      <option name="placement" value="Late 1944:Eliteusa_armour" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+
     <attachment name="triggerAttachmenLate 1940AC" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:AirFleetCommander:conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:EXP43Invert:AirFleetCommander:conditionAttachmentTurn1"/>
       <option name="placement" value="Late 1940:GAirCommanderFtr" count="1"/>
 <option name="when" value="before:changerCombatMove"/>
     </attachment>
@@ -32865,6 +33022,7 @@
       <option name="placement" value="Early 1940:SubPen" count="1"/>
       <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
       <option name="placement" value="Early 1940:NavalMine" count="1"/>
+      <option name="placement" value="Early 1940:USA_Engineer" count="1"/>
       <option name="placement" value="Late 1940:Late1940" count="1"/>
       <option name="placement" value="Late 1940:Panzer_General" count="1"/>
       <option name="placement" value="Late 1940:UK_TankGeneral" count="1"/>
@@ -32880,6 +33038,7 @@
       <option name="placement" value="Late 1941:EuropeDOW" count="1"/>
       <option name="placement" value="Late 1941:Russian_Rockets" count="1"/>
       <option name="placement" value="Late 1941:Soviet_Partisan" count="1"/>
+      <option name="placement" value="Late 1941:ElitePanzer" count="1"/>
       <option name="placement" value="Late 1941:MayAttack" count="1"/>
       <option name="placement" value="Late 1941:Late1941" count="1"/>
       <option name="placement" value="Late 1941:USA_LendLeaseUK" count="1"/>
@@ -32905,6 +33064,8 @@
       <option name="placement" value="Early 1943:German_Rockets" count="1"/>
       <option name="placement" value="Early 1943:Waffen_Para" count="1"/>
       <option name="placement" value="Early 1943:Hvycarrier" count="1"/>
+      <option name="placement" value="Early 1943:Elitewaffen_panzer" count="1"/>
+      <option name="placement" value="Early 1943:Elitearmour" count="1"/>
       <option name="placement" value="Late 1943:Late1943" count="1"/>
       <option name="placement" value="Late 1943:2Destroyers" count="1"/>
       <option name="placement" value="Early 1943:DevelopWeapons" count="1"/>
@@ -32919,6 +33080,7 @@
       <option name="placement" value="Early 1944:King_Tiger" count="1"/>
       <option name="placement" value="Early 1944:TypeXXIUBoat" count="1"/>
       <option name="placement" value="Early 1944:WaffenPnzrJagerFS" count="1"/>
+      <option name="placement" value="Early 1944:Eliteusa_armour" count="1"/>
       <option name="placement" value="Late 1944:Late1944" count="1"/>
       <option name="placement" value="Late 1944:Waffen_Hvy_Tank" count="1"/>
       <option name="placement" value="Late 1944:Kamikaze" count="1"/>
@@ -33084,7 +33246,6 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
 
-    
     <attachment name="triggerAttachment_PacificEXP_PUsPhil" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="PacificEXP:conditionAttachmentTurn1"/>
       <option name="placement" value="Philippines:5_PU" count="1"/>
@@ -33336,6 +33497,35 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_BuyLMs" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Landmines"/>
+      <option name="productionRule" value="productionGermans:buyMine_Unarmed"/>
+      <option name="productionRule" value="productionRussians:buyMine_Unarmed"/>
+      <option name="productionRule" value="productionJapanese:buyMine_Unarmed"/>
+      <option name="productionRule" value="productionAmericans:buyMine_Unarmed"/>
+      <option name="productionRule" value="productionBritish:buyMine_Unarmed"/>
+      <option name="productionRule" value="productionItalians:buyMine_Unarmed"/>
+      <option name="productionRule" value="productionANZAC:buyMine_Unarmed"/>
+      <option name="productionRule" value="productionFrench:buyMine_Unarmed"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_BuyFortifications" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="Fortifications"/>
+      <option name="productionRule" value="productionJapanese:buyFortification"/>
+      <option name="productionRule" value="productionAmericans:buyFortification"/>
+      <option name="productionRule" value="productionBritish:buyFortification"/>
+      <option name="productionRule" value="productionANZAC:buyFortification"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_BuyNavyFtrs" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="NavyFtrs"/>
+      <option name="productionRule" value="productionJapanese:buyNavyFighter"/>
+      <option name="productionRule" value="productionAmericans:buyNavyFighter"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     
     <attachment name="triggerAttachment_Waffen_SS_Oberst" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="WaffenOberst:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn2"/>
@@ -33390,79 +33580,79 @@
     </attachment>
     
     <attachment name="triggerAttachment_SubPen" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn1"/>
       <option name="productionRule" value="productionGermans:buySubPen"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenLate43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="TournamentRulesInvert:SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="SubPenLate43"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenLate43Place" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="TournamentRulesInvert:SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
       <option name="placement" value="Western Germany:SubPen" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenEarly44" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9"/>
+      <option name="conditions" value="TournamentRulesInvert:SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="SubPenEarly44"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenEarly44Place" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9"/>
+      <option name="conditions" value="TournamentRulesInvert:SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9"/>
       <option name="placement" value="Western Germany:SubPen" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenLate44" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn10"/>
+      <option name="conditions" value="TournamentRulesInvert:SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn10"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="SubPenLate44"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenLate44Place" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn10"/>
+      <option name="conditions" value="TournamentRulesInvert:SubPens:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn10"/>
       <option name="placement" value="Western Germany:SubPen" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenLate43EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn2"/>
+      <option name="conditions" value="TournamentRulesInvert:SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn2"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="SubPenLate43EXP43"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenLate43EXP43Place" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn2"/>
+      <option name="conditions" value="TournamentRulesInvert:SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn2"/>
       <option name="placement" value="Western Germany:SubPen" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenEarly44EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn3"/>
+      <option name="conditions" value="TournamentRulesInvert:SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn3"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="SubPenEarly44EXP43"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenEarly44EXP43Place" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn3"/>
+      <option name="conditions" value="TournamentRulesInvert:SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn3"/>
       <option name="placement" value="Western Germany:SubPen" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenLate44EXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn4"/>
+      <option name="conditions" value="TournamentRulesInvert:SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn4"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="SubPenLate44EXP43"/>
     </attachment>
     <attachment name="triggerAttachment_SubPenLate44EXP43Place" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn4"/>
+      <option name="conditions" value="TournamentRulesInvert:SubPens:EXP43:BasicEXPInvert:conditionAttachmentTurn4"/>
       <option name="placement" value="Western Germany:SubPen" count="1"/>
       <option name="uses" value="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
@@ -33631,7 +33821,7 @@
     </attachment>
 
     <attachment name="triggerAttachment_GermansNavalMines" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="NavalMines:EXP43Invert:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="TournamentRulesInvert:NavalMines:EXP43Invert:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionGermans:buyNavalMine"/>
       <option name="productionRule" value="productionJapanese:buyNavalMine"/>
       <option name="productionRule" value="productionAmericans:buyNavalMine"/>
@@ -33654,7 +33844,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_GermansNavalMinesEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="NavalMines:EXP43:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="TournamentRulesInvert:NavalMines:EXP43:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionGermans:buyNavalMine"/>
       <option name="productionRule" value="productionJapanese:buyNavalMine"/>
       <option name="productionRule" value="productionAmericans:buyNavalMine"/>
@@ -33786,19 +33976,19 @@
     </attachment>
     
     <attachment name="triggerAttachment_AtlanticWall" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachment_SwitchIsTrue:conditionAttachmentTurn6OrHigher"/>
+      <option name="conditions" value="EXP43Invert:AtlanticWall:conditionAttachment_SwitchIsTrue:conditionAttachmentTurn6OrHigher"/>
       <option name="productionRule" value="productionGermans:buyAtlantic_Wall"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_AtlanticWallEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachment_SwitchIsTrue:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="EXP43:AtlanticWall:conditionAttachment_SwitchIsTrue:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionGermans:buyAtlantic_Wall"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_AtlanticWallNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn6"/>
+      <option name="conditions" value="EXP43Invert:AtlanticWall:conditionAttachmentTurn6"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="AtlanticWall"/>
@@ -33811,13 +34001,13 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_DDayNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn9"/>
+      <option name="conditions" value="EXP43Invert:DDay:conditionAttachmentTurn9"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="DDay"/>
     </attachment>
     <attachment name="triggerAttachment_DDayNotificationEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn3"/>
+      <option name="conditions" value="EXP43:DDay:conditionAttachmentTurn3"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="DDay"/>
@@ -34091,26 +34281,26 @@
     </attachment>
     
     <attachment name="triggerAttachment_Seafire" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Seafire:BasicEXPInvert:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:Seafire:BasicEXPInvert:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionBritish:buySeafire"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:britishPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Me_109T" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Me_109T:BasicEXPInvert:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:Me_109T:BasicEXPInvert:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionGermans:buyMe_109T"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     
     <attachment name="triggerAttachment_Rockets" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Rockets:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:Rockets:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionGermans:buyGerman_Rockets"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_RocketsNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Rockets:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn7"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:Rockets:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn7"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="Rockets"/>
@@ -34129,13 +34319,13 @@
     </attachment>
     
     <attachment name="triggerAttachment_Type_XXI_UBoat" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Type_XXI_UBoat:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9OrHigher"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:Type_XXI_UBoat:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9OrHigher"/>
       <option name="productionRule" value="productionGermans:buyType_XXI_UBoat"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Type_XXI_UBoatNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Type_XXI_UBoat:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:Type_XXI_UBoat:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="Type_XXI_UBoat"/>
@@ -34155,13 +34345,13 @@
     
     <!-- German Hvy Bmbrs --> 
     <attachment name="triggerAttachment_German_Hvy_Bmbr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
       <option name="productionRule" value="productionGermans:buyGerman_Hvy_Bmbr"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_German_Hvy_BmbrNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="German_Hvy_Bmbr"/>
@@ -34182,13 +34372,13 @@
 
     <!-- German Panzer Jagers --> 
     <attachment name="triggerAttachmentPanzerJagerFS" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
       <option name="productionRule" value="productionGermans:buyPanzerJagerFS"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmentPanzerJagerFSNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="PanzerJagerFS"/>
@@ -34208,13 +34398,13 @@
 
     <!-- German Waffen Panzer Jagers --> 
     <attachment name="triggerAttachmentWaffenPnzrJagerFS" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9OrHigher"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9OrHigher"/>
       <option name="productionRule" value="productionGermans:buyWaffenPnzrJagerFS"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmentWaffenPnzrJagerFSNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="WaffenPnzrJagerFS"/>
@@ -34235,13 +34425,13 @@
 
     <!-- Waffen Pioneers --> 
     <attachment name="triggerAttachmentWaffenPioneer" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="WaffenPioneer:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn2OrHigher"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:WaffenPioneer:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn2OrHigher"/>
       <option name="productionRule" value="productionGermans:buyWaffenPioneer"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmentWaffenPioneerNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="WaffenPioneer:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn2"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:WaffenPioneer:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn2"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="WaffenPioneer"/>
@@ -34256,13 +34446,13 @@
 
     <!-- Russian Tank Destroyers --> 
     <attachment name="triggerAttachmentTankDestroyerFS" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
       <option name="productionRule" value="productionRussians:buyTankDestroyerFS"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:russiansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmentTankDestroyerFSNotification" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
       <option name="notification" value="TankDestroyerFS"/>
@@ -34283,13 +34473,13 @@
 
     <!-- USA Tank Destroyers --> 
     <attachment name="triggerAttachmentUSATankDestroyerFS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn6OrHigher"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn6OrHigher"/>
       <option name="productionRule" value="productionAmericans:buyUSATankDestroyerFS"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:americansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmentUSATankDestroyerFSNotification" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn6"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:TankDestroyers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn6"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansPurchase"/>
       <option name="notification" value="USATankDestroyerFS"/>
@@ -34303,13 +34493,13 @@
     <!-- USA Tank Destroyers End -->
     
     <attachment name="triggerAttachment_USA_Hvy_Bomber" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
       <option name="productionRule" value="productionAmericans:buyUSA_Hvy_Bomber"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:americansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_USA_Hvy_BomberNotification" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansPurchase"/>
       <option name="notification" value="USA_Hvy_Bomber"/>
@@ -34328,13 +34518,13 @@
     </attachment>
     
     <attachment name="triggerAttachment_UK_Hvy_Bomber" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
       <option name="productionRule" value="productionBritish:buyUK_Hvy_Bomber"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:britishPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_UK_Hvy_BomberNotification" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:HeavyBombers:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:britishPurchase"/>
       <option name="notification" value="UK_Hvy_Bomber"/>
@@ -34353,13 +34543,13 @@
     </attachment>
     
     <attachment name="triggerAttachment_RocketsUSSR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Rockets:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn4OrHigher"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:Rockets:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn4OrHigher"/>
       <option name="productionRule" value="productionRussians:buyRussian_Rockets"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_RocketsNotificationUSSR" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Rockets:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn4"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:Rockets:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn4"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
       <option name="notification" value="RocketsUSSR"/>
@@ -34372,13 +34562,13 @@
     </attachment>
     
     <attachment name="triggerAttachment_Heavy_Transport" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Heavy_Transport:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:Heavy_Transport:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher"/>
       <option name="productionRule" value="productionAmericans:buyHeavy_Transport"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:americansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Heavy_TransportNotification" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="Heavy_Transport:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:Heavy_Transport:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansPurchase"/>
       <option name="notification" value="Heavy_Transport"/>
@@ -34409,7 +34599,7 @@
     </attachment>
     
     <attachment name="triggerAttachment_GermansTakeOverItalyDestruct" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_GermansTakeOverItalyDestruct"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:conditionAttachment_GermansTakeOverItalyDestruct"/>
       <option name="removeUnits" value="all:TakeOverItaly" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
@@ -44443,73 +44633,73 @@
     </attachment>
     
     <attachment name="triggerAttachment_PacificFleetJPNRD5" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn5"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn5"/>
       <option name="placement" value="6 Sea Zone:pacific_cruiser" count="1"/>
       <option name="placement" value="6 Sea Zone:pacific_submarine" count="1"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_JPNPacificFleet_Notification" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn5"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn5"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japaneseEndTurn"/>
       <option name="notification" value="JPNPacificFleet"/>
     </attachment>
     <attachment name="triggerAttachment_PacificFleetJPNRD6" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn6"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn6"/>
       <option name="placement" value="6 Sea Zone:pacific_carrier" count="1"/>
       <option name="placement" value="6 Sea Zone:NavyFighter" count="2"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_JPNPacificFleet_NotificationRD6" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn6"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn6"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japaneseEndTurn"/>
       <option name="notification" value="JPNPacificFleet6"/>
     </attachment>
     
     <attachment name="triggerAttachment_PacificFleetJPNRD7" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn7"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn7"/>
       <option name="placement" value="6 Sea Zone:pacific_BB" count="1"/>
       <option name="placement" value="6 Sea Zone:pacific_transport" count="1"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_JPNPacificFleet_NotificationRD7" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn7"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn7"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japaneseEndTurn"/>
       <option name="notification" value="JPNPacificFleet7"/>
     </attachment>
     <attachment name="triggerAttachment_PacificFleetJPNRD7EXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43:conditionAttachmentTurn1"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43:conditionAttachmentTurn1"/>
       <option name="placement" value="6 Sea Zone:pacific_BB" count="1"/>
       <option name="placement" value="6 Sea Zone:pacific_transport" count="1"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_JPNPacificFleet_NotificationRD7EXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43:conditionAttachmentTurn1"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43:conditionAttachmentTurn1"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japaneseEndTurn"/>
       <option name="notification" value="JPNPacificFleet7"/>
     </attachment>
     
     <attachment name="triggerAttachment_PacificFleetJPNRD8" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn8"/>
       <option name="placement" value="6 Sea Zone:JPN_Pacific_DD" count="2"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_JPNPacificFleet_NotificationRD8" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japaneseEndTurn"/>
       <option name="notification" value="JPNPacificFleet8"/>
     </attachment>
     <attachment name="triggerAttachment_PacificFleetJPNRD8EXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43:conditionAttachmentTurn2"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43:conditionAttachmentTurn2"/>
       <option name="placement" value="6 Sea Zone:JPN_Pacific_DD" count="2"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_JPNPacificFleet_NotificationRD8EXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43:conditionAttachmentTurn2"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43:conditionAttachmentTurn2"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japaneseEndTurn"/>
       <option name="notification" value="JPNPacificFleet8"/>
@@ -46676,73 +46866,73 @@
     </attachment>
     
     <attachment name="triggerAttachment_PacificFleetRD5" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn5"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn5"/>
       <option name="placement" value="10 Sea Zone:pacific_cruiser" count="1"/>
       <option name="placement" value="10 Sea Zone:pacific_submarine" count="1"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_USAPacificFleet_Notification" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn5"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn5"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansEndTurn"/>
       <option name="notification" value="USAPacificFleet"/>
     </attachment>
     <attachment name="triggerAttachment_PacificFleetRD6" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn6"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn6"/>
       <option name="placement" value="10 Sea Zone:pacific_carrier" count="1"/>
       <option name="placement" value="10 Sea Zone:NavyFighter" count="2"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_USAPacificFleet_NotificationRD6" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn6"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn6"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansEndTurn"/>
       <option name="notification" value="USAPacificFleet6"/>
     </attachment>
     
     <attachment name="triggerAttachment_PacificFleetRD7" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn7"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn7"/>
       <option name="placement" value="10 Sea Zone:pacific_BB" count="1"/>
       <option name="placement" value="10 Sea Zone:pacific_transport" count="1"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_USAPacificFleet_NotificationRD7" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn7"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn7"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansEndTurn"/>
       <option name="notification" value="USAPacificFleet7"/>
     </attachment>
     <attachment name="triggerAttachment_PacificFleetRD7EXP43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43:conditionAttachmentTurn1"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43:conditionAttachmentTurn1"/>
       <option name="placement" value="10 Sea Zone:pacific_BB" count="1"/>
       <option name="placement" value="10 Sea Zone:pacific_transport" count="1"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_USAPacificFleet_NotificationRD7EXP43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43:conditionAttachmentTurn1"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43:conditionAttachmentTurn1"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansEndTurn"/>
       <option name="notification" value="USAPacificFleet7"/>
     </attachment>
     
     <attachment name="triggerAttachment_PacificFleetRD8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn8"/>
       <option name="placement" value="10 Sea Zone:pacific_destroyer" count="2"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_USAPacificFleet_NotificationRD8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43Invert:conditionAttachmentTurn8"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43Invert:conditionAttachmentTurn8"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansEndTurn"/>
       <option name="notification" value="USAPacificFleet8"/>
     </attachment>
     <attachment name="triggerAttachment_PacificFleetRD8EXP43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43:conditionAttachmentTurn2"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43:conditionAttachmentTurn2"/>
       <option name="placement" value="10 Sea Zone:pacific_destroyer" count="2"/>
       <option name="when" value="before:americansEndTurn"/>
     </attachment>
     <attachment name="triggerAttachment_USAPacificFleet_NotificationRD8EXP43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="PacificEXP:EXP43:conditionAttachmentTurn2"/>
+      <option name="conditions" value="PacificEXP:IncreasedShip:EXP43:conditionAttachmentTurn2"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansEndTurn"/>
       <option name="notification" value="USAPacificFleet8"/>
@@ -51044,7 +51234,7 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_DDayTokenEXP" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn9OrHigher"/>
+      <option name="conditions" value="EXP43Invert:DDay:conditionAttachmentTurn9OrHigher"/>
       <option name="productionRule" value="productionAmericans:buyDDayEurope"/>
       
       <option name="when" value="before:americansPurchase"/>
@@ -51052,7 +51242,7 @@
     </attachment>
     
     <attachment name="triggerAttachment_DDayTokenEXP43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher"/>
+      <option name="conditions" value="EXP43:DDay:conditionAttachmentTurn3OrHigher"/>
       <option name="productionRule" value="productionAmericans:buyDDayEurope"/>
       
       <option name="when" value="before:americansPurchase"/>
@@ -51109,7 +51299,7 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_DDayUnitSwitch" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn1OrHigher:conditionAttachmentDDayTokenUK"/>
+      <option name="conditions" value="EXP43Invert:DDay:conditionAttachmentTurn1OrHigher:conditionAttachmentDDayTokenUK"/>
       <option name="playerAttachmentName" value="PlayerAttachment" count="playerAttachment"/>
       <option name="players" value="Americans"/>
       <option name="playerProperty" value="giveUnitControl" count="D-Day"/>
@@ -51117,7 +51307,7 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_DDayUnitSwitch43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn3OrHigher:conditionAttachmentDDayTokenUK"/>
+      <option name="conditions" value="EXP43:DDay:conditionAttachmentTurn3OrHigher:conditionAttachmentDDayTokenUK"/>
       <option name="playerAttachmentName" value="PlayerAttachment" count="playerAttachment"/>
       <option name="players" value="Americans"/>
       <option name="playerProperty" value="giveUnitControl" count="D-Day"/>
@@ -53315,16 +53505,37 @@
     <property name="Air Battle Defenders Can Retreat" value="true" editable="true">
       <boolean/>
     </property>
+    <property name="Tournament Rules" value="false" editable="true">
+      <boolean/>
+    </property>
+    <property name="Tournament Rules 1st and 2nd Year" value="false" editable="true">
+      <boolean/>
+    </property>
     <property name="Japanese-Soviet Pact" value="true" editable="true">
       <boolean/>
     </property>
     <property name="Expanded Pacific Ocean" value="true" editable="true">
       <boolean/>
     </property>
+    <property name="Increased Ship Building" value="true" editable="true">
+      <boolean/>
+    </property>
     <property name="Escorts and Transports" value="true" editable="true">
       <boolean/>
     </property>
     <property name="National Guard" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="Navy Fighters" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="Fortifications" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="Atlantic Wall" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="D-Day" value="true" editable="true">
       <boolean/>
     </property>
     <property name="Red Army Conscription" value="true" editable="true">
@@ -53436,6 +53647,9 @@
       <boolean/>
       </property>
       <property name="Elite Panzers" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Landmines" value="true" editable="true">
       <boolean/>
       </property>
       <property name="Triplea Landmines" value="false" editable="true">
