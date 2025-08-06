@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.45"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.46"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -32501,12 +32501,12 @@
     
     <!-- Box Triggers -->
     <attachment name="triggerAttachmen1stDesertArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRulesInvert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:conditionAttachmentTurn1"/>
       <option name="placement" value="1st Desert:DAK" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen1stDesertArmyFctry" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRulesInvert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:conditionAttachmentTurn1"/>
       <option name="placement" value="1st Desert:BoxFctry" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
@@ -32796,7 +32796,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenUSADesertArmy" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRulesInvert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:conditionAttachmentTurn1"/>
       <option name="placement" value="USA Desert:1stDesertUS" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
@@ -32816,7 +32816,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenUKDesertArmy" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRulesInvert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:conditionAttachmentTurn1"/>
       <option name="placement" value="UK Desert:1stDesertUK" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
@@ -32959,7 +32959,7 @@
 
     <!-- Tournament TimeTable 1st and 2nd -->
     <attachment name="triggerAttachmenEarly1940RedTournamentRules1stAnd2nd" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2nd:EXP43Invert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRules:TournamentRules1stAnd2nd:EXP43Invert:conditionAttachmentTurn1"/>
       <option name="placement" value="Early 1940:Early1940_red" count="1"/>
       <option name="placement" value="Early 1940:waffen_infantry" count="1"/>
       <option name="placement" value="Early 1940:WaffenArty" count="1"/>

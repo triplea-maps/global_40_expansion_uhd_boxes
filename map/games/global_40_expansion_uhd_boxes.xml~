@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.4551"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.45"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4023,7 +4023,6 @@
       <frontierRules name="buyWaffen_Infantry"/>
       <frontierRules name="buyElite"/>
       <frontierRules name="buyGerman_Para"/>
-      <frontierRules name="buyGerman_Engineer"/>
       <frontierRules name="buyMech_Infantry"/>
       <frontierRules name="buyPanzer_Grndrs"/>
       <frontierRules name="buyArtillery"/>
@@ -4033,7 +4032,6 @@
       <frontierRules name="buyTactical_Bomber"/>
       <frontierRules name="buyBomber"/>
       <frontierRules name="buyTransport"/>
-      <frontierRules name="buyG_Air_Transport"/>
       <frontierRules name="buyGerman_LCV"/>
       <frontierRules name="buyGermanUBoat"/>
       <frontierRules name="buyWolfpack"/>
@@ -4071,7 +4069,6 @@
       <frontierRules name="buyElite"/>
       <frontierRules name="buyRussian_Para"/>
       <frontierRules name="buyRussian_ParaBoost"/>
-      <frontierRules name="buyRussian_Engineer"/>
       <frontierRules name="buyMech_Infantry"/>
       <frontierRules name="buyArtillery"/>
       <frontierRules name="buyArmour"/>
@@ -4080,7 +4077,6 @@
       <frontierRules name="buyTactical_Bomber"/>
       <frontierRules name="buyBomber"/>
       <frontierRules name="buyTransport"/>
-      <frontierRules name="buyAir_Transport"/>
       <frontierRules name="buySubmarine"/>
       <frontierRules name="buyCarrier"/>
       <frontierRules name="buyDestroyer"/>
@@ -4114,7 +4110,6 @@
       <frontierRules name="buyElite"/>
       <frontierRules name="buyJapanese_Para"/>
       <frontierRules name="buyJapanese_ParaBoost"/>
-      <frontierRules name="buyJapan_Engineer"/>
       <frontierRules name="buyMech_Infantry"/>
       <frontierRules name="buyArtillery"/>
       <frontierRules name="buyArmour"/>
@@ -4122,7 +4117,6 @@
       <frontierRules name="buyTactical_Bomber"/>
       <frontierRules name="buyBomber"/>
       <frontierRules name="buyTransport"/>
-      <frontierRules name="buyAir_Transport"/>
       <frontierRules name="buyJapanese_LCV"/>
       <frontierRules name="buySubmarine"/>
       <frontierRules name="buyCarrier"/>
@@ -4159,7 +4153,6 @@
       <frontierRules name="buyElite"/>
       <frontierRules name="buyUSA_Para"/>
       <frontierRules name="buyUSA_ParaBoost"/>
-      <frontierRules name="buyUSA_Engineer"/>
       <frontierRules name="buyMech_Infantry"/>
       <frontierRules name="buyArmoredInfantry"/>
       <frontierRules name="buyArtillery"/>
@@ -4168,7 +4161,6 @@
       <frontierRules name="buyUSA_Tactical_Bomber"/>
       <frontierRules name="buyBomber"/>
       <frontierRules name="buyTransport"/>
-      <frontierRules name="buyAir_Transport"/>
       <frontierRules name="buyUSA_LCV"/>
       <frontierRules name="buySubmarine"/>
       <frontierRules name="buyCarrier"/>
@@ -4206,7 +4198,6 @@
       <frontierRules name="buyElite"/>
       <frontierRules name="buyUK_Para"/>
       <frontierRules name="buyUK_ParaBoost"/>
-      <frontierRules name="buyUK_Engineer"/>
       <frontierRules name="buyMech_Infantry"/>
       <frontierRules name="buyArtillery"/>
       <frontierRules name="buyUK_Armour"/>
@@ -4214,7 +4205,6 @@
       <frontierRules name="buyUK_Tactical_Bomber"/>
       <frontierRules name="buyBomber"/>
       <frontierRules name="buyTransport"/>
-      <frontierRules name="buyAir_Transport"/>
       <frontierRules name="buyUK_LCV"/>
       <frontierRules name="buySubmarine"/>
       <frontierRules name="buyCarrier"/>
@@ -4256,7 +4246,6 @@
       <frontierRules name="buyTactical_Bomber"/>
       <frontierRules name="buyBomber"/>
       <frontierRules name="buyTransport"/>
-      <frontierRules name="buyAir_Transport"/>
       <frontierRules name="buyItalian_LCV"/>
       <frontierRules name="buySubmarine"/>
       <frontierRules name="buyCarrier"/>
@@ -4295,7 +4284,6 @@
       <frontierRules name="buyTactical_Bomber"/>
       <frontierRules name="buyBomber"/>
       <frontierRules name="buyTransport"/>
-      <frontierRules name="buyAir_Transport"/>
       <frontierRules name="buySubmarine"/>
       <frontierRules name="buyCarrier"/>
       <frontierRules name="buyDestroyer"/>
@@ -4333,7 +4321,6 @@
       <frontierRules name="buyTactical_Bomber"/>
       <frontierRules name="buyBomber"/>
       <frontierRules name="buyTransport"/>
-      <frontierRules name="buyAir_Transport"/>
       <frontierRules name="buySubmarine"/>
       <frontierRules name="buyCarrier"/>
       <frontierRules name="buyDestroyer"/>
@@ -15828,6 +15815,20 @@
     </attachment>
     <attachment name="TotalWar" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Total War"/>
+    </attachment>
+    <attachment name="AirTrprt" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Air Transport"/>
+    </attachment>
+    <attachment name="AirTrprtInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Air Transport"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="Engnr" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Combat Engineer"/>
+    </attachment>
+    <attachment name="EngnrInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Combat Engineer"/>
+      <option name="invert" value="true"/>
     </attachment>
     <attachment name="Volkssturm" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Volkssturm"/>
@@ -33526,6 +33527,28 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_BuyAirTrprt" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AirTrprt"/>
+      <option name="productionRule" value="productionGermans:buyG_Air_Transport"/>
+      <option name="productionRule" value="productionJapanese:buyAir_Transport"/>
+      <option name="productionRule" value="productionAmericans:buyAir_Transport"/>
+      <option name="productionRule" value="productionRussians:buyAir_Transport"/>
+      <option name="productionRule" value="productionBritish:buyAir_Transport"/>
+      <option name="productionRule" value="productionItalians:buyAir_Transport"/>
+      <option name="productionRule" value="productionANZAC:buyAir_Transport"/>
+      <option name="productionRule" value="productionFrench:buyAir_Transport"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_BuyEngnrs" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:Engnr"/>
+      <option name="productionRule" value="productionGermans:buyGerman_Engineer"/>
+      <option name="productionRule" value="productionJapanese:buyJapan_Engineer"/>
+      <option name="productionRule" value="productionAmericans:buyUSA_Engineer"/>
+      <option name="productionRule" value="productionRussians:buyRussian_Engineer"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     
     <attachment name="triggerAttachment_Waffen_SS_Oberst" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="WaffenOberst:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn2"/>
@@ -34281,13 +34304,13 @@
     </attachment>
     
     <attachment name="triggerAttachment_Seafire" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRules1stAnd2ndInvert:Seafire:BasicEXPInvert:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:Seafire:BasicEXPInvert:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionBritish:buySeafire"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:britishPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_Me_109T" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRules1stAnd2ndInvert:Me_109T:BasicEXPInvert:conditionAttachmentTurn1OrHigher"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:Me_109T:BasicEXPInvert:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionGermans:buyMe_109T"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
@@ -42852,7 +42875,7 @@
     
     <!-- Germans TotalWarAirTrprt -->
     <attachment name="triggerAttachment_GermansTotalWarAirTrprt" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43Invert:TotalWar:conditionAttachmentTurn7OrHigher"/>
+      <option name="conditions" value="AirTrprtInvert:EXP43Invert:TotalWar:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionGermans:buyTotalWarAirTrprt"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
@@ -44273,7 +44296,7 @@
     
     <!-- Russians TotalWarAirTrprt -->
     <attachment name="triggerAttachment_RussiansTotalWarAirTrprt" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
+      <option name="conditions" value="AirTrprtInvert:TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionRussians:buyTotalWarAirTrprt"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
@@ -45276,7 +45299,7 @@
     
     <!-- JapaneseTotalWarAirTrprt -->
     <attachment name="triggerAttachment_JapaneseTotalWarAirTrprt" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
+      <option name="conditions" value="AirTrprtInvert:TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionJapanese:buyTotalWarAirTrprt"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japanesePurchase"/>
@@ -46179,7 +46202,7 @@
     
     <!-- BritishTotalWarAirTrprt -->
     <attachment name="triggerAttachment_UKTotalWarAirTrprt" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
+      <option name="conditions" value="AirTrprtInvert:TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionBritish:buyTotalWarAirTrprt"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:britishPurchase"/>
@@ -47987,7 +48010,7 @@
 
     <!-- AmericansTotalWarAirTrprt -->
     <attachment name="triggerAttachment_AmericansTotalWarAirTrprt" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
+      <option name="conditions" value="AirTrprtInvert:TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionAmericans:buyTotalWarAirTrprt"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansPurchase"/>
@@ -53560,6 +53583,12 @@
       <boolean/>
       </property>
       <property name="Total War" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Air Transport" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Combat Engineer" value="true" editable="true">
       <boolean/>
       </property>
       <property name="Soviet Partisan" value="true" editable="true">
