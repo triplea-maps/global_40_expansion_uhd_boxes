@@ -36,16 +36,27 @@ Tank Destroyers<br>
 French in UK<br>
 German U-Boat Pens<br>
 Non use of Desert Army is Player Enforced.<br><br>
-1st and 2nd year Players will also need to deselect<br>
+For <b>Tournament Rules 1st and 2nd Year Players</b> in Game Options you will need to also deselect<br>
 Landmines<br>
 Navy Fighters<br>
 Fortifications<br>
 D-Day<br>
 Waffen Paratroopers<br>
-Non use of Army Group is Player Enforced.<br>
 Total War<br>
-
-<br><br>
+Partisans<br>
+Air Transport<br>
+Me 262<br>
+Japanese Banzai Attack<br>
+Sea Fighter Planes<br>
+Me-109T Fighter Planes<br>
+Japanese Destroyers<br>
+Air Fleet Commander<br>
+Combat Engineer<br>
+US and UK Lend-Lease<br>
+Heavy Bombers<br>
+Non use of Army Group is Player Enforced.<br>
+<br>
+<b>Turn off both Tournament Rules and Tournament Rules 1st and 2nd Year</b> so the appropriate Notifications will not appear.<br><br>
 This mod will play more like a TableTop game than most triplea maps. While there is the need for edit use, it is completely playable and will become second nature after a few games. It's <b>Huge</b> upside is well worth the effort.<br>
 <br>
 <b>IMPORTANT</b><br>
@@ -1273,10 +1284,15 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 2.45<br> 7/30/25 
+<br>Version 2.46<br> 8/5/25 
+<br>
+Fix TimeTable for "Tournament Rules 1st and 2nd Year Players".
+<br>
+<br>Version 2.45<br> 8/5/25 
 <br>
 Add Elite Tanks to TimeTable.<br>
-Add Game Options "Atlantic Wall" and "Increased Ship Building".
+Add Game Options "Atlantic Wall" and "Increased Ship Building".<br>
+Add "Tournament Rules" and "Tournament Rules 1st and 2nd Year".
 <br>
 <br>Version 2.44<br> 6/21/25 
 <br>
