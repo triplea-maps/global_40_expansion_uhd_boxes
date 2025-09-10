@@ -56,7 +56,7 @@ US and UK Lend-Lease<br>
 Heavy Bombers<br>
 Non use of Army Group is Player Enforced.<br>
 <br>
-<b>Turn off both Tournament Rules and Tournament Rules 1st and 2nd Year</b> so the appropriate Notifications will not appear.<br><br>
+<b>Turn on both Tournament Rules and Tournament Rules 1st and 2nd Year</b> so the appropriate Notifications will not appear.<br><br>
 This mod will play more like a TableTop game than most triplea maps. While there is the need for edit use, it is completely playable and will become second nature after a few games. It's <b>Huge</b> upside is well worth the effort.<br>
 <br>
 <b>IMPORTANT</b><br>
@@ -1283,6 +1283,16 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.472<br> 9/4/25 
+<br>
+Fix FlakTower Not Shooting at Air Fleet Tactical Bombers.
+<br>
+<br>Version 2.471<br> 8/28/25 
+<br>
+Fix USA Tank Destroyer Max Purchasing to 4.<br>
+Fix Repair Carrier only Repairing 1 Hit of Damage on Heavy Carriers.<br>
+Fix Total War Mech Infantry Not Changing in Korea.
 <br>
 <br>Version 2.46<br> 8/5/25 
 <br>

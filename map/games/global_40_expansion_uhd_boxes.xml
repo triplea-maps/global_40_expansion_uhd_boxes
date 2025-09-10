@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.46"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.5"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -247,7 +247,7 @@
 
   <map>
     <!-- Full europe list:
-				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Easterns Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:1st Desert:3rd Panzer:3rd Waffen:Army Group South:Army Group Centre:Army Group North:1st Waffen:1st Panzer:2nd Waffen:4th Waffen:2nd Panzer:1st Corps:1st Tank:2nd Corps:2nd Tank:3rd Corps:1st Waffen Panzer:1st Luftflotten:2nd Luftflotten:3rd Luftflotten:1st USA AirFleet:2nd USA AirFleet:1st AirFleet:2nd AirFleet:Credits:1st Army Group:2nd Army Group:UK Desert:1st UK Tank:USA Desert:1st USA Tank:2nd USA Tank:USA Army Group:Early 1940:Early 1941:Early 1942:Early 1943:Early 1944:Late 1940:Late 1941:Late 1942:Late 1943:Late 1944:D-Day:Overflow:Bermuda
+				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Easterns Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:1st Desert:3rd Panzer:3rd Waffen:Army Group South:Army Group Centre:Army Group North:1st Waffen:1st Panzer:2nd Waffen:4th Waffen:2nd Panzer:1st Corps:1st Tank:2nd Corps:2nd Tank:3rd Corps:1st Waffen Panzer:1st Luftflotten:2nd Luftflotten:3rd Luftflotten:1st USA AirFleet:2nd USA AirFleet:1st AirFleet:2nd AirFleet:Credits:1st Army Group:2nd Army Group:UK Desert:1st UK Tank:USA Desert:1st USA Tank:2nd USA Tank:USA Army Group:Early 1940:Early 1941:Early 1942:Early 1943:Early 1944:Late 1940:Late 1941:Late 1942:Late 1943:Late 1944:D-Day:Overflow:GermanFlow:Bermuda
 				-->
     <!-- Border territories:
 				Evenkiyskiy:Urals:Novosibirsk:Himalayas:Kazakhstan:Timguska:India:Sikang:Tsinghai:Kansu
@@ -485,6 +485,7 @@
     <territory name="Eastern Poland"/>
     <territory name="Bessarabia"/>
     <territory name="Overflow"/>
+    <territory name="GermanFlow"/>
     <territory name="Russia"/>
     <territory name="Tambov"/>
     <territory name="Ukraine"/>
@@ -1521,7 +1522,7 @@
     <connection t1="1st Desert" t2="USA Army Group"/>
     <connection t1="1st Desert" t2="D-Day"/>
     <connection t1="1st Desert" t2="Overflow"/>
-
+    <connection t1="1st Desert" t2="GermanFlow"/>
 
   </map>
   <resourceList>
@@ -5429,7 +5430,7 @@
       <option name="maxAAattacks" value="3"/>
       <option name="targetsAA" value="Elitewaffen_panzer:waffen_panzer:ElitePanzer:armour:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:PanzerJager:PanzerJagerFS:WaffenPnzrJager:WaffenPnzrJagerFS:WaffenPnzrJagerFS2:PanzerJagerFS2:Panzer_General:DesertGeneral:WaffenPioneerAttack:WaffenPioneer"/>
       <option name="typeAA" value="USATankDestroyerFirstStrike"/>
-      <option name="maxBuiltPerPlayer" value="2"/>  
+      <option name="maxBuiltPerPlayer" value="4"/>  
     </attachment>
     <!-- USATankDestroyerFS2 -->
     <attachment name="unitAttachment" attachTo="USATankDestroyerFS2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -5446,7 +5447,7 @@
       <option name="maxAAattacks" value="2"/>
       <option name="targetsAA" value="Elitewaffen_panzer:waffen_panzer:ElitePanzer:armour:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:PanzerJager:PanzerJagerFS:WaffenPnzrJager:WaffenPnzrJagerFS:WaffenPnzrJagerFS2:PanzerJagerFS2:Panzer_General:DesertGeneral:WaffenPioneerAttack:WaffenPioneer"/>
       <option name="typeAA" value="USATankDestroyerFirstStrike2"/>
-      <option name="maxBuiltPerPlayer" value="2"/>  
+      <option name="maxBuiltPerPlayer" value="4"/>  
     </attachment>
     <!-- USATankDestroyer -->
     <attachment name="unitAttachment" attachTo="USATankDestroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -5456,7 +5457,7 @@
       <option name="attack" value="2"/>
       <option name="defense" value="4"/>
       <option name="canBlitz" value="true"/>
-      <option name="maxBuiltPerPlayer" value="2"/>  
+      <option name="maxBuiltPerPlayer" value="4"/>  
     </attachment>
     <!-- Russian Para -->
     <attachment name="unitAttachment" attachTo="russian_para" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -8235,7 +8236,7 @@
       <option name="constructionType" value="Flak"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
-      <option name="targetsAA" value="tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:tactical_bomberPG:tactical_bomberTG:usa_tactical_bomberTG:uk_tactical_bomberTG:bomber:bomberA0C5"/>
+      <option name="targetsAA" value="tactical_bomber:usa_tactical_bomber:uk_tactical_bomber:tactical_bomberPG:tactical_bomberTG:usa_tactical_bomberTG:uk_tactical_bomberTG:bomber:bomberA0C5:GAirCommanderTac:AirCommanderTac:Gtactical_bomberAF:tactical_bomberAF:usa_tactical_bomberAF"/>
       <option name="maxAAattacks" value="-1"/>
       <option name="attackAA" value="2"/>
       <option name="attackAAmaxDieSides" value="6"/>
@@ -8702,7 +8703,7 @@
       <option name="isSea" value="true"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
-      <option name="repairsUnits" value="carrier:Hvycarrier:pacific_carrier"/>
+      <option name="repairsUnits" value="2:carrier:Hvycarrier:pacific_carrier"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="Repair_Carrier"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
@@ -11795,6 +11796,9 @@
       <option name="production" value="0"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Overflow" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="GermanFlow" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="UK Desert" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -29983,7 +29987,10 @@
       <option name="directPresenceTerritories" value="Korea" count="1"/>
       <option name="unitPresence" value="TotalWar_Arty" count="6"/>
     </attachment>
-
+    <attachment name="conditionAttachment_JapaneseRemoveTotalWarMechInf6Korea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Korea" count="1"/>
+      <option name="unitPresence" value="TotalWarMechInf" count="6"/>
+    </attachment>
     <attachment name="conditionAttachment_JapaneseRemoveTotalWarFighter4" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Japan" count="1"/>
       <option name="unitPresence" value="TotalWarFighter" count="4"/>
@@ -32510,10 +32517,33 @@
       <option name="placement" value="1st Desert:BoxFctry" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    <attachment name="triggerAttachmenOverflow" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachmenGermanFlow" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
-      <option name="placement" value="Overflow:Overflow" count="1"/>
-      <option name="placement" value="Overflow:BoxFctry" count="1"/>
+      <option name="placement" value="GermanFlow:Waffen_Oberst" count="4"/>
+      <option name="placement" value="GermanFlow:Waffen_Oberst_3" count="3"/>
+      <option name="placement" value="GermanFlow:Panzer_General" count="3"/>
+      <option name="placement" value="GermanFlow:Panzer_General3" count="3"/>
+      <option name="placement" value="GermanFlow:GAirCommander" count="3"/>
+      <option name="placement" value="GermanFlow:GAirCommanderFtr" count="3"/>
+      <option name="placement" value="GermanFlow:GAirCommanderTac" count="3"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmenOverflow" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="placement" value="Overflow:Soviet_Commisar_3" count="3"/>
+      <option name="placement" value="Overflow:Soviet_Commisar" count="3"/>
+      <option name="placement" value="Overflow:Tank_General" count="2"/>
+      <option name="placement" value="Overflow:Tank_General3" count="2"/>
+      <option name="placement" value="Overflow:AirCommander" count="2"/>
+      <option name="placement" value="Overflow:AirCommanderFtr" count="2"/>
+      <option name="placement" value="Overflow:AirCommanderTac" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmenOverflowUSA" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="placement" value="Overflow:AirCommander" count="2"/>
+      <option name="placement" value="Overflow:AirCommanderFtr" count="2"/>
+      <option name="placement" value="Overflow:AirCommanderTac" count="2"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmen1stPanzerArmy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -44778,6 +44808,13 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
+    <attachment name="triggerAttachment_JapaneseTotalWarMechInfPlace6Korea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarMechInf6Korea"/>
+      <option name="placement" value="Korea:mech_infantry" count="6"/>
+      <option name="removeUnits" value="Korea:TotalWarMechInf" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:japanesePlace"/>
+    </attachment>
     <!-- JapaneseTotalWarMechInf43 -->
     <attachment name="triggerAttachment_JapaneseTotalWarMechInfEXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TotalWar:EXP43:conditionAttachmentTurn1OrHigher"/>
@@ -44799,6 +44836,13 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
+    <attachment name="triggerAttachment_JapaneseTotalWarMechInfPlace6Korea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_JapaneseRemoveTotalWarMechInf6Korea"/>
+      <option name="placement" value="Korea:mech_infantry" count="6"/>
+      <option name="removeUnits" value="Korea:TotalWarMechInf" count="6"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="after:japanesePlace"/>
+    </attachment>
 
     <!-- JapaneseTotalWarTank -->
     <attachment name="triggerAttachment_JapaneseTotalWarTank" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -44814,20 +44858,21 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
-    <attachment name="triggerAttachment_JapaneseTotalWarMTankPlaceJapan12" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment_JapaneseTotalWarTankPlaceJapan12" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarTank12"/>
       <option name="placement" value="Japan:armour" count="12"/>
       <option name="removeUnits" value="Japan:TotalWar_Tank" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
-    <attachment name="triggerAttachment_JapaneseTotalWarMTankPlaceJapan6Korea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment_JapaneseTotalWarTankPlace6Korea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarTank6Korea"/>
       <option name="placement" value="Korea:armour" count="6"/>
       <option name="removeUnits" value="Korea:TotalWar_Tank" count="6"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
+    
     <!-- JapaneseTotalWarTank43 -->
     <attachment name="triggerAttachment_JapaneseTotalWarTankEXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TotalWar:EXP43:conditionAttachmentTurn1OrHigher"/>
@@ -52597,6 +52642,7 @@
       <territoryOwner territory="1st AirFleet" owner="Russians"/>
       <territoryOwner territory="2nd AirFleet" owner="Russians"/>
       <territoryOwner territory="Overflow" owner="Changer"/>
+      <territoryOwner territory="GermanFlow" owner="Germans"/>
       <territoryOwner territory="Early 1940" owner="Changer"/>
       <territoryOwner territory="Early 1941" owner="Changer"/>
       <territoryOwner territory="Early 1942" owner="Changer"/>
@@ -53887,9 +53933,6 @@ Archangel<br>
 <br>
 <b>NOTE</b><br>
 The Army Group Does Not provide a Movement Bonus to the Units in the AG. They must still move at their allotted amount.<br>
-<br>
-<b>Overflow Boxes</b><br>
-use edit to place the Overflow Token into the desired Territorry. Then move the Overflow Units to the correct Box. There are two for Land and one for Sea Zones.<br>
 <br>
 <b>Important</b><br>
 <br>
