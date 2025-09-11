@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.473"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.5"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -247,7 +247,7 @@
 
   <map>
     <!-- Full europe list:
-				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Easterns Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:1st Desert:3rd Panzer:3rd Waffen:Army Group South:Army Group Centre:Army Group North:1st Waffen:1st Panzer:2nd Waffen:4th Waffen:2nd Panzer:1st Corps:1st Tank:2nd Corps:2nd Tank:3rd Corps:1st Waffen Panzer:1st Luftflotten:2nd Luftflotten:3rd Luftflotten:1st USA AirFleet:2nd USA AirFleet:1st AirFleet:2nd AirFleet:Credits:1st Army Group:2nd Army Group:UK Desert:1st UK Tank:USA Desert:1st USA Tank:2nd USA Tank:USA Army Group:Early 1940:Early 1941:Early 1942:Early 1943:Early 1944:Late 1940:Late 1941:Late 1942:Late 1943:Late 1944:D-Day:Overflow:ChangerFlow:Bermuda
+				West Indies:Central United States:Central America:Greenland:Southeast Mexico:Eastern United States:West India:Belgian Congo:Iceland:Quebec:Alberta Saskatchewan Manitoba:Trans-Jordan:British Somaliland:Alexandria:Gibraltar:New Brunswick Nova Scotia:Egypt:Union of South Africa:Cyprus:British Guiana:Gold Coast:Rio de Oro:Ontario:Scotland:South West Africa:Nigeria:Kenya:Malta:United Kingdom:Anglo Egyptian Sudan:Rhodesia:Tanganyika Territory:Newfoundland Labrador:Morocco:French Equatorial Africa:Normandy Bordeaux:French Central Africa:French Madagascar:French Guiana:Algeria:Southern France:Syria:French West Africa:France:Tunisia:Greater Southern Germany:Slovakia Hungary:Western Germany:Romania:Poland:Germany:Norway:Denmark:Holland Belgium:Tobruk:Albania:Northern Italy:Libya:Sicily:Italian Somaliland:Southern Italy:Ethiopia:Sardinia:Belarus:Karelia:Baltic States:Bryansk:Rostov:Nenetsia:Vyborg:Archangel:Eastern Poland:Bessarabia:Russia:Tambov:Ukraine:Western Ukraine:Vologda:Volgograd:Turkmenistan:Novgorod:Caucasus:Smolensk:Samara:Portugal:Portuguese Guinea:Ecuador:Chile:Afghanistan:Sierra Leone:Turkey:Mozambique:Saudi Arabia:Paraguay:Switzerland:Pripet Marshes:Eire:Crete:Argentina:Bulgaria:Angola:Greece:Iraq:Easterns Persia:Uruguay:Brazil:Venezuela:Northwest Persia:Persia:Sweden:Yugoslavia:Spain:Colombia:Bolivia:Liberia:Peru:Finland:Suriname:1st Desert:3rd Panzer:3rd Waffen:Army Group South:Army Group Centre:Army Group North:1st Waffen:1st Panzer:2nd Waffen:4th Waffen:2nd Panzer:1st Corps:1st Tank:2nd Corps:2nd Tank:3rd Corps:1st Waffen Panzer:1st Luftflotten:2nd Luftflotten:3rd Luftflotten:1st USA AirFleet:2nd USA AirFleet:1st AirFleet:2nd AirFleet:Credits:1st Army Group:2nd Army Group:UK Desert:1st UK Tank:USA Desert:1st USA Tank:2nd USA Tank:USA Army Group:Early 1940:Early 1941:Early 1942:Early 1943:Early 1944:Late 1940:Late 1941:Late 1942:Late 1943:Late 1944:D-Day:Overflow:GermanFlow:Bermuda
 				-->
     <!-- Border territories:
 				Evenkiyskiy:Urals:Novosibirsk:Himalayas:Kazakhstan:Timguska:India:Sikang:Tsinghai:Kansu
@@ -485,7 +485,7 @@
     <territory name="Eastern Poland"/>
     <territory name="Bessarabia"/>
     <territory name="Overflow"/>
-    <territory name="ChangerFlow"/>
+    <territory name="GermanFlow"/>
     <territory name="Russia"/>
     <territory name="Tambov"/>
     <territory name="Ukraine"/>
@@ -1522,7 +1522,7 @@
     <connection t1="1st Desert" t2="USA Army Group"/>
     <connection t1="1st Desert" t2="D-Day"/>
     <connection t1="1st Desert" t2="Overflow"/>
-    <connection t1="1st Desert" t2="ChangerFlow"/>
+    <connection t1="1st Desert" t2="GermanFlow"/>
 
   </map>
   <resourceList>
@@ -11798,7 +11798,7 @@
     <attachment name="territoryAttachment" attachTo="Overflow" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
-    <attachment name="territoryAttachment" attachTo="ChangerFlow" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="GermanFlow" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="UK Desert" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -32517,6 +32517,17 @@
       <option name="placement" value="1st Desert:BoxFctry" count="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachmenGermanFlow" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="placement" value="GermanFlow:Waffen_Oberst" count="4"/>
+      <option name="placement" value="GermanFlow:Waffen_Oberst_3" count="3"/>
+      <option name="placement" value="GermanFlow:Panzer_General" count="3"/>
+      <option name="placement" value="GermanFlow:Panzer_General3" count="3"/>
+      <option name="placement" value="GermanFlow:GAirCommander" count="3"/>
+      <option name="placement" value="GermanFlow:GAirCommanderFtr" count="3"/>
+      <option name="placement" value="GermanFlow:GAirCommanderTac" count="3"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     <attachment name="triggerAttachmenOverflow" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="Overflow:Soviet_Commisar_3" count="3"/>
@@ -52631,7 +52642,7 @@
       <territoryOwner territory="1st AirFleet" owner="Russians"/>
       <territoryOwner territory="2nd AirFleet" owner="Russians"/>
       <territoryOwner territory="Overflow" owner="Changer"/>
-      <territoryOwner territory="ChangerFlow" owner="Changer"/>
+      <territoryOwner territory="GermanFlow" owner="Germans"/>
       <territoryOwner territory="Early 1940" owner="Changer"/>
       <territoryOwner territory="Early 1941" owner="Changer"/>
       <territoryOwner territory="Early 1942" owner="Changer"/>
@@ -53922,9 +53933,6 @@ Archangel<br>
 <br>
 <b>NOTE</b><br>
 The Army Group Does Not provide a Movement Bonus to the Units in the AG. They must still move at their allotted amount.<br>
-<br>
-<b>Overflow Boxes</b><br>
-use edit to place the Overflow Token into the desired Territorry. Then move the Overflow Units to the correct Box. There are two for Land and one for Sea Zones.<br>
 <br>
 <b>Important</b><br>
 <br>
