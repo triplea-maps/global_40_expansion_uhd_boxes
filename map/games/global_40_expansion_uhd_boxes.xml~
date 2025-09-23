@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.5"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.51"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -32519,11 +32519,8 @@
     </attachment>
     <attachment name="triggerAttachmenGermanFlow" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
-      <option name="placement" value="GermanFlow:Waffen_Oberst" count="4"/>
       <option name="placement" value="GermanFlow:Waffen_Oberst_3" count="3"/>
-      <option name="placement" value="GermanFlow:Panzer_General" count="3"/>
       <option name="placement" value="GermanFlow:Panzer_General3" count="3"/>
-      <option name="placement" value="GermanFlow:GAirCommander" count="3"/>
       <option name="placement" value="GermanFlow:GAirCommanderFtr" count="3"/>
       <option name="placement" value="GermanFlow:GAirCommanderTac" count="3"/>
       <option name="when" value="before:germansPurchase"/>
@@ -32531,17 +32528,13 @@
     <attachment name="triggerAttachmenOverflow" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="Overflow:Soviet_Commisar_3" count="3"/>
-      <option name="placement" value="Overflow:Soviet_Commisar" count="3"/>
-      <option name="placement" value="Overflow:Tank_General" count="2"/>
       <option name="placement" value="Overflow:Tank_General3" count="2"/>
-      <option name="placement" value="Overflow:AirCommander" count="2"/>
       <option name="placement" value="Overflow:AirCommanderFtr" count="2"/>
       <option name="placement" value="Overflow:AirCommanderTac" count="2"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenOverflowUSA" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn1"/>
-      <option name="placement" value="Overflow:AirCommander" count="2"/>
       <option name="placement" value="Overflow:AirCommanderFtr" count="2"/>
       <option name="placement" value="Overflow:AirCommanderTac" count="2"/>
       <option name="when" value="before:germansPurchase"/>
