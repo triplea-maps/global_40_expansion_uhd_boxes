@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.51"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.52"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -42898,7 +42898,7 @@
     
     <!-- Germans TotalWarAirTrprt -->
     <attachment name="triggerAttachment_GermansTotalWarAirTrprt" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="AirTrprtInvert:EXP43Invert:TotalWar:conditionAttachmentTurn7OrHigher"/>
+      <option name="conditions" value="EXP43Invert:TotalWar:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionGermans:buyTotalWarAirTrprt"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
@@ -44319,7 +44319,7 @@
     
     <!-- Russians TotalWarAirTrprt -->
     <attachment name="triggerAttachment_RussiansTotalWarAirTrprt" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="AirTrprtInvert:TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
+      <option name="conditions" value="TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionRussians:buyTotalWarAirTrprt"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:russiansPurchase"/>
@@ -45337,7 +45337,7 @@
     
     <!-- JapaneseTotalWarAirTrprt -->
     <attachment name="triggerAttachment_JapaneseTotalWarAirTrprt" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="AirTrprtInvert:TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
+      <option name="conditions" value="TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionJapanese:buyTotalWarAirTrprt"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:japanesePurchase"/>
@@ -46240,7 +46240,7 @@
     
     <!-- BritishTotalWarAirTrprt -->
     <attachment name="triggerAttachment_UKTotalWarAirTrprt" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="AirTrprtInvert:TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
+      <option name="conditions" value="TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionBritish:buyTotalWarAirTrprt"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:britishPurchase"/>
@@ -48048,7 +48048,7 @@
 
     <!-- AmericansTotalWarAirTrprt -->
     <attachment name="triggerAttachment_AmericansTotalWarAirTrprt" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="AirTrprtInvert:TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
+      <option name="conditions" value="TotalWar:EXP43Invert:conditionAttachmentTurn7OrHigher"/>
       <option name="productionRule" value="productionAmericans:buyTotalWarAirTrprt"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansPurchase"/>
