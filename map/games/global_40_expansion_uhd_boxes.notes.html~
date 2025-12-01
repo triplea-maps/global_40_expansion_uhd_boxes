@@ -4,7 +4,9 @@
 <img src="EXP.png"/><br>
 <br>			
 It uses the UHD Mega Map based off of the Bung,Veqryn "World War II Global 1940 2nd Edition" Map. <br>
-<br>
+<br><br>
+<b>Important</b><br>
+Make sure <b>All</b> Players are using the same triplea engine version. As of 12-1-25 it is suggested to use prerelease version "2.7+14962" which can be downloaded here: https://github.com/triplea-game/triplea/releases/tag/2.7.14962 <br><br>
 <b>FREE Hand Painted Game Pieces</b> for games played. More Information here:<br>
 <br>
 <b>https://www.axisandallies.org/forums/topic/40751/g40-award-winning-free-units</b><br>
@@ -117,7 +119,6 @@ Waffen Heavy Tank<br>
 Waffen PG<br>
 Waffen Pioneer<br>
 Waffen Panzer General<br>
-Elite Panzer<br>
 <br>
 <b>Russia</b><br>
 Air LL<br>
@@ -980,6 +981,10 @@ https://www.axisandallies.org/forums/topic/36998/global-1940-and-1943-expansion-
 Unit Image courtesy of Generation Kill.
 <br>
 <br>
+<b>Note</b><br>
+When using edit to change to Changer mines, you need to do so during the 2nd placement phase.
+<br>
+<br>
 <b>20. US and UK Lend-Lease</b><br>
 <br>
 This has no affect on Game Play. It just adds a "Game Option" for a simple way for Players to agree to using the Optional rule. It may be expanded in the future.<br>
@@ -1151,7 +1156,7 @@ Rules are Player Enforced. <br><br>
 <br>
 <img src="GAirCommander.png"/><br>
 <br>Explained in detail here <br><br>
-https://www.axisandallies.org/forums/assets/uploads/files/1742398334531-16.g40-air-fleet-commander-rules.pdf
+https://www.axisandallies.org/forums/assets/uploads/files/1764225726626-16.g40-air-fleet-commander-rules.pdf
 <br>
 <img src="GAirCommanderFtr.png"/><br>
 <img src="GAirCommanderTac.png"/><br>
@@ -1174,6 +1179,7 @@ Also as the First Casualty in Regular Combat. Otherwise it will continue to give
 <br>Replace in edit after battle if needed.<br>
 <br>
 Rules are Player Enforced. <br><br>
+The Me 262 has been added. The Commander<br> <img src="GAirCommanderMe_262.png"/><br> will give 1 bonus roll to a Me_262AF<br> <img src="Me_262AF.png"/><br> and itself. The Commander rolls the same as all Comanders Attack 3 Defend 4. Only the AF is an actual Me 262.<br><br>
 <b>32. Heavy Carrier</b><br>
 <br>
 <img src="Hvycarrier.png"/><br>
@@ -1190,6 +1196,12 @@ https://www.axisandallies.org/forums/assets/uploads/files/1749817887277-11.g40-e
 <br>
 <br>
 Work similar to Elite Infantry. <br><br>
+<b>34. Self Propelled Artillery</b><br>
+<br>
+<img src="SP_Artillery.png"/><br>
+<br>Explained in detail here <br><br>
+https://www.axisandallies.org/forums/assets/uploads/files/1764255018451-21.g40-selfpropelled-artillery-unit.pdf
+<br><br>
 <b>Unofficial SBR Option</b><br>
 <br>
 This is independent of the Captain and Company's Awesome House Rules, thus "Unofficial". :) 
@@ -1285,6 +1297,19 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.53<br> 11/19/25 
+<br>
+Add AF Ftr and Tacs to Overflow Boxes.<br>
+Add Self Propelled Artillery.<br>
+Only Have "FrenchInUK" Token Activate when Conditions are Met.<br>
+Expand TimeTable.<br>
+Have Deselected Game Options Not Show in TimeTable.<br>
+Add Me 262 to Air Fleets.
+<br>
+<br>Version 2.52<br> 9/22/25 
+<br>
+Fix Total War Air Transport Not Purchasing.
 <br>
 <br>Version 2.51<br> 9/11/25 
 <br>
