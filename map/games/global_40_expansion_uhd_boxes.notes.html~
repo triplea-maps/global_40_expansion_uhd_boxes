@@ -6,7 +6,8 @@
 It uses the UHD Mega Map based off of the Bung,Veqryn "World War II Global 1940 2nd Edition" Map. <br>
 <br><br>
 <b>Important</b><br>
-Make sure <b>All</b> Players are using the same triplea engine version. As of 12-1-25 it is suggested to use prerelease version "2.7+14962" which can be downloaded here: https://github.com/triplea-game/triplea/releases/tag/2.7.14962 <br><br>
+It is recommended <b>All</b> Players use the same triplea engine version when playing a Forum or PBEM game. As of 12-1-25 it is suggested to use prerelease version "2.7+14962" which can be downloaded here: https://github.com/triplea-game/triplea/releases/tag/2.7.14962 <br><br>
+For testing it is suggested to use the latest prerelease. https://github.com/triplea-game/triplea/releases/  <br><br>
 <b>FREE Hand Painted Game Pieces</b> for games played. More Information here:<br>
 <br>
 <b>https://www.axisandallies.org/forums/topic/40751/g40-award-winning-free-units</b><br>
@@ -123,11 +124,9 @@ Waffen Panzer General<br>
 <b>Russia</b><br>
 Air LL<br>
 Tank LL<br>
-Elite Armor<br>
 <br>
 <b>USA</b><br>
 Marines<br>
-Elite Armor<br>
 <br>
 <b>United Kingdom</b><br>
 Commandos<br>
@@ -1298,7 +1297,11 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 2.53<br> 11/19/25 
+<br>Version 2.54<br> 12/18/25 
+<br>
+Have Commisar2 Support "Self Propelled Artillery".
+<br>
+<br>Version 2.53<br> 12/1/25 
 <br>
 Add AF Ftr and Tacs to Overflow Boxes.<br>
 Add Self Propelled Artillery.<br>
