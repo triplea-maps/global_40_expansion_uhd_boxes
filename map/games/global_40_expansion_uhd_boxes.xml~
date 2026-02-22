@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.541"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.56"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -2088,6 +2088,19 @@
     <unit name="Repair_FlakTower"/>
     <unit name="HomeDefense"/>
     <unit name="FrenchUK"/>
+    <unit name="Nuke"/>
+    <unit name="USANC"/>
+    <unit name="USANC1"/>
+    <unit name="USANC2"/>
+    <unit name="USANC3"/>
+    <unit name="USANC_Damaged"/>
+    <unit name="USANC1_Damaged"/>
+    <unit name="USANC2_Damaged"/>
+    <unit name="USANC3_Damaged"/>
+    <unit name="GNC"/>
+    <unit name="GNC1"/>
+    <unit name="GNC_Damaged"/>
+    <unit name="GNC1_Damaged"/>
   </unitList>
   <relationshipTypes>
     <relationshipType name="Allied"/>
@@ -2920,6 +2933,30 @@
     <productionRule name="buyCruiserX">
       <cost resource="PUs" quantity="10"/>
       <result resourceOrUnit="cruiser" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSANC">
+      <cost resource="PUs" quantity="20"/>
+      <result resourceOrUnit="USANC" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSANC1">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="USANC1" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSANC2">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="USANC2" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSANC3">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="USANC3" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGNC">
+      <cost resource="PUs" quantity="20"/>
+      <result resourceOrUnit="GNC" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGNC1">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="GNC1" quantity="1"/>
     </productionRule>
     <productionRule name="buyBattleship">
       <cost resource="PUs" quantity="15"/>
@@ -3839,6 +3876,10 @@
     <productionRule name="buyFrenchUK">
       <cost resource="PUs" quantity="5"/>
       <result resourceOrUnit="FrenchUK" quantity="1"/>
+      </productionRule>
+      <productionRule name="buyNuke">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="Nuke" quantity="1"/>
     </productionRule>
     <!-- Advanced Industrial Production -->
     <!--<productionRule name="buyInfantryIndustrialTechnology">
@@ -7641,6 +7682,156 @@
       <option name="blockade" value="1"/>
       <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
     </attachment>
+    <!-- USANC -->
+    <attachment name="unitAttachment" attachTo="USANC" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="canBombard" value="true"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="unitPlacementOnlyAllowedIn" value="101 Sea Zone:10 Sea Zone"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+    </attachment>
+    <!-- USANC Damaged -->
+    <attachment name="unitAttachment" attachTo="USANC_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="4"/>
+      <option name="canBombard" value="false"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:USANC"/>
+    </attachment>
+    <!-- USANC1 -->
+    <attachment name="unitAttachment" attachTo="USANC1" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="attackRolls" value="2"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canBombard" value="true"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+    </attachment>
+    <!-- USANC1 Damaged -->
+    <attachment name="unitAttachment" attachTo="USANC1_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="4"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canBombard" value="false"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:USANC"/>
+    </attachment>
+    <!-- USANC2 -->
+    <attachment name="unitAttachment" attachTo="USANC2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="canBombard" value="true"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+    </attachment>
+    <!-- USANC2 Damaged -->
+    <attachment name="unitAttachment" attachTo="USANC2_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="4"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canBombard" value="false"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:USANC"/>
+    </attachment>
+    <!-- USANC3 -->
+    <attachment name="unitAttachment" attachTo="USANC3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="canBombard" value="true"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+    </attachment>
+    <!-- USANC3 Damaged -->
+    <attachment name="unitAttachment" attachTo="USANC3_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="4"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canBombard" value="false"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:USANC"/>
+    </attachment>
+    <!-- GNC -->
+    <attachment name="unitAttachment" attachTo="GNC" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="canBombard" value="true"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="unitPlacementOnlyAllowedIn" value="113 Sea Zone"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+    </attachment>
+    <!-- GNC Damaged -->
+    <attachment name="unitAttachment" attachTo="GNC_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="4"/>
+      <option name="canBombard" value="false"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:GNC"/>
+    </attachment>
+    <!-- GNC1 -->
+    <attachment name="unitAttachment" attachTo="GNC1" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="attackRolls" value="2"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canBombard" value="true"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+    </attachment>
+    <!-- GNC1 Damaged -->
+    <attachment name="unitAttachment" attachTo="GNC1_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="4"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canBombard" value="false"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:GNC"/>
+    </attachment>
     <!-- BB Damaged -->
     <attachment name="unitAttachment" attachTo="BB_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
@@ -7850,7 +8041,7 @@
       <!-- stuff for targeting unescorted transports (we are using the new-fangled aa-gun code)
 						 <option name="isAAforFlyOverOnly" value="true"/>
 						 <option name="targetsAA" value="transport"/>
-						 <option name="willNotFireIfPresent" value="destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:Escort_ConvoyA:cruiser:pacific_cruiser:battleship:pacific_BB:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:Hvycarrier:pacific_carrier:pacific_destroyer"/>
+						 <option name="willNotFireIfPresent" value="destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:Escort_ConvoyA:cruiser:pacific_cruiser:battleship:USANC:USANC1:USANC2:USANC3:pacific_BB:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:Hvycarrier:pacific_carrier:pacific_destroyer:USANC_Damaged:USANC1_Damaged:USANC2_Damaged:USANC3_Damaged:GNC:GNC_Damaged:GNC1:GNC1_Damaged"/>
 						 <option name="mayOverStackAA" value="true"/>
 						 <option name="maxAAattacks" value="1"/>
 						 <option name="attackAA" value="2"/>
@@ -7911,7 +8102,7 @@
       <!-- stuff for targeting unescorted transports (we are using the new-fangled aa-gun code)
 						 <option name="isAAforFlyOverOnly" value="true"/>
 						 <option name="targetsAA" value="transport"/>
-						 <option name="willNotFireIfPresent" value="destroyer:pacific_destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:Escort_ConvoyA:cruiser:pacific_cruiser:battleship:pacific_BB:carrier:Hvycarrier:pacific_carrier"/>
+						 <option name="willNotFireIfPresent" value="destroyer:pacific_destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:Escort_ConvoyA:cruiser:pacific_cruiser:battleship:USANC:USANC1:USANC2:USANC3:USANC1_Damaged:USANC2_Damaged:USANC3_Damaged:pacific_BB:carrier:Hvycarrier:pacific_carrier:GNC:GNC_Damaged:GNC1:GNC1_Damaged"/>
 						 <option name="mayOverStackAA" value="true"/>
 						 <option name="maxAAattacks" value="1"/>
 						 <option name="attackAA" value="2"/>
@@ -8335,6 +8526,14 @@
       <option name="givesMovement" value="1:Hvycarrier"/>
       <option name="givesMovement" value="1:pacific_carrier"/>
       <option name="givesMovement" value="1:battleship"/>
+      <option name="givesMovement" value="1:USANC"/>
+      <option name="givesMovement" value="1:USANC1"/>
+      <option name="givesMovement" value="1:USANC2"/>
+      <option name="givesMovement" value="1:USANC3"/>
+      <option name="givesMovement" value="1:GNC"/>
+      <option name="givesMovement" value="1:GNC1"/>
+      <option name="givesMovement" value="1:GNC_Damaged"/>
+      <option name="givesMovement" value="1:GNC1_Damaged"/>
       <option name="givesMovement" value="1:pacific_BB"/>
       <option name="givesMovement" value="1:Pac_BB_Damaged"/>
       <option name="givesMovement" value="1:BB_Damaged"/>
@@ -8342,6 +8541,10 @@
       <option name="givesMovement" value="1:German_Heavy_BB"/>
       <option name="givesMovement" value="1:Hvy_BB_Dmgd"/>
       <option name="givesMovement" value="1:German_Hvy_BB_Dmgd"/>
+      <option name="givesMovement" value="1:USANC_Damaged"/>
+      <option name="givesMovement" value="1:USANC1_Damaged"/>
+      <option name="givesMovement" value="1:USANC2_Damaged"/>
+      <option name="givesMovement" value="1:USANC3_Damaged"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <!--<option name="canBeGivenByTerritoryTo" value="British"/>-->
     </attachment>
@@ -8419,6 +8622,19 @@
     </attachment>
     <!-- French UK -->
     <attachment name="unitAttachment" attachTo="FrenchUK" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="isSuicideOnAttack" value="true"/>
+      <option name="isSuicideOnDefense" value="true"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="FrnchUK"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+      <option name="maxConstructionsPerTypePerTerr" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+    </attachment>
+    <!-- Nuke -->
+    <attachment name="unitAttachment" attachTo="Nuke" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
@@ -8941,7 +9157,7 @@
       <option name="isSea" value="true"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
-      <option name="repairsUnits" value="2:BB_Damaged:battleship:pacific_BB:Pac_BB_Damaged:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:pacific_BB"/>
+      <option name="repairsUnits" value="2:BB_Damaged:battleship:USANC:USANC1:USANC2:USANC3:pacific_BB:Pac_BB_Damaged:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:pacific_BB:USANC_Damaged:USANC1_Damaged:USANC2_Damaged:USANC3_Damaged:GNC:GNC_Damaged:GNC1:GNC1_Damaged"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="Repair_BB"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
@@ -15417,6 +15633,138 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+    <attachment name="supportAttachmentUSANC1attack" attachTo="USANC1" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:pacific_BB:cruiser:pacific_cruiser"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USANCattack"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSANC1defense" attachTo="USANC1" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:pacific_BB:Pac_BB_Damaged:cruiser:pacific_cruiser:carrier:pacific_carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USANCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSANC1DamagedDefense" attachTo="USANC1_Damaged" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:pacific_BB:Pac_BB_Damaged:cruiser:pacific_cruiser:carrier:pacific_carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USANCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSANC2attack" attachTo="USANC2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:pacific_BB:cruiser:pacific_cruiser"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USANCattack"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSANC2defense" attachTo="USANC2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:pacific_BB:Pac_BB_Damaged:cruiser:pacific_cruiser:carrier:pacific_carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USANCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSANC2DamagedDefense" attachTo="USANC2_Damaged" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:pacific_BB:Pac_BB_Damaged:cruiser:pacific_cruiser:carrier:pacific_carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USANCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSANC3attack" attachTo="USANC3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:pacific_BB:cruiser:pacific_cruiser"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USANCattack"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSANC3defense" attachTo="USANC3" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:pacific_BB:Pac_BB_Damaged:cruiser:pacific_cruiser:carrier:pacific_carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USANCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUSANC3DamagedDefense" attachTo="USANC3_Damaged" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:pacific_BB:Pac_BB_Damaged:cruiser:pacific_cruiser:carrier:pacific_carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="USANCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGNC1attack" attachTo="GNC1" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:cruiser"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="GNCattack"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGNC1defense" attachTo="GNC1" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:cruiser:carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="GNCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentGNC1DamagedDefense" attachTo="GNC1_Damaged" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:cruiser:carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="GNCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
     <attachment name="supportAttachmentTacticalBomberACTac" attachTo="AirCommanderFtr" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="usa_fighterAF:fighterAF"/>
       <option name="faction" value="allied"/>
@@ -16211,6 +16559,13 @@
     </attachment>
     <attachment name="AirFleetCommanderInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Air Fleet Commander"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="NavalCommander" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Naval Commander"/>
+    </attachment>
+    <attachment name="NavalCommanderInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Naval Commander"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="Fortifications" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -33376,6 +33731,11 @@
       <option name="placement" value="Early 1943:German_Rockets" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenLate1941USANC" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:NavalCommander"/>
+      <option name="placement" value="Late 1941:USANC" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenLate1941RedElitePanzers" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:ElitePanzers"/>
       <option name="placement" value="Late 1941:ElitePanzer" count="1"/>
@@ -33556,7 +33916,7 @@
 
     <!-- Tournament TimeTable 1st and 2nd -->
     <attachment name="triggerAttachmenEarly1940RedTournamentRules1stAnd2nd" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRules:TournamentRules1stAnd2nd:EXP43Invert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2nd:EXP43Invert:conditionAttachmentTurn1"/>
       <option name="placement" value="Early 1940:Early1940_red" count="1"/>
       <option name="placement" value="Early 1940:waffen_infantry" count="1"/>
       <option name="placement" value="Early 1940:WaffenArty" count="1"/>
@@ -42597,7 +42957,7 @@
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="LuftwaffeAce"/>
     </attachment>
-
+    <!-- Air Commander -->
     <attachment name="triggerAttachment_AirCommander" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:AirFleetCommander:conditionAttachmentTurn2OrHigher"/>
       <option name="productionRule" value="productionGermans:buyGAirCommander"/>
@@ -42619,6 +42979,28 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="notification" value="AirFleetCommander"/>
+    </attachment>
+
+    <!-- Naval Commander -->
+    <attachment name="triggerAttachment_NavalCommander" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:NavalCommander:conditionAttachmentTurn4OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyGNC"/>
+      <option name="productionRule" value="productionAmericans:buyUSANC"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_NavalCommanderEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:NavalCommander:conditionAttachmentTurn1OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyGNC"/>
+      <option name="productionRule" value="productionAmericans:buyUSANC"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_NavalCommanderNotification" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43Invert:NavalCommander:conditionAttachmentTurn4"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="NavalCommander"/>
     </attachment>
     
     <!-- Allies Fighter Ace -->
@@ -52275,6 +52657,7 @@
     <attachment name="playerAttachment" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="giveUnitControl" value="British"/>
       <option name="placementLimit" value="allied:elite" count="1"/>
+      <option name="placementLimit" value="allied:USANC" count="1"/>
       <option name="placementLimit" value="allied:Eliteusa_armour" count="1"/>
       <option name="placementLimit" value="owned:marine" count="12"/>
     </attachment>
@@ -54448,6 +54831,9 @@
       <boolean/>
       </property>
       <property name="Air Fleet Commander" value="true" editable="true">
+	<boolean/>
+      </property>
+	<property name="Naval Commander" value="true" editable="true">
       <boolean/>
       </property>
       <property name="Kamikaze" value="true" editable="true">
