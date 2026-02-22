@@ -438,6 +438,10 @@ Consult Game Rules and use Edit to correct as needed.<br>
 <br>
 In the Rare instance USA is in positon to enter Dutch New Guinea first, you will need to Player Enforce that it doesn't. <br><br>
 Use Edit if needed.<br><br>
+For determining Economic Victory you need to add and subtract by hand for the additional value to the Islands. Ttiplea will show the correct PU total without "Objectives" under the "Players" tab top right second column. <br> <br>
+<img src="PU_Total.png"/> <br><br>
+175 at Game Start for the Allies in the above example. If Japan were to take the Philippines, you would subtract 3 PUs from the Allies and add 3 PUs to the Axis to get the correct total.<br>
+<br>
 May be turned off in "Map Options".<br>
 <br>
 <b>2. Increased Ship Building</b><br>
@@ -957,7 +961,9 @@ Edit in the "tactical_bomberPG/TG" and "artilleryPG/TG" before battle to prevent
 <b>18. Combat Engineer</b><br>
 <br>
 <img src="German_Engineer.png"/> <br><br>
-Adds the Combat Engineer Unit. Use Edit for removing Landmines. Also for landing at Landing Strips. Land the Air Unit in a legal area if needed and then edit after Non Combat Move. Unit Image courtesy of Hepps.
+Adds the Combat Engineer Unit. Explained in detail here <br><br>
+https://www.axisandallies.org/forums/assets/uploads/files/1704049684134-g40-combat-engineer-unit.pdf <br><br>
+Use Edit for removing Landmines. Also for landing at Landing Strips. Land the Air Unit in a legal area if needed and then edit after Non Combat Move. Unit Image courtesy of Hepps.
 <br>
 <br>
 They are Named "German_Engineer" "Russian_Engineer" "Japan_Engineer" "USA_Engineer" and "UK_Engineer". <br>
@@ -1201,6 +1207,9 @@ Work similar to Elite Infantry. <br><br>
 <br>Explained in detail here <br><br>
 https://www.axisandallies.org/forums/assets/uploads/files/1764255018451-21.g40-selfpropelled-artillery-unit.pdf
 <br><br>
+<b>35. Economic Victory </b><br>
+<br>
+For correct Economic totals you must add and subtract by hand for the increased values of the Pacific Islands. Refer to "The Expanded Pacific Ocean" above for details.<br><br>
 <b>Unofficial SBR Option</b><br>
 <br>
 This is independent of the Captain and Company's Awesome House Rules, thus "Unofficial". :) 
@@ -1297,9 +1306,15 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 2.54<br> 12/18/25 
+<br>Version 2.55<br> 2/8/26 
 <br>
-Have Commisar2 Support "Self Propelled Artillery".
+Fix TimeTable for "Tournament Rules 1st and 2nd Year".
+<br>
+<br>Version 2.54<br> 1/21/26 
+<br>
+Have Commisar2 Support "Self Propelled Artillery".<br>
+Make USA and Japan Specific Bmbrs for Landing on Carriers when "Heavy Carriers" Option is On.<br>
+Change USA Factories to Upgrade Before Purchase when at War.
 <br>
 <br>Version 2.53<br> 12/1/25 
 <br>
