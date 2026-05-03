@@ -313,7 +313,6 @@ You may activate tech in Early 1943, Round 7, in "Map Options". You will need to
 <b>Double Place Phase</b><br>
 <br>
 Waffen Infantry, Waffen Panzer, Commandos, Marines, Unarmed Mines, Waffen Paratroopers, Waffen Artillery, Waffen Heavy Tank, Wolfpacks, Heavy Industry and Underground Factories are all placed in the First Placement Phase. Everything else as normal.<br>
-If placing both a Minor Factory and a Underground Minor, Place the Minor in the first phase and the Underground in the second.<br>
 <br><b>NOTE</b><br>
 Only Place Units that are activated that turn in the First Place Phase.<br>
 <br>
@@ -867,6 +866,8 @@ Buy the appropriate number of "repair units" and place where needed.<br>
 These work correctly. Use same repair procedure as above. Uses same place procedure as other Waffen Units.
 <br>
 <br>
+<b>NOTE</b><br>
+The "Repair Tiger" Unit will repair both "King Tiger" and "Waffen Hvy Tank" now. Buy the appropriate number of repair units. Player Enforced.<br><br>
 <b>6. Japanese Banzai Attack</b><br>
 <br>
 <img src="Banzai.png"/> <br><br>
@@ -1061,7 +1062,7 @@ Thanks to ebbe for the unit image !<br>
 Adds the FlakTower Unit.<br>
 Is On by Default at Game Start.<br>
 <br>Here are the Rules. They are discussed here <br><br>
-https://www.axisandallies.org/forums/topic/36945/axis-allies-global-1940-house-rules-expansion/592
+https://www.axisandallies.org/forums/assets/uploads/files/1717400231167-5.g40-flak-tower.pdf
 <br>
 <br>
 You will need to remove any AA Guns and replace with "aaGunNO".<br>
@@ -1069,8 +1070,11 @@ You will need to remove any AA Guns and replace with "aaGunNO".<br>
 <img src="aaGunNO.png"/> <br><br>
 Can be taken as a hit but will not fire at planes.<br>
 <br>
-The Tower has Max Damage of 6. This allows you to take the 5 Hit Points of Damage without killing it. One repair unit will fix <b>All</b> damage, so Player enforce the correct amount.<br>
-<br><b> You need to roll All AA shots for Fighter Units with Dice roller before battle and edit accordingly.<br>
+The Tower has Max Damage of 6. This allows you to take the 5 Hit Points of Damage without killing it. Do Not take all 6. Only 5 max. Player Enforced.<br>
+One repair unit will fix <b>All</b> damage, so Player enforce the correct amount.<br>
+<br><br> You need to roll All AA shots for Fighter Units with Dice roller before battle and edit accordingly.<br><br>
+  <b>UPDATE</b><br>
+  As of 2.56, FlakTowers will now auto place a FlaKTowerFTR that will correctly roll at 1 at All Fighter units. It is a 1 pixel unit but will take up a placement spot. Do Not Take as casualty.<br><br>
 It will Fire at All Bombers, except Heavy Bombers, correctly at 2. </b><br>
 <br>
 By Rule they Fire at <b>ALL</b> planes. 1 at Fighters and 2 at Tac Bmbrs and Bmbrs.<br>
@@ -1118,6 +1122,7 @@ Waffen Panzer General, aka WaffenPG, is available in Late 1942. It rolls 2 dice 
 When 3 Waffen Panzers, Excluding Heavy Waffen, are present, they can form 1st Waffen Panzer Army.<br>
 All 3 Waffen Panzers will now roll two dice as well.<br><br>
 You must roll the Battle in "Edit" and select the correct casualties, as the WaffenPG rolls two dice whether active or not. You can't remove it first the way you can a Wehrmacht Panzer General to remove the bonus dice rolls to the rest of the Army.<br><br>
+<b>Update</b> Use a Inactive Waffen PG as one of the three Waffen Panzers when a Waffen Panzer Army is formed. You can then kill the Active Waffen PG to stop the bonus rolls when needed and the inactive Waffen PG will continue to roll 2 dice.<br><br>
 Rules are Player Enforced. <br><br>
 <b>28. French Units in UK</b><br>
 <br>
@@ -1209,10 +1214,24 @@ Work similar to Elite Infantry. <br><br>
 <br>Explained in detail here <br><br>
 https://www.axisandallies.org/forums/assets/uploads/files/1764255018451-21.g40-selfpropelled-artillery-unit.pdf
 <br><br>
-<b>35. Economic Victory </b><br>
+<b>35. Self Propelled Artillery AA</b><br>
+<br>
+<img src="SP_ArtilleryAA.png"/><br>
+<br>Explained in detail here <br><br>
+https://www.axisandallies.org/forums/assets/uploads/files/1769770146995-22.g40-selfpropelled-aaa-unit.pdf
+<br><br>
+Also activates the "Waffen_ArtyAA"<br><br>
+<img src="Waffen_ArtyAA.png"/><br>
+<br>
+It will Fire separately from regular and SPA AA. If not using as a AA Gun, you will need to edit in "Waffen_ArtyNoAA"<br><br>
+<img src="Waffen_ArtyNoAA.png"/><br>
+<br>
+It will then defend against Land Units. Make sure to edit any Defenders before any Attackers enter the Territory being attacked or additional edited Defenders will not participate in the battle, even though they will show up in the TTy.
+<br><br>
+<b>36. Economic Victory </b><br>
 <br>
 For correct Economic totals you must add and subtract by hand for the increased values of the Pacific Islands. Refer to "The Expanded Pacific Ocean" above for details.<br><br>
-<b>34. Naval Commanders</b><br>
+<b>37. Naval Commanders</b><br>
 <br>
 <img src="USANC.png"/><br>
 <br>Explained in detail here <br><br>
@@ -1220,6 +1239,10 @@ https://www.axisandallies.org/forums/assets/uploads/files/1770916645890-38.g40-n
 <br><br>
 There are no Boxes for the Naval Commander Task Forces. Use the "Comment Log"
 top left under "View" if needed to document. <br><br>
+Use a "Red" C NC to activate the bonus rolls. 
+<img src="USANC1.png"/><br>
+<br>
+You will need to fight the battle in edit if the NC TF is at risk of being disbanded. Select the appropriate casualties manually. Ignore the extra dice rolls if TF is disbanded.<br><br>
 <b>Unofficial SBR Option</b><br>
 <br>
 This is independent of the Captain and Company's Awesome House Rules, thus "Unofficial". :) 
@@ -1315,6 +1338,20 @@ There are additional Player Enforced rules in the original Game Notes below.
 Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml help. Also Thanks to Joe Pants, hepps, Veqryn, Frostion, ebbe, Black Elk, VictoryFirst, GenerationKill and others for Unit image help. Thanks to the triplea devs for making it possible. Thanks to VictoryFirst for pointing out map connections and playtesting. Thanks to Panzerstahl-Helm for playtesting.<br>
 <br>
 Change Log UHD Boxes:
+<br>
+<br>Version 2.56<br> 5/3/26 
+<br>
+Fix Total War Mech Not Changing in Korea. Previously only worked in 1943 Mod.<br>
+Fix "Demo Airfield Heavy" Not removing.<br>
+Correct Game Notes that Factories Can't be Purchased and Moved Underground on same Turn.<br>
+Make Sea Zone 34 Inaccessible to USA until at War with Japan.<br><br>
+Make Original USA Minor Factories able to Upgrade to Heavy Industry 1.<br>
+Have Japanese and USA Total War Bombers Change Correctly.<br>
+Fix "King Tiger" and "Waffen Hvy Tank" not repairing correctly.<br>
+Correct FlakTower link.<br><br>
+Fix 1943 Timetable to Start at 1943 and Not 1940.<br>
+Add Self Propelled AA.<br>
+Add FlakTowerFTR. FlakTower will now Roll for Fighters.
 <br>
 <br>Version 2.55<br> 2/22/26 
 <br>
