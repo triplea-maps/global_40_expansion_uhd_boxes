@@ -2061,7 +2061,6 @@
     <unit name="Repair_Tiger"/>
     <unit name="Waffen_Hvy_Tank"/>
     <unit name="Waffen_HvyTnk_Dmgd"/>
-    <unit name="Repair_Hvy_Tank"/>
     <unit name="Banzai"/>
     <unit name="Seafire"/>
     <unit name="SeafireTotalWar"/>
@@ -2089,6 +2088,7 @@
     <unit name="HomeDefense"/>
     <unit name="FrenchUK"/>
     <unit name="Nuke"/>
+    <unit name="NC"/>
     <unit name="USANC"/>
     <unit name="USANC1"/>
     <unit name="USANC2"/>
@@ -2101,6 +2101,16 @@
     <unit name="GNC1"/>
     <unit name="GNC_Damaged"/>
     <unit name="GNC1_Damaged"/>
+    <unit name="UKNC"/>
+    <unit name="UKNC1"/>
+    <unit name="UKNC_Damaged"/>
+    <unit name="UKNC1_Damaged"/>
+    <unit name="JNC"/>
+    <unit name="JNC1"/>
+    <unit name="JNC2"/>
+    <unit name="JNC_Damaged"/>
+    <unit name="JNC1_Damaged"/>
+    <unit name="JNC2_Damaged"/>
   </unitList>
   <relationshipTypes>
     <relationshipType name="Allied"/>
@@ -2958,6 +2968,26 @@
       <cost resource="PUs" quantity="0"/>
       <result resourceOrUnit="GNC1" quantity="1"/>
     </productionRule>
+    <productionRule name="buyUKNC">
+      <cost resource="PUs" quantity="20"/>
+      <result resourceOrUnit="UKNC" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUKNC1">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="UKNC1" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyJNC">
+      <cost resource="PUs" quantity="20"/>
+      <result resourceOrUnit="JNC" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyJNC1">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="JNC1" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyJNC2">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="JNC2" quantity="1"/>
+    </productionRule>
     <productionRule name="buyBattleship">
       <cost resource="PUs" quantity="15"/>
       <result resourceOrUnit="battleship" quantity="1"/>
@@ -3700,10 +3730,6 @@
     <productionRule name="buyRepair_Tiger">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="Repair_Tiger" quantity="1"/>
-    </productionRule>
-    <productionRule name="buyRepair_Hvy_Tank">
-      <cost resource="PUs" quantity="1"/>
-      <result resourceOrUnit="Repair_Hvy_Tank" quantity="1"/>
     </productionRule>
     <productionRule name="buyRepair_FlakTower">
       <cost resource="PUs" quantity="1"/>
@@ -7832,6 +7858,132 @@
       <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
       <option name="whenHitPointsRepairedChangesInto" value="0:true:GNC"/>
     </attachment>
+    <!-- UKNC -->
+    <attachment name="unitAttachment" attachTo="UKNC" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="canBombard" value="true"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="unitPlacementOnlyAllowedIn" value="109 Sea Zone:110 Sea Zone"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+    </attachment>
+    <!-- UKNC Damaged -->
+    <attachment name="unitAttachment" attachTo="UKNC_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="4"/>
+      <option name="canBombard" value="false"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:UKNC"/>
+    </attachment>
+    <!-- UKNC1 -->
+    <attachment name="unitAttachment" attachTo="UKNC1" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="attackRolls" value="2"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canBombard" value="true"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+    </attachment>
+    <!-- UKNC1 Damaged -->
+    <attachment name="unitAttachment" attachTo="UKNC1_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="4"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canBombard" value="false"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:GNC"/>
+    </attachment>
+    <!-- JNC -->
+    <attachment name="unitAttachment" attachTo="JNC" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="canBombard" value="true"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="unitPlacementOnlyAllowedIn" value="6 Sea Zone"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+    </attachment>
+    <!-- JNC Damaged -->
+    <attachment name="unitAttachment" attachTo="JNC_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="4"/>
+      <option name="canBombard" value="false"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:JNC"/>
+    </attachment>
+    <!-- JNC1 -->
+    <attachment name="unitAttachment" attachTo="JNC1" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="attackRolls" value="2"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canBombard" value="true"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+    </attachment>
+    <!-- JNC1 Damaged -->
+    <attachment name="unitAttachment" attachTo="JNC1_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="4"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canBombard" value="false"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:USANC"/>
+    </attachment>
+    <!-- JNC2 -->
+    <attachment name="unitAttachment" attachTo="JNC2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="canBombard" value="true"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+    </attachment>
+    <!-- JNC2 Damaged -->
+    <attachment name="unitAttachment" attachTo="JNC2_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="4"/>
+      <option name="defenseRolls" value="2"/>
+      <option name="canBombard" value="false"/>
+      <option name="hitPoints" value="2"/>
+      <option name="blockade" value="1"/>
+      <option name="canBeGivenByTerritoryTo" value="British:Germans"/>
+      <option name="whenHitPointsRepairedChangesInto" value="0:true:USANC"/>
+    </attachment>
     <!-- BB Damaged -->
     <attachment name="unitAttachment" attachTo="BB_Damaged" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
@@ -8041,7 +8193,7 @@
       <!-- stuff for targeting unescorted transports (we are using the new-fangled aa-gun code)
 						 <option name="isAAforFlyOverOnly" value="true"/>
 						 <option name="targetsAA" value="transport"/>
-						 <option name="willNotFireIfPresent" value="destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:Escort_ConvoyA:cruiser:pacific_cruiser:battleship:USANC:USANC1:USANC2:USANC3:pacific_BB:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:Hvycarrier:pacific_carrier:pacific_destroyer:USANC_Damaged:USANC1_Damaged:USANC2_Damaged:USANC3_Damaged:GNC:GNC_Damaged:GNC1:GNC1_Damaged"/>
+						 <option name="willNotFireIfPresent" value="destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:Escort_ConvoyA:cruiser:pacific_cruiser:battleship:USANC:USANC1:USANC2:USANC3:pacific_BB:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:carrier:Hvycarrier:pacific_carrier:pacific_destroyer:USANC_Damaged:USANC1_Damaged:USANC2_Damaged:USANC3_Damaged:GNC:GNC_Damaged:GNC1:GNC1_Damaged:UKNC:UKNC_Damaged:UKNC1:UKNC1_Damaged:JNC:JNC1:JNC2:JNC_Damaged:JNC1_Damaged:JNC2_Damaged"/>
 						 <option name="mayOverStackAA" value="true"/>
 						 <option name="maxAAattacks" value="1"/>
 						 <option name="attackAA" value="2"/>
@@ -8102,7 +8254,7 @@
       <!-- stuff for targeting unescorted transports (we are using the new-fangled aa-gun code)
 						 <option name="isAAforFlyOverOnly" value="true"/>
 						 <option name="targetsAA" value="transport"/>
-						 <option name="willNotFireIfPresent" value="destroyer:pacific_destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:Escort_ConvoyA:cruiser:pacific_cruiser:battleship:USANC:USANC1:USANC2:USANC3:USANC1_Damaged:USANC2_Damaged:USANC3_Damaged:pacific_BB:carrier:Hvycarrier:pacific_carrier:GNC:GNC_Damaged:GNC1:GNC1_Damaged"/>
+						 <option name="willNotFireIfPresent" value="destroyer:pacific_destroyer:Japan_destroyer:JPN_Pacific_DD:Escort:Escort_Convoy:Escort_ConvoyA:cruiser:pacific_cruiser:battleship:USANC:USANC1:USANC2:USANC3:USANC1_Damaged:USANC2_Damaged:USANC3_Damaged:pacific_BB:carrier:Hvycarrier:pacific_carrier:GNC:GNC_Damaged:GNC1:GNC1_Damaged:UKNC:UKNC_Damaged:UKNC1:UKNC1_Damaged:JNC:JNC1:JNC2:JNC_Damaged:JNC1_Damaged:JNC2_Damaged"/>
 						 <option name="mayOverStackAA" value="true"/>
 						 <option name="maxAAattacks" value="1"/>
 						 <option name="attackAA" value="2"/>
@@ -8203,7 +8355,7 @@
     <!-- Hvy Ind 1 -->
     <attachment name="unitAttachment" attachTo="Hvy_Ind_1" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isFactory" value="true"/>
-      <option name="unitPlacementOnlyAllowedIn" value="Southern Italy:Northern Italy:Germany:Western Germany:Union of South Africa:New South Wales:Southern France:Normandy Bordeaux"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Southern Italy:Northern Italy:Germany:Western Germany:Union of South Africa:New South Wales:Southern France:Normandy Bordeaux:Eastern United States:Central United States:Western United States"/>
       <option name="canOnlyBePlacedInTerritoryValuedAtX" value="2"/>
       <!--<option name="destroyedWhenCapturedBy" value="Chinese"/>-->
       <option name="isAAforBombingThisUnitOnly" value="true"/>
@@ -8530,10 +8682,24 @@
       <option name="givesMovement" value="1:USANC1"/>
       <option name="givesMovement" value="1:USANC2"/>
       <option name="givesMovement" value="1:USANC3"/>
+      <option name="givesMovement" value="1:USANC_Damaged"/>
+      <option name="givesMovement" value="1:USANC1_Damaged"/>
+      <option name="givesMovement" value="1:USANC2_Damaged"/>
+      <option name="givesMovement" value="1:USANC3_Damaged"/>
       <option name="givesMovement" value="1:GNC"/>
       <option name="givesMovement" value="1:GNC1"/>
       <option name="givesMovement" value="1:GNC_Damaged"/>
       <option name="givesMovement" value="1:GNC1_Damaged"/>
+      <option name="givesMovement" value="1:UKNC"/>
+      <option name="givesMovement" value="1:UKNC1"/>
+      <option name="givesMovement" value="1:UKNC_Damaged"/>
+      <option name="givesMovement" value="1:UKNC1_Damaged"/>
+      <option name="givesMovement" value="1:JNC"/>
+      <option name="givesMovement" value="1:JNC1"/>
+      <option name="givesMovement" value="1:JNC2"/>
+      <option name="givesMovement" value="1:JNC_Damaged"/>
+      <option name="givesMovement" value="1:JNC1_Damaged"/>
+      <option name="givesMovement" value="1:JNC2_Damaged"/>
       <option name="givesMovement" value="1:pacific_BB"/>
       <option name="givesMovement" value="1:Pac_BB_Damaged"/>
       <option name="givesMovement" value="1:BB_Damaged"/>
@@ -8541,10 +8707,6 @@
       <option name="givesMovement" value="1:German_Heavy_BB"/>
       <option name="givesMovement" value="1:Hvy_BB_Dmgd"/>
       <option name="givesMovement" value="1:German_Hvy_BB_Dmgd"/>
-      <option name="givesMovement" value="1:USANC_Damaged"/>
-      <option name="givesMovement" value="1:USANC1_Damaged"/>
-      <option name="givesMovement" value="1:USANC2_Damaged"/>
-      <option name="givesMovement" value="1:USANC3_Damaged"/>
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <!--<option name="canBeGivenByTerritoryTo" value="British"/>-->
     </attachment>
@@ -8671,6 +8833,12 @@
     </attachment>
     <!-- Surrender -->
     <attachment name="unitAttachment" attachTo="Surrender" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="0"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+    </attachment>
+    <!-- NC -->
+    <attachment name="unitAttachment" attachTo="NC" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="0"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
@@ -9157,7 +9325,7 @@
       <option name="isSea" value="true"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
-      <option name="repairsUnits" value="2:BB_Damaged:battleship:USANC:USANC1:USANC2:USANC3:pacific_BB:Pac_BB_Damaged:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:pacific_BB:USANC_Damaged:USANC1_Damaged:USANC2_Damaged:USANC3_Damaged:GNC:GNC_Damaged:GNC1:GNC1_Damaged"/>
+      <option name="repairsUnits" value="2:BB_Damaged:battleship:USANC:USANC1:USANC2:USANC3:pacific_BB:Pac_BB_Damaged:Heavy_BB:Hvy_BB_Dmgd:German_Heavy_BB:German_Hvy_BB_Dmgd:pacific_BB:USANC_Damaged:USANC1_Damaged:USANC2_Damaged:USANC3_Damaged:GNC:GNC_Damaged:GNC1:GNC1_Damaged:UKNC:UKNC_Damaged:UKNC1:UKNC1_Damaged:JNC:JNC1:JNC2:JNC_Damaged:JNC1_Damaged:JNC2_Damaged"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="Repair_BB"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
@@ -9168,20 +9336,9 @@
       <option name="movement" value="0"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
-      <option name="repairsUnits" value="Tiger_Damaged"/>
+      <option name="repairsUnits" value="2:King_Tiger:Tiger_Damaged:Waffen_Hvy_Tank:Waffen_HvyTnk_Dmgd"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="Repair_Tiger"/>
-      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
-      <option name="maxConstructionsPerTypePerTerr" value="99"/>
-    </attachment>
-    <!-- Repair Hvy Tank -->
-    <attachment name="unitAttachment" attachTo="Repair_Hvy_Tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="movement" value="0"/>
-      <option name="attack" value="0"/>
-      <option name="defense" value="0"/>
-      <option name="repairsUnits" value="Waffen_HvyTnk_Dmgd"/>
-      <option name="isConstruction" value="true"/>
-      <option name="constructionType" value="Repair_Hvy_Tank"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
     </attachment>
@@ -9692,7 +9849,7 @@
       <option name="isAirTransportable" value="false"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="1PU"/>
-      <option name="constructionsPerTerrPerTypePerTurn" value="10"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="12"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
       <option name="unitPlacementOnlyAllowedIn" value="Germany:Russia:Japan:Eastern United States:United Kingdom:France:New South Wales:Southern Italy:India"/>
       <option name="canBeGivenByTerritoryTo" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
@@ -15765,6 +15922,105 @@
       <option name="impArtTech" value="false"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
+    <attachment name="supportAttachmentUKNC1attack" attachTo="UKNC1" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:cruiser"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UKNCattack"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUKNC1defense" attachTo="UKNC1" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:cruiser:carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UKNCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentUKNC1DamagedDefense" attachTo="UKNC1_Damaged" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:cruiser:carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="UKNCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentJNC1attack" attachTo="JNC1" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:pacific_BB:cruiser:pacific_cruiser"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="JNCattack"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentJNC1defense" attachTo="JNC1" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:pacific_BB:Pac_BB_Damaged:cruiser:pacific_cruiser:carrier:pacific_carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="JNCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentJNC1DamagedDefense" attachTo="JNC1_Damaged" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:pacific_BB:Pac_BB_Damaged:cruiser:pacific_cruiser:carrier:pacific_carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="JNCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentJNC2attack" attachTo="JNC2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:pacific_BB:cruiser:pacific_cruiser"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="JNCattack"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentJNC2defense" attachTo="JNC2" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:pacific_BB:Pac_BB_Damaged:cruiser:pacific_cruiser:carrier:pacific_carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="JNCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentJNC2DamagedDefense" attachTo="JNC2_Damaged" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="battleship:BB_Damaged:pacific_BB:Pac_BB_Damaged:cruiser:pacific_cruiser:carrier:pacific_carrier"/>
+      <option name="faction" value="allied"/>
+      <option name="side" value="defence"/>
+      <option name="dice" value="roll"/>
+      <option name="bonus" value="1"/>
+      <option name="number" value="1"/>
+      <option name="bonusType" value="JNCdefense"/>
+      <option name="impArtTech" value="false"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
     <attachment name="supportAttachmentTacticalBomberACTac" attachTo="AirCommanderFtr" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="usa_fighterAF:fighterAF"/>
       <option name="faction" value="allied"/>
@@ -16368,6 +16624,10 @@
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demo_airfield" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_Germans_DemoAirfieldHvy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="map" count="1"/>
+      <option name="unitPresence" value="DemoAirfieldHvy" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_Germans_DemoHarbour" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demo_harbour" count="1"/>
@@ -16399,10 +16659,6 @@
     <attachment name="conditionAttachment_Germans_RemoveRepair_Tiger" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="Repair_Tiger" count="1"/>
-    </attachment>
-    <attachment name="conditionAttachment_Germans_RemoveRepair_Hvy_Tank" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="map" count="1"/>
-      <option name="unitPresence" value="Repair_Hvy_Tank" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_RemoveBanzai" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="map" count="1"/>
@@ -30118,6 +30374,10 @@
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demo_airfield" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_Russians_DemoAirfieldHvy" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="map" count="1"/>
+      <option name="unitPresence" value="DemoAirfieldHvy" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_Russians_DemoHarbour" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demo_harbour" count="1"/>
@@ -30686,6 +30946,10 @@
     <attachment name="conditionAttachment_Japanese_DemoAirfield" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demo_airfield" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japanese_DemoAirfieldHvy" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="map" count="1"/>
+      <option name="unitPresence" value="DemoAirfieldHvy" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_DemoHarbour" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="map" count="1"/>
@@ -31259,6 +31523,10 @@
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demo_airfield" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_British_DemoAirfieldHvy" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="map" count="1"/>
+      <option name="unitPresence" value="DemoAirfieldHvy" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_British_DemoHarbour" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demo_harbour" count="1"/>
@@ -31752,6 +32020,10 @@
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demo_airfield" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_Italians_DemoAirfieldHvy" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="map" count="1"/>
+      <option name="unitPresence" value="DemoAirfieldHvy" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_Italians_DemoHarbour" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demo_harbour" count="1"/>
@@ -31787,6 +32059,10 @@
     <attachment name="conditionAttachment_ANZAC_DemoAirfield" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demo_airfield" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_ANZAC_DemoAirfieldHvy" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="map" count="1"/>
+      <option name="unitPresence" value="DemoAirfieldHvy" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_ANZAC_DemoHarbour" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="map" count="1"/>
@@ -32048,6 +32324,10 @@
     <attachment name="conditionAttachment_Americans_DemoAirfield" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demo_airfield" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_DemoAirfieldHvy" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="map" count="1"/>
+      <option name="unitPresence" value="DemoAirfieldHvy" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_DemoHarbour" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="map" count="1"/>
@@ -32783,6 +33063,10 @@
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demo_airfield" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_French_DemoAirfieldHvy" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="map" count="1"/>
+      <option name="unitPresence" value="DemoAirfieldHvy" count="1"/>
+    </attachment>
     <attachment name="conditionAttachment_French_DemoHarbour" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="demo_harbour" count="1"/>
@@ -33301,6 +33585,10 @@
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="GermanFlow:Waffen_Oberst_3" count="3"/>
       <option name="placement" value="GermanFlow:Panzer_General3" count="3"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmenGermanFlowAC" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1:AirFleetCommander"/>
       <option name="placement" value="GermanFlow:GAirCommanderFtr" count="3"/>
       <option name="placement" value="GermanFlow:GAirCommanderMe_262" count="3"/>
       <option name="placement" value="GermanFlow:GAirCommanderTac" count="3"/>
@@ -33313,6 +33601,10 @@
       <option name="conditions" value="conditionAttachmentTurn1"/>
       <option name="placement" value="Overflow:Soviet_Commisar_3" count="3"/>
       <option name="placement" value="Overflow:Tank_General3" count="2"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmenOverflowAC" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn1:AirFleetCommander"/>
       <option name="placement" value="Overflow:AirCommanderFtr" count="2"/>
       <option name="placement" value="Overflow:AirCommanderTac" count="2"/>
       <option name="placement" value="Overflow:fighterAF" count="6"/>
@@ -33320,7 +33612,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmenOverflowUSA" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentTurn1"/>
+      <option name="conditions" value="conditionAttachmentTurn1:AirFleetCommander"/>
       <option name="placement" value="Overflow:AirCommanderFtr" count="2"/>
       <option name="placement" value="Overflow:AirCommanderTac" count="2"/>
       <option name="placement" value="Overflow:usa_fighterAF" count="6"/>
@@ -33681,13 +33973,28 @@
       <option name="placement" value="Early 1940:SubPen" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenEarly1940RedSubPen43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:SubPens"/>
+      <option name="placement" value="Early 1940:SubPen" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenEarly1940RedEngineer" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:Engnr"/>
       <option name="placement" value="Early 1940:USA_Engineer" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenEarly1940RedEngineer43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:Engnr"/>
+      <option name="placement" value="Early 1940:USA_Engineer" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenEarly1940RedNavalMines" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:NavalMines"/>
+      <option name="placement" value="Early 1940:NavalMine" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenEarly1940RedNavalMines43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:NavalMines"/>
       <option name="placement" value="Early 1940:NavalMine" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
@@ -33698,13 +34005,28 @@
       <option name="placement" value="Late 1940:WaffenPioneer" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenLate1940RedWaffenPioneer43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:Engnr"/>
+      <option name="placement" value="Late 1940:WaffenPioneer" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenLate1940RedFlakTowerTT" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:FlakTower"/>
       <option name="placement" value="Late 1940:FlakTowerTT" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenLate1940RedFlakTowerTT43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:FlakTower"/>
+      <option name="placement" value="Late 1940:FlakTowerTT" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenLate1940RedAirFleetCommander" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:AirFleetCommander"/>
+      <option name="placement" value="Late 1940:GAirCommanderFtr" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenLate1940RedAirFleetCommander43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:AirFleetCommander"/>
       <option name="placement" value="Late 1940:GAirCommanderFtr" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
@@ -33715,13 +34037,28 @@
       <option name="placement" value="Late 1941:USA_LendLeaseUK" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenLate1941RedUSA_LendLeaseUK43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:USandUK_LL"/>
+      <option name="placement" value="Late 1941:USA_LendLeaseUK" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenLate1941RedEscortAndConvoy" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:EscortsA3"/>
       <option name="placement" value="Late 1941:EscortAndConvoy" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenLate1941RedEscortAndConvoy43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:EscortsA3"/>
+      <option name="placement" value="Late 1941:EscortAndConvoy" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenLate1941RedSoviet_Partisan" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:Soviet_Partisan"/>
+      <option name="placement" value="Late 1941:Soviet_Partisan" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenLate1941RedSoviet_Partisan43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:Soviet_Partisan"/>
       <option name="placement" value="Late 1941:Soviet_Partisan" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
@@ -33731,13 +34068,32 @@
       <option name="placement" value="Early 1943:German_Rockets" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenLate1941RedRockets43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:Rockets"/>
+      <option name="placement" value="Late 1941:Russian_Rockets" count="1"/>
+      <option name="placement" value="Early 1943:German_Rockets" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenLate1941USANC" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:NavalCommander"/>
-      <option name="placement" value="Late 1941:USANC" count="1"/>
+      <option name="placement" value="Late 1941:NC" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenLate1941USANC43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:NavalCommander"/>
+      <option name="placement" value="Late 1941:NC" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
     <attachment name="triggerAttachmenLate1941RedElitePanzers" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:ElitePanzers"/>
+      <option name="placement" value="Late 1941:ElitePanzer" count="1"/>
+      <option name="placement" value="Early 1943:Elitewaffen_panzer" count="1"/>
+      <option name="placement" value="Early 1943:Elitearmour" count="1"/>
+      <option name="placement" value="Late 1944:Eliteusa_armour" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenLate1941RedElitePanzers43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:ElitePanzers"/>
       <option name="placement" value="Late 1941:ElitePanzer" count="1"/>
       <option name="placement" value="Early 1943:Elitewaffen_panzer" count="1"/>
       <option name="placement" value="Early 1943:Elitearmour" count="1"/>
@@ -33754,8 +34110,21 @@
       <option name="placement" value="Late 1943:2Destroyers" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenEarly1942RedIncreasedShip43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:IncreasedShip"/>
+      <option name="placement" value="Early 1942:CruiserAndSub" count="1"/>
+      <option name="placement" value="Late 1942:Carrier2FTRS" count="1"/>
+      <option name="placement" value="Early 1943:BBandTransport" count="1"/>
+      <option name="placement" value="Late 1943:2Destroyers" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenEarly1942RedFrenchInUK" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:FrenchInUK"/>
+      <option name="placement" value="Early 1942:FrenchUK" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenEarly1942RedFrenchInUK43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:FrenchInUK"/>
       <option name="placement" value="Early 1942:FrenchUK" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
@@ -33764,8 +34133,18 @@
       <option name="placement" value="Early 1942:WaffenPnzrGrndr" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenEarly1942RedWaffenPnzrGrndr43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:WaffenPnzrGrndr"/>
+      <option name="placement" value="Early 1942:WaffenPnzrGrndr" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenEarly1942RedJapanDD" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:JapanDD"/>
+      <option name="placement" value="Early 1942:DestroyerTransport" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenEarly1942RedJapanDD43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:JapanDD"/>
       <option name="placement" value="Early 1942:DestroyerTransport" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
@@ -33774,8 +34153,18 @@
       <option name="placement" value="Early 1942:RedArmyConscript" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenEarly1942RedRedArmyConscript43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:RedArmyConscript"/>
+      <option name="placement" value="Early 1942:RedArmyConscript" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenEarly1942RedSP_Artillery" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:SP_Artillery"/>
+      <option name="placement" value="Early 1942:SP_Artillery" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenEarly1942RedSP_Artillery43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:SP_Artillery"/>
       <option name="placement" value="Early 1942:SP_Artillery" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
@@ -33789,8 +34178,21 @@
       <option name="placement" value="Early 1944:WaffenPnzrJagerFS" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenLate1942RedTankDestroyers43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:TankDestroyers"/>
+      <option name="placement" value="Late 1942:USATankDestroyerFS" count="1"/>
+      <option name="placement" value="Late 1943:PanzerJagerFS" count="1"/>
+      <option name="placement" value="Late 1943:TankDestroyerFS" count="1"/>
+      <option name="placement" value="Early 1944:WaffenPnzrJagerFS" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenLate1942RedAtlanticWall" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:AtlanticWall"/>
+      <option name="placement" value="Late 1942:Atlantic_Wall" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenLate1942RedAtlanticWall43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:AtlanticWall"/>
       <option name="placement" value="Late 1942:Atlantic_Wall" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
@@ -33799,18 +34201,38 @@
       <option name="placement" value="Late 1942:LuftwaffeAce" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenLate1942RedLuftwaffeAndFtrAce43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:LuftwaffeAndFtrAce"/>
+      <option name="placement" value="Late 1942:LuftwaffeAce" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenLate1942RedBanzai" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:Banzai"/>
       <option name="placement" value="Late 1942:Banzai" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenLate1942RedBanzai43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:Banzai"/>
+      <option name="placement" value="Late 1942:Banzai" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenLate1942RedBanzai" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:Banzai"/>
+      <option name="placement" value="Late 1942:Banzai" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenLate1942RedBanzai43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:Banzai"/>
       <option name="placement" value="Late 1942:Banzai" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
     <attachment name="triggerAttachmenLate1942RedWaffenPG" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:WaffenPG"/>
+      <option name="placement" value="Late 1942:waffen_PG" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenLate1942RedWaffenPG43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:WaffenPG"/>
       <option name="placement" value="Late 1942:waffen_PG" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
@@ -33821,6 +34243,11 @@
       <option name="placement" value="Early 1943:Hvycarrier" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenEarly1943RedHeavyCV43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:HeavyCV"/>
+      <option name="placement" value="Early 1943:Hvycarrier" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
 
     <!-- Late 1943 TimeTable -->
     <attachment name="triggerAttachmenLate1943RedUSAHeavyTransport" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -33828,8 +34255,18 @@
       <option name="placement" value="Late 1943:USAHeavyTransport" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenLate1943RedUSAHeavyTransport43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:Heavy_Transport"/>
+      <option name="placement" value="Late 1943:USAHeavyTransport" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenLate1943RedUSAHeavyBombers" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:HeavyBombers"/>
+      <option name="placement" value="Late 1943:HeavyBombers" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenLate1943RedUSAHeavyBombers43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:HeavyBombers"/>
       <option name="placement" value="Late 1943:HeavyBombers" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
@@ -33840,8 +34277,19 @@
       <option name="placement" value="Early 1944:Me262" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenEarly1944RedMe_26243" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:Me_262"/>
+      <option name="placement" value="Early 1944:Me262" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachmenEarly1944RedKing_Tiger" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:King_Tiger"/>
+      <option name="placement" value="Early 1944:King_Tiger" count="1"/>
+      <option name="placement" value="Late 1944:Waffen_Hvy_Tank" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenEarly1944RedKing_Tiger43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:King_Tiger"/>
       <option name="placement" value="Early 1944:King_Tiger" count="1"/>
       <option name="placement" value="Late 1944:Waffen_Hvy_Tank" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
@@ -33851,10 +34299,20 @@
       <option name="placement" value="Early 1944:TypeXXIUBoat" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenEarly1944Type_XXI_UBoat43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:Type_XXI_UBoat"/>
+      <option name="placement" value="Early 1944:TypeXXIUBoat" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
 
     <!-- Late 1944 TimeTable -->
     <attachment name="triggerAttachmenLate1944RedKamikaze" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:Kamikaze"/>
+      <option name="placement" value="Late 1944:Kamikaze" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenLate1944RedKamikaze43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:Kamikaze"/>
       <option name="placement" value="Late 1944:Kamikaze" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
@@ -33898,6 +34356,61 @@
       <option name="placement" value="Late 1942:Banzai" count="1"/>
       <option name="placement" value="Late 1942:waffen_PG" count="1"/>
       <option name="placement" value="Early 1943:Early1943" count="1"/>
+      <option name="placement" value="Early 1943:TotalWar" count="1"/>
+      <option name="placement" value="Early 1943:Waffen_Para" count="1"/>
+      <option name="placement" value="Early 1943:Elitewaffen_panzer" count="1"/>
+      <option name="placement" value="Early 1943:Elitearmour" count="1"/>
+      <option name="placement" value="Late 1943:Late1943" count="1"/>
+      <option name="placement" value="Early 1943:DevelopWeapons" count="1"/>
+      <option name="placement" value="Late 1943:HeavyBombers" count="1"/>
+      <option name="placement" value="Late 1943:TakeOverItalyTT" count="1"/>
+      <option name="placement" value="Early 1944:Early1944" count="1"/>
+      <option name="placement" value="Early 1944:DDayEurope" count="1"/>
+      <option name="placement" value="Early 1944:Me262" count="1"/>
+      <option name="placement" value="Late 1944:Late1944" count="1"/>
+      <option name="placement" value="Late 1944:Eliteusa_armour" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+
+    <!-- Tournament TimeTable 43 -->
+    <attachment name="triggerAttachmenEarly1940RedTournamentRules43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1"/>
+      <option name="placement" value="Early 1940:Early1940" count="1"/>
+      <option name="placement" value="Early 1940:waffen_infantry" count="1"/>
+      <option name="placement" value="Early 1940:WaffenArty" count="1"/>
+      <option name="placement" value="Early 1940:marine" count="1"/>
+      <option name="placement" value="Early 1940:commando" count="1"/>
+      <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
+      <option name="placement" value="Early 1940:USA_Engineer" count="1"/>
+      <option name="placement" value="Late 1940:Late1940" count="1"/>
+      <option name="placement" value="Late 1940:Panzer_General" count="1"/>
+      <option name="placement" value="Late 1940:UK_TankGeneral" count="1"/>
+      <option name="placement" value="Late 1940:Waffen_Oberst" count="1"/>
+      <option name="placement" value="Late 1940:FlakTowerTT" count="1"/>
+      <option name="placement" value="Late 1940:WaffenPioneer" count="1"/>
+      <option name="placement" value="Early 1941:Early1941" count="1"/>
+      <option name="placement" value="Early 1941:USADOW" count="1"/>
+      <option name="placement" value="Early 1941:Tank_General" count="1"/>
+      <option name="placement" value="Early 1941:Tankograd" count="1"/>
+      <option name="placement" value="Late 1941:guard_infantry" count="1"/>
+      <option name="placement" value="Late 1941:EscortAndConvoy" count="1"/>
+      <option name="placement" value="Late 1941:EuropeDOW" count="1"/>
+      <option name="placement" value="Late 1941:Soviet_Partisan" count="1"/>
+      <option name="placement" value="Late 1941:ElitePanzer" count="1"/>
+      <option name="placement" value="Late 1941:MayAttack" count="1"/>
+      <option name="placement" value="Late 1941:Late1941" count="1"/>
+      <option name="placement" value="Late 1941:USA_LendLeaseUK" count="1"/>
+      <option name="placement" value="Early 1942:Early1942" count="1"/>
+      <option name="placement" value="Early 1942:DestroyerTransport" count="1"/>
+      <option name="placement" value="Early 1942:RedArmyConscript" count="1"/>
+      <option name="placement" value="Early 1942:WaffenPnzrGrndr" count="1"/>
+      <option name="placement" value="Early 1942:USA_TankGeneral" count="1"/>
+      <option name="placement" value="Late 1942:Late1942" count="1"/>
+      <option name="placement" value="Late 1942:waffen_panzer" count="1"/>
+      <option name="placement" value="Late 1942:Mass_Tanks" count="1"/>
+      <option name="placement" value="Late 1942:Banzai" count="1"/>
+      <option name="placement" value="Late 1942:waffen_PG" count="1"/>
+      <option name="placement" value="Early 1943:Early1943_red" count="1"/>
       <option name="placement" value="Early 1943:TotalWar" count="1"/>
       <option name="placement" value="Early 1943:Waffen_Para" count="1"/>
       <option name="placement" value="Early 1943:Elitewaffen_panzer" count="1"/>
@@ -33958,6 +34471,51 @@
       <option name="placement" value="Late 1944:Eliteusa_armour" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    
+    <!-- Tournament TimeTable 1st and 2nd 43 -->
+    <attachment name="triggerAttachmenEarly1940RedTournamentRules1stAnd2nd43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2nd:EXP43:conditionAttachmentTurn1"/>
+      <option name="placement" value="Early 1940:Early1940" count="1"/>
+      <option name="placement" value="Early 1940:waffen_infantry" count="1"/>
+      <option name="placement" value="Early 1940:WaffenArty" count="1"/>
+      <option name="placement" value="Early 1940:marine" count="1"/>
+      <option name="placement" value="Early 1940:commando" count="1"/>
+      <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
+      <option name="placement" value="Late 1940:Late1940" count="1"/>
+      <option name="placement" value="Late 1940:Panzer_General" count="1"/>
+      <option name="placement" value="Late 1940:UK_TankGeneral" count="1"/>
+      <option name="placement" value="Late 1940:Waffen_Oberst" count="1"/>
+      <option name="placement" value="Late 1940:FlakTowerTT" count="1"/>
+      <option name="placement" value="Early 1941:Early1941" count="1"/>
+      <option name="placement" value="Early 1941:USADOW" count="1"/>
+      <option name="placement" value="Early 1941:Tank_General" count="1"/>
+      <option name="placement" value="Early 1941:Tankograd" count="1"/>
+      <option name="placement" value="Late 1941:guard_infantry" count="1"/>
+      <option name="placement" value="Late 1941:EscortAndConvoy" count="1"/>
+      <option name="placement" value="Late 1941:EuropeDOW" count="1"/>
+      <option name="placement" value="Late 1941:ElitePanzer" count="1"/>
+      <option name="placement" value="Late 1941:MayAttack" count="1"/>
+      <option name="placement" value="Late 1941:Late1941" count="1"/>
+      <option name="placement" value="Late 1941:USA_LendLeaseUK" count="1"/>
+      <option name="placement" value="Early 1942:Early1942" count="1"/>
+      <option name="placement" value="Early 1942:RedArmyConscript" count="1"/>
+      <option name="placement" value="Early 1942:WaffenPnzrGrndr" count="1"/>
+      <option name="placement" value="Early 1942:USA_TankGeneral" count="1"/>
+      <option name="placement" value="Late 1942:Late1942" count="1"/>
+      <option name="placement" value="Late 1942:waffen_panzer" count="1"/>
+      <option name="placement" value="Late 1942:Mass_Tanks" count="1"/>
+      <option name="placement" value="Late 1942:waffen_PG" count="1"/>
+      <option name="placement" value="Early 1943:Early1943_red" count="1"/>
+      <option name="placement" value="Early 1943:Elitewaffen_panzer" count="1"/>
+      <option name="placement" value="Early 1943:Elitearmour" count="1"/>
+      <option name="placement" value="Late 1943:Late1943" count="1"/>
+      <option name="placement" value="Early 1943:DevelopWeapons" count="1"/>
+      <option name="placement" value="Late 1943:TakeOverItalyTT" count="1"/>
+      <option name="placement" value="Early 1944:Early1944" count="1"/>
+      <option name="placement" value="Late 1944:Late1944" count="1"/>
+      <option name="placement" value="Late 1944:Eliteusa_armour" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
 
     <attachment name="triggerAttachmenLate1940ACEXP43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:AirFleetCommander:conditionAttachmentTurn1"/>
@@ -33966,22 +34524,56 @@
     </attachment>
     
     <attachment name="triggerAttachmenEarly1943RedTimeTable" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="EXP43:conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1"/>
       <option name="placement" value="Early 1940:Early1940" count="1"/>
       <option name="placement" value="Early 1940:waffen_infantry" count="1"/>
       <option name="placement" value="Early 1940:WaffenArty" count="1"/>
       <option name="placement" value="Early 1940:marine" count="1"/>
       <option name="placement" value="Early 1940:commando" count="1"/>
-      <option name="placement" value="Early 1940:SubPen" count="1"/>
       <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
-      <option name="placement" value="Early 1940:NavalMine" count="1"/>
-      <option name="placement" value="Early 1940:USA_Engineer" count="1"/>
+      <option name="placement" value="Late 1940:Late1940" count="1"/>
+      <option name="placement" value="Late 1940:Panzer_General" count="1"/>
+      <option name="placement" value="Late 1940:UK_TankGeneral" count="1"/>
+      <option name="placement" value="Late 1940:Waffen_Oberst" count="1"/>
+      <option name="placement" value="Early 1941:Early1941" count="1"/>
+      <option name="placement" value="Early 1941:USADOW" count="1"/>
+      <option name="placement" value="Early 1941:Tank_General" count="1"/>
+      <option name="placement" value="Early 1941:Tankograd" count="1"/>
+      <option name="placement" value="Late 1941:guard_infantry" count="1"/>
+      <option name="placement" value="Late 1941:EuropeDOW" count="1"/>
+      <option name="placement" value="Late 1941:MayAttack" count="1"/>
+      <option name="placement" value="Late 1941:Late1941" count="1"/>
+      <option name="placement" value="Early 1942:Early1942" count="1"/>
+      <option name="placement" value="Early 1942:USA_TankGeneral" count="1"/>
+      <option name="placement" value="Late 1942:Late1942" count="1"/>
+      <option name="placement" value="Late 1942:waffen_panzer" count="1"/>
+      <option name="placement" value="Late 1942:Mass_Tanks" count="1"/>
+      <option name="placement" value="Early 1943:Early1943_red" count="1"/>
+      <option name="placement" value="Early 1943:TotalWar" count="1"/>
+      <option name="placement" value="Early 1943:Waffen_Para" count="1"/>
+      <option name="placement" value="Late 1943:Late1943" count="1"/>
+      <option name="placement" value="Early 1943:DevelopWeapons" count="1"/>
+      <option name="placement" value="Late 1943:TakeOverItalyTT" count="1"/>
+      <option name="placement" value="Early 1944:Early1944" count="1"/>
+      <option name="placement" value="Early 1944:DDayEurope" count="1"/>
+      <option name="placement" value="Late 1944:Late1944" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+
+    <!-- Tournament TimeTable 1st and 2nd -->
+    <attachment name="triggerAttachmenEarly1940RedTournamentRules1stAnd2nd" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2nd:EXP43Invert:conditionAttachmentTurn1"/>
+      <option name="placement" value="Early 1940:Early1940" count="1"/>
+      <option name="placement" value="Early 1940:waffen_infantry" count="1"/>
+      <option name="placement" value="Early 1940:WaffenArty" count="1"/>
+      <option name="placement" value="Early 1940:marine" count="1"/>
+      <option name="placement" value="Early 1940:commando" count="1"/>
+      <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
       <option name="placement" value="Late 1940:Late1940" count="1"/>
       <option name="placement" value="Late 1940:Panzer_General" count="1"/>
       <option name="placement" value="Late 1940:UK_TankGeneral" count="1"/>
       <option name="placement" value="Late 1940:Waffen_Oberst" count="1"/>
       <option name="placement" value="Late 1940:FlakTowerTT" count="1"/>
-      <option name="placement" value="Late 1940:WaffenPioneer" count="1"/>
       <option name="placement" value="Early 1941:Early1941" count="1"/>
       <option name="placement" value="Early 1941:USADOW" count="1"/>
       <option name="placement" value="Early 1941:Tank_General" count="1"/>
@@ -33989,54 +34581,70 @@
       <option name="placement" value="Late 1941:guard_infantry" count="1"/>
       <option name="placement" value="Late 1941:EscortAndConvoy" count="1"/>
       <option name="placement" value="Late 1941:EuropeDOW" count="1"/>
-      <option name="placement" value="Late 1941:Russian_Rockets" count="1"/>
-      <option name="placement" value="Late 1941:Soviet_Partisan" count="1"/>
       <option name="placement" value="Late 1941:ElitePanzer" count="1"/>
       <option name="placement" value="Late 1941:MayAttack" count="1"/>
       <option name="placement" value="Late 1941:Late1941" count="1"/>
       <option name="placement" value="Late 1941:USA_LendLeaseUK" count="1"/>
       <option name="placement" value="Early 1942:Early1942" count="1"/>
-      <option name="placement" value="Early 1942:CruiserAndSub" count="1"/>
-      <option name="placement" value="Early 1942:DestroyerTransport" count="1"/>
       <option name="placement" value="Early 1942:RedArmyConscript" count="1"/>
       <option name="placement" value="Early 1942:WaffenPnzrGrndr" count="1"/>
       <option name="placement" value="Early 1942:USA_TankGeneral" count="1"/>
-      <option name="placement" value="Early 1942:FrenchUK" count="1"/>
       <option name="placement" value="Late 1942:Late1942" count="1"/>
-      <option name="placement" value="Late 1942:Carrier2FTRS" count="1"/>
       <option name="placement" value="Late 1942:waffen_panzer" count="1"/>
       <option name="placement" value="Late 1942:Mass_Tanks" count="1"/>
-      <option name="placement" value="Late 1942:Atlantic_Wall" count="1"/>
-      <option name="placement" value="Late 1942:Banzai" count="1"/>
-      <option name="placement" value="Late 1942:LuftwaffeAce" count="1"/>
-      <option name="placement" value="Late 1942:USATankDestroyerFS" count="1"/>
       <option name="placement" value="Late 1942:waffen_PG" count="1"/>
       <option name="placement" value="Early 1943:Early1943_red" count="1"/>
-      <option name="placement" value="Early 1943:BBandTransport" count="1"/>
-      <option name="placement" value="Early 1943:TotalWar" count="1"/>
-      <option name="placement" value="Early 1943:German_Rockets" count="1"/>
-      <option name="placement" value="Early 1943:Waffen_Para" count="1"/>
-      <option name="placement" value="Early 1943:Hvycarrier" count="1"/>
       <option name="placement" value="Early 1943:Elitewaffen_panzer" count="1"/>
       <option name="placement" value="Early 1943:Elitearmour" count="1"/>
       <option name="placement" value="Late 1943:Late1943" count="1"/>
-      <option name="placement" value="Late 1943:2Destroyers" count="1"/>
       <option name="placement" value="Early 1943:DevelopWeapons" count="1"/>
-      <option name="placement" value="Late 1943:HeavyBombers" count="1"/>
-      <option name="placement" value="Late 1943:USAHeavyTransport" count="1"/>
       <option name="placement" value="Late 1943:TakeOverItalyTT" count="1"/>
-      <option name="placement" value="Late 1943:PanzerJagerFS" count="1"/>
-      <option name="placement" value="Late 1943:TankDestroyerFS" count="1"/>
+      <option name="placement" value="Early 1944:Early1944" count="1"/>
+      <option name="placement" value="Late 1944:Late1944" count="1"/>
+      <option name="placement" value="Late 1944:Eliteusa_armour" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+
+    <attachment name="triggerAttachmenLate1940ACEXP43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="EXP43:AirFleetCommander:conditionAttachmentTurn1"/>
+      <option name="placement" value="Late 1940:GAirCommanderFtr" count="1"/>
+<option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    
+    <attachment name="triggerAttachmenEarly1943RedTimeTable" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRulesInvert:TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1"/>
+      <option name="placement" value="Early 1940:Early1940" count="1"/>
+      <option name="placement" value="Early 1940:waffen_infantry" count="1"/>
+      <option name="placement" value="Early 1940:WaffenArty" count="1"/>
+      <option name="placement" value="Early 1940:marine" count="1"/>
+      <option name="placement" value="Early 1940:commando" count="1"/>
+      <option name="placement" value="Early 1940:Soviet_Commisar" count="1"/>
+      <option name="placement" value="Late 1940:Late1940" count="1"/>
+      <option name="placement" value="Late 1940:Panzer_General" count="1"/>
+      <option name="placement" value="Late 1940:UK_TankGeneral" count="1"/>
+      <option name="placement" value="Late 1940:Waffen_Oberst" count="1"/>
+      <option name="placement" value="Early 1941:Early1941" count="1"/>
+      <option name="placement" value="Early 1941:USADOW" count="1"/>
+      <option name="placement" value="Early 1941:Tank_General" count="1"/>
+      <option name="placement" value="Early 1941:Tankograd" count="1"/>
+      <option name="placement" value="Late 1941:guard_infantry" count="1"/>
+      <option name="placement" value="Late 1941:EuropeDOW" count="1"/>
+      <option name="placement" value="Late 1941:MayAttack" count="1"/>
+      <option name="placement" value="Late 1941:Late1941" count="1"/>
+      <option name="placement" value="Early 1942:Early1942" count="1"/>
+      <option name="placement" value="Early 1942:USA_TankGeneral" count="1"/>
+      <option name="placement" value="Late 1942:Late1942" count="1"/>
+      <option name="placement" value="Late 1942:waffen_panzer" count="1"/>
+      <option name="placement" value="Late 1942:Mass_Tanks" count="1"/>
+      <option name="placement" value="Early 1943:Early1943_red" count="1"/>
+      <option name="placement" value="Early 1943:TotalWar" count="1"/>
+      <option name="placement" value="Early 1943:Waffen_Para" count="1"/>
+      <option name="placement" value="Late 1943:Late1943" count="1"/>
+      <option name="placement" value="Early 1943:DevelopWeapons" count="1"/>
+      <option name="placement" value="Late 1943:TakeOverItalyTT" count="1"/>
       <option name="placement" value="Early 1944:Early1944" count="1"/>
       <option name="placement" value="Early 1944:DDayEurope" count="1"/>
-      <option name="placement" value="Early 1944:Me262" count="1"/>
-      <option name="placement" value="Early 1944:King_Tiger" count="1"/>
-      <option name="placement" value="Early 1944:TypeXXIUBoat" count="1"/>
-      <option name="placement" value="Early 1944:WaffenPnzrJagerFS" count="1"/>
-      <option name="placement" value="Early 1944:Eliteusa_armour" count="1"/>
       <option name="placement" value="Late 1944:Late1944" count="1"/>
-      <option name="placement" value="Late 1944:Waffen_Hvy_Tank" count="1"/>
-      <option name="placement" value="Late 1944:Kamikaze" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
     
@@ -35219,7 +35827,6 @@
     <attachment name="triggerAttachment_Waffen_Hvy_Tank" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:King_Tiger:conditionAttachmentTurn10OrHigher"/>
       <option name="productionRule" value="productionGermans:buyWaffen_Hvy_Tank"/>
-      <option name="productionRule" value="productionGermans:buyRepair_Hvy_Tank"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
@@ -35232,7 +35839,6 @@
     <attachment name="triggerAttachment_Waffen_Hvy_TankEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:King_Tiger:conditionAttachmentTurn4OrHigher"/>
       <option name="productionRule" value="productionGermans:buyWaffen_Hvy_Tank"/>
-      <option name="productionRule" value="productionGermans:buyRepair_Hvy_Tank"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
@@ -35769,6 +36375,11 @@
       <option name="removeUnits" value="all:demo_airfield" count="111"/>
       <option name="when" value="before:russiansCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachment_Germans_DemoAirfieldHvy" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germans_DemoAirfieldHvy"/>
+      <option name="removeUnits" value="all:DemoAirfieldHvy" count="111"/>
+      <option name="when" value="before:russiansCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachment_Germans_DemoHarbour" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Germans_DemoHarbour"/>
       <option name="removeUnits" value="all:demo_harbour" count="111"/>
@@ -35807,11 +36418,6 @@
     <attachment name="triggerAttachment_Germans_RemoveRepair_Tiger" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Germans_RemoveRepair_Tiger"/>
       <option name="removeUnits" value="all:Repair_Tiger" count="111"/> 
-      <option name="when" value="after:germansCombatMove"/>
-    </attachment>
-    <attachment name="triggerAttachment_Germans_RemoveRepair_Hvy_Tank" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Germans_RemoveRepair_Hvy_Tank"/>
-      <option name="removeUnits" value="all:Repair_Hvy_Tank" count="111"/> 
       <option name="when" value="after:germansCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_HvyCVBmbrs" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -42985,14 +43591,18 @@
     <attachment name="triggerAttachment_NavalCommander" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:NavalCommander:conditionAttachmentTurn4OrHigher"/>
       <option name="productionRule" value="productionGermans:buyGNC"/>
+      <option name="productionRule" value="productionJapanese:buyJNC"/>
       <option name="productionRule" value="productionAmericans:buyUSANC"/>
+      <option name="productionRule" value="productionBritish:buyUKNC"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachment_NavalCommanderEXP43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:NavalCommander:conditionAttachmentTurn1OrHigher"/>
       <option name="productionRule" value="productionGermans:buyGNC"/>
+      <option name="productionRule" value="productionJapanese:buyJNC"/>
       <option name="productionRule" value="productionAmericans:buyUSANC"/>
+      <option name="productionRule" value="productionBritish:buyUKNC"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
@@ -44786,6 +45396,11 @@
       <option name="removeUnits" value="all:demo_airfield" count="111"/>
       <option name="when" value="before:japaneseCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachment_Russians_DemoAirfieldHvy" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Russians_DemoAirfieldHvy"/>
+      <option name="removeUnits" value="all:DemoAirfieldHvy" count="111"/>
+      <option name="when" value="before:japaneseCombatMove"/>
+    </attachment>
     <attachment name="triggerAttachment_Russians_DemoHarbour" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Russians_DemoHarbour"/>
       <option name="removeUnits" value="all:demo_harbour" count="111"/>
@@ -45755,7 +46370,12 @@
     
     <attachment name="triggerAttachment_Japanese_DemoAirfield" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_DemoAirfield"/>
-      <option name="removeUnits" value="all:demo_airfield" count="1"/>
+      <option name="removeUnits" value="all:demo_airfield" count="111"/>
+      <option name="when" value="before:americansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_DemoAirfieldHvy" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_DemoAirfieldHvy"/>
+      <option name="removeUnits" value="all:DemoAirfieldHvy" count="111"/>
       <option name="when" value="before:americansCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Japanese_DemoHarbour" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -45973,7 +46593,7 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
-    <attachment name="triggerAttachment_JapaneseTotalWarMechInfPlace6Korea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment_JapaneseTotalWarMechInfPlace6Korea43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_JapaneseRemoveTotalWarMechInf6Korea"/>
       <option name="placement" value="Korea:mech_infantry" count="6"/>
       <option name="removeUnits" value="Korea:TotalWarMechInf" count="6"/>
@@ -46024,14 +46644,14 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
-    <attachment name="triggerAttachment_JapaneseTotalWarMTankPlaceJapan12EXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment_JapaneseTotalWarTankPlaceJapan12EXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_JapaneseRemoveTotalWarTank12"/>
       <option name="placement" value="Japan:armour" count="12"/>
       <option name="removeUnits" value="Japan:TotalWar_Tank" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
-    <attachment name="triggerAttachment_JapaneseTotalWarMTankPlaceJapan6Korea43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment_JapaneseTotalWarTankPlaceJapan6Korea43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_JapaneseRemoveTotalWarTank6Korea"/>
       <option name="placement" value="Korea:armour" count="6"/>
       <option name="removeUnits" value="Korea:TotalWar_Tank" count="6"/>
@@ -46081,7 +46701,7 @@
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
     </attachment>
-    <attachment name="triggerAttachment_JapaneseTotalWarMArtyPlaceJapan12EXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment_JapaneseTotalWarArtyPlaceJapan12EXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:conditionAttachmentTurn1OrHigher:conditionAttachment_JapaneseRemoveTotalWarArty12"/>
       <option name="placement" value="Japan:artillery" count="12"/>
       <option name="removeUnits" value="Japan:TotalWar_Arty" count="12"/>
@@ -46248,7 +46868,7 @@
     </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWar_BomberPlaceJapan4" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber4:conditionAttachment_JapaneseRemoveTotalWar_Bomber4Invert"/>
-      <option name="placement" value="Japan:bomber" count="4"/>
+      <option name="placement" value="Japan:JPNbomber" count="4"/>
       <option name="removeUnits" value="Japan:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
@@ -46262,7 +46882,7 @@
     </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWar_BomberPlaceJapan8" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber8:conditionAttachment_JapaneseRemoveTotalWar_Bomber8Invert"/>
-      <option name="placement" value="Japan:bomber" count="8"/>
+      <option name="placement" value="Japan:JPNbomber" count="8"/>
       <option name="removeUnits" value="Japan:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
@@ -46276,7 +46896,7 @@
     </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWar_BomberPlaceJapan12" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber12"/>
-      <option name="placement" value="Japan:bomber" count="12"/>
+      <option name="placement" value="Japan:JPNbomber" count="12"/>
       <option name="removeUnits" value="Japan:TotalWar_Bomber" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
@@ -46290,7 +46910,7 @@
     </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWarBomberPlaceJapan4Korea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarBomber4Korea:conditionAttachment_JapaneseRemoveTotalWarBomber4InvertKorea"/>
-      <option name="placement" value="Korea:bomber" count="4"/>
+      <option name="placement" value="Korea:JPNbomber" count="4"/>
       <option name="removeUnits" value="Korea:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
@@ -46304,7 +46924,7 @@
     </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWarBomberPlaceJapan8Korea" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_JapaneseRemoveTotalWarBomber8Korea"/>
-      <option name="placement" value="Korea:bomber" count="8"/>
+      <option name="placement" value="Korea:JPNbomber" count="8"/>
       <option name="removeUnits" value="Korea:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
@@ -46325,7 +46945,7 @@
     </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWar_BomberPlaceJapan4EXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:A0C5BmbrInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber4:conditionAttachment_JapaneseRemoveTotalWar_Bomber4Invert"/>
-      <option name="placement" value="Japan:bomber" count="4"/>
+      <option name="placement" value="Japan:JPNbomber" count="4"/>
       <option name="removeUnits" value="Japan:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
@@ -46339,7 +46959,7 @@
     </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWar_BomberPlaceJapan8EXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:A0C5BmbrInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber8:conditionAttachment_JapaneseRemoveTotalWar_Bomber8Invert"/>
-      <option name="placement" value="Japan:bomber" count="8"/>
+      <option name="placement" value="Japan:JPNbomber" count="8"/>
       <option name="removeUnits" value="Japan:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
@@ -46353,7 +46973,7 @@
     </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWar_BomberPlaceJapan12EXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:A0C5BmbrInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_JapaneseRemoveTotalWar_Bomber12"/>
-      <option name="placement" value="Japan:bomber" count="12"/>
+      <option name="placement" value="Japan:JPNbomber" count="12"/>
       <option name="removeUnits" value="Japan:TotalWar_Bomber" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
@@ -46367,7 +46987,7 @@
     </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWarBomberPlaceJapan4KoreaEXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:A0C5BmbrInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_JapaneseRemoveTotalWarBomber4Korea:conditionAttachment_JapaneseRemoveTotalWarBomber4InvertKorea"/>
-      <option name="placement" value="Korea:bomber" count="4"/>
+      <option name="placement" value="Korea:JPNbomber" count="4"/>
       <option name="removeUnits" value="Korea:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
@@ -46381,7 +47001,7 @@
     </attachment>
     <attachment name="triggerAttachment_JapaneseTotalWarBomberPlaceJapan8KoreaEXP43" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43:A0C5BmbrInvert:conditionAttachmentTurn1OrHigher:conditionAttachment_JapaneseRemoveTotalWarBomber8Korea"/>
-      <option name="placement" value="Korea:bomber" count="8"/>
+      <option name="placement" value="Korea:JPNbomber" count="8"/>
       <option name="removeUnits" value="Korea:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:japanesePlace"/>
@@ -46858,6 +47478,11 @@
     <attachment name="triggerAttachment_British_DemoAirfield" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_DemoAirfield"/>
       <option name="removeUnits" value="all:demo_airfield" count="1"/>
+      <option name="when" value="before:italiansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_DemoAirfieldHvy" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_DemoAirfieldHvy"/>
+      <option name="removeUnits" value="all:DemoAirfieldHvy" count="1"/>
       <option name="when" value="before:italiansCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_British_DemoHarbour" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -47635,10 +48260,14 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     
-    
     <attachment name="triggerAttachment_Italians_DemoAirfield" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Italians_DemoAirfield"/>
       <option name="removeUnits" value="all:demo_airfield" count="1"/>
+      <option name="when" value="before:anzacCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italians_DemoAirfieldHvy" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italians_DemoAirfieldHvy"/>
+      <option name="removeUnits" value="all:DemoAirfieldHvy" count="1"/>
       <option name="when" value="before:anzacCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Italians_DemoHarbour" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -47716,6 +48345,11 @@
     <attachment name="triggerAttachment_ANZAC_DemoAirfield" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_ANZAC_DemoAirfield"/>
       <option name="removeUnits" value="all:demo_airfield" count="1"/>
+      <option name="when" value="before:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_ANZAC_DemoAirfieldHvy" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ANZAC_DemoAirfieldHvy"/>
+      <option name="removeUnits" value="all:DemoAirfieldHvy" count="1"/>
       <option name="when" value="before:germansCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_ANZAC_DemoHarbour" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -47996,6 +48630,11 @@
     <attachment name="triggerAttachment_Americans_DemoAirfield" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Americans_DemoAirfield"/>
       <option name="removeUnits" value="all:demo_airfield" count="1"/>
+      <option name="when" value="before:italiansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_Americans_DemoAirfieldHvy" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Americans_DemoAirfieldHvy"/>
+      <option name="removeUnits" value="all:DemoAirfieldHvy" count="1"/>
       <option name="when" value="before:italiansCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_Americans_DemoHarbour" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -48791,7 +49430,7 @@
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceEUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber4EUS:conditionAttachment_AmericansRemoveTotalWar_Bomber4EUSInvert"/>
-      <option name="placement" value="Eastern United States:bomber" count="4"/>
+      <option name="placement" value="Eastern United States:USAbomber" count="4"/>
       <option name="removeUnits" value="Eastern United States:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
@@ -48805,7 +49444,7 @@
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceEUS8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber8EUS:conditionAttachment_AmericansRemoveTotalWar_Bomber8EUSInvert"/>
-      <option name="placement" value="Eastern United States:bomber" count="8"/>
+      <option name="placement" value="Eastern United States:USAbomber" count="8"/>
       <option name="removeUnits" value="Eastern United States:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
@@ -48819,7 +49458,7 @@
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceEUS12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber12EUS"/>
-      <option name="placement" value="Eastern United States:bomber" count="12"/>
+      <option name="placement" value="Eastern United States:USAbomber" count="12"/>
       <option name="removeUnits" value="Eastern United States:TotalWar_Bomber" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
@@ -48833,7 +49472,7 @@
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceCUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber4CUS:conditionAttachment_AmericansRemoveTotalWar_Bomber4CUSInvert"/>
-      <option name="placement" value="Central United States:bomber" count="4"/>
+      <option name="placement" value="Central United States:USAbomber" count="4"/>
       <option name="removeUnits" value="Central United States:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
@@ -48847,7 +49486,7 @@
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceCUS8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber8CUS:conditionAttachment_AmericansRemoveTotalWar_Bomber8CUSInvert"/>
-      <option name="placement" value="Central United States:bomber" count="8"/>
+      <option name="placement" value="Central United States:USAbomber" count="8"/>
       <option name="removeUnits" value="Central United States:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
@@ -48861,7 +49500,7 @@
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceCUS12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber12CUS"/>
-      <option name="placement" value="Central United States:bomber" count="12"/>
+      <option name="placement" value="Central United States:USAbomber" count="12"/>
       <option name="removeUnits" value="Central United States:TotalWar_Bomber" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
@@ -48875,7 +49514,7 @@
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceWUS" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber4WUS:conditionAttachment_AmericansRemoveTotalWar_Bomber4WUSInvert"/>
-      <option name="placement" value="Western United States:bomber" count="4"/>
+      <option name="placement" value="Western United States:USAbomber" count="4"/>
       <option name="removeUnits" value="Western United States:TotalWar_Bomber" count="4"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
@@ -48889,7 +49528,7 @@
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceWUS8" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber8WUS:conditionAttachment_AmericansRemoveTotalWar_Bomber8WUSInvert"/>
-      <option name="placement" value="Western United States:bomber" count="8"/>
+      <option name="placement" value="Western United States:USAbomber" count="8"/>
       <option name="removeUnits" value="Western United States:TotalWar_Bomber" count="8"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
@@ -48903,7 +49542,7 @@
     </attachment>
     <attachment name="triggerAttachment_AmericansTotalWar_BomberPlaceWUS12" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="EXP43Invert:A0C5BmbrInvert:conditionAttachmentTurn7OrHigher:conditionAttachment_AmericansRemoveTotalWar_Bomber12WUS"/>
-      <option name="placement" value="Western United States:bomber" count="12"/>
+      <option name="placement" value="Western United States:USAbomber" count="12"/>
       <option name="removeUnits" value="Western United States:TotalWar_Bomber" count="12"/>
       <option name="uses" value="99"/>
       <option name="when" value="after:americansPlace"/>
@@ -49629,6 +50268,11 @@
     <attachment name="triggerAttachment_French_DemoAirfield" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_French_DemoAirfield"/>
       <option name="removeUnits" value="all:demo_airfield" count="1"/>
+      <option name="when" value="before:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachment_French_DemoAirfieldHvy" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_DemoAirfieldHvy"/>
+      <option name="removeUnits" value="all:DemoAirfieldHvy" count="1"/>
       <option name="when" value="before:germansCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_French_DemoHarbour" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -52638,6 +53282,7 @@
       <option name="suicideAttackResources" value="SuicideAttackTokens" count="2"/>
       <!--<option name="suicideAttackTargets" value="battleship:BB_Damaged:Heavy_BB:Hvy_BB_Dmgd:pacific_BB:carrier:Hvycarrier:pacific_carrier:cruiser:pacific_cruiser:destroyer:Escort:Escort_Convoy:Escort_ConvoyA:pacific_destroyer"/>-->
       <option name="placementLimit" value="allied:elite" count="1"/>
+      <option name="placementLimit" value="allied:JNC" count="1"/>
     </attachment>
     <attachment name="playerAttachment" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="immuneToBlockade" value="true"/>
@@ -52692,7 +53337,7 @@
 							6 Sea Zone:17 Sea Zone:19 Sea Zone:20 Sea Zone:22 Sea Zone:32 Sea Zone:34 Sea Zone:33 Sea Zone:36 Sea Zone:37 Sea Zone
 				-->
     <attachment name="rulesAttachment" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="movementRestrictionTerritories" value="65 Sea Zone:66 Sea Zone:85 Sea Zone:86 Sea Zone:88 Sea Zone:90 Sea Zone:103 Sea Zone:106 Sea Zone:107 Sea Zone:116 Sea Zone:117 Sea Zone:120 Sea Zone:122 Sea Zone:19 Sea Zone:20 Sea Zone:36 Sea Zone"/>
+      <option name="movementRestrictionTerritories" value="65 Sea Zone:66 Sea Zone:85 Sea Zone:86 Sea Zone:88 Sea Zone:90 Sea Zone:103 Sea Zone:106 Sea Zone:107 Sea Zone:116 Sea Zone:117 Sea Zone:120 Sea Zone:122 Sea Zone:19 Sea Zone:20 Sea Zone:36 Sea Zone:34 Sea Zone"/>
       <!-- :6 Sea Zone:17 Sea Zone:22 Sea Zone:32 Sea Zone:33 Sea Zone:34 Sea Zone:37 Sea Zone -->
       <option name="movementRestrictionType" value="disallowed"/>
     </attachment>
