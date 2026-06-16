@@ -326,6 +326,12 @@ They work correctly.<br>
 <img src="waffen_infantry.png"/> <br><br>
 Max Build is Player Enforced. Otherwise they work correctly.<br>
 <br>
+<b>Update</b><br>
+Version 2.57 now limits Waffen Infantry to a max purchase of 6 and adds the "waffen_infantry4" <br><br>
+<img src="waffen_infantry4.png"/> <br><br>
+unit. You purchase it when you are consuming a regular Waffen Infantry with a "Waffen Oberst" and your Waffen Infantry are maxed out at 6. <br><br>
+It will auto change to a regular Waffen Infantry after Place. You still need to Player Enforce correct Game Play, as triplea will allow you to purchase up to 4 max and they will all change into Waffen Infantry exceeding the Game total.<br><br>
+So only buy when you can't buy regular Waffen Infantry and at a 1:1 ratio with Waffen Oberst.<br><br>
 <b>3. Waffen Panzer</b><br>
 <br>
 <img src="waffen_panzer.png"/> <br><br>
@@ -367,6 +373,11 @@ When Attacking AA Guns, you will need to <b>Hand Roll</b> before Battle and Edit
 <b>Note</b><br>
 If moving with edit, it may take an unintended route and conquer empty Enemy Territories in the process. You may move with your intended course and stop when triplea deviates from your intended path, or edit unintended Territories to correct ownership.<br>
 <br>
+<b>Update</b><br>
+As of Game Version 2.57 German Paratroopers now have a max purchase of 8. If purchasing Waffen Paratroopers and you already have 8 regular Paratroopers on the board and you want to replace the Paratroopers the Waffen Paratroopers are consuming, you will need to buy "german_para2.<br><br>
+<img src="german_para2.png"/> <br><br>
+It will auto change to a regular German Paratrooper after Place. You still need to Player Enforce correct Game Play, as triplea will allow you to purchase up to 2 max and they will all change into German Paratroopers exceeding the Game total.<br><br>
+So only buy when you can't buy regular German Paratroopers and at a 1:1 ratio with Waffen Paratroopers.<br><br>
 <b>8. Lend-Lease</b><br>
 <br>
 After the Allied Players Non Combat Move is finished, use edit and place the appropiate Lend-Lease Unit with the corresponding Unit (this is optional and Players may choose to ignore this step). On Russia’s turn, purchase “AirLL” or "TankLL" for every Lend Lease Unit you want to accept. This will cost 1 PU per unit as well as 1 resource. The Soviets begin the game with 3 "Air" and 3 "Tank" resources. Once the resources are gone, they will be unable to purchase anymore "Air" or "Tank" LL units.<br>
@@ -593,6 +604,12 @@ They work correctly.<br>
 <img src="Panzer_Grndrs.png"/> <br><br>
 They work correctly except for Max Builds, which are Player Enforced.<br>
 <br>
+<b>Update</b><br>
+Version 2.57 now limits Panzer Grenadiers to a max purchase of 6 and adds the "Panzer_Grndrs4" <br><br>
+<img src="Panzer_Grndrs4.png"/> <br><br>
+unit. You purchase it when you are consuming a regular Panzer Grenadier with a "Waffen Panzer Grenadier" and your Panzer Grenadiers are maxed out at 6. <br><br>
+It will auto change to a regular Panzer Grenadier after Place. You still need to Player Enforce correct Game Play, as triplea will allow you to purchase up to 4 max and they will all change into Panzer Grenadiers exceeding the Game total.<br><br>
+So only buy when you can't buy regular Panzer Grenadiers and at a 1:1 ratio with Waffen Panzer Grenadier.<br><br>
 <b>3. Strategic Rail Movement</b><br>
 <br>
 <img src="Rail.png"/> <br><br>
@@ -710,6 +727,7 @@ Also edit when Waffen Arty is Not part of the Waffen Army and has no Waffen Unit
 This may <b>Rarely</b> result in Battle that a Active Waffen Arty, due to combat losses, would end up supporting a Unit Inside the Army.<br>
 If needed, you can roll the Battle in Edit for exact Game Play results.<br>
 <br>
+If needing to upgrade from a "Self Propelled Artillery" you will need to remove the "SPA" with a regular "Artillery" and then make your purchase and upgrade normally.<br><br>
 <b>Section IV</b><br>
 <br>
 <b>1. Soviet Tank Mass Production </b><br>
@@ -824,6 +842,7 @@ When needing to transport a Allied unit, you will need to use edit and Player En
 <img src="AirTrprtAllied.png"/> <br><br> token in the territory where transport is taking place. This is for information purposes only.<br>
 You may also document in comment log.<br>
 <br>
+If you need to edit in a unit from an Army or Corps in CM or NCM, Air Transport will not recognize that unit as Air transportable. You will need to use edit to move. <br><br>
 <b>Section V Optional Rules</b><br>
 <br>
 May be turned off in "Map Options" before Game Start.<br>
@@ -1070,8 +1089,11 @@ You will need to remove any AA Guns and replace with "aaGunNO".<br>
 <img src="aaGunNO.png"/> <br><br>
 Can be taken as a hit but will not fire at planes.<br>
 <br>
-The Tower has Max Damage of 6. This allows you to take the 5 Hit Points of Damage without killing it. One repair unit will fix <b>All</b> damage, so Player enforce the correct amount.<br>
-<br><b> You need to roll All AA shots for Fighter Units with Dice roller before battle and edit accordingly.<br>
+The Tower has Max Damage of 6. This allows you to take the 5 Hit Points of Damage without killing it. Do Not take all 6. Only 5 max. Player Enforced.<br>
+One repair unit will fix <b>All</b> damage, so Player enforce the correct amount.<br>
+<br><br> You need to roll All AA shots for Fighter Units with Dice roller before battle and edit accordingly.<br><br>
+  <b>UPDATE</b><br>
+  As of 2.56, FlakTowers will now auto place a FlaKTowerFTR that will correctly roll at 1 at All Fighter units. It is a 1 pixel unit but will take up a placement spot. Do Not Take as casualty.<br><br>
 It will Fire at All Bombers, except Heavy Bombers, correctly at 2. </b><br>
 <br>
 By Rule they Fire at <b>ALL</b> planes. 1 at Fighters and 2 at Tac Bmbrs and Bmbrs.<br>
@@ -1161,6 +1183,11 @@ Both Units will defend correctly.
 <img src="WaffenPioneerAttack.png"/><br><br>
 Use Edit for crossing Sea Zones.<br><br>
 Rules are Player Enforced. <br><br>
+<b>Update</b><br>
+As of Game Version 2.57 you may purchase "German_Engineer2" <br><br>
+<img src="German_Engineer2.png"/> <br><br>
+units if you already have the maximum of 4 Engineers on the Map and want to replace the Engineers that the Pioneer units consume. They will auto change to regular German Engineers after Place.<br><br>
+Only buy when you can't buy regular German Engineers and at a 1:1 ratio with Waffen Pioneers.<br><br>
 <b>31. Air Fleet Commander</b><br>
 <br>
 <img src="GAirCommander.png"/><br>
@@ -1211,10 +1238,24 @@ Work similar to Elite Infantry. <br><br>
 <br>Explained in detail here <br><br>
 https://www.axisandallies.org/forums/assets/uploads/files/1764255018451-21.g40-selfpropelled-artillery-unit.pdf
 <br><br>
-<b>35. Economic Victory </b><br>
+<b>35. Self Propelled Artillery AA</b><br>
+<br>
+<img src="SP_ArtilleryAA.png"/><br>
+<br>Explained in detail here <br><br>
+https://www.axisandallies.org/forums/assets/uploads/files/1769770146995-22.g40-selfpropelled-aaa-unit.pdf
+<br><br>
+Also activates the "Waffen_ArtyAA"<br><br>
+<img src="Waffen_ArtyAA.png"/><br>
+<br>
+It will Fire separately from regular and SPA AA. If not using as a AA Gun, you will need to edit in "Waffen_ArtyNoAA"<br><br>
+<img src="Waffen_ArtyNoAA.png"/><br>
+<br>
+It will then defend against Land Units. Make sure to edit any Defenders before any Attackers enter the Territory being attacked or additional edited Defenders will not participate in the battle, even though they will show up in the TTy.
+<br><br>
+<b>36. Economic Victory </b><br>
 <br>
 For correct Economic totals you must add and subtract by hand for the increased values of the Pacific Islands. Refer to "The Expanded Pacific Ocean" above for details.<br><br>
-<b>34. Naval Commanders</b><br>
+<b>37. Naval Commanders</b><br>
 <br>
 <img src="USANC.png"/><br>
 <br>Explained in detail here <br><br>
@@ -1322,7 +1363,14 @@ Thanks to General Zod, wc_sumpton, hepps, redrum, The Dog and others for xml hel
 <br>
 Change Log UHD Boxes:
 <br>
-<br>Version 2.56<br> 4/30/26 
+<br>Version 2.57<br> 5/11/26 
+<br>
+Allow a Maximum of 20 Conscripts to place in Moscow.<br>
+Have "SP_ArtilleryAA" not show in TimeTable or Purchase Window if Deseleceted in "Game Options".<br>
+Remove "SP_ArtilleryAA" from Tank Destroyer Target List.<br>
+Add "waffen_infantry4" "Panzer_Grndrs4" "german_para2" "German_Engineer2". This allows correct Maximum build of the Parent units.
+<br>
+<br>Version 2.56<br> 5/3/26 
 <br>
 Fix Total War Mech Not Changing in Korea. Previously only worked in 1943 Mod.<br>
 Fix "Demo Airfield Heavy" Not removing.<br>
@@ -1332,7 +1380,9 @@ Make Original USA Minor Factories able to Upgrade to Heavy Industry 1.<br>
 Have Japanese and USA Total War Bombers Change Correctly.<br>
 Fix "King Tiger" and "Waffen Hvy Tank" not repairing correctly.<br>
 Correct FlakTower link.<br><br>
-Fix 1943 Timetable to Start at 1943 and Not 1940.
+Fix 1943 Timetable to Start at 1943 and Not 1940.<br>
+Add Self Propelled AA.<br>
+Add FlakTowerFTR. FlakTower will now Roll for Fighters.
 <br>
 <br>Version 2.55<br> 2/22/26 
 <br>
@@ -1340,7 +1390,7 @@ Fix TimeTable for "Tournament Rules 1st and 2nd Year".
 <br>
 Add Naval Commanders.<br>
 Allow Max Mine Build of 12 with Heavy Industry.<br>
-Remove Air Commanders from Overflow Box when "Air Fleet Commander" is not Active.<br><br>
+Remove Air Commanders from Overflow Box when "Air Fleet Commander" is not Active.<br>
 <br>Version 2.54<br> 1/21/26 
 <br>
 Have Commisar2 Support "Self Propelled Artillery".<br>
