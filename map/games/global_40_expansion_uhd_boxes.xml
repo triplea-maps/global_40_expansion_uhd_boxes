@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.58"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.591"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1573,6 +1573,7 @@
   </playerList>
   <unitList>
     <unit name="ABomb"/>
+    <unit name="A_Bomb"/>
     <unit name="Nuked"/>
     <unit name="NukedChanger"/>
     <unit name="NukedChanger2"/>
@@ -3330,6 +3331,10 @@
     <productionRule name="buyABomb">
       <cost resource="PUs" quantity="7"/>
       <result resourceOrUnit="ABomb" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyA_Bomb">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="A_Bomb" quantity="1"/>
     </productionRule>
     <productionRule name="buyNuked">
       <cost resource="PUs" quantity="0"/>
@@ -10165,6 +10170,19 @@
       <option name="defense" value="0"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="ABomb"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany:Eastern United States"/>
+      <option name="isSuicideOnAttack" value="true"/>
+    </attachment>
+    <!-- A_Bomb -->
+    <attachment name="unitAttachment" attachTo="A_Bomb" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="A_Bomb"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
       <option name="unitPlacementOnlyAllowedIn" value="Germany:Eastern United States"/>
@@ -34683,6 +34701,26 @@
       <option name="placement" value="Early 1942:SP_Artillery" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenEarly1942RedAtomicBomb" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:AtomicBomb"/>
+      <option name="placement" value="Early 1942:ABomb" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenEarly1942RedAtomicBomb43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:AtomicBomb"/>
+      <option name="placement" value="Early 1942:ABomb" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenEarly1943RedAtomicBomb" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:AtomicBomb"/>
+      <option name="placement" value="Early 1943:A_Bomb" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenEarly1943RedAtomicBomb43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:AtomicBomb"/>
+      <option name="placement" value="Early 1943:A_Bomb" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
 
     <!-- Late 1942 TimeTable -->
     <attachment name="triggerAttachmenLate1942RedTankDestroyers" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -37117,6 +37155,12 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachmentAtomicLevel1NotificationG" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn7"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="AtomicBombG"/>
+    </attachment>
     <attachment name="triggerAttachmentAtomicBombLevel1NoBuyG" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn8OrHigher:conditionAttachmentRemoveAtomicLevel1BuyG"/>
       <option name="productionRule" value="productionGermans:-buyAtomicLevel1"/>
@@ -37254,7 +37298,159 @@
       <option name="uses" value="1"/>
       <option name="when" value="after:germansCombatMove"/>
     </attachment>
-    <!-- Germans Atomic Bomb Triggers End --> 
+    <!-- Germans Atomic Bomb Triggers End -->
+
+    <!-- Germans Atomic Bomb 1943 Triggers --> 
+    <attachment name="triggerAttachmentAtomicBombLevel1G43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher"/>
+      <option name="productionRule" value="productionGermans:buyAtomicLevel1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicLevel1NotificationG43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="notification" value="AtomicBombG"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombLevel1NoBuyG43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn2OrHigher:conditionAttachmentRemoveAtomicLevel1BuyG"/>
+      <option name="productionRule" value="productionGermans:-buyAtomicLevel1"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombLevel2G43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn2OrHigher:conditionAttachmentAtomicLevel2BuyG"/>
+      <option name="productionRule" value="productionGermans:buyAtomicLevel2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombLevel2NoBuyG43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn3OrHigher:conditionAttachmentRemoveAtomicLevel1BuyG"/>
+      <option name="productionRule" value="productionGermans:-buyAtomicLevel2"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombLevel3G43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn3OrHigher:conditionAttachmentAtomicLevel3BuyG"/>
+      <option name="productionRule" value="productionGermans:buyAtomicLevel3"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombLevel3NoBuyG43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn4OrHigher:conditionAttachmentRemoveAtomicLevel1BuyG"/>
+      <option name="productionRule" value="productionGermans:-buyAtomicLevel3"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombLevel4G43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn4OrHigher:conditionAttachmentAtomicLevel4BuyG"/>
+      <option name="productionRule" value="productionGermans:buyAtomicLevel4"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombLevel4NoBuyG43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn5OrHigher:conditionAttachmentRemoveAtomicLevel1BuyG"/>
+      <option name="productionRule" value="productionGermans:-buyAtomicLevel4"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombLevel5G43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn5OrHigher:conditionAttachmentAtomicLevel5BuyG"/>
+      <option name="productionRule" value="productionGermans:buyAtomicLevel5"/>
+      <option name="productionRule" value="productionGermans:buyABomb"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombLevel5NoBuyG43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn6OrHigher:conditionAttachmentRemoveAtomicLevel1BuyG"/>
+      <option name="productionRule" value="productionGermans:-buyAtomicLevel5"/>
+      <option name="uses" value="99"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombProductionPlaceG43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn5OrHigher:conditionAttachmentAtomicProductionFacilityPlaceG"/>
+      <option name="placement" value="Germany:AtomicProductionFacility" count="1"/>
+      <option name="removeUnits" value="Germany:AtomicLevel5" count="1"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansPlace"/>
+    </attachment>
+    
+    <attachment name="triggerAttachmentAtomicBombPlaceMoscow43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInMoscow"/>
+      <option name="placement" value="Russia:Nuked"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceMoscowChanger43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInMoscowNuked"/>
+      <option name="placement" value="Russia:NukedChanger"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceMoscowChanger243" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInMoscowNuked2"/>
+      <option name="placement" value="Russia:NukedChanger2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceMoscowChanger343" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInMoscowNuked3"/>
+      <option name="placement" value="Russia:NukedChanger3"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
+    
+    <attachment name="triggerAttachmentAtomicBombPlaceUK43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInUK"/>
+      <option name="placement" value="United Kingdom:Nuked"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceUKChanger43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInUKNuked"/>
+      <option name="placement" value="United Kingdom:NukedChanger"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceUKChanger243" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInUKNuked2"/>
+      <option name="placement" value="United Kingdom:NukedChanger2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceUKChanger343" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInUKNuked3"/>
+      <option name="placement" value="United Kingdom:NukedChanger3"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
+
+    <attachment name="triggerAttachmentAtomicBombPlaceUS43" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInUS"/>
+      <option name="placement" value="Eastern United States:Nuked"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceUSChanger43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInUSNuked"/>
+      <option name="placement" value="Eastern United States:NukedChanger"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceUSChanger243" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInUSNuked2"/>
+      <option name="placement" value="Eastern United States:NukedChanger2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceUSChanger343" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInUSNuked3"/>
+      <option name="placement" value="Eastern United States:NukedChanger3"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:germansCombatMove"/>
+    </attachment>
+    <!-- Germans Atomic Bomb 1943 Triggers End --> 
 
     <!-- Americans Atomic Bomb Triggers--> 
     <attachment name="triggerAttachmentAtomicBombLevel1" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -37400,6 +37596,7 @@
       <option name="uses" value="1"/>
       <option name="when" value="after:americansCombatMove"/>
     </attachment>
+    <!-- Americans Atomic Bomb Triggers Ends--> 
     
      <!-- Americans Atomic Bomb Triggers 1943--> 
     <attachment name="triggerAttachmentAtomicBomb43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -37433,14 +37630,87 @@
       <option name="when" value="before:americansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmentAtomicLevel1Notification" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn1"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn5"/>
       <option name="uses" value="1"/>
       <option name="when" value="before:americansPurchase"/>
       <option name="notification" value="AtomicBomb"/>
     </attachment>
 
+    <attachment name="triggerAttachmentAtomicBombPlaceJapan43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInJapan"/>
+      <option name="placement" value="Japan:Nuked"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:americansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceJapanChanger43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInJapanNuked"/>
+      <option name="placement" value="Japan:NukedChanger"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:americansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceJapanChanger243" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInJapanNuked2"/>
+      <option name="placement" value="Japan:NukedChanger2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:americansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceJapanChanger343" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInJapanNuked3"/>
+      <option name="placement" value="Japan:NukedChanger3"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:americansCombatMove"/>
+    </attachment>
     
-    <!-- American Atomic Bomb Triggers End -->
+    <attachment name="triggerAttachmentAtomicBombPlaceGermany43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInGermany"/>
+      <option name="placement" value="Germany:Nuked"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:americansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceGermanyChanger43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInGermanyNuked"/>
+      <option name="placement" value="Germany:NukedChanger"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:americansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceGermanyChanger243" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInGermanyNuked2"/>
+      <option name="placement" value="Germany:NukedChanger2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:americansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceChanger3Germany43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInGermanyNuked3"/>
+      <option name="placement" value="Germany:NukedChanger3"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:americansCombatMove"/>
+    </attachment>
+
+    <attachment name="triggerAttachmentAtomicBombPlaceWesternGermany43" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInWesternGermany"/>
+      <option name="placement" value="Western Germany:Nuked"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:americansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceWesternGermanyChanger43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInWesternGermanyNuked"/>
+      <option name="placement" value="Western Germany:NukedChanger"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:americansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceWesternGermanyChanger243" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInWesternGermanyNuked2"/>
+      <option name="placement" value="Western Germany:NukedChanger2"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:americansCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmentAtomicBombPlaceChanger3WG43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43:conditionAttachmentTurn1OrHigher:conditionAttachmentABombInWesternGermanyNuked3"/>
+      <option name="placement" value="Western Germany:NukedChanger3"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="after:americansCombatMove"/>
+    </attachment>
+    <!-- American Atomic Bomb 1943 Triggers End -->
 
     <!-- Russian Tank Destroyers --> 
     <attachment name="triggerAttachmentTankDestroyerFS" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">

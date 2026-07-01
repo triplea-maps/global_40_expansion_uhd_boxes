@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.583"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.591"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1573,6 +1573,7 @@
   </playerList>
   <unitList>
     <unit name="ABomb"/>
+    <unit name="A_Bomb"/>
     <unit name="Nuked"/>
     <unit name="NukedChanger"/>
     <unit name="NukedChanger2"/>
@@ -3330,6 +3331,10 @@
     <productionRule name="buyABomb">
       <cost resource="PUs" quantity="7"/>
       <result resourceOrUnit="ABomb" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyA_Bomb">
+      <cost resource="PUs" quantity="0"/>
+      <result resourceOrUnit="A_Bomb" quantity="1"/>
     </productionRule>
     <productionRule name="buyNuked">
       <cost resource="PUs" quantity="0"/>
@@ -10165,6 +10170,19 @@
       <option name="defense" value="0"/>
       <option name="isConstruction" value="true"/>
       <option name="constructionType" value="ABomb"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
+      <option name="maxConstructionsPerTypePerTerr" value="99"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Germany:Eastern United States"/>
+      <option name="isSuicideOnAttack" value="true"/>
+    </attachment>
+    <!-- A_Bomb -->
+    <attachment name="unitAttachment" attachTo="A_Bomb" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="A_Bomb"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="99"/>
       <option name="maxConstructionsPerTypePerTerr" value="99"/>
       <option name="unitPlacementOnlyAllowedIn" value="Germany:Eastern United States"/>
@@ -34683,6 +34701,26 @@
       <option name="placement" value="Early 1942:SP_Artillery" count="1"/>
       <option name="when" value="before:changerCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachmenEarly1942RedAtomicBomb" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:AtomicBomb"/>
+      <option name="placement" value="Early 1942:ABomb" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenEarly1942RedAtomicBomb43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:AtomicBomb"/>
+      <option name="placement" value="Early 1942:ABomb" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenEarly1943RedAtomicBomb" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:EXP43Invert:conditionAttachmentTurn1:AtomicBomb"/>
+      <option name="placement" value="Early 1943:A_Bomb" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
+    <attachment name="triggerAttachmenEarly1943RedAtomicBomb43" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:EXP43:conditionAttachmentTurn1:AtomicBomb"/>
+      <option name="placement" value="Early 1943:A_Bomb" count="1"/>
+      <option name="when" value="before:changerCombatMove"/>
+    </attachment>
 
     <!-- Late 1942 TimeTable -->
     <attachment name="triggerAttachmenLate1942RedTankDestroyers" attachTo="Changer" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -56825,12 +56863,12 @@
       <property name="Self Propelled Artillery AA" value="true" editable="true">
       <boolean/>
       </property>
+      <property name="Atomic Bomb" value="true" editable="true">
+      <boolean/>
+      </property>
       <property name="Total Victory" value="true" editable="true">
       <boolean/>
       </property>
-      <property name="Atomic Bomb" value="true" editable="true">
-      <boolean/>
-    </property>
       <property name="Landmines" value="true" editable="true">
       <boolean/>
       </property>
