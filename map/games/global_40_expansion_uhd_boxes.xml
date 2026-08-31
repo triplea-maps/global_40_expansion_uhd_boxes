@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.6"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.61"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -17424,8 +17424,11 @@
       <option name="gameProperty" value="Kamikaze"/>
       <option name="invert" value="true"/>
     </attachment>
-    <attachment name="KamikazeInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="gameProperty" value="Kamikaze"/>
+    <attachment name="KamikazeOOB" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Kamikaze OOB"/>
+    </attachment>
+    <attachment name="KamikazeOOBInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Kamikaze OOB"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="FlakTower" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -47932,7 +47935,7 @@
 				</attachment>-->
     <!-- New Kamikaze Trigger: -->
     <attachment name="triggerAttachment_Japanese_Recruit_Kamikaze_Pilots_alpha" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="KamikazeInvert:conditionAttachmentAxisVictory3"/>
+      <option name="conditions" value="KamikazeInvert:KamikazeOOB:conditionAttachmentAxisVictory3"/>
       <!-- just using a condition that is sure to be true at the start of the game, so that this trigger definitely fires at the beginning of each game -->
       <option name="territories" value="6 Sea Zone:17 Sea Zone:19 Sea Zone:20 Sea Zone:22 Sea Zone:35 Sea Zone"/>
       <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
@@ -57087,6 +57090,9 @@
       <boolean/>
       </property>
       <property name="Kamikaze" value="true" editable="true">
+      <boolean/>
+      </property>
+      <property name="Kamikaze OOB" value="false" editable="true">
       <boolean/>
       </property>
       <property name="FlakTower" value="true" editable="true">
