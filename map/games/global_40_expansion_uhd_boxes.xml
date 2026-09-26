@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.61"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.63"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -9453,6 +9453,10 @@
     </attachment>
     <!-- AtomicLevel1 -->
     <attachment name="unitAttachment" attachTo="AtomicLevel1" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="isInfrastructure" value="true"/>
+      <option name="isAAforBombingThisUnitOnly" value="true"/>
+      <option name="canBeDamaged" value="true"/>
+      <option name="maxDamage" value="10"/>
       <option name="movement" value="0"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
@@ -9464,6 +9468,10 @@
     </attachment>
     <!-- AtomicLevel2 -->
     <attachment name="unitAttachment" attachTo="AtomicLevel2" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="isInfrastructure" value="true"/>
+      <option name="isAAforBombingThisUnitOnly" value="true"/>
+      <option name="canBeDamaged" value="true"/>
+      <option name="maxDamage" value="20"/>
       <option name="movement" value="0"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
@@ -9477,6 +9485,10 @@
     </attachment>
     <!-- AtomicLevel3 -->
     <attachment name="unitAttachment" attachTo="AtomicLevel3" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="isInfrastructure" value="true"/>
+      <option name="isAAforBombingThisUnitOnly" value="true"/>
+      <option name="canBeDamaged" value="true"/>
+      <option name="maxDamage" value="30"/>
       <option name="movement" value="0"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
@@ -9490,6 +9502,10 @@
     </attachment>
     <!-- AtomicLevel4  -->
     <attachment name="unitAttachment" attachTo="AtomicLevel4" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="isInfrastructure" value="true"/>
+      <option name="isAAforBombingThisUnitOnly" value="true"/>
+      <option name="canBeDamaged" value="true"/>
+      <option name="maxDamage" value="40"/>
       <option name="movement" value="0"/>
       <option name="attack" value="0"/>
       <option name="defense" value="0"/>
@@ -13120,6 +13136,26 @@
     <!-- Territory Effects -->
     
     <!-- Support Attachments -->
+    <attachment name="supportAttachmentABomb" attachTo="ABomb" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:WaffenPioneer:WaffenPioneerAttack:artillery:SP_Artillery:SP_ArtilleryAA:Waffen_ArtyAA:Waffen_ArtyNoAA:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:ElitePanzer:armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:WaffenPnzrJager:aaGun:German_Engineer:German_EngineerAttack:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA2D3:DesertGeneralA2D4:Japan_Engineer:Japan_EngineerAttack:japanese_para:italian_para:Me_262:King_Tiger:Tiger_Damaged:Waffen_Hvy_Tank:Waffen_HvyTnk_Dmgd:German_Hvy_Bmbr:Waffen_Oberst_3:Waffen_Oberst_4:Waffen_Oberst_5:Elitewaffen_panzer:PanzerJager:PanzerJagerFS:PanzerJagerFS2:artilleryPG:Waffen_ArtyPG:fighter:GfighterAF:Me_262AF:fighterAF:GAirCommander:GAirCommanderFtr:GAirCommanderTac:GAirCommanderMe_262:LuftwaffeAce:tactical_bomber:Gtactical_bomberAF:tactical_bomberAF:bomber:Volkssturm"/>
+      <option name="faction" value="enemy"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="-1"/>
+      <option name="number" value="999"/>
+      <option name="bonusType" value="ABomb"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
+    <attachment name="supportAttachmentA_Bomb" attachTo="A_Bomb" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
+      <option name="unitType" value="infantry:guard_infantry:commando:marine:commandoA1:marineA1:elite:USATankDestroyerFS:USATankDestroyerFS2:USATankDestroyer:TankDestroyerFS:TankDestroyerFS2:TankDestroyer:russian_para:usa_para:uk_para:Russian_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:Army_Conscript:artillery:SP_ArtilleryUSSR:SP_ArtilleryUSA:ArmoredInfantry:mech_infantry:armour:usa_armour:Eliteusa_armour:uk_armour:Tank_General:USA_TankGeneral:USA_DesertGeneral:USA_DesertGeneral2:USA_DesertGeneral3:USA_DesertGeneralA2D3:USA_DesertGeneralA2D4:UK_TankGeneral:UK_DesertGeneral:UK_DesertGeneral2:UK_DesertGeneral3:Tank_General3:USATankGeneral3:UKTankGeneral3:FighterAceUSA:usa_fighter:usa_fighterAF:uk_fighter:fighterAF:usa_tactical_bomber:usa_tactical_bomberAF:usa_tactical_bomberTG:uk_tactical_bomber:USAbomber:uk_tactical_bomberTG:tactical_bomberTG:fighter:fighterAF:tactical_bomber:tactical_bomberAF:bomber:AirCommander:AirCommanderFtr:AirCommanderTac:Soviet_Commisar:Soviet_Commisar_1:Soviet_Commisar_2:Soviet_Commisar_3:Soviet_Commisar_A2D3:Soviet_Commisar_4:Soviet_Partisan:USA_Hvy_Bomber:UK_Hvy_Bomber"/>
+      <option name="faction" value="enemy"/>
+      <option name="side" value="offence"/>
+      <option name="dice" value="strength"/>
+      <option name="bonus" value="-1"/>
+      <option name="number" value="999"/>
+      <option name="bonusType" value="A_Bomb"/>
+      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
+    </attachment>
     <attachment name="supportAttachmentInfantryAndMechInf" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
       <option name="unitType" value="infantry:guard_infantry:commando:marine:Army_Conscript:elite:mech_infantry:ArmoredInfantry:Panzer_Grndrs:German_EngineerAttack:Russian_Engineer:Japan_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:Japan_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:german_para:russian_para:japanese_para:usa_para:uk_para:italian_para"/>
       <option name="faction" value="allied"/>
@@ -37214,7 +37250,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmentAtomicBombLevel5NoBuyG" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn12OrHigher:conditionAttachmentAtomicProductionFacilityPlaceG"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn12OrHigher:conditionAttachmentABombBuyG"/>
       <option name="productionRule" value="productionGermans:-buyAtomicLevel5"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
@@ -37512,7 +37548,7 @@
       <option name="when" value="before:americansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmentAtomicBombLevel5NoBuy" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn10OrHigher:conditionAttachmentAtomicProductionFacilityPlace"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn10OrHigher:conditionAttachmentABombBuy"/>
       <option name="productionRule" value="productionAmericans:-buyAtomicLevel5"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:americansPurchase"/>
@@ -38107,9 +38143,36 @@
       <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
+    <attachment name="triggerAttachment_TotalVictoryUndrgHvy2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TotalVictory"/>
+      <option name="unitType" value="Hvy_Undg_2"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="maxDamage" count="999"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_TotalVictoryUndrg" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TotalVictory"/>
+      <option name="unitType" value="UndrgroundFctry"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="maxDamage" count="999"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
     <attachment name="triggerAttachment_TotalVictoryMinor" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TotalVictory"/>
       <option name="unitType" value="factory_minor"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="maxDamage" count="999"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_TotalVictoryMinorUndrg" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TotalVictory"/>
+      <option name="unitType" value="UndergroundMinr"/>
       <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
       <option name="unitProperty" value="maxDamage" count="999"/>
       <option name="unitProperty" value="canBeDamaged" count="true"/>
@@ -38134,7 +38197,33 @@
       <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
-    
+    <attachment name="triggerAttachment_TotalVictoryMinorHvy1Undrg" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TotalVictory"/>
+      <option name="unitType" value="Hvy_Undg_1"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="maxDamage" count="999"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_TotalVictoryUSSRMinorHvy1Undrg" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TotalVictory"/>
+      <option name="unitType" value="Rus_Hvy_Undg_1"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="maxDamage" count="999"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
+    <attachment name="triggerAttachment_TotalVictoryUSSRMinorUndrg" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="TotalVictory"/>
+      <option name="unitType" value="RusUndrGrndMinr"/>
+      <option name="unitAttachmentName" value="UnitAttachment" count="unitAttachment"/>
+      <option name="unitProperty" value="maxDamage" count="999"/>
+      <option name="unitProperty" value="canBeDamaged" count="true"/>
+      <option name="unitProperty" value="isAAforBombingThisUnitOnly" count="true"/>
+      <option name="when" value="before:germansPurchase"/>
+    </attachment>
 
     <!--Next are the triggers: Place Wolfpack where there are 3 German U-Boats -->
 <attachment foreach="$WolfpackSeaZones$" name="triggerAttachment_Wolfpack_at@WolfpackSeaZones@_SeaZones" attachTo="Germans" javaClass="TriggerAttachment" type="player">
@@ -46647,14 +46736,14 @@
       <option name="uses" value="1"/>
       <option name="when" value="before:germansCombatMove"/>
     </attachment>
-    <attachment name="triggerAttachment_SpainFelixPlace" attachTo="Neutral_Axis" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment_SpainFelixPlace" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Felix:conditionAttachmentCDGMODInvert:NeutralNations:conditionAttachmentGermansControlSpain"/>
       <option name="placement" value="Spain:infantry" count="6"/>
       <option name="placement" value="Spain:artillery" count="1"/>
       <option name="placement" value="Spain:armour" count="1"/>
       <option name="placement" value="Spain:fighter" count="1"/>
       <option name="uses" value="1"/>
-      <option name="when" value="after:germansBattle"/>
+      <option name="when" value="before:germansNonCombatMove"/>
     </attachment>
     <attachment name="triggerAttachment_SpainFelixRemoveInvert" attachTo="Neutral_True" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="Felix:conditionAttachmentCDGMODInvert:NeutralNationsInvert:conditionAttachmentFelixDestruct"/>
