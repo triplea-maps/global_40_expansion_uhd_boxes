@@ -1383,7 +1383,8 @@ Change Log UHD Boxes:
 <br>Version 2.63<br> 9/25/26 
 <br>
 Fix Undrg Factorys Not Taking Damage. <br>
-<b> Only</b> take as damage when hit by Atomic Bomb. Player Enforced.
+<b> Only</b> take as Damage when hit by Atomic Bomb. Player Enforced.<br>
+Fix Atomic Level 5 showing in Purchase Window after already Purchased.
 <br>
 <br>Version 2.62<br> 9/16/26 
 <br>

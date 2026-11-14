@@ -37250,7 +37250,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmentAtomicBombLevel5NoBuyG" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn12OrHigher:conditionAttachmentAtomicProductionFacilityPlaceG"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn12OrHigher:conditionAttachmentABombBuyG"/>
       <option name="productionRule" value="productionGermans:-buyAtomicLevel5"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
@@ -37548,7 +37548,7 @@
       <option name="when" value="before:americansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmentAtomicBombLevel5NoBuy" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn10OrHigher:conditionAttachmentAtomicProductionFacilityPlace"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn10OrHigher:conditionAttachmentABombBuy"/>
       <option name="productionRule" value="productionAmericans:-buyAtomicLevel5"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:americansPurchase"/>

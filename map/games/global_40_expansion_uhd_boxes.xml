@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Global 40 Expansion UHD Boxes" version="2.63"/>
+  <info name="Global 40 Expansion UHD Boxes" version="2.64"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4169,6 +4169,30 @@
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="factory_major" quantity="1"/>
     </repairRule>
+    <repairRule name="repairUndrgroundFctry">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="UndrgroundFctry" quantity="1"/>
+    </repairRule>
+    <repairRule name="repairHvy_Undg_2">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Hvy_Undg_2" quantity="1"/>
+    </repairRule>
+    <repairRule name="repairHvy_Undg_1">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Hvy_Undg_1" quantity="1"/>
+    </repairRule>
+    <repairRule name="repairUndergroundMinr">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="UndergroundMinr" quantity="1"/>
+    </repairRule>
+    <repairRule name="repairRusUndrGrndMinr">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="RusUndrGrndMinr" quantity="1"/>
+    </repairRule>
+    <repairRule name="repairRus_Hvy_Undg_1">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Rus_Hvy_Undg_1" quantity="1"/>
+    </repairRule>
     <repairRule name="repairAtomicProductionFacility">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="AtomicProductionFacility" quantity="1"/>
@@ -4176,6 +4200,30 @@
     <repairRule name="repairFactory_MajorIndustrialTechnology">
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="factory_major" quantity="2"/>
+    </repairRule>
+    <repairRule name="repairUndrgroundFctryIndustrialTechnology">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="UndrgroundFctry" quantity="2"/>
+    </repairRule>
+    <repairRule name="repairHvy_Undg_2IndustrialTechnology">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Hvy_Undg_2" quantity="2"/>
+    </repairRule>
+    <repairRule name="repairHvy_Undg_1IndustrialTechnology">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Hvy_Undg_1" quantity="2"/>
+    </repairRule>
+    <repairRule name="repairUndergroundMinrIndustrialTechnology">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="UndergroundMinr" quantity="2"/>
+    </repairRule>
+    <repairRule name="repairRusUndrGrndMinrIndustrialTechnology">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="RusUndrGrndMinr" quantity="2"/>
+    </repairRule>
+    <repairRule name="repairRus_Hvy_Undg_1IndustrialTechnology">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="Rus_Hvy_Undg_1" quantity="2"/>
     </repairRule>
     <repairRule name="repairFactory_Upgrade">
       <cost resource="PUs" quantity="1"/>
@@ -4220,6 +4268,12 @@
       <repairRules name="repairRus_Hvy_Ind_1"/>
       <repairRules name="repairHvy_Ind_2"/>
       <repairRules name="repairFactory_Major"/>
+      <repairRules name="repairUndrgroundFctry"/>
+      <repairRules name="repairHvy_Undg_2"/>
+      <repairRules name="repairHvy_Undg_1"/>
+      <repairRules name="repairUndergroundMinr"/>
+      <repairRules name="repairRusUndrGrndMinr"/>
+      <repairRules name="repairRus_Hvy_Undg_1"/>
       <repairRules name="repairAtomicProductionFacility"/>
       <repairRules name="repairFactory_Upgrade"/>
       <repairRules name="repairAirfield"/>
@@ -4234,6 +4288,9 @@
       <repairRules name="repairRus_Hvy_Ind_1IndustrialTechnology"/>
       <repairRules name="repairHvy_Ind_2IndustrialTechnology"/>
       <repairRules name="repairFactory_MajorIndustrialTechnology"/>
+      <repairRules name="repairUndrgroundFctryIndustrialTechnology"/>
+      <repairRules name="repairUndergroundMinrIndustrialTechnology"/>
+      <repairRules name="repairRusUndrGrndMinrIndustrialTechnology"/>
       <repairRules name="repairFactory_UpgradeIndustrialTechnology"/>
       <repairRules name="repairAirfieldIndustrialTechnology"/>
       <repairRules name="repairAirfield_HvyIndustrialTechnology"/>
@@ -13137,23 +13194,13 @@
     
     <!-- Support Attachments -->
     <attachment name="supportAttachmentABomb" attachTo="ABomb" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:WaffenPioneer:WaffenPioneerAttack:artillery:SP_Artillery:SP_ArtilleryAA:Waffen_ArtyAA:Waffen_ArtyNoAA:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:ElitePanzer:armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:WaffenPnzrJager:aaGun:German_Engineer:German_EngineerAttack:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA2D3:DesertGeneralA2D4:Japan_Engineer:Japan_EngineerAttack:japanese_para:italian_para:Me_262:King_Tiger:Tiger_Damaged:Waffen_Hvy_Tank:Waffen_HvyTnk_Dmgd:German_Hvy_Bmbr:Waffen_Oberst_3:Waffen_Oberst_4:Waffen_Oberst_5:Elitewaffen_panzer:PanzerJager:PanzerJagerFS:PanzerJagerFS2:artilleryPG:Waffen_ArtyPG:fighter:GfighterAF:Me_262AF:fighterAF:GAirCommander:GAirCommanderFtr:GAirCommanderTac:GAirCommanderMe_262:LuftwaffeAce:tactical_bomber:Gtactical_bomberAF:tactical_bomberAF:bomber:Volkssturm"/>
+      <option name="unitType" value="infantry:waffen_infantry:Waffen_Oberst:Waffen_Oberst_2:Panzer_General:Panzer_General3:elite:german_para:Waffen_Para:Waffen_Arty:WaffenPioneer:WaffenPioneerAttack:artillery:SP_Artillery:SP_ArtilleryAA:Waffen_ArtyAA:Waffen_ArtyNoAA:mech_infantry:Panzer_Grndrs:WaffenPnzrGrndr:ElitePanzer:armour:waffen_PG:waffen_PG_Active:waffen_panzer:WaffenPnzrJagerFS2:WaffenPnzrJagerFS:WaffenPnzrJager:aaGun:German_Engineer:German_EngineerAttack:DesertGeneral:DesertGeneral2:DesertGeneral3:DesertGeneralA2D3:DesertGeneralA2D4:Japan_Engineer:Japan_EngineerAttack:japanese_para:italian_para:Me_262:King_Tiger:Tiger_Damaged:Waffen_Hvy_Tank:Waffen_HvyTnk_Dmgd:German_Hvy_Bmbr:Waffen_Oberst_3:Waffen_Oberst_4:Waffen_Oberst_5:Elitewaffen_panzer:PanzerJager:PanzerJagerFS:PanzerJagerFS2:artilleryPG:Waffen_ArtyPG:fighter:GfighterAF:Me_262AF:fighterAF:GAirCommander:GAirCommanderFtr:GAirCommanderTac:GAirCommanderMe_262:LuftwaffeAce:tactical_bomber:Gtactical_bomberAF:tactical_bomberAF:bomber:Volkssturm:guard_infantry:commando:marine:commandoA1:marineA1:USATankDestroyerFS:USATankDestroyerFS2:USATankDestroyer:TankDestroyerFS:TankDestroyerFS2:TankDestroyer:russian_para:usa_para:uk_para:Russian_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:Army_Conscript:SP_ArtilleryUSSR:SP_ArtilleryUSA:ArmoredInfantry:usa_armour:Eliteusa_armour:uk_armour:Tank_General:USA_TankGeneral:USA_DesertGeneral:USA_DesertGeneral2:USA_DesertGeneral3:USA_DesertGeneralA2D3:USA_DesertGeneralA2D4:UK_TankGeneral:UK_DesertGeneral:UK_DesertGeneral2:UK_DesertGeneral3:Tank_General3:USATankGeneral3:UKTankGeneral3:FighterAceUSA:usa_fighter:usa_fighterAF:uk_fighter:usa_tactical_bomber:usa_tactical_bomberAF:usa_tactical_bomberTG:uk_tactical_bomber:USAbomber:uk_tactical_bomberTG:tactical_bomberTG:AirCommander:AirCommanderFtr:AirCommanderTac:Soviet_Commisar:Soviet_Commisar_1:Soviet_Commisar_2:Soviet_Commisar_3:Soviet_Commisar_A2D3:Soviet_Commisar_4:Soviet_Partisan:USA_Hvy_Bomber:UK_Hvy_Bomber"/>
       <option name="faction" value="enemy"/>
       <option name="side" value="offence"/>
       <option name="dice" value="strength"/>
       <option name="bonus" value="-1"/>
       <option name="number" value="999"/>
       <option name="bonusType" value="ABomb"/>
-      <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
-    </attachment>
-    <attachment name="supportAttachmentA_Bomb" attachTo="A_Bomb" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
-      <option name="unitType" value="infantry:guard_infantry:commando:marine:commandoA1:marineA1:elite:USATankDestroyerFS:USATankDestroyerFS2:USATankDestroyer:TankDestroyerFS:TankDestroyerFS2:TankDestroyer:russian_para:usa_para:uk_para:Russian_Engineer:USA_Engineer:UK_Engineer:Russian_EngineerAttack:USA_EngineerAttack:UK_EngineerAttack:Army_Conscript:artillery:SP_ArtilleryUSSR:SP_ArtilleryUSA:ArmoredInfantry:mech_infantry:armour:usa_armour:Eliteusa_armour:uk_armour:Tank_General:USA_TankGeneral:USA_DesertGeneral:USA_DesertGeneral2:USA_DesertGeneral3:USA_DesertGeneralA2D3:USA_DesertGeneralA2D4:UK_TankGeneral:UK_DesertGeneral:UK_DesertGeneral2:UK_DesertGeneral3:Tank_General3:USATankGeneral3:UKTankGeneral3:FighterAceUSA:usa_fighter:usa_fighterAF:uk_fighter:fighterAF:usa_tactical_bomber:usa_tactical_bomberAF:usa_tactical_bomberTG:uk_tactical_bomber:USAbomber:uk_tactical_bomberTG:tactical_bomberTG:fighter:fighterAF:tactical_bomber:tactical_bomberAF:bomber:AirCommander:AirCommanderFtr:AirCommanderTac:Soviet_Commisar:Soviet_Commisar_1:Soviet_Commisar_2:Soviet_Commisar_3:Soviet_Commisar_A2D3:Soviet_Commisar_4:Soviet_Partisan:USA_Hvy_Bomber:UK_Hvy_Bomber"/>
-      <option name="faction" value="enemy"/>
-      <option name="side" value="offence"/>
-      <option name="dice" value="strength"/>
-      <option name="bonus" value="-1"/>
-      <option name="number" value="999"/>
-      <option name="bonusType" value="A_Bomb"/>
       <option name="players" value="Germans:Russians:Americans:British:French:Italians:Japanese:Chinese:ANZAC:French:Dutch"/>
     </attachment>
     <attachment name="supportAttachmentInfantryAndMechInf" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitSupportAttachment" type="unitType">
@@ -37213,7 +37260,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmentAtomicBombLevel2NoBuyG" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9OrHigher:conditionAttachmentAtomicLevel2BuyG"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn9OrHigher:conditionAttachmentAtomicLevel3BuyG"/>
       <option name="productionRule" value="productionGermans:-buyAtomicLevel2"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
@@ -37225,7 +37272,7 @@
       <option name="when" value="before:germansPurchase"/>
     </attachment>
     <attachment name="triggerAttachmentAtomicBombLevel3NoBuyG" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn10OrHigher:conditionAttachmentAtomicLevel3BuyG"/>
+      <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn10OrHigher:conditionAttachmentAtomicLevel4BuyG"/>
       <option name="productionRule" value="productionGermans:-buyAtomicLevel3"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
@@ -37238,7 +37285,7 @@
     </attachment>
     <attachment name="triggerAttachmentAtomicBombLevel4NoBuyG" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="TournamentRules1stAnd2ndInvert:AtomicBomb:BasicEXPInvert:EXP43Invert:conditionAttachmentTurn11OrHigher:conditionAttachmentAtomicLevel4BuyG"/>
-      <option name="productionRule" value="productionGermans:-buyAtomicLevel4"/>
+      <option name="productionRule" value="productionGermans:-buyAtomicLevel5"/>
       <option name="uses" value="99"/>
       <option name="when" value="before:germansPurchase"/>
     </attachment>
